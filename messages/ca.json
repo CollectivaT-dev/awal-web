@@ -1,0 +1,73 @@
+{
+    "nav": {
+        "signUp": "Uniu-vos a Awal",
+        "Points": "Punts de contribució",
+        "signIn": "Inici de sesió",
+        "settings": "Perfil",
+        "signOut": "Tanca la sesió",
+        "translator": "Traductor",
+        "contribute": "Contribuir",
+        "validate": "Validar"
+    },
+    "language": {
+        "zgh": "ⵜⴰⵎⴰⵣⵉⵖⵜ",
+        "ca": "Català",
+        "es": "Español",
+        "en": "English",
+        "fr": "Français",
+        "ary": "الدارجة"
+    },
+    "variation": {
+        "central": "Central",
+        "tif": "Tarifit",
+        "tachlit": "Tachlit",
+        "other": "Altre"
+    },
+    "menu": {
+        "translator": "Traductor",
+        "voice": "Veu",
+        "about": "Sobre Awal",
+        "resources": "Recursos"
+    },
+    "user": {
+        "username": "Nom d'usuari",
+        "email": "Correu electrònic",
+        "password": "Contrasenya",
+        "confirm_password": "Confirma la contrasenya",
+        "age": "Anys",
+        "gender": "Sexe",
+        "name": "Nom",
+        "surname": "Cognom"
+    },
+    "translator": {
+        "select_lang": "Selecciona l'idioma",
+        "generate": "Frase aleatòria",
+        "translate": "Traduir",
+        "report": "Informa",
+        "placeholder": {
+            "type_to_translate": "Introduïu aquí el text que voleu traduir...",
+            "dictionary_cat": "Diccionari català-tamazight",
+            "translation_box": "La traducció apareixerà aquí..."
+        },
+        "notice": "Advertència: Aquesta aplicació es basa en un motor de traducció basat en recerca que pot proporcionar resultats imprecisos. Si parles amazic, pots ajudar-nos a millorar enviant traduccions."
+    },
+    "footer": {
+        "legal": "Avís legal",
+        "privacy": "Política de privacitat",
+        "cookie": "Política de cookies"
+    },
+    "toasters": {
+        "under_construction": "Aquesta pàgina encara està en desenvolupament.",
+        "success_contribution": "Gràcies per la seva contribució! Acaba de guanyar",
+        "select_var": "Si us plau, seleccioni una variant per a les llengües amazigues",
+        "alert_no_text": "Cap text per contribuir.",
+        "alert_no_modify": "Si us plau, tradueixi el text per contribuir.",
+        "alert_privacy_check": "Si us plau, llegeixi i accepti els termes de contribució per continuar.",
+        "alert_general": "Alguna cosa ha anat malament",
+        "alert_username": "Nom d'usuari ja agafat",
+        "alert_email": "Correu electrònic ja en ús",
+        "alert_email_username": "Nom d'usuari o correu electrònic ja en ús",
+        "success_update": "Perfil actualitzat amb èxit.",
+        "success_registration": "Èxit, gràcies per registrar-se!"
+    }
+}

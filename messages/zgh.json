@@ -1,0 +1,71 @@
+{
+    "nav": {
+        "signUp": "ⴰⵙⵏⵓⵍⴼⵓ",
+        "Points": "ⵜⴰⴳⵓⵎⴰⵢⵜ ⵏ ⵜⵓⴳⴳⵯⴰ",
+        "signIn": "ⴽⵚⵎ",
+        "settings": "ⵉⵖⴻⵡⵡⴰⵔⵏ",
+        "signOut": "ⴼⴼⵖ",
+        "translator": "ⴰⵎⵙⴻⵜⵜⴰⴼ",
+        "contribute": "ⵜⵔⵓ"
+    },
+    "language": {
+        "zgh": "ⵜⴰⵎⴰⵣⵉⵖⵜ",
+        "ca": "ⵜⴰⴽⴰⵜⴰⵍⴰⵏ",
+        "es": "ⵜⴰⵙⴱⴰⵏⵢⵓⵍⵉⵜ",
+        "en": "ⵜⴰⵏⴳⵍⵉⵣⵉⵜ",
+        "fr": "ⵜⴰⴼⵔⴰⵏⵙⵉⵙⵜ",
+        "ary": "ⵜⴰⴷⴰⵔⵊⴰ"
+    },
+    "variation": {
+        "central": "ⵜⴰⵡⵣⵏⵜ",
+        "tif": "ⵜⴰⵔⵉⴼⵉⵜ",
+        "tachlit": "ⵜⴰⵛⵍⵃⵉⵜ",
+        "other": "ⴰⵢⴻⵏ ⴰⵢⴷⵓⵔⵏ"
+    },
+    "menu": {
+        "translator": "ⴰⵎⵙⴻⵜⵜⴰⴼ",
+        "voice": "ⴰⵙⴰⵡⴻⵏ",
+        "about": "ⴳⵓⴼ ⴰⵡⴰⵍ",
+        "resources": "ⵉⵎⴰⵡⵍⴰⵏ"
+    },
+    "user": {
+        "username": "ⵉⵙⴻⵎ ⵏ ⵓⵙⵇⴷⴰⵛ",
+        "email": "ⵜⴰⵏⵙⴰ ⵏ ⵉⵎⴰⵢⵍⴻⵏ",
+        "password": "ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ",
+        "confirm_password": "ⵙⵇⴷⵚ ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ",
+        "age": "ⵜⵓⴷⵔⵜ",
+        "gender": "ⴰⵊⵓⵣ",
+        "name": "ⵉⵙⴻⵎ",
+        "surname": "ⴰⵣⵡⴻⵍ"
+    },
+    "translator": {
+        "select_lang": "ⴼⵔⴻⵏ ⵜⵓⵜⵍⴰⵢⵜ",
+        "generate": "ⴰⵣⵔⴰⴳ ⴰⴽⴷⴰⵙⴳⴰⵏ",
+        "translate": "ⵙⴻⵎⵙⴰⵔ",
+        "report": "ⴰⵔⵓ",
+        "placeholder": {
+            "type_to_translate": "ⴰⵙⵏⵓⵍⴼ ⴰⴽⴽⵓ ⴰⵔ ⵜⵙⵎⵙⴰⵔⵉⴷ...",
+            "dictionary_cat": "ⵜⴰⵙⴷⴰⵡⵉⵜ ⵜⴰⴽⴰⵜⴰⵍⴰⵏⵜ-ⵜⴰⵎⴰⵣⵉⵖⵜ",
+            "translation_box": "ⵜⴰⵙⵎⵙⴰⵔⵜ ⵜⴰⴷⵓⵙⴽⴰ ⵜⴰⵙⵏⴰ"
+        }
+    },
+    "footer": {
+        "legal": "ⵜⴰⵏⴰⵣⴷⴰⵖ ⵏ ⵜⵍⴰⵡⵜ",
+        "privacy": "ⵜⴰⵙⴻⵔⵜⵉⵜ ⵏ ⵜⵡⴻⵏⵏⴼⵜ",
+        "cookie": "ⵜⴰⵙⴻⵔⵜⵉⵜ ⵏ ⵜⵉⵙⴽⴰⵔ"
+    },
+    "toasters": {
+        "under_construction": "ⴰⴳⴳⴰⵔ ⵏ ⵓⵢⴰ ⵢⴰⴷ ⵓⵔ ⵜⵙⴰⵍⴰⵢⴰⴷ ⴰⵎⴰⴷⵓⵔⵏ",
+        "success_contribution": "ⵜⴰⵏⵎⵎⵉⵔⵜ ⵏ ⵜⵓⴳⴳⵯⴰ ⵏⵏⵉⴳ! ⵜⴰⴼⴷⴰⵜⵜ ⴰⴽⴷⴰⵙⴳⴰⵏ",
+        "select_var": "ⴼⵔⴻⵏ ⴰⵏⵓⵡⴰⵍ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⵏ ⵉⵎⴰⵣⵉⵖⵏ",
+        "alert_no_text": "ⵓⵔ ⵢⴻⴼⴽ ⴰⵏⵣⵉ ⴰⵔ ⵜⵙⴰⵍⴰⵢⴰⴷ",
+        "alert_no_modify": "ⴼⵔⴻⵏ ⴰⵙⵏⵓⵍⴼ ⴰⵏⵣⵉ ⴰⵔ ⵜⵙⴰⵍⴰⵢⴰⴷ",
+        "alert_privacy_check": "ⴼⵔⴻⵏ ⴰⵔⴰ ⵉⵙⴰⴳⵔⴰⵡⵏ ⴰⵔⴰ ⵜⵓⴳⴳⵯⴰ ⵏ ⵓⵙⴰⵍⴰⵢⴰⴷ ⴰⵔ ⵜⵙⴰⵍⴰⵢⴰⴷ",
+        "alert_general": "ⵓⴹⵓ ⵓⵔⵢⴰⴷⴰⵔⴰⵔⵓ",
+        "alert_username": "ⵉⵙⴻⵎ ⵏ ⵓⵙⵇⴷⴰⵛ ⴰⴽⴰⴷⴰⵙⴳⴰⵏ",
+        "alert_email": "ⵜⴰⵏⵙⴰ ⵏ ⵉⵎⴰⵢⵍⴻⵏ ⴰⴽⴰⴷⴰⵙⴳⴰⵏ",
+        "alert_email_username": "ⵉⵙⴻⵎ ⵏ ⵓⵙⵇⴷⴰⵛ ⴰⵏⴰⵎⵓⵔ ⴰⵖⵔⴰⵔⵎⴰ ⵜⴰⵏⵙⴰ ⵏ ⵉⵎⴰⵢⵍⴻⵏ ⴰⴽⴰⴷⴰⵙⴳⴰⵏ",
+        "success_update": "ⴰⵏⴰⵎⵓⵔⵓ ⵢⴰⴷ ⵓⵏⴰⵎⵎⵉⵔⵜ",
+        "success_registrationL": "ⵜⴰⵏⵎⵎⵉⵔⵜ, ⵜⴰⵏⵎⵎⵉⵔⵜ ⵏ ⵓⵙⵏⵓⵍⴼⵓⵏ"
+    }
+}

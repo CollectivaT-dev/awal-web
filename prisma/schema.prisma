@@ -11,12 +11,90 @@ datasource db {
 }
 
 model User {
-	id 		String @id @default(auto()) @map("_id") @db.ObjectId
-	email 	String @unique
-	name 	String
-	points	Int?
-	image	String?
-	hashedPassword String?
-	createdAt DateTime @default(now())
-	updatedAt DateTime @updatedAt
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  username     String   @unique
+  email        String?  @unique
+  name         String?
+  surname      String?
+  score        Int?
+  password     String?
+  gender       String?
+  age          Int?
+  isSubscribed Boolean?
+  isPrivacy    Boolean?
+  isVerified   Boolean?
+
+  language     OtherLanguages[]
+  tachelhit    Tachelhit[]
+  central      Central[]
+  tarifit      Tarifit[]
+  contribution Contribution[]
+}
+
+model OtherLanguages {
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId  String   @db.ObjectId
+  english Boolean?
+  spanish Boolean?
+  catala  Boolean?
+  french  Boolean?
+  arabic  Boolean?
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model Tachelhit {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String   @db.ObjectId
+  isChecked   Boolean?
+  oral        Int?
+  written_lat Int?
+  written_tif Int?
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model Central {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String   @db.ObjectId
+  isChecked   Boolean?
+  oral        Int?
+  written_lat Int?
+  written_tif Int?
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model Tarifit {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String   @db.ObjectId
+  isChecked   Boolean?
+  oral        Int?
+  written_lat Int?
+  written_tif Int?
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model Contribution {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId   String  @db.ObjectId
+  username String?
+
+  // standard api parameters
+  src      String?
+  tgt      String?
+  src_text String?
+  tgt_text String?
+  tgt_batch String[]
+  // src variantion check
+  srcVar   String?
+  // target variantion check
+  tgtVar   String?
+  // validation check, every validation will give validation +1
+  validation Int?
+  // if an entry is validated twice then set isValidated to true and never show this entry again
+  isValidated Boolean?
+
+  user User @relation(fields: [userId], references: [id])
 }

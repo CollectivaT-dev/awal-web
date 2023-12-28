@@ -1,0 +1,73 @@
+{
+    "nav": {
+        "signUp": "Únete a Awal",
+        "Points": "Puntos de Contribución",
+        "signIn": "Iniciar sesión",
+        "settings": "Perfil",
+        "signOut": "Cerrar sesión",
+        "translator": "Traductor",
+        "contribute": "Contribuir",
+        "validate": "Validar"
+    },
+    "language": {
+        "zgh": "ⵜⴰⵎⴰⵣⵉⵖⵜ",
+        "ca": "Català",
+        "es": "Español",
+        "en": "Inglés",
+        "fr": "Francés",
+        "ary": "الدارجة"
+    },
+    "variation": {
+        "central": "Central",
+        "tif": "Tarifit",
+        "tachlit": "Tachlit",
+        "other": "Otro"
+    },
+    "menu": {
+        "translator": "Traductor",
+        "voice": "Voz",
+        "about": "Acerca de Awal",
+        "resources": "Recursos"
+    },
+    "user": {
+        "username": "Nombre de usuario",
+        "email": "Correo electrónico",
+        "password": "Contraseña",
+        "confirm_password": "Confirmar contraseña",
+        "age": "Edad",
+        "gender": "Sexo",
+        "name": "Nombre",
+        "surname": "Apellido"
+    },
+    "translator": {
+        "select_lang": "Seleccionar idioma",
+        "generate": "Frase aleatoria",
+        "translate": "Traducir",
+        "report": "Reportar",
+        "placeholder": {
+            "type_to_translate": "Escribe algo para traducir...",
+            "dictionary_cat": "Diccionario catalán-amazigh",
+            "translation_box": "La traducción aparecerá aquí..."
+        },
+        "notice": "Precaución: Esta aplicación se basa en un modelo de traducción basado en investigaciones que puede proporcionar resultados inexactos. Si hablas amazigh, puedes ayudarnos a mejorar enviando traducciones."
+    },
+    "footer": {
+        "legal": "Aviso legal",
+        "privacy": "Política de privacidad",
+        "cookie": "Política de cookies"
+    },
+    "toasters": {
+        "under_construction": "Esta página aún está en desarrollo.",
+        "success_contribution": "¡Gracias por tu contribución! Acabas de ganar",
+        "select_var": "Por favor, selecciona una variante para los idiomas amazigh",
+        "alert_no_text": "No hay texto para contribuir",
+        "alert_no_modify": "Por favor, traduce el texto para contribuir.",
+        "alert_privacy_check": "Por favor, lee y acepta los términos de contribución para continuar.",
+        "alert_general": "Algo salió mal.",
+        "alert_username": "Nombre de usuario ya utilizado.",
+        "alert_email": "Correo electrónico ya registrado.",
+        "alert_email_username": "Nombre de usuario o correo electrónico ya en uso.",
+        "success_update": "Perfil actualizado con éxito!",
+        "success_registration": "¡Gracias por registrarte!"
+    }
+}

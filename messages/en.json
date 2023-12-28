@@ -1,0 +1,73 @@
+{
+    "nav": {
+        "signUp": "Join Awal",
+        "Points": "Contribution Points",
+        "signIn": "Sign In",
+        "settings": "Profile",
+        "signOut": "Sign Out",
+        "translator": "Translator",
+        "contribute": "Contribute",
+        "validate": "Validate"
+    },
+    "language": {
+        "zgh": "ⵜⴰⵎⴰⵣⵉⵖⵜ",
+        "ca": "Català",
+        "es": "Español",
+        "en": "English",
+        "fr": "Français",
+        "ary": "الدارجة"
+    },
+    "variation": {
+        "central": "Central",
+        "tif": "Tarifit",
+        "tachlit": "Tachlit",
+        "other": "Other"
+    },
+    "menu": {
+        "translator": "Translate",
+        "voice": "Voice",
+        "about": "About Awal",
+        "resources": "Resources"
+    },
+    "user": {
+        "username": "Username",
+        "email": "Email",
+        "password": "Password",
+        "confirm_password": "Confirm Password",
+        "age": "Age",
+        "gender": "Sex",
+        "name": "Name",
+        "surname": "Surname"
+    },
+    "translator": {
+        "select_lang": "Select Language",
+        "generate": "Random Sentence",
+        "translate": "Translate",
+        "report": "Report",
+        "placeholder": {
+            "type_to_translate": "Type something to translate...",
+            "dictionary_cat": "Catalan-Tamazight dictionary",
+            "translation_box": "Translation will appear here..."
+        },
+        "notice": "Caution: This application relies on a research-based translation engine that may provide inaccurate results.  If you speak Tamazight, you can help us improve by submitting translations."
+    },
+    "footer": {
+        "legal": "Legal notice",
+        "privacy": "Privacy Policy",
+        "cookie": "Cookie Policy"
+    },
+    "toasters": {
+        "under_construction": "This page is still under development.",
+        "success_contribution": "Thank you for your contribution! You just earned",
+        "select_var": "Please select a variant for Amazigh languages",
+        "alert_no_text": "No text to contribute",
+        "alert_no_modify": "Please translate the text to contribute.",
+        "alert_privacy_check": "Please read and agree to contribution terms to continue.",
+        "alert_general": "Something went wrong.",
+        "alert_username": "Username already taken.",
+        "alert_email": "Email already registered.",
+        "alert_email_username": "Username or Email already in use.",
+        "success_update": "Profile updated successfully.",
+        "success_registration": "Successful, thank you for signing up!"
+    }
+}

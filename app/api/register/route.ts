@@ -1,19 +1,56 @@
+import prisma from '@/lib/prisma';
 import bcrypt from 'bcrypt';
+import {NextResponse } from 'next/server';
+interface ReqBodyProps {
+    username: string;
+    email: string;
+    password: string;
+}
 
-import { NextResponse } from 'next/server';
-import prismadb from '@/lib/prismadb';
-export async function POST(request: Request) {
-    const body = await request.json();
-    const { email, name, password } = body;
-
-    const hashedPassword = await bcrypt.hash(password, 12);
-    const user = await prismadb.user.create({
-        data: {
-            email,
-            name,
-            hashedPassword,
-        },
-    });
-
-    return NextResponse.json(user);
+export async function POST(req: Request) {
+	try {
+		const body = await req.json();
+		console.log(body);
+		const checkExistingUser = await prisma.user.findFirst({
+            where: {
+                OR: [
+                    { email: body.email },
+                    { username: body.username }
+                ],
+            },
+        });
+		if (checkExistingUser) {
+			return new NextResponse(JSON.stringify(checkExistingUser), {
+				status: 409,
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			});
+		}
+		console.log(checkExistingUser);
+		const user = await prisma.user.create({
+			data: {
+				username: body.username,
+				email: body.email,
+				password: await bcrypt.hash(body.password, 10),
+				isPrivacy:body.isPrivacy,
+				score:0
+			},
+		});
+		console.log(user)
+		console.log(user);
+	
+		const { password, ...userWithoutPassword } = user;
+	
+		return new NextResponse(JSON.stringify(userWithoutPassword), {
+			status: 200,
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		});
+	} catch (error) {
+		console.log(error);
+        return new NextResponse(null, { status: 500 });
+	}
+   
 }

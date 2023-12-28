@@ -1,0 +1,73 @@
+{
+    "nav": {
+        "signUp": "Inscrivez-vous à Awal",
+        "Points": "Points de contribution",
+        "signIn": "Connexion",
+        "settings": "Profil",
+        "signOut": "Déconnexion",
+        "translator": "Traducteur",
+        "contribute": "Contribuer",
+        "validate": "Valider"
+    },
+    "language": {
+        "zgh": "ⵜⴰⵎⴰⵣⵉⵖⵜ",
+        "ca": "Català",
+        "es": "Español",
+        "en": "English",
+        "fr": "Français",
+        "ary": "الدارجة"
+    },
+    "variation": {
+        "central": "Central",
+        "tif": "Tarifit",
+        "tachlit": "Tachlit",
+        "other": "Autre"
+    },
+    "menu": {
+        "translator": "Traducteur",
+        "voice": "Voix",
+        "about": "À propos d'Awal",
+        "resources": "Ressources"
+    },
+    "user": {
+        "username": "Nom d'utilisateur",
+        "email": "Courriel électronique",
+        "password": "Mot de passe",
+        "confirm_password": "Confirmer le mot de passe",
+        "age": "Âge",
+        "gender": "Sexe",
+        "name": "Prénom",
+        "surname": "Nom"
+    },
+    "translator": {
+        "select_lang": "Sélectionnez la langue",
+        "generate": "Phrase aléatoire",
+        "translate": "Traduire",
+        "report": "Signaler",
+        "placeholder": {
+            "type_to_translate": "Saisissez ici le texte que vous souhaitez traduire...",
+            "dictionary_cat": "Dictionnaire catalan-tamazight",
+            "translation_box": "La traduction apparaîtra ici..."
+        },
+        "notice": "Avertissement : Cette application repose sur un moteur de traduction basé sur la recherche qui peut fournir des résultats imprécis. Si vous parlez tamazight, vous pouvez nous aider à améliorer en envoyant des traductions."
+    },
+    "footer": {
+        "legal": "Avis légal",
+        "privacy": "Politique de confidentialité",
+        "cookie": "Politique de cookies"
+    },
+    "toasters": {
+        "under_construction": "Cette page est encore en cours de développement.",
+        "success_contribution": "Merci pour votre contribution ! Vous venez de gagner",
+        "select_var": "Veuillez sélectionner une variante pour les langues tamazight",
+        "alert_no_text": "Aucun texte à contribuer.",
+        "alert_no_modify": "Veuillez traduire le texte pour contribuer.",
+        "alert_privacy_check": "Veuillez lire et accepter les termes de contribution pour continuer.",
+        "alert_general": "Quelque chose s'est mal passé",
+        "alert_username": "Nom d'utilisateur déjà pris",
+        "alert_email": "Courriel déjà utilisé",
+        "alert_email_username": "Nom d'utilisateur ou courriel déjà utilisé",
+        "success_update": "Profil mis à jour avec succès.",
+        "success_registration": "Succès, merci de vous être inscrit !"
+    }
+}
