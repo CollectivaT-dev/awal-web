@@ -78,7 +78,7 @@ const SignInForm: React.FC<SignInFormProps> = ({ className, callbackUrl }) => {
         <Form {...form}>
             <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-8 h-screen"
+                className="space-y-8 min-h-screen"
             >
                 <div className="flex flex-col justify-center items-center">
                     <FormField

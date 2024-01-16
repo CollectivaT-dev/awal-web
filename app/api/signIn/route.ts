@@ -14,10 +14,13 @@ export async function POST(req: Request) {
             email: body.email,
         },
     });
-console.log(user)
-if (user && (await bcrypt.compare(body.password, user.password as string))) {
+    console.log(user);
+    if (
+        user &&
+        (await bcrypt.compare(body.password, user.password as string))
+    ) {
         const { password, ...userWithoutPassword } = user;
-		console.log(JSON.stringify(userWithoutPassword))
+        console.log(JSON.stringify(userWithoutPassword));
         return new Response(JSON.stringify(userWithoutPassword));
     }
     return new Response('Invalid credentials', {
