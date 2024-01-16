@@ -1,0 +1,75 @@
+{
+    "nav": {
+        "signUp": "انضم إلى أوال",
+        "Points": "نقاط المساهمة",
+        "signIn": "تسجيل الدخول",
+        "settings": "الملف الشخصي",
+        "signOut": "تسجيل الخروج",
+        "translator": "مترجم",
+        "contribute": "المساهمة",
+        "validate": "التحقق"
+    },
+    "language": {
+        "zgh": "ⵜⴰⵎⴰⵣⵉⵖⵜ",
+        "ber": "Tamaziɣt",
+        "ca": "Català",
+        "es": "Español",
+        "en": "English",
+        "fr": "Français",
+        "ary": "الدارجة"
+    },
+    "variation": {
+        "central": "الوسطى",
+        "rif": "تاريفيت",
+        "tachlit": "تشليت",
+        "other": "أخرى"
+    },
+    "menu": {
+        "translator": "ترجمة",
+        "voice": "صوت",
+        "about": "حول أوال",
+        "resources": "الموارد"
+    },
+    "user": {
+        "username": "اسم المستخدم",
+        "email": "البريد الإلكتروني",
+        "password": "كلمة المرور",
+        "confirm_password": "تأكيد كلمة المرور",
+        "age": "العمر",
+        "gender": "الجنس",
+        "name": "الاسم",
+        "surname": "اللقب"
+    },
+    "translator": {
+        "select_lang": "اختر اللغة",
+        "generate": "جملة عشوائية",
+        "translate": "ترجمة",
+        "report": "تقرير",
+        "placeholder": {
+            "type_to_translate": "اكتب شيئًا للترجمة...",
+            "dictionary_cat": "قاموس الكاتالونية-تمازيغت",
+            "translation_box": "ستظهر الترجمة هنا..."
+        },
+        "notice": "تحذير: تعتمد هذا التطبيق على محرك ترجمة مستند إلى البحث قد يوفر نتائج غير دقيقة. إذا كنت تتحدث تمازيغت، يمكنك مساعدتنا في التحسين من خلال تقديم الترجمات.",
+        "help": "كيف يعمل؟"
+    },
+    "footer": {
+        "legal": "إشعار قانوني",
+        "privacy": "سياسة الخصوصية",
+        "cookie": "سياسة الكوكيز"
+    },
+    "toasters": {
+        "under_construction": "هذه الصفحة لا تزال قيد التطوير.",
+        "success_contribution": "شكرًا لمساهمتك! لقد كسبت للتو",
+        "select_var": "الرجاء تحديد نوع للغات الأمازيغية",
+        "alert_no_text": "لا يوجد نص للمساهمة",
+        "alert_no_modify": "يرجى ترجمة النص للمساهمة.",
+        "alert_privacy_check": "يرجى قراءة والموافقة على شروط المساهمة للمتابعة.",
+        "alert_general": "حدث خطأ ما.",
+        "alert_username": "اسم المستخدم مأخوذ بالفعل.",
+        "alert_email": "البريد الإلكتروني مسجل بالفعل.",
+        "alert_email_username": "اسم المستخدم أو البريد الإلكتروني قيد الاستخدام بالفعل.",
+        "success_update": "تم تحديث الملف الشخصي بنجاح.",
+        "success_registration": "نجاح، شكرًا لتسجيلك!"
+    }
+}

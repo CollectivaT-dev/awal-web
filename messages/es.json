@@ -1,0 +1,278 @@
+{
+    "nav": {
+        "signUp": "Únete a Awal",
+        "points": "Puntos de Contribución",
+        "signIn": "Iniciar Sesión",
+        "settings": "Perfil",
+        "signOut": "Cerrar Sesión",
+        "translator": "Traductor",
+        "contribute": "Contribuir",
+        "validate": "Validar"
+    },
+    "language": {
+        "zgh": "ⵜⴰⵎⴰⵣⵉⵖⵜ",
+        "ber": "Tamaziɣt",
+        "ca": "Català",
+        "es": "Español",
+        "en": "English",
+        "fr": "Français",
+        "ary": "الدارجة"
+    },
+    "variation": {
+        "central": "Central",
+        "tif": "Tarifit",
+        "tachlit": "Tachlit",
+        "other": "Otro"
+    },
+    "menu": {
+        "translator": "Traductor",
+        "voice": "Voz",
+        "about": "Sobre Awal",
+        "resources": "Recursos"
+    },
+    "user": {
+        "username": "Nombre de Usuario",
+        "email": "Correo Electrónico",
+        "password": "Contraseña",
+        "confirm_password": "Confirmar Contraseña",
+        "age": "Edad",
+        "gender": "Género",
+        "name": "Nombre",
+        "surname": "Apellido"
+    },
+    "translator": {
+        "select_lang": "Selecciona el Idioma",
+        "generate": "Frase Aleatoria",
+        "translate": "Traducir",
+        "report": "Informar",
+        "placeholder": {
+            "type_to_translate": "Escribe algo para traducir...",
+            "translation_box": "La traducción aparecerá aquí..."
+        },
+        "notice": "Esta aplicación se basa en un motor de traducción basado en investigación que puede proporcionar resultados inexactos. Si hablas amazigh, puedes ayudarnos a mejorar enviando traducciones.",
+        "help": "¿Cómo funciona?",
+        "help_pop_up": {
+            "header": "¿Cómo aportar traducciones?",
+            "description": "lorem ipsum"
+        }
+    },
+    "footer": {
+        "legal": "Aviso Legal",
+        "privacy": "Política de Privacidad",
+        "cookie": "Política de Cookies",
+        "terms": "Términos de contribución"
+    },
+    "toasters": {
+        "under_construction": "Esta página todavía está en desarrollo.",
+        "success_contribution": "¡Gracias por tu contribución! Acabas de ganar",
+        "success_contribution_points": "puntos.",
+        "select_var": "Por favor, selecciona una variante para las lenguas amazigas",
+        "alert_no_text": "No hay texto para contribuir.",
+        "alert_no_modify": "Por favor, traduce el texto para contribuir.",
+        "alert_privacy_check": "Por favor, lee y acepta los términos de contribución para continuar.",
+        "alert_general": "Algo ha salido mal",
+        "alert_username": "El nombre de usuario ya está tomado",
+        "alert_email": "El correo electrónico ya está registrado",
+        "alert_email_username": "El nombre de usuario o correo electrónico ya está en uso",
+        "success_update": "Perfil actualizado con éxito.",
+        "success_registration": "¡Éxito! ¡Gracias por registrarte! Ahora, inicia sesión para empezar a contribuir.",
+        "loading_updating": "Actualizando tu perfil...",
+        "alert_email_pwd": "Por favor, proporciona una dirección de correo electrónico y una contraseña válida.",
+        "success_copy": "Traducción copiada al portapapeles!",
+        "success_signIn": "¡Sesión iniciada con éxito!",
+        "alert_copy": "No se pudo copiar la traducción.",
+        "alert_try_again": "Por favor, intenta de nuevo más tarde."
+    },
+    "text_with_link": {
+        "accept_terms": {
+            "text_before_link": "acepta",
+            "link_text": "condiciones de contribución",
+            "text_after_link": "antes de finalizar el registro"
+        },
+        "dic_link": {
+            "text_before_link": "Recursos Útiles",
+            "link_text_1": "Diccionario Catalán-Amazigh",
+            "link_text_2": "Dictionnaire Général de la Langue Amazighe",
+            "link_text_3": "Diccionario Inglés-Amazigh"
+        }
+    },
+    "error_msg": {
+        "alert_required": "Requerido",
+        "alert_password_coincide": "Las contraseñas deben coincidir",
+        "alert_age": "La edad no puede superar 120."
+    },
+    "page_intro": {
+        "title": "Internet habla Amazigh!",
+        "CTA_text": "Awal es una iniciativa impulsada por la comunidad para fomentar la lengua amazigh en el mundo digital. Nuestra visión es clara: empoderar al amazigh para prosperar con tecnología de código abierto, y necesitamos tu colaboración para lograrlo.",
+        "heading_1": "¿Cómo Puedes Contribuir?",
+        "heading_2": "Todxs son bienvenidxs",
+        "text_2": "La contribución está abierta a cualquier persona que pueda leer y escribir en amazigh. Celebramos la rica diversidad de variantes del amazigh y damos la bienvenida a hablantes de todos los orígenes.",
+        "heading_3": "Ver tu clasificación",
+        "text_3": "Ganarás puntos por las traducciones y validaciones que realices, y podrás ver cómo te comparas con otros miembros de la comunidad en la clasificación pública.",
+        "heading_4": "Descubre la Comunidad Awal",
+        "text_4": "Obtén más información sobre la iniciativa y nuestros colaboradores en la página 'Acerca de Awal'. Síguenos en Instagram y X para estar informado sobre las últimas noticias y conectarte con la red Awal.",
+        "CTA_button": "Únete a Awal",
+        "item_1_strong": "Traduce con Sentido: ",
+        "item_1_normal": "Demuestra tus habilidades lingüísticas traduciendo frases a o desde el amazigh con tus propias palabras.",
+        "item_2_strong": "La Validación Cuenta: ",
+        "item_2_normal": "Valida las traducciones realizadas por otros voluntarios, asegurando la exactitud de la tecnología resultante.",
+        "item_3_strong": "Alza tu Voz: ",
+        "item_3_normal": "Contribuye con datos de voz a través de Common Voice, dando al amazigh una voz en el mundo digital."
+    },
+    "texts": {
+        "data_marathon": "Maratón de Datos Awal",
+        "accept_mail_list": "Suscríbete a la lista de correo",
+        "save_settings": "Guardar Configuraciones",
+        "loading": "Cargando",
+        "welcome": "Bienvenido/a de nuevo",
+        "welcome_m": "Bienvenido de nuevo",
+        "welcome_f": "Bienvenida de nuevo",
+        "subscribe": "Suscríbete a la lista de correo",
+        "login_to_signup_1": "¿Nuevo en Awal?",
+        "login_to_signup_2": "¡Regístrate!"
+    },
+    "validator": {
+        "alert_no_more_entries": "No hay más entradas para validar para el par de idiomas y variante seleccionada. Puedes contribuir con más traducciones mientras tanto.",
+        "alert_loading": "Cargando...",
+        "success_loading": "Nuevo par de traducción cargado.",
+        "success_validation": {
+            "text_before_link": "¡Gracias por tu validación! Acabas de ganar",
+            "text_after_link": "puntos."
+        }
+    },
+    "btn": {
+        "continue": "Continuar",
+        "cancel": "Cancelar",
+        "contribute": "Contribuir",
+        "clear": "Borra el texto"
+    },
+    "setting": {
+        "oral": "Oral",
+        "written_tif": "Escrito (Tifinagh)",
+        "written_lat": "Escrito (latín)",
+        "mark_proficiency_tamazight": "Por favor, marca tu competencia en los dialectos del tamazight:",
+        "mark_proficiency_other": "Por favor, marca los pares de idiomas en los que puedes contribuir:",
+        "gender": {
+            "select": "Selecciona tu género",
+            "m": "Masculino",
+            "f": "Femenino",
+            "nb": "No binario",
+            "tr": "Transgénero",
+            "other": "Otro"
+        },
+
+        "about": {
+            "main_string_1": "Awal és un projecte que contribueix a preservar i promoure la llengua amaziga en l'espai digital desenvolupant eines innovadores que en facilitin l'ús i difusió. \\La participació d'amazigoparlants serà primordial per a recopilar dades, tant orals com escrites, a través d'enregistraments de veu i recollida de textos traduïts d'aquesta llengua minoritzada. La iniciativa es proposa no només crear eines digitals efectives, sinó també conscienciar la comunitat sobre la importància de les dades lingüístiques i les noves tecnologies per a preservar la llengua, sensibilitzar sobre els efectes de la bretxa digital i fer créixer una xarxa de professionals.\nAwal és una iniciativa del CIEMEN, Col·lectivaT i Casa Amaziga de Catalunya, i està finançada per l'Ajuntament de Barcelona i la Generalitat de Catalunya amb el suport de l'Agència Catalana de Cooperació al Desenvolupament i el Departament de Drets Socials.",
+            "ciemen_logo_url": "",
+            "ciemen_web_url": "www.ciemen.cat",
+            "ciemen_intro": "El Centre Internacional Escarré per a les Minories Ètniques i les Nacions (CIEMEN) és una entitat de la societat civil catalana que treballa per a fer conèixer i promoure la realitat nacional catalana al món, per a difondre el coneixement dels pobles i nacions sense estat, i per a defensar-ne els drets col·lectius. Fundada a l'exili el 1974, es tracta d'una entitat amb una història molt llarga de treball pel país i per les nacions. Singular en molts aspectes, us convidem a descobrir el CIEMEN amb més profunditat en aquesta secció.",
+            "collectivat_logo_url": "",
+            "collectivat_web_url": "www.collectivat.cat",
+            "collectivat_intro": "Col·lectivaT és una cooperativa sense ànim de lucre situada a Barcelona, formada per un equip multidisciplinari i especialitzada en el desenvolupament de tecnologies de codi obert, la prestació de serveis de llenguatge i traducció, la formació i la recerca en l'àmbit social, així com l'assessorament estratègic i el suport.\nAmb la seva feina, l'organització busca contribuir a fer disminuir les injustícies i desigualtats estructurals, donant suport a organitzacions de la societat civil que treballen amb cultures i llengües minoritàries.",
+            "casa_amaziga_logo_url": "",
+            "casa_amaziga_web_url": "https://casaamaziga.wordpress.com/",
+            "casa_amaziga_intro": "La Casa Amaziga de Catalunya és una entitat que té la voluntat de ser el referent del poble amazic a Catalunya i punt de trobada entre la ciutadania amaziga i catalana.",
+            "main_text_2": "Ens agradaria destacar també les persones que col·laboren amb Awal i que hi juguen un paper fonamental.",
+            "contributor_farida_photo": "",
+            "contributor_farida_website": "",
+            "contributor_farida_intro": "Farida Boudichat Fortas. Lingüista i professora de castellà, català i anglès com a llengües estrangeres. Ha realitzat estudis sociolingüístics sobre la llengua amaziga i col·labora amb algunes entitats per promoure la llengua, especialment la seva preservació i transmissió.",
+            "contributor_ghizlan_photo": "",
+            "contributor_ghizlan_website": "",
+            "contributor_ghizlan_intro": "Lalla Ghizlan Baryala. Activista cultural amaziga a Catalunya, col·labora amb diferents entitats per divulgar història, llengua i cultura amaziga al país. Ha estudiat màrqueting i investigació de mercats a la UOC i un postgrau de Màrqueting Digital i e-commerce",
+            "contributor_yuxuan_photo": "",
+            "contributor_yuxuan_website": "",
+            "contributor_yuxuan_intro": "",
+            "contact_heading": "Posa't en contacte amb Awal",
+            "contact_info": "Per a consultes, suggeriments o més informació, contacta'ns a",
+            "contact_text": "awal@collectivat.cat"
+        },
+        "terms": {
+            "contribution_terms": "Awal és una iniciativa sense ànim de lucre que contribueix a la digitalització de la llengua amaziga mitjançant la recopilació de conjunts de dades obertes i el desenvolupament d'eines innovadores.\nEl portal web d'Awal permet la contribució lliure de frases traduïdes amb l'objectiu de desenvolupar aplicacions de traducció automàtica. Només podeu fer contribucions i validar frases traduïdes si us apunteu a la iniciativa. En registrar-vos, heu de comprometre-us a complir aquests termes.\nAwal també col·labora amb la iniciativa Common Voice de Mozilla per a la recopilació de conjunts de dades obertes de parla, permetent a qualsevol persona construir aplicacions basades en la veu per a l'amazic. Tingueu en compte que les contribucions a Common Voice estan subjectes als",
+            "mozilla_terms": "termes legals de Mozilla.",
+            "contribution_terms_continued": "En aquests termes, 'nosaltres', 'el nostre', 'ens' o '-nos' es refereixen als col·laboradors i administradors d'Awal, la iniciativa sense ànim de lucre. 'Tu', 'teu', 'vosaltres' o 'vostre' fa referència a l'usuari, col·laborador o voluntari que interacciona i contribueix a la plataforma d'Awal.",
+            "translation_contribution_heading": "Contribucions de Traducció",
+            "translation_contributions": "Una contribució de traducció consisteix en una frase en català, espanyol, anglès, àrab o francès amb la seva traducció a l'amazic. Podeu traduir de l'amazic a una altra llengua o viceversa. Les contribucions s'accepten tant en l'alfabet tifinagh com en l'alfabet llatí.\nLes contribucions es guarden inicialment a les bases de dades privades de núvol de Col·lectivaT i es posaran periòdicament a disposició amb",
+            "cc_license_link_text": "una llicència Creative Commons (CC)",
+            "translation_continued_1": "al",
+            "repo_link_text": "repositori de Hugging Face de Col·lectivaT",
+            "translation_continued_2": "Això significa que qualsevol persona pot veure les traduccions que feu i utilitzar-les com vulgui.\nHeu d'abstenir-vos d'incloure qualsevol informació personal identificable en les frases que envieu.\nLes frases originals que traduïu poden ser de creació pròpia o preses de fonts sense drets d'autor.\nLes vostres traduccions també han de ser de creació pròpia, assegurant precisió i respecte i evitant contingut ofensiu o inadequat.\nEls socis del projecte poden dur a terme inspeccions manuals dels aportacions fetes pels usuaris. El no compliment d'alguna d'aquestes condicions pot comportar l'eliminació del vostre compte i la retirada de les vostres contribucions.",
+            "random_sentence_heading": "Frases aleatòries",
+            "random_sentence": "Utilitzant la funció de càrrega de \"Frase aleatòria\", podeu accedir a milers de frases amb llicència oberta en totes les llengües per traduir. Podeu carregar tantes vegades com vulgueu i decidir quina voleu traduir.\nLa majoria d'aquestes frases són frases carregades per la comunitat de",
+            "tatoeba_platform_link_text": "la plataforma Tatoeba",
+            "random_sentence_continued": "Si trobeu alguna frase que considereu ofensiva, racista, sexista, discriminatòria o que de qualsevol manera incompleix les nostres pautes comunitàries, podeu utilitzar el botó \"Informar\", investigarem ràpidament la qüestió i, si és necessari, prendrem les mesures pertinents, incloent-hi la retirada del contingut ofensiu de la nostra base de dades.",
+            "machine_translation_heading": "Traducció automàtica",
+            "machine_translation": "Awal Translate permet la traducció automàtica entre l'amazic i uns altres quatre idiomes. Aquesta funció està alimentada pel",
+            "machine_translation_link_text": "model NLLB de Meta,",
+            "machine_translation_continued": "aun model de codi obert publicat amb finalitats de recerca. No obstant això, la qualitat de les traduccions a l'amazic és actualment baixa degut als recursos limitats. Un dels objectius del projecte és millorar aquest model utilitzant les dades d'alta qualitat que recopilem.\nEn fer contribucions, teniu l'opció d'utilitzar la funció de traducció automàtica per generar la traducció amb la qual treballareu. No obstant això, és crucial editar aquesta frase adequadament per assegurar-ne l'exactitud. Les frases traduïdes automàticament sense cap edició no seran acceptades. L'ús indegut de la funció de traducció automàtica pot comportar la retirada de les frases que heu contribuït o fins i tot la suspensió del vostre compte d'usuari.",
+            "validation_heading": "Validació de traduccions",
+            "validation": "Awal també permet la validació comunitària de frases traduïdes. Això es fa per garantir l'exactitud de les frases que recopilem, la qual és essencial per obtenir models precisos. Podeu acceptar les traduccions correctes i rebutjar aquelles que continguin errors importants, faltes d'ortografia o traduccions incorrectes. No s'han de comptar com a errors les discrepàncies menors i les diferències de variants.",
+            "profile_heading": "Perfil d'usuari",
+            "profile": "Podeu omplir informació com el nom, cognom, edat, sexe i habilitats lingüístiques a la pàgina de perfil. El vostre nom, cognom i adreça de correu electrònic no es revelaran públicament de cap manera.\nLa informació demogràfica com l'edat, el sexe i les habilitats lingüístiques ens permet obtenir coneixements sobre el perfil de les persones que col·laboren amb el projecte i avaluar la parcialitat, la qualitat i la quantitat de les dades que recopilem. En proporcionar aquesta informació, doneu permís per publicar les vostres traduccions juntament amb aquesta informació.\nEl vostre nom d'usuari és públic i es pot incloure en els taulells de classificació públics juntament amb els punts de contribució que heu aconseguit. Depèn de vosaltres triar un nom d'usuari que us agradi. El vostre nom d'usuari pot ser inclòs en els conjunts de dades publicats juntament amb les traduccions que heu presentat.",
+            "scoring_heading": "Puntuació",
+            "scoring": "Les persones col·laboradores guanyen punts per cada traducció que realitzen. Els punts que guanyeu són proporcionals a la longitud de la frase original que introduïu (quan no utilitzeu la funció \"Frase aleatòria\") i la traducció corresponent. Si feu servir la funció de traducció automàtica, la vostra puntuació objectiu es calcularà en funció del nombre de canvis que feu..\nÉs important assenyalar que la puntuació està dissenyada exclusivament per a una competició amistosa i no implica cap forma de compensació.",
+            "communication_heading": "Comunicacions",
+
+            "communication": "Si us registreu a Awal, podeu rebre correus electrònics nostres relacionats amb el vostre compte. Si us subscriviu a la nostra llista de correu, rebreu informació addicional sobre la iniciativa, com ara actualitzacions de la pàgina web, invitacions a esdeveniments i publicació de notícies i recursos.",
+            "disclaimer_heading": "Exempcions de responsabilitat",
+            "disclaimer": "Awal i els seus serveis associats es proporcionen \"tal com són\" i \"segons estiguin disponibles\", sense cap garantia o representació, expressa o implícita. L'ús dels nostres serveis és sota la vostra responsabilitat.\nNo garantim l'exactitud, la completesa o la fiabilitat del contingut proporcionat per les persones col·laboradores. En accedir a la pàgina haureu de verificar de manera independent qualsevol informació obtinguda a través d'Awal o dels recursos publicats abans de confiar-hi.\nEn col·laborar us feu responsables de la vostra pròpia conducta, i utilitzant Awal, acordeu no violar cap llei, infringir en drets de terceres persones o presentar contingut inadequat. Ens reservem el dret de suprimir qualsevol contingut o suspendre comptes que incompleixin aquestes condicions, a les que s'apliquen les lleis espanyoles.\nTEn la màxima mesura permesa per la llei aplicable, Awal i les seves empreses afiliades, oficials, empleades, agents, sòcies i llicenciants no seran responsables de cap dany indirecte, fortuït, especial, resultant o punitiu, o de la pèrdua de beneficis o ingressos.\nAwal pot contenir enllaços a llocs web o serveis de tercers que no són propietat nostra o no estan controlats per nosaltres. No tenim control sobre el contingut, les polítiques de privadesa o les pràctiques de cap lloc o servei de tercers.\nAwal respecta els drets de propietat intel·lectual externs. Si creieu que la vostra obra ha estat copiada o utilitzada de manera que constitueix una infracció de drets d'autor, poseu-vos en contacte amb nosaltres a awal@collectivat.cat.\nEns reservem el dret de modificar, suspendre o finalitzar els nostres serveis, termes o polítiques en qualsevol moment sense previ avís. És responsabilitat de les persones usuàries revisar regularment els nostres termes per a qualsevol actualització.\nTot i que implementem mesures per protegir les dades de les usuàries, no podem garantir la seguretat de la informació transmesa per internet. Aquestes proporcionen la informació al seu propi risc.\nPodem suspendre o finalitzar el compte de qualsevol persona a Awal en qualsevol moment per qualsevol motiu. Si decidim suspendre o finalitzar el vostre accés, intentarem notificar-vos a l'adreça de correu electrònic associada al vostre compte o la propera vegada que intenteu accedir a la nostra pàgina web.\nConsulteu la nostra Política de privadesa per obtenir detalls sobre com recopilem, usem i protegim la vostra informació personal. El nostre Avís legal proporciona informació important sobre els termes i les condicions d'ús dels serveis d'Awal, mentre que la Política de galetes explica com utilitzem les galetes per millorar la vostra experiència de navegació. En utilitzar aquest lloc web, accepteu aquests termes i polítiques."
+        },
+        "how_to_contribute_heading": "Com aportar traduccions?",
+        "how_it_works_contribution": "Awal té com a objectiu crear una aplicació de traducció automàtica de codi obert i d'alta qualitat per a l'amazic. El camí cap a aquest objectiu passa per la recopilació de moltes frases traduïdes de qualitat en amazic. Pots enviar traduccions de manera fàcil i divertida mitjançant aquesta aplicació. El que has de fer és:",
+        "how_it_works_contribution_1": "Seleccionar el parell de llengües que vols traduir utilitzant els menús desplegables. La llengua que vols traduir es troba a l'esquerra de la pantalla, i la llengua a la qual vols traduir es troba a la dreta.",
+        "how_it_works_contribution_2": "Escriure o carregar una frase per traduir al panell esquerre. Pots ser creatiu o prendre-la d'un lloc en què tinguis permisos per fer-ho, com ara un text amb llicència Creative Commons com la Viquipèdia. Si ho prefereixes, també pots carregar una frase aleatòria de la nostra base de dades amb el botó \"Frase aleatòria\". Recorda que la frase original pot ser una paraula, una frase o una oració completa, però mai més d'una oració. Si estàs traduint des de l'amazic, assegura't de marcar la variant a continuació amb les caselles de selecció. Si no entens la frase o no t'agrada traduir-la, sempre pots carregar una altra frase. Si trobes una frase ofensiva o incorrecta, assegura't de denunciar-la amb el botó \"Informar\", i la revisarem per retirar-la de la nostra base de dades.",
+        "how_it_works_contribution_3": "Després, has d'escriure la traducció de la frase al panell de la dreta. Per ajudar-te a començar, pots utilitzar la funció de traducció automàtica prototip que t'oferirà una traducció aproximada (no gaire bona). Assegura't d'escriure una traducció precisa i ben redactada. Sempre pots consultar els recursos útils que indiquem a continuació. Si estàs traduint a l'amazic, assegura't de marcar la variant amb les caselles de selecció a continuació.",
+        "how_it_works_contribution_4": "Un cop hagis acabat de traduir la frase, fes clic al botó \"Contribuir\", i la teva contribució es desarà. Aconseguiràs punts de contribució proporcionals a la longitud de la frase original que introdueixis (quan no facis servir la funció de \"Frase aleatòria\") i la traducció corresponent. Si utilitzes la funció de traducció automàtica, la teva puntuació objectiu es calcularà en funció del nombre de canvis que facis.",
+        "how_it_works_contribution_continued": "Per obtenir informació addicional, consulta els termes de contribució. Si necessites ajuda, no dubtis a contactar amb nosaltres a awal@collectivat.cat. Moltes gràcies per la teva valuosa contribució!",
+        "how_to_validate_heading": "Com validar",
+        "how_it_works_validation": "Validar les traduccions és un pas essencial per mantenir la integritat del conjunt de dades i contribuir al desenvolupament d'una aplicació de traducció automàtica fiable per a l'amazic. En aquesta pantalla, se't mostraran traduccions fetes per altres persones voluntàries i hauràs de verificar si són acceptables o no.",
+        "how_it_works_validation_1": "Comenceu seleccionant la combinació de llengües i la variant de l'amazic per a les validacions. Veureu la contribució d'una altra persona voluntària. La frase d'origen es mostrarà al panell esquerre i la frase traduïda al panell dret.",
+        "how_it_works_validation_2": "Avalua la qualitat de la traducció, tenint en compte que aspirem a l'acceptabilitat més que a la perfecció. Considera les següents directrius:",
+        "how_it_works_validation_2_1": "Confirma si la traducció transmet el significat de la frase original.",
+        "how_it_works_validation_2_2": "Assegura't que els termes clau i els conceptes estiguin traduïts adequadament sense perdre'n el sentit original.",
+        "how_it_works_validation_2_3": "Avalua la fluïdesa i la naturalitat de la traducció. Una bona traducció es llegeix amb suavitat i sembla natural en la llengua objectiu.",
+        "how_it_works_validation_2_4": "Si surt una frase amb paraules de les quals no esteu segurs/es, sempre podeu fer clic a \"Omet\" per carregar una altra contribució.",
+        "how_it_works_validation_2_5": "Verifica que la traducció compleixi les normes gramaticals i les convencions de puntuació de la llengua objectiu.",
+        "how_it_works_validation_2_6": "Si trobes una frase ofensiva o perjudicial (tant en l'original com en la traducció), utilitza el botó \"Informar\".",
+        "how_it_works_validation_2_7": "Si et trobes amb alguna situació que no estigui coberta per aquestes directrius, si us plau, vota segons el teu criteri. Si, tot i això,  no et decideixes, passa a la següent contribució.",
+        "how_it_works_validation_3": "Si consideres que la traducció és acceptable, fes clic a la icona de la marca de verificació; si no, fes clic a la icona de la creu.",
+        "how_it_works_validation_continued": "Per obtenir informació addicional, consulta els termes de contribució. Si necessites ajuda, no dubtis a contactar amb nosaltres a awal@collectivat.cat. Moltes gràcies per la teva valuosa contribució!",
+        "legal": {
+            "legal_title": "Avis legal",
+            "legal_text_1": "Col·lectivaT SCCL, responsable del lloc web Awal, d'ara endavant, el RESPONSABLE, posa a disposició dels usuaris aquest document, amb el qual pretén fer complir les obligacions que estableix la Llei 34/2002, de 11 de juliol, de Serveis de la Societat de la Informació i de Comerç Electrònic (LSSICE), BOE Nº 166, així com informar tots els usuaris del lloc web sobre quines son les condicions d'ús.\nQualsevol persona que accedeixi a aquest lloc web assumeix el paper d'usuari i es compromet a l'observança i compliment rigorós de les disposicións que s'hi estableixen, així com a qualsevol altra disposició legal que s'hi apliqui.\nCol·lectivaT SCCL, es reserva el dret de modificar qualsevol tipus d'informació que pugui aparèixer al lloc web, sense obligació de preavisar o assabentar els usuaris d'aquestes obligacions, atès que es considera suficient la publicació al lloc web de l'Associació Bloc4.",
+            "legal_data_1_heading": "DADES IDENTIFICADORES",
+
+            "legal_data_1_text": "Nom del domini: www.awaldigital.org\nEntitat responsable: Col·lectivaT SCCL\nNIF: F67078097\nDomicili Social: Carrer Rocafort, 242 bis, 3r, 08029, Barcelona, Espanya\nE-mail: info@collectivat.cat o awal@collectivat.cat",
+            "legal_data_2_heading": "DRETS DE PROPIETAT INTEL·LECTUAL I INDUSTRIAL",
+            "legal_data_2_text": "El lloc web, incloent a títol enunciatiu, pero no limitatiu la seva programació, edició, compliació i altres elements necessaris per al seu funcionament, els dissenys, logotips, text i/o gràfics, són propietat del RESPONSABLE o, si es el cas, disposa de llicència o autorització expressa per part dels autors. Tots els continguts del lloc web es troben degudament protegits per la normativa de propietat intel·lectual i industrial, així com inscrits en els registres públics corresponents.\nIndependentment de la finaltat per a la qual fossin destinats, la reproducció total o parcial, ús, explotació, distribució i comercialització, requereix en tot cas l'autorització escrita prèvia per part del RESPONSABLE.\nQualsevol ús no autoritzat previament es considera un incompliment greu dels drets de propietat intel·lectual o industrial de l'autor.\nEls dissenys, logotips, text i/o gràfics aliens al RESPONSIBLE i que puguin aparèixer al lloc web, pertanyen als seus respectius propietaris, els quals son responsables de qualsevol possible controvèrsia que se'n pugui desprendre. El RESPONSABLE autoritza expressament que tercers puguin redirigir directament als continguts concrets del lloc web, i en tot cas redirigir al lloc web principal de www.bloc4.coop\nEl RESPONSABLE reconeix a favor dels seus titulars els corresponents drets de propietat intel·lectual i industrial, sense implicar el seu sol esment o aparició al lloc web l'existència de drets o responsabilitat sobre aquests, ni el suport, patrocini o recomanació per part del RESPONSABLE.\nPer efectuar qualsevol tipus d'observació pel que fa a possibles incompliments dels drets de propietat intel·lectual o industrial, així com sobre qualsevol dels continguts del lloc web, podeu fer-ho a través del correu electrònic info@collectivat.cat",
+            "legal_data_3_heading": "EXEMPCIÓ DE RESPONSABILITATS",
+            "legal_data_3_text": "El RESPONSABLE s'eximeix de qualsevol tipus de responsabilitat derivada de la informació publicada al seu lloc web sempre que no tingui coneixement efectiu que aquesta informació hagi estat manipulada o intruïda per un tercer aliè a la mateixa o, si ho té, hagi actuat amb diligència per retirar les dades o fer impossible l'accíes a elles.\nUs de galetes (cookies)\nPot ser que aquest lloc web utilitzi cookies tècniques (petits arxius d'informació que el servidor envia a l'ordinador de qui accedeix a la pàgina) per dur a terme determinades funcions que es consideren imprescindibles per al correcte funcionament i visualització del web. Les cookies utilitzades tenen, en qualsevol cas, caràcter temporal, amb l'única finalitat de fer que la navegació sigui més eficient, i desapareixen en finalitzar la sessió de l'usuari. En cap cas, aquestes cookies proporcionen per si mateixes dades de caràcter personal i no s'utilitzaran per recollir dades d'aquest tipus.\nMitjançant l'us de cookies també es possible que el servidor on es troba la web reconegui el navegador que utilitza l'usuari, amb la finalitat que la navegació sigui mes senzilla, tot permetent, per exemple, l'accés dels usuaris que s'hagin registrat prèviament a les àrees, serveis, promocions o concursos reservats exclusivament a ells sense haver de registrar-se a cada visita. També es poden utilitzar per mesurar l'audiència, paràmatres de trànsit, controlar el progrés i el nombre d'entrades, etc. En aquests casos, les cookies són prescindibles tècnicament però beneficioses per a l'usuari. Aquest lloc web no instal·larà cookies prescindibles sense el cosnentiment previ de l'usuari.\nAquesta pàgina web utilitza galetes\nPolítica d'enllaços\nDes del lloc web, es possible que es redirigeixi a continguts de tercers llocs web. Atès que el RESPONSABLE no pot controlar sempre els continguts introduits per tercers en els seus llocs web respectius, no assumeix cap tipus de responsabilitat respecte d'aquests continguts. En qualsevol cas, retirarà inmediatament qualsevol contingut que pugui transgredir la legislació nacional o internacional, la moral o l'ordre públic, tot retirant inmediatament la redirecció a aquest lloc web i assabentant les autoritats competents del contingut en qüestió.\nEl RESPONSABLE no es fa responsable de la informació i continguts emmagatzemats, a títol enunciatiu, pero no limitatiu, a forums, xats, generadors de blogs, comentaris, xarxes socials o qualsevol altre mitjà que permeti a tercers publicar continguts de manera independent en la pàgina web del RESPONSABLE. Això no obstant, i en compliment del que estableixen els articles 11 i 16 de la LSSICE, es posa a disposició de tots els usuaris, autoritats i forces de seguretat que col·laboren de manera activa en la retirada o, si escau, bloqueig de tots els continguts que puguin afectar o transgredir la legislació nacional o internacional, els drets de tercers o la moral i l'ordre públic. En cas que l'usuari consideri que el lloc web conté material que pugui ser susceptible d'aquesta classificació, li preguem que ho notifiqui inmediatament a l'administrador del lloc web. Aquest lloc web s'ha revisat i provat perque funcioni correctament. En principi, es pot garantir que funcionarà correctament els 365 dies de l'any i les 24 hores al dia. Això no obstant, el REPONSABLE no descarta la possibilitat que es produeixin errors de programació, o que hi tinguin lloc causes de força major, catàstrofes naturals, vagues o circumstàncies similars que facin impossible l'accés a la pàgina web.\nADRECES IP\nEls servidors del lloc web podràn detectar automàticament l'adreça IP i el nom del domini utilitzats per l'usuari. Una adreça IP es un numero assignat automaticament a un ordinador aixi que es connecta a Internet. Tota aquesta informació queda registrada en un fitxer d'activitat del servidor degudament inscrit que permet processar les dades posteriorment per tal d'obtenir mesuratges únicament estadístics que permetin conèixer el nombre d'impressions de pàgines, el nombre de visites efectuades als servdors web, l'ordre de visites, el punt d'accés, etc.",
+            "legal_data_4_heading": "LLEI APLICABLE I JURISDICCIÓ",
+            "legal_data_4_text": "Per a la ressolució de totes les controvèrsies o questions relacionades amb aquest lloc web o de les activitats que s'hi duen a terme, s'aplicarà la legislació espanyola, a la qual se sotmeten expressament les parts, els quals tindran competència suficient per a la ressolució de tots els conflictes derivats o relacionats amb el seu ús els Jutjats i Tribunals del domicili de l'USUARI o el lloc de compliment de l'obligació."
+        },
+        "cookies": {
+            "cookies_heading": "Política de galetes",
+            "cookies_text_1": "'acord amb la normativa vigent, facilitem als usuaris informació relativa a les galetes (cookies) que utilitza i els motius del seu ús, així com sol·licita el seu consentiment per poder utilitzar-les. www.awaldigital.org utilitza galetes pròpies i de tercers per tal d'oferir una millor experiència de navegació i un millor servei. No obstant l'usuari té l'opció d'impedir la generació de galetes i l'eliminació de les mateixes mitjançant la selecció de la corresponent opció al seu navegador. En cas de bloquejar l'ús de les galetes al seu navegador, és possible que alguns serveis o funcionalitats de la pàgina web no estiguin disponibles.\nQuè és una galeta? Les galetes constitueixen una eina empleada pels servidors web per emmagatzemar i recuperar informació relativa als usuaris. Són petits arxius de text que les pàgines web envien al navegador i que s'emmagatzemen al terminal de l'usuari, ja sigui un ordinador, un telèfon mòbil o una tauleta. Aquesta informació permet recuperar informació com per exemple el seu usuari registrat, si en disposa, dades de connexió a les xarxes socials o dades de preferències de navegació. Aquestes dades són emmagatzemades per a ser recordades quan l'usuari visita de nou la pàgina.\nCom s'utilitzen les galetes i quin tipus d'informació guarden? Al navegar per la pàgina web www.awaldigital.org al seu terminal que permetin conèixer la següent informació:",
+            "cookies_list_1": "Informació estadística de l'ús de la web",
+            "cookies_list_2": "El format de web que prefereix per accedir als dispositius mòbils",
+            "cookies_list_3": "L'activitat que ha dut a terme l'usuari al web (pàgines vistes, cerques, etc.)",
+            "cookies_list_4": "Dades de connexió a les xarxes socials per als usuaris que accedeixen amb el seu usuari de Facebook o Twitter",
+            "cookies_text_2": "En cas de bloquejar l'ús de galetes del seu navegador alguns dels serveis de la pàgina web deixaran d'estar disponibles.\nCom puc bloquejar o eliminar les galetes? Pots permetre, bloquejar o eliminar les galetes que tens instal·lades al teu equip, a la configuració de les opcions del navegador de l'ordinador, ‘smartphone' o tauleta. El fet de bloquejar la instal·lació de les galetes no t'impedeix la navegació efectiva a la pàgina web."
+        },
+        "privacy": {
+            "privacy_heading": "Política de privacitat",
+            "privacy_item_1_txt_1_heading": "INFORMACIÓ PER LA PERSONA USUÀRIA",
+            "privacy_item_1_txt_1": "Qui es el responsable del tractament de les teves dades personals?\nCol·lectivaT SCCL es el RESPONSABLE del tractament de les dades personals de l'PERSONA USUÀRIA i l'informa que aquestes dades es tracten de conformitat amb el que disposa el Reglament (UE) 2016/679, de 27 d'abril (GDPR), i la Llei Orgànica 3/2018, de 5 de desembre (LOPDGDD)\nPerquè tractem les teves dades personals?\nPer mantenir una relació comercial amb la persona usuària. Les operacions previstes per fer el tractament són:\nPer quin motiu podem tractar les teves dades personals?\nPerquè el tractament està legitimat per l'article 6 del RGDP de la seguent manera:",
+            "privacy_item_1_li_1": "Amb el consentiment de la PERSONA USUÀRIA: enviament de comunicacions comercials i del butlletí informatiu.",
+            "privacy_item_1_li_2": "Per interès legítim del RESPONSABLE: efectuar estudis de mercat, anàlisis estadístiques, etc. i tramitar encàrrecs, sol·licituds, etc. a petició de a PERSONA USUÀRIA.",
+            "privacy_item_1_txt_2": "Durant quant de temps guardarem les teves dades personals?\nEs conservaran durant no més temps del necessari per mantenir la finalitat del tractament o mentre hi hagi prescripcions legals que en dictaminin la custòdia i quan ja no sigui necessari per a això, es suprimiràn amb mesures de seguretat adequades per garantir l'anonimització de les dades o la seva destrucció total.\nA qui facilitem les teves dades personals?\nEs preveu la comunicació de dades personals a tercers per tal de portar a terme l'adequat desenvolupament i execució de les finalitats del tractament.\nQui son els teus drets?\nEls drets que té la PERSONA USUÀRIA són:",
+            "privacy_item_1_li_3": "Dret a retirar el consentiment en qualsevol moment",
+            "privacy_item_1_li_4": "Dret d'accés, rectificació, portabilitat i supressió de les seves dades i de limitació o oposició al seu tractament.",
+            "privacy_item_1_li_5": "Dret a presentar una reclamació davant de l'autoritat de control (www.aepd.es) si considera que el tractament no s'ajusta a la normativa vigent.",
+            "privacy_item_1_txt_3": "Dades de contacte per exercir els seus drets:\nCol·lectivaT, SCCL, Carrer Rocafort, 242 bis, 2n, 08029, Barcelona info@collectivat.cat",
+            "privacy_item_2_txt_heading": "CARÀCTER OBLIGATORI O FACULTATIU DE LA INFORMACIÓ FACILITADA PER LA PERSONA USUÀRIA",
+            "privacy_item_2_txt": "Les PERSONES USUÀRIES, per mitjà de les caselles corresponents I la introducció de dades en els camps, marcats amb l'asterisc (*) en el formulari de contacte o presentats en formularis de descàrrega, accepten expressament i de manera lliure e inequívoca, que les seves dades són necessàries per a l'atenció de la seva petició, per part del prestador, i que per tant la inclusió de les dades en els camps restants es voluntària. La PERSONA USUÀRIA garanteix que les dades personals facilitades al RESPONSABLE són verídiques i es fa responsable de comunicar-ne qualsevol modificació.\nEl RESPONSABLE informa que totes les dades sol·licitades a traves del lloc web són obligatòries, ja que són necessàries per a la prestació d'un servei òptima la PERSONA USUÀRIA.\nEn cas que no es facilitin totes les dades, no es garanteix que la informació i serveis facilitats s'ajustin completament a les seves necessitats.",
+            "privacy_item_3_heading": "MESURES DE SEGURETAT",
+            "privacy_item_3_txt": "Que, de conformitat amb el que estableixen les normatives vigents en protecció de dades personals, el RESPONSABLE està complint amb totes les disposicions de les normatives GDPR i LOPDGDD per al tractament de les dades personals de la seva responsabilitat, i manifestament amb els principis descrits a l'article 5 del GDPR, pels quals es tracten de manera lícita, lleial i transparent en relació amb l'interessat i adequades, pertinents i limitades al que es necessari en relació amb les finalitats per a les quals es tracten.\nEl RESPONSABLE garanteix que ha implementat polítiques tècniques i organitzatives apropiades per aplicar les mesures de seguretat que estableixen el GDPR i la LOPDGDD per tal de protegir els drets i llibertats de les PERSONES USUÀRIES i els ha comunicat la informació adequada perque puguin exercir-los."
+        }
+    }
+}
