@@ -1,8 +1,10 @@
 # Guide
+
 ## Intro .
+
 ## Basics
 
-``` bash
+```bash
 # install all packages
 npm i
 # build
@@ -11,14 +13,14 @@ npm run build
 
 ## Inspect in localhost
 
-``` bash
+```bash
 # portal localhost:3000
 npm run dev
 ```
 
 ## (optional) Update packages
 
-``` bash
+```bash
 npm update
 npm outdated
 

@@ -18,9 +18,9 @@ const ResourcesPage = () => {
     }, [locale]);
     return (
         <div className="min-h-screen flex flex-col  space-y-5 text-[1.2rem] m-10 leading-8 whitespace-pre-wrap">
-                <h1 className="text-3xl font-semibold mb-10 text-center">
-                    {d?.resources.resources_heading}
-                </h1>
+            <h1 className="text-3xl font-semibold mb-10 text-center">
+                {d?.resources.resources_heading}
+            </h1>
             <ol className="list-disc pl-4">
                 <li>
                     <Link

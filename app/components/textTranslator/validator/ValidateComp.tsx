@@ -127,7 +127,6 @@ const ValidateComp = () => {
             return null;
         }
     };
-
     useEffect(() => {
         console.log('Left Radio Value:', srcVar);
         console.log('Right Radio Value:', tgtVar);
