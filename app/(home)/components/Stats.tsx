@@ -1,6 +1,7 @@
 'use client';
 
 import useLocaleStore from '@/app/hooks/languageStore';
+import { Separator } from '@/components/ui/separator';
 import {
     Table,
     TableBody,
@@ -37,18 +38,18 @@ const Stats: React.FC<StatsProps> = ({ users }) => {
     }, [locale]);
 
     return (
-        <div className="w-full h-full p-10 flex-col-center bg-slate-200 my-10">
+        <div className="w-full h-full p-10 flex-col-center  my-10">
             <h1 className="text-sm mobile:text-2xl mobile:font-semibold capitalize ">
                 stats
             </h1>
-            <div className="h-full p-10 flex-row-center">
+            <div className="h-full p-10 flex-row-center border-2 border-opacity-40 shadow-xl shadow-slate-100/50">
                 {/* <div className='w-1/2'>
 
 </div> */}
-                <Table className="w-1/2">
+                <Table className="flex flex-col border-solid  ">
                     <TableHeader>
                         <TableRow>
-                            <TableHead className="w-[100px] text-center">
+                            <TableHead className="text-center">
                                 {d?.user.username}
                             </TableHead>
                             <TableHead className="text-center">
@@ -58,15 +59,15 @@ const Stats: React.FC<StatsProps> = ({ users }) => {
                     </TableHeader>
                     <TableBody>
                         {users.map((u) => (
-                            <TableRow key={u.id}>
+                            <TableRow key={u.id } className='flex flex-row justify-between items-center'>
                                 <TableCell
-                                    className="font-medium text-center"
+                                    className="font-medium "
                                     key={u.username}
                                 >
                                     {u.username}
                                 </TableCell>
                                 <TableCell
-                                    className="text-center"
+                                    className=""
                                     key={u.score}
                                 >
                                     {u.score}
@@ -76,6 +77,7 @@ const Stats: React.FC<StatsProps> = ({ users }) => {
                     </TableBody>
                 </Table>
             </div>
+					
         </div>
     );
 };

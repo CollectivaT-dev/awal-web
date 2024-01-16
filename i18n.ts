@@ -134,7 +134,12 @@ export interface MessagesProps {
         heading_3: string;
         text_3: string;
         heading_4: string;
-        text_4: string;
+        text_4_1: string;
+        text_4_about: string;
+        text_4_2: string;
+        text_4_ins: string;
+        text_4_X: string;
+        text_4_3: string;
         CTA_button: string;
         item_1_strong: string;
         item_1_normal: string;
@@ -297,5 +302,11 @@ export interface MessagesProps {
         privacy_item_2_txt: string;
         privacy_item_3_heading: string;
         privacy_item_3_txt: string;
+    };
+    resources: {
+        resources_heading: string;
+        awal_huggingface: string;
+        tamazight_wiki: string;
+        TALAM_groups: string;
     };
 }

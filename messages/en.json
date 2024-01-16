@@ -112,7 +112,12 @@
         "heading_3": "See Where You Stand",
         "text_3": "For each translation registered in Awal Translate, you'll gain points and see how you compare with your fellow community members.",
         "heading_4": "Discover the Awal Community",
-        "text_4": "Learn more about the initiative and our collaborators on our About page. Follow us on Instagram and X to get informed about latest news and connect with the Awal network.",
+        "text_4_1": "Learn more about the initiative and our collaborators on our ",
+        "text_4_about": "About page. ",
+		"text_4_2":"Follow us on",
+        "text_4_ins": "Instagram",
+        "text_4_X": "and X",
+        "text_4_3": "to get informed about latest news and connect with the Awal network.",
         "CTA_button": "Join Awal",
         "item_1_strong": "Translate with Purpose: ",
         "item_1_normal": "Show your language skills by translating sentences to or from Tamazight in your own words.",
@@ -275,11 +280,11 @@
         "privacy_item_3_heading": "MESURES DE SEGURETAT",
         "privacy_item_3_txt": "Que, de conformitat amb el que estableixen les normatives vigents en protecció de dades personals, el RESPONSABLE està complint amb totes les disposicions de les normatives GDPR i LOPDGDD per al tractament de les dades personals de la seva responsabilitat, i manifestament amb els principis descrits a l'article 5 del GDPR, pels quals es tracten de manera lícita, lleial i transparent en relació amb l'interessat i adequades, pertinents i limitades al que es necessari en relació amb les finalitats per a les quals es tracten.\nEl RESPONSABLE garanteix que ha implementat polítiques tècniques i organitzatives apropiades per aplicar les mesures de seguretat que estableixen el GDPR i la LOPDGDD per tal de protegir els drets i llibertats de les PERSONES USUÀRIES i els ha comunicat la informació adequada perque puguin exercir-los."
     },
-	"resources":{
-		"resources_heading":"Resources",
-		"awal_huggingface":"Awal project can be found in Col·lectivaT's huggingface repository",
-		"tamazight_NLP_huggingface":"Tamazight NLP group publishes open datasets and models in huggingface",
-		"tamazight_wiki":"Tamazight wikipedia",
-		"TALAM_groups":"TALAM portal groups applications in relation with automatic processing of Tamazight. "
-	}
+    "resources": {
+        "resources_heading": "Resources",
+        "awal_huggingface": "Awal project can be found in Col·lectivaT's huggingface repository",
+        "tamazight_NLP_huggingface": "Tamazight NLP group publishes open datasets and models in huggingface",
+        "tamazight_wiki": "Tamazight wikipedia",
+        "TALAM_groups": "TALAM portal groups applications in relation with automatic processing of Tamazight. "
+    }
 }

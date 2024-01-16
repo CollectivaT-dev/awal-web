@@ -57,8 +57,9 @@ const Translation = ({ totalEntries }: { totalEntries: number }) => {
                 </div>
 
                 {/* Voice Translation */}
+
                 <div
-                    className="relative flex justify-center items-center bg-[#EFBB3F]  px-20 py-13 cursor-pointer transition duration-500"
+                    className="transVoiceParent"
                     style={{ width: 'calc(50%)', height: '100%' }}
                     onClick={() =>
                         window.open('https://commonvoice.mozilla.org/zgh')
@@ -68,7 +69,7 @@ const Translation = ({ totalEntries }: { totalEntries: number }) => {
                         {d?.menu.voice} <br />
                         AWAL
                     </h1>
-                    <div className="flex justify-center items-center rounded-full p-10 cursor-pointer transition duration-500 bg-[#FFE7EE]">
+                    <div className="transVoiceChild">
                         <Mic2 className="h-10 w-10 " />
                     </div>
                 </div>

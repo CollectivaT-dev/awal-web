@@ -25,6 +25,7 @@ const PrivacyPage = () => {
             <ol className="list-disc pl-4">
                 <li>{d?.privacy.privacy_item_1_li_1}</li>
                 <li>{d?.privacy.privacy_item_1_li_2}</li>
+             
             </ol>
             <p>{d?.privacy.privacy_item_1_txt_2}</p>
             <ol className="list-disc pl-4">

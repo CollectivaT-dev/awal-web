@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import { MessagesProps, getDictionary } from '@/i18n';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 const ProjectIntro = () => {
     const router = useRouter();
     const { data: session } = useSession();
@@ -56,10 +57,10 @@ const ProjectIntro = () => {
                     alt="amazic-logo"
                     width={100}
                     height={200}
-			className='mr-3'
+                    className="mr-3"
                 />
-                <div className="flex flex-col w-1/2   text-gray-700">
-				<Heading
+                <div className="flex flex-col w-1/2 text-gray-700">
+                    <Heading
                         title={`${d?.page_intro.heading_2}`}
                         titleClassName="text-xl pt-5"
                     />
@@ -75,7 +76,34 @@ const ProjectIntro = () => {
                         title={`${d?.page_intro.heading_4}`}
                         titleClassName="text-xl pt-5"
                     />
-                    <p>{d?.page_intro.text_4}</p>
+                    <p>
+                        {d?.page_intro.text_4_1}
+                        <Link
+                            scroll={false}
+                            target="_blank"
+                            href={'/about'}
+                            className="underline"
+                        >
+                            {d?.page_intro.text_4_about}
+                        </Link>
+                        {d?.page_intro.text_4_2}{' '}
+                        <Link
+                            className="underline"
+                            target="_blank"
+                            scroll={false}
+                            href={'https://www.instagram.com/awaldigital/'}
+                        >
+                            {d?.page_intro.text_4_ins}
+                        </Link>{" "}
+						<Link
+                            className="underline"
+                            target="_blank"
+                            scroll={false}
+                            href={'https://twitter.com/Awaldigital'}
+                        >
+                            {d?.page_intro.text_4_X}
+                        </Link>{" "}{d?.page_intro.text_4_3}
+                    </p>
                 </div>
             </div>
             {/* sign in button */}
