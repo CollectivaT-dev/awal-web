@@ -1,4 +1,5 @@
 import NextAuth, { AuthOptions } from 'next-auth';
+import GithubProvider from 'next-auth/providers/github';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
 export const handler: AuthOptions = NextAuth({
@@ -18,21 +19,28 @@ export const handler: AuthOptions = NextAuth({
                 },
             },
             async authorize(credentials, req) {
-                const url =
-                    process.env.NODE_ENV === 'development'
-                        ? 'http://localhost:3000/api/signIn'
-                        : 'https://awaldigital.org/api/signIn';
+                const url = 'http://localhost:3000';
+                const reqUrl = (req?.headers as any).origin;
+                console.log(reqUrl);
+                console.log(typeof url);
                 if (!credentials?.email || !credentials?.password) {
                     throw new Error('Invalid credentials');
                 }
                 //> the local host needs to be changed to actual url
-                const res = await fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
+                const res = await fetch(
+                    `${
+                        url === reqUrl
+                            ? 'http://localhost:3000/api/signIn'
+                            : 'https://awaldigital.org/api/signIn'
+                    }`,
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(credentials),
                     },
-                    body: JSON.stringify(credentials),
-                });
+                );
                 const data = await res.json();
                 console.log(data);
                 if (res.ok && data.email) {
@@ -53,12 +61,15 @@ export const handler: AuthOptions = NextAuth({
             console.log(session?.user);
             const l = trigger === 'update' && session?.user ? true : false;
             console.log(l);
-
+			if(session?.user.gender ===null){
+			session.user.gender = 'female';	
+			}
             if (trigger === 'update' && session?.user) {
                 token.score = session.user.score;
                 console.log(session.user.score);
                 token.username = session.user.username;
                 console.log(token);
+				
             }
             console.log(token);
             return { ...token, ...user };

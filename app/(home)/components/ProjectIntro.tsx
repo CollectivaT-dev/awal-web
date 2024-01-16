@@ -59,7 +59,7 @@ const ProjectIntro = () => {
                     height={200}
                     className="mr-3"
                 />
-                <div className="flex flex-col w-1/2 text-gray-700">
+                <div className="flex flex-col w-1/2   text-gray-700">
                     <Heading
                         title={`${d?.page_intro.heading_2}`}
                         titleClassName="text-xl pt-5"
