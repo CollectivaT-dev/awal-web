@@ -133,8 +133,8 @@ export default function RegisterForm() {
         <Form {...form}>
             <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-8 h-[100vh] flex flex-col justify-center items-center"
-            >``
+                className="space-y-8 min-h-screen flex flex-col justify-center items-center"
+            >
                 <FormField
                     control={form.control}
                     name="username"
