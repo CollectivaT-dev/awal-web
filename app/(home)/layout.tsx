@@ -40,7 +40,7 @@ console.log(apiUrl)
     console.log(topTen);
 	console.log(totalValidation)
     return (
-        <div className="flex flex-col items-center justify-center ">
+        <div className="flex flex-col items-center justify-center">
             <ClientProvider>
                 <Translation totalEntries={totalEntries} totalValidation={totalValidation} />
                 <ProjectIntro />

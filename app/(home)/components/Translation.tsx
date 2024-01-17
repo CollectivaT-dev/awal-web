@@ -1,6 +1,13 @@
 'use client';
 import useLocaleStore from '@/app/hooks/languageStore';
+import useMediaQuery from '@/app/hooks/useMediaQuery';
 import { Badge } from '@/components/ui/badge';
+import {
+    ResizableHandle,
+    ResizablePanel,
+    ResizablePanelGroup,
+} from '@/components/ui/resizable';
+import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
 import { MessagesProps, getDictionary } from '@/i18n';
 import axios from 'axios';
@@ -16,6 +23,8 @@ const Translation: React.FC<TranslationProps> = ({
     totalEntries,
     totalValidation,
 }) => {
+    const isAboveMediumScreen = useMediaQuery('(min-width: 1024px)');
+
     const router = useRouter();
     const { locale } = useLocaleStore();
     const [d, setD] = useState<MessagesProps>();
@@ -32,66 +41,135 @@ const Translation: React.FC<TranslationProps> = ({
         router.push('/translate', { scroll: false });
     };
     return (
-        // changed w-full => w-[100vw]
-        <div className="flex justify-center items-center h-[50vh] my-10 w-full">
-            <div className="flex justify-around items-center w-full h-full">
-                {/* Text Translation */}
-                <div
-                    onClick={handleTextTranslation}
-                    // deleted rouned-2xl
-                    className="relative flex justify-center items-center bg-text-primary  px-20 py-13 cursor-pointer transition duration-500"
-                    // changed style={{ width: 'calc(50% - 2rem)', height: '100%' }}
-                    style={{ width: 'calc(50%)', height: '100%' }}
-                >
-                    <h1 className="absolute top-10 left-10 text-3xl text-[#FFE7EE]">
-                        {d?.menu.translator}
-                        <br /> AWAL
-                    </h1>
-                    <div className="flex justify-center items-center rounded-full p-10 cursor-pointer transition duration-500 bg-[#FFE7EE]">
-                        <Image
-                            src={'/Icon/Translation.svg'}
-                            alt="Text Translation"
-                            width={40}
-                            height={40}
-                            className="rounded-full"
-                        />
+        <>
+            {/* // changed w-full => w-[100vw] */}
+            {isAboveMediumScreen ? (
+                <div className="w-full h-[50vh] flex-row-center">
+                    {/* Text Translation */}
+                    <div
+                        onClick={handleTextTranslation}
+                        // deleted rouned-2xl
+                        className="textTranslatorParent "
+                        // changed style={{ width: 'calc(50% - 2rem)', height: '100%' }}
+                    >
+                        <h1 className="text-3xl text-[#FFE7EE] mr-auto">
+                            {d?.menu.translator}
+                            <br /> AWAL
+                        </h1>
+                        <div className="rounded-full p-10 bg-[#FFE7EE]">
+                            <Image
+                                src={'/Icon/Translation.svg'}
+                                alt="Text Translation"
+                                width={40}
+                                height={40}
+                                className="rounded-full"
+                            />
+                        </div>
+                        <div className="mt-auto flex items-center text-white">
+                            {totalEntries ? (
+                                <div className="relative">
+                                    {d?.texts.total_entries}
+                                    <span className="absolute bottom-1 left-1">{totalEntries}</span>
+                                </div>
+                            ) : (
+                                <Skeleton />
+                            )}
+                            <div className="flex flex-grow"></div>
+                            {totalValidation ? (
+                                <div className="relative">
+                                    {d?.texts.total_validated_entries}
+                                    <span className="absolute bottom-1 right-1">{totalValidation}</span>
+                                </div>
+                            ) : null}
+                        </div>
                     </div>
-                    <span className="absolute flex-col-center space-y-2 bottom-2 right-3 text-white">
-                        {totalEntries ? (
-                            <Badge variant={'secondary'}>
-                                {d?.texts.total_entries} {totalEntries}
-                            </Badge>
-                        ) : (
-                            <Skeleton />
-                        )}
-                        {totalValidation ? (
-                            <Badge variant={'secondary'}>
-                                {d?.texts.total_validated_entries}{' '}
-                                {totalValidation}
-                            </Badge>
-                        ) : null}
-                    </span>
-                </div>
-
-                {/* Voice Translation */}
-
-                <div
-                    className="transVoiceParent"
-                    style={{ width: 'calc(50%)', height: '100%' }}
-                    onClick={() =>
-                        window.open('https://commonvoice.mozilla.org/zgh')
-                    }
-                >
-                    <h1 className="absolute top-10 left-10 text-3xl text-text-primary">
-                        {d?.menu.voice} <br />
-                        AWAL
-                    </h1>
-                    <div className="transVoiceChild">
-                        <Mic2 className="h-10 w-10 " />
+                    {/* Voice Translation */}
+                    <div
+                        className="transVoiceParent"
+                        onClick={() =>
+                            window.open('https://commonvoice.mozilla.org/zgh')
+                        }
+                    >
+                        <h1 className="text-3xl mr-auto text-text-primary">
+                            {d?.menu.voice} <br />
+                            AWAL
+                        </h1>
+                        <div className="transVoiceChild">
+                            <Mic2 className="h-10 w-10 " />
+                        </div>
+                        <span className="flex space-y-2  text-white"></span>
                     </div>
                 </div>
-            </div>
-        </div>
+            ) : (
+                // mobile view
+                <ResizablePanelGroup
+                    direction="horizontal"
+                    className="max-w-screen rounded-lg"
+                >
+                    <ResizablePanel
+                        defaultSize={50}
+                        onClick={handleTextTranslation}
+                    >
+                        <div className="flex h-[200px] items-center justify-center p-6 bg-text-primary ">
+                            <h1 className="text-3xl text-[#FFE7EE] mr-auto">
+                                {d?.menu.translator}
+                                <br /> AWAL
+                            </h1>
+                            <div>
+                                <span className="flex-col-center space-y-2  text-white">
+                                    {totalEntries ? (
+                                        <div className="flex-col-center ">
+                                            <span>
+                                                {d?.texts.total_entries}
+                                            </span>
+                                            <span>{totalEntries}</span>
+                                        </div>
+                                    ) : (
+                                        <Skeleton />
+                                    )}
+                                    <Separator />
+                                    {totalValidation ? (
+                                        <div className="flex-col-center">
+                                            <span>
+                                                {
+                                                    d?.texts
+                                                        .total_validated_entries
+                                                }
+                                            </span>
+                                            <span>{totalValidation}</span>
+                                        </div>
+                                    ) : null}
+                                </span>
+                            </div>
+                        </div>
+                    </ResizablePanel>
+                    <ResizableHandle />
+                    <ResizablePanel
+                        defaultSize={50}
+                        onClick={() =>
+                            window.open('https://commonvoice.mozilla.org/zgh')
+                        }
+                    >
+                        <div className="flex h-[200px] items-center justify-center p-6 bg-[#EFBB3F]">
+                            <h1 className="text-3xl text-text-primary">
+                                {d?.menu.voice}
+                                <br />
+                                AWAL
+                            </h1>
+                        </div>
+                    </ResizablePanel>
+                </ResizablePanelGroup>
+                // <div className="w-screen flex-col-center">
+                //     <div
+                //         className="textTranslatorParent"
+                //         onClick={handleTextTranslation}
+                //     ></div>
+                //     <div className="transVoiceParent"></div>
+
+                //     <div></div>
+                // </div>
+            )}
+        </>
     );
 };
 export default Translation;

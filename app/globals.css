@@ -92,14 +92,19 @@ body,
 }
 
 .flex-row-center {
-	@apply flex flex-row justify-center items-center 
+    @apply flex flex-row justify-center items-center;
 }
 .flex-col-center {
-	@apply flex flex-col justify-center items-center 
+    @apply flex flex-col justify-center items-center;
 }
-.transVoiceParent{
-	@apply relative flex justify-center items-center bg-[#EFBB3F] px-20 py-10 cursor-pointer transition duration-500
+.transVoiceParent {width: calc(50%); height: 100%;
+    @apply flex flex-col  justify-center items-center bg-[#EFBB3F] px-20 py-[3.25rem] cursor-pointer;
 }
-.transVoiceChild{
-	@apply  flex justify-center items-center rounded-full p-10 cursor-pointer transition duration-500 bg-[#FFE7EE]
+.transVoiceChild {
+    @apply rounded-full p-10 bg-[#FFE7EE];
+}
+.textTranslatorParent {
+    width: calc(50%);
+    height: 100%;
+    @apply flex flex-col justify-center items-center bg-text-primary px-20 py-[3.25rem] cursor-pointer;
 }

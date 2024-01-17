@@ -294,12 +294,12 @@ const TextTranslator = () => {
                 </div>
             </div>
             <div className="flex-col-center mt-5">
-                <h2 className="text-sm mobile:text-xl font-semibold w-[33%] mobile:w-1/2 mt-10">
+                <h2 className="text-sm md:text-xl font-semibold w-[33%] lg:w-1/2 mt-10 text-center">
                     {d?.translator.notice}
                 </h2>
                 {!session && (
                     <div className="mt-5">
-                        <Link href={'register'}>
+                        <Link href={'/register'}>
                             <Button>{d?.nav.signUp}</Button>
                         </Link>
                     </div>
