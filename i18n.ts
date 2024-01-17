@@ -158,8 +158,10 @@ export interface MessagesProps {
         welcome_f: string;
         subscribe: string;
         total_entries: string;
+        total_validated_entries: string;
         login_to_signup_1: string;
         login_to_signup_2: string;
+        statistic: string;
     };
     validator: {
         alert_no_more_entries: string;

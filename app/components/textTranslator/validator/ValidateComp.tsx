@@ -438,7 +438,7 @@ const ValidateComp = () => {
                                     {' '}
                                     <AlertDialogTitle className="flex items-center justify-center">
                                         <h4 className="text-sm font-semibold capitalize">
-                                            {d?.translator.help_pop_up.header}
+                                            {d?.how_to_validate_heading}
                                         </h4>
                                     </AlertDialogTitle>
                                 </AlertDialogHeader>

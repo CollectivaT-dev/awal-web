@@ -151,6 +151,17 @@ const AboutPage = () => {
                     {d?.about.contributor_yuxuan_intro}
                 </div>
             </div>
+            <div className=" mb-10 ">
+                {d?.about.contact_info}{' '}
+                <Link
+                    href={'mailto:awal@collectivat.cat'}
+                    className="underline"
+                    target="_blank"
+                    scroll={false}
+                >
+                    awal@collectivat.cat
+                </Link>
+            </div>
         </div>
     );
 };

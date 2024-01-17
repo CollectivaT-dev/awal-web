@@ -138,7 +138,8 @@
         "total_entries": "Translations contributed",
         "total_validated_entries": "Translations validated",
         "login_to_signup_1": "New to Awal?",
-        "login_to_signup_2": "Sign up!"
+        "login_to_signup_2": "Sign up!",
+		"statistic":"statistic"
     },
     "validator": {
         "alert_no_more_entries": "No more entries to validate for language pair and variant. You can contribute more translations meanwhile.",
@@ -190,7 +191,7 @@
         "contributor_ghizlan_intro": "Lalla Ghizlan Baryala, Amazigh cultural activist in Catalonia, collaborates with various organizations to promote the history, language, and culture of the Amazigh people in the region. She studied marketing and market research at UOC and completed a postgraduate program in Digital Marketing and e-commerce.",
         "contributor_yuxuan_photo": "",
         "contributor_yuxuan_website": "",
-        "contributor_yuxuan_intro": "placehodler",
+        "contributor_yuxuan_intro": "Full Stack Dev",
         "contact_heading": "Contact Awal",
         "contact_info": "For inquiries, suggestions, or more information, contact us at",
         "contact_text": "awal@collectivat.cat"

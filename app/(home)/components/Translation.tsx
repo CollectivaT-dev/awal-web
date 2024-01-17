@@ -1,13 +1,21 @@
 'use client';
 import useLocaleStore from '@/app/hooks/languageStore';
+import { Badge } from '@/components/ui/badge';
+import { Skeleton } from '@/components/ui/skeleton';
 import { MessagesProps, getDictionary } from '@/i18n';
 import axios from 'axios';
 import { Languages, Mic2 } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-
-const Translation = ({ totalEntries }: { totalEntries: number }) => {
+interface TranslationProps {
+    totalEntries: number;
+    totalValidation: number;
+}
+const Translation: React.FC<TranslationProps> = ({
+    totalEntries,
+    totalValidation,
+}) => {
     const router = useRouter();
     const { locale } = useLocaleStore();
     const [d, setD] = useState<MessagesProps>();
@@ -48,12 +56,21 @@ const Translation = ({ totalEntries }: { totalEntries: number }) => {
                             className="rounded-full"
                         />
                     </div>
-                    {totalEntries && (
-                        <span className="absolute flex-col-center bottom-2 right-3 text-white">
-                            <h1>{d?.texts.total_entries}</h1>
-                            {totalEntries}
-                        </span>
-                    )}
+                    <span className="absolute flex-col-center space-y-2 bottom-2 right-3 text-white">
+                        {totalEntries ? (
+                            <Badge variant={'secondary'}>
+                                {d?.texts.total_entries} {totalEntries}
+                            </Badge>
+                        ) : (
+                            <Skeleton />
+                        )}
+                        {totalValidation ? (
+                            <Badge variant={'secondary'}>
+                                {d?.texts.total_validated_entries}{' '}
+                                {totalValidation}
+                            </Badge>
+                        ) : null}
+                    </span>
                 </div>
 
                 {/* Voice Translation */}

@@ -14,6 +14,7 @@ export default function HomepageLayout({
 }) {
     const [totalEntries, setTotalEntries] = useState(0);
     const [topTen, setTopTen] = useState([]);
+	const [totalValidation, setTotalValidation] = useState(0)
     const apiUrl =
         process.env.NODE_ENV === 'development'
             ? 'http://localhost:3000'
@@ -26,8 +27,10 @@ console.log(apiUrl)
                 // delete dependency array to fetch on page refresh
                 const req = await axios.get(`${apiUrl}/api/stats`);
                 console.log(req.data.topTen);
+				console.log(req.data.totalValidation)
                 setTotalEntries(req.data.totalEntries);
                 setTopTen(req.data.topTen);
+				setTotalValidation(req.data.totalValidation)
             } catch (error) {
                 console.log('Error fetching data:', error);
             }
@@ -35,10 +38,11 @@ console.log(apiUrl)
         fetchData();
     }, [apiUrl]);
     console.log(topTen);
+	console.log(totalValidation)
     return (
         <div className="flex flex-col items-center justify-center ">
             <ClientProvider>
-                <Translation totalEntries={totalEntries} />
+                <Translation totalEntries={totalEntries} totalValidation={totalValidation} />
                 <ProjectIntro />
                 <EventCarousel />
                 <Stats users={topTen} />

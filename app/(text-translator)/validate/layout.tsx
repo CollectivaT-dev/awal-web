@@ -3,10 +3,8 @@ import ContributeComp from '@/app/components/textTranslator/contributor/Contribu
 import ValidateComp from '@/app/components/textTranslator/validator/ValidateComp';
 import useLocaleStore from '@/app/hooks/languageStore';
 
-
 import TranslatorNav from '@/components/ui/Navbar/TranslatorNav';
 import { useSession } from 'next-auth/react';
-
 
 export default function ContributeLayout({
     children,
@@ -27,9 +25,7 @@ export default function ContributeLayout({
         return (
             <div>
                 <TranslatorNav />
-       
-                    <ValidateComp />
-
+                <ValidateComp />
                 {children}
             </div>
         );

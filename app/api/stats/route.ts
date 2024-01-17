@@ -6,15 +6,19 @@ export const dynamic = 'force-dynamic';
 export async function GET(req: Request) {
     try {
         const totalEntries = await prisma.contribution.count();
+        const totalValidation = await prisma.contribution.count({
+            where: { isValidated: true },
+        });
         const topTen = await prisma.user.findMany({
             take: 10, // Limit the result to top 10
             orderBy: { score: 'desc' },
             select: { id: true, username: true, score: true },
         });
         console.log(topTen);
+		console.log(totalValidation)
         // Send the response with both totalEntries and topTen as JSON
         return new NextResponse(
-            JSON.stringify({ topTen: topTen, totalEntries }),
+            JSON.stringify({ topTen: topTen, totalEntries,totalValidation }),
             {
                 status: 200,
             },
