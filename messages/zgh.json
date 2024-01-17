@@ -138,7 +138,8 @@
         "total_entries": "Translations contributed",
         "total_validated_entries": "Translations validated",
         "login_to_signup_1": "New to Awal?",
-        "login_to_signup_2": "Sign up!"
+        "login_to_signup_2": "ⵍⴽⵎⴰⵜ ⴰⵡⴰⵍ!",
+        "statistic":"ⵉⵎⴰⵔⴰⴳⵏ ⵉⵎⵓⴼⴰⵢⵏ"
     },
     "validator": {
         "alert_no_more_entries": "No more entries to validate for language pair and variant. You can contribute more translations meanwhile.",
