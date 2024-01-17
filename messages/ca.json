@@ -49,7 +49,7 @@
             "type_to_translate": "Introduïu aquí el text que voleu traduir...",
             "translation_box": "La traducció apareixerà aquí..."
         },
-        "notice": "Aquesta aplicació es basa en un motor de traducció basat en recerca que pot proporcionar resultats imprecisos. Si parles amazic, pots ajudar-nos a millorar enviant traduccions.",
+        "notice": "Aquesta aplicació es basa en un motor de traducció basat en la recerca que només funciona per al dialecte central i moltes vegades proporciona resultats inexactes. Si parles amazic, pots ajudar-nos a millorar i habilitar més variants contribuint amb traduccions.",
         "help": "Com funciona?",
         "help_pop_up": {
             "header": "Com aportar traduccions?",
@@ -135,7 +135,8 @@
         "welcome_m": "Benvingut de nou",
         "welcome_f": "Benvinguda de nou",
         "subscribe": "Subscriu-te a la llista de correu",
-        "total_entries": "Total d'entrades",
+        "total_entries": "Traduccions contribuïdes",
+        "total_validated_entries": "Traduccions validades",
         "login_to_signup_1": "Nou a Awal?",
         "login_to_signup_2": "Inscriu-te!"
     },
@@ -231,7 +232,7 @@
     "how_it_works_contribution_3": "Després, has d'escriure la traducció de la frase al panell de la dreta. Per ajudar-te a començar, pots utilitzar la funció de traducció automàtica prototip que t'oferirà una traducció aproximada (no gaire bona). Assegura't d'escriure una traducció precisa i ben redactada. Sempre pots consultar els recursos útils que indiquem a continuació. Si estàs traduint a l'amazic, assegura't de marcar la variant amb les caselles de selecció a continuació.",
     "how_it_works_contribution_4": "Un cop hagis acabat de traduir la frase, fes clic al botó \"Contribuir\", i la teva contribució es desarà. Aconseguiràs punts de contribució proporcionals a la longitud de la frase original que introdueixis (quan no facis servir la funció de \"Frase aleatòria\") i la traducció corresponent. Si utilitzes la funció de traducció automàtica, la teva puntuació objectiu es calcularà en funció del nombre de canvis que facis.",
     "how_it_works_contribution_continued": "Per obtenir informació addicional, consulta els termes de contribució. Si necessites ajuda, no dubtis a contactar amb nosaltres a awal@collectivat.cat. Moltes gràcies per la teva valuosa contribució!",
-    "how_to_validate_heading": "Com validar",
+    "how_to_validate_heading": "Com validar?",
     "how_it_works_validation": "Validar les traduccions és un pas essencial per mantenir la integritat del conjunt de dades i contribuir al desenvolupament d'una aplicació de traducció automàtica fiable per a l'amazic. En aquesta pantalla, se't mostraran traduccions fetes per altres persones voluntàries i hauràs de verificar si són acceptables o no.",
     "how_it_works_validation_1": "Comenceu seleccionant la combinació de llengües i la variant de l'amazic per a les validacions. Veureu la contribució d'una altra persona voluntària. La frase d'origen es mostrarà al panell esquerre i la frase traduïda al panell dret.",
     "how_it_works_validation_2": "Avalua la qualitat de la traducció, tenint en compte que aspirem a l'acceptabilitat més que a la perfecció. Considera les següents directrius:",
