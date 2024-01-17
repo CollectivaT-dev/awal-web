@@ -139,7 +139,7 @@
         "total_validated_entries": "Traduccions validades",
         "login_to_signup_1": "Nou a Awal?",
         "login_to_signup_2": "Inscriu-te!",
-		"statistic":"estadística"
+		"statistic":"Classificació de la Comunitat"
     },
     "validator": {
         "alert_no_more_entries": "No hi ha més entrades per validar per al parell de llengües i variant seleccionat. Pots contribuir amb més traduccions mentrestant.",

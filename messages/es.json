@@ -136,7 +136,8 @@
         "total_entries": "Traducciones contribuidas",
         "total_validated_entries": "Traducciones validadas",
         "login_to_signup_1": "¿Nuevo en Awal?",
-        "login_to_signup_2": "¡Regístrate!"
+        "login_to_signup_2": "¡Regístrate!",
+        "statistic":"Clasificación de la Comunidad"
     },
     "validator": {
         "alert_no_more_entries": "No hay más entradas para validar para el par de idiomas y variante seleccionada. Puedes contribuir con más traducciones mientras tanto.",
