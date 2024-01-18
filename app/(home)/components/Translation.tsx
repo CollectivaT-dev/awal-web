@@ -161,7 +161,7 @@ const Translation: React.FC<TranslationProps> = ({
                                 AWAL
                             </h1>
                             <div>
-                                <span className="flex-col-center space-y-2  text-white">
+                                <span className="flex-col-center space-y-2 ">
                                     <span>{d?.texts.total_voice_entries}</span>
                                     <Separator />
 

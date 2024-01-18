@@ -32,14 +32,12 @@ const formSchema = z.object({
 });
 
 type SignInFormValue = z.infer<typeof formSchema>;
-const SignInForm: React.FC<SignInFormProps> = ({ className, callbackUrl }) => {
+const SignInForm: React.FC<SignInFormProps> = ({callbackUrl }) => {
     const form = useForm<SignInFormValue>({
         resolver: zodResolver(formSchema),
     });
     const router = useRouter();
     const { locale } = useLocaleStore();
-    const [signInClicked, setSignInClicked] = useState(false);
-
     const { data: session } = useSession();
     const [d, setD] = useState<MessagesProps>();
     useEffect(() => {
@@ -76,87 +74,69 @@ const SignInForm: React.FC<SignInFormProps> = ({ className, callbackUrl }) => {
             toast.error(`${d?.toasters.alert_try_again}`);
         }
     }
-
     return (
         <div className="min-h-screen flex-col-center">
-            {signInClicked ? (
-                <Form {...form}>
-                    <form
-                        onSubmit={form.handleSubmit(onSubmit)}
-                        className="space-y-8 mt-10"
-                    >
-                        <div className="flex flex-col justify-center items-center">
-                            <FormField
-                                control={form.control}
-                                name="email"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>{d?.user.email}</FormLabel>
-                                        <FormControl>
-                                            <Input
-                                                type="text"
-                                                id="email"
-                                                placeholder={`${d?.user.email}`}
-                                                {...field}
-                                            />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                            <FormField
-                                control={form.control}
-                                name="password"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>
-                                            {d?.user.password}
-                                        </FormLabel>
-                                        <FormControl>
-                                            <Input
-                                                type="password"
-                                                id="password"
-                                                placeholder={`${d?.user.password}`}
-                                                {...field}
-                                            />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                        </div>
-
-                        <div className="flex flex-col lg:flex-row gap-3 justify-center items-center">
-                            <Button
-                                variant={'outline'}
-                                type="submit"
-                                className="capitalize"
-                            >
-                                {d?.nav.signIn}
-                            </Button>
-                            <Button>
-                                <Link href={'/register'}>{d?.nav.signUp}</Link>
-                            </Button>
-                        </div>
-                    </form>
-                </Form>
-            ) : (
-                <span className="flex-row-center space-x-2 text-xl">
-                    <span className="capitalize">{d?.texts.have_account}</span>
-                    <div
-                        className="cursor-pointer underline"
-                        onClick={() => setSignInClicked(!signInClicked)}
-                    >
-                        {d?.nav.signIn}
+            <Form {...form}>
+                <form
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className="space-y-8 mt-10"
+                >
+                    <div className="flex flex-col justify-center items-center">
+                        <FormField
+                            control={form.control}
+                            name="email"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>{d?.user.email}</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            type="text"
+                                            id="email"
+                                            placeholder={`${d?.user.email}`}
+                                            {...field}
+                                        />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="password"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>{d?.user.password}</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            type="password"
+                                            id="password"
+                                            placeholder={`${d?.user.password}`}
+                                            {...field}
+                                        />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
                     </div>
-                    <Link
-                        href={'/register'}
-                        className="cursor-pointer underline"
-                    >
-                        {d?.nav.signUp}
-                    </Link>
-                </span>
-            )}
+
+                    <div className="flex flex-col lg:flex-row gap-3 justify-center items-center">
+                        <Button
+                            variant={'outline'}
+                            type="submit"
+                            className="capitalize"
+                        >
+                            {d?.nav.signIn}
+                        </Button>
+                    </div>
+                </form>
+            </Form>
+            <div className="mt-10">
+                {d?.texts.login_to_signup_1}{' '}
+                <Link href={'/register'} className="underline">
+                    {d?.texts.login_to_signup_2}
+                </Link>
+            </div>
         </div>
     );
 };

@@ -85,8 +85,9 @@ const ProjectIntro = () => {
                             className="underline"
                         >
                             {d?.page_intro.text_4_about}
-                        </Link>
-                        {d?.page_intro.text_4_2}{' '}
+                        </Link>{' '}
+                        {d?.page_intro.text_4_2}
+                        {'  '}
                         <Link
                             className="underline"
                             target="_blank"
@@ -94,15 +95,16 @@ const ProjectIntro = () => {
                             href={'https://www.instagram.com/awaldigital/'}
                         >
                             {d?.page_intro.text_4_ins}
-                        </Link>{" "}
-						<Link
+                        </Link>{' '}
+                        <Link
                             className="underline"
                             target="_blank"
                             scroll={false}
                             href={'https://twitter.com/Awaldigital'}
                         >
                             {d?.page_intro.text_4_X}
-                        </Link>{" "}{d?.page_intro.text_4_3}
+                        </Link>{' '}
+                        {d?.page_intro.text_4_3}
                     </p>
                 </div>
             </div>
