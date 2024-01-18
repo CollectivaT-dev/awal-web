@@ -139,6 +139,8 @@
         "login_to_signup_2": "Inscrivez-vous !",
         "total_entries": "Traductions contribuées",
         "total_validated_entries": "Traductions validées",
+        "total_voice_entries": "1 heure enregistrée",
+        "total_voice_validation": "1 heure validée",
         "statistic":"Classement de la Communauté"
     },
     "validator": {

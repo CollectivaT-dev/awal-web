@@ -137,6 +137,8 @@
         "subscribe": "Subscriu-te a la llista de correu",
         "total_entries": "Traduccions contribuïdes",
         "total_validated_entries": "Traduccions validades",
+        "total_voice_entries": "1 hora gravada",
+        "total_voice_validation": "1 hora validada",
         "login_to_signup_1": "Nou a Awal?",
         "login_to_signup_2": "Inscriu-te!",
 		"statistic":"Classificació de la Comunitat"
