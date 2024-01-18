@@ -223,6 +223,7 @@ export interface MessagesProps {
         contact_text: string;
     };
     terms: {
+        contribution_terms_heading: string;
         contribution_terms: string;
         mozilla_terms: string;
         contribution_terms_continued: string;

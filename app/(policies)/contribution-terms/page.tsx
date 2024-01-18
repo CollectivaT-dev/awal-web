@@ -19,7 +19,10 @@ const ContributionTermsPage = () => {
 
     return (
         <div className="min-h-screen mx-10 flex-col-center text-xl whitespace-pre-wrap leading-8 mt-10">
-            <div className="space-y-10">
+            <div className="min-h-screen flex flex-col  space-y-5 text-[1.2rem] m-10 leading-8 whitespace-pre-wrap">
+                <h1 className="text-3xl font-semibold text-center">
+					{d?.terms.contribution_terms_heading}
+				</h1>
                 <div>
                     {d?.terms.contribution_terms}{' '}
                     <Link

@@ -250,7 +250,7 @@ export default function RegisterForm() {
                                             .text_before_link
                                     }{' '}
                                     <Link
-                                        href={'/privacy'}
+                                        href={'/contribution-terms'}
                                         target="_blank"
                                         scroll={false}
                                         className="text-blue-500"
