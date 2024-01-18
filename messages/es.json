@@ -197,6 +197,7 @@
         "contact_text": "awal@collectivat.cat"
     },
     "terms": {
+        "contribution_terms_heading": "Términos de contribución",
         "contribution_terms": "Awal es una iniciativa sin ánimo de lucro que contribuye a la digitalización de la lengua amazigh mediante la recopilación de conjuntos de datos abiertos y el desarrollo de herramientas innovadoras.\nEl portal web de Awal permite la contribución libre de frases traducidas con el objetivo de desarrollar aplicaciones de traducción automática. Solo puedes hacer contribuciones y validar frases traducidas si te unes a la iniciativa. Al registrarte, debes comprometerte a cumplir con estos términos.\nAwal también colabora con la iniciativa Common Voice de Mozilla para la recopilación de conjuntos de datos abiertos de voz, permitiendo a cualquier persona construir aplicaciones basadas en la voz para el amazigh. Ten en cuenta que las contribuciones a Common Voice están sujetas a los",
         "mozilla_terms": "términos legales de Mozilla.",
         "contribution_terms_continued": "En estos términos, 'nosotros', 'nuestro', 'nos' o '-nos' se refieren a los colaboradores y administradores de Awal, la iniciativa sin ánimo de lucro. 'Tú', 'tu', 'vosotros' o 'vuestro' se refiere al usuario, colaborador o voluntario que interactúa y contribuye a la plataforma de Awal.",
