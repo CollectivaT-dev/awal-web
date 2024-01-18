@@ -159,6 +159,9 @@ export interface MessagesProps {
         subscribe: string;
         total_entries: string;
         total_validated_entries: string;
+        total_voice_entries: string;
+        total_voice_validation: string;
+        have_account: string;
         login_to_signup_1: string;
         login_to_signup_2: string;
         statistic: string;

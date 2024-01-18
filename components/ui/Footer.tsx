@@ -55,7 +55,7 @@ const Footer = () => {
                 <div className="flex flex-row justify-center items-center space-x-3">
                     <Link
                         target="_blank"
-                        href={'https://facebook.com'}
+                        href={'https://www.facebook.com/aawaldigital'}
                         scroll={false}
                     >
                         <RiFacebookFill size={30} />
@@ -84,7 +84,7 @@ const Footer = () => {
                     </Link>
                     <Link
                         target="_blank"
-                        href={'mailto:8PqFP@example.com'}
+                        href={'mailto:awal@collectivat.cat'}
                         scroll={false}
                     >
                         <Mail size={30} />
@@ -92,12 +92,11 @@ const Footer = () => {
                 </div>
                 <div>
                     <ul className="flex flex-col items-start justify-between my-5">
-                       
                         <li>
                             <Link href={'/legal'}> {d?.footer.legal}</Link>
                         </li>
-						<li>
-                            <Link href={'/contribution-terms'} >
+                        <li>
+                            <Link href={'/contribution-terms'}>
                                 {d?.footer.contributionTerms}
                             </Link>
                         </li>

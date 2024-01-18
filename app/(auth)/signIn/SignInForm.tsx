@@ -20,6 +20,7 @@ import * as z from 'zod';
 import useLocaleStore from '@/app/hooks/languageStore';
 import { MessagesProps, getDictionary } from '@/i18n';
 import { useEffect, useState } from 'react';
+
 interface SignInFormProps {
     className?: string;
     callbackUrl?: string;
@@ -37,6 +38,7 @@ const SignInForm: React.FC<SignInFormProps> = ({ className, callbackUrl }) => {
     });
     const router = useRouter();
     const { locale } = useLocaleStore();
+    const [signInClicked, setSignInClicked] = useState(false);
 
     const { data: session } = useSession();
     const [d, setD] = useState<MessagesProps>();
@@ -70,69 +72,92 @@ const SignInForm: React.FC<SignInFormProps> = ({ className, callbackUrl }) => {
                 router.push(callbackUrl ?? '/', { scroll: false });
             }
         } catch (error) {
-			console.log(error)
+            console.log(error);
             toast.error(`${d?.toasters.alert_try_again}`);
         }
     }
-    return (
-        <Form {...form}>
-            <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-8 min-h-screen"
-            >
-                <div className="flex flex-col justify-center items-center">
-                    <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>{d?.user.email}</FormLabel>
-                                <FormControl>
-                                    <Input
-                                        type="text"
-                                        id="email"
-                                        placeholder={`${d?.user.email}`}
-                                        {...field}
-                                    />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                    <FormField
-                        control={form.control}
-                        name="password"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>{d?.user.password}</FormLabel>
-                                <FormControl>
-                                    <Input
-                                        type="password"
-                                        id="password"
-                                        placeholder={`${d?.user.password}`}
-                                        {...field}
-                                    />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
-                </div>
 
-                <div className="flex flex-col lg:flex-row gap-3 justify-center items-center">
-                    <Button
-                        variant={'outline'}
-                        type="submit"
-                        className="capitalize"
+    return (
+        <div className="min-h-screen flex-col-center">
+            {signInClicked ? (
+                <Form {...form}>
+                    <form
+                        onSubmit={form.handleSubmit(onSubmit)}
+                        className="space-y-8 mt-10"
+                    >
+                        <div className="flex flex-col justify-center items-center">
+                            <FormField
+                                control={form.control}
+                                name="email"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>{d?.user.email}</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                type="text"
+                                                id="email"
+                                                placeholder={`${d?.user.email}`}
+                                                {...field}
+                                            />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="password"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>
+                                            {d?.user.password}
+                                        </FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                type="password"
+                                                id="password"
+                                                placeholder={`${d?.user.password}`}
+                                                {...field}
+                                            />
+                                        </FormControl>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+
+                        <div className="flex flex-col lg:flex-row gap-3 justify-center items-center">
+                            <Button
+                                variant={'outline'}
+                                type="submit"
+                                className="capitalize"
+                            >
+                                {d?.nav.signIn}
+                            </Button>
+                            <Button>
+                                <Link href={'/register'}>{d?.nav.signUp}</Link>
+                            </Button>
+                        </div>
+                    </form>
+                </Form>
+            ) : (
+                <span className="flex-row-center space-x-2 text-xl">
+                    <span className="capitalize">{d?.texts.have_account}</span>
+                    <div
+                        className="cursor-pointer underline"
+                        onClick={() => setSignInClicked(!signInClicked)}
                     >
                         {d?.nav.signIn}
-                    </Button>
-                    {/* <Button>
-                        <Link href={'/'}>Cancel·lar</Link>
-                    </Button> */}
-                </div>
-            </form>
-        </Form>
+                    </div>
+                    <Link
+                        href={'/register'}
+                        className="cursor-pointer underline"
+                    >
+                        {d?.nav.signUp}
+                    </Link>
+                </span>
+            )}
+        </div>
     );
 };
 export default SignInForm;

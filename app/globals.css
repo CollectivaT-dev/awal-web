@@ -9,15 +9,6 @@ body,
     color: #093953;
 }
 
-/* google translate */
-
-#google_translate_element {
-    position: fixed;
-    top: 10px;
-    right: 50px;
-    width: 10px;
-    z-index: 1000; /* To ensure it's above other content */
-}
 @layer base {
     :root {
         --background: 0 0% 100%;
@@ -97,7 +88,9 @@ body,
 .flex-col-center {
     @apply flex flex-col justify-center items-center;
 }
-.transVoiceParent {width: calc(50%); height: 100%;
+.transVoiceParent {
+    width: calc(50%);
+    height: 100%;
     @apply flex flex-col  justify-center items-center bg-[#EFBB3F] px-20 py-[3.25rem] cursor-pointer;
 }
 .transVoiceChild {

@@ -114,7 +114,7 @@
         "heading_4": "Discover the Awal Community",
         "text_4_1": "Learn more about the initiative and our collaborators on our ",
         "text_4_about": "About page. ",
-		"text_4_2":"Follow us on",
+        "text_4_2": "Follow us on",
         "text_4_ins": "Instagram",
         "text_4_X": "and X",
         "text_4_3": "to get informed about latest news and connect with the Awal network.",
@@ -137,9 +137,12 @@
         "subscribe": "Subscribe to mailing list",
         "total_entries": "Translations contributed",
         "total_validated_entries": "Translations validated",
+        "total_voice_entries": "1 hour recorded",
+        "total_voice_validation": "1 hour validated",
+        "have_account": "have an account? ",
         "login_to_signup_1": "New to Awal?",
         "login_to_signup_2": "Sign up!",
-		"statistic":"Community Leaderboard"
+        "statistic": "Community Leaderboard"
     },
     "validator": {
         "alert_no_more_entries": "No more entries to validate for language pair and variant. You can contribute more translations meanwhile.",

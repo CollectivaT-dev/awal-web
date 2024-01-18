@@ -40,6 +40,7 @@ const Translation: React.FC<TranslationProps> = ({
     const handleTextTranslation = () => {
         router.push('/translate', { scroll: false });
     };
+    console.log(d?.texts);
     return (
         <>
             {/* // changed w-full => w-[100vw] */}
@@ -65,25 +66,25 @@ const Translation: React.FC<TranslationProps> = ({
                                 className="rounded-full"
                             />
                         </div>
-                        <div className="mt-auto flex items-center text-white">
+                        <div className="mt-auto flex-col-center text-white">
                             {totalEntries ? (
                                 <div className="relative">
-                                    {d?.texts.total_entries}
-                                    <span className="absolute bottom-1 left-1">{totalEntries}</span>
+                                    {totalEntries} {d?.texts.total_entries}
                                 </div>
                             ) : (
                                 <Skeleton />
                             )}
-                            <div className="flex flex-grow"></div>
+
                             {totalValidation ? (
                                 <div className="relative">
+                                    {totalValidation}{' '}
                                     {d?.texts.total_validated_entries}
-                                    <span className="absolute bottom-1 right-1">{totalValidation}</span>
                                 </div>
                             ) : null}
                         </div>
                     </div>
                     {/* Voice Translation */}
+
                     <div
                         className="transVoiceParent"
                         onClick={() =>
@@ -95,9 +96,12 @@ const Translation: React.FC<TranslationProps> = ({
                             AWAL
                         </h1>
                         <div className="transVoiceChild">
-                            <Mic2 className="h-10 w-10 " />
+                            <Mic2 className="h-10 w-10" />
                         </div>
-                        <span className="flex space-y-2  text-white"></span>
+                        <div className="mt-auto flex-col-center">
+                            <span>{d?.texts.total_voice_entries}</span>
+                            <span>{d?.texts.total_voice_validation}</span>
+                        </div>
                     </div>
                 </div>
             ) : (
@@ -116,7 +120,7 @@ const Translation: React.FC<TranslationProps> = ({
                                 <br /> AWAL
                             </h1>
                             <div>
-                                <span className="flex-col-center space-y-2  text-white">
+                                <span className="flex-col-center space-y-2 items-center  text-white">
                                     {totalEntries ? (
                                         <div className="flex-col-center ">
                                             <span>
@@ -150,12 +154,22 @@ const Translation: React.FC<TranslationProps> = ({
                             window.open('https://commonvoice.mozilla.org/zgh')
                         }
                     >
-                        <div className="flex h-[200px] items-center justify-center p-6 bg-[#EFBB3F]">
+                        <div className="flex-row flex h-[200px] items-center justify-around p-6 mx-auto bg-[#EFBB3F]">
                             <h1 className="text-3xl text-text-primary">
                                 {d?.menu.voice}
                                 <br />
                                 AWAL
                             </h1>
+                            <div>
+                                <span className="flex-col-center space-y-2  text-white">
+                                    <span>{d?.texts.total_voice_entries}</span>
+                                    <Separator />
+
+                                    <span>
+                                        {d?.texts.total_voice_validation}
+                                    </span>
+                                </span>
+                            </div>
                         </div>
                     </ResizablePanel>
                 </ResizablePanelGroup>

@@ -38,12 +38,12 @@ const EventCarousel = () => {
                         <div className="p-1">
                             <Card>
                                 <Link href={'/'} scroll={false}>
-                                    <CardContent className="flex-col-center ">
+                                    <CardContent className="flex-col-center">
                                         <span className=" py-10 flex flex-col justify-between items-center space-y-2 ">
                                             <h1 className="text-3xl font-bold">
                                                 {d?.texts.data_marathon}
                                             </h1>
-                                            <p>10/02/2024</p>
+                                            <p>17/02/2024</p>
                                         </span>
                                     </CardContent>
                                 </Link>
@@ -51,7 +51,7 @@ const EventCarousel = () => {
                         </div>
                     </CarouselItem>
                 </CarouselContent>
-                <CarouselPrevious />
+                <CarouselPrevious/>
                 <CarouselNext />
             </Carousel>
         </>
