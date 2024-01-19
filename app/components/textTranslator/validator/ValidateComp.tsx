@@ -232,7 +232,6 @@ const ValidateComp = () => {
                     setLeftRadioValue(res.data.srcVar || '');
                     setRightRadioValue(res.data.tgtVar || '');
                     setEntry(res.data);
-                    toast.success('Data fetched successfully!');
                 }
             } catch (error) {
                 if (axios.isAxiosError(error) && error.response) {
@@ -241,18 +240,16 @@ const ValidateComp = () => {
                         setTargetText('');
                         switch (error.response.status) {
                             case 406:
-                                throw new Error(
-                                    `${
-                                        d?.validator.alert_no_more_entries ||
-                                        'No more entries available'
-                                    }`,
+                                toast.error(
+                                    `${d?.validator.alert_no_more_entries}`,
                                 );
+
                             default:
-                                throw new Error('Error fetching data');
+                                return null;
                         }
                     } else {
                         // Something happened in setting up the request that triggered an error
-                        throw new Error('An unexpected error occurred');
+                        toast.error(`${d?.toasters.alert_general}`);
                     }
                 } else {
                     // Handle non-Axios errors
@@ -263,7 +260,7 @@ const ValidateComp = () => {
         toast.promise(
             fetchData(),
             {
-                loading: ``,
+                loading: `${d?.validator.alert_loading}`,
                 success: `${d?.validator.success_loading}`,
                 error: (err) => err.message,
             },
@@ -317,12 +314,9 @@ const ValidateComp = () => {
             );
         } catch (error) {
             console.log(error);
-            toast(
-                'An error occurred during rejection handling. probly because the pair is invalid',
-                {
-                    icon: '❌',
-                },
-            );
+            toast(`${d?.validator.alert_no_more_entries}`, {
+                icon: '❌',
+            });
         }
         setTriggerFetch((prev) => prev + 1);
     };

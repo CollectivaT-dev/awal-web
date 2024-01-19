@@ -98,8 +98,8 @@ const Translation: React.FC<TranslationProps> = ({
                         <div className="transVoiceChild">
                             <Mic2 className="h-10 w-10" />
                         </div>
-                        <div className="mt-auto flex-col-center">
-                            <span>{d?.texts.total_voice_entries}</span>
+                        <div className="mt-auto ">
+                            <span className='mr-auto'>{d?.texts.total_voice_entries}</span>
                             <span>{d?.texts.total_voice_validation}</span>
                         </div>
                     </div>
