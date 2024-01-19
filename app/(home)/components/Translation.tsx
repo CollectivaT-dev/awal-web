@@ -1,7 +1,6 @@
 'use client';
 import useLocaleStore from '@/app/hooks/languageStore';
 import useMediaQuery from '@/app/hooks/useMediaQuery';
-import { Badge } from '@/components/ui/badge';
 import {
     ResizableHandle,
     ResizablePanel,
@@ -10,8 +9,7 @@ import {
 import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
 import { MessagesProps, getDictionary } from '@/i18n';
-import axios from 'axios';
-import { Languages, Mic2 } from 'lucide-react';
+import { Mic2 } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';

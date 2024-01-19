@@ -1,8 +1,7 @@
 import getCurrentUser from '@/app/actions/get/getCurrentUser';
-import PostAmazicLanguage from '@/app/actions/post/postAmazicLanguage';
-import PostOtherLanguages from '@/app/actions/post/postOtherLanguages';
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
+
 export async function PATCH(req: Request) {
     console.log(req);
     try {
@@ -28,6 +27,24 @@ export async function PATCH(req: Request) {
                 },
             );
         }
+
+        // Validation checks for central, tachelhit, and tarifit
+        if (
+            (body.central?.isChecked &&
+                (body.central.oral === 0 || body.central.written_lat === 0 || body.central.tarifit === 0)) ||
+            (body.tachelhit?.isChecked &&
+                (body.tachelhit.oral === 0 || body.tachelhit.written_lat === 0 || body.tachelhit.tarifit === 0)) ||
+            (body.tarifit?.isChecked &&
+                (body.tarifit.oral === 0 || body.tarifit.written_lat === 0 || body.tarifit.written_tif === 0))
+        ) {
+            return new NextResponse('', {
+				status: 406, // Not Acceptable
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			});
+        }
+
         const user = await prisma.user.updateMany({
             where: {
                 id: body.userId,
@@ -37,9 +54,9 @@ export async function PATCH(req: Request) {
                 email: body.email,
                 name: body.name ? body.name : '',
                 surname: body.surname ? body.surname : '',
-                central: body.central.isChecked ? body.central : null,
-                tachelhit: body.tachelhit.isChecked ? body.tachelhit : null,
-                tarifit: body.tarifit.isChecked ? body.tarifit : null,
+                central: body.central?.isChecked ? body.central : null,
+                tachelhit: body.tachelhit?.isChecked ? body.tachelhit : null,
+                tarifit: body.tarifit?.isChecked ? body.tarifit : null,
                 isPrivacy: body.isPrivacy ? body.isPrivacy : true,
                 updatedAt: new Date(),
                 isSubscribed: body.isSubscribed ? body.isSubscribed : false,

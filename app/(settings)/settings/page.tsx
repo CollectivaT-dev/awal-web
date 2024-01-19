@@ -18,7 +18,6 @@ import { useSession } from 'next-auth/react';
 import { Suspense, useCallback, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
-import Link from 'next/link';
 import axios from 'axios';
 import Heading from '@/components/ui/Heading';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -26,7 +25,6 @@ import { MessagesProps, getDictionary } from '@/i18n';
 import useLocaleStore from '@/app/hooks/languageStore';
 import { Separator } from '@/components/ui/separator';
 import { SelectButton } from './components/SelectButton';
-
 import {
     Select,
     SelectContent,
@@ -261,17 +259,15 @@ export function SettingsPage() {
             });
             console.log(updateData);
             sessionUpdate({ user: { ...session?.user, ...dataWithoutScore } });
-
-            // router.push('/', { scroll: false });
             router.refresh();
             setLoading(false);
         } catch (error) {
+            // if error then dismiss the loading toast
+            toast.dismiss(toastId);
             if (axios.isAxiosError(error)) {
-                console.error(error);
-                toast.error(
-                    error.response?.data?.message ||
-                        `${d?.toasters.alert_general}`,
-                );
+                if (error.request.status === 406) {
+                    toast.error(`${d?.toasters.alert_select_variant}`);
+                } else toast.error(`${d?.toasters.alert_general}`);
             } else {
                 // Handle non-Axios errors
                 toast.error("S'ha produït un error inesperat.", {});
@@ -363,545 +359,575 @@ export function SettingsPage() {
     }
     return (
         <div className="pb-[2em] block min-h-screen">
-			 <Suspense fallback={<Loading />}>
-            <Heading
-                title={`${d?.nav.settings}`}
-                titleClassName="flex-row-center my-5"
-            />
+            <Suspense fallback={<Loading />}>
+                <Heading
+                    title={`${d?.nav.settings}`}
+                    titleClassName="flex-row-center my-5"
+                />
 
-            <Form {...form}>
-                <form
-                    onSubmit={form.handleSubmit(onSubmit)}
-                    className=" space-y-8 w-full px-4"
-                >
-                    <div className="grid grid-cols-2 gap-8">
-                        <FormField
-                            control={form.control}
-                            name="name"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>{d?.user.name}</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            disabled={loading}
-                                            {...field}
-                                            placeholder={d?.user.name}
-                                        />
-                                    </FormControl>
-                                    <FormMessage className="text-white" />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="surname"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>{d?.user.surname}</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            disabled={loading}
-                                            {...field}
-                                            placeholder={d?.user.surname}
-                                        />
-                                    </FormControl>
-                                    <FormMessage className="text-white" />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="username"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>{d?.user.username}</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            disabled={loading}
-                                            {...field}
-                                            placeholder={d?.user.username}
-                                        />
-                                    </FormControl>
-                                    <FormMessage className="text-white" />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="email"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>{d?.user.email}</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            disabled={loading}
-                                            {...field}
-                                            placeholder={d?.user.email}
-                                        />
-                                    </FormControl>
-                                    <FormMessage className="text-white" />
-                                </FormItem>
-                            )}
-                        />
-                        {/* //> age */}
-                        <FormField
-                            control={form.control}
-                            name="age"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>{d?.user.age}</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            disabled={loading}
-                                            {...field}
-                                            placeholder={d?.user.age}
-                                            onChange={(e) => {
-                                                const age = parseInt(
-                                                    e.target.value,
-                                                    10,
-                                                );
-                                                if (!isNaN(age)) {
-                                                    form.setValue('age', age);
-                                                } else {
-                                                    form.setValue('age', 0);
-                                                }
-                                            }}
-                                        />
-                                    </FormControl>
-                                    <FormMessage className="text-white" />
-                                </FormItem>
-                            )}
-                        />
-                        {/* //> gender */}
-                        <FormField
-                            control={form.control}
-                            name="gender"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>{d?.user.gender}</FormLabel>
-                                    <Select
-                                        onValueChange={field.onChange}
-                                        defaultValue={field.value}
-                                    >
+                <Form {...form}>
+                    <form
+                        onSubmit={form.handleSubmit(onSubmit)}
+                        className=" space-y-8 w-full px-4"
+                    >
+                        <div className="grid grid-cols-2 gap-8">
+                            <FormField
+                                control={form.control}
+                                name="name"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>{d?.user.name}</FormLabel>
                                         <FormControl>
-                                            <SelectTrigger>
-                                                <SelectValue
-                                                    placeholder={
-                                                        d?.setting.gender.select
-                                                            ? d?.setting.gender
-                                                                  .select
-                                                            : 'Select'
-                                                    }
-                                                />
-                                            </SelectTrigger>
+                                            <Input
+                                                disabled={loading}
+                                                {...field}
+                                                placeholder={d?.user.name}
+                                            />
                                         </FormControl>
-                                        <SelectContent>
-                                            <SelectItem
-                                                value={
-                                                    d?.setting.gender.m
-                                                        ? d?.setting.gender.m
-                                                        : 'Male'
-                                                }
-                                            >
-                                                {d?.setting.gender.m}
-                                            </SelectItem>
-                                            <SelectItem
-                                                value={
-                                                    d?.setting.gender.f
-                                                        ? d?.setting.gender.f
-                                                        : 'Female'
-                                                }
-                                            >
-                                                {d?.setting.gender.f}
-                                            </SelectItem>
-                                            <SelectItem
-                                                value={
-                                                    d?.setting.gender.nb
-                                                        ? d?.setting.gender.nb
-                                                        : 'Non-binary'
-                                                }
-                                            >
-                                                {d?.setting.gender.nb}
-                                            </SelectItem>
-                                            <SelectItem
-                                                value={
-                                                    d?.setting.gender.tr
-                                                        ? d?.setting.gender.tr
-                                                        : 'Transgender'
-                                                }
-                                            >
-                                                {d?.setting.gender.tr}
-                                            </SelectItem>
-                                            <SelectItem
-                                                value={
-                                                    d?.setting.gender.other
-                                                        ? d?.setting.gender
-                                                              .other
-                                                        : 'Other'
-                                                }
-                                            >
-                                                {d?.setting.gender.other}
-                                            </SelectItem>
-                                        </SelectContent>
-                                    </Select>
-                                    <FormMessage className="text-white" />
+                                        <FormMessage className="text-white" />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="surname"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>{d?.user.surname}</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                disabled={loading}
+                                                {...field}
+                                                placeholder={d?.user.surname}
+                                            />
+                                        </FormControl>
+                                        <FormMessage className="text-white" />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="username"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>
+                                            {d?.user.username}
+                                        </FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                disabled={loading}
+                                                {...field}
+                                                placeholder={d?.user.username}
+                                            />
+                                        </FormControl>
+                                        <FormMessage className="text-white" />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="email"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>{d?.user.email}</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                disabled={loading}
+                                                {...field}
+                                                placeholder={d?.user.email}
+                                            />
+                                        </FormControl>
+                                        <FormMessage className="text-white" />
+                                    </FormItem>
+                                )}
+                            />
+                            {/* //> age */}
+                            <FormField
+                                control={form.control}
+                                name="age"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>{d?.user.age}</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                disabled={loading}
+                                                {...field}
+                                                placeholder={d?.user.age}
+                                                onChange={(e) => {
+                                                    const age = parseInt(
+                                                        e.target.value,
+                                                        10,
+                                                    );
+                                                    if (!isNaN(age)) {
+                                                        form.setValue(
+                                                            'age',
+                                                            age,
+                                                        );
+                                                    } else {
+                                                        form.setValue('age', 0);
+                                                    }
+                                                }}
+                                            />
+                                        </FormControl>
+                                        <FormMessage className="text-white" />
+                                    </FormItem>
+                                )}
+                            />
+                            {/* //> gender */}
+                            <FormField
+                                control={form.control}
+                                name="gender"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>{d?.user.gender}</FormLabel>
+                                        <Select
+                                            onValueChange={field.onChange}
+                                            defaultValue={field.value}
+                                        >
+                                            <FormControl>
+                                                <SelectTrigger>
+                                                    <SelectValue
+                                                        placeholder={
+                                                            d?.setting.gender
+                                                                .select
+                                                                ? d?.setting
+                                                                      .gender
+                                                                      .select
+                                                                : 'Select'
+                                                        }
+                                                    />
+                                                </SelectTrigger>
+                                            </FormControl>
+                                            <SelectContent>
+                                                <SelectItem
+                                                    value={
+                                                        d?.setting.gender.m
+                                                            ? d?.setting.gender
+                                                                  .m
+                                                            : 'Male'
+                                                    }
+                                                >
+                                                    {d?.setting.gender.m}
+                                                </SelectItem>
+                                                <SelectItem
+                                                    value={
+                                                        d?.setting.gender.f
+                                                            ? d?.setting.gender
+                                                                  .f
+                                                            : 'Female'
+                                                    }
+                                                >
+                                                    {d?.setting.gender.f}
+                                                </SelectItem>
+                                                <SelectItem
+                                                    value={
+                                                        d?.setting.gender.nb
+                                                            ? d?.setting.gender
+                                                                  .nb
+                                                            : 'Non-binary'
+                                                    }
+                                                >
+                                                    {d?.setting.gender.nb}
+                                                </SelectItem>
+                                                <SelectItem
+                                                    value={
+                                                        d?.setting.gender.tr
+                                                            ? d?.setting.gender
+                                                                  .tr
+                                                            : 'Transgender'
+                                                    }
+                                                >
+                                                    {d?.setting.gender.tr}
+                                                </SelectItem>
+                                                <SelectItem
+                                                    value={
+                                                        d?.setting.gender.other
+                                                            ? d?.setting.gender
+                                                                  .other
+                                                            : 'Other'
+                                                    }
+                                                >
+                                                    {d?.setting.gender.other}
+                                                </SelectItem>
+                                            </SelectContent>
+                                        </Select>
+                                        <FormMessage className="text-white" />
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+
+                        <FormField
+                            control={form.control}
+                            name="isSubscribed"
+                            render={({ field }) => (
+                                <FormItem className="flex flex-row items-center">
+                                    <Checkbox
+                                        checked={field.value}
+                                        onCheckedChange={field.onChange}
+                                    />
+                                    <FormLabel className="ml-2">
+                                        {d?.texts.subscribe}
+                                    </FormLabel>
                                 </FormItem>
                             )}
                         />
-                    </div>
+                        <Separator />
+                        {/* //> variations */}
+                        <div className="flex flex-col items-between justify-center space-y-10">
+                            <h1 className="text-sm mobile:text-2xl capitalize font-normal mobile:font-semibold">
+                                {d?.setting.mark_proficiency_tamazight}
+                            </h1>
+                            <div className="grid grid-cols-3">
+                                {/*// > central */}
+                                <div className="flex flex-col">
+                                    <FormField
+                                        name="central.isChecked"
+                                        control={form.control}
+                                        render={({ field }) => (
+                                            <FormItem className="flex justify-start items-center space-x-2">
+                                                <FormLabel>
+                                                    {' '}
+                                                    {d?.variation.central}
+                                                </FormLabel>
+                                                <FormControl>
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={form.watch(
+                                                            'central.isChecked',
+                                                        )}
+                                                        className="text-orange-600 w-5 h-5 border-gray-300 focus:ring-0 focus:ring-offset-0 rounded-full"
+                                                        onChange={
+                                                            handleCentralChecked
+                                                        }
+                                                    />
+                                                </FormControl>
+                                            </FormItem>
+                                        )}
+                                    />
+                                    {isCentralCheckedBox && (
+                                        <div className="flex flex-col gap-2 p-2">
+                                            <FormField
+                                                control={form.control}
+                                                name="central.oral"
+                                                render={(field) => (
+                                                    <FormItem>
+                                                        <FormLabel>
+                                                            {d?.setting.oral}{' '}
+                                                        </FormLabel>
 
-                    <FormField
-                        control={form.control}
-                        name="isSubscribed"
-                        render={({ field }) => (
-                            <FormItem className="flex flex-row items-center">
-                                <Checkbox
-                                    checked={field.value}
-                                    onCheckedChange={field.onChange}
-                                />
-                                <FormLabel className="ml-2">
-                                    {d?.texts.subscribe}
-                                </FormLabel>
-                            </FormItem>
-                        )}
-                    />
-                    <Separator />
-                    {/* //> variations */}
-                    <div className="flex flex-col items-between justify-center space-y-10">
-                        <h1 className="text-sm mobile:text-2xl capitalize font-normal mobile:font-semibold">
-                            {d?.setting.mark_proficiency_tamazight}
-                        </h1>
-                        <div className="grid grid-cols-3">
-                            {/*// > central */}
-                            <div className="flex flex-col">
-                                <FormField
-                                    name="central.isChecked"
-                                    control={form.control}
-                                    render={({ field }) => (
-                                        <FormItem className="flex justify-start items-center">
-                                            <FormLabel>
-                                                {' '}
-                                                {d?.variation.central}
-                                            </FormLabel>
-                                            <FormControl>
-                                                <input
-                                                    type="checkbox"
-                                                    checked={form.watch(
-                                                        'central.isChecked',
-                                                    )}
-                                                    className="text-orange-600 w-5 h-5 border-gray-300 focus:ring-0 focus:ring-offset-0 rounded-full"
-                                                    onChange={
-                                                        handleCentralChecked
-                                                    }
-                                                />
-                                            </FormControl>
-                                        </FormItem>
+                                                        <FormControl>
+                                                            <SelectButton
+                                                                currentValue={
+                                                                    form.watch(
+                                                                        'central.oral',
+                                                                    ) || 0
+                                                                }
+                                                                name="central.oral"
+                                                                onChange={
+                                                                    handleButtonChange
+                                                                }
+                                                            />
+                                                        </FormControl>
+                                                    </FormItem>
+                                                )}
+                                            />
+                                            <FormField
+                                                control={form.control}
+                                                name="central.written_lat"
+                                                render={() => (
+                                                    <FormItem>
+                                                        <FormLabel>
+                                                            {
+                                                                d?.setting
+                                                                    .written_lat
+                                                            }
+                                                        </FormLabel>
+                                                        <FormControl>
+                                                            <SelectButton
+                                                                currentValue={
+                                                                    form.watch(
+                                                                        'central.written_lat',
+                                                                    ) || 0
+                                                                }
+                                                                name="central.written_lat"
+                                                                onChange={
+                                                                    handleButtonChange
+                                                                }
+                                                            />
+                                                        </FormControl>
+                                                    </FormItem>
+                                                )}
+                                            />
+                                            <FormField
+                                                control={form.control}
+                                                name="central.written_tif"
+                                                render={() => (
+                                                    <FormItem>
+                                                        <FormLabel>
+                                                            {
+                                                                d?.setting
+                                                                    .written_tif
+                                                            }{' '}
+                                                        </FormLabel>
+                                                        <FormControl>
+                                                            <SelectButton
+                                                                currentValue={
+                                                                    form.watch(
+                                                                        'central.written_tif',
+                                                                    ) || 0
+                                                                }
+                                                                name="central.written_tif"
+                                                                onChange={
+                                                                    handleButtonChange
+                                                                }
+                                                            />
+                                                        </FormControl>
+                                                    </FormItem>
+                                                )}
+                                            />
+                                        </div>
                                     )}
-                                />
-                                {isCentralCheckedBox && (
-                                    <div className="flex flex-col gap-2 p-2">
-                                        <FormField
-                                            control={form.control}
-                                            name="central.oral"
-                                            render={(field) => (
-                                                <FormItem>
-                                                    <FormLabel>
-                                                        {d?.setting.oral}{' '}
-                                                    </FormLabel>
+                                </div>
+                                {/*//> tachelhit central */}
+                                <div className="flex flex-col ">
+                                    <FormField
+                                        name="tachelhit.isChecked"
+                                        control={form.control}
+                                        render={({ field }) => (
+                                            <FormItem className="flex justify-start items-center space-x-2">
+                                                <FormLabel>
+                                                    {' '}
+                                                    {d?.variation.tachelhit}
+                                                </FormLabel>
+                                                <FormControl>
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={form.watch(
+                                                            'tachelhit.isChecked',
+                                                        )}
+                                                        className="text-orange-600 w-5 h-5 border-gray-300 focus:ring-0 focus:ring-offset-0 rounded-full "
+                                                        onChange={
+                                                            handleTachelhitChecked
+                                                        }
+                                                    />
+                                                </FormControl>
+                                            </FormItem>
+                                        )}
+                                    />
+                                    {isTachelhitCheckedBox && (
+                                        <div className="flex flex-col gap-2 p-2 ">
+                                            <FormField
+                                                control={form.control}
+                                                name="tachelhit.oral"
+                                                render={(field) => (
+                                                    <FormItem>
+                                                        <FormLabel>
+                                                            {' '}
+                                                            {
+                                                                d?.setting.oral
+                                                            }{' '}
+                                                        </FormLabel>
 
-                                                    <FormControl>
-                                                        <SelectButton
-                                                            currentValue={
-                                                                form.watch(
-                                                                    'central.oral',
-                                                                ) || 0
-                                                            }
-                                                            name="central.oral"
-                                                            onChange={
-                                                                handleButtonChange
-                                                            }
-                                                        />
-                                                    </FormControl>
-                                                </FormItem>
-                                            )}
-                                        />
-                                        <FormField
-                                            control={form.control}
-                                            name="central.written_lat"
-                                            render={() => (
-                                                <FormItem>
-                                                    <FormLabel>
-                                                        {d?.setting.written_lat}
-                                                    </FormLabel>
-                                                    <FormControl>
-                                                        <SelectButton
-                                                            currentValue={
-                                                                form.watch(
-                                                                    'central.written_lat',
-                                                                ) || 0
-                                                            }
-                                                            name="central.written_lat"
-                                                            onChange={
-                                                                handleButtonChange
-                                                            }
-                                                        />
-                                                    </FormControl>
-                                                </FormItem>
-                                            )}
-                                        />
-                                        <FormField
-                                            control={form.control}
-                                            name="central.written_tif"
-                                            render={() => (
-                                                <FormItem>
-                                                    <FormLabel>
-                                                        {d?.setting.written_tif}{' '}
-                                                    </FormLabel>
-                                                    <FormControl>
-                                                        <SelectButton
-                                                            currentValue={
-                                                                form.watch(
-                                                                    'central.written_tif',
-                                                                ) || 0
-                                                            }
-                                                            name="central.written_tif"
-                                                            onChange={
-                                                                handleButtonChange
-                                                            }
-                                                        />
-                                                    </FormControl>
-                                                </FormItem>
-                                            )}
-                                        />
-                                    </div>
-                                )}
-                            </div>
-                            {/*//> tachelhit central */}
-                            <div className="flex flex-col">
-                                <FormField
-                                    name="tachelhit.isChecked"
-                                    control={form.control}
-                                    render={({ field }) => (
-                                        <FormItem className="flex justify-start items-center">
-                                            <FormLabel>
-                                                {' '}
-                                                {d?.variation.tachlit}
-                                            </FormLabel>
-                                            <FormControl>
-                                                <input
-                                                    type="checkbox"
-                                                    checked={form.watch(
-                                                        'tachelhit.isChecked',
-                                                    )}
-                                                    className="text-orange-600 w-5 h-5 border-gray-300 focus:ring-0 focus:ring-offset-0 rounded-full"
-                                                    onChange={
-                                                        handleTachelhitChecked
-                                                    }
-                                                />
-                                            </FormControl>
-                                        </FormItem>
+                                                        <FormControl>
+                                                            <SelectButton
+                                                                currentValue={
+                                                                    form.watch(
+                                                                        'tachelhit.oral',
+                                                                    ) || 0
+                                                                }
+                                                                name="tachelhit.oral"
+                                                                onChange={
+                                                                    handleButtonChange
+                                                                }
+                                                            />
+                                                        </FormControl>
+                                                    </FormItem>
+                                                )}
+                                            />
+                                            <FormField
+                                                control={form.control}
+                                                name="tachelhit.written_lat"
+                                                render={() => (
+                                                    <FormItem>
+                                                        <FormLabel>
+                                                            {' '}
+                                                            {
+                                                                d?.setting
+                                                                    .written_lat
+                                                            }{' '}
+                                                        </FormLabel>
+                                                        <FormControl>
+                                                            <SelectButton
+                                                                currentValue={
+                                                                    form.watch(
+                                                                        'tachelhit.written_lat',
+                                                                    ) || 0
+                                                                }
+                                                                name="tachelhit.written_lat"
+                                                                onChange={
+                                                                    handleButtonChange
+                                                                }
+                                                            />
+                                                        </FormControl>
+                                                    </FormItem>
+                                                )}
+                                            />
+                                            <FormField
+                                                control={form.control}
+                                                name="tachelhit.written_tif"
+                                                render={() => (
+                                                    <FormItem>
+                                                        <FormLabel>
+                                                            {
+                                                                d?.setting
+                                                                    .written_tif
+                                                            }{' '}
+                                                        </FormLabel>
+                                                        <FormControl>
+                                                            <SelectButton
+                                                                currentValue={
+                                                                    form.watch(
+                                                                        'tachelhit.written_tif',
+                                                                    ) || 0
+                                                                }
+                                                                name="tachelhit.written_tif"
+                                                                onChange={
+                                                                    handleButtonChange
+                                                                }
+                                                            />
+                                                        </FormControl>
+                                                    </FormItem>
+                                                )}
+                                            />
+                                        </div>
                                     )}
-                                />
-                                {isTachelhitCheckedBox && (
-                                    <div className="flex flex-col gap-2 p-2 ">
-                                        <FormField
-                                            control={form.control}
-                                            name="tachelhit.oral"
-                                            render={(field) => (
-                                                <FormItem>
-                                                    <FormLabel>
-                                                        {' '}
-                                                        {d?.setting.oral}{' '}
-                                                    </FormLabel>
+                                </div>
+                                {/*// > tarifit */}
+                                <div className="flex flex-col">
+                                    <FormField
+                                        name="tarifit.isChecked"
+                                        control={form.control}
+                                        render={({ field }) => (
+                                            <FormItem className="flex justify-start items-center space-x-2">
+                                                <FormLabel>
+                                                    {' '}
+                                                    {d?.variation.tif}
+                                                </FormLabel>
+                                                <FormControl>
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={form.watch(
+                                                            'tarifit.isChecked',
+                                                        )}
+                                                        className="text-orange-600 w-5 h-5 border-gray-300 focus:ring-0 focus:ring-offset-0 rounded-full"
+                                                        onChange={
+                                                            handleTarifitChecked
+                                                        }
+                                                    />
+                                                </FormControl>
+                                            </FormItem>
+                                        )}
+                                    />
+                                    {isTarifitCheckedBox && (
+                                        <div className="flex flex-col gap-2 p-2 ">
+                                            <FormField
+                                                control={form.control}
+                                                name="tarifit.oral"
+                                                render={(field) => (
+                                                    <FormItem>
+                                                        <FormLabel>
+                                                            {' '}
+                                                            {
+                                                                d?.setting.oral
+                                                            }{' '}
+                                                        </FormLabel>
 
-                                                    <FormControl>
-                                                        <SelectButton
-                                                            currentValue={
-                                                                form.watch(
-                                                                    'tachelhit.oral',
-                                                                ) || 0
+                                                        <FormControl>
+                                                            <SelectButton
+                                                                currentValue={
+                                                                    form.watch(
+                                                                        'tarifit.oral',
+                                                                    ) || 0
+                                                                }
+                                                                name="tarifit.oral"
+                                                                onChange={
+                                                                    handleButtonChange
+                                                                }
+                                                            />
+                                                        </FormControl>
+                                                    </FormItem>
+                                                )}
+                                            />
+                                            <FormField
+                                                control={form.control}
+                                                name="tarifit.written_lat"
+                                                render={() => (
+                                                    <FormItem>
+                                                        <FormLabel>
+                                                            {
+                                                                d?.setting
+                                                                    .written_lat
                                                             }
-                                                            name="tachelhit.oral"
-                                                            onChange={
-                                                                handleButtonChange
+                                                        </FormLabel>
+                                                        <FormControl>
+                                                            <SelectButton
+                                                                currentValue={
+                                                                    form.watch(
+                                                                        'tarifit.written_lat',
+                                                                    ) || 0
+                                                                }
+                                                                name="tarifit.written_lat"
+                                                                onChange={
+                                                                    handleButtonChange
+                                                                }
+                                                            />
+                                                        </FormControl>
+                                                    </FormItem>
+                                                )}
+                                            />
+                                            <FormField
+                                                control={form.control}
+                                                name="tarifit.written_tif"
+                                                render={() => (
+                                                    <FormItem>
+                                                        <FormLabel>
+                                                            {
+                                                                d?.setting
+                                                                    .written_tif
                                                             }
-                                                        />
-                                                    </FormControl>
-                                                </FormItem>
-                                            )}
-                                        />
-                                        <FormField
-                                            control={form.control}
-                                            name="tachelhit.written_lat"
-                                            render={() => (
-                                                <FormItem>
-                                                    <FormLabel>
-                                                        {' '}
-                                                        {
-                                                            d?.setting
-                                                                .written_lat
-                                                        }{' '}
-                                                    </FormLabel>
-                                                    <FormControl>
-                                                        <SelectButton
-                                                            currentValue={
-                                                                form.watch(
-                                                                    'tachelhit.written_lat',
-                                                                ) || 0
-                                                            }
-                                                            name="tachelhit.written_lat"
-                                                            onChange={
-                                                                handleButtonChange
-                                                            }
-                                                        />
-                                                    </FormControl>
-                                                </FormItem>
-                                            )}
-                                        />
-                                        <FormField
-                                            control={form.control}
-                                            name="tachelhit.written_tif"
-                                            render={() => (
-                                                <FormItem>
-                                                    <FormLabel>
-                                                        {d?.setting.written_tif}{' '}
-                                                    </FormLabel>
-                                                    <FormControl>
-                                                        <SelectButton
-                                                            currentValue={
-                                                                form.watch(
-                                                                    'tachelhit.written_tif',
-                                                                ) || 0
-                                                            }
-                                                            name="tachelhit.written_tif"
-                                                            onChange={
-                                                                handleButtonChange
-                                                            }
-                                                        />
-                                                    </FormControl>
-                                                </FormItem>
-                                            )}
-                                        />
-                                    </div>
-                                )}
-                            </div>
-                            {/*// > tarifit */}
-                            <div className="flex flex-col">
-                                <FormField
-                                    name="tarifit.isChecked"
-                                    control={form.control}
-                                    render={({ field }) => (
-                                        <FormItem className="flex justify-start items-center">
-                                            <FormLabel>
-                                                {' '}
-                                                {d?.variation.tif}
-                                            </FormLabel>
-                                            <FormControl>
-                                                <input
-                                                    type="checkbox"
-                                                    checked={form.watch(
-                                                        'tarifit.isChecked',
-                                                    )}
-                                                    className="text-orange-600 w-5 h-5 border-gray-300 focus:ring-0 focus:ring-offset-0 rounded-full"
-                                                    onChange={
-                                                        handleTarifitChecked
-                                                    }
-                                                />
-                                            </FormControl>
-                                        </FormItem>
+                                                        </FormLabel>
+                                                        <FormControl>
+                                                            <SelectButton
+                                                                currentValue={
+                                                                    form.watch(
+                                                                        'tarifit.written_tif',
+                                                                    ) || 0
+                                                                }
+                                                                name="tarifit.written_tif"
+                                                                onChange={
+                                                                    handleButtonChange
+                                                                }
+                                                            />
+                                                        </FormControl>
+                                                    </FormItem>
+                                                )}
+                                            />
+                                        </div>
                                     )}
-                                />
-                                {isTarifitCheckedBox && (
-                                    <div className="flex flex-col gap-2 p-2 ">
-                                        <FormField
-                                            control={form.control}
-                                            name="tarifit.oral"
-                                            render={(field) => (
-                                                <FormItem>
-                                                    <FormLabel>
-                                                        {' '}
-                                                        {d?.setting.oral}{' '}
-                                                    </FormLabel>
-
-                                                    <FormControl>
-                                                        <SelectButton
-                                                            currentValue={
-                                                                form.watch(
-                                                                    'tarifit.oral',
-                                                                ) || 0
-                                                            }
-                                                            name="tarifit.oral"
-                                                            onChange={
-                                                                handleButtonChange
-                                                            }
-                                                        />
-                                                    </FormControl>
-                                                </FormItem>
-                                            )}
-                                        />
-                                        <FormField
-                                            control={form.control}
-                                            name="tarifit.written_lat"
-                                            render={() => (
-                                                <FormItem>
-                                                    <FormLabel>
-                                                        {d?.setting.written_lat}
-                                                    </FormLabel>
-                                                    <FormControl>
-                                                        <SelectButton
-                                                            currentValue={
-                                                                form.watch(
-                                                                    'tarifit.written_lat',
-                                                                ) || 0
-                                                            }
-                                                            name="tarifit.written_lat"
-                                                            onChange={
-                                                                handleButtonChange
-                                                            }
-                                                        />
-                                                    </FormControl>
-                                                </FormItem>
-                                            )}
-                                        />
-                                        <FormField
-                                            control={form.control}
-                                            name="tarifit.written_tif"
-                                            render={() => (
-                                                <FormItem>
-                                                    <FormLabel>
-                                                        {d?.setting.written_tif}
-                                                    </FormLabel>
-                                                    <FormControl>
-                                                        <SelectButton
-                                                            currentValue={
-                                                                form.watch(
-                                                                    'tarifit.written_tif',
-                                                                ) || 0
-                                                            }
-                                                            name="tarifit.written_tif"
-                                                            onChange={
-                                                                handleButtonChange
-                                                            }
-                                                        />
-                                                    </FormControl>
-                                                </FormItem>
-                                            )}
-                                        />
-                                    </div>
-                                )}
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <Button type="submit">{d?.texts.save_settings}</Button>
-                </form>
-                {process.env.NODE_ENV === 'development' && (
-                    <pre className="flex w-screen">
-                        {JSON.stringify(form.watch(), null, 2)}
-                    </pre>
-                )}
-            </Form>
-			</Suspense>
+                        <Button type="submit">{d?.texts.save_settings}</Button>
+                    </form>
+                    {process.env.NODE_ENV === 'development' && (
+                        <pre className="flex w-screen">
+                            {JSON.stringify(form.watch(), null, 2)}
+                        </pre>
+                    )}
+                </Form>
+            </Suspense>
         </div>
     );
 }
