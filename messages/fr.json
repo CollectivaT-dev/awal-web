@@ -193,12 +193,13 @@
         "contributor_ghizlan_intro": "Lalla Ghizlan Baryala. Activiste culturelle amazighe en Catalogne, collabore avec différentes entités pour diffuser l'histoire, la langue et la culture amazighes dans le pays. Elle a étudié le marketing et la recherche de marché à l'UOC ainsi qu'un post-diplôme en marketing digital et commerce électronique.",
         "contributor_yuxuan_photo": "",
         "contributor_yuxuan_website": "",
-        "contributor_yuxuan_intro": "",
+        "contributor_yuxuan_intro": "Yuxuan Peng développe et maintient la page web d'Awal.",
         "contact_heading": "Contactez Awal",
         "contact_info": "Pour toute question, suggestion ou plus d'informations, contactez-nous à",
         "contact_text": "awal@collectivat.cat"
     },
     "terms": {
+        "contribution_terms_heading": "Conditions de contribution",
         "contribution_terms": "Awal és una iniciativa sense ànim de lucre que contribueix a la digitalització de la llengua amaziga mitjançant la recopilació de conjunts de dades obertes i el desenvolupament d'eines innovadores.\nEl portal web d'Awal permet la contribució lliure de frases traduïdes amb l'objectiu de desenvolupar aplicacions de traducció automàtica. Només podeu fer contribucions i validar frases traduïdes si us apunteu a la iniciativa. En registrar-vos, heu de comprometre-us a complir aquests termes.\nAwal també col·labora amb la iniciativa Common Voice de Mozilla per a la recopilació de conjunts de dades obertes de parla, permetent a qualsevol persona construir aplicacions basades en la veu per a l'amazic. Tingueu en compte que les contribucions a Common Voice estan subjectes als",
         "mozilla_terms": "termes legals de Mozilla.",
         "contribution_terms_continued": "En aquests termes, 'nosaltres', 'el nostre', 'ens' o '-nos' es refereixen als col·laboradors i administradors d'Awal, la iniciativa sense ànim de lucre. 'Tu', 'teu', 'vosaltres' o 'vostre' fa referència a l'usuari, col·laborador o voluntari que interacciona i contribueix a la plataforma d'Awal.",

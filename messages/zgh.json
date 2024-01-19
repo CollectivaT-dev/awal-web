@@ -199,6 +199,7 @@
         "contact_text": "awal@collectivat.cat"
     },
     "terms": {
+        "contribution_terms_heading": "ⵜⵉⴼⴰⴷⵉⵡⵉⵏ",
         "contribution_terms": "Awal is a non-profit initiative that contributes to the digitization of the Amazigh language through the collection of open-source datasets and the development of innovative tools.\nAwal's web portal permits the free contribution of translated phrases for the objective of developing machine translation applications.\nYou can only make contributions and validate translated phrases by signing up for the initiative. By signing up, you must agree to abide by these terms. \nAwal also partners with Mozilla's Common Voice initiative for the collection of open-source speech datasets, enabling anyone to build voice-based applications for Tamazight. Please note that contributions to Common Voice are subject to",
         "mozilla_terms": "Mozilla's legal terms.",
         "contribution_terms_continued": "In these terms, 'we,' 'our,' or 'us' refer to the collaborators and administrators of Awal, the non-profit initiative. 'You' or 'your' pertains to the user, contributor, or volunteer engaging with and contributing to the Awal platform.",
