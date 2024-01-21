@@ -1,7 +1,6 @@
 'use client';
 import useLocaleStore from '@/app/hooks/languageStore';
 import useMediaQuery from '@/app/hooks/useMediaQuery';
-import { Badge } from '@/components/ui/badge';
 import {
     ResizableHandle,
     ResizablePanel,
@@ -10,8 +9,7 @@ import {
 import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
 import { MessagesProps, getDictionary } from '@/i18n';
-import axios from 'axios';
-import { Languages, Mic2 } from 'lucide-react';
+import { Mic2 } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -35,12 +33,9 @@ const Translation: React.FC<TranslationProps> = ({
         };
         fetchDictionary();
     }, [locale]);
-
-    console.log(totalEntries);
     const handleTextTranslation = () => {
         router.push('/translate', { scroll: false });
     };
-    console.log(d?.texts);
     return (
         <>
             {/* // changed w-full => w-[100vw] */}
@@ -57,19 +52,21 @@ const Translation: React.FC<TranslationProps> = ({
                             {d?.menu.translator}
                             <br /> AWAL
                         </h1>
-                        <div className="rounded-full p-10 bg-[#FFE7EE]">
+                        <div className="rounded-full flex flex-col-center mx-auto p-10 bg-[#FFE7EE]">
                             <Image
                                 src={'/Icon/Translation.svg'}
                                 alt="Text Translation"
                                 width={40}
                                 height={40}
-                                className="rounded-full"
                             />
                         </div>
-                        <div className="mt-auto flex-col-center text-white">
+                        <div className="mt-auto flex flex-row justify-between text-white">
                             {totalEntries ? (
                                 <div className="relative">
-                                    {totalEntries} {d?.texts.total_entries}
+                                    <span className="absolute bottom-10 left-0 text-[36px] font-semibold text-slate-100">
+                                        {totalEntries}
+                                    </span>
+                                    <span>{d?.texts.total_entries}</span>
                                 </div>
                             ) : (
                                 <Skeleton />
@@ -77,8 +74,12 @@ const Translation: React.FC<TranslationProps> = ({
 
                             {totalValidation ? (
                                 <div className="relative">
-                                    {totalValidation}{' '}
-                                    {d?.texts.total_validated_entries}
+                                    <span className="absolute bottom-10 right-0 text-[36px] font-semibold text-slate-100">
+                                        {totalValidation}
+                                    </span>
+                                    <span>
+                                        {d?.texts.total_validated_entries}
+                                    </span>
                                 </div>
                             ) : null}
                         </div>
@@ -98,9 +99,20 @@ const Translation: React.FC<TranslationProps> = ({
                         <div className="transVoiceChild">
                             <Mic2 className="h-10 w-10" />
                         </div>
-                        <div className="mt-auto ">
-                            <span className='mr-auto'>{d?.texts.total_voice_entries}</span>
-                            <span>{d?.texts.total_voice_validation}</span>
+                        {/* voice stats */}
+                        <div className="mt-auto flex flex-row justify-between  text-text-primary">
+                            <div className="relative">
+                                <span className="absolute bottom-10 left-0 text-[36px] font-semibold">
+                                    {d?.texts.total_voice_entries_number}
+                                </span>
+                                <span>{d?.texts.total_voice_entries}</span>
+                            </div>
+                            <div className="relative">
+                                <span className="absolute bottom-10 right-0 text-[36px] font-semibold">
+                                    {d?.texts.total_voice_validation_number}
+                                </span>
+                                <span>{d?.texts.total_voice_validation}</span>
+                            </div>
                         </div>
                     </div>
                 </div>

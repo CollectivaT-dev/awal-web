@@ -2,9 +2,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import {
     Check,
-    CheckCircle,
     ChevronDown,
-    Circle,
     HelpCircle,
     X,
 } from 'lucide-react';
@@ -243,7 +241,6 @@ const ValidateComp = () => {
                                 toast.error(
                                     `${d?.validator.alert_no_more_entries}`,
                                 );
-
                             default:
                                 return null;
                         }

@@ -91,13 +91,13 @@ body,
 .transVoiceParent {
     width: calc(50%);
     height: 100%;
-    @apply flex flex-col  justify-center items-center bg-[#EFBB3F] px-20 py-[3.25rem] cursor-pointer;
+    @apply flex flex-col justify-center items-stretch bg-[#EFBB3F] px-20 py-[3.25rem] cursor-pointer;
 }
 .transVoiceChild {
-    @apply rounded-full p-10 bg-[#FFE7EE];
+    @apply rounded-full flex flex-col-center mx-auto p-10 bg-[#FFE7EE];
 }
 .textTranslatorParent {
     width: calc(50%);
     height: 100%;
-    @apply flex flex-col justify-center items-center bg-text-primary px-20 py-[3.25rem] cursor-pointer;
+    @apply flex flex-col justify-center items-stretch bg-text-primary px-20 py-[3.25rem] cursor-pointer;
 }

@@ -44,7 +44,7 @@ export interface MessagesProps {
     variation: {
         central: string;
         tif: string;
-        tachlit: string;
+        tachelhit: string;
         other: string;
     };
     menu: {
@@ -106,6 +106,7 @@ export interface MessagesProps {
         success_signIn: string;
         alert_copy: string;
         alert_try_again: string;
+        alert_select_variant: string;
     };
     text_with_link: {
         accept_terms: {
@@ -159,7 +160,9 @@ export interface MessagesProps {
         subscribe: string;
         total_entries: string;
         total_validated_entries: string;
+        total_voice_entries_number: string;
         total_voice_entries: string;
+        total_voice_validation_number: string;
         total_voice_validation: string;
         have_account: string;
         login_to_signup_1: string;
