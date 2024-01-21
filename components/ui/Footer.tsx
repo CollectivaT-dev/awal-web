@@ -25,8 +25,8 @@ const Footer = () => {
 
     return (
         <>
-            <Separator className="bg-text-primary " />
-            <div className="flex flex-row justify-center space-x-10 items-center">
+            <Separator className="bg-text-primary" />
+            <div className="flex-row-center space-x-10">
                 <div>
                     <ul className="flex flex-col my-5 justify-center items-end ">
                         <li>
@@ -52,7 +52,7 @@ const Footer = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="flex flex-row justify-center items-center space-x-3">
+                <div className="flex-row-center space-x-3">
                     <Link
                         target="_blank"
                         href={'https://www.facebook.com/aawaldigital'}
@@ -67,7 +67,6 @@ const Footer = () => {
                     >
                         <RiTwitterXFill size={30} />
                     </Link>
-
                     <Link
                         target="_blank"
                         href={'https://www.instagram.com/awaldigital/'}
@@ -75,7 +74,7 @@ const Footer = () => {
                     >
                         <RiInstagramFill size={30} />
                     </Link>
-                    <Link
+                    <Link 
                         target="_blank"
                         href={'https://github.com/CollectivaT-dev/awal-web'}
                         scroll={false}
