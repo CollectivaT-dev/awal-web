@@ -69,9 +69,7 @@ const Stats: React.FC<StatsProps> = ({ users }) => {
                                 >
                                     {u.username}
                                 </TableCell>
-                                <TableCell key={u.score}>
-                                    {u.score}
-                                </TableCell>
+                                <TableCell key={u.score}>{u.score}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
