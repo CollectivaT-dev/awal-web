@@ -135,8 +135,10 @@
         "subscribe": "Suscríbete a la lista de correo",
         "total_entries": "Traducciones contribuidas",
         "total_validated_entries": "Traducciones validadas",
-        "total_voice_entries": "1 hora grabada",
-        "total_voice_validation": "1 hora validada",
+        "total_voice_entries_number": "1",
+        "total_voice_entries": "hora grabada",
+        "total_voice_validation_number": "1",
+        "total_voice_validation": "hora validada",
         "login_to_signup_1": "¿Nuevo en Awal?",
         "login_to_signup_2": "¡Regístrate!",
         "statistic":"Clasificación de la Comunidad"
