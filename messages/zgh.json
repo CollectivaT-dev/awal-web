@@ -137,8 +137,10 @@
         "subscribe": "ⵍⵜⵖ ⴳ ⵜⴱⵔⴰⵜ ⵏ ⵉⵏⵖⵎⵉⵙⵏ ⵏⵏⵖ.",
         "total_entries": "Translations contributed",
         "total_validated_entries": "Translations validated",
-        "total_voice_entries": "1 hour recorded",
-        "total_voice_validation": "1 hour validated",
+        "total_voice_entries_number": "1",
+        "total_voice_entries": "hour recorded",
+        "total_voice_validation_number": "1",
+        "total_voice_validation": "hour validated",
         "login_to_signup_1": "New to Awal?",
         "login_to_signup_2": "ⵍⴽⵎⴰⵜ ⴰⵡⴰⵍ!",
         "statistic":"ⵉⵎⴰⵔⴰⴳⵏ ⵉⵎⵓⴼⴰⵢⵏ"
