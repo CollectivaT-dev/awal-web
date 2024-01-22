@@ -13,12 +13,24 @@ export async function GET(req: Request) {
             take: 10, // Limit the result to top 10
             orderBy: { score: 'desc' },
             select: { id: true, username: true, score: true },
+            where: {
+                email: {
+                    not: {
+                        contains: 'test',
+                    },
+                },
+                score: {
+                    not: {
+                        equals: 0,
+                    },
+                },
+            },
         });
         console.log(topTen);
-		console.log(totalValidation)
+        console.log(totalValidation);
         // Send the response with both totalEntries and topTen as JSON
         return new NextResponse(
-            JSON.stringify({ topTen: topTen, totalEntries,totalValidation }),
+            JSON.stringify({ topTen: topTen, totalEntries, totalValidation }),
             {
                 status: 200,
             },

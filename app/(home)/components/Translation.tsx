@@ -126,15 +126,15 @@ const Translation: React.FC<TranslationProps> = ({
                         defaultSize={50}
                         onClick={handleTextTranslation}
                     >
-                        <div className="flex h-[200px] items-center justify-center p-6 bg-text-primary ">
-                            <h1 className="text-3xl text-[#FFE7EE] mr-auto">
+                        <div className="flex h-[200px] items-center justify-center p-6 bg-text-primary space-x-1">
+                            <h1 className="text-2xl text-[#FFE7EE] mr-auto">
                                 {d?.menu.translator}
                                 <br /> AWAL
                             </h1>
-                            <div>
-                                <span className="flex-col-center space-y-2 items-center  text-white">
+                            <div className="text-sm">
+                                <span className="flex-col-center space-y-2 items-center text-white text-center">
                                     {totalEntries ? (
-                                        <div className="flex-col-center ">
+                                        <div className="flex-col-center">
                                             <span>
                                                 {d?.texts.total_entries}
                                             </span>
@@ -166,20 +166,34 @@ const Translation: React.FC<TranslationProps> = ({
                             window.open('https://commonvoice.mozilla.org/zgh')
                         }
                     >
-                        <div className="flex-row flex h-[200px] items-center justify-around p-6 mx-auto bg-[#EFBB3F]">
-                            <h1 className="text-3xl text-text-primary">
+                        <div className="flex-row flex h-[200px] items-center justify-around p-6 mx-auto bg-[#EFBB3F] text-center space-x-1">
+                            <h1 className="text-2xl text-text-primary">
                                 {d?.menu.voice}
                                 <br />
                                 AWAL
                             </h1>
-                            <div>
-                                <span className="flex-col-center space-y-2 ">
-                                    <span>{d?.texts.total_voice_entries}</span>
+                            <div className="text-sm">
+                                <span className="flex-col-center space-y-2">
+                                    <div className="flex-col-center">
+                                        <span>
+                                            {
+                                                d?.texts
+                                                    .total_voice_entries_number
+                                            }
+                                        </span>
+                                        {d?.texts.total_voice_entries}
+                                    </div>
                                     <Separator />
 
-                                    <span>
+                                    <div className="flex-col-center">
+                                        <span>
+                                            {
+                                                d?.texts
+                                                    .total_voice_validation_number
+                                            }
+                                        </span>
                                         {d?.texts.total_voice_validation}
-                                    </span>
+                                    </div>
                                 </span>
                             </div>
                         </div>
