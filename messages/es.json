@@ -81,7 +81,8 @@
         "success_copy": "Traducción copiada al portapapeles!",
         "success_signIn": "¡Sesión iniciada con éxito!",
         "alert_copy": "No se pudo copiar la traducción.",
-        "alert_try_again": "Por favor, intenta de nuevo más tarde."
+        "alert_try_again": "Por favor, intenta de nuevo más tarde.",
+		"alert_select_variant":"Por favor, seleccione su nivel de competencia"
     },
     "text_with_link": {
         "accept_terms": {

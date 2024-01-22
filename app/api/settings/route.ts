@@ -10,39 +10,49 @@ export async function PATCH(req: Request) {
         console.log(body);
         const existingUser = await prisma.user.findFirst({
             where: {
-                OR: [{ username: body.username }, { email: body.email }],
+                OR: [
+                    {
+                        username: body.username
+                            .toLowerCase()
+                            .replace(/\s/g, ''),
+                    },
+                    { email: body.email },
+                ],
                 NOT: { id: body.userId },
             },
         });
         console.log(existingUser);
         console.log(existingUser);
         if (existingUser) {
-            return new NextResponse(
-                JSON.stringify({ message: 'Username or email already taken' }),
-                {
-                    status: 407,
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+            return new NextResponse(JSON.stringify({ error: 'username and email error' }), {
+                status: 406,
+                headers: {
+                    'Content-Type': 'application/json',
                 },
-            );
+            });
         }
 
         // Validation checks for central, tachelhit, and tarifit
         if (
             (body.central?.isChecked &&
-                (body.central.oral === 0 || body.central.written_lat === 0 || body.central.tarifit === 0)) ||
+                (body.central.oral === 0 ||
+                    body.central.written_lat === 0 ||
+                    body.central.tarifit === 0)) ||
             (body.tachelhit?.isChecked &&
-                (body.tachelhit.oral === 0 || body.tachelhit.written_lat === 0 || body.tachelhit.tarifit === 0)) ||
+                (body.tachelhit.oral === 0 ||
+                    body.tachelhit.written_lat === 0 ||
+                    body.tachelhit.tarifit === 0)) ||
             (body.tarifit?.isChecked &&
-                (body.tarifit.oral === 0 || body.tarifit.written_lat === 0 || body.tarifit.written_tif === 0))
+                (body.tarifit.oral === 0 ||
+                    body.tarifit.written_lat === 0 ||
+                    body.tarifit.written_tif === 0))
         ) {
-            return new NextResponse('', {
-				status: 406, // Not Acceptable
-				headers: {
-					'Content-Type': 'application/json',
-				},
-			});
+            return new NextResponse(JSON.stringify({ error: 'variation selection error' }), {
+                status: 406, // Not Acceptable
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
         }
 
         const user = await prisma.user.updateMany({
@@ -54,17 +64,55 @@ export async function PATCH(req: Request) {
                 email: body.email,
                 name: body.name ? body.name : '',
                 surname: body.surname ? body.surname : '',
-                central: body.central?.isChecked ? body.central : null,
-                tachelhit: body.tachelhit?.isChecked ? body.tachelhit : null,
-                tarifit: body.tarifit?.isChecked ? body.tarifit : null,
+                central: body.central?.isChecked
+                    ? body.central
+                    : {
+                          isChecked: false,
+                          oral: 0,
+                          written_lat: 0,
+                          written_tif: 0,
+                      },
+                tachelhit: body.tachelhit?.isChecked
+                    ? body.tachelhit
+                    : {
+                          isChecked: false,
+                          oral: 0,
+                          written_lat: 0,
+                          written_tif: 0,
+                      },
+                tarifit: body.tarifit?.isChecked
+                    ? body.tarifit
+                    : {
+                          isChecked: false,
+                          oral: 0,
+                          written_lat: 0,
+                          written_tif: 0,
+                      },
                 isPrivacy: body.isPrivacy ? body.isPrivacy : true,
+                language: {
+                    english: body.languages.english
+                        ? body.languages.english
+                        : false,
+                    arabic: body.languages.arabic
+                        ? body.languages.arabic
+                        : false,
+                    french: body.languages.french
+                        ? body.languages.french
+                        : false,
+                    catala: body.languages.catala
+                        ? body.languages.catala
+                        : false,
+                    spanish: body.languages.spanish
+                        ? body.languages.spanish
+                        : false,
+                },
                 updatedAt: new Date(),
                 isSubscribed: body.isSubscribed ? body.isSubscribed : false,
                 age: body.age ? body.age : null,
-                gender: body.gender ? body.gender : null,
+                gender: body.gender ? body.gender : 'other',
             },
         });
-        console.log({ user });
+        console.log({ ...user });
 
         return NextResponse.json({
             user,

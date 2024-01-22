@@ -13,7 +13,7 @@ import { Input } from '@/components/ui/input';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
-import { AmazicConfig } from '../SettingsConfig';
+import { AmazicConfig, OtherLanguagesConfig } from '../SettingsConfig';
 import { useSession } from 'next-auth/react';
 import { Suspense, useCallback, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -33,6 +33,8 @@ import {
     SelectValue,
 } from '@/components/ui/select';
 import Loading from '@/app/loading';
+import { Badge } from '@/components/ui/badge';
+import { X } from 'lucide-react';
 
 const formSchema = z
     .object({
@@ -46,11 +48,11 @@ const formSchema = z
         isVerified: z.boolean().optional(),
         languages: z
             .object({
-                en: z.boolean().default(false),
-                fr: z.boolean().default(false),
-                ca: z.boolean().default(false),
-                es: z.boolean().default(false),
-                ary: z.boolean().default(false),
+                english: z.boolean().default(false),
+                french: z.boolean().default(false),
+                catala: z.boolean().default(false),
+                spanish: z.boolean().default(false),
+                arabic: z.boolean().default(false),
             })
             .partial(),
         central: z.object({
@@ -77,6 +79,13 @@ const formSchema = z
 
 type SettingFormValues = z.infer<typeof formSchema>;
 
+const languages = [
+    { label: 'English', value: 'english' },
+    { label: 'Spanish', value: 'spanish' },
+    { label: 'Catala', value: 'catala' },
+    { label: 'Arabic', value: 'arabic' },
+    { label: 'French', value: 'french' },
+] as const;
 export function SettingsPage() {
     const { locale } = useLocaleStore();
     const { data: session, update: sessionUpdate, status } = useSession();
@@ -87,7 +96,14 @@ export function SettingsPage() {
     const userId = session?.user?.id;
     const [d, setD] = useState<MessagesProps>();
     const appStatus = process.env.NODE_ENV;
-
+    const [selectedLanguages, setSelectedLanguages] =
+        useState<OtherLanguagesConfig.OtherLanguagesProps>({
+            english: false,
+            spanish: false,
+            catala: false,
+            arabic: false,
+            french: false,
+        });
     const [formState, setFormState] =
         useState<AmazicConfig.AmazicProps | null>();
     useEffect(() => {
@@ -128,15 +144,16 @@ export function SettingsPage() {
                 written_tif: 1,
             },
             languages: {
-                en: false,
-                fr: false,
-                ca: false,
-                es: false,
-                ary: false,
+                english: false,
+                french: false,
+                catala: false,
+                spanish: false,
+                arabic: false,
             },
         },
     });
 
+    //# 1 fetch userData and set form values
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -164,11 +181,11 @@ export function SettingsPage() {
                         written_tif: 1,
                     },
                     languages: {
-                        en: false,
-                        fr: false,
-                        ca: false,
-                        es: false,
-                        ary: false,
+                        english: false,
+                        french: false,
+                        catala: false,
+                        spanish: false,
+                        arabic: false,
                     },
                 };
                 const mergedData = {
@@ -179,34 +196,38 @@ export function SettingsPage() {
                     tarifit: userData.tarifit || defaultData.tarifit,
                     languages: userData.languages || defaultData.languages,
                 };
+                console.log(mergedData);
                 setFetchedData(mergedData);
                 form.reset({
-                    name: userData.name || '',
-                    surname: userData.surname || '',
-                    email: userData.email,
-                    username: userData.username,
-                    age: userData.age || 0,
-                    gender: userData.gender || '',
-                    isSubscribed: userData.isSubscribed || false,
+                    name: mergedData.name || '',
+                    surname: mergedData.surname || '',
+                    email: mergedData.email,
+                    username: mergedData.username,
+                    age: mergedData.age || 0,
+                    gender: mergedData.gender || '',
+                    isSubscribed: mergedData.isSubscribed || false,
                     central: {
-                        isChecked: userData.central?.isChecked || false,
-                        oral: userData.central?.oral || 0,
-                        written_lat: userData.central?.written_lat || 0,
-                        written_tif: userData.central?.written_tif || 0,
+                        isChecked: mergedData.central?.isChecked || false,
+                        oral: mergedData.central?.oral || 0,
+                        written_lat: mergedData.central?.written_lat || 0,
+                        written_tif: mergedData.central?.written_tif || 0,
                     },
                     tachelhit: {
-                        isChecked: userData.tachelhit?.isChecked || false,
-                        oral: userData.tachelhit?.oral || 0,
-                        written_lat: userData.tachelhit?.written_lat || 0,
-                        written_tif: userData.tachelhit?.written_tif || 0,
+                        isChecked: mergedData.tachelhit?.isChecked || false,
+                        oral: mergedData.tachelhit?.oral || 0,
+                        written_lat: mergedData.tachelhit?.written_lat || 0,
+                        written_tif: mergedData.tachelhit?.written_tif || 0,
                     },
                     tarifit: {
-                        isChecked: userData.tarifit?.isChecked || false,
-                        oral: userData.tarifit?.oral || 0,
-                        written_lat: userData.tarifit?.written_lat || 0,
-                        written_tif: userData.tarifit?.written_tif || 0,
+                        isChecked: mergedData.tarifit?.isChecked || false,
+                        oral: mergedData.tarifit?.oral || 0,
+                        written_lat: mergedData.tarifit?.written_lat || 0,
+                        written_tif: mergedData.tarifit?.written_tif || 0,
                     },
+                    languages: mergedData.language,
                 });
+                setSelectedLanguages(mergedData.language);
+
                 setLoading(false);
             } catch (error) {
                 console.error('error fetching data', error);
@@ -217,7 +238,11 @@ export function SettingsPage() {
 
         fetchData();
     }, [form]);
-
+    useEffect(() => {
+        console.log(selectedLanguages); // This will log the updated state
+    }, [selectedLanguages]);
+    console.log(selectedLanguages);
+    //# 2 update user data
     const handleUpdate = async (updateData: SettingFormValues) => {
         const { score, ...dataWithoutScore } = updateData;
         const newData = {
@@ -240,6 +265,14 @@ export function SettingsPage() {
                 written_lat: form.getValues('tarifit.written_lat') || 0,
                 written_tif: form.getValues('tarifit.written_tif') || 0,
             },
+            languages: form.getValues('languages') || {
+                // fallback value
+                english: false,
+                spanish: false,
+                catala: false,
+                arabic: false,
+                french: false,
+            },
         };
         console.log(updateData);
         console.log(newData);
@@ -249,11 +282,6 @@ export function SettingsPage() {
         try {
             setLoading(true);
             const res = await axios.patch(`/api/settings`, newData);
-            if (res.status !== 200) {
-                throw new Error(
-                    res.data.message || `${d?.toasters.alert_general}`,
-                );
-            }
             toast.success(`${d?.toasters.success_update}`, {
                 id: toastId,
             });
@@ -264,19 +292,23 @@ export function SettingsPage() {
         } catch (error) {
             // if error then dismiss the loading toast
             toast.dismiss(toastId);
-            if (axios.isAxiosError(error)) {
-                if (error.request.status === 406) {
+            if (axios.isAxiosError(error) && error.response) {
+                const serverErrMsg = error.response.data.error;
+                if (serverErrMsg.includes('variation')) {
                     toast.error(`${d?.toasters.alert_select_variant}`);
-                } else toast.error(`${d?.toasters.alert_general}`);
+                } else if (serverErrMsg.includes('email')) {
+                    toast.error(`${d?.toasters.alert_email_username}`);
+                } else {
+                    toast.error(`${d?.toasters.alert_general}`);
+                }
             } else {
                 // Handle non-Axios errors
-                toast.error("S'ha produït un error inesperat.", {});
+                toast.error("S'ha produït un error inesperat.");
             }
         } finally {
             setLoading(false);
         }
     };
-
     const onSubmit = async (data: SettingFormValues) => {
         console.log('submit', data);
         setLoading(true);
@@ -289,6 +321,7 @@ export function SettingsPage() {
         await handleUpdate(combinedData);
     };
 
+    //# 3 dialect settings
     const handleCentralChecked = () => {
         const isChecked = !form.getValues('central.isChecked');
         form.setValue(`central.isChecked`, isChecked, {
@@ -347,13 +380,41 @@ export function SettingsPage() {
         },
         [form],
     );
+
+    //# 4 other language
+    const handleLanguageSelect = (selectedValue: string) => {
+        const languageKey = languages.find(
+            (lang) => lang.label === selectedValue,
+        )?.value;
+        if (languageKey) {
+            setSelectedLanguages((prevLanguages) => {
+                const newLanguages = {
+                    ...prevLanguages,
+                    [languageKey]: !prevLanguages[languageKey],
+                };
+                form.setValue('languages', newLanguages);
+                return newLanguages;
+            });
+        }
+    };
+    const handleLanguageDelete = (languageKey: string) => {
+        setSelectedLanguages((prevLanguages) => {
+            const newLanguages = {
+                ...prevLanguages,
+                [languageKey]: false,
+            };
+            form.setValue('languages', newLanguages);
+            return newLanguages;
+        });
+    };
+
     const isCentralCheckedBox = form.watch('central.isChecked');
     const isTachelhitCheckedBox = form.watch('tachelhit.isChecked');
     const isTarifitCheckedBox = form.watch('tarifit.isChecked');
 
-    console.log(fetchedData);
-    console.log(userId);
-    console.log(form.formState);
+    // console.log(fetchedData);
+    // console.log(userId);
+    // console.log(form.formState);
     if (form.formState?.errors.age?.message?.includes('120')) {
         form.formState.errors.age.message = d?.error_msg.alert_age;
     }
@@ -370,6 +431,7 @@ export function SettingsPage() {
                         onSubmit={form.handleSubmit(onSubmit)}
                         className=" space-y-8 w-full px-4"
                     >
+                        {/* user info  */}
                         <div className="grid grid-cols-2 gap-8">
                             <FormField
                                 control={form.control}
@@ -556,7 +618,7 @@ export function SettingsPage() {
                                 )}
                             />
                         </div>
-
+                        {/* subscribe check */}
                         <FormField
                             control={form.control}
                             name="isSubscribed"
@@ -917,12 +979,62 @@ export function SettingsPage() {
                                     )}
                                 </div>
                             </div>
+                            {/* other lang */}
                         </div>
 
+                        {/* other lang */}
+                        <div>
+                            <FormItem className="flex flex-col">
+                                <FormLabel>
+                                    {d?.translator.select_lang}
+                                </FormLabel>
+                                <select
+                                    onChange={(e) =>
+                                        handleLanguageSelect(e.target.value)
+                                    }
+                                >
+                                    <option>{d?.translator.select_lang}</option>
+                                    {languages.map((lang) => (
+                                        <option
+                                            key={lang.value}
+                                            value={lang.label}
+                                        >
+                                            {lang.label}
+                                        </option>
+                                    ))}
+                                </select>
+                            </FormItem>
+                            <div className="mt-10 flex flex-row justify-center items-center gap-4">
+                                {selectedLanguages &&
+                                    Object.entries(selectedLanguages)
+                                        .filter(([_, value]) => value)
+                                        .map(([key, _]) => (
+                                            <Badge
+                                                variant={'default'}
+                                                key={key}
+                                                className="text-clay-100 cursor-default text-sm capitalize"
+                                            >
+                                                {key}
+                                                <Button
+                                                    size={'icon'}
+                                                    onClick={() =>
+                                                        handleLanguageDelete(
+                                                            key as keyof OtherLanguagesConfig.OtherLanguagesProps,
+                                                        )
+                                                    }
+                                                    className="ml-2 bg-transparent hover:bg-transparent"
+                                                    value={key}
+                                                >
+                                                    <X size={24} />
+                                                </Button>
+                                            </Badge>
+                                        ))}
+                            </div>
+                        </div>
                         <Button type="submit">{d?.texts.save_settings}</Button>
                     </form>
                     {process.env.NODE_ENV === 'development' && (
-                        <pre className="flex w-screen">
+                        <pre className="flex flex-row h-screen w-screen">
                             {JSON.stringify(form.watch(), null, 2)}
                         </pre>
                     )}

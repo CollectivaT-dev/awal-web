@@ -83,7 +83,7 @@
         "success_signIn": "Successfully signed in!",
         "alert_copy": "The translation could not be copied.",
         "alert_try_again": "Please try again later.",
-		"alert_select_variant":"Please select your proficiency level"
+        "alert_select_variant": "Please select your proficiency level"
     },
 
     "text_with_link": {
@@ -139,7 +139,7 @@
         "total_entries": "translations contributed",
         "total_validated_entries": "translations validated",
         "total_voice_entries_number": "1",
-		"total_voice_entries": "hour recorded",
+        "total_voice_entries": "hour recorded",
         "total_voice_validation_number": "1",
         "total_voice_validation": "hour validated",
         "have_account": "have an account? ",
@@ -203,7 +203,7 @@
         "contact_text": "awal@collectivat.cat"
     },
     "terms": {
-		"contribution_terms_heading":"Contribution Terms",
+        "contribution_terms_heading": "Contribution Terms",
         "contribution_terms": "Awal is a non-profit initiative that contributes to the digitization of the Amazigh language through the collection of open-source datasets and the development of innovative tools.\nAwal's web portal permits the free contribution of translated phrases for the objective of developing machine translation applications.\nYou can only make contributions and validate translated phrases by signing up for the initiative. By signing up, you must agree to abide by these terms. \nAwal also partners with Mozilla's Common Voice initiative for the collection of open-source speech datasets, enabling anyone to build voice-based applications for Tamazight. Please note that contributions to Common Voice are subject to",
         "mozilla_terms": "Mozilla's legal terms.",
         "contribution_terms_continued": "In these terms, 'we,' 'our,' or 'us' refer to the collaborators and administrators of Awal, the non-profit initiative. 'You' or 'your' pertains to the user, contributor, or volunteer engaging with and contributing to the Awal platform.",
