@@ -161,7 +161,7 @@
         "cancel": "Cancelar",
         "contribute": "Contribuir",
         "clear": "Borrar el texto",
-        "skip":"Omitir"
+        "skip":"Saltar"
     },
     "setting": {
         "oral": "Oral",
@@ -249,7 +249,7 @@
     "how_it_works_validation_2_1": "Confirma si la traducción transmite el significado de la frase original.",
     "how_it_works_validation_2_2": "Asegúrate de que los términos clave y los conceptos estén traducidos adecuadamente sin perder su sentido original.",
     "how_it_works_validation_2_3": "Evalúa la fluidez y la naturalidad de la traducción. Una buena traducción se lee con suavidad y parece natural en el idioma objetivo.",
-    "how_it_works_validation_2_4": "Si surge una frase con palabras que no estás seguro/a, siempre puedes hacer clic en \"Omitir\" para cargar otra contribución.",
+    "how_it_works_validation_2_4": "Si surge una frase con palabras que no estás seguro/a, siempre puedes hacer clic en \"Saltar\" para cargar otra contribución.",
     "how_it_works_validation_2_5": "Verifica que la traducción cumpla con las normas gramaticales y las convenciones de puntuación del idioma objetivo.",
     "how_it_works_validation_2_6": "Si encuentras una frase ofensiva o perjudicial (tanto en el original como en la traducción), utiliza el botón \"Informar\".",
     "how_it_works_validation_2_7": "Si te encuentras con alguna situación que no esté cubierta por estas pautas, por favor, vota según tu criterio. Si, aún así, no te decides, pasa a la siguiente contribución.",
