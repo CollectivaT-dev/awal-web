@@ -633,7 +633,7 @@ const ValidateComp = () => {
                             className="cursor-pointer"
                             onClick={handleNext}
                         >
-                            Skip
+                            {d?.btn.skip}
                         </Button>
                     </div>
                 </div>
