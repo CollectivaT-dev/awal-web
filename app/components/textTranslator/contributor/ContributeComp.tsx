@@ -39,6 +39,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import useLocaleStore from '@/app/hooks/languageStore';
 import { MessagesProps, getDictionary } from '@/i18n';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import useMediaQuery from '@/app/hooks/useMediaQuery';
 
 interface ContributeCompProps {
     userId: string;
@@ -56,7 +57,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
     const { data: session } = useSession();
     const [entryScore, setEntryScore] = useState(0);
     const [initialTranslatedText, setInitialTranslatedText] = useState('');
-
+    const isAboveLgScreen = useMediaQuery('(min-width: 1024px)');
     useEffect(() => {
         const fetchDictionary = async () => {
             const m = await getDictionary(locale);
@@ -104,7 +105,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
             const radioGroupValue = side === 'left' ? srcVar : tgtVar;
 
             return (
-                <RadioGroup className="grid-cols-4 mt-3 justify-start">
+                <RadioGroup className="flex flex-row mt-3 justify-between">
                     {['Central', 'Tarifit', 'Tachelhit', 'Other'].map(
                         (value) => (
                             <div
@@ -426,224 +427,446 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
         toast.error('Report not yet implemented');
     };
 
+    const SrcLanguageSelection = () => (
+        <DropdownMenu>
+            <DropdownMenuTrigger className="mb-5" asChild>
+                <Button
+                    variant="outline"
+                    className="text-text-primary  bg-transparent border-text-primary"
+                >
+                    {contributeLanguages[sourceLanguage]}
+                    <ChevronDown className="pl-2 " />
+                </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56 bg-[#EFBB3F] border-[#EFBB3F] text-text-primary">
+                <DropdownMenuLabel>
+                    {d?.translator.select_lang}
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuRadioGroup
+                    value={sourceLanguage}
+                    onValueChange={handleSourceLanguageChange}
+                >
+                    {renderLanguageOptions(true)}
+                </DropdownMenuRadioGroup>
+            </DropdownMenuContent>
+        </DropdownMenu>
+    );
+    const TgtLanguageSelection = () => (
+        <DropdownMenu>
+            <DropdownMenuTrigger className="mb-5" asChild>
+                <Button
+                    variant="outline"
+                    className="text-text-primary  bg-transparent border-text-primary"
+                >
+                    {contributeLanguages[targetLanguage]}
+                    <ChevronDown className="pl-2 " />
+                </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56 bg-[#EFBB3F] border-[#EFBB3F] text-text-primary">
+                <DropdownMenuLabel>
+                    {d?.translator.select_lang}
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuRadioGroup
+                    value={targetLanguage}
+                    onValueChange={handleTargetLanguageChange}
+                >
+                    {renderLanguageOptions(false)}
+                </DropdownMenuRadioGroup>
+            </DropdownMenuContent>
+        </DropdownMenu>
+    );
     return (
-        <div className="text-translator ">
-            <div className="flex flex-row justify-center items-baseline px-10 space-x-10">
-                <div className="w-1/2">
-                    <DropdownMenu>
-                        <DropdownMenuTrigger className="mb-5" asChild>
-                            <Button
-                                variant="outline"
-                                className="text-text-primary  bg-transparent border-text-primary"
-                            >
-                                {contributeLanguages[sourceLanguage]}
-                                <ChevronDown className="pl-2 " />
-                            </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent className="w-56 bg-[#EFBB3F] border-[#EFBB3F] text-text-primary">
-                            <DropdownMenuLabel>
-                                {d?.translator.select_lang}
-                            </DropdownMenuLabel>
-                            <DropdownMenuSeparator />
-                            <DropdownMenuRadioGroup
-                                value={sourceLanguage}
-                                onValueChange={handleSourceLanguageChange}
-                            >
-                                {renderLanguageOptions(true)}
-                            </DropdownMenuRadioGroup>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-
-                    <div className="relative">
-                        <Textarea
-                            value={sourceText}
-                            className="border border-gray-300 h-[50vh] rounded-md shadow"
-                            placeholder={
-                                d?.translator.placeholder.type_to_translate
-                            }
-                            id="src_message"
-                            onChange={(e) => setSourceText(e.target.value)}
-                        />
-
-                        <Button
-                            variant={'outline'}
-                            className="absolute bottom-2 right-2"
-                            onClick={() => {
-                                setSourceText('');
-                                setRandomClicked(false);
-                            }}
-                        >
-                            {d?.btn.clear}
-                        </Button>
-                    </div>
-
-                    {renderRadioGroup('left')}
-                    <div className="flex flex-row justify-between items-center pt-10 w-full">
-                        <div className="flex flex-row space-x-3">
-                            <Button
-                                onClick={handleGenerate}
-                                variant="default"
-                                className="rounded-full bg-text-secondary"
-                            >
-                                {d?.translator.generate}
-                            </Button>
-                            <Button
-                                onClick={handleTranslate}
-                                variant="default"
-                                className="rounded-full bg-text-primary"
-                            >
-                                {d?.translator.translate}
-                            </Button>
-                        </div>
-                        <Button
-                            variant={'destructive'}
-                            className="rounded-full bg-red-500"
-                            onClick={handleReport}
-                        >
-                            {d?.translator.report}
-                        </Button>
-                    </div>
-                </div>
-
-                <div className="w-1/2 ">
-                    <div className="flex flex-row justify-between items-center">
-                        <DropdownMenu>
-                            <DropdownMenuTrigger className="mb-5" asChild>
+        <>
+            {isAboveLgScreen ? (
+                <div className="text-translator">
+                    <div className="flex flex-row justify-center items-baseline px-10 space-x-10">
+                        <div className="w-1/2">
+                            <div className="relative">
+                                <SrcLanguageSelection />
+                                <Textarea
+                                    value={sourceText}
+                                    className="border border-gray-300 h-[50vh] rounded-md shadow"
+                                    placeholder={
+                                        d?.translator.placeholder
+                                            .type_to_translate
+                                    }
+                                    id="src_message"
+                                    onChange={(e) =>
+                                        setSourceText(e.target.value)
+                                    }
+                                />
                                 <Button
-                                    variant="outline"
-                                    className="text-text-primary  bg-transparent border-text-primary"
+                                    variant={'outline'}
+                                    className="absolute bottom-2 right-2"
+                                    onClick={() => {
+                                        setSourceText('');
+                                        setRandomClicked(false);
+                                    }}
                                 >
-                                    {contributeLanguages[targetLanguage]}
-                                    <ChevronDown className="pl-2 " />
+                                    {d?.btn.clear}
                                 </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent className="w-56 bg-[#EFBB3F] border-[#EFBB3F] text-text-primary">
-                                <DropdownMenuLabel>
-                                    {d?.translator.select_lang}
-                                </DropdownMenuLabel>
-                                <DropdownMenuSeparator />
-                                <DropdownMenuRadioGroup
-                                    value={targetLanguage}
-                                    onValueChange={handleTargetLanguageChange}
-                                >
-                                    {renderLanguageOptions(false)}
-                                </DropdownMenuRadioGroup>
-                            </DropdownMenuContent>
-                        </DropdownMenu>
+                            </div>
 
-                        <AlertDialog>
-                            <AlertDialogTrigger asChild>
-                                <Button
-                                    size={'lg'}
-                                    className="cursor-pointer rounded-3xl m-1 text-xs capitalize"
-                                >
-                                    {d?.how_to_contribute_heading}
-                                    <HelpCircle className="ml-2" size={15} />
-                                </Button>
-                            </AlertDialogTrigger>
-                            <AlertDialogContent className="flex flex-col  max-h-[50%] overflow-auto">
-                                <AlertDialogHeader>
-                                    <AlertDialogTitle className="flex items-center justify-center">
-                                        <h4 className="text-sm font-semibold capitalize">
-                                            {d?.translator.help_pop_up.header}
-                                        </h4>
-                                    </AlertDialogTitle>
-                                </AlertDialogHeader>{' '}
-                                <div className="flex-grow overflow-auto">
-                                    <AlertDialogDescription className="text-left whitespace-pre-wrap">
-                                        {d?.how_it_works_contribution}
-                                        <ol className="list-disc space-y-2 my-4 mx-5 flex-row ">
-                                            <li>
-                                                {d?.how_it_works_contribution_1}
-                                            </li>
-                                            <li>
-                                                {d?.how_it_works_contribution_2}
-                                            </li>
-                                            <li>
-                                                {d?.how_it_works_contribution_3}
-                                            </li>
-                                            <li>
-                                                {d?.how_it_works_contribution_4}
-                                            </li>
-                                        </ol>
-                                        {d?.how_it_works_contribution_continued}
-                                    </AlertDialogDescription>
+                            {renderRadioGroup('left')}
+                            <div className="flex flex-row justify-between items-center pt-10 w-full">
+                                <div className="flex flex-row space-x-3">
+                                    <Button
+                                        onClick={handleGenerate}
+                                        variant="default"
+                                        className="rounded-full bg-text-secondary"
+                                    >
+                                        {d?.translator.generate}
+                                    </Button>
+                                    <Button
+                                        onClick={handleTranslate}
+                                        variant="default"
+                                        className="rounded-full bg-text-primary"
+                                    >
+                                        {d?.translator.translate}
+                                    </Button>
                                 </div>
-                                <AlertDialogFooter className="flex-shrink-0">
-                                    {' '}
-                                    <AlertDialogCancel>
-                                        {d?.btn.cancel}
-                                    </AlertDialogCancel>
-                                    <AlertDialogAction>
-                                        {d?.btn.continue}
-                                    </AlertDialogAction>
-                                </AlertDialogFooter>
-                            </AlertDialogContent>
-                        </AlertDialog>
-                    </div>
-                    <div className="relative">
-                        <Textarea
-                            id="tgt_message"
-                            className="border border-gray-300 rounded-md h-[50vh] shadow"
-                            placeholder={
-                                d?.translator.placeholder.translation_box
-                            }
-                            value={targetText}
-                            onChange={(e) => {
-                                setTargetText(e.target.value);
-                                setTranslated(true);
-                            }}
-                        />
+                                <Button
+                                    variant={'destructive'}
+                                    className="rounded-full bg-red-500"
+                                    onClick={handleReport}
+                                >
+                                    {d?.translator.report}
+                                </Button>
+                            </div>
+                        </div>
 
-                        <Button
-                            variant={'outline'}
-                            className="absolute bottom-2 right-2"
-                            onClick={() => {
-                                setTargetText('');
-                                setTranslateClicked(false); // Reset because the translation is cleared
-                                setTranslated(false);
-                            }}
-                        >
-                            {d?.btn.clear}
-                        </Button>
+                        <div className="w-1/2 ">
+                            <div className="flex flex-row justify-between items-center">
+                                <TgtLanguageSelection />
+
+                                <AlertDialog>
+                                    <AlertDialogTrigger asChild>
+                                        <Button
+                                            size={'lg'}
+                                            className="cursor-pointer rounded-3xl m-1 text-xs capitalize"
+                                        >
+                                            {d?.how_to_contribute_heading}
+                                            <HelpCircle
+                                                className="ml-2"
+                                                size={15}
+                                            />
+                                        </Button>
+                                    </AlertDialogTrigger>
+                                    <AlertDialogContent className="flex flex-col  max-h-[50%] overflow-auto">
+                                        <AlertDialogHeader>
+                                            <AlertDialogTitle className="flex items-center justify-center">
+                                                <h4 className="text-sm font-semibold capitalize">
+                                                    {
+                                                        d?.translator
+                                                            .help_pop_up.header
+                                                    }
+                                                </h4>
+                                            </AlertDialogTitle>
+                                        </AlertDialogHeader>{' '}
+                                        <div className="flex-grow overflow-auto">
+                                            <AlertDialogDescription className="text-left whitespace-pre-wrap">
+                                                {d?.how_it_works_contribution}
+                                                <ol className="list-disc space-y-2 my-4 mx-5 flex-row ">
+                                                    <li>
+                                                        {
+                                                            d?.how_it_works_contribution_1
+                                                        }
+                                                    </li>
+                                                    <li>
+                                                        {
+                                                            d?.how_it_works_contribution_2
+                                                        }
+                                                    </li>
+                                                    <li>
+                                                        {
+                                                            d?.how_it_works_contribution_3
+                                                        }
+                                                    </li>
+                                                    <li>
+                                                        {
+                                                            d?.how_it_works_contribution_4
+                                                        }
+                                                    </li>
+                                                </ol>
+                                                {
+                                                    d?.how_it_works_contribution_continued
+                                                }
+                                            </AlertDialogDescription>
+                                        </div>
+                                        <AlertDialogFooter className="flex-shrink-0">
+                                            {' '}
+                                            <AlertDialogCancel>
+                                                {d?.btn.cancel}
+                                            </AlertDialogCancel>
+                                            <AlertDialogAction>
+                                                {d?.btn.continue}
+                                            </AlertDialogAction>
+                                        </AlertDialogFooter>
+                                    </AlertDialogContent>
+                                </AlertDialog>
+                            </div>
+                            <div className="relative">
+                                <Textarea
+                                    id="tgt_message"
+                                    className="border border-gray-300 rounded-md h-[50vh] shadow"
+                                    placeholder={
+                                        d?.translator.placeholder
+                                            .translation_box
+                                    }
+                                    value={targetText}
+                                    onChange={(e) => {
+                                        setTargetText(e.target.value);
+                                        setTranslated(true);
+                                    }}
+                                />
+
+                                <Button
+                                    variant={'outline'}
+                                    className="absolute bottom-2 right-2"
+                                    onClick={() => {
+                                        setTargetText('');
+                                        setTranslateClicked(false); // Reset because the translation is cleared
+                                        setTranslated(false);
+                                    }}
+                                >
+                                    {d?.btn.clear}
+                                </Button>
+                            </div>
+
+                            {renderRadioGroup('right')}
+                            <div className="flex justify-end mt-10">
+                                <Button
+                                    variant={'default'}
+                                    onClick={handleContribute}
+                                    className="rounded-full bg-text-primary"
+                                >
+                                    {d?.btn.contribute}
+                                </Button>
+                            </div>
+                        </div>
                     </div>
 
-                    {renderRadioGroup('right')}
-                    <div className="flex justify-end mt-10">
-                        <Button
-                            variant={'default'}
-                            onClick={handleContribute}
-                            className="rounded-full bg-text-primary"
+                    <div className="mt-10 flex flex-col bg-[#EFBB3F] w-1/3 rounded-md shadow-sm px-4 py-5 ml-10 mb-5">
+                        <h1 className="font-bold capitalize">
+                            {d?.text_with_link.dic_link.text_before_link}
+                        </h1>
+                        <Link href={'https://www.amazic.cat/'} target="_blank">
+                            {d?.text_with_link.dic_link.link_text_1}
+                        </Link>
+                        <Link
+                            href={'https://tal.ircam.ma/dglai_new/'}
+                            target="_blank"
+                            scroll={false}
                         >
-                            {d?.btn.contribute}
-                        </Button>
+                            {d?.text_with_link.dic_link.link_text_2}
+                        </Link>
+                        <Link
+                            href={'https://amazigh.moroccanlanguages.com/'}
+                            target="_blank"
+                            scroll={false}
+                        >
+                            {d?.text_with_link.dic_link.link_text_3}
+                        </Link>
                     </div>
                 </div>
-            </div>
+            ) : (
+                <div className="text-translator">
+                    <div className="flex flex-col justify-center items-baseline px-10">
+                        <div className="w-full mb-10">
+                            <div className="relative">
+                                <div className="flex flex-row justify-between">
+                                    <SrcLanguageSelection />
+                                    <Button
+                                        onClick={handleGenerate}
+                                        variant="default"
+                                        className="rounded-full bg-text-secondary"
+                                    >
+                                        {d?.translator.generate}
+                                    </Button>
+                                </div>
+                                <Textarea
+                                    value={sourceText}
+                                    className="border border-gray-300 h-[50vh] rounded-md shadow"
+                                    placeholder={
+                                        d?.translator.placeholder
+                                            .type_to_translate
+                                    }
+                                    id="src_message"
+                                    onChange={(e) =>
+                                        setSourceText(e.target.value)
+                                    }
+                                />
 
-            <div className="mt-10 flex flex-col bg-[#EFBB3F] w-1/3 rounded-md shadow-sm px-4 py-5 ml-10 mb-5">
-                <h1 className="font-bold capitalize">
-                    {d?.text_with_link.dic_link.text_before_link}
-                </h1>
-                <Link href={'https://www.amazic.cat/'} target="_blank">
-                    {d?.text_with_link.dic_link.link_text_1}
-                </Link>
-                <Link
-                    href={'https://tal.ircam.ma/dglai_new/'}
-                    target="_blank"
-                    scroll={false}
-                >
-                    {d?.text_with_link.dic_link.link_text_2}
-                </Link>
-                <Link
-                    href={'https://amazigh.moroccanlanguages.com/'}
-                    target="_blank"
-                    scroll={false}
-                >
-                    {d?.text_with_link.dic_link.link_text_3}
-                </Link>
-            </div>
-        </div>
+                                <Button
+                                    variant={'outline'}
+                                    className="absolute bottom-2 right-2"
+                                    onClick={() => {
+                                        setSourceText('');
+                                        setRandomClicked(false);
+                                    }}
+                                >
+                                    {d?.btn.clear}
+                                </Button>
+                            </div>
+
+                            {renderRadioGroup('left')}
+                            <div className="flex-row-between pt-10 w-full">
+                                <div className="flex flex-row space-x-3">
+                                    <Button
+                                        onClick={handleTranslate}
+                                        variant="default"
+                                        className="rounded-full bg-text-primary"
+                                    >
+                                        {d?.translator.translate}
+                                    </Button>
+                                </div>
+                                <Button
+                                    variant={'destructive'}
+                                    className="rounded-full bg-red-500"
+                                    onClick={handleReport}
+                                >
+                                    {d?.translator.report}
+                                </Button>
+                            </div>
+                        </div>
+
+                        <div className="w-full">
+                            <div className="flex flex-row items-baseline justify-between">
+                                <TgtLanguageSelection />
+                                <AlertDialog>
+                                    <AlertDialogTrigger asChild>
+                                        <Button
+                                            size={'lg'}
+                                            className="cursor-pointer rounded-3xl m-1 text-xs capitalize"
+                                        >
+                                            {d?.how_to_contribute_heading}
+                                            <HelpCircle
+                                                className="ml-2"
+                                                size={15}
+                                            />
+                                        </Button>
+                                    </AlertDialogTrigger>
+                                    <AlertDialogContent className="flex flex-col  max-h-[50%] overflow-auto">
+                                        <AlertDialogHeader>
+                                            <AlertDialogTitle className="flex items-center justify-center">
+                                                <h4 className="text-sm font-semibold capitalize">
+                                                    {
+                                                        d?.translator
+                                                            .help_pop_up.header
+                                                    }
+                                                </h4>
+                                            </AlertDialogTitle>
+                                        </AlertDialogHeader>{' '}
+                                        <div className="flex-grow overflow-auto">
+                                            <AlertDialogDescription className="text-left whitespace-pre-wrap">
+                                                {d?.how_it_works_contribution}
+                                                <ol className="list-disc space-y-2 my-4 mx-5 flex-row ">
+                                                    <li>
+                                                        {
+                                                            d?.how_it_works_contribution_1
+                                                        }
+                                                    </li>
+                                                    <li>
+                                                        {
+                                                            d?.how_it_works_contribution_2
+                                                        }
+                                                    </li>
+                                                    <li>
+                                                        {
+                                                            d?.how_it_works_contribution_3
+                                                        }
+                                                    </li>
+                                                    <li>
+                                                        {
+                                                            d?.how_it_works_contribution_4
+                                                        }
+                                                    </li>
+                                                </ol>
+                                                {
+                                                    d?.how_it_works_contribution_continued
+                                                }
+                                            </AlertDialogDescription>
+                                        </div>
+                                        <AlertDialogFooter className="flex-shrink-0">
+                                            {' '}
+                                            <AlertDialogCancel>
+                                                {d?.btn.cancel}
+                                            </AlertDialogCancel>
+                                            <AlertDialogAction>
+                                                {d?.btn.continue}
+                                            </AlertDialogAction>
+                                        </AlertDialogFooter>
+                                    </AlertDialogContent>
+                                </AlertDialog>
+                            </div>
+                            <div className="relative">
+                                <Textarea
+                                    id="tgt_message"
+                                    className="border border-gray-300 rounded-md h-[50vh] shadow"
+                                    placeholder={
+                                        d?.translator.placeholder
+                                            .translation_box
+                                    }
+                                    value={targetText}
+                                    onChange={(e) => {
+                                        setTargetText(e.target.value);
+                                        setTranslated(true);
+                                    }}
+                                />
+
+                                <Button
+                                    variant={'outline'}
+                                    className="absolute bottom-2 right-2"
+                                    onClick={() => {
+                                        setTargetText('');
+                                        setTranslateClicked(false); // Reset because the translation is cleared
+                                        setTranslated(false);
+                                    }}
+                                >
+                                    {d?.btn.clear}
+                                </Button>
+                            </div>
+
+                            {renderRadioGroup('right')}
+                            <div className="flex justify-end mt-10">
+                                <Button
+                                    variant={'default'}
+                                    onClick={handleContribute}
+                                    className="rounded-full bg-text-primary"
+                                >
+                                    {d?.btn.contribute}
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="mt-10 flex flex-col bg-[#EFBB3F] max-w-full rounded-md shadow-sm p-5 mx-10 mb-5">
+                        <h1 className="font-bold capitalize">
+                            {d?.text_with_link.dic_link.text_before_link}
+                        </h1>
+                        <Link href={'https://www.amazic.cat/'} target="_blank">
+                            {d?.text_with_link.dic_link.link_text_1}
+                        </Link>
+                        <Link
+                            href={'https://tal.ircam.ma/dglai_new/'}
+                            target="_blank"
+                            scroll={false}
+                        >
+                            {d?.text_with_link.dic_link.link_text_2}
+                        </Link>
+                        <Link
+                            href={'https://amazigh.moroccanlanguages.com/'}
+                            target="_blank"
+                            scroll={false}
+                        >
+                            {d?.text_with_link.dic_link.link_text_3}
+                        </Link>
+                    </div>
+                </div>
+            )}
+        </>
     );
 };
 

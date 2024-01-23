@@ -21,7 +21,7 @@ const Translation: React.FC<TranslationProps> = ({
     totalEntries,
     totalValidation,
 }) => {
-    const isAboveMediumScreen = useMediaQuery('(min-width: 1024px)');
+    const isAboveLgScreen = useMediaQuery('(min-width: 1024px)');
 
     const router = useRouter();
     const { locale } = useLocaleStore();
@@ -39,7 +39,7 @@ const Translation: React.FC<TranslationProps> = ({
     return (
         <>
             {/* // changed w-full => w-[100vw] */}
-            {isAboveMediumScreen ? (
+            {isAboveLgScreen ? (
                 <div className="w-full h-[50vh] flex-row-center">
                     {/* Text Translation */}
                     <div

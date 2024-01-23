@@ -7,13 +7,10 @@ import { ToastProvider } from '@/providers/ToastProvider';
 import ClientProvider from '@/providers/ClientProvider';
 import Footer from '@/components/ui/Footer';
 import { Analytics } from '@vercel/analytics/react';
-
 import { headers } from 'next/headers';
-import { Toaster } from '@/components/ui/toaster';
 import { Suspense } from 'react';
 import Loading from './loading';
 const inter = Inter({ subsets: ['latin'] });
-
 export const metadata: Metadata = {
     title: 'Awal',
     description: 'Internet parla l\'Amazic!',

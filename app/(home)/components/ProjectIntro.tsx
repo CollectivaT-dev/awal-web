@@ -9,11 +9,14 @@ import { MessagesProps, getDictionary } from '@/i18n';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import useMediaQuery from '@/app/hooks/useMediaQuery';
 const ProjectIntro = () => {
     const router = useRouter();
     const { data: session } = useSession();
     const { locale } = useLocaleStore();
     const [d, setD] = useState<MessagesProps>();
+    const isAboveLgScreen = useMediaQuery('(min-width: 1024px)');
+
     useEffect(() => {
         const fetchDictionary = async () => {
             const m = await getDictionary(locale);
@@ -23,105 +26,226 @@ const ProjectIntro = () => {
     }, [locale]);
 
     return (
-        <div className=" py-10 whitespace flex-col-center mx-10 text-text-primary">
-            {/* header */}
-            <h1 className="text-3xl font-semibold ">{d?.page_intro?.title}</h1>
-            {/* body */}
-            <div className="flex-row-center ">
-                <div className="flex flex-col w-1/2   text-gray-700">
-                    <p>{d?.page_intro?.CTA_text}</p>
-                    <p className="pt-2">
-                        <Heading
-                            title={`${d?.page_intro.heading_1}`}
-                            titleClassName="text-xl mb-2"
+        <>
+            {/* //#  above 1024px*/}
+            {isAboveLgScreen ? (
+                <div className="py-10 whitespace flex-col-center mx-10 text-text-primary">
+                    {/* header */}
+                    <h1 className="text-3xl font-semibold">
+                        {d?.page_intro?.title}
+                    </h1>
+                    {/* body */}
+                    <div className="flex-row-center">
+                        <div className="flex flex-col w-1/2 text-gray-700">
+                            <p>{d?.page_intro?.CTA_text}</p>
+                            <p className="pt-2">
+                                <Heading
+                                    title={`${d?.page_intro.heading_1}`}
+                                    titleClassName="text-xl mb-2"
+                                />
+
+                                <ul className="list-disc space-y-3">
+                                    <li className="ml-4">
+                                        <strong>
+                                            {d?.page_intro.item_1_strong}
+                                        </strong>
+                                        {d?.page_intro.item_1_normal}
+                                    </li>
+                                    <li className="ml-4">
+                                        <strong>
+                                            {d?.page_intro.item_2_strong}
+                                        </strong>
+                                        {d?.page_intro.item_2_normal}
+                                    </li>
+                                    <li className="ml-4">
+                                        <strong>
+                                            {d?.page_intro.item_3_strong}
+                                        </strong>{' '}
+                                        {d?.page_intro.item_3_normal}
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                        <Image
+                            src={'/intro-icon.svg'}
+                            alt="amazic-logo"
+                            width={100}
+                            height={200}
+                            className="mr-3"
                         />
+                        <div className="flex flex-col w-1/2   text-gray-700">
+                            <Heading
+                                title={`${d?.page_intro.heading_2}`}
+                                titleClassName="text-xl pt-5"
+                            />
 
-                        <ul className="list-disc space-y-3">
-                            <li className="ml-4">
-                                <strong>{d?.page_intro.item_1_strong}</strong>
-                                {d?.page_intro.item_1_normal}
-                            </li>
-                            <li className="ml-4">
-                                <strong>{d?.page_intro.item_2_strong}</strong>
-                                {d?.page_intro.item_2_normal}
-                            </li>
-                            <li className="ml-4">
-                                <strong>{d?.page_intro.item_3_strong}</strong>{' '}
-                                {d?.page_intro.item_3_normal}
-                            </li>
-                        </ul>
-                    </p>
+                            <p className="">{d?.page_intro.text_2}</p>
+                            <Heading
+                                title={`${d?.page_intro.heading_3}`}
+                                titleClassName="text-xl pt-5"
+                            />
+
+                            <p className="">{d?.page_intro.text_3}</p>
+                            <Heading
+                                title={`${d?.page_intro.heading_4}`}
+                                titleClassName="text-xl pt-5"
+                            />
+                            <p>
+                                {d?.page_intro.text_4_1}
+                                <Link
+                                    scroll={false}
+                                    target="_blank"
+                                    href={'/about'}
+                                    className="underline"
+                                >
+                                    {d?.page_intro.text_4_about}
+                                </Link>{' '}
+                                {d?.page_intro.text_4_2}
+                                {'  '}
+                                <Link
+                                    className="underline"
+                                    target="_blank"
+                                    scroll={false}
+                                    href={
+                                        'https://www.instagram.com/awaldigital/'
+                                    }
+                                >
+                                    {d?.page_intro.text_4_ins}
+                                </Link>{' '}
+                                <Link
+                                    className="underline"
+                                    target="_blank"
+                                    scroll={false}
+                                    href={'https://twitter.com/Awaldigital'}
+                                >
+                                    {d?.page_intro.text_4_X}
+                                </Link>{' '}
+                                {d?.page_intro.text_4_3}
+                            </p>
+                        </div>
+                    </div>
+                    {/* sign in button */}
+                    {session ? (
+                        ''
+                    ) : (
+                        <Button
+                            variant="default"
+                            size="xl"
+                            className="mt-5 bg-text-primary text-sm mobile:text-xl"
+                            onClick={() =>
+                                router.push('/signIn', { scroll: false })
+                            }
+                        >
+                            {d?.page_intro.CTA_button}
+                        </Button>
+                    )}
                 </div>
-                <Image
-                    src={'/intro-icon.svg'}
-                    alt="amazic-logo"
-                    width={100}
-                    height={200}
-                    className="mr-3"
-                />
-                <div className="flex flex-col w-1/2   text-gray-700">
-                    <Heading
-                        title={`${d?.page_intro.heading_2}`}
-                        titleClassName="text-xl pt-5"
-                    />
-
-                    <p className="">{d?.page_intro.text_2}</p>
-                    <Heading
-                        title={`${d?.page_intro.heading_3}`}
-                        titleClassName="text-xl pt-5"
-                    />
-
-                    <p className="">{d?.page_intro.text_3}</p>
-                    <Heading
-                        title={`${d?.page_intro.heading_4}`}
-                        titleClassName="text-xl pt-5"
-                    />
-                    <p>
-                        {d?.page_intro.text_4_1}
-                        <Link
-                            scroll={false}
-                            target="_blank"
-                            href={'/about'}
-                            className="underline"
-                        >
-                            {d?.page_intro.text_4_about}
-                        </Link>{' '}
-                        {d?.page_intro.text_4_2}
-                        {'  '}
-                        <Link
-                            className="underline"
-                            target="_blank"
-                            scroll={false}
-                            href={'https://www.instagram.com/awaldigital/'}
-                        >
-                            {d?.page_intro.text_4_ins}
-                        </Link>{' '}
-                        <Link
-                            className="underline"
-                            target="_blank"
-                            scroll={false}
-                            href={'https://twitter.com/Awaldigital'}
-                        >
-                            {d?.page_intro.text_4_X}
-                        </Link>{' '}
-                        {d?.page_intro.text_4_3}
-                    </p>
-                </div>
-            </div>
-            {/* sign in button */}
-            {session ? (
-                ''
             ) : (
-                <Button
-                    variant="default"
-                    size="xl"
-                    className="mt-5 bg-text-primary text-sm mobile:text-xl"
-                    onClick={() => router.push('/signIn', { scroll: false })}
-                >
-                    {d?.page_intro.CTA_button}
-                </Button>
+                //# below 1024px
+                <div className="flex-col-center py-10 text-center">
+                    <h1 className="text-xl font-semibold mb-5">
+                        {d?.page_intro?.title}
+                    </h1>
+                    <div className="flex-col-center px-5">
+                        <div className="flex-col-center text-gray-700">
+                            <p>{d?.page_intro?.CTA_text}</p>
+                            <p className="pt-2">
+                                <Heading
+                                    title={`${d?.page_intro.heading_1}`}
+                                    titleClassName="text-xl mb-2"
+                                />
+
+                                <ul className="space-y-3">
+                                    <li className="ml-4">
+                                        <strong>
+                                            {d?.page_intro.item_1_strong}
+                                        </strong>
+                                        {d?.page_intro.item_1_normal}
+                                    </li>
+                                    <li className="ml-4">
+                                        <strong>
+                                            {d?.page_intro.item_2_strong}
+                                        </strong>
+                                        {d?.page_intro.item_2_normal}
+                                    </li>
+                                    <li className="ml-4">
+                                        <strong>
+                                            {d?.page_intro.item_3_strong}
+                                        </strong>{' '}
+                                        {d?.page_intro.item_3_normal}
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+
+                        <div className="flex-col-center text-gray-700">
+                            <Heading
+                                title={`${d?.page_intro.heading_2}`}
+                                titleClassName="text-xl pt-5"
+                            />
+
+                            <p className="">{d?.page_intro.text_2}</p>
+                            <Heading
+                                title={`${d?.page_intro.heading_3}`}
+                                titleClassName="text-xl pt-5"
+                            />
+
+                            <p className="">{d?.page_intro.text_3}</p>
+                            <Heading
+                                title={`${d?.page_intro.heading_4}`}
+                                titleClassName="text-xl pt-5"
+                            />
+                            <p>
+                                {d?.page_intro.text_4_1}
+                                <Link
+                                    scroll={false}
+                                    target="_blank"
+                                    href={'/about'}
+                                    className="underline"
+                                >
+                                    {d?.page_intro.text_4_about}
+                                </Link>{' '}
+                                {d?.page_intro.text_4_2}
+                                {'  '}
+                                <Link
+                                    className="underline"
+                                    target="_blank"
+                                    scroll={false}
+                                    href={
+                                        'https://www.instagram.com/awaldigital/'
+                                    }
+                                >
+                                    {d?.page_intro.text_4_ins}
+                                </Link>{' '}
+                                <Link
+                                    className="underline"
+                                    target="_blank"
+                                    scroll={false}
+                                    href={'https://twitter.com/Awaldigital'}
+                                >
+                                    {d?.page_intro.text_4_X}
+                                </Link>{' '}
+                                {d?.page_intro.text_4_3}
+                            </p>
+                        </div>
+                    </div>
+                    {session ? (
+                        ''
+                    ) : (
+                        <Button
+                            variant="default"
+                            size="xl"
+                            className="mt-5 bg-text-primary text-sm mobile:text-xl"
+                            onClick={() =>
+                                router.push('/register', { scroll: false })
+                            }
+                        >
+                            {d?.page_intro.CTA_button}
+                        </Button>
+                    )}
+                </div>
             )}
-        </div>
+        </>
     );
 };
 export default ProjectIntro;
