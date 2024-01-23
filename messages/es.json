@@ -82,7 +82,8 @@
         "success_signIn": "¡Sesión iniciada con éxito!",
         "alert_copy": "No se pudo copiar la traducción.",
         "alert_try_again": "Por favor, intenta de nuevo más tarde.",
-		"alert_select_variant":"Por favor, seleccione su nivel de competencia"
+		"alert_select_variant":"Por favor, seleccione su nivel de competencia",
+        "validation_success_report": "Contribución reportada. Gracias por tu atención."
     },
     "text_with_link": {
         "accept_terms": {
@@ -142,7 +143,9 @@
         "total_voice_validation": "hora validada",
         "login_to_signup_1": "¿Nuevo en Awal?",
         "login_to_signup_2": "¡Regístrate!",
-        "statistic":"Clasificación de la Comunidad"
+        "statistic":"Clasificación de la Comunidad",
+        "validate_report_heading": "Informar contribución",
+        "validate_report_text": "Por favor, explíquenos brevemente qué está mal con esta contribución según nuestras pautas comunitarias."
     },
     "validator": {
         "alert_no_more_entries": "No hay más entradas para validar para el par de idiomas y variante seleccionada. Puedes contribuir con más traducciones mientras tanto.",

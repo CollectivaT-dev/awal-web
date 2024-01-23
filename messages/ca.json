@@ -82,7 +82,9 @@
         "success_copy": "Traducció copiada al porta-retalls!",
         "success_signIn": "S'ha iniciat sessió amb èxit!",
         "alert_copy": "No s'ha pogut copiar la traducció.",
-        "alert_try_again": "Si us plau, intenta-ho de nou més tard."
+        "alert_try_again": "Si us plau, intenta-ho de nou més tard.",
+        "alert_select_variant": "Si us plau, selecciona el teu nivell de competència.",
+        "validation_success_report": "Contribució informada. Gràcies per la teva atenció."
     },
 
     "text_with_link": {
@@ -143,7 +145,9 @@
         "total_voice_validation": "hora validada",
         "login_to_signup_1": "Nou a Awal?",
         "login_to_signup_2": "Inscriu-te!",
-		"statistic":"Classificació de la Comunitat"
+		"statistic":"Classificació de la Comunitat",
+        "validate_report_heading": "Informar contribució",
+        "validate_report_text": "Expliqueu breument què hi ha de malament amb aquesta contribució segons les directrius de la nostra comunitat."
     },
     "validator": {
         "alert_no_more_entries": "No hi ha més entrades per validar per al parell de llengües i variant seleccionat. Pots contribuir amb més traduccions mentrestant.",
