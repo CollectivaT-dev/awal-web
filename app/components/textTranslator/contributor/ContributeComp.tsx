@@ -688,7 +688,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
                                 </div>
                                 <Textarea
                                     value={sourceText}
-                                    className="border border-gray-300 h-[50vh] rounded-md shadow"
+                                    className="border border-gray-300 h-auto rounded-md shadow"
                                     placeholder={
                                         d?.translator.placeholder
                                             .type_to_translate
@@ -804,7 +804,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
                             <div className="relative">
                                 <Textarea
                                     id="tgt_message"
-                                    className="border border-gray-300 rounded-md h-[50vh] shadow"
+                                    className="border border-gray-300 rounded-md h-auto shadow"
                                     placeholder={
                                         d?.translator.placeholder
                                             .translation_box
