@@ -33,7 +33,7 @@ model User {
   reportedEntries   String[]
 
   // user settings
-  language  Json?
+  languages  Json?
   tachelhit Json?
   central   Json?
   tarifit   Json?

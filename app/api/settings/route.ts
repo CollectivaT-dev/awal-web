@@ -89,7 +89,7 @@ export async function PATCH(req: Request) {
                           written_tif: 0,
                       },
                 isPrivacy: body.isPrivacy ? body.isPrivacy : true,
-                language: {
+                languages: {
                     english: body.languages.english
                         ? body.languages.english
                         : false,

@@ -80,7 +80,7 @@ const formSchema = z
 type SettingFormValues = z.infer<typeof formSchema>;
 
 const languages = [
-    { label: 'English', value: 'english' },
+    { label: 'english', value: 'english' },
     { label: 'Spanish', value: 'spanish' },
     { label: 'Catala', value: 'catala' },
     { label: 'Arabic', value: 'arabic' },
@@ -145,10 +145,10 @@ export function SettingsPage() {
             },
             languages: {
                 english: false,
-                french: false,
-                catala: false,
                 spanish: false,
+                catala: false,
                 arabic: false,
+                french: false,
             },
         },
     });
@@ -160,6 +160,7 @@ export function SettingsPage() {
                 setLoading(true);
                 const response = await axios.get('/api/settings');
                 const userData = response.data;
+				console.log(userData)
                 const defaultData = {
                     age: 0,
                     central: {
@@ -182,10 +183,10 @@ export function SettingsPage() {
                     },
                     languages: {
                         english: false,
-                        french: false,
-                        catala: false,
                         spanish: false,
+                        catala: false,
                         arabic: false,
+                        french: false,
                     },
                 };
                 const mergedData = {
@@ -194,9 +195,8 @@ export function SettingsPage() {
                     central: userData.central || defaultData.central,
                     tachelhit: userData.tachelhit || defaultData.tachelhit,
                     tarifit: userData.tarifit || defaultData.tarifit,
-                    languages: userData.languages || defaultData.languages,
+                    languages: userData.languages ||defaultData.languages,
                 };
-                console.log(mergedData);
                 setFetchedData(mergedData);
                 form.reset({
                     name: mergedData.name || '',
@@ -224,10 +224,15 @@ export function SettingsPage() {
                         written_lat: mergedData.tarifit?.written_lat || 0,
                         written_tif: mergedData.tarifit?.written_tif || 0,
                     },
-                    languages: mergedData.language,
+                    languages: mergedData.languages || {
+                        english: false,
+                        spanish: false,
+                        catala: false,
+                        arabic: false,
+                        french: false,
+                    },
                 });
-                setSelectedLanguages(mergedData.language);
-
+                setSelectedLanguages(mergedData.languages);
                 setLoading(false);
             } catch (error) {
                 console.error('error fetching data', error);
@@ -238,9 +243,7 @@ export function SettingsPage() {
 
         fetchData();
     }, [form]);
-    useEffect(() => {
-        console.log(selectedLanguages); // This will log the updated state
-    }, [selectedLanguages]);
+
     console.log(selectedLanguages);
     //# 2 update user data
     const handleUpdate = async (updateData: SettingFormValues) => {
@@ -320,7 +323,7 @@ export function SettingsPage() {
         console.log(combinedData);
         await handleUpdate(combinedData);
     };
-
+    console.log(form.formState);
     //# 3 dialect settings
     const handleCentralChecked = () => {
         const isChecked = !form.getValues('central.isChecked');
