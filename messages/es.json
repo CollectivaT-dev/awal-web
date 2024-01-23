@@ -160,7 +160,8 @@
         "continue": "Continuar",
         "cancel": "Cancelar",
         "contribute": "Contribuir",
-        "clear": "Borrar el texto"
+        "clear": "Borrar el texto",
+        "skip":"Omitir"
     },
     "setting": {
         "oral": "Oral",

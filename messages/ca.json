@@ -162,7 +162,8 @@
         "continue": "Continua",
         "cancel": "Cancel·la",
         "contribute": "Contribueix",
-        "clear": "Buideu el text"
+        "clear": "Buideu el text",
+        "skip":"Omet"
     },
     "setting": {
         "oral": "Oral",
