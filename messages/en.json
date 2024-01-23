@@ -83,9 +83,9 @@
         "success_signIn": "Successfully signed in!",
         "alert_copy": "The translation could not be copied.",
         "alert_try_again": "Please try again later.",
-        "alert_select_variant": "Please select your proficiency level"
+        "alert_select_variant": "Please select your proficiency level",
+		"success_report":"sentences reported successfully"
     },
-
     "text_with_link": {
         "accept_terms": {
             "text_before_link": "accept",
@@ -145,7 +145,10 @@
         "have_account": "have an account? ",
         "login_to_signup_1": "New to Awal?",
         "login_to_signup_2": "Sign up!",
-        "statistic": "Community Leaderboard"
+        "statistic": "Community Leaderboard",
+		"report_heading":"report sentences",
+		"report_text":"report sentences that violate our community guidelines",
+		"report_placeholder":"reasons to report"
     },
     "validator": {
         "alert_no_more_entries": "No more entries to validate for language pair and variant. You can contribute more translations meanwhile.",

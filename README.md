@@ -10,4 +10,4 @@ Awal is an initiative by CIEMEN, Col·lectivaT, and Casa Amaziga de Catalunya an
 [Instagram](https://www.instagram.com/awaldigital/)
 [Twitter](https://twitter.com/Awaldigital)
 [Email](mailto:awal@collectivat.cat)
-d
+

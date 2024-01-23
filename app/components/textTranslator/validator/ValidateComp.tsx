@@ -1,11 +1,6 @@
 'use client';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import {
-    Check,
-    ChevronDown,
-    HelpCircle,
-    X,
-} from 'lucide-react';
+import { Check, ChevronDown, HelpCircle, X } from 'lucide-react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import {
@@ -39,6 +34,17 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
+import {
+    Dialog,
+    DialogClose,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
 
 const ValidateComp = () => {
     const [sourceText, setSourceText] = useState('');
@@ -46,6 +52,8 @@ const ValidateComp = () => {
     const [sourceLanguage, setSourceLanguage] = useState(
         localStorage.getItem('sourceLanguage') || 'ca',
     );
+    const [reportInput,setReportInput] = useState('');
+
     const [targetLanguage, setTargetLanguage] = useState(
         localStorage.getItem('targetLanguage') || 'zgh',
     );
@@ -265,7 +273,6 @@ const ValidateComp = () => {
         );
     }, [sourceLanguage, targetLanguage, triggerFetch, srcVar, tgtVar]);
 
-    console.log(entry);
     // validate post route
     const handleValidate = async () => {
         const data = { ...entry, validatorId: session?.user?.id };
@@ -318,7 +325,21 @@ const ValidateComp = () => {
         setTriggerFetch((prev) => prev + 1);
     };
     const handleReport = async () => {
-        toast.error('Report not yet implemented');
+        const data = { ...entry, reportMsg:reportInput, validatorId: session?.user?.id };
+        try {
+            const res = await axios.patch('/api/contribute/report', data);
+            const updatedUser = res.data;
+            sessionUpdate({ user: updatedUser });
+            const { score, ...userWithoutScore } = updatedUser;
+            sessionUpdate({ user: updatedUser });
+            toast.success(`${d?.toasters.success_report}`);
+        } catch (error) {
+            console.log(error);
+            toast(`${d?.validator.alert_no_more_entries}`, {
+                icon: '❌',
+            });
+        }
+        setTriggerFetch((prev) => prev + 1);
     };
 
     const handleNext = async () => {
@@ -378,13 +399,58 @@ const ValidateComp = () => {
                         >
                             Frase aleat&#242;ria
                         </Button> */}
-                        <Button
-                            variant={'destructive'}
-                            className="rounded-full bg-red-500"
-                            onClick={handleReport}
-                        >
-                            {d?.translator.report}
-                        </Button>
+                        {sourceText.length > 0 && targetText.length > 0 ? (
+                            <Dialog>
+                                <DialogTrigger asChild>
+                                    <Button variant={'destructive'}>
+                                        {d?.translator.report}
+                                    </Button>
+                                </DialogTrigger>
+                                <DialogContent className="sm:max-w-md">
+                                    <DialogHeader>
+                                        <DialogTitle className="capitalize">
+                                            {d?.texts.report_heading}
+                                        </DialogTitle>
+                                        <DialogDescription className="capitalize">
+                                            {d?.texts.report_text}{' '}
+                                        </DialogDescription>
+                                    </DialogHeader>
+                                    <div className="flex items-center space-x-2">
+                                        <div className="grid flex-1 gap-2">
+                                            <Label
+                                                htmlFor="link"
+                                                className="sr-only"
+                                            >
+                                                Link
+                                            </Label>
+                                            <Input
+                                                id="link"
+                                                defaultValue={
+                                                    d?.texts.report_placeholder
+                                                }
+												value={reportInput}
+
+                                                onChange={(e) => {
+                                                    setReportInput(
+                                                        e.target.value,
+                                                    );
+                                                }}
+                                            />
+                                        </div>
+                                    </div>
+                                    <DialogFooter className="sm:justify-start">
+                                        <DialogClose asChild>
+                                            <Button
+                                                type="submit"
+                                                onClick={handleReport}
+                                            >
+                                                {d?.translator.report}
+                                            </Button>
+                                        </DialogClose>
+                                    </DialogFooter>
+                                </DialogContent>
+                            </Dialog>
+                        ) : null}
                     </div>
                 </div>
 
