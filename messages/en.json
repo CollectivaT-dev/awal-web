@@ -162,7 +162,8 @@
         "continue": "Continue",
         "cancel": "Cancel",
         "contribute": "Contribute",
-        "clear": "Clear text"
+        "clear": "Clear text",
+		"skip":"Skip"
     },
     "setting": {
         "oral": "Oral",

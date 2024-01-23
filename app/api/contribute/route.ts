@@ -46,6 +46,9 @@ export async function GET(req: Request, res: Response) {
                     id: {
                         notIn: session?.validationEntries,
                     },
+					// userId:{
+					// 	notIn: 
+					// }
                 },
             },
         });

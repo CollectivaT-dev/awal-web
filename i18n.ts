@@ -107,7 +107,7 @@ export interface MessagesProps {
         alert_copy: string;
         alert_try_again: string;
         alert_select_variant: string;
-		success_report:string
+        success_report: string;
     };
     text_with_link: {
         accept_terms: {
@@ -169,9 +169,9 @@ export interface MessagesProps {
         login_to_signup_1: string;
         login_to_signup_2: string;
         statistic: string;
-		report_heading:string;
-		report_text:string
-		report_placeholder:string
+        report_heading: string;
+        report_text: string;
+        report_placeholder: string;
     };
     validator: {
         alert_no_more_entries: string;
@@ -187,6 +187,7 @@ export interface MessagesProps {
         cancel: string;
         contribute: string;
         clear: string;
+        skip: string;
     };
     setting: {
         oral: string;

@@ -20,10 +20,12 @@ import { useSession } from 'next-auth/react';
 import useLocaleStore from '@/app/hooks/languageStore';
 import { MessagesProps, getDictionary } from '@/i18n';
 import Link from 'next/link';
+import useMediaQuery from '@/app/hooks/useMediaQuery';
 
 const TextTranslator = () => {
     const { locale } = useLocaleStore();
     const [d, setD] = useState<MessagesProps>();
+    const isAboveLgScreen = useMediaQuery('(min-width: 1024px)');
     useEffect(() => {
         const fetchDictionary = async () => {
             const m = await getDictionary(locale);
@@ -197,115 +199,182 @@ const TextTranslator = () => {
             }
         }
     }, [sourceLanguage, targetLanguage]);
-
+    //' reusable comps
+    const SrcLangSelection = () => (
+        <DropdownMenu>
+            <DropdownMenuTrigger className="mb-5" asChild>
+                <Button
+                    variant="outline"
+                    className="text-text-primary bg-transparent border-text-primary"
+                >
+                    {translateLanguages[sourceLanguage]}
+                    <ChevronDown className="pl-2 " />
+                </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56 bg-[#EFBB3F] border-[#EFBB3F] text-text-primary">
+                <DropdownMenuLabel>
+                    {d?.translator.select_lang}
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator className="bg-text-primary" />
+                <DropdownMenuRadioGroup
+                    value={sourceLanguage}
+                    onValueChange={handleSourceLanguageChange}
+                >
+                    {renderLanguageOptions(sourceLanguage, true)}
+                </DropdownMenuRadioGroup>
+            </DropdownMenuContent>
+        </DropdownMenu>
+    );
+    const TgtLanguageSelection = () => (
+        <DropdownMenu>
+            <DropdownMenuTrigger className="mb-5" asChild>
+                <Button
+                    variant="outline"
+                    className="text-text-primary  bg-transparent border-text-primary"
+                >
+                    {translateLanguages[targetLanguage]}
+                    <ChevronDown className="pl-2 " />
+                </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56 bg-[#EFBB3F] border-[#EFBB3F] text-text-primary">
+                <DropdownMenuLabel>
+                    {d?.translator.select_lang}
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator className="bg-text-primary" />
+                <DropdownMenuRadioGroup
+                    value={targetLanguage}
+                    onValueChange={handleTargetLanguageChange}
+                >
+                    {renderLanguageOptions(sourceLanguage, false)}
+                </DropdownMenuRadioGroup>
+            </DropdownMenuContent>
+        </DropdownMenu>
+    );
     useEffect(() => {
         handleTranslate();
     }, [source, sourceLanguage, targetLanguage]);
 
     return (
-        <div className="text-translator min-h-screen">
-            <div className="flex flex-row justify-center items-center px-10 mb-5 space-x-10">
-                <div className="w-1/2">
-                    <DropdownMenu>
-                        <DropdownMenuTrigger className="mb-5" asChild>
-                            <Button
-                                variant="outline"
-                                className="text-text-primary  bg-transparent border-text-primary"
-                            >
-                                {translateLanguages[sourceLanguage]}
-                                <ChevronDown className="pl-2 " />
-                            </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent className="w-56 bg-[#EFBB3F] border-[#EFBB3F] text-text-primary">
-                            <DropdownMenuLabel>
-                                {d?.translator.select_lang}
-                            </DropdownMenuLabel>
-                            <DropdownMenuSeparator className="bg-text-primary" />
-                            <DropdownMenuRadioGroup
-                                value={sourceLanguage}
-                                onValueChange={handleSourceLanguageChange}
-                            >
-                                {renderLanguageOptions(sourceLanguage, true)}
-                            </DropdownMenuRadioGroup>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-                    <Textarea
-                        value={source}
-                        onChange={handleInputChange}
-                        className=" bg-gray-100 h-[50vh] text-text-primary rounded-md shadow"
-                        placeholder={
-                            d?.translator.placeholder.type_to_translate
-                        }
-                        id="message"
-                    />
-                </div>
+        <>
+            {isAboveLgScreen ? (
+                <div className="text-translator min-h-screen">
+                    <div className="flex flex-row justify-center items-center px-10 mb-5 space-x-10">
+                        <div className="w-1/2">
+                            <SrcLangSelection />
+                            <Textarea
+                                value={source}
+                                onChange={handleInputChange}
+                                className=" bg-gray-100 h-[50vh] text-text-primary rounded-md shadow"
+                                placeholder={
+                                    d?.translator.placeholder.type_to_translate
+                                }
+                                id="message"
+                            />
+                        </div>
 
-                <div className="w-1/2 ">
-                    <div className="flex flex-row justify-between items-center">
-                        <DropdownMenu>
-                            <DropdownMenuTrigger className="mb-5" asChild>
-                                <Button
-                                    variant="outline"
-                                    className="text-text-primary  bg-transparent border-text-primary"
-                                >
-                                    {translateLanguages[targetLanguage]}
-                                    <ChevronDown className="pl-2 " />
+                        <div className="w-1/2 ">
+                            <div className="flex flex-row justify-between items-center">
+                                <TgtLanguageSelection />
+                                <Button size={'icon'} onClick={handleCopy}>
+                                    <Copy size={20} />
                                 </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent className="w-56 bg-[#EFBB3F] border-[#EFBB3F] text-text-primary">
-                                <DropdownMenuLabel>
-                                    {d?.translator.select_lang}
-                                </DropdownMenuLabel>
-                                <DropdownMenuSeparator className="bg-text-primary" />
-                                <DropdownMenuRadioGroup
-                                    value={targetLanguage}
-                                    onValueChange={handleTargetLanguageChange}
-                                >
-                                    {renderLanguageOptions(
-                                        sourceLanguage,
-                                        false,
-                                    )}
-                                </DropdownMenuRadioGroup>
-                            </DropdownMenuContent>
-                        </DropdownMenu>
-                        <Button size={'icon'} onClick={handleCopy}>
-                            <Copy size={20} />
-                        </Button>
-                    </div>
-                    <div className="relative">
-                        <Textarea
-                            id="message"
-                            value={target}
-                            className="bg-gray-200 h-[50vh] text-text-primary rounded-md shadow"
-                            placeholder={
-                                d?.translator.placeholder.translation_box
-                            }
-                            readOnly
-                        />
-                        {isLoading && (
-                            <span className="absolute bottom-2 right-2">
-                                <Loader
-                                    className="animate-spin text-yellow-500"
-                                    size={40}
+                            </div>
+                            <div className="relative">
+                                <Textarea
+                                    id="message"
+                                    value={target}
+                                    className="bg-gray-200 h-[50vh] text-text-primary rounded-md shadow"
+                                    placeholder={
+                                        d?.translator.placeholder
+                                            .translation_box
+                                    }
+                                    readOnly
                                 />
-                            </span>
+                                {isLoading && (
+                                    <span className="absolute bottom-2 right-2">
+                                        <Loader
+                                            className="animate-spin text-yellow-500"
+                                            size={40}
+                                        />
+                                    </span>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex-col-center mt-5">
+                        <h2 className="text-sm md:text-xl font-semibold w-[33%] lg:w-1/2 mt-10 text-center">
+                            {d?.translator.notice}
+                        </h2>
+                        {!session && (
+                            <div className="mt-5">
+                                <Link href={'/register'}>
+                                    <Button>{d?.nav.signUp}</Button>
+                                </Link>
+                            </div>
                         )}
                     </div>
                 </div>
-            </div>
-            <div className="flex-col-center mt-5">
-                <h2 className="text-sm md:text-xl font-semibold w-[33%] lg:w-1/2 mt-10 text-center">
-                    {d?.translator.notice}
-                </h2>
-                {!session && (
-                    <div className="mt-5">
-                        <Link href={'/register'}>
-                            <Button>{d?.nav.signUp}</Button>
-                        </Link>
+            ) : (
+                // mobile view
+                <div className="text-translator min-h-screen">
+                    <div className="flex-col-center px-10">
+                        <div className="w-full mb-5">
+                            <SrcLangSelection />
+                            <Textarea
+                                value={source}
+                                onChange={handleInputChange}
+                                className=" bg-gray-100 h-[50vh] text-text-primary rounded-md shadow"
+                                placeholder={
+                                    d?.translator.placeholder.type_to_translate
+                                }
+                                id="message"
+                            />
+                        </div>
+
+                        <div className="w-full">
+                            <div className="flex flex-row justify-between items-center">
+                                <TgtLanguageSelection />
+                                <Button size={'icon'} onClick={handleCopy}>
+                                    <Copy size={20} />
+                                </Button>
+                            </div>
+                            <div className="relative">
+                                <Textarea
+                                    id="message"
+                                    value={target}
+                                    className="bg-gray-200 h-[50vh] text-text-primary rounded-md shadow"
+                                    placeholder={
+                                        d?.translator.placeholder
+                                            .translation_box
+                                    }
+                                    readOnly
+                                />
+                                {isLoading && (
+                                    <span className="absolute bottom-2 right-2">
+                                        <Loader
+                                            className="animate-spin text-yellow-500"
+                                            size={40}
+                                        />
+                                    </span>
+                                )}
+                            </div>
+                        </div>
                     </div>
-                )}
-            </div>
-        </div>
+                    <div className="flex-col-center mt-5">
+                        <h2 className="text-md font-semibold min-w-full p-10 text-center">
+                            {d?.translator.notice}
+                        </h2>
+                        {!session && (
+                            <div className="mt-5">
+                                <Link href={'/register'}>
+                                    <Button>{d?.nav.signUp}</Button>
+                                </Link>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            )}
+        </>
     );
 };
 

@@ -40,6 +40,7 @@
         "clsx": "^2.0.0",
         "cmdk": "^0.2.0",
         "dotenv": "^16.3.1",
+        "embla-carousel-autoplay": "^8.0.0-rc19",
         "embla-carousel-react": "^8.0.0-rc19",
         "formatjs": "^0.1.1",
         "framer-motion": "^10.16.16",

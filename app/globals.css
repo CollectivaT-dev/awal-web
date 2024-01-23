@@ -88,6 +88,9 @@ body,
 .flex-col-center {
     @apply flex flex-col justify-center items-center;
 }
+.flex-row-between {
+    @apply flex flex-row justify-between items-center;
+}
 .transVoiceParent {
     width: calc(50%);
     height: 100%;
