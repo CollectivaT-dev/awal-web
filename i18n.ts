@@ -321,5 +321,6 @@ export interface MessagesProps {
         awal_huggingface: string;
         tamazight_wiki: string;
         TALAM_groups: string;
+		tamazight_NLP_huggingface: string;
     };
 }

@@ -5,12 +5,32 @@ import { NextResponse } from 'next/server';
 export const dynamic = 'force-dynamic';
 export async function GET(req: Request) {
     try {
+        //# data form homepage
+        // total entries and validations for homepage
         const totalEntries = await prisma.contribution.count();
         const totalValidation = await prisma.contribution.count({
             where: { isValidated: true },
         });
+        // top ten for homepage
         const topTen = await prisma.user.findMany({
             take: 10, // Limit the result to top 10
+            orderBy: { score: 'desc' },
+            select: { id: true, username: true, score: true },
+            where: {
+                email: {
+                    not: {
+                        contains: 'test',
+                    },
+                },
+                score: {
+                    not: {
+                        equals: 0,
+                    },
+                },
+            },
+        });
+        // data for leaderboard page
+        const leaderboard = await prisma.user.findMany({
             orderBy: { score: 'desc' },
             select: { id: true, username: true, score: true },
             where: {
@@ -30,7 +50,7 @@ export async function GET(req: Request) {
         console.log(totalValidation);
         // Send the response with both totalEntries and topTen as JSON
         return new NextResponse(
-            JSON.stringify({ topTen: topTen, totalEntries, totalValidation }),
+            JSON.stringify({ topTen: topTen, totalEntries, totalValidation, leaderboard }),
             {
                 status: 200,
             },

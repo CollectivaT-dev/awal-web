@@ -5,9 +5,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 const ResourcesPage = () => {
     const { locale } = useLocaleStore();
-
     const [d, setDictionary] = useState<MessagesProps>();
-
     useEffect(() => {
         const fetchDictionary = async () => {
             const m = await getDictionary(locale);
