@@ -35,6 +35,7 @@ import {
 import Loading from '@/app/loading';
 import { Badge } from '@/components/ui/badge';
 import { X } from 'lucide-react';
+import useMediaQuery from '@/app/hooks/useMediaQuery';
 
 const formSchema = z
     .object({
@@ -160,7 +161,7 @@ export function SettingsPage() {
                 setLoading(true);
                 const response = await axios.get('/api/settings');
                 const userData = response.data;
-				console.log(userData)
+                console.log(userData);
                 const defaultData = {
                     age: 0,
                     central: {
@@ -195,7 +196,7 @@ export function SettingsPage() {
                     central: userData.central || defaultData.central,
                     tachelhit: userData.tachelhit || defaultData.tachelhit,
                     tarifit: userData.tarifit || defaultData.tarifit,
-                    languages: userData.languages ||defaultData.languages,
+                    languages: userData.languages || defaultData.languages,
                 };
                 setFetchedData(mergedData);
                 form.reset({
@@ -643,7 +644,7 @@ export function SettingsPage() {
                             <h1 className="text-sm mobile:text-2xl capitalize font-normal mobile:font-semibold">
                                 {d?.setting.mark_proficiency_tamazight}
                             </h1>
-                            <div className="grid grid-cols-3">
+                            <div className="grid grid-rows-1 lg:grid-cols-3">
                                 {/*// > central */}
                                 <div className="flex flex-col">
                                     <FormField
