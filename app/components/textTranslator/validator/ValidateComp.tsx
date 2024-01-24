@@ -426,13 +426,6 @@ const ValidateComp = () => {
                             />
                             {renderRadioGroup('left')}
                             <div className="flex flex-row justify-between items-center pt-10 w-full">
-                                {/* <Button
-                            onClick={handleDataFetch}
-                            variant="default"
-                            className="rounded-full text-text-primary bg-text-accent"
-                        >
-                            Frase aleat&#242;ria
-                        </Button> */}
                                 {sourceText.length > 0 &&
                                 targetText.length > 0 ? (
                                     <Dialog>
@@ -444,26 +437,21 @@ const ValidateComp = () => {
                                         <DialogContent className="sm:max-w-md">
                                             <DialogHeader>
                                                 <DialogTitle className="capitalize">
-                                                    {d?.texts.report_heading}
+                                                    {
+                                                        d?.texts
+                                                            .validate_report_heading
+                                                    }
                                                 </DialogTitle>
                                                 <DialogDescription className="capitalize">
-                                                    {d?.texts.report_text}{' '}
+                                                    {
+                                                        d?.texts
+                                                            .validate_report_text
+                                                    }{' '}
                                                 </DialogDescription>
                                             </DialogHeader>
                                             <div className="flex items-center space-x-2">
                                                 <div className="grid flex-1 gap-2">
-                                                    <Label
-                                                        htmlFor="link"
-                                                        className="sr-only"
-                                                    >
-                                                        Link
-                                                    </Label>
                                                     <Input
-                                                        id="link"
-                                                        defaultValue={
-                                                            d?.texts
-                                                                .report_placeholder
-                                                        }
                                                         value={reportInput}
                                                         onChange={(e) => {
                                                             setReportInput(
@@ -492,7 +480,6 @@ const ValidateComp = () => {
                         <div className="w-1/2 ">
                             <div className="flex flex-row justify-between items-center">
                                 <TgtLanguageSelection />
-
                                 <AlertDialog>
                                     <AlertDialogTrigger asChild>
                                         <Button
@@ -644,7 +631,7 @@ const ValidateComp = () => {
                             <SrcLanguageSelection />
                             <Textarea
                                 value={sourceText}
-                                className="border border-gray-300 h-[50vh] rounded-md shadow"
+                                className="border border-gray-300 h-auto rounded-md shadow"
                                 placeholder={
                                     d?.translator.placeholder.type_to_translate
                                 }
@@ -664,20 +651,21 @@ const ValidateComp = () => {
                                         <DialogContent className="sm:max-w-md">
                                             <DialogHeader>
                                                 <DialogTitle className="capitalize">
-                                                    {d?.texts.report_heading}
+                                                    {
+                                                        d?.texts
+                                                            .validate_report_heading
+                                                    }
                                                 </DialogTitle>
                                                 <DialogDescription className="capitalize">
-                                                    {d?.texts.report_text}{' '}
+                                                    {
+                                                        d?.texts
+                                                            .validate_report_text
+                                                    }{' '}
                                                 </DialogDescription>
                                             </DialogHeader>
                                             <div className="flex items-center space-x-2">
                                                 <div className="grid flex-1 gap-2">
                                                     <Input
-                                                        id="link"
-                                                        defaultValue={
-                                                            d?.texts
-                                                                .report_placeholder
-                                                        }
                                                         value={reportInput}
                                                         onChange={(e) => {
                                                             setReportInput(
@@ -815,7 +803,7 @@ const ValidateComp = () => {
 
                             <Textarea
                                 id="tgt_message"
-                                className="border border-gray-300 h-[50vh] rounded-md shadow"
+                                className="border border-gray-300 h-auto rounded-md shadow"
                                 placeholder={
                                     d?.translator.placeholder.translation_box
                                 }
@@ -837,10 +825,7 @@ const ValidateComp = () => {
                             onClick={handleRejection}
                         />
                     </div>
-                    <div
-                        className="flex items-center justify-center my-2
-			"
-                    >
+                    <div className="flex items-center justify-center my-2">
                         <Button
                             variant={'default'}
                             className="cursor-pointer"
