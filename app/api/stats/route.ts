@@ -30,7 +30,14 @@ export async function GET(req: Request) {
             },
         });
         // data for leaderboard page
+        const limit = 5; // Fixed number of items per page
+        const url = new URL(req.url);
+		console.log(url)
+        const page = parseInt(url.searchParams.get('page') || '1', 10);
+        const skip = (page - 1) * limit;
         const leaderboard = await prisma.user.findMany({
+            skip: skip,
+            take: limit,
             orderBy: { score: 'desc' },
             select: { id: true, username: true, score: true },
             where: {
@@ -50,7 +57,12 @@ export async function GET(req: Request) {
         console.log(totalValidation);
         // Send the response with both totalEntries and topTen as JSON
         return new NextResponse(
-            JSON.stringify({ topTen: topTen, totalEntries, totalValidation, leaderboard }),
+            JSON.stringify({
+                topTen: topTen,
+                totalEntries,
+                totalValidation,
+                leaderboard,
+            }),
             {
                 status: 200,
             },
