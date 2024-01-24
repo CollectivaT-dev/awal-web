@@ -252,7 +252,7 @@ const TextTranslator = () => {
     );
     useEffect(() => {
         handleTranslate();
-    }, [source, sourceLanguage, targetLanguage]);
+    }, [source, sourceLanguage, targetLanguage, handleTranslate]);
 
     return (
         <>

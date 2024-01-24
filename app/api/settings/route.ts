@@ -16,7 +16,7 @@ export async function PATCH(req: Request) {
                             .toLowerCase()
                             .replace(/\s/g, ''),
                     },
-                    { email: body.email },
+                    { email: body.email.toLowerCase() },
                 ],
                 NOT: { id: body.userId },
             },

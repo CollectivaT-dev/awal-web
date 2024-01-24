@@ -437,10 +437,16 @@ const ValidateComp = () => {
                                         <DialogContent className="sm:max-w-md">
                                             <DialogHeader>
                                                 <DialogTitle className="capitalize">
-                                                    {d?.texts.validate_report_heading}
+                                                    {
+                                                        d?.texts
+                                                            .validate_report_heading
+                                                    }
                                                 </DialogTitle>
                                                 <DialogDescription className="capitalize">
-                                                    {d?.texts.validate_report_text}{' '}
+                                                    {
+                                                        d?.texts
+                                                            .validate_report_text
+                                                    }{' '}
                                                 </DialogDescription>
                                             </DialogHeader>
                                             <div className="flex items-center space-x-2">
@@ -645,16 +651,21 @@ const ValidateComp = () => {
                                         <DialogContent className="sm:max-w-md">
                                             <DialogHeader>
                                                 <DialogTitle className="capitalize">
-                                                    {d?.texts.validate_report_heading}
+                                                    {
+                                                        d?.texts
+                                                            .validate_report_heading
+                                                    }
                                                 </DialogTitle>
                                                 <DialogDescription className="capitalize">
-                                                    {d?.texts.validate_report_text}{' '}
+                                                    {
+                                                        d?.texts
+                                                            .validate_report_text
+                                                    }{' '}
                                                 </DialogDescription>
                                             </DialogHeader>
                                             <div className="flex items-center space-x-2">
                                                 <div className="grid flex-1 gap-2">
                                                     <Input
-
                                                         value={reportInput}
                                                         onChange={(e) => {
                                                             setReportInput(
@@ -814,10 +825,7 @@ const ValidateComp = () => {
                             onClick={handleRejection}
                         />
                     </div>
-                    <div
-                        className="flex items-center justify-center my-2
-			"
-                    >
+                    <div className="flex items-center justify-center my-2">
                         <Button
                             variant={'default'}
                             className="cursor-pointer"
