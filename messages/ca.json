@@ -43,7 +43,7 @@
     "translator": {
         "select_lang": "Selecciona l'idioma",
         "generate": "Frase aleatòria",
-        "translate": "Traduir",
+        "translate": "Pretraduir",
         "report": "Informa",
         "placeholder": {
             "type_to_translate": "Introduïu aquí el text que voleu traduir...",
@@ -147,7 +147,8 @@
         "login_to_signup_2": "Inscriu-te!",
 		"statistic":"Classificació de la Comunitat",
         "validate_report_heading": "Informar contribució",
-        "validate_report_text": "Expliqueu breument què hi ha de malament amb aquesta contribució segons les directrius de la nostra comunitat."
+        "validate_report_text": "Expliqueu breument què hi ha de malament amb aquesta contribució segons les directrius de la nostra comunitat.",
+        "faq_heading":"Preguntes Freqüents"
     },
     "validator": {
         "alert_no_more_entries": "No hi ha més entrades per validar per al parell de llengües i variant seleccionat. Pots contribuir amb més traduccions mentrestant.",
@@ -301,5 +302,24 @@
         "tamazight_wiki": "Viquipèdia en amazic",
         "TALAM_groups": "El portal TALAM recull aplicacions relacionades amb el processament automàtic del amazic"
 
+    },
+    "faq": {
+        "q1": {
+            "q": "No tinc confiança en les meves habilitats d'escriptura en català/espanyol/francès/àrab. Què hauria de fer?",
+            "a": "No et preocupis! Si entens bé la llengua, encara pots fer contribucions valuoses. Utilitza el botó \"Frase Aleatòria\" per carregar automàticament una frase d'origen i, a continuació, proporciona la seva traducció a l'amazic. També pots extreure frases de fonts sense drets d'autor, com ara la Viquipèdia, per diversificar el tipus de traduccions que recopilem."
+        },
+        "q2": {
+            "q": "He corregit un error en la sortida de la traducció automàtica, però encara fa el mateix error. La meva contribució no s'està guardant?",
+            "a": "Les teves correccions es guarden a la nostra base de dades, però no afectaran immediatament la traducció automàtica. La millora es produirà en una fase posterior, després de recopilar prou traduccions de qualitat dels col·laboradors com tu. Així que els teus esforços són valuosos i contribuiran a millorar el motor de traducció amb el temps."
+        },
+        "q3": {
+            "q": "Com es calculen les puntuacions de contribució per a les traduccions?",
+            "a": "Les teves punts de contribució es determinen segons la longitud de caràcters tant de la frase d'origen que introdueixes com de la seva traducció. Si introdueixes manualment la font i tradueixes des de zero (és a dir, sense utilitzar 'Pre-traduir'), els teus punts seran la suma dels caràcters de les dues frases. Si utilitzes el motor de traducció automàtica fent clic a 'Pre-traduir', els punts per a la traducció es basaran en el nombre d'edicions de caràcters que facis a la sortida de la traducció automàtica. Si carregues una frase d'origen de la base de dades amb 'Frase aleatòria', només guanyaràs punts per la teva traducció, no per la frase d'origen."
+        },
+        "q4": {
+            "q": "Guanyo punts amb les contribucions de veu a Common Voice?",
+            "a": "Desafortunadament, per ara, el sistema de punts només es basa en les contribucions de traducció. En el futur, també ens agradaria incloure les contribucions de veu en els punts de contribució."
+        }
     }
+
 }

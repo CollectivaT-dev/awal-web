@@ -43,7 +43,7 @@
     "translator": {
         "select_lang": "Sélectionnez la Langue",
         "generate": "Phrase Aléatoire",
-        "translate": "Traduire",
+        "translate": "Pré-traduire",
         "report": "Signaler",
         "placeholder": {
             "type_to_translate": "Écrivez quelque chose à traduire...",
@@ -147,7 +147,8 @@
         "total_voice_validation": "heure validée",
         "statistic":"Classement de la Communauté",
         "validate_report_heading": "Signaler la contribution",
-        "validate_report_text": "Veuillez nous dire brièvement ce qui ne va pas avec cette contribution selon nos lignes directrices communautaires."
+        "validate_report_text": "Veuillez nous dire brièvement ce qui ne va pas avec cette contribution selon nos lignes directrices communautaires.",
+        "faq_heading":"Foire aux questions"
     },
     "validator": {
         "alert_no_more_entries": "Il n'y a plus d'entrées à valider pour la paire de langues et la variante sélectionnée. Vous pouvez contribuer avec plus de traductions entre-temps.",
@@ -301,5 +302,24 @@
         "tamazight_wiki": "Wikipédia en Tamazight",
         "TALAM_groups": "Le portail TALAM regroupe des applications liées au traitement automatique du Tamazight"
 
+    },
+    "faq": {
+        "q1": {
+            "q": "Je ne suis pas sûr de mes compétences en écriture en catalan/espagnol/français/arabe. Que dois-je faire ?",
+            "a": "Pas d'inquiétude ! Si vous avez une bonne compréhension de la langue, vous pouvez toujours faire des contributions précieuses. Utilisez le bouton 'Phrase Aléatoire' pour charger automatiquement une phrase source, puis fournissez sa traduction en tamazight. De plus, vous pouvez extraire des phrases de sources non soumises à des droits d'auteur, telles que Wikipédia, pour diversifier le type de traductions que nous recueillons."
+        },
+        "q2": {
+            "q": "J'ai corrigé une erreur dans la sortie de la traduction automatique, mais elle continue de faire la même erreur. Ma contribution n'est-elle pas enregistrée ?",
+            "a": "Vos corrections sont enregistrées dans notre base de données, mais elles n'affecteront pas immédiatement la traduction automatique. L'amélioration se produira à une phase ultérieure, après avoir recueilli suffisamment de traductions de qualité de contributeurs comme vous. Ainsi, vos efforts sont précieux et contribueront à améliorer le moteur de traduction avec le temps."
+        },
+        "q3": {
+            "q": "Comment sont calculés les scores de contribution pour les traductions ?",
+            "a": "Vos points de contribution sont déterminés par la longueur en caractères à la fois de la phrase source que vous saisissez et de sa traduction. Si vous saisissez manuellement la source et traduisez de zéro (c'est-à-dire sans utiliser 'Pré-traduire'), vos points seront la somme des caractères des deux phrases. Si vous utilisez le moteur de traduction automatique en cliquant sur 'Pré-traduire', vos points pour la traduction seront basés sur le nombre d'éditions de caractères que vous apportez à la sortie de la traduction automatique. Si vous chargez une phrase source depuis la base de données avec 'Phrase aléatoire', vous ne gagnerez des points que pour votre traduction, pas pour la phrase source."
+        },
+        "q4": {
+            "q": "Est-ce que je gagne des points avec les contributions vocales dans Common Voice ?",
+            "a": "Malheureusement, pour le moment, le système de points est uniquement basé sur les contributions de traduction. À l'avenir, nous aimerions également inclure les contributions vocales dans les points de contribution."
+        }
     }
+
 }
