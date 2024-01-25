@@ -148,7 +148,7 @@
         "statistic": "Community Leaderboard",
         "validate_report_heading": "Report contribution",
         "validate_report_text": "Please tell us briefly what's wrong with this contribution according to our community guidelines.",
-		"faq_heading":"FAQ"
+		"faq_heading":"Frequently Asked Questions"
     },
     "validator": {
         "alert_no_more_entries": "No more entries to validate for language pair and variant. You can contribute more translations meanwhile.",
@@ -302,12 +302,16 @@
     },
     "faq": {
         "q1": {
-            "q": "q1",
-            "a": "a1"
+            "q": "I'm not good in language X what should I do. ",
+            "a": "You can always translate to Amazigh and load random sentes"
         },
         "q2": {
             "q": "q2",
             "a": "a2"
+        },
+        "q3": {
+            "q": "Question 3",
+            "a": " answer"
         }
     }
 }
