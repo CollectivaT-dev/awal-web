@@ -61,7 +61,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
     useEffect(() => {
         const fetchDictionary = async () => {
             const m = await getDictionary(locale);
-            setD(m);
+            setD(m as unknown as MessagesProps);
         };
         fetchDictionary();
     }, [locale]);

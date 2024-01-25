@@ -171,6 +171,7 @@ export interface MessagesProps {
         statistic: string;
         validate_report_heading: string;
         validate_report_text: string;
+        faq_heading: string;
     };
     validator: {
         alert_no_more_entries: string;
@@ -321,6 +322,16 @@ export interface MessagesProps {
         awal_huggingface: string;
         tamazight_wiki: string;
         TALAM_groups: string;
-		tamazight_NLP_huggingface: string;
+        tamazight_NLP_huggingface: string;
+    };
+    faq: {
+        q1: {
+            q: string;
+            a: string;
+        };
+        q2: {
+            q: string;
+            a: string;
+        };
     };
 }

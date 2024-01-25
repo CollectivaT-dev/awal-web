@@ -84,7 +84,7 @@
         "alert_copy": "The translation could not be copied.",
         "alert_try_again": "Please try again later.",
         "alert_select_variant": "Please select your proficiency level",
-		"validation_success_report":"Contribution reported. Thank you for your attention."
+        "validation_success_report": "Contribution reported. Thank you for your attention."
     },
     "text_with_link": {
         "accept_terms": {
@@ -146,8 +146,9 @@
         "login_to_signup_1": "New to Awal?",
         "login_to_signup_2": "Sign up!",
         "statistic": "Community Leaderboard",
-		"validate_report_heading":"Report contribution",
-		"validate_report_text":"Please tell us briefly what's wrong with this contribution according to our community guidelines."
+        "validate_report_heading": "Report contribution",
+        "validate_report_text": "Please tell us briefly what's wrong with this contribution according to our community guidelines.",
+		"faq_heading":"FAQ"
     },
     "validator": {
         "alert_no_more_entries": "No more entries to validate for language pair and variant. You can contribute more translations meanwhile.",
@@ -163,7 +164,7 @@
         "cancel": "Cancel",
         "contribute": "Contribute",
         "clear": "Clear text",
-		"skip":"Skip"
+        "skip": "Skip"
     },
     "setting": {
         "oral": "Oral",
@@ -298,5 +299,15 @@
         "tamazight_NLP_huggingface": "Tamazight NLP group publishes open datasets and models in huggingface",
         "tamazight_wiki": "Tamazight wikipedia",
         "TALAM_groups": "TALAM portal groups applications in relation with automatic processing of Tamazight. "
+    },
+    "faq": {
+        "q1": {
+            "q": "q1",
+            "a": "a1"
+        },
+        "q2": {
+            "q": "q2",
+            "a": "a2"
+        }
     }
 }

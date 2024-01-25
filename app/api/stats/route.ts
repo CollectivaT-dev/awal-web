@@ -32,7 +32,7 @@ export async function GET(req: Request) {
         // data for leaderboard page
         const limit = 5; // Fixed number of items per page
         const url = new URL(req.url);
-		console.log(url)
+        console.log(url);
         const page = parseInt(url.searchParams.get('page') || '1', 10);
         const skip = (page - 1) * limit;
         const leaderboard = await prisma.user.findMany({
@@ -55,7 +55,7 @@ export async function GET(req: Request) {
         });
         console.log(topTen);
         console.log(totalValidation);
-        // Send the response with both totalEntries and topTen as JSON
+        // Send the response with topTen, totalEntries, totalValidation and leaderboard
         return new NextResponse(
             JSON.stringify({
                 topTen: topTen,
@@ -68,7 +68,6 @@ export async function GET(req: Request) {
             },
         );
     } catch (error) {
-        console.log('Failed to get data:', error.message);
         // Send an error response
         return new NextResponse(
             JSON.stringify({ error: 'Failed to get data' }),

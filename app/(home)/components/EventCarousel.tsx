@@ -20,7 +20,7 @@ const EventCarousel = () => {
     useEffect(() => {
         const fetchDictionary = async () => {
             const m = await getDictionary(locale);
-            setD(m);
+            setD(m as unknown as MessagesProps);
         };
         fetchDictionary();
     }, [locale]);

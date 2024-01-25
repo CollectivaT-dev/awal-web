@@ -29,7 +29,7 @@ const Translation: React.FC<TranslationProps> = ({
     useEffect(() => {
         const fetchDictionary = async () => {
             const m = await getDictionary(locale);
-            setD(m);
+            setD(m as unknown as MessagesPropsm);
         };
         fetchDictionary();
     }, [locale]);
