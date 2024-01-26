@@ -13,6 +13,14 @@ import {
 import { Card, CardContent } from '@/components/ui/card';
 import Autoplay from 'embla-carousel-autoplay';
 import useMediaQuery from '@/app/hooks/useMediaQuery';
+
+interface Carousel {
+    [key: string]: {
+        heading: string;
+        body: string;
+        link: string;
+    };
+}
 const EventCarousel = () => {
     const { locale } = useLocaleStore();
     const [d, setD] = useState<MessagesProps>();
@@ -25,6 +33,9 @@ const EventCarousel = () => {
         fetchDictionary();
     }, [locale]);
     const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
+    // get carousel object from json
+    const c: Carousel = d?.carousel ?? {};
+    console.log(c);
     return (
         <>
             {isAboveLgScreen ? (
@@ -38,23 +49,24 @@ const EventCarousel = () => {
                     className="w-1/2"
                 >
                     <CarouselContent>
-                        {/* new item, change class name basis-1/2 for card size and responsiveness <></> */}
-                        <CarouselItem>
-                            <div className="p-1">
-                                <Card>
-                                    <Link href={'/'} scroll={false}>
-                                        <CardContent className="flex-col-center">
-                                            <span className="py-10 flex flex-col justify-between items-center space-y-2 ">
-                                                <h1 className="text-3xl font-bold">
-                                                    {d?.texts.data_marathon}
-                                                </h1>
-                                                <p>17/02/2024</p>
-                                            </span>
-                                        </CardContent>
-                                    </Link>
-                                </Card>
-                            </div>
-                        </CarouselItem>
+                        {Object.keys(c).map((key) => (
+                            <CarouselItem key={key}>
+                                <div className="p-1">
+                                    <Card>
+                                        <Link href={c[key].link} scroll={false}>
+                                            <CardContent className="flex-col-center">
+                                                <span className="py-10 flex flex-col justify-between items-center space-y-2 ">
+                                                    <h1 className="text-3xl font-bold">
+                                                        {c[key].heading}
+                                                    </h1>
+                                                    <p> {c[key].body}</p>
+                                                </span>
+                                            </CardContent>
+                                        </Link>
+                                    </Card>
+                                </div>
+                            </CarouselItem>
+                        ))}
                     </CarouselContent>
                     <CarouselPrevious />
                     <CarouselNext />
@@ -68,34 +80,27 @@ const EventCarousel = () => {
                         align: 'center',
                         loop: true,
                     }}
-                    className=" w-1/2 "
+                    className="w-1/2"
                 >
                     <CarouselContent>
-                        <CarouselItem>
-                            <div className="p-1">
-                                <Card>
-                                    <CardContent className="flex aspect-square items-center justify-center p-6">
-                                        <span className="flex-col-center text-center space-y-2">
-                                            <h1 className="text-xl font-semibold">
-                                                {d?.texts.data_marathon}
-                                            </h1>
-                                            <p>17/02/2024</p>
-                                        </span>
-                                    </CardContent>
-                                </Card>
-                            </div>
-                        </CarouselItem>
-                        {/* <CarouselItem>
-                            <div className="p-1">
-                                <Card>
-                                    <CardContent className="flex aspect-square items-center justify-center p-6">
-                                        <span className="text-4xl font-semibold">
-                                            b
-                                        </span>
-                                    </CardContent>
-                                </Card>
-                            </div>
-                        </CarouselItem> */}
+                        {Object.keys(c).map((key) => (
+                            <CarouselItem key={key}>
+                                <div className="p-1">
+                                    <Card>
+                                        <Link href={c[key].link} scroll={false}>
+                                            <CardContent className="flex aspect-square items-center justify-center p-6">
+                                                <span className="flex-col-center text-center space-y-2">
+                                                    <h1 className="text-xl font-semibold">
+                                                        {c[key].heading}
+                                                    </h1>
+                                                    <p> {c[key].body}</p>
+                                                </span>
+                                            </CardContent>
+                                        </Link>
+                                    </Card>
+                                </div>
+                            </CarouselItem>
+                        ))}
                     </CarouselContent>
                     <CarouselPrevious />
                     <CarouselNext />

@@ -1,6 +1,6 @@
 'use client';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { ChevronDown, HelpCircle } from 'lucide-react';
+import { ChevronDown, Eraser, HelpCircle } from 'lucide-react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import {
@@ -498,14 +498,14 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
                                     }
                                 />
                                 <Button
-                                    variant={'outline'}
+                                    size={'icon'}
                                     className="absolute bottom-2 right-2"
                                     onClick={() => {
                                         setSourceText('');
                                         setRandomClicked(false);
                                     }}
                                 >
-                                    {d?.btn.clear}
+                                    <Eraser />
                                 </Button>
                             </div>
 
@@ -623,7 +623,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
                                 />
 
                                 <Button
-                                    variant={'outline'}
+                                    size={'icon'}
                                     className="absolute bottom-2 right-2"
                                     onClick={() => {
                                         setTargetText('');
@@ -631,7 +631,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
                                         setTranslated(false);
                                     }}
                                 >
-                                    {d?.btn.clear}
+                                    <Eraser />
                                 </Button>
                             </div>
 
@@ -700,14 +700,14 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
                                 />
 
                                 <Button
-                                    variant={'outline'}
+                                    size={'icon'}
                                     className="absolute bottom-2 right-2"
                                     onClick={() => {
                                         setSourceText('');
                                         setRandomClicked(false);
                                     }}
                                 >
-                                    {d?.btn.clear}
+                                    <Eraser />
                                 </Button>
                             </div>
 
@@ -817,7 +817,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
                                 />
 
                                 <Button
-                                    variant={'outline'}
+                                    size={'icon'}
                                     className="absolute bottom-2 right-2"
                                     onClick={() => {
                                         setTargetText('');
@@ -825,7 +825,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
                                         setTranslated(false);
                                     }}
                                 >
-                                    {d?.btn.clear}
+                                    <Eraser />
                                 </Button>
                             </div>
 

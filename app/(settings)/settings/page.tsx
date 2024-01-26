@@ -74,6 +74,7 @@ const formSchema = z
             written_tif: z.number().optional(),
             written_lat: z.number().optional(),
         }),
+        other: z.string(),
         isSubscribed: z.boolean().default(false).optional(),
     })
     .partial();
@@ -105,6 +106,7 @@ export function SettingsPage() {
             arabic: false,
             french: false,
         });
+    const [otherVar, setOtherVar] = useState('');
     const [formState, setFormState] =
         useState<AmazicConfig.AmazicProps | null>();
     useEffect(() => {
@@ -151,6 +153,7 @@ export function SettingsPage() {
                 arabic: false,
                 french: false,
             },
+            other: '',
         },
     });
 
@@ -189,6 +192,7 @@ export function SettingsPage() {
                         arabic: false,
                         french: false,
                     },
+                    other: '',
                 };
                 const mergedData = {
                     ...userData,
@@ -197,6 +201,7 @@ export function SettingsPage() {
                     tachelhit: userData.tachelhit || defaultData.tachelhit,
                     tarifit: userData.tarifit || defaultData.tarifit,
                     languages: userData.languages || defaultData.languages,
+                    other: userData.other || defaultData.other,
                 };
                 setFetchedData(mergedData);
                 form.reset({
@@ -207,6 +212,7 @@ export function SettingsPage() {
                     age: mergedData.age || 0,
                     gender: mergedData.gender || '',
                     isSubscribed: mergedData.isSubscribed || false,
+                    other: mergedData.other || '',
                     central: {
                         isChecked: mergedData.central?.isChecked || false,
                         oral: mergedData.central?.oral || 0,
@@ -644,7 +650,7 @@ export function SettingsPage() {
                             <h1 className="text-sm mobile:text-2xl capitalize font-normal mobile:font-semibold">
                                 {d?.setting.mark_proficiency_tamazight}
                             </h1>
-                            <div className="grid grid-rows-1 lg:grid-cols-3">
+                            <div className="grid grid-rows-1 lg:grid-cols-4">
                                 {/*// > central */}
                                 <div className="flex flex-col">
                                     <FormField
@@ -982,6 +988,38 @@ export function SettingsPage() {
                                         </div>
                                     )}
                                 </div>
+								{/* other variation */}
+								{/* <div className="flex flex-col">
+                                    <FormField
+                                        name="other.isChecked"
+                                        control={form.control}
+                                        render={({ field }) => (
+                                            <FormItem className="flex justify-start items-center space-x-2">
+                                                <FormLabel>
+                                                    {' '}
+                                                    {d?.variation.other}
+                                                </FormLabel>
+                                                <FormControl>
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={form.watch(
+                                                            'other.isChecked',
+                                                        )}
+                                                        className="text-orange-600 w-5 h-5 border-gray-300 focus:ring-0 focus:ring-offset-0 rounded-full"
+                                                        onChange={
+                                                            handleOthertChecked
+                                                        }
+                                                    />
+                                                </FormControl>
+                                            </FormItem>
+                                        )}
+                                    />
+                                    {isOtherCheckedBox && (
+                                        <div className="flex flex-col gap-2 p-2 ">
+                                          <Input value={otherVar} onChange={(e)=>(setOtherVar(e.target.value))}></Input>
+                                        </div>
+                                    )}
+                                </div> */}
                             </div>
                             {/* other lang */}
                         </div>

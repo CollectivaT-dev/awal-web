@@ -30,7 +30,7 @@ const FaqPage = () => {
                     className="flex flex-col items-start justify-start space-y-3 mx-2"
                     key={key}
                 >
-                    <h2 className="text-xl my-3">{faq[key].q}</h2>
+                    <h2 className="text-xl font-semibold mt-3">{faq[key].q}</h2>
                     <p className="text-md my-3 pl-2">{faq[key].a}</p>
                 </div>
             ))}

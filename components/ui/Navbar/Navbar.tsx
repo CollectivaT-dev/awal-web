@@ -122,10 +122,10 @@ const AppBar = () => {
                 AWAL
             </Link>
             {/* sign in */}
-			<div className='flex flex-row items-center justify-center space-x-3 ml-auto'>
-            <SignInButton />
-			{/* user info rendering */}
-            
+            <div className="flex flex-row items-center justify-center space-x-3 ml-auto">
+                <SignInButton />
+                {/* user info rendering */}
+
                 <div className="flex lg:hidden">
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
@@ -195,7 +195,6 @@ const AppBar = () => {
                                 <DropdownMenuRadioItem value="en">
                                     {d?.language?.en}
                                 </DropdownMenuRadioItem>
-
                                 <DropdownMenuRadioItem value="fr">
                                     {d?.language?.fr}
                                 </DropdownMenuRadioItem>
@@ -247,6 +246,11 @@ const AppBar = () => {
                         <li>
                             <Link href={'/about'} scroll={false}>
                                 {d?.menu.about}
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href={'/faq'} scroll={false}>
+                                {d?.menu.faq}
                             </Link>
                         </li>
                         <li>

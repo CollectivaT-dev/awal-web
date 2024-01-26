@@ -28,7 +28,8 @@
         "translator": "Translate",
         "voice": "Voice",
         "about": "About Awal",
-        "resources": "Resources"
+        "resources": "Resources",
+        "faq": "FAQ"
     },
     "user": {
         "username": "Username",
@@ -61,7 +62,8 @@
         "privacy": "Privacy Policy",
         "cookie": "Cookie Policy",
         "terms": "Contribution terms",
-        "contributionTerms": "Contribution terms"
+        "contributionTerms": "Contribution terms",
+        "leaderboard": "Leaderboard"
     },
     "toasters": {
         "under_construction": "This page is still under development.",
@@ -128,7 +130,6 @@
         "item_3_normal": "Contribute speech data through Common Voice, giving Tamazight a voice in the digital world."
     },
     "texts": {
-        "data_marathon": "Awal Translate Datathon",
         "accept_mail_list": "Subscribe to Awal mailing list",
         "save_settings": "Save settings",
         "loading": "Loading",
@@ -148,7 +149,8 @@
         "statistic": "Community Leaderboard",
         "validate_report_heading": "Report contribution",
         "validate_report_text": "Please tell us briefly what's wrong with this contribution according to our community guidelines.",
-		"faq_heading":"Frequently Asked Questions"
+        "faq_heading": "Frequently Asked Questions",
+		"rank":"Rank"
     },
     "validator": {
         "alert_no_more_entries": "No more entries to validate for language pair and variant. You can contribute more translations meanwhile.",
@@ -316,6 +318,13 @@
         "q4": {
             "q": "Do I gain points from voice contributions in Common Voice?",
             "a": "Unfortunately, for now, the points system is only based on translation contributions. In the future, we would like to also include voice contributions in the contribution points."
+        }
+    },
+    "carousel": {
+        "c1": {
+            "heading": "Awal Translate Datathon",
+            "body": "17/02/2024",
+            "link": ""
         }
     }
 }

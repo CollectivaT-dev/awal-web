@@ -32,11 +32,12 @@ model User {
   validationEntries String[]
   reportedEntries   String[]
 
-  // user settings
+  // user lang settings
   languages  Json?
-  tachelhit Json?
-  central   Json?
-  tarifit   Json?
+  tachelhit  Json?
+  central    Json?
+  tarifit    Json?
+  other 	 Json?
 
   contribution Contribution[]
 }

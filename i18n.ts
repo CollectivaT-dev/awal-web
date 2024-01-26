@@ -52,6 +52,7 @@ export interface MessagesProps {
         voice: string;
         about: string;
         resources: string;
+        faq: string;
     };
     user: {
         username: string;
@@ -85,6 +86,7 @@ export interface MessagesProps {
         cookie: string;
         terms: string;
         contributionTerms: string;
+        leaderboard: string;
     };
     toasters: {
         under_construction: string;
@@ -172,6 +174,7 @@ export interface MessagesProps {
         validate_report_heading: string;
         validate_report_text: string;
         faq_heading: string;
+        rank: string;
     };
     validator: {
         alert_no_more_entries: string;
@@ -332,6 +335,13 @@ export interface MessagesProps {
         q2: {
             q: string;
             a: string;
+        };
+    };
+    carousel: {
+        c1: {
+            heading: string;
+            body: string;
+            link: string;
         };
     };
 }
