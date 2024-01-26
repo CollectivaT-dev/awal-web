@@ -75,6 +75,9 @@ const LeaderBoardPage = () => {
     }
     return (
         <div className="flex-col-center min-h-[80vh]">
+            <h1 className="text-3xl font-semibold my-3">
+                {d?.texts.statistic}
+            </h1>
             <Table className="flex-col-center">
                 <TableHeader>
                     <TableRow>
@@ -105,7 +108,7 @@ const LeaderBoardPage = () => {
                         </TableRow>
                     ))}
                 </TableBody>
-			<Separator className="my-10 w-[20%]" />
+                <Separator className="my-10 w-[20%]" />
             </Table>
             {/* pagination */}
             <Pagination>
