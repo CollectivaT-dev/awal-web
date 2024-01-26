@@ -329,9 +329,14 @@
     },
     "carousel": {
         "c1": {
-            "heading": "Awal Translate Datathon",
-            "body": "17/02/2024",
-            "link": ""
+            "heading": "Marató de Dades Awal: Uneix-te per a l'Amazic!",
+            "body": "Acompanya'ns el 17 de febrer, de 11:00 a 20:00 h, a la seu del CIEMEN a Barcelona, en un esforç col·lectiu per generar dades i enriquir la llengua amazic. Forma part de la preservació i promoció de la cultura amaziga. Totes les edats, gèneres i variants dialectals són benvingude/as!",
+            "link": "https://twitter.com/awaldigital"
+        },
+          "c2": {
+            "heading": "AWAL al blog de Col·lectivaT",
+            "body": "Presentació del projecte Awal per preservar i promoure la llengua amazic a internet amb una comunitat de dades forta i unida.",
+            "link": "https://collectivat.cat/blog/2024-01-22-awal-ca/"
         }
     }
 }
