@@ -87,7 +87,6 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
     const { update: sessionUpdate } = useSession();
     const [isLoading, setIsLoading] = useState(false);
     // read from local storage
-
     useEffect(() => {
         localStorage.setItem('sourceLanguage', sourceLanguage);
         localStorage.setItem('targetLanguage', targetLanguage);
@@ -280,12 +279,12 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
         sourceText,
         translateClicked,
     ]);
-    console.log('fetchedText', fetchedText);
-    console.log('entryScore', entryScore);
-    console.log('totalScore', totalScore);
-    console.log('randomClicked', randomClicked);
-    console.log('transclicked', translateClicked);
-    console.log('translated', translated);
+    // console.log('fetchedText', fetchedText);
+    // console.log('entryScore', entryScore);
+    // console.log('totalScore', totalScore);
+    // console.log('randomClicked', randomClicked);
+    // console.log('transclicked', translateClicked);
+    // console.log('translated', translated);
 
     // contribution post route
     const handleContribute = async () => {
@@ -311,26 +310,25 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
             toast.error(`${d?.toasters.alert_no_text}`);
             return;
         }
-        if (
-            ((srcLanguageCode === 'ber' || srcLanguageCode === 'zgh') &&
-                !srcVar) ||
-            ((tgtLanguageCode === 'ber' || tgtLanguageCode === 'zgh') &&
-                !tgtVar)
-        ) {
-            toast.error(`${d?.toasters.select_var}`);
-            return;
-        }
+        // if (
+        //     ((srcLanguageCode === 'ber' || srcLanguageCode === 'zgh') &&
+        //         !srcVar) ||
+        //     ((tgtLanguageCode === 'ber' || tgtLanguageCode === 'zgh') &&
+        //         !tgtVar)
+        // ) {
+        //     toast.error(`${d?.toasters.select_var}`);
+        //     return;
+        // }
         console.log(data);
         if (data.userId.length === 0) {
             router.push('/signIn', { scroll: false });
         }
-        try {
+        try { 
             setIsLoading(true);
             const res = await axios.post(
                 `/api/contribute`,
                 JSON.stringify(data),
             );
-
             toast.success(
                 <span>
                     {d?.toasters.success_contribution}{' '}

@@ -205,12 +205,15 @@ const ValidateComp = () => {
         },
         [sourceLanguage, validateLanguage],
     );
+    const validatorToaster = useMemo(() => d?.validator ?? ({} as any), [d]);
+
     // retrieve contribution item
-    console.log();
     useEffect(() => {
-        const toastId = toast.loading('Carregant...', {
+        console.log(validatorToaster);
+        const toastId = toast.loading(validatorToaster.alert_loading, {
             id: 'loading',
         });
+
         const fetchData = async () => {
             const srcLangCode = getLanguageCode(sourceLanguage);
             const tgtLangCode = getLanguageCode(targetLanguage);
@@ -235,14 +238,13 @@ const ValidateComp = () => {
                 console.log(res);
                 console.log(res.status);
                 console.log(res.data);
-
                 if (res.data) {
                     setSourceText(res.data.src_text || '');
                     setTargetText(res.data.tgt_text || '');
-                    setLeftRadioValue(res.data.srcVar || '');
-                    setRightRadioValue(res.data.tgtVar || '');
+					setLeftRadioValue(res.data.srcVar || '');
+					setRightRadioValue(res.data.tgtVar || '');
                     setEntry(res.data);
-                    toast.success(`Nova parella de traducció carregada`, {
+                    toast.success(`${validatorToaster.success_loading}`, {
                         id: toastId,
                     });
                 }
@@ -254,24 +256,32 @@ const ValidateComp = () => {
                         setTargetText('');
                         if (error.response.statusText.includes('entries')) {
                             toast.error(
-                                'No hi ha més entrades per validar per al parell de llengües i variant seleccionat. Pots contribuir amb més traduccions mentrestant.',
+                                validatorToaster.alert_no_more_entries,
                                 { id: 'no_entries' },
                             );
-                        } else toast.error('Alguna cosa ha anat malament.');
+                        } else
+                            toast.error(`${validatorToaster.alert_no_more_entries}`, {
+                                id: 'no_entries',
+                            });
                     } else {
                         // Something happened in setting up the request that triggered an error
-                        // toast.error(`${d?.toasters.alert_general}`);
-                        toast.error('Alguna cosa ha anat malament');
+                        console.error('Alguna cosa ha anat malament');
                     }
                 } else {
                     // Handle non-Axios errors
-
                     console.error('Non-Axios error:', error);
                 }
             }
         };
         fetchData();
-    }, [sourceLanguage, targetLanguage, triggerFetch, srcVar, tgtVar]);
+    }, [
+        sourceLanguage,
+        targetLanguage,
+        triggerFetch,
+        srcVar,
+        tgtVar,
+        validatorToaster,
+    ]);
 
     // validate post route
     const handleValidate = async () => {
