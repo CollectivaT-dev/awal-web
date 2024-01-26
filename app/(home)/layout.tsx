@@ -18,7 +18,7 @@ export default function HomepageLayout({
     const apiUrl =
         process.env.NODE_ENV === 'development'
             ? 'http://localhost:3000'
-            : `https://awaldigital.org/`;
+            : `https://awaldigital.org`;
 console.log(apiUrl)
     // get total entries
     useEffect(() => {
