@@ -28,7 +28,8 @@
         "translator": "Translate",
         "voice": "Voice",
         "about": "About Awal",
-        "resources": "Resources"
+        "resources": "Resources",
+        "faq": "FAQ"
     },
     "user": {
         "username": "Username",
@@ -43,7 +44,7 @@
     "translator": {
         "select_lang": "Select Language",
         "generate": "Random Sentence",
-        "translate": "Translate",
+        "translate": "Pre-translate",
         "report": "Report",
         "placeholder": {
             "type_to_translate": "Type something to translate...",
@@ -61,7 +62,8 @@
         "privacy": "Privacy Policy",
         "cookie": "Cookie Policy",
         "terms": "Contribution terms",
-        "contributionTerms": "Contribution terms"
+        "contributionTerms": "Contribution terms",
+        "leaderboard": "Leaderboard"
     },
     "toasters": {
         "under_construction": "This page is still under development.",
@@ -84,7 +86,7 @@
         "alert_copy": "The translation could not be copied.",
         "alert_try_again": "Please try again later.",
         "alert_select_variant": "Please select your proficiency level",
-		"validation_success_report":"Contribution reported. Thank you for your attention."
+        "validation_success_report": "Contribution reported. Thank you for your attention."
     },
     "text_with_link": {
         "accept_terms": {
@@ -128,7 +130,6 @@
         "item_3_normal": "Contribute speech data through Common Voice, giving Tamazight a voice in the digital world."
     },
     "texts": {
-        "data_marathon": "Awal Translate Datathon",
         "accept_mail_list": "Subscribe to Awal mailing list",
         "save_settings": "Save settings",
         "loading": "Loading",
@@ -146,8 +147,10 @@
         "login_to_signup_1": "New to Awal?",
         "login_to_signup_2": "Sign up!",
         "statistic": "Community Leaderboard",
-		"validate_report_heading":"Report contribution",
-		"validate_report_text":"Please tell us briefly what's wrong with this contribution according to our community guidelines."
+        "validate_report_heading": "Report contribution",
+        "validate_report_text": "Please tell us briefly what's wrong with this contribution according to our community guidelines.",
+        "faq_heading": "Frequently Asked Questions",
+		"rank":"Rank"
     },
     "validator": {
         "alert_no_more_entries": "No more entries to validate for language pair and variant. You can contribute more translations meanwhile.",
@@ -163,7 +166,7 @@
         "cancel": "Cancel",
         "contribute": "Contribute",
         "clear": "Clear text",
-		"skip":"Skip"
+        "skip": "Skip"
     },
     "setting": {
         "oral": "Oral",
@@ -298,5 +301,30 @@
         "tamazight_NLP_huggingface": "Tamazight NLP group publishes open datasets and models in huggingface",
         "tamazight_wiki": "Tamazight wikipedia",
         "TALAM_groups": "TALAM portal groups applications in relation with automatic processing of Tamazight. "
+    },
+    "faq": {
+        "q1": {
+            "q": "I'm not confident in my writing skills in Catalan/Spanish/French/Arabic. What should I do?",
+            "a": "No need to worry! If you have a good understanding of the language, you can still make valuable contributions. Utilize the \"Random Sentence\" button to load a source sentence automatically, and then provide its translation into Tamazight. Additionally, you're welcome to extract sentences from non-copyrighted sources, such as Wikipedia, to diversify the type of translations we collect."
+        },
+        "q2": {
+            "q": "I fixed a mistake in the machine translation output, but it still makes the same error. Is my contribution not being saved?",
+            "a": "Your corrections are saved in our database, but they won't immediately affect the machine translation. The improvement will happen in a later phase, after we collect enough quality translations from contributors like you. So, your efforts are valuable and will contribute to enhancing the translation engine over time."
+        },
+        "q3": {
+            "q": "How are contribution scores for translations calculated?",
+            "a": "Your contribution points are determined by the character length of both the source sentence you input and its translation. If you manually input the source and translate from scratch (i.e., without using 'Pre-translate'), your points will be the total characters in both sentences. If you use the machine translation engine by clicking 'Pre-translate,' your points for the translation will be based on the number of character edits you make to the machine-translated output. If you load a source phrase from the database using 'Random sentence,' you'll only earn points for your translation, not the source sentence."
+        },
+        "q4": {
+            "q": "Do I gain points from voice contributions in Common Voice?",
+            "a": "Unfortunately, for now, the points system is only based on translation contributions. In the future, we would like to also include voice contributions in the contribution points."
+        }
+    },
+    "carousel": {
+        "c1": {
+            "heading": "Awal Translate Datathon",
+            "body": "17/02/2024",
+            "link": ""
+        }
     }
 }

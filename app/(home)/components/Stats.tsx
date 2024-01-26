@@ -32,23 +32,24 @@ const Stats: React.FC<StatsProps> = ({ users }) => {
     useEffect(() => {
         const fetchDictionary = async () => {
             const m = await getDictionary(locale);
-            setD(m);
+            setD(m as unknown as MessagesProps);
         };
         fetchDictionary();
     }, [locale]);
 
     return (
         <div className="w-full h-full p-10 flex-col-center  ">
-            <h1 className="text-sm text-slate-200 lg:text-2xl lg:font-semibold capitalize my-10 ">
+            <h1 className="text-xl text-slate-200 lg:text-2xl font-semibold capitalize my-10">
                 {d?.texts.statistic}
             </h1>
             <div className="h-full p-10 flex-row-center border-2 border-opacity-40 shadow-xl shadow-slate-100/50">
-                {/* <div className='w-1/2'>
-
-</div> */}
                 <Table className="flex flex-col">
                     <TableHeader>
                         <TableRow>
+                            {' '}
+                            <TableHead className="text-center text-slate-100">
+                                {d?.texts.rank}
+                            </TableHead>
                             <TableHead className="text-center text-slate-100">
                                 {d?.user.username}
                             </TableHead>
@@ -58,11 +59,15 @@ const Stats: React.FC<StatsProps> = ({ users }) => {
                         </TableRow>
                     </TableHeader>
                     <TableBody>
-                        {users.map((u) => (
+                        {users.map((u, index) => (
                             <TableRow
                                 key={u.id}
                                 className="flex flex-row justify-between items-center"
                             >
+                                <TableCell className="text-center">
+                                    {' '}
+                                    {index + 1}
+                                </TableCell>
                                 <TableCell
                                     className="font-medium "
                                     key={u.username}

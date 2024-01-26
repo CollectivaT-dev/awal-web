@@ -24,12 +24,15 @@ export async function PATCH(req: Request) {
         console.log(existingUser);
         console.log(existingUser);
         if (existingUser) {
-            return new NextResponse(JSON.stringify({ error: 'username and email error' }), {
-                status: 406,
-                headers: {
-                    'Content-Type': 'application/json',
+            return new NextResponse(
+                JSON.stringify({ error: 'username and email error' }),
+                {
+                    status: 406,
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
                 },
-            });
+            );
         }
 
         // Validation checks for central, tachelhit, and tarifit
@@ -47,12 +50,15 @@ export async function PATCH(req: Request) {
                     body.tarifit.written_lat === 0 ||
                     body.tarifit.written_tif === 0))
         ) {
-            return new NextResponse(JSON.stringify({ error: 'variation selection error' }), {
-                status: 406, // Not Acceptable
-                headers: {
-                    'Content-Type': 'application/json',
+            return new NextResponse(
+                JSON.stringify({ error: 'variation selection error' }),
+                {
+                    status: 406, // Not Acceptable
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
                 },
-            });
+            );
         }
 
         const user = await prisma.user.updateMany({

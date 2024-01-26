@@ -14,7 +14,7 @@ const AboutPage = () => {
     useEffect(() => {
         const fetchDictionary = async () => {
             const m = await getDictionary(locale);
-            setDictionary(m);
+            setDictionary(m as unknown as MessagesProps);
         };
 
         fetchDictionary();

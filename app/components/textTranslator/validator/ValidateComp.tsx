@@ -87,7 +87,7 @@ const ValidateComp = () => {
     useEffect(() => {
         const fetchDictionary = async () => {
             const m = await getDictionary(locale);
-            setD(m);
+            setD(m as unknown as MessagesProps);
         };
         fetchDictionary();
     }, [locale]);
@@ -208,6 +208,9 @@ const ValidateComp = () => {
     // retrieve contribution item
     console.log();
     useEffect(() => {
+        const toastId = toast.loading('Carregant...', {
+            id: 'loading',
+        });
         const fetchData = async () => {
             const srcLangCode = getLanguageCode(sourceLanguage);
             const tgtLangCode = getLanguageCode(targetLanguage);
@@ -229,49 +232,45 @@ const ValidateComp = () => {
                     tgtLangCode,
                 )}&tgt_var=${encodeURIComponent(tgtLangVar)}`;
                 const res = await axios.get(url);
-
                 console.log(res);
                 console.log(res.status);
                 console.log(res.data);
+
                 if (res.data) {
                     setSourceText(res.data.src_text || '');
                     setTargetText(res.data.tgt_text || '');
                     setLeftRadioValue(res.data.srcVar || '');
                     setRightRadioValue(res.data.tgtVar || '');
                     setEntry(res.data);
+                    toast.success(`Nova parella de traducció carregada`, {
+                        id: toastId,
+                    });
                 }
             } catch (error) {
+                toast.dismiss(toastId);
                 if (axios.isAxiosError(error) && error.response) {
                     if (error.response) {
                         setSourceText('');
                         setTargetText('');
-                        switch (error.response.status) {
-                            case 406:
-                                toast.error(
-                                    `${d?.validator.alert_no_more_entries}`,
-                                );
-                            default:
-                                return null;
-                        }
+                        if (error.response.statusText.includes('entries')) {
+                            toast.error(
+                                'No hi ha més entrades per validar per al parell de llengües i variant seleccionat. Pots contribuir amb més traduccions mentrestant.',
+                                { id: 'no_entries' },
+                            );
+                        } else toast.error('Alguna cosa ha anat malament.');
                     } else {
                         // Something happened in setting up the request that triggered an error
-                        toast.error(`${d?.toasters.alert_general}`);
+                        // toast.error(`${d?.toasters.alert_general}`);
+                        toast.error('Alguna cosa ha anat malament');
                     }
                 } else {
                     // Handle non-Axios errors
+
                     console.error('Non-Axios error:', error);
                 }
             }
         };
-        toast.promise(
-            fetchData(),
-            {
-                loading: `${d?.validator.alert_loading}`,
-                success: `${d?.validator.success_loading}`,
-                error: (err) => err.message,
-            },
-            { id: 'original-get-data' },
-        );
+        fetchData();
     }, [sourceLanguage, targetLanguage, triggerFetch, srcVar, tgtVar]);
 
     // validate post route

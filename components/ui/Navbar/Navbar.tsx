@@ -31,7 +31,7 @@ const AppBar = () => {
     useEffect(() => {
         const fetchDictionary = async () => {
             const m = await getDictionary(locale);
-            setD(m);
+            setD(m as unknown as MessagesProps);
         };
         fetchDictionary();
     }, [locale]);
@@ -122,10 +122,10 @@ const AppBar = () => {
                 AWAL
             </Link>
             {/* sign in */}
-			<div className='flex flex-row items-center justify-center space-x-3 ml-auto'>
-            <SignInButton />
-			{/* user info rendering */}
-            
+            <div className="flex flex-row items-center justify-center space-x-3 ml-auto">
+                <SignInButton />
+                {/* user info rendering */}
+
                 <div className="flex lg:hidden">
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
@@ -195,7 +195,6 @@ const AppBar = () => {
                                 <DropdownMenuRadioItem value="en">
                                     {d?.language?.en}
                                 </DropdownMenuRadioItem>
-
                                 <DropdownMenuRadioItem value="fr">
                                     {d?.language?.fr}
                                 </DropdownMenuRadioItem>
@@ -248,10 +247,20 @@ const AppBar = () => {
                             <Link href={'/about'} scroll={false}>
                                 {d?.menu.about}
                             </Link>
-                        </li>
+                        </li>{' '}
                         <li>
                             <Link href={'/resources'} scroll={false}>
                                 {d?.menu.resources}
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href={'/leaderboard'} scroll={false}>
+                                {d?.footer.leaderboard}
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href={'/faq'} scroll={false}>
+                                {d?.menu.faq}
                             </Link>
                         </li>
                     </ul>
