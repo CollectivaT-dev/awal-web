@@ -21,13 +21,16 @@ import {
     PaginationPrevious,
 } from '@/components/ui/pagination';
 import toast from 'react-hot-toast';
+import Loading from '@/app/loading';
+import { Separator } from '@/components/ui/separator';
 
 const LeaderBoardPage = () => {
     const { locale } = useLocaleStore();
     const [d, setDictionary] = useState<MessagesProps>();
     const [users, setUsers] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-
+    const [totalPages, setTotalPages] = useState(0);
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
         const fetchDictionary = async () => {
             const m = await getDictionary(locale);
@@ -38,40 +41,63 @@ const LeaderBoardPage = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
+                setLoading(true);
                 const res = await axios.get(`/api/stats?page=${currentPage}`);
-                const users = res.data.leaderboard;
-                console.log(users);
-                console.log(res.data);
-                setUsers(users);
+                if (res.data && res.data.leaderboard) {
+                    setUsers(res.data.leaderboard);
+                    const totalEntries = res.data.totalLeaderboardEntries;
+                    setTotalPages(Math.ceil(totalEntries / 10)); // Assuming 10 is your page size
+                } else {
+                    console.log('No data received');
+                }
+                setLoading(false);
             } catch (error) {
                 toast.error(`${d?.toasters.alert_general}`);
+            } finally {
+                setLoading(false);
             }
         };
         fetchData();
     }, [currentPage]);
     const handlePageChange = (newPage: number) => {
-        setCurrentPage(newPage);
+        // Prevent going to a page less than 1 or greater than totalPages
+        if (newPage >= 1 && newPage <= totalPages) {
+            setCurrentPage(newPage);
+        }
     };
-    console.log(users);
+    const calculateRank = (index: number) => {
+        // Calculate the starting index of the current page
+        const startIndex = (currentPage - 1) * 10; // Assuming 10 is your page size
+        return startIndex + index + 1;
+    };
+    if (loading) {
+        return <Loading />;
+    }
     return (
-        <div className="min-h-[80vh] flex-col flex justify-between items-center">
-            <Table className="flex-col flex items-stretch justify-center max-w-[50vh]">
+        <div className="flex-col-center min-h-[80vh]">
+            <Table className="flex-col-center">
                 <TableHeader>
                     <TableRow>
-                        <TableHead className="text-center text-slate-100">
+                        <TableHead className="text-center">
+                            {d?.texts.rank}
+                        </TableHead>
+                        <TableHead className="text-center">
                             {d?.user.username}
                         </TableHead>
-                        <TableHead className="text-center text-slate-100">
+                        <TableHead className="text-center font-semibold">
                             {d?.nav.points}
                         </TableHead>
                     </TableRow>
                 </TableHeader>
-                <TableBody >
-                    {users.map(({ id, username, score }) => (
+                <TableBody>
+                    {users.map(({ id, username, score }, index) => (
                         <TableRow
                             key={id}
                             className="flex flex-row justify-between items-center"
                         >
+                            <TableCell className="font-medium" key={id}>
+                                {calculateRank(index)} {/* Calculate rank */}
+                            </TableCell>
                             <TableCell className="font-medium" key={username}>
                                 {username}
                             </TableCell>
@@ -79,12 +105,14 @@ const LeaderBoardPage = () => {
                         </TableRow>
                     ))}
                 </TableBody>
+			<Separator className="my-10 w-[20%]" />
             </Table>
             {/* pagination */}
             <Pagination>
                 <PaginationContent>
                     <PaginationItem>
                         <PaginationPrevious
+                            className="cursor-pointer"
                             onClick={() => handlePageChange(currentPage - 1)}
                         />
                     </PaginationItem>
@@ -93,6 +121,7 @@ const LeaderBoardPage = () => {
                     </PaginationItem>
                     <PaginationItem>
                         <PaginationNext
+                            className="cursor-pointer"
                             onClick={() => handlePageChange(currentPage + 1)}
                         />
                     </PaginationItem>

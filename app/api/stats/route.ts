@@ -30,11 +30,18 @@ export async function GET(req: Request) {
             },
         });
         // data for leaderboard page
-        const limit = 5; // Fixed number of items per page
-        const url = new URL(req.url);
-        console.log(url);
+		const url = new URL(req.url);
         const page = parseInt(url.searchParams.get('page') || '1', 10);
+        const limit = 10; // Fixed number of items per page
         const skip = (page - 1) * limit;
+        // Fetch paginated data
+		const totalLeaderboardEntries = await prisma.user.count({
+            where: {
+                email: { not: { contains: 'test' } },
+                score: { not: { equals: 0 } },
+            },
+        });
+
         const leaderboard = await prisma.user.findMany({
             skip: skip,
             take: limit,
@@ -61,7 +68,7 @@ export async function GET(req: Request) {
                 topTen: topTen,
                 totalEntries,
                 totalValidation,
-                leaderboard,
+                leaderboard,totalLeaderboardEntries
             }),
             {
                 status: 200,

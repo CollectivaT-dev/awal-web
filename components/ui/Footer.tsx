@@ -45,8 +45,8 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href={'/about'} scroll={false}>
-                                    {d?.menu.about}
+                                <Link href={'/leaderboard'}>
+                                    {d?.footer.leaderboard}
                                 </Link>
                             </li>
                             <li>
@@ -108,8 +108,8 @@ const Footer = () => {
                     <div>
                         <ul className="flex flex-col items-start justify-between my-5">
                             <li>
-                                <Link href={'/leaderboard'}>
-                                    {d?.footer.leaderboard}
+                                <Link href={'/about'} scroll={false}>
+                                    {d?.menu.about}
                                 </Link>
                             </li>
                             <li>
@@ -142,7 +142,6 @@ const Footer = () => {
                                 <li>
                                     <Link href={'/translate'} scroll={false}>
                                         {d?.nav.translator}
-                                        {}
                                     </Link>
                                 </li>
                                 <li>
@@ -151,8 +150,8 @@ const Footer = () => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href={'/about'} scroll={false}>
-                                        {d?.menu.about}
+                                    <Link href={'/leaderboard'}>
+                                        {d?.footer.leaderboard}
                                     </Link>
                                 </li>
                                 <li>
@@ -170,8 +169,8 @@ const Footer = () => {
                         <div>
                             <ul className="flex flex-col items-start justify-between my-5">
                                 <li>
-                                    <Link href={'/leaderboard'}>
-                                        {d?.footer.leaderboard}
+                                    <Link href={'/about'} scroll={false}>
+                                        {d?.menu.about}
                                     </Link>
                                 </li>
                                 <li>

@@ -247,15 +247,20 @@ const AppBar = () => {
                             <Link href={'/about'} scroll={false}>
                                 {d?.menu.about}
                             </Link>
+                        </li>{' '}
+                        <li>
+                            <Link href={'/resources'} scroll={false}>
+                                {d?.menu.resources}
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href={'/leaderboard'} scroll={false}>
+                                {d?.footer.leaderboard}
+                            </Link>
                         </li>
                         <li>
                             <Link href={'/faq'} scroll={false}>
                                 {d?.menu.faq}
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href={'/resources'} scroll={false}>
-                                {d?.menu.resources}
                             </Link>
                         </li>
                     </ul>
