@@ -110,6 +110,7 @@ export interface MessagesProps {
         alert_try_again: string;
         alert_select_variant: string;
         success_report: string;
+        alert_input: string;
     };
     text_with_link: {
         accept_terms: {
@@ -206,6 +207,7 @@ export interface MessagesProps {
             tr: string;
             other: string;
         };
+        specify: string;
     };
     about: {
         main_string_1: string;

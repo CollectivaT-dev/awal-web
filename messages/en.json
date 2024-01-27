@@ -86,7 +86,8 @@
         "alert_copy": "The translation could not be copied.",
         "alert_try_again": "Please try again later.",
         "alert_select_variant": "Please select your proficiency level",
-        "validation_success_report": "Contribution reported. Thank you for your attention."
+        "validation_success_report": "Contribution reported. Thank you for your attention.",
+		"alert_input": "Please enter more than 1 character"
     },
     "text_with_link": {
         "accept_terms": {
@@ -181,7 +182,8 @@
             "nb": "Non-binary",
             "tr": "Transgender",
             "other": "Other"
-        }
+        },
+		"specify":"Please specify and separate with ,"
     },
     "about": {
         "main_string_1": "Awal is a project that contributes to preserving and promoting the Amazigh language in the digital space by developing innovative tools that facilitate its use and dissemination.\nThe participation of Amazigh speakers will be essential to collect data, both oral and written, through voice recordings and collection of translated texts from this minority language. The initiative aims not only to create effective digital tools, but also to raise community awareness of the importance of linguistic data and new technologies to preserve the language, to raise awareness of the effects of the digital divide and to grow a network of professionals.\nAwal is an initative by CIEMEN, Col·lectivaT and Casa Amaziga de Catalunya and is funded by the Municipality of Barcelona and Generalitat de Catalunya with the support of the Catalan Development Cooperation Agency and the Department of Social Rights.",

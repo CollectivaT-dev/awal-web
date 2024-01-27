@@ -53,7 +53,19 @@ export async function PATCH(req: Request) {
             return new NextResponse(
                 JSON.stringify({ error: 'variation selection error' }),
                 {
-                    status: 406, // Not Acceptable
+                    status: 406,
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                },
+            );
+        }
+console.log(body.other.body.length)
+        if (body.other?.isChecked && body.other.body.length === 0) {
+            return new NextResponse(
+                JSON.stringify({ error: 'Non Empty String' }),
+                {
+                    status: 406,
                     headers: {
                         'Content-Type': 'application/json',
                     },
@@ -94,7 +106,14 @@ export async function PATCH(req: Request) {
                           written_lat: 0,
                           written_tif: 0,
                       },
-                isPrivacy: body.isPrivacy ? body.isPrivacy : true,
+                other: {
+                    isChecked: body.other?.isChecked
+                        ? body.other
+                        : {
+                              isChecked: false,
+                              body: '',
+                          },
+                },
                 languages: {
                     english: body.languages.english
                         ? body.languages.english
@@ -116,6 +135,7 @@ export async function PATCH(req: Request) {
                 isSubscribed: body.isSubscribed ? body.isSubscribed : false,
                 age: body.age ? body.age : null,
                 gender: body.gender ? body.gender : 'other',
+                isPrivacy: body.isPrivacy ? body.isPrivacy : true,
             },
         });
         console.log({ ...user });

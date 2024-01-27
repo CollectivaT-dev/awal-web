@@ -254,9 +254,9 @@ const ValidateComp = () => {
                     if (error.response) {
                         setSourceText('');
                         setTargetText('');
-                        if (error.response.statusText.includes('entries')) {
+                        if (error.response.statusText.includes('entries') ) {
                             toast.error(
-                                validatorToaster.alert_no_more_entries,
+                                validatorToaster.alert_no_more_entries?validatorToaster.alert_no_more_entries:null,
                                 { id: 'no_entries' },
                             );
                         } else
