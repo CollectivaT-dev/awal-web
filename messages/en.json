@@ -50,7 +50,7 @@
             "type_to_translate": "Type something to translate...",
             "translation_box": "Translation will appear here..."
         },
-        "notice": "This application relies on a research-based translation engine that works only for Central dialect and many times provides inaccurate results. If you speak Tamazight, you can help us improve and support more variants by submitting translations.",
+        "notice": "This application relies on a research-based translation engine that many times provides inaccurate results. If you speak Tamazight, you can help us improve and support more variants by submitting translations.",
         "help": "How does it work?",
         "help_pop_up": {
             "header": "How to contribute translations?",
@@ -61,7 +61,6 @@
         "legal": "Legal notice",
         "privacy": "Privacy Policy",
         "cookie": "Cookie Policy",
-        "terms": "Contribution terms",
         "contributionTerms": "Contribution terms",
         "leaderboard": "Leaderboard"
     },
@@ -151,7 +150,7 @@
         "validate_report_heading": "Report contribution",
         "validate_report_text": "Please tell us briefly what's wrong with this contribution according to our community guidelines.",
         "faq_heading": "Frequently Asked Questions",
-		"rank":"Rank"
+		"rank":"#"
     },
     "validator": {
         "alert_no_more_entries": "No more entries to validate for language pair and variant. You can contribute more translations meanwhile.",
@@ -320,13 +319,26 @@
         "q4": {
             "q": "Do I gain points from voice contributions in Common Voice?",
             "a": "Unfortunately, for now, the points system is only based on translation contributions. In the future, we would like to also include voice contributions in the contribution points."
+        },
+        "q5": {
+            "q": "I forgot my password and cannot access my account. What should I do?",
+            "a": "We are still working on password recovery. In the meanwhile, you can open another account and contact us at awal@collectivat.cat so that we transfer your points to your new account. "
+        },
+        "q6": {
+            "q": "I already have an account in AWAL. Do I need to create one also in Common Voice?",
+            "a": "Even though it's not obligatory, we recommend creating an account in Common Voice. This way, you can see how much you have contributed and fill in your details in your profile. "
         }
     },
     "carousel": {
         "c1": {
-            "heading": "Awal Translate Datathon",
-            "body": "17/02/2024",
-            "link": ""
+            "heading": "Awal Data Marathon: Unite for Tamazight!",
+            "body": "Join us on February 17, 11:00 am - 8:00 pm at CIEMEN headquarters in Barcelona, for a collective effort in generating data to enrich the Tamazight language. Be part of the preservation and promotion of Amazigh culture. All ages, genders, and dialects welcome!",
+            "link": "https://twitter.com/awaldigital"
+        }, 
+        "c2": {
+            "heading": "AWAL on Col·lectivaT's blog",
+            "body": "Introducing Project Awal for preserving and promoting the Tamazight language on the internet with a strong and united data community. ",
+            "link": "https://collectivat.cat/blog/2024-01-22-awal-en/"
         }
     }
 }

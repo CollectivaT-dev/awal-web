@@ -28,7 +28,8 @@
         "translator": "Traductor",
         "voice": "Voz",
         "about": "Sobre Awal",
-        "resources": "Recursos"
+        "resources": "Recursos",
+        "faq": "FAQ"
     },
     "user": {
         "username": "Nombre de Usuario",
@@ -49,7 +50,7 @@
             "type_to_translate": "Escribe algo para traducir...",
             "translation_box": "La traducción aparecerá aquí..."
         },
-        "notice": "Esta aplicación se basa en un motor de traducción basado en la investigación que funciona solo para el dialecto central y, en muchas ocasiones, proporciona resultados inexactos. Si hablas tamazight, puedes ayudarnos a mejorar y permitir más variantes contribuyendo con traducciones.",
+        "notice": "Esta aplicación se basa en un motor de traducción basado en la investigación que, en muchas ocasiones, proporciona resultados inexactos. Si hablas tamazight, puedes ayudarnos a mejorar y permitir más variantes contribuyendo con traducciones.",
         "help": "¿Cómo funciona?",
         "help_pop_up": {
             "header": "¿Cómo aportar traducciones?",
@@ -60,7 +61,8 @@
         "legal": "Aviso Legal",
         "privacy": "Política de Privacidad",
         "cookie": "Política de Cookies",
-        "terms": "Términos de contribución"
+        "contributionTerms": "Términos de contribución",
+        "leaderboard": "Clasificación"
     },
     "toasters": {
         "under_construction": "Esta página todavía está en desarrollo.",
@@ -146,7 +148,8 @@
         "statistic":"Clasificación de la Comunidad",
         "validate_report_heading": "Informar contribución",
         "validate_report_text": "Por favor, explíquenos brevemente qué está mal con esta contribución según nuestras pautas comunitarias.",
-        "faq_heading":"Preguntas Frecuentes"
+        "faq_heading":"Preguntas Frecuentes",
+        "rank": "#"
     },
     "validator": {
         "alert_no_more_entries": "No hay más entradas para validar para el par de idiomas y variante seleccionada. Puedes contribuir con más traducciones mientras tanto.",
@@ -230,10 +233,8 @@
         "scoring_heading": "Puntuación",
         "scoring": "Las personas colaboradoras ganan puntos por cada traducción que realizan. Los puntos que ganas son proporcionales a la longitud de la frase original que introduces (cuando no utilizas la función 'Frase aleatoria') y la traducción correspondiente. Si utilizas la función de traducción automática, tu puntuación objetivo se calculará en función del número de cambios que realices.\nEs importante señalar que la puntuación está diseñada exclusivamente para una competición amistosa y no implica ninguna forma de compensación.",
         "communication_heading": "Comunicaciones",
-
         "communication": "Si te registras en Awal, puedes recibir correos electrónicos nuestros relacionados con tu cuenta. Si te suscribes a nuestra lista de correo, recibirás información adicional sobre la iniciativa, como actualizaciones del sitio web, invitaciones a eventos y publicación de noticias y recursos.",
         "disclaimer_heading": "Exenciones de responsabilidad",
-
         "disclaimer": "Awal y sus servicios asociados se proporcionan 'tal como están' y 'según estén disponibles', sin ninguna garantía o representación, expresa o implícita. El uso de nuestros servicios es bajo su responsabilidad.\nNo garantizamos la exactitud, integridad o confiabilidad del contenido proporcionado por las personas colaboradoras. Al acceder a la página, deberán verificar de manera independiente cualquier información obtenida a través de Awal o de los recursos publicados antes de confiar en ella.\nAl colaborar, son responsables de su propia conducta, y al utilizar Awal, aceptan no violar ninguna ley, infringir en los derechos de terceras personas o presentar contenido inadecuado. Nos reservamos el derecho de eliminar cualquier contenido o suspender cuentas que incumplan estas condiciones, a las que se aplican las leyes españolas.\nEn la máxima medida permitida por la ley aplicable, Awal y sus empresas afiliadas, funcionarios, empleados, agentes, socios y licenciantes no serán responsables de ningún daño indirecto, fortuito, especial, consecuente o punitivo, o de la pérdida de beneficios o ingresos.\nAwal puede contener enlaces a sitios web o servicios de terceros que no son propiedad nuestra ni están controlados por nosotros. No tenemos control sobre el contenido, las políticas de privacidad o las prácticas de ningún sitio o servicio de terceros.\nAwal respeta los derechos de propiedad intelectual externos. Si crees que tu obra ha sido copiada o utilizada de manera que constituye una infracción de derechos de autor, ponte en contacto con nosotros en awal@collectivat.cat.\nNos reservamos el derecho de modificar, suspender o finalizar nuestros servicios, términos o políticas en cualquier momento sin previo aviso. Es responsabilidad de las personas usuarias revisar regularmente nuestros términos para cualquier actualización.\nAunque implementamos medidas para proteger los datos de las usuarias, no podemos garantizar la seguridad de la información transmitida por internet. Ellas proporcionan la información bajo su propio riesgo.\nPodemos suspender o finalizar la cuenta de cualquier persona en Awal en cualquier momento y por cualquier motivo. Si decidimos suspender o finalizar su acceso, intentaremos notificarles a la dirección de correo electrónico asociada a su cuenta o la próxima vez que intenten acceder a nuestra página web.\nConsulten nuestra Política de privacidad para obtener detalles sobre cómo recopilamos, usamos y protegemos su información personal. Nuestro Aviso legal proporciona información importante sobre los términos y condiciones de uso de los servicios de Awal, mientras que la Política de cookies explica cómo usamos las cookies para mejorar su experiencia de navegación. Al utilizar este sitio web, aceptan estos términos y políticas."
     },
     "how_to_contribute_heading": "¿Cómo contribuir?",
@@ -260,7 +261,6 @@
         "legal_title": "Avis legal",
         "legal_text_1": "Col·lectivaT SCCL, responsable del lloc web Awal, d'ara endavant, el RESPONSABLE, posa a disposició dels usuaris aquest document, amb el qual pretén fer complir les obligacions que estableix la Llei 34/2002, de 11 de juliol, de Serveis de la Societat de la Informació i de Comerç Electrònic (LSSICE), BOE Nº 166, així com informar tots els usuaris del lloc web sobre quines son les condicions d'ús.\nQualsevol persona que accedeixi a aquest lloc web assumeix el paper d'usuari i es compromet a l'observança i compliment rigorós de les disposicións que s'hi estableixen, així com a qualsevol altra disposició legal que s'hi apliqui.\nCol·lectivaT SCCL, es reserva el dret de modificar qualsevol tipus d'informació que pugui aparèixer al lloc web, sense obligació de preavisar o assabentar els usuaris d'aquestes obligacions, atès que es considera suficient la publicació al lloc web de l'Associació Bloc4.",
         "legal_data_1_heading": "DADES IDENTIFICADORES",
-
         "legal_data_1_text": "Nom del domini: www.awaldigital.org\nEntitat responsable: Col·lectivaT SCCL\nNIF: F67078097\nDomicili Social: Carrer Rocafort, 242 bis, 3r, 08029, Barcelona, Espanya\nE-mail: info@collectivat.cat o awal@collectivat.cat",
         "legal_data_2_heading": "DRETS DE PROPIETAT INTEL·LECTUAL I INDUSTRIAL",
         "legal_data_2_text": "El lloc web, incloent a títol enunciatiu, pero no limitatiu la seva programació, edició, compliació i altres elements necessaris per al seu funcionament, els dissenys, logotips, text i/o gràfics, són propietat del RESPONSABLE o, si es el cas, disposa de llicència o autorització expressa per part dels autors. Tots els continguts del lloc web es troben degudament protegits per la normativa de propietat intel·lectual i industrial, així com inscrits en els registres públics corresponents.\nIndependentment de la finaltat per a la qual fossin destinats, la reproducció total o parcial, ús, explotació, distribució i comercialització, requereix en tot cas l'autorització escrita prèvia per part del RESPONSABLE.\nQualsevol ús no autoritzat previament es considera un incompliment greu dels drets de propietat intel·lectual o industrial de l'autor.\nEls dissenys, logotips, text i/o gràfics aliens al RESPONSIBLE i que puguin aparèixer al lloc web, pertanyen als seus respectius propietaris, els quals son responsables de qualsevol possible controvèrsia que se'n pugui desprendre. El RESPONSABLE autoritza expressament que tercers puguin redirigir directament als continguts concrets del lloc web, i en tot cas redirigir al lloc web principal de www.bloc4.coop\nEl RESPONSABLE reconeix a favor dels seus titulars els corresponents drets de propietat intel·lectual i industrial, sense implicar el seu sol esment o aparició al lloc web l'existència de drets o responsabilitat sobre aquests, ni el suport, patrocini o recomanació per part del RESPONSABLE.\nPer efectuar qualsevol tipus d'observació pel que fa a possibles incompliments dels drets de propietat intel·lectual o industrial, així com sobre qualsevol dels continguts del lloc web, podeu fer-ho a través del correu electrònic info@collectivat.cat",
@@ -317,8 +317,27 @@
         "q4": {
             "q": "¿Gano puntos con las contribuciones de voz en Common Voice?",
             "a": "Desafortunadamente, por ahora, el sistema de puntos solo se basa en las contribuciones de traducción. En el futuro, nos gustaría incluir también las contribuciones de voz en los puntos de contribución."
+        },
+        "q5": {
+            "q": "Olvidé mi contraseña y no puedo acceder a mi cuenta. ¿Qué debo hacer?",
+            "a": "Todavía estamos trabajando en la recuperación de contraseñas. Mientras tanto, puedes abrir otra cuenta y ponerte en contacto con nosotros en awal@collectivat.cat para que transfiramos tus puntos a tu nueva cuenta."
+        },
+        "q6": {
+            "q": "Ya tengo una cuenta en AWAL. ¿Necesito crear otra en Common Voice?",
+            "a": "Aunque no es obligatorio, recomendamos crear una cuenta en Common Voice. De esta manera, podrás ver cuánto has contribuido y completar tus detalles en tu perfil."
         }
-    }
 
-    
+    },
+    "carousel": {
+        "c1": {
+            "heading": "Maratón de Datos Awal: ¡Únete por el Amazigh!",
+            "body": "Acompáñanos el 17 de febrero, de 11:00 a 20:00 h, en la sede del CIEMEN en Barcelona, en un esfuerzo colectivo para generar datos y enriquecer la lengua amazigh. Forma parte de la preservación y promoción de la cultura amazigh. ¡Todas las edades, géneros y variantes dialectales son bienvenidxs!",
+            "link": "https://twitter.com/awaldigital"
+          },
+        "c2": {
+            "heading": "AWAL en el blog de Col·lectivaT",
+            "body": "Presentación del proyecto Awal para preservar y promover la lengua amazigh en Internet con una comunidad de datos fuerte y unida.",
+            "link": "https://collectivat.cat/blog/2024-01-22-awal-es/"
+        }
+    } 
 }
