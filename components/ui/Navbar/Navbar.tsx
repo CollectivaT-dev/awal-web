@@ -168,7 +168,8 @@ const AppBar = () => {
                 <div className="hidden lg:flex">
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <Button variant="outline">
+                            <Button>
+                                <Globe className="mr-3" />
                                 {locale === 'es' && d?.language?.es}
                                 {locale === 'ca' && d?.language?.ca}
                                 {locale === 'en' && d?.language?.en}

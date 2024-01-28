@@ -223,7 +223,7 @@ export function SettingsPage() {
                     isSubscribed: mergedData.isSubscribed || false,
                     other: {
                         isChecked: mergedData.other?.isChecked || false,
-                        body: mergedData?.other.body || '',
+                        body: mergedData.other?.body || '',
                     },
                     central: {
                         isChecked: mergedData.central?.isChecked || false,
@@ -271,7 +271,7 @@ export function SettingsPage() {
             ...updateData,
             other: {
                 isChecked: form.getValues('other.isChecked'),
-                body: form.getValues('other.body'),
+                body: form.getValues('other.body') || '',
             },
             central: {
                 isChecked: form.getValues('central.isChecked'),
@@ -456,6 +456,7 @@ export function SettingsPage() {
     // console.log(fetchedData);
     // console.log(userId);
     // console.log(form.formState);
+    console.log(form.formState.errors);
     if (form.formState?.errors.age?.message?.includes('120')) {
         form.formState.errors.age.message = d?.error_msg.alert_age;
     }

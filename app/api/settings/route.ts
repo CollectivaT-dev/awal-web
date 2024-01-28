@@ -60,7 +60,7 @@ export async function PATCH(req: Request) {
                 },
             );
         }
-console.log(body.other.body.length)
+        console.log(body.other.body.length);
         if (body.other?.isChecked && body.other.body.length === 0) {
             return new NextResponse(
                 JSON.stringify({ error: 'Non Empty String' }),
@@ -106,14 +106,12 @@ console.log(body.other.body.length)
                           written_lat: 0,
                           written_tif: 0,
                       },
-                other: {
-                    isChecked: body.other?.isChecked
-                        ? body.other
-                        : {
-                              isChecked: false,
-                              body: '',
-                          },
-                },
+                other: body.other?.isChecked
+                    ? body.other
+                    : {
+                          isChecked: false,
+                          body: '',
+                      },
                 languages: {
                     english: body.languages.english
                         ? body.languages.english
