@@ -111,6 +111,9 @@ export interface MessagesProps {
         alert_select_variant: string;
         success_report: string;
         alert_input: string;
+		translating:string;
+		alert_api:string;
+		success_translate:string
     };
     text_with_link: {
         accept_terms: {
@@ -123,6 +126,7 @@ export interface MessagesProps {
             link_text_1: string;
             link_text_2: string;
             link_text_3: string;
+			link_text_4:string
         };
     };
     error_msg: {

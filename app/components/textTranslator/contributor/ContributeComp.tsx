@@ -231,7 +231,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
         [sourceLanguage, contributeLanguages],
     );
 
-    // src_text generate get route
+    // src_text generate get route, load sentence
     const handleGenerate = async () => {
         setRandomClicked(true);
         const srcLanguageCode = getLanguageCode(sourceLanguage);
@@ -244,14 +244,21 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
                 'Content-Type': 'application/json',
             },
         };
-        try {
-            const res = await axios.request(config);
-            console.log(res.data.sentence);
-            setSourceText(res.data.sentence);
-            setFetchedText(res.data.sentence);
-        } catch (error) {
-            console.log(error);
-        }
+        const fetchData = async () => {
+            try {
+                const res = await axios.request(config);
+                console.log(res.data.sentence);
+                setSourceText(res.data.sentence);
+                setFetchedText(res.data.sentence);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        toast.promise(fetchData(), {
+            loading: `${d?.texts.loading}`,
+            success: `${d?.toasters.success_loading}`,
+            error: (err) => `${d?.toasters.alert_api}${console.error(err)}`,
+        });
     };
 
     // contribution score calc logic
@@ -323,7 +330,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
         if (data.userId.length === 0) {
             router.push('/signIn', { scroll: false });
         }
-        try { 
+        try {
             setIsLoading(true);
             const res = await axios.post(
                 `/api/contribute`,
@@ -403,22 +410,29 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
             },
             data: requestData,
         };
-        try {
-            const response = await axios.request(config);
-            setInitialTranslatedText(response.data.translation);
+        const translate = async () => {
+            try {
+                const response = await axios.request(config);
+                setInitialTranslatedText(response.data.translation);
 
-            console.log(response.data);
-            // Check if response data is an array
-            if (Array.isArray(response.data.translation)) {
-                // If it's an array, join the array elements with a newline character to form a string
-                setTargetText(response.data.translation.join('\n'));
-            } else {
-                // If it's not an array, assume it's a string and set it directly
-                setTargetText(response.data.translation);
+                console.log(response.data);
+                // Check if response data is an array
+                if (Array.isArray(response.data.translation)) {
+                    // If it's an array, join the array elements with a newline character to form a string
+                    setTargetText(response.data.translation.join('\n'));
+                } else {
+                    // If it's not an array, assume it's a string and set it directly
+                    setTargetText(response.data.translation);
+                }
+            } catch (error) {
+                console.log('Error:', error);
             }
-        } catch (error) {
-            console.log('Error:', error);
-        }
+        };
+        toast.promise(translate(), {
+            loading: `${d?.toasters.translating}`,
+            success: `${d?.toasters.success_translate}`,
+            error: (err) => `${d?.toasters.alert_api}${console.error(err)}`,
+        });
     };
 
     const handleReport = async () => {
@@ -666,6 +680,13 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
                             scroll={false}
                         >
                             {d?.text_with_link.dic_link.link_text_3}
+                        </Link>
+                        <Link
+                            href={'https://amawalwarayni.com/'}
+                            target="_blank"
+                            scroll={false}
+                        >
+                            {d?.text_with_link.dic_link.link_text_4}
                         </Link>
                     </div>
                 </div>

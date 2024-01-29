@@ -152,7 +152,7 @@ const AppBar = () => {
                                     {d?.language?.en}
                                 </DropdownMenuRadioItem>
 
-                                <DropdownMenuRadioItem value="fr">
+                                <DropdownMenuRadioItem value="fr">g
                                     {d?.language?.fr}
                                 </DropdownMenuRadioItem>
                                 {/* <DropdownMenuRadioItem value="ary">
