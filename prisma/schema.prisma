@@ -29,6 +29,7 @@ model User {
   updatedAt         DateTime? @default(now())
   // translator and validator related
   lastContribution  DateTime?
+  contributions String[]
   validationEntries String[]
   reportedEntries   String[]
 

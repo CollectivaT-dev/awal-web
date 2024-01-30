@@ -26,6 +26,7 @@ export async function GET(req: Request, res: Response) {
                 src: src,
                 tgt: tgt,
                 isValidated: false,
+                userId: { not: session?.id },
                 AND: {
                     id: {
                         notIn: session?.validationEntries,
@@ -68,16 +69,6 @@ export async function POST(req: Request, res: Response) {
         }
         let updatedScore = existingUser.score + body.contributionPoint;
         console.log(updatedScore);
-        const updatedUserScore = await prisma.user.updateMany({
-            where: {
-                id: body.userId,
-            },
-            data: {
-                score: updatedScore,
-                lastContribution: new Date(),
-            },
-        });
-        console.log(updatedScore);
         // check if languages are zgh or zgh-ber
         let srcVar =
             body.src === 'ber' || body.src === 'zgh' ? body.srcVar : null;
@@ -92,17 +83,28 @@ export async function POST(req: Request, res: Response) {
                 tgt: body.tgt,
                 src_text: body.src_text,
                 tgt_text: body.tgt_text,
-                srcVar,
-                tgtVar,
+                srcVar:
+                    body.src === 'ber' || body.src === 'zgh'
+                        ? body.srcVar
+                        : null,
+                tgtVar:
+                    body.tgt === 'ber' || body.tgt === 'zgh'
+                        ? body.tgtVar
+                        : null,
                 isValidated: false,
                 validation: 0,
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
         });
-        const updatedUser = await prisma.user.findUnique({
+        const updatedUser = await prisma.user.update({
             where: {
                 id: body.userId,
+            },
+            data: {
+                contributions: { push: contribution.id },
+                lastContribution: new Date(),
+                score: updatedScore,
             },
         });
         console.log(contribution);
