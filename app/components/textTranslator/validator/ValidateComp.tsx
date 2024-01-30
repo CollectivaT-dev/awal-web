@@ -190,7 +190,6 @@ const ValidateComp = () => {
             const availableLanguages = isSourceLanguage
                 ? Object.keys(LanguageRelations)
                 : LanguageRelations[sourceLanguage] || [];
-
             return availableLanguages.map((key) => (
                 <DropdownMenuRadioItem key={key} value={key}>
                     {validateLanguage[key]}
@@ -209,14 +208,12 @@ const ValidateComp = () => {
 
         const fetchData = async () => {
             console.log('Fetching data for', sourceLanguage, targetLanguage);
-
             const srcLangCode = getLanguageCode(sourceLanguage);
             const tgtLangCode = getLanguageCode(targetLanguage);
             const apiUrl =
                 process.env.NODE_ENV === 'development'
                     ? 'http://localhost:3000'
                     : 'https://awaldigital.org';
-
             try {
                 const url = `${apiUrl}/api/contribute?src=${encodeURIComponent(
                     srcLangCode,
@@ -227,14 +224,15 @@ const ValidateComp = () => {
                     setSourceText(res.data.src_text || '');
                     setTargetText(res.data.tgt_text || '');
                     setEntry(res.data);
-toast.success(`1`,{id:toastId});
+                    toast.success(validatorToaster.success_loading, {
+                        id: toastId,
+                    });
                     if (['zgh', 'ber'].includes(sourceLanguage)) {
                         setLeftRadioValue(res.data.srcVar || '');
                     }
                     if (['zgh', 'ber'].includes(targetLanguage)) {
                         setRightRadioValue(res.data.tgtVar || '');
                     }
-					
                 } else {
                     console.error('No data available');
                 }
@@ -263,13 +261,12 @@ toast.success(`1`,{id:toastId});
                         console.error('Alguna cosa ha anat malament');
                     }
                 } else {
-                    // Handle non-Axios errors
                     console.error('Non-Axios error:', error);
                 }
             }
         };
         fetchData();
-    }, [sourceLanguage, targetLanguage, validatorToaster]);
+    }, [sourceLanguage, targetLanguage, validatorToaster, triggerFetch]);
 
     // validate post route
     const handleValidate = async () => {
@@ -342,38 +339,38 @@ toast.success(`1`,{id:toastId});
         }
         setTriggerFetch((prev) => prev + 1);
     };
-	const handleNext = async () => {
-		console.log('Fetching next entry');
-		try {
-			const data = {
-				...entry,
-				validatorId: session?.user?.id, // Explicitly include the ID of validator
-			};
-			console.log('Sending request with data:', data);
-			const res = await axios.patch('/api/contribute', data);
-			console.log('Response received:', res);
-	
-			// Assuming the API returns the next entry in the response
-			if (res.status === 200 && res.data) {
-				setSourceText(res.data.src_text || '');
-				setTargetText(res.data.tgt_text || '');
-				setEntry(res.data);
-				// Update variants if applicable
-				if (['zgh', 'ber'].includes(sourceLanguage)) {
-					setLeftRadioValue(res.data.srcVar || '');
-				}
-				if (['zgh', 'ber'].includes(targetLanguage)) {
-					setRightRadioValue(res.data.tgtVar || '');
-				}
-			} else {
-				console.error('No next entry available');
-			}
-		} catch (error) {
-			console.error('Error fetching next entry:', error);
-		}
-		setTriggerFetch((prev) => prev + 1);
-	};
-	
+    const handleNext = async () => {
+        console.log('Fetching next entry');
+        try {
+            const data = {
+                ...entry,
+                validatorId: session?.user?.id, // Explicitly include the ID of validator
+            };
+            console.log('Sending request with data:', data);
+            const res = await axios.patch('/api/contribute', data);
+            console.log('Response received:', res);
+
+            // Assuming the API returns the next entry in the response
+            if (res.status === 200 && res.data) {
+                setSourceText(res.data.src_text || '');
+                setTargetText(res.data.tgt_text || '');
+                setEntry(res.data);
+                // Update variants if applicable
+                if (['zgh', 'ber'].includes(sourceLanguage)) {
+                    setLeftRadioValue(res.data.srcVar || '');
+                }
+                if (['zgh', 'ber'].includes(targetLanguage)) {
+                    setRightRadioValue(res.data.tgtVar || '');
+                }
+            } else {
+                console.error('No next entry available');
+            }
+        } catch (error) {
+            console.error('Error fetching next entry:', error);
+        }
+        setTriggerFetch((prev) => prev + 1);
+    };
+
     const SrcLanguageSelection = () => (
         <DropdownMenu>
             <DropdownMenuTrigger className="mb-5" asChild>
@@ -848,7 +845,7 @@ toast.success(`1`,{id:toastId});
                             className="cursor-pointer"
                             onClick={handleNext}
                         >
-                            Skip
+                            {d?.btn.skip}
                         </Button>
                     </div>
                 </div>
