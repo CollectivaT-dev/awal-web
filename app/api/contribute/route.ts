@@ -11,14 +11,6 @@ export async function GET(req: Request, res: Response) {
         console.log(query);
         const src = Array.isArray(query.src) ? query.src[0] : query.src;
         const tgt = Array.isArray(query.tgt) ? query.tgt[0] : query.tgt;
-        const src_var = Array.isArray(query.src_var)
-            ? query.src_var[0]
-            : query.src_var || null;
-        const tgt_var = Array.isArray(query.tgt_var)
-            ? query.tgt_var[0]
-            : query.tgt_var || null;
-        console.log(src_var);
-        console.log(tgt_var);
         const session = await getCurrentUser();
         console.log(session);
         console.log(src);
@@ -29,26 +21,15 @@ export async function GET(req: Request, res: Response) {
                 statusText: 'Language pair not valid',
             });
         }
-        const user = await prisma.user.findUnique({
-            where: { id: session?.id },
-            select: {
-                validationEntries: true,
-            },
-        });
         const randomEntry = await prisma.contribution.findFirst({
             where: {
                 src: src,
                 tgt: tgt,
-                srcVar: src_var,
-                tgtVar: tgt_var,
                 isValidated: false,
                 AND: {
                     id: {
                         notIn: session?.validationEntries,
                     },
-					// userId:{
-					// 	notIn: 
-					// }
                 },
             },
         });

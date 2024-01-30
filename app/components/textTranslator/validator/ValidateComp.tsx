@@ -91,6 +91,8 @@ const ValidateComp = () => {
         };
         fetchDictionary();
     }, [locale]);
+    const variants = ['Central', 'Tarifit', 'Tachelhit', 'Other']; // List of all variants
+
     // render variations conditionally
     const renderRadioGroup = (side: 'left' | 'right') => {
         const languagesToRender =
@@ -111,16 +113,8 @@ const ValidateComp = () => {
                                     value={value}
                                     id={`${value}-${side}`}
                                     checked={radioGroupValue === value}
-                                    onCheckedChange={(newCheckedState) => {
-                                        if (
-                                            typeof newCheckedState === 'boolean'
-                                        ) {
-                                            const newValue = value; // 'value' is the value of the radio item
-                                            side === 'left'
-                                                ? setLeftRadioValue(newValue)
-                                                : setRightRadioValue(newValue);
-                                        }
-                                    }}
+                                    onCheckedChange={() => {}}
+                                    disabled // Make radio button unselectable
                                 />
                                 <Label htmlFor={`${value}-${side}`}>
                                     {value}
@@ -209,18 +203,15 @@ const ValidateComp = () => {
 
     // retrieve contribution item
     useEffect(() => {
-        console.log(validatorToaster);
         const toastId = toast.loading(validatorToaster.alert_loading, {
             id: 'loading',
         });
 
         const fetchData = async () => {
+            console.log('Fetching data for', sourceLanguage, targetLanguage);
+
             const srcLangCode = getLanguageCode(sourceLanguage);
             const tgtLangCode = getLanguageCode(targetLanguage);
-            const srcLangVar = srcVar;
-            const tgtLangVar = tgtVar;
-
-            console.log(srcLangCode, srcLangVar, tgtLangVar);
             const apiUrl =
                 process.env.NODE_ENV === 'development'
                     ? 'http://localhost:3000'
@@ -229,24 +220,23 @@ const ValidateComp = () => {
             try {
                 const url = `${apiUrl}/api/contribute?src=${encodeURIComponent(
                     srcLangCode,
-                )}&src_var=${encodeURIComponent(
-                    srcLangVar,
-                )}&tgt=${encodeURIComponent(
-                    tgtLangCode,
-                )}&tgt_var=${encodeURIComponent(tgtLangVar)}`;
+                )}&tgt=${encodeURIComponent(tgtLangCode)}`;
                 const res = await axios.get(url);
                 console.log(res);
-                console.log(res.status);
-                console.log(res.data);
-                if (res.data) {
+                if (res.status === 200 && res.data) {
                     setSourceText(res.data.src_text || '');
                     setTargetText(res.data.tgt_text || '');
-					setLeftRadioValue(res.data.srcVar || '');
-					setRightRadioValue(res.data.tgtVar || '');
                     setEntry(res.data);
-                    toast.success(`${validatorToaster.success_loading}`, {
-                        id: toastId,
-                    });
+toast.success(`1`,{id:toastId});
+                    if (['zgh', 'ber'].includes(sourceLanguage)) {
+                        setLeftRadioValue(res.data.srcVar || '');
+                    }
+                    if (['zgh', 'ber'].includes(targetLanguage)) {
+                        setRightRadioValue(res.data.tgtVar || '');
+                    }
+					
+                } else {
+                    console.error('No data available');
                 }
             } catch (error) {
                 toast.dismiss(toastId);
@@ -254,15 +244,20 @@ const ValidateComp = () => {
                     if (error.response) {
                         setSourceText('');
                         setTargetText('');
-                        if (error.response.statusText.includes('entries') ) {
+                        if (error.response.statusText.includes('entries')) {
                             toast.error(
-                                validatorToaster.alert_no_more_entries?validatorToaster.alert_no_more_entries:null,
+                                validatorToaster.alert_no_more_entries
+                                    ? validatorToaster.alert_no_more_entries
+                                    : null,
                                 { id: 'no_entries' },
                             );
                         } else
-                            toast.error(`${validatorToaster.alert_no_more_entries}`, {
-                                id: 'no_entries',
-                            });
+                            toast.error(
+                                `${validatorToaster.alert_no_more_entries}`,
+                                {
+                                    id: 'no_entries',
+                                },
+                            );
                     } else {
                         // Something happened in setting up the request that triggered an error
                         console.error('Alguna cosa ha anat malament');
@@ -274,14 +269,7 @@ const ValidateComp = () => {
             }
         };
         fetchData();
-    }, [
-        sourceLanguage,
-        targetLanguage,
-        triggerFetch,
-        srcVar,
-        tgtVar,
-        validatorToaster,
-    ]);
+    }, [sourceLanguage, targetLanguage, validatorToaster]);
 
     // validate post route
     const handleValidate = async () => {
@@ -354,18 +342,38 @@ const ValidateComp = () => {
         }
         setTriggerFetch((prev) => prev + 1);
     };
-    const handleNext = async () => {
-        try {
-            const data = {
-                ...entry,
-                validatorId: session?.user?.id, // Explicitly include the ID of validator
-            };
-            console.log(data);
-            const res = await axios.patch('/api/contribute', data);
-            console.log(res);
-        } catch (error) {}
-        setTriggerFetch((prev) => prev + 1);
-    };
+	const handleNext = async () => {
+		console.log('Fetching next entry');
+		try {
+			const data = {
+				...entry,
+				validatorId: session?.user?.id, // Explicitly include the ID of validator
+			};
+			console.log('Sending request with data:', data);
+			const res = await axios.patch('/api/contribute', data);
+			console.log('Response received:', res);
+	
+			// Assuming the API returns the next entry in the response
+			if (res.status === 200 && res.data) {
+				setSourceText(res.data.src_text || '');
+				setTargetText(res.data.tgt_text || '');
+				setEntry(res.data);
+				// Update variants if applicable
+				if (['zgh', 'ber'].includes(sourceLanguage)) {
+					setLeftRadioValue(res.data.srcVar || '');
+				}
+				if (['zgh', 'ber'].includes(targetLanguage)) {
+					setRightRadioValue(res.data.tgtVar || '');
+				}
+			} else {
+				console.error('No next entry available');
+			}
+		} catch (error) {
+			console.error('Error fetching next entry:', error);
+		}
+		setTriggerFetch((prev) => prev + 1);
+	};
+	
     const SrcLanguageSelection = () => (
         <DropdownMenu>
             <DropdownMenuTrigger className="mb-5" asChild>
