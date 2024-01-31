@@ -6,6 +6,7 @@ declare module 'next-auth' {
         // Add the custom fields
         score?: number;
 		username?: string;
+		gender?:string
     }
     interface Session {
         user?: User;
