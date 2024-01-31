@@ -50,9 +50,9 @@ const EventCarousel = () => {
                 >
                     <CarouselContent>
                         {Object.keys(c).map((key) => (
-                            <CarouselItem key={key}>
+                            <CarouselItem key={key} >
                                 <div className="p-1">
-                                    <Card>
+                                    <Card className='bg-yellow-100'>
                                         <Link
                                             href={c[key].link}
                                             scroll={false}

@@ -1,7 +1,6 @@
 import getCurrentUser from '@/app/actions/get/getCurrentUser';
 import prisma from '@/lib/prisma';
 import { redirect } from 'next/navigation';
-
 import { NextResponse } from 'next/server';
 import { parse } from 'url';
 

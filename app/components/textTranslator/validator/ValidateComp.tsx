@@ -432,9 +432,7 @@ const ValidateComp = () => {
                             <Textarea
                                 value={sourceText}
                                 className="border border-gray-300 h-[50vh] rounded-md shadow"
-                                placeholder={
-                                    d?.translator.placeholder.type_to_translate
-                                }
+                                placeholder={``}
                                 id="src_message"
                                 readOnly
                             />
@@ -604,9 +602,7 @@ const ValidateComp = () => {
                             <Textarea
                                 id="tgt_message"
                                 className="border border-gray-300 h-[50vh] rounded-md shadow"
-                                placeholder={
-                                    d?.translator.placeholder.translation_box
-                                }
+                                placeholder={``}
                                 value={targetText}
                                 onChange={(e) => setTargetText(e.target.value)}
                                 readOnly
@@ -646,9 +642,7 @@ const ValidateComp = () => {
                             <Textarea
                                 value={sourceText}
                                 className="border border-gray-300 h-auto rounded-md shadow"
-                                placeholder={
-                                    d?.translator.placeholder.type_to_translate
-                                }
+                                placeholder={``}
                                 id="src_message"
                                 readOnly
                             />
@@ -818,9 +812,7 @@ const ValidateComp = () => {
                             <Textarea
                                 id="tgt_message"
                                 className="border border-gray-300 h-auto rounded-md shadow"
-                                placeholder={
-                                    d?.translator.placeholder.translation_box
-                                }
+                                placeholder={``}
                                 value={targetText}
                                 onChange={(e) => setTargetText(e.target.value)}
                                 readOnly

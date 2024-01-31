@@ -473,8 +473,11 @@ export function SettingsPage() {
                         onSubmit={form.handleSubmit(onSubmit)}
                         className=" space-y-8 w-full px-4"
                     >
-                        {/* user info  */}
+                        {/* 
+						//> user info
+						  */}
                         <div className="grid grid-cols-2 gap-8">
+                            {/* name */}
                             <FormField
                                 control={form.control}
                                 name="name"
@@ -492,6 +495,7 @@ export function SettingsPage() {
                                     </FormItem>
                                 )}
                             />
+                            {/* surname */}
                             <FormField
                                 control={form.control}
                                 name="surname"
@@ -509,6 +513,7 @@ export function SettingsPage() {
                                     </FormItem>
                                 )}
                             />
+                            {/* username */}
                             <FormField
                                 control={form.control}
                                 name="username"
@@ -528,6 +533,7 @@ export function SettingsPage() {
                                     </FormItem>
                                 )}
                             />
+                            {/* email */}
                             <FormField
                                 control={form.control}
                                 name="email"
@@ -545,7 +551,7 @@ export function SettingsPage() {
                                     </FormItem>
                                 )}
                             />
-                            {/* //> age */}
+                            {/* // age */}
                             <FormField
                                 control={form.control}
                                 name="age"
@@ -603,55 +609,31 @@ export function SettingsPage() {
                                                 </SelectTrigger>
                                             </FormControl>
                                             <SelectContent>
-                                                <SelectItem
-                                                    value={
-                                                        d?.setting.gender.m
-                                                            ? d?.setting.gender
-                                                                  .m
-                                                            : 'Male'
-                                                    }
-                                                >
-                                                    {d?.setting.gender.m}
+                                                <SelectItem value={'m'}>
+                                                    {d?.setting.gender.m
+                                                        ? d?.setting.gender.m
+                                                        : 'Male'}
                                                 </SelectItem>
-                                                <SelectItem
-                                                    value={
-                                                        d?.setting.gender.f
-                                                            ? d?.setting.gender
-                                                                  .f
-                                                            : 'Female'
-                                                    }
-                                                >
-                                                    {d?.setting.gender.f}
+                                                <SelectItem value="f">
+                                                    {d?.setting.gender.f
+                                                        ? d?.setting.gender.f
+                                                        : 'Female'}
                                                 </SelectItem>
-                                                <SelectItem
-                                                    value={
-                                                        d?.setting.gender.nb
-                                                            ? d?.setting.gender
-                                                                  .nb
-                                                            : 'Non-binary'
-                                                    }
-                                                >
-                                                    {d?.setting.gender.nb}
+                                                <SelectItem value="nb">
+                                                    {d?.setting.gender.nb
+                                                        ? d?.setting.gender.nb
+                                                        : 'Non-binary'}
                                                 </SelectItem>
-                                                <SelectItem
-                                                    value={
-                                                        d?.setting.gender.tr
-                                                            ? d?.setting.gender
-                                                                  .tr
-                                                            : 'Transgender'
-                                                    }
-                                                >
-                                                    {d?.setting.gender.tr}
+                                                <SelectItem value="tr">
+                                                    {d?.setting.gender.tr
+                                                        ? d?.setting.gender.tr
+                                                        : 'Transgender'}
                                                 </SelectItem>
-                                                <SelectItem
-                                                    value={
-                                                        d?.setting.gender.other
-                                                            ? d?.setting.gender
-                                                                  .other
-                                                            : 'Other'
-                                                    }
-                                                >
-                                                    {d?.setting.gender.other}
+                                                <SelectItem value="other">
+                                                    {d?.setting.gender.other
+                                                        ? d?.setting.gender
+                                                              .other
+                                                        : 'Other'}
                                                 </SelectItem>
                                             </SelectContent>
                                         </Select>
