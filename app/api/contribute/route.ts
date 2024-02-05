@@ -1,7 +1,6 @@
 import getCurrentUser from '@/app/actions/get/getCurrentUser';
 import prisma from '@/lib/prisma';
 import { redirect } from 'next/navigation';
-
 import { NextResponse } from 'next/server';
 import { parse } from 'url';
 
@@ -11,14 +10,6 @@ export async function GET(req: Request, res: Response) {
         console.log(query);
         const src = Array.isArray(query.src) ? query.src[0] : query.src;
         const tgt = Array.isArray(query.tgt) ? query.tgt[0] : query.tgt;
-        const src_var = Array.isArray(query.src_var)
-            ? query.src_var[0]
-            : query.src_var || null;
-        const tgt_var = Array.isArray(query.tgt_var)
-            ? query.tgt_var[0]
-            : query.tgt_var || null;
-        console.log(src_var);
-        console.log(tgt_var);
         const session = await getCurrentUser();
         console.log(session);
         console.log(src);
@@ -29,26 +20,16 @@ export async function GET(req: Request, res: Response) {
                 statusText: 'Language pair not valid',
             });
         }
-        const user = await prisma.user.findUnique({
-            where: { id: session?.id },
-            select: {
-                validationEntries: true,
-            },
-        });
         const randomEntry = await prisma.contribution.findFirst({
             where: {
                 src: src,
                 tgt: tgt,
-                srcVar: src_var,
-                tgtVar: tgt_var,
                 isValidated: false,
+                userId: { not: session?.id },
                 AND: {
                     id: {
                         notIn: session?.validationEntries,
                     },
-					// userId:{
-					// 	notIn: 
-					// }
                 },
             },
         });
@@ -87,16 +68,6 @@ export async function POST(req: Request, res: Response) {
         }
         let updatedScore = existingUser.score + body.contributionPoint;
         console.log(updatedScore);
-        const updatedUserScore = await prisma.user.updateMany({
-            where: {
-                id: body.userId,
-            },
-            data: {
-                score: updatedScore,
-                lastContribution: new Date(),
-            },
-        });
-        console.log(updatedScore);
         // check if languages are zgh or zgh-ber
         let srcVar =
             body.src === 'ber' || body.src === 'zgh' ? body.srcVar : null;
@@ -111,17 +82,28 @@ export async function POST(req: Request, res: Response) {
                 tgt: body.tgt,
                 src_text: body.src_text,
                 tgt_text: body.tgt_text,
-                srcVar,
-                tgtVar,
+                srcVar:
+                    body.src === 'ber' || body.src === 'zgh'
+                        ? body.srcVar
+                        : null,
+                tgtVar:
+                    body.tgt === 'ber' || body.tgt === 'zgh'
+                        ? body.tgtVar
+                        : null,
                 isValidated: false,
                 validation: 0,
                 createdAt: new Date(),
                 updatedAt: new Date(),
             },
         });
-        const updatedUser = await prisma.user.findUnique({
+        const updatedUser = await prisma.user.update({
             where: {
                 id: body.userId,
+            },
+            data: {
+                contributions: { push: contribution.id },
+                lastContribution: new Date(),
+                score: updatedScore,
             },
         });
         console.log(contribution);

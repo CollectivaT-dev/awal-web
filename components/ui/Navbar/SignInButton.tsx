@@ -59,7 +59,11 @@ const SignInButton = () => {
                 <div className="hidden lg:flex-grow"></div>
                 <div className="hidden lg:flex lg:flex-row lg:justify-center lg:items-center lg:space-x-4  ">
                     <p className="text-text-primary text-xs mobile:text-lg">
-                        {d?.texts.welcome}{' '}
+                        {session.user.gender === 'f'
+                            ? d?.texts.welcome_f
+                            : session.user.gender === 'm'
+                            ? d?.texts.welcome_m
+                            : d?.texts.welcome}{' '}
                         <Link
                             href={'/settings'}
                             className="font-bold hover:underline"

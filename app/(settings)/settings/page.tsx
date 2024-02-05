@@ -74,7 +74,10 @@ const formSchema = z
             written_tif: z.number().optional(),
             written_lat: z.number().optional(),
         }),
-        other: z.string(),
+        other: z.object({
+            isChecked: z.boolean().default(false),
+            body: z.string(),
+        }),
         isSubscribed: z.boolean().default(false).optional(),
     })
     .partial();
@@ -153,7 +156,10 @@ export function SettingsPage() {
                 arabic: false,
                 french: false,
             },
-            other: '',
+            other: {
+                isChecked: false,
+                body: '',
+            },
         },
     });
 
@@ -192,7 +198,10 @@ export function SettingsPage() {
                         arabic: false,
                         french: false,
                     },
-                    other: '',
+                    other: {
+                        isChecked: false,
+                        body: '',
+                    },
                 };
                 const mergedData = {
                     ...userData,
@@ -212,7 +221,10 @@ export function SettingsPage() {
                     age: mergedData.age || 0,
                     gender: mergedData.gender || '',
                     isSubscribed: mergedData.isSubscribed || false,
-                    other: mergedData.other || '',
+                    other: {
+                        isChecked: mergedData.other?.isChecked || false,
+                        body: mergedData.other?.body || '',
+                    },
                     central: {
                         isChecked: mergedData.central?.isChecked || false,
                         oral: mergedData.central?.oral || 0,
@@ -250,13 +262,17 @@ export function SettingsPage() {
 
         fetchData();
     }, [form]);
-
+    console.log(form.formState);
     console.log(selectedLanguages);
     //# 2 update user data
     const handleUpdate = async (updateData: SettingFormValues) => {
         const { score, ...dataWithoutScore } = updateData;
         const newData = {
             ...updateData,
+            other: {
+                isChecked: form.getValues('other.isChecked'),
+                body: form.getValues('other.body') || '',
+            },
             central: {
                 isChecked: form.getValues('central.isChecked'),
                 oral: form.getValues('central.oral') || 0,
@@ -306,6 +322,8 @@ export function SettingsPage() {
                 const serverErrMsg = error.response.data.error;
                 if (serverErrMsg.includes('variation')) {
                     toast.error(`${d?.toasters.alert_select_variant}`);
+                } else if (serverErrMsg.includes('String')) {
+                    toast.error(`${d?.toasters.alert_input}`);
                 } else if (serverErrMsg.includes('email')) {
                     toast.error(`${d?.toasters.alert_email_username}`);
                 } else {
@@ -374,6 +392,19 @@ export function SettingsPage() {
             written_lat: prevState?.written_lat ?? 1,
         }));
     };
+    const handleOtherChecked = () => {
+        const isChecked = !form.getValues('other.isChecked');
+        form.setValue(`other.isChecked`, isChecked, {
+            shouldValidate: true,
+        });
+
+        setFormState((prevState) => ({
+            ...prevState,
+            isChecked,
+            body: prevState?.body ?? '',
+        }));
+    };
+    handleOtherChecked;
     const handleButtonChange = useCallback(
         (field: string, value: number) => {
             form.setValue(field as keyof SettingFormValues, value, {
@@ -421,7 +452,7 @@ export function SettingsPage() {
     const isCentralCheckedBox = form.watch('central.isChecked');
     const isTachelhitCheckedBox = form.watch('tachelhit.isChecked');
     const isTarifitCheckedBox = form.watch('tarifit.isChecked');
-
+    const isOtherCheckedBox = form.watch('other.isChecked');
     // console.log(fetchedData);
     // console.log(userId);
     // console.log(form.formState);
@@ -441,8 +472,11 @@ export function SettingsPage() {
                         onSubmit={form.handleSubmit(onSubmit)}
                         className=" space-y-8 w-full px-4"
                     >
-                        {/* user info  */}
+                        {/* 
+						//> user info
+						  */}
                         <div className="grid grid-cols-2 gap-8">
+                            {/* name */}
                             <FormField
                                 control={form.control}
                                 name="name"
@@ -460,6 +494,7 @@ export function SettingsPage() {
                                     </FormItem>
                                 )}
                             />
+                            {/* surname */}
                             <FormField
                                 control={form.control}
                                 name="surname"
@@ -477,6 +512,7 @@ export function SettingsPage() {
                                     </FormItem>
                                 )}
                             />
+                            {/* username */}
                             <FormField
                                 control={form.control}
                                 name="username"
@@ -496,6 +532,7 @@ export function SettingsPage() {
                                     </FormItem>
                                 )}
                             />
+                            {/* email */}
                             <FormField
                                 control={form.control}
                                 name="email"
@@ -513,7 +550,7 @@ export function SettingsPage() {
                                     </FormItem>
                                 )}
                             />
-                            {/* //> age */}
+                            {/* // age */}
                             <FormField
                                 control={form.control}
                                 name="age"
@@ -549,83 +586,69 @@ export function SettingsPage() {
                             <FormField
                                 control={form.control}
                                 name="gender"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>{d?.user.gender}</FormLabel>
-                                        <Select
-                                            onValueChange={field.onChange}
-                                            defaultValue={field.value}
-                                        >
-                                            <FormControl>
-                                                <SelectTrigger>
-                                                    <SelectValue
-                                                        placeholder={
-                                                            d?.setting.gender
-                                                                .select
-                                                                ? d?.setting
-                                                                      .gender
-                                                                      .select
-                                                                : 'Select'
-                                                        }
-                                                    />
-                                                </SelectTrigger>
-                                            </FormControl>
-                                            <SelectContent>
-                                                <SelectItem
-                                                    value={
-                                                        d?.setting.gender.m
+                                render={({ field }) => {
+                                    // console.log("Gender field value:", field.value); // Log the current value
+                                    return (
+                                        <FormItem>
+                                            <FormLabel>
+                                                {d?.user.gender}
+                                            </FormLabel>
+                                            <Select
+                                                onValueChange={field.onChange}
+                                                value={field.value}
+                                            >
+                                                <FormControl>
+                                                    <SelectTrigger>
+                                                        <SelectValue
+                                                            placeholder={
+                                                                d?.setting
+                                                                    .gender
+                                                                    .select
+                                                                    ? d?.setting
+                                                                          .gender
+                                                                          .select
+                                                                    : 'Select'
+                                                            }
+                                                        />
+                                                    </SelectTrigger>
+                                                </FormControl>
+                                                <SelectContent>
+                                                    <SelectItem value={'m'}>
+                                                        {d?.setting.gender.m
                                                             ? d?.setting.gender
                                                                   .m
-                                                            : 'Male'
-                                                    }
-                                                >
-                                                    {d?.setting.gender.m}
-                                                </SelectItem>
-                                                <SelectItem
-                                                    value={
-                                                        d?.setting.gender.f
+                                                            : 'Male'}
+                                                    </SelectItem>
+                                                    <SelectItem value="f">
+                                                        {d?.setting.gender.f
                                                             ? d?.setting.gender
                                                                   .f
-                                                            : 'Female'
-                                                    }
-                                                >
-                                                    {d?.setting.gender.f}
-                                                </SelectItem>
-                                                <SelectItem
-                                                    value={
-                                                        d?.setting.gender.nb
+                                                            : 'Female'}
+                                                    </SelectItem>
+                                                    <SelectItem value="nb">
+                                                        {d?.setting.gender.nb
                                                             ? d?.setting.gender
                                                                   .nb
-                                                            : 'Non-binary'
-                                                    }
-                                                >
-                                                    {d?.setting.gender.nb}
-                                                </SelectItem>
-                                                <SelectItem
-                                                    value={
-                                                        d?.setting.gender.tr
+                                                            : 'Non-binary'}
+                                                    </SelectItem>
+                                                    <SelectItem value="tr">
+                                                        {d?.setting.gender.tr
                                                             ? d?.setting.gender
                                                                   .tr
-                                                            : 'Transgender'
-                                                    }
-                                                >
-                                                    {d?.setting.gender.tr}
-                                                </SelectItem>
-                                                <SelectItem
-                                                    value={
-                                                        d?.setting.gender.other
+                                                            : 'Transgender'}
+                                                    </SelectItem>
+                                                    <SelectItem value="other">
+                                                        {d?.setting.gender.other
                                                             ? d?.setting.gender
                                                                   .other
-                                                            : 'Other'
-                                                    }
-                                                >
-                                                    {d?.setting.gender.other}
-                                                </SelectItem>
-                                            </SelectContent>
-                                        </Select>
-                                        <FormMessage className="text-white" />
-                                    </FormItem>
-                                )}
+                                                            : 'Other'}
+                                                    </SelectItem>
+                                                </SelectContent>
+                                            </Select>
+                                            <FormMessage className="text-white" />
+                                        </FormItem>
+                                    );
+                                }}
                             />
                         </div>
                         {/* subscribe check */}
@@ -988,8 +1011,8 @@ export function SettingsPage() {
                                         </div>
                                     )}
                                 </div>
-								{/* other variation */}
-								{/* <div className="flex flex-col">
+                                {/* other variation */}
+                                <div className="flex flex-col">
                                     <FormField
                                         name="other.isChecked"
                                         control={form.control}
@@ -1007,7 +1030,7 @@ export function SettingsPage() {
                                                         )}
                                                         className="text-orange-600 w-5 h-5 border-gray-300 focus:ring-0 focus:ring-offset-0 rounded-full"
                                                         onChange={
-                                                            handleOthertChecked
+                                                            handleOtherChecked
                                                         }
                                                     />
                                                 </FormControl>
@@ -1015,11 +1038,27 @@ export function SettingsPage() {
                                         )}
                                     />
                                     {isOtherCheckedBox && (
-                                        <div className="flex flex-col gap-2 p-2 ">
-                                          <Input value={otherVar} onChange={(e)=>(setOtherVar(e.target.value))}></Input>
-                                        </div>
+                                        <FormField
+                                            control={form.control}
+                                            name="other.body"
+                                            render={({ field }) => (
+                                                <FormItem>
+                                                    <FormControl>
+                                                        <Input
+                                                            disabled={loading}
+                                                            {...field}
+                                                            placeholder={
+                                                                d?.setting
+                                                                    .specify
+                                                            }
+                                                        />
+                                                    </FormControl>
+                                                    <FormMessage className="text-white" />
+                                                </FormItem>
+                                            )}
+                                        />
                                     )}
-                                </div> */}
+                                </div>
                             </div>
                             {/* other lang */}
                         </div>
