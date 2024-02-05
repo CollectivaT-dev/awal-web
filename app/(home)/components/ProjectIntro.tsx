@@ -133,7 +133,7 @@ const ProjectIntro = () => {
                             size="xl"
                             className="mt-5 bg-text-primary text-sm mobile:text-xl"
                             onClick={() =>
-                                router.push('/signIn', { scroll: false })
+                                router.push('/register', { scroll: false })
                             }
                         >
                             {d?.page_intro.CTA_button}

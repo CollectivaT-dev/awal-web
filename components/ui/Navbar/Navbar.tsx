@@ -152,7 +152,7 @@ const AppBar = () => {
                                     {d?.language?.en}
                                 </DropdownMenuRadioItem>
 
-                                <DropdownMenuRadioItem value="fr">
+                                <DropdownMenuRadioItem value="fr">g
                                     {d?.language?.fr}
                                 </DropdownMenuRadioItem>
                                 {/* <DropdownMenuRadioItem value="ary">
@@ -168,7 +168,8 @@ const AppBar = () => {
                 <div className="hidden lg:flex">
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <Button variant="outline">
+                            <Button>
+                                <Globe className="mr-3" />
                                 {locale === 'es' && d?.language?.es}
                                 {locale === 'ca' && d?.language?.ca}
                                 {locale === 'en' && d?.language?.en}

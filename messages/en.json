@@ -66,25 +66,30 @@
     },
     "toasters": {
         "under_construction": "This page is still under development.",
-        "success_contribution": "Thank you for your contribution! You've just earned",
-        "success_contribution_points": "contribution points.",
+        "loading_updating": "Updating your profile...",
+        "translating": "Translating...",
         "select_var": "Please select a variant for Tamazight languages",
         "alert_no_text": "No text to contribute",
-        "alert_no_modify": "Please translate the text to contribute.",
+        "alert_no_modify": "Please revise the pre-translated text.",
         "alert_privacy_check": "Please read and agree to contribution terms to continue.",
         "alert_general": "Something went wrong.",
         "alert_username": "Username already taken.",
         "alert_email": "Email already registered.",
         "alert_email_username": "Username or Email already in use.",
-        "success_update": "Profile updated successfully.",
-        "success_registration": "Successful, thank you for signing up! Now, please sign in to start contributing.",
-        "loading_updating": "Updating your profile...",
         "alert_email_pwd": "Please provide valid email address and a password.",
-        "success_copy": "Translation copied to clipboard!",
-        "success_signIn": "Successfully signed in!",
         "alert_copy": "The translation could not be copied.",
         "alert_try_again": "Please try again later.",
         "alert_select_variant": "Please select your proficiency level",
+        "success_contribution": "Thank you for your contribution! You've just earned",
+        "success_contribution_points": "contribution points.",
+        "alert_input": "Please enter more than one character.",
+        "alert_api": "Translate engine not responsive. Please try again later.",
+        "success_translate": "Input phrase pre-translated. Please revise and correct the translation before submitting.",
+        "success_update": "Profile updated successfully.",
+        "success_loading": "New phrase loaded successfully.",
+        "success_registration": "Successful, thank you for signing up! Now, please sign in to start contributing.",
+        "success_copy": "Translation copied to clipboard!",
+        "success_signIn": "Successfully signed in!",
         "validation_success_report": "Contribution reported. Thank you for your attention."
     },
     "text_with_link": {
@@ -97,7 +102,8 @@
             "text_before_link": "Useful Resources",
             "link_text_1": "Diccionari Català-Amazic",
             "link_text_2": "Dictionnaire Général de la Langue Amazighe",
-            "link_text_3": "English-Tamazight Dictionary"
+            "link_text_3": "English-Tamazight Dictionary",
+            "link_text_4": "AmaWar Arabic-Tamazight dictionary"
         }
     },
     "error_msg": {
@@ -149,7 +155,7 @@
         "validate_report_heading": "Report contribution",
         "validate_report_text": "Please tell us briefly what's wrong with this contribution according to our community guidelines.",
         "faq_heading": "Frequently Asked Questions",
-		"rank":"#"
+        "rank": "#"
     },
     "validator": {
         "alert_no_more_entries": "No more entries to validate for language pair and variant. You can contribute more translations meanwhile.",
@@ -180,7 +186,8 @@
             "nb": "Non-binary",
             "tr": "Transgender",
             "other": "Other"
-        }
+        },
+        "specify": "Please specify your variant."
     },
     "about": {
         "main_string_1": "Awal is a project that contributes to preserving and promoting the Amazigh language in the digital space by developing innovative tools that facilitate its use and dissemination.\nThe participation of Amazigh speakers will be essential to collect data, both oral and written, through voice recordings and collection of translated texts from this minority language. The initiative aims not only to create effective digital tools, but also to raise community awareness of the importance of linguistic data and new technologies to preserve the language, to raise awareness of the effects of the digital divide and to grow a network of professionals.\nAwal is an initative by CIEMEN, Col·lectivaT and Casa Amaziga de Catalunya and is funded by the Municipality of Barcelona and Generalitat de Catalunya with the support of the Catalan Development Cooperation Agency and the Department of Social Rights.",
@@ -202,7 +209,7 @@
         "contributor_ghizlan_intro": "Lalla Ghizlan Baryala, Amazigh cultural activist in Catalonia, collaborates with various organizations to promote the history, language, and culture of the Amazigh people in the region. She studied marketing and market research at UOC and completed a postgraduate program in Digital Marketing and e-commerce.",
         "contributor_yuxuan_photo": "",
         "contributor_yuxuan_website": "",
-        "contributor_yuxuan_intro": "Yuxuan Peng develops and maintains Awal's web page. ",
+        "contributor_yuxuan_intro": "Yuxuan Peng, full stack developer, develops and maintains Awal's web page. ",
         "contact_heading": "Contact Awal",
         "contact_info": "For inquiries, suggestions, or more information, contact us at",
         "contact_text": "awal@collectivat.cat"
@@ -308,7 +315,7 @@
         },
         "q2": {
             "q": "I fixed a mistake in the machine translation output, but it still makes the same error. Is my contribution not being saved?",
-            "a": "Your corrections are saved in our database, but they won't immediately affect the machine translation. The improvement will happen in a later phase, after we collect enough quality translations from contributors like you. So, your efforts are valuable and will contribute to enhancing the translation engine over time."
+            "a": "Your contributions are saved in our database, but they won't immediately affect the machine translation. The improvement will happen in a later phase, after we collect enough quality translations from contributors like you. So, your efforts are valuable and will contribute to enhancing the translation engine over time."
         },
         "q3": {
             "q": "How are contribution scores for translations calculated?",
@@ -330,9 +337,9 @@
     "carousel": {
         "c1": {
             "heading": "Awal Data Marathon: Unite for Tamazight!",
-            "body": "Join us on February 17, 11:00 am - 8:00 pm at CIEMEN headquarters in Barcelona, for a collective effort in generating data to enrich the Tamazight language. Be part of the preservation and promotion of Amazigh culture. All ages, genders, and dialects welcome!",
+            "body": "Join us on February 17, 11:00 am - 8:00 pm at CIEMEN headquarters in Barcelona or virtually, for a collective effort in generating data to enrich the Tamazight language. Be part of the preservation and promotion of Amazigh culture. All ages, genders, and dialects welcome!",
             "link": "https://twitter.com/awaldigital"
-        }, 
+        },
         "c2": {
             "heading": "AWAL on Col·lectivaT's blog",
             "body": "Introducing Project Awal for preserving and promoting the Tamazight language on the internet with a strong and united data community. ",

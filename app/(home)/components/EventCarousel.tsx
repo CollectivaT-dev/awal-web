@@ -50,17 +50,21 @@ const EventCarousel = () => {
                 >
                     <CarouselContent>
                         {Object.keys(c).map((key) => (
-                            <CarouselItem key={key}>
+                            <CarouselItem key={key} >
                                 <div className="p-1">
-                                    <Card>
-                                        <Link href={c[key].link} scroll={false}>
-                                            <CardContent className="flex-col-center">
-                                                <span className="py-10 flex flex-col justify-between items-center space-y-2 ">
-                                                    <h1 className="text-3xl font-bold">
-                                                        {c[key].heading}
-                                                    </h1>
-                                                    <p> {c[key].body}</p>
-                                                </span>
+                                    <Card className='bg-yellow-100'>
+                                        <Link
+                                            href={c[key].link}
+                                            scroll={false}
+                                            target="_blank"
+                                        >
+                                            <CardContent className="py-10 flex flex-col justify-evenly items-center min-h-[250px]">
+                                                <h1 className="text-3xl font-bold">
+                                                    {c[key].heading}
+                                                </h1>
+                                                <p className="whitespace-pre-wrap text-center">
+                                                    {c[key].body}
+                                                </p>
                                             </CardContent>
                                         </Link>
                                     </Card>

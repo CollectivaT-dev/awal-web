@@ -27,8 +27,6 @@ const Stats: React.FC<StatsProps> = ({ users }) => {
     const { data: session } = useSession();
     const { locale } = useLocaleStore();
     const [d, setD] = useState<MessagesProps>();
-    console.log(users);
-
     useEffect(() => {
         const fetchDictionary = async () => {
             const m = await getDictionary(locale);
@@ -42,18 +40,18 @@ const Stats: React.FC<StatsProps> = ({ users }) => {
             <h1 className="text-xl text-slate-200 lg:text-2xl font-semibold capitalize my-10">
                 {d?.texts.statistic}
             </h1>
-            <div className="h-full p-10 flex-row-center border-2 border-opacity-40 shadow-xl shadow-slate-100/50">
-                <Table className="flex flex-col">
-                    <TableHeader>
+            <div className="h-full p-10 flex-row-center border-2 border-opacity-80 shadow-xl shadow-slate-600/50 bg-yellow-200">
+                <Table className="flex flex-col ">
+                    <TableHeader className="text-text-primary">
                         <TableRow>
                             {' '}
-                            <TableHead className="text-center text-slate-100">
+                            <TableHead className="text-center">
                                 {d?.texts.rank}
                             </TableHead>
-                            <TableHead className="text-center text-slate-100">
+                            <TableHead className="text-center">
                                 {d?.user.username}
                             </TableHead>
-                            <TableHead className="text-center text-slate-100">
+                            <TableHead className="text-center">
                                 {d?.nav.points}
                             </TableHead>
                         </TableRow>
@@ -65,7 +63,6 @@ const Stats: React.FC<StatsProps> = ({ users }) => {
                                 className="flex flex-row justify-between items-center"
                             >
                                 <TableCell className="text-center">
-                                    {' '}
                                     {index + 1}
                                 </TableCell>
                                 <TableCell

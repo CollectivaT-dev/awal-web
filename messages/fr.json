@@ -66,6 +66,11 @@
     },
     "toasters": {
         "under_construction": "Cette page est encore en cours de développement.",
+        "translating": "En cours de traduction",
+        "success_loading": "Nouvelle phrase chargée avec succès.",
+        "success_translate": "Phrase d'entrée prétraduite. Veuillez réviser et corriger la traduction avant de soumettre.",
+        "alert_input": "Veuillez saisir plus d'un caractère.",
+        "alert_api": "Le moteur de traduction ne répond pas. Veuillez réessayer ultérieurement.",
         "success_contribution": "Merci pour votre contribution ! Vous venez de gagner",
         "success_contribution_points": "points de contribution.",
         "select_var": "Veuillez sélectionner une variante pour les langues amazighes",
@@ -97,7 +102,8 @@
             "text_before_link": "Ressources Utiles",
             "link_text_1": "Dictionnaire Catalan-Amazigh",
             "link_text_2": "Dictionnaire Général de la Langue Amazighe",
-            "link_text_3": "Dictionnaire Anglais-Tamazight"
+            "link_text_3": "Dictionnaire Anglais-Tamazight",
+            "link_text_4": "Dictionnaire arabe-tamazight AmaWar"
         }
     },
     "error_msg": {
@@ -114,8 +120,8 @@
         "heading_3": "Découvrez votre position",
         "text_3": "Pour chaque traduction enregistrée dans Awal Translate, vous gagnerez des points et verrez comment vous vous comparez avec les autres membres de la communauté.",
         "heading_4": "Découvrez la communauté Awal",
-        "text_4_1": "Apprenez-en davantage sur l'initiative et nos collaborateurs sur notre ",
-        "text_4_about": "page À propos. ",
+        "text_4_1": "Apprenez-en davantage sur l'initiative et nos collaborateurs sur page ",
+        "text_4_about": "À propos. ",
         "text_4_2": "Suivez-nous sur",
         "text_4_ins": "Instagram",
         "text_4_X": "et X",
@@ -180,7 +186,8 @@
             "nb": "Non-binaire",
             "tr": "Transgenre",
             "other": "Autre"
-        }
+        },
+        "specify": "Veuillez spécifier votre variante."
     },
     "about": {
         "main_string_1": "Awal est un projet qui contribue à préserver et promouvoir la langue amazighe dans l'espace numérique en développant des outils innovants pour en faciliter l'utilisation et la diffusion. \\La participation des locuteurs amazighs sera essentielle pour recueillir des données, à la fois orales et écrites, à travers des enregistrements vocaux et la collecte de textes traduits de cette langue minorisée. L'initiative vise non seulement à créer des outils numériques efficaces, mais aussi à sensibiliser la communauté à l'importance des données linguistiques et des nouvelles technologies pour préserver la langue, à sensibiliser aux effets de la fracture numérique et à développer un réseau de professionnels.\nAwal est une initiative du CIEMEN, Col·lectivaT et Casa Amaziga de Catalunya, financée par la mairie de Barcelone et la Generalitat de Catalunya avec le soutien de l'Agence catalane de coopération au développement et du Département des droits sociaux.",

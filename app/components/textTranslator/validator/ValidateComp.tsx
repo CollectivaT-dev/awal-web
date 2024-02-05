@@ -91,6 +91,8 @@ const ValidateComp = () => {
         };
         fetchDictionary();
     }, [locale]);
+    const variants = ['Central', 'Tarifit', 'Tachelhit', 'Other']; // List of all variants
+
     // render variations conditionally
     const renderRadioGroup = (side: 'left' | 'right') => {
         const languagesToRender =
@@ -111,16 +113,8 @@ const ValidateComp = () => {
                                     value={value}
                                     id={`${value}-${side}`}
                                     checked={radioGroupValue === value}
-                                    onCheckedChange={(newCheckedState) => {
-                                        if (
-                                            typeof newCheckedState === 'boolean'
-                                        ) {
-                                            const newValue = value; // 'value' is the value of the radio item
-                                            side === 'left'
-                                                ? setLeftRadioValue(newValue)
-                                                : setRightRadioValue(newValue);
-                                        }
-                                    }}
+                                    onCheckedChange={() => {}}
+                                    disabled // Make radio button unselectable
                                 />
                                 <Label htmlFor={`${value}-${side}`}>
                                     {value}
@@ -196,7 +190,6 @@ const ValidateComp = () => {
             const availableLanguages = isSourceLanguage
                 ? Object.keys(LanguageRelations)
                 : LanguageRelations[sourceLanguage] || [];
-
             return availableLanguages.map((key) => (
                 <DropdownMenuRadioItem key={key} value={key}>
                     {validateLanguage[key]}
@@ -205,46 +198,43 @@ const ValidateComp = () => {
         },
         [sourceLanguage, validateLanguage],
     );
+    const validatorToaster = useMemo(() => d?.validator ?? ({} as any), [d]);
+
     // retrieve contribution item
-    console.log();
     useEffect(() => {
-        const toastId = toast.loading('Carregant...', {
+        const toastId = toast.loading(validatorToaster.alert_loading, {
             id: 'loading',
         });
+
         const fetchData = async () => {
+            console.log('Fetching data for', sourceLanguage, targetLanguage);
             const srcLangCode = getLanguageCode(sourceLanguage);
             const tgtLangCode = getLanguageCode(targetLanguage);
-            const srcLangVar = srcVar;
-            const tgtLangVar = tgtVar;
-
-            console.log(srcLangCode, srcLangVar, tgtLangVar);
             const apiUrl =
                 process.env.NODE_ENV === 'development'
                     ? 'http://localhost:3000'
                     : 'https://awaldigital.org';
-
             try {
                 const url = `${apiUrl}/api/contribute?src=${encodeURIComponent(
                     srcLangCode,
-                )}&src_var=${encodeURIComponent(
-                    srcLangVar,
-                )}&tgt=${encodeURIComponent(
-                    tgtLangCode,
-                )}&tgt_var=${encodeURIComponent(tgtLangVar)}`;
+                )}&tgt=${encodeURIComponent(tgtLangCode)}`;
                 const res = await axios.get(url);
                 console.log(res);
-                console.log(res.status);
-                console.log(res.data);
-
-                if (res.data) {
+                if (res.status === 200 && res.data) {
                     setSourceText(res.data.src_text || '');
                     setTargetText(res.data.tgt_text || '');
-                    setLeftRadioValue(res.data.srcVar || '');
-                    setRightRadioValue(res.data.tgtVar || '');
                     setEntry(res.data);
-                    toast.success(`Nova parella de traducció carregada`, {
+                    toast.success(validatorToaster.success_loading, {
                         id: toastId,
                     });
+                    if (['zgh', 'ber'].includes(sourceLanguage)) {
+                        setLeftRadioValue(res.data.srcVar || '');
+                    }
+                    if (['zgh', 'ber'].includes(targetLanguage)) {
+                        setRightRadioValue(res.data.tgtVar || '');
+                    }
+                } else {
+                    console.error('No data available');
                 }
             } catch (error) {
                 toast.dismiss(toastId);
@@ -254,24 +244,29 @@ const ValidateComp = () => {
                         setTargetText('');
                         if (error.response.statusText.includes('entries')) {
                             toast.error(
-                                'No hi ha més entrades per validar per al parell de llengües i variant seleccionat. Pots contribuir amb més traduccions mentrestant.',
+                                validatorToaster.alert_no_more_entries
+                                    ? validatorToaster.alert_no_more_entries
+                                    : null,
                                 { id: 'no_entries' },
                             );
-                        } else toast.error('Alguna cosa ha anat malament.');
+                        } else
+                            toast.error(
+                                `${validatorToaster.alert_no_more_entries}`,
+                                {
+                                    id: 'no_entries',
+                                },
+                            );
                     } else {
                         // Something happened in setting up the request that triggered an error
-                        // toast.error(`${d?.toasters.alert_general}`);
-                        toast.error('Alguna cosa ha anat malament');
+                        console.error('Alguna cosa ha anat malament');
                     }
                 } else {
-                    // Handle non-Axios errors
-
                     console.error('Non-Axios error:', error);
                 }
             }
         };
         fetchData();
-    }, [sourceLanguage, targetLanguage, triggerFetch, srcVar, tgtVar]);
+    }, [sourceLanguage, targetLanguage, validatorToaster, triggerFetch]);
 
     // validate post route
     const handleValidate = async () => {
@@ -345,17 +340,37 @@ const ValidateComp = () => {
         setTriggerFetch((prev) => prev + 1);
     };
     const handleNext = async () => {
+        console.log('Fetching next entry');
         try {
             const data = {
                 ...entry,
                 validatorId: session?.user?.id, // Explicitly include the ID of validator
             };
-            console.log(data);
+            console.log('Sending request with data:', data);
             const res = await axios.patch('/api/contribute', data);
-            console.log(res);
-        } catch (error) {}
+            console.log('Response received:', res);
+
+            // Assuming the API returns the next entry in the response
+            if (res.status === 200 && res.data) {
+                setSourceText(res.data.src_text || '');
+                setTargetText(res.data.tgt_text || '');
+                setEntry(res.data);
+                // Update variants if applicable
+                if (['zgh', 'ber'].includes(sourceLanguage)) {
+                    setLeftRadioValue(res.data.srcVar || '');
+                }
+                if (['zgh', 'ber'].includes(targetLanguage)) {
+                    setRightRadioValue(res.data.tgtVar || '');
+                }
+            } else {
+                console.error('No next entry available');
+            }
+        } catch (error) {
+            console.error('Error fetching next entry:', error);
+        }
         setTriggerFetch((prev) => prev + 1);
     };
+
     const SrcLanguageSelection = () => (
         <DropdownMenu>
             <DropdownMenuTrigger className="mb-5" asChild>
@@ -417,9 +432,7 @@ const ValidateComp = () => {
                             <Textarea
                                 value={sourceText}
                                 className="border border-gray-300 h-[50vh] rounded-md shadow"
-                                placeholder={
-                                    d?.translator.placeholder.type_to_translate
-                                }
+                                placeholder={``}
                                 id="src_message"
                                 readOnly
                             />
@@ -589,9 +602,7 @@ const ValidateComp = () => {
                             <Textarea
                                 id="tgt_message"
                                 className="border border-gray-300 h-[50vh] rounded-md shadow"
-                                placeholder={
-                                    d?.translator.placeholder.translation_box
-                                }
+                                placeholder={``}
                                 value={targetText}
                                 onChange={(e) => setTargetText(e.target.value)}
                                 readOnly
@@ -631,9 +642,7 @@ const ValidateComp = () => {
                             <Textarea
                                 value={sourceText}
                                 className="border border-gray-300 h-auto rounded-md shadow"
-                                placeholder={
-                                    d?.translator.placeholder.type_to_translate
-                                }
+                                placeholder={``}
                                 id="src_message"
                                 readOnly
                             />
@@ -803,9 +812,7 @@ const ValidateComp = () => {
                             <Textarea
                                 id="tgt_message"
                                 className="border border-gray-300 h-auto rounded-md shadow"
-                                placeholder={
-                                    d?.translator.placeholder.translation_box
-                                }
+                                placeholder={``}
                                 value={targetText}
                                 onChange={(e) => setTargetText(e.target.value)}
                                 readOnly
@@ -830,7 +837,7 @@ const ValidateComp = () => {
                             className="cursor-pointer"
                             onClick={handleNext}
                         >
-                            Skip
+                            {d?.btn.skip}
                         </Button>
                     </div>
                 </div>
