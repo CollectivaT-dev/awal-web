@@ -66,6 +66,11 @@
     },
     "toasters": {
         "under_construction": "Esta página todavía está en desarrollo.",
+        "translating": "Traduciendo",
+        "success_loading": "Nueva frase cargada exitosamente.",
+        "success_translate": "Frase de entrada pretraducida. Por favor, revise y corrija la traducción antes de enviar.",
+        "alert_input": "Por favor, introduzca más de un carácter.",
+        "alert_api": "El motor de traducción no responde. Por favor, inténtelo de nuevo más tarde.",
         "success_contribution": "¡Gracias por tu contribución! Acabas de ganar",
         "success_contribution_points": "puntos.",
         "select_var": "Por favor, selecciona una variante para las lenguas amazigas",
@@ -97,7 +102,8 @@
             "text_before_link": "Recursos Útiles",
             "link_text_1": "Diccionario Catalán-Amazigh",
             "link_text_2": "Dictionnaire Général de la Langue Amazighe",
-            "link_text_3": "Diccionario Inglés-Amazigh"
+            "link_text_3": "Diccionario Inglés-Amazigh",
+            "link_text_4": "Diccionario árabe-tamazight AmaWar"
         }
     },
     "error_msg": {
@@ -180,7 +186,8 @@
             "nb": "No binario",
             "tr": "Transgénero",
             "other": "Otro"
-        }
+        },
+        "specify": "Por favor, especifique su variante."
     },
     "about": {
         "main_string_1": "Awal es un proyecto que contribuye a preservar y promover la lengua amazigh en el espacio digital desarrollando herramientas innovadoras que faciliten su uso y difusión. \\La participación de hablantes amazigh es esencial para recopilar datos, tanto orales como escritos, a través de grabaciones de voz y recopilación de textos traducidos de este idioma minoritario. La iniciativa se propone no solo crear herramientas digitales efectivas, sino también concienciar a la comunidad sobre la importancia de los datos lingüísticos y las nuevas tecnologías para preservar la lengua, sensibilizar sobre los efectos de la brecha digital y hacer crecer una red de profesionales.\nAwal es una iniciativa del CIEMEN, Col·lectivaT y Casa Amaziga de Catalunya, y está financiada por el Ayuntamiento de Barcelona y la Generalitat de Catalunya con el apoyo de la Agencia Catalana de Cooperación al Desarrollo y el Departamento de Derechos Sociales.",
@@ -308,7 +315,7 @@
         },
         "q2": {
             "q": "Corregí un error en la salida de la traducción automática, pero sigue cometiendo el mismo error. ¿Mi contribución no se está guardando?",
-            "a": "Tus correcciones se guardan en nuestra base de datos, pero no afectarán inmediatamente la traducción automática. La mejora ocurrirá en una fase posterior, después de recopilar suficientes traducciones de calidad de colaboradores como tú. Así que tus esfuerzos son valiosos y contribuirán a mejorar el motor de traducción con el tiempo."
+            "a": "Tus contribuciones se guardan en nuestra base de datos, pero no afectarán inmediatamente la traducción automática. La mejora ocurrirá en una fase posterior, después de recopilar suficientes traducciones de calidad de colaboradores como tú. Así que tus esfuerzos son valiosos y contribuirán a mejorar el motor de traducción con el tiempo."
         },
         "q3": {
             "q": "¿Cómo se calculan las puntuaciones de contribución para las traducciones?",
@@ -326,7 +333,6 @@
             "q": "Ya tengo una cuenta en AWAL. ¿Necesito crear otra en Common Voice?",
             "a": "Aunque no es obligatorio, recomendamos crear una cuenta en Common Voice. De esta manera, podrás ver cuánto has contribuido y completar tus detalles en tu perfil."
         }
-
     },
     "carousel": {
         "c1": {

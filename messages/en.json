@@ -67,10 +67,10 @@
     "toasters": {
         "under_construction": "This page is still under development.",
         "loading_updating": "Updating your profile...",
-        "translating": "Translating",
+        "translating": "Translating...",
         "select_var": "Please select a variant for Tamazight languages",
         "alert_no_text": "No text to contribute",
-        "alert_no_modify": "Please translate the text to contribute.",
+        "alert_no_modify": "Please revise the pre-translated text.",
         "alert_privacy_check": "Please read and agree to contribution terms to continue.",
         "alert_general": "Something went wrong.",
         "alert_username": "Username already taken.",
@@ -82,9 +82,9 @@
         "alert_select_variant": "Please select your proficiency level",
         "success_contribution": "Thank you for your contribution! You've just earned",
         "success_contribution_points": "contribution points.",
-        "alert_input": "Please enter more than 1 character",
-        "alert_api": "Please Try again later, if the problem persists, please contact us.",
-        "success_translate": "Translation done",
+        "alert_input": "Please enter more than one character.",
+        "alert_api": "Translate engine not responsive. Please try again later.",
+        "success_translate": "Input phrase pre-translated. Please revise and correct the translation before submitting.",
         "success_update": "Profile updated successfully.",
         "success_loading": "New phrase loaded successfully.",
         "success_registration": "Successful, thank you for signing up! Now, please sign in to start contributing.",
@@ -187,7 +187,7 @@
             "tr": "Transgender",
             "other": "Other"
         },
-        "specify": "Please specify and separate with ,"
+        "specify": "Please specify your variant."
     },
     "about": {
         "main_string_1": "Awal is a project that contributes to preserving and promoting the Amazigh language in the digital space by developing innovative tools that facilitate its use and dissemination.\nThe participation of Amazigh speakers will be essential to collect data, both oral and written, through voice recordings and collection of translated texts from this minority language. The initiative aims not only to create effective digital tools, but also to raise community awareness of the importance of linguistic data and new technologies to preserve the language, to raise awareness of the effects of the digital divide and to grow a network of professionals.\nAwal is an initative by CIEMEN, Col·lectivaT and Casa Amaziga de Catalunya and is funded by the Municipality of Barcelona and Generalitat de Catalunya with the support of the Catalan Development Cooperation Agency and the Department of Social Rights.",

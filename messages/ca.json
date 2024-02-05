@@ -66,6 +66,11 @@
     },
     "toasters": {
         "under_construction": "Aquesta pàgina encara està en desenvolupament.",
+        "translating": "Traduint",
+        "success_loading": "Nova frase carregada amb èxit.",
+        "success_translate": "Frase d'entrada pretraduïda. Si us plau, reviseu i corregiu la traducció abans de enviar-la.",
+        "alert_input": "Si us plau, introdueix més d'un caràcter.",
+        "alert_api": "El motor de traducció no respon. Si us plau, torneu-ho a provar més tard.",
         "success_contribution": "Gràcies per la seva contribució! Acaba de guanyar",
         "success_contribution_points": "punts.",
         "select_var": "Si us plau, seleccioni una variant per a les llengües amazigues",
@@ -97,7 +102,8 @@
             "text_before_link": "Recursos Útils",
             "link_text_1": "Diccionari Català-Amazic",
             "link_text_2": "Dictionnaire Général de la Langue Amazighe",
-            "link_text_3": "Diccionari Anglès-Tamazight"
+            "link_text_3": "Diccionari Anglès-Tamazight",
+            "link_text_4": "Diccionari àrab-amazic AmaWar"
         }
     },
     "error_msg": {
@@ -180,7 +186,8 @@
             "nb": "No binari",
             "tr": "Transgènere",
             "other": "Altres"
-        }
+        },
+        "specify": "Si us plau, especifiqueu la vostra variant."
     },
     "about": {
         "main_string_1": "Awal és un projecte que contribueix a preservar i promoure la llengua amaziga en l'espai digital desenvolupant eines innovadores que en facilitin l'ús i difusió. \\La participació d'amazigoparlants serà primordial per a recopilar dades, tant orals com escrites, a través d'enregistraments de veu i recollida de textos traduïts d'aquesta llengua minoritzada. La iniciativa es proposa no només crear eines digitals efectives, sinó també conscienciar la comunitat sobre la importància de les dades lingüístiques i les noves tecnologies per a preservar la llengua, sensibilitzar sobre els efectes de la bretxa digital i fer créixer una xarxa de professionals.\nAwal és una iniciativa del CIEMEN, Col·lectivaT i Casa Amaziga de Catalunya, i està finançada per l'Ajuntament de Barcelona i la Generalitat de Catalunya amb el suport de l'Agència Catalana de Cooperació al Desenvolupament i el Departament de Drets Socials.",
@@ -308,7 +315,7 @@
         },
         "q2": {
             "q": "He corregit un error en la sortida de la traducció automàtica, però encara fa el mateix error. La meva contribució no s'està guardant?",
-            "a": "Les teves correccions es guarden a la nostra base de dades, però no afectaran immediatament la traducció automàtica. La millora es produirà en una fase posterior, després de recopilar prou traduccions de qualitat dels col·laboradors com tu. Així que els teus esforços són valuosos i contribuiran a millorar el motor de traducció amb el temps."
+            "a": "Les teves contribucions es guarden a la nostra base de dades, però no afectaran immediatament la traducció automàtica. La millora es produirà en una fase posterior, després de recopilar prou traduccions de qualitat dels col·laboradors com tu. Així que els teus esforços són valuosos i contribuiran a millorar el motor de traducció amb el temps."
         },
         "q3": {
             "q": "Com es calculen les puntuacions de contribució per a les traduccions?",

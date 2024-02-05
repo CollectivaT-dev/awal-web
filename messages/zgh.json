@@ -29,7 +29,7 @@
         "voice": "ⴰⴳⵕⴹ",
         "about": "ⵅⴼ ⴰⵡⴰⵍ",
         "resources": "ⵉⵙⵓⴳⴰⵎ",
-        "faq": "FAQ"
+        "faq": "ⵉⵙⵇⵙⵉⵜⵏ ⴷ ⵉⵜⵜⴰⵖⵓⵍⵏ"
     },
     "user": {
         "username": "ⵉⵙⵎ ⵏ ⵓⵏⵙⵙⵎⵔⵙ",
@@ -43,14 +43,14 @@
     },
     "translator": {
         "select_lang": "ⵙⵜⵢ ⵜⵓⵜⵍⴰⵢⵜ",
-        "generate": "ⵜⴰⵡⵉⵏⵙⵜ ⵜⴰⴷⵀⵎⴰⵙⵜ",
-        "translate": "ⵙⵙⵓⵖⵍ",
+        "generate": "ⵜⴰⵡⵉⵏⵙⵜ ⵜⴰⴳⴰⵛⵓⵔⴰⵏⵜ",
+        "translate": "ⴰⵙⵓⵖⵍ ⴰⵎⵏⵣⵓ",
         "report": "ⵎⵍ",
         "placeholder": {
-            "type_to_translate": "ⴰⵔⴰ ⴽⵔⴰ ⴰⴼⴰⴷ ⴰⴷ ⵜ ⵜⵙⵙⵓⵖⵍⴷ...",
+            "type_to_translate": "ⴰⵔⴰ ⴽⵔⴰ ⵃⵎⴰ ⴰⴷ ⵜ ⵜⵙⵙⵓⵖⵍⴷ...",
             "translation_box": "ⵔⴰⴷ ⵜⵓⵎⴰⵏ ⵜⵙⵓⵖⵍⵜ ⴷⴰ..."
         },
-        "notice": "This application relies on a research-based translation engine that many times provides inaccurate results. If you speak Tamazight, you can help us improve and support more variants by submitting translations.",
+        "notice": "ⵜⵓⵜⴳ ⵜⵙⵏⵙⵉ ⴰⴷ ⵖⴼ ⵢⴰⵏ ⵓⵏⵙⵎⴰⵙⵙⵓ ⵏ ⵓⵙⵓⵖⵍ ⵉⴱⴷⴷⵏ ⵖⴼ ⵓⵔⵣⵣⵓ ⵏⵏⴰ ⵢⴰⴽⴽⴰⵏ ⴳ ⵜⵓⴳⵜ ⵏ ⵜⵉⴽⴽⴰⵍ ⵜⵉⵢⵓⴼⴰ ⵓⵔ ⵏⵖⵉⴷⵏⵉⵏ. ⵉⴳ ⴷⴰ ⵜⵙⴰⵡⴰⵍⴷ ⵜⴰⵎⴰⵣⵉⵖⵜ, ⵜⵣⵎⵔⴷ ⴰⴷ ⴰⵏⵖ ⵜⴰⵡⵙⴷ ⴳ ⵓⵙⵖⵓⴷⵓ ⴷ ⵓⵙⵏⴰⵍ ⵏ ⵡⵓⴳⴳⴰⵔ ⵏ ⵜⵎⵣⴰⵔⴰⵢⵉⵏ ⵙ ⵡⴰⵣⴰⵏ ⵏ ⵜⵙⵓⵖⵍⵉⵏ.",
         "help": "ⵎⴰⵏⵎⴽ ⴷⴰ ⵉⵙⵡⵓⵔⵓⵢ?",
         "help_pop_up": {
             "header": "ⵎⴰⵏⵎⴽ ⵙ ⵔⴰⴷ ⴰⵔⴳⵖ ⵜⵉⵙⵓⵖⵍⵉⵏ?",
@@ -66,23 +66,28 @@
     },
     "toasters": {
         "under_construction": "ⵜⵙⵓⵍ ⵜⴰⵙⵏⴰ ⴰ ⴷⴷⴰⵡ ⵓⵙⴱⵓⵖⵍⵓ.",
-        "success_contribution": "ⵜⴰⵏⵎⵎⵉⵔⵜ ⵖⴼ ⵡⴰⵔⵔⴰⴳ ⵏⵏⵓⵏ! ⵜⵓⵔⵣⵎ ⴷⵖⵉ",
+        "translating": "Translating",
+        "success_loading": "New phrase loaded successfully.",
+        "success_translate": "Translation done",
+        "alert_input": "Please enter more than 1 character",
+        "alert_api": "Please Try again later, if the problem persists, please contact us.",
+        "success_contribution": "ⵜⴰⵏⵎⵎⵉⵔⵜ ⵖⴼ ⵡⴰⵔⵔⴰⴳ ⵏⵏⵓⵏ! ⴱⵃⵕⴰ ⵜⵓⵔⵣⵎ",
         "success_contribution_points": "ⵜⵉⵏⵇⵇⴰⴹ ⵏ ⵡⴰⵔⵔⴰⴳ.",
-        "select_var": "ⵎⴽ ⵜⵓⴼⵉⴷ, ⵙⵜⵉ ⵜⴰⵎⵣⴰⵔⴰⵢⵜ ⵉ ⵜⵓⵜⵍⴰⵢⵉⵏ ⵜⵉⵎⴰⵣⵉⵖⵉⵏ",
+        "select_var": "ⵎⴽ ⵜⵓⴼⵉⴷ, ⵙⵜⵉ ⴽⵔⴰ ⵏ ⵜⵎⵣⴰⵔⴰⵢⵜ ⵉ ⵜⵓⵜⵍⴰⵢⵉⵏ ⵜⵉⵎⴰⵣⵉⵖⵉⵏ",
         "alert_no_text": "ⵡⴰⵍⵓ ⴰⴹⵕⵉⵚ ⵉ ⵡⴰⵔⵔⴰⴳ",
-        "alert_no_modify": "ⵎⴽ ⵜⵓⴼⵉⴷ, ⵙⵙⵓⵖⵍ ⴰⴹⵕⵉⵚ ⵉ ⵡⴰⵔⵔⴰⴳ.",
-        "alert_privacy_check": "ⵎⴽ ⵢⵓⴼⵉⴷ, ⵖⵔ, ⵜⵎⵙⴰⵙⴰⴷ ⵖⴼ ⵜⴼⴰⴷⵉⵡⵉⵏ ⵏ ⵡⴰⵔⵔⴰⴳ ⴰⴼⴰⴷ ⴰⴷ ⵜⵙⵎⴷⴷ.",
-        "alert_general": "ⵜⵙⴰⵔ ⴽⵔⴰ ⵏ ⵜⵣⴳⴰⵍⵜ!",
+        "alert_no_modify": "ⵎⴽ ⵜⵓⴼⵉⴷ, ⵙⵙⵓⵖⵍ ⴰⴹⵕⵉⵚ ⵃⵎⴰ ⴰⴷ ⵜ ⵜⴰⵔⴳⴷ.",
+        "alert_privacy_check": "ⵎⴽ ⵜⵓⴼⵉⴷ, ⵖⵔ, ⵜⵎⵙⴰⵙⴰⴷ ⴷ ⵖⴼ ⵜⴼⴰⴷⵉⵡⵉⵏ ⵏ ⵡⴰⵔⵔⴰⴳ ⵃⵎⴰ ⴰⴷ ⵜⵙⵎⴷⴷ.",
+        "alert_general": "ⵜⵣⴳⵍ ⴽⵔⴰ ⵏ ⵜⵖⴰⵡⵙⴰ.",
         "alert_username": "ⵉⵜⵜⵢⴰⵎⴰⵥ ⵢⴰⴷ ⵢⵉⵙⵎ ⵏ ⵓⵏⵙⵙⵎⵔⵙ.",
         "alert_email": "ⵉⵜⵜⵓⵣⵎⵎⴻⵎ ⵢⴰⴷ ⵉⵎⴰⵢⵍ.",
-        "alert_email_username": "ⵉⵜⵜⵓⵙⵎⵔⵙ ⵢⴰⴷ ⵢⵉⵙⵎ ⵏ ⵓⵏⵙⵙⵎⵔⵙ ⵏⵖ ⴷ ⵉⵎⴰⵢⵍ.",
+        "alert_email_username": "ⵉⵜⵜⵓⵙⵎⵔⵙ ⵢⴰⴷ ⵢⵉⵙⵎ ⵏ ⵓⵏⵙⵙⵎⵔⵙ ⵏⵉⵖ ⴷ ⵉⵎⴰⵢⵍ.",
         "success_update": "ⵉⵜⵜⵓⵙⴷⵖⵉ ⵉⴼⵔⵙ ⵙ ⵓⵎⵓⵔⵙ.",
-        "success_registration": "ⵜⵎⵓⵔⵙⴷ, ⵜⴰⵏⵎⵎⵉⵔⵜ ⵖⴼ ⵓⵣⵎⵎⴻⵎ! ⴷⵖⵉ, ⵎⴽ ⵜⵓⴼⵉⴷ, ⴽⵛⵎ ⴰⴷ ⵜⵙⵙⵏⵜⵉⵜ ⴰⵔⵔⴰⴳ.",
+        "success_registration": "ⵜⵎⵓⵔⵙⴷ, ⵜⴰⵏⵎⵎⵉⵔⵜ ⵖⴼ ⵓⵣⵎⵎⴻⵎ! ⴷⵖⵉ, ⵎⴽ ⵜⵓⴼⵉⴷ, ⴽⵛⵎ ⴰⴷ ⵜⵙⵙⵏⵜⵉⴷ ⴰⵔⵔⴰⴳ.",
         "loading_updating": "ⴰⵙⴷⵖⵉ ⵏ ⵉⴼⵔⵙ ⵏⵏⵓⵏ...",
-        "alert_email_pwd": "ⵎⴽ ⵜⵓⴼⵉⴷ, ⴼⴽ ⴰⵏⵙⴰ ⵏ ⵉⵎⴰⵢⵍ ⵉⵣⵔⵉⵏ ⴷ ⵜⴳⵓⵔⵉ ⵏ ⵓⵣⵔⴰⵢ.",
-        "success_copy": "ⵜⵏⵖⵍ ⵜⵙⵓⵖⵍⵜ ⵙ ⵜⵏⵟⵟⴰⴼⵜ!",
+        "alert_email_pwd": "ⵎⴽ ⵜⵓⴼⵉⴷ, ⴼⴽ ⴰⵏⵙⴰ ⵏ ⵉⵎⴰⵢⵍ ⵉⵣⵔⵢⵏ ⴷ ⵜⴳⵓⵔⵉ ⵏ ⵓⵣⵔⴰⵢ.",
+        "success_copy": "ⵜⵏⵖⵍ ⵜⵙⵓⵖⵍⵜ ⵖⵔ ⵜⵏⵟⵟⴰⴼⵜ!",
         "success_signIn": "ⵜⴽⵛⵎⴷ ⵙ ⵓⵎⵓⵔⵙ!",
-        "alert_copy": "ⵓⵔ ⵢⴰⵍⵍⴼⵓⵙ ⵓⵙⵙⵏⵖⵍ ⵏ ⵜⵙⵓⵖⵍⵜ.",
+        "alert_copy": "ⵓⵔ ⵜⵣⵎⵉⵔ ⵜⵙⵓⵖⵍⵜ ⴰⴷ ⵜⵏⵖⵍ.",
         "alert_try_again": "ⵎⴽ ⵜⵓⴼⵉⴷ ⴰⵔⵎ ⴷⴰⵖ ⴽⵓⴷⵏⵏⴰ.",
         "alert_select_variant": "ⵎⴽ ⵜⵓⴼⴰⵎ, ⵙⵜⵢⴰⵜ ⴰⵙⵡⵉⵔ ⵏ ⵜⵙⵓⴳⵔⵜ ⵏⵏⵓⵏ",
         "validation_success_report": "ⵉⵜⵜⵓⵎⵍⴰ ⵡⴰⵔⵔⴰⴳ. ⵜⴰⵏⵎⵎⵉⵔⵜ ⵖⴼ ⵜⴰⵢⵏⵉⵜ ⵏⵏⵓⵏ."
@@ -97,36 +102,37 @@
             "text_before_link": "ⵉⵙⵓⴳⴰⵎ ⵓⵏⴼⵓⵜⵏ",
             "link_text_1": "ⴰⵎⴰⵡⴰⵍ ⵜⴰⴽⴰⵟⴰⵍⵓⵏⵉⵜ-ⵜⴰⵎⴰⵣⵉⵖⵜ",
             "link_text_2": "ⴰⵎⴰⵡⴰⵍ ⴰⵎⴰⵜⴰⵢ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⵣⵉⵖⵜ",
-            "link_text_3": "ⴰⵎⴰⵡⴰⵍ ⵜⴰⵏⴳⵍⵉⵣⵜ-ⵜⴰⵎⴰⵣⵉⵖⵜ"
+            "link_text_3": "ⴰⵎⴰⵡⴰⵍ ⵜⴰⵏⴳⵍⵉⵣⵜ-ⵜⴰⵎⴰⵣⵉⵖⵜ",
+            "link_text_4": "ⴰⵎⴰⵡⴰⵍ ⵜⴰⵄⵔⴰⴱⵜ-ⵜⴰⵎⴰⵣⵉⵖⵜ"
         }
     },
     "error_msg": {
-        "alert_required": "ⵓⵛⵛⵉⵍ",
-        "alert_password_coincide": "ⵉⵇⵇⴰⵏ ⴷ ⴰⴷ ⵜⵎⵙⴰⵙⴰ ⵜⴳⵓⵔⵉ ⵏ ⵓⵣⵔⴰⵢ",
-        "alert_age": "ⵓⵔ ⵢⴰⵍⵍⴼⵓⵙ ⴰⴷ ⵉⵣⵔⵉ ⵡⴰⵡⵜⴰⵢ 120."
+        "alert_required": "ⵉⵇⵇⴰⵏ ⴷ",
+        "alert_password_coincide": "ⵉⵇⵇⴰⵏ ⴷ ⴰⴷ ⴷ ⵜⵎⵙⴰⵙⴰ ⵜⴳⵓⵔⵉ ⵏ ⵓⵣⵔⴰⵢ",
+        "alert_age": "ⵓⵔ ⵉⵣⵎⵉⵔ ⵓⵡⵜⴰⵢ ⴰⴷ ⵉⵣⵔⵉ 120."
     },
     "page_intro": {
         "title": "ⴰⵏⵜⵉⵔⵏⵉⵜ ⵉⵙⴰⵡⴰⵍ ⵜⴰⵎⴰⵣⵉⵖⵜ",
-        "CTA_text": "Awal is a community-driven initiative to foster the Tamazight language in the digital realm. Our vision is clear: empower Tamazight to thrive with open-source technology, and we need you to accomplish that.",
-        "heading_1": "How You Can Contribute?",
-        "heading_2": "All Are Welcome",
-        "text_2": "Contribution is open to anyone who can read and write in Tamazight. We celebrate the rich diversity of Tamazight variants and welcome speakers from all backgrounds.",
-        "heading_3": "See Where You Stand",
-        "text_3": "For each translation registered in Awal Translate, you'll gain points and see how you compare with your fellow community members.",
-        "heading_4": "Discover the Awal Community",
-        "text_4_1": "Learn more about the initiative and our collaborators on our",
-        "text_4_about": "About page.",
-        "text_4_2": "Follow us on",
-        "text_4_ins": "Instagram",
-        "text_4_X": "and X",
-        "text_4_3": "to get informed about latest news and connect with the Awal network.",
-        "CTA_button": "Join Awal",
-        "item_1_strong": "Translate with Purpose:",
-        "item_1_normal": "Show your language skills by translating sentences to or from Tamazight in your own words.",
-        "item_2_strong": "Validation Matters:",
-        "item_2_normal": "Validate translations made by fellow volunteers, ensuring accuracy of the resulting technology.",
-        "item_3_strong": "Raise Your Voice:",
-        "item_3_normal": "Contribute speech data through Common Voice, giving Tamazight a voice in the digital world."
+        "CTA_text": "ⵉⴳⴰ \"ⴰⵡⴰⵍ\" ⵢⴰⵜ ⵜⵙⵏⵜⴰⵢⵜ ⵏ ⵜⴳⵔⴰⵡⵜ ⵉ ⵓⵙⵙⴷⵓⵙ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⵣⵉⵖⵜ ⴳ ⵢⵉⴳⵔ ⴰⵎⵓⵟⵟⵓⵏ. ⴰⵙⵎⵎⴰⵇⵇⵍ ⵏⵏⵖ ⵉⴼⴰⵡ: ⴰⵣⵣⵎⵔ ⵏ ⵜⵎⴰⵣⵉⵖⵜ ⴰⴷ ⵜⴼⵍⵓⵊⵊⵓ ⴰⴽⴷ ⵜⴻⵜⵉⴽⵏⵓⵍⵓⵊⵉⵜ ⵏ ⵓⵙⴰⴳⵯⵎ ⵓⵕⵥⵉⵎ, ⵏⵉⵔⵉ ⴽⵯⵏ ⴰⴷ ⵜⵙⵎⴷⵎ ⴰⵢⴰ.",
+        "heading_1": "ⵎⴰⵏⵎⴽ ⴰ ⵙ ⵜⵣⵎⵔⴷ ⴰⴷ ⵜⴰⵔⴳⴷ?",
+        "heading_2": "ⵍⴰ ⵏⵙⴱⵔⵔⴰⴽ ⵙ ⴽⵓⵢⴰⵏ",
+        "text_2": "ⵉⵏⵏⵓⵕⵥⵎ ⵡⴰⵔⵔⴰⴳ ⵉ ⴽⵓⵢⴰⵏ ⵉⵣⵎⵔⵏ ⴰⴷ ⵉⵜⵜⴰⵔⴰ ⴰⵔ ⵢⴰⵇⵔⴰ ⵙ ⵜⵎⴰⵣⵉⵖⵜ. ⵍⴰ ⵏⵙⴼⵓⴳⵍⵓ ⵙ ⵓⵎⵢⴰⵏⴰⵡ ⴰⵏⴱⵖⵓⵔ ⵏ ⵜⵎⵣⴰⵔⴰⵢⵉⵏ ⵜⵉⵎⴰⵣⵉⵖⵉⵏ ⴷ ⵍⴰ ⵏⵙⴱⵔⵔⴰⴽ ⵙ ⵉⵎⵙⵉⵡⵍⵏ ⵙⴳ ⴽⵔⴰⵢⴳⴰⵜ ⵎⴰⵏⵉ.",
+        "heading_3": "ⵥⵕ ⵎⴰⵏⵉ ⴳ ⵜⴱⴷⴷⴻⴷ",
+        "text_3": "ⵉ ⴽⵓ ⵜⴰⵙⵓⵖⵍⵙ ⵉⵜⵜⵓⵣⵎⵎⴻⵎⵏ ⴳ ⵓⵙⵓⵖⵍ ⵏ ⴰⵡⴰⵍ, ⵔⴰⴷ ⵜⴰⵔⵣⵎ ⵜⵉⵏⵇⵇⴰⴹ, ⵜⵙⵎⵣⴰⵣⴰⵍⵎ ⵉⵅⴼⴰⵡⵏ ⵏⵏⵓⵏ ⴰⴽⴷ ⵉⴳⵎⴰⵎⵏ ⵏ ⵜⴳⵔⴰⵡⵜ.",
+        "heading_4": "ⴰⴼ ⵜⴳⵔⴰⵡⵜ ⵏ ⴰⵡⵍ",
+        "text_4_1": "ⵙⵙⵏ ⵓⴳⴳⴰⵔ ⵖⴼ ⵜⵙⵏⵜⴰⵢⵜ ⴷ ⵉⵎⵢⴰⵡⴰⵙⵏ ⵏⵏⵖ ⴳ",
+        "text_4_about": "ⵜⴰⵙⵏⴰ ⵏ ⵅⴼ.",
+        "text_4_2": "ⴹⴼⵕ ⴰⵏⵖ ⴳ",
+        "text_4_ins": "ⵉⵏⵙⵜⴰⴳⵕⴰⵎ",
+        "text_4_X": "ⴷ ⵉⴽⵙ",
+        "text_4_3": "ⵃⵎⴰ ⴰⴷ ⵜⵏⵏⵖⵎⵙⴷ ⵖⴼ ⵉⵏⵖⵎⵉⵙⵏ ⵉⵏⴳⴳⵓⵔⴰ, ⵜⵣⴷⵉⴷ ⴰⴽⴷ ⵓⵥⵟⵟⴰ ⵏ ⴰⵡⴰⵍ.",
+        "CTA_button": "ⵍⴽⵎ ⴰⵡⴰⵍ",
+        "item_1_strong": "ⵙⵙⵓⵖⵍ ⵙ ⵓⵡⵜⵜⴰⵙ:",
+        "item_1_normal": "ⵙⵙⵓⵎⴰⵏⴰⵜ ⴷ ⵉⴼⵓⴽⴽⵙⵏ ⵏⵏⵓⵏ ⴳ ⵜⵓⵜⵍⴰⵢⵜ ⵙ ⵓⵙⵓⵖⵍ ⵏ ⵜⵡⵉⵏⴰⵙ ⵖⵔ ⵏⵉⵖ ⵙⴳ ⵜⵎⴰⵣⵉⵖⵜ ⵙ ⵜⴳⵓⵔⵉⵡⵉⵏ ⵏⵏⵓⵏ.",
+        "item_2_strong": "ⵜⵉⵅⵉⵜⵔⵜ ⵏ ⵓⵣⵣⵔⴰⵢ:",
+        "item_2_normal": "ⴰⵣⵣⵔⴰⵢ ⵏ ⵜⵙⵓⵖⵍⵉⵏ ⵏⵏⴰ ⵙⴽⵔⵏ ⵉⵔⵏⴰⵡⵏ ⵉⵎⵅⵙⴰⵏ, ⵍⴰ ⵉⵜⵜⴹⴽⴰⵍ ⴰⵏⵖⴰⴷ ⵏ ⵜⴻⵜⵜⵉⴽⵏⵓⵍⵓⵊⵉⵜ ⵜⴰⵢⴰⴼⵓⵜ.",
+        "item_3_strong": "ⴰⵍⵍⴰⵜ ⴰⴳⵕⴹ ⵏⵏⵓⵏ:",
+        "item_3_normal": "ⴰⵔⵔⴰⴳ ⵏ ⵉⵙⴼⴽⴰ ⵉⴳⵕⴹⴰⵏⵏ ⴷⴳ ⴽⴰⵎⵏⴼⵓⵢⵙ, ⴷ ⵜⵉⴽⴽⵉ ⵏ ⵡⴰⵡⴰⵍ ⵉ ⵜⵎⴰⵣⵉⵖⵜ ⴳ ⵓⵎⴰⴹⴰⵍ ⴰⵎⵓⵟⵟⵓⵏ."
     },
     "texts": {
         "data_marathon": "ⴷⴰⵜⴰⵜⵓⵏ ⵏ ⵓⵙⵓⵖⵍ ⵏ ⴰⵡⴰⵍ",
@@ -148,16 +154,17 @@
         "login_to_signup_2": "ⵣⵎⵎⴻⵎ!",
         "statistic": "ⵜⵉⴼⵉⵍⵜ ⵏ ⵉⵎⵣⵡⴰⵔⵏ",
         "validate_report_heading": "ⵎⵍ ⴰⵔⵔⴰⴳ",
-        "validate_report_text": "Please tell us briefly what's wrong with this contribution according to our community guidelines.",
+        "validate_report_text": "ⵎⴽ ⵜⵓⴼⵉⴷ, ⵉⵏⵉ ⴰⵏⵖ ⵙ ⵓⵙⴳⵣⵍ ⵎⴰ ⴰⴷ ⵉⵣⴳⵍⵏ ⴳ ⵡⴰⵔⵔⴰⴳ ⴰⴷ, ⵙ ⵎⴽⴷⴰ ⵉⵍⵍⴰⵏ ⴳ ⵜⴰⵔⴰⵜⵉⵏ ⵏ ⵜⴳⵔⴰⵡⵜ ⵏⵏⵖ.",
+        "faq_heading":"ⵉⵙⵇⵇⵙⵉⵜⵏ ⴷ ⵉⵜⵜⴰⵖⵓⵍⵏ",
         "rank": "#"
     },
     "validator": {
-        "alert_no_more_entries": "No more entries to validate for language pair and variant. You can contribute more translations meanwhile.",
+        "alert_no_more_entries": "ⵡⴰⵍⵓ ⵜⵓⴷⵉⴼⵉⵏ ⵉ ⵓⵣⵣⵔⴰⵢ ⴳ ⵜⵢⵓⴳⴰ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⴷ ⵜⵎⵣⴰⵔⴰⵢⵜ. ⵜⵣⵎⵔⴷ ⴰⴷ ⵜⴰⵔⴳⴷ ⵓⴳⴳⴰⵔ ⵏ ⵜⵙⵓⵖⵍⵉⵏ ⴳ ⵜⵉⵣⵉ ⴰⴷ.",
         "alert_loading": "ⴰⵣⴷⴰⵎ...",
         "success_loading": "ⵜⴻⵜⵜⵓⵣⴷⴰⵎ ⵜⵢⵓⴳⴰ ⵏ ⵜⵙⵓⵖⵍⵉⵏ ⵜⴰⵎⴰⵢⵏⵓⵜ.",
         "success_validation": {
-            "text_before_link": "ⵜⴰⵏⵎⵎⵉⵔⵜ ⵖⴼ ⵓⵣⵣⵔⴰⵢ ⵏⵏⵓ! ⵜⵓⵔⵣⵎ ⴷⵖⵉ",
-            "text_after_link": "ⵜⵉⵏⵇⵇⴰⴹ."
+            "text_before_link": "ⵜⴰⵏⵎⵎⵉⵔⵜ ⵖⴼ ⵓⵣⵣⵔⴰⵢ ⵏⵏⵓ! ⴱⵃⵕⴰ ⵜⵓⵔⵣⵎ",
+            "text_after_link": "ⵜⵏⵇⵇⴰⴹ."
         }
     },
     "btn": {
@@ -180,10 +187,11 @@
             "nb": "Non-binary",
             "tr": "Transgender",
             "other": "ⵡⴰⵢⵢⴰⴹ"
-        }
+        },
+        "specify": "Please specify your variant."
     },
     "about": {
-        "main_string_1": "Awal is a project that contributes to preserving and promoting the Amazigh language in the digital space by developing innovative tools that facilitate its use and dissemination.\\nThe participation of Amazigh speakers will be essential to collect data, both oral and written, through voice recordings and collection of translated texts from this minority language. The initiative aims not only to create effective digital tools, but also to raise community awareness of the importance of linguistic data and new technologies to preserve the language, to raise awareness of the effects of the digital divide and to grow a network of professionals.\\nAwal is an initative by CIEMEN, Col·lectivaT and Casa Amaziga de Catalunya and is funded by the Municipality of Barcelona and Generalitat de Catalunya with the support of the Catalan Development Cooperation Agency and the Department of Social Rights.",
+        "main_string_1": "ⵉⴳⴰ \"ⴰⵡⴰⵍ\" ⵢⴰⵏ ⵓⵙⵏⴼⴰⵔ ⵏⵏⴰ ⵉⵜⵜⴰⵔⴳⵏ ⴳ ⵓⵃⵟⵟⵓ ⴷ ⵓⵙⵙⴷⵓⵙ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⵣⵉⵖⵜ ⴳ ⵓⵙⴰⵢⵔⴰⵔ ⴰⵎⵓⵟⵟⵓⵏ ⵙ ⵓⵙⵖⵉⵡⵙ ⵏ ⵉⵎⴰⵙⵙⵏ ⵉⵎⴰⵢⵏⵓⵜⵏ ⵏⵏⴰ ⵉⵙⵙⵏⵀⴰⵍⵏ ⴰⵙⵙⵎⵔⵙ ⵏⵏⵙ ⴷ ⵓⴼⵙⴰⵔ ⵏⵏⵙ. ⵔⴰⴷ ⵜⴳ ⵜⴷⵔⴰⵡⵜ ⵏ ⵉⵎⵙⵉⵡⵍⵏ ⵙ ⵜⵎⴰⵣⵉⵖⵜ ⵜⵓⵛⵛⵉⵍⵜ ⵉ ⵓⴳⵔⵔⵓ ⵏ ⵉⵙⴼⴽⴰ, ⵉⴳⵕⴹⴰⵏⵏ ⴷ ⵡⵉⴷ ⵜⵜⵢⴰⵔⴰⵏⵉⵏ, ⵙ ⵜⵖⴰⵔⴰⵙⵜ ⵏ ⵉⵙⵓⵙⴰⵔ ⵉⴳⵕⴹⴰⵏⵏ ⴷ ⵜⵓⴳⵔⵉⵡⵜ ⵏ ⵉⴹⵕⵉⵚⵏ ⵜⵜⵡⴰⵙⵓⵖⵍⵏⵉⵏ ⵙⴳ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⴷⵔⵓⵙⵜ ⴰⴷ. ⵓⵔ ⵜⵡⴰⴷⵙ ⵜⵙⵏⵜⴰⵢⵜ ⴰⴷ ⴽⴰ ⵜⵙⵏⴼⵍⵓⵍ ⵉⵎⴰⵙⵙⵏ ⵉⵎⵓⵟⵟⵓⵏⵏ ⵉⵎⵕⵡⵉⵜⵏ, ⵎⴰⵛⵛ ⵜⵡⴰⴷⵙ ⴰⵡⴷ ⴰⵙⴰⵜⵜⵓⵢ ⴰⴼⵔⴰⴽ ⵏ ⵜⴳⵔⴰⵡⵜ ⵙ ⵜⵅⵅⵉⵜⵔⵜ ⵏ ⵉⵙⴼⴽⴰ ⵉⵙⵏⵉⵍⵙⴰⵏⵏ ⴷ ⵜⴻⵜⵉⴽⵏⵓⵍⵓⵊⵉⵢⵉⵏ ⵜⵉⵎⴰⵢⵏⵓⵜⵉⵏ ⵉ ⵓⵃⵟⵟⵓ ⵏ ⵜⵓⵜⵍⴰⵢⵜ, ⴰⵙⴰⵜⵜⵓⵢ ⵏ ⵓⴼⵔⴰⴽ ⵙ ⵜⵓⵙⵓⵔⵉⵏ ⵏ ⵜⵕⵥⵉ ⵜⴰⵎⵓⵟⵟⵓⵏⵜ ⴷ ⵓⵙⵙⵉⵎⵖⵓⵔ ⵏ ⵢⴰⵏ ⵓⵥⵟⵟⴰ ⵏ ⵉⵎⵣⵣⵓⵍⵏ. ⵉⴳⴰ "ⴰⵡⴰⵍ" ⵢⴰⵜ ⵜⵙⵏⵜⴰⵢⵜ ⵙⴳ ⵖⵓⵔ CIEMEN, Col·lectivaT ⴷ Casa Amaziga de Catalunya, ⵜⵙⵙⵥⵕⴼ ⵜⵜ ⵜⴳⵔⴰⵡⵜ ⵏ ⴱⴰⵕⵙⵉⵍⵓⵏⴰ ⴷ ⵓⵙⵇⵇⵉⵎ ⴰⵎⴰⵜⴰⵢ ⵏ ⴽⴰⵟⴰⵍⵓⵏⵢⴰ ⵙ ⵡⴰⵏⵏⴰⵍ ⵏ ⵜⵙⵏⵓⵔⴰⵢⵜ ⵜⴰⴽⴰⵟⴰⵍⵓⵏⵉⵜ ⵏ ⵓⵎⵢⴰⵡⴰⵙ ⴰⵏⴳⵎⵓ ⴷ ⵜⵣⵓⵏⵉ ⵏ ⵉⵣⵔⴼⴰⵏ ⵉⵏⴰⵎⵓⵏⵏ.",
         "ciemen_logo_url": "",
         "ciemen_web_url": "www.ciemen.cat",
         "ciemen_intro": "CIEMEN is a cultural, not-for-profit, non-governmental Catalan organization with an international scope and over 40 years of experience in the field of stateless nations, minoritised peoples and diversity. It aims both to contribute to a better knowledge of peoples and nations that are marginalize or see their identity and existence threatened, and to support and foster the recognition and respect of individual and collective rights as a way to progress towards a lasting peace and democracy.",
@@ -202,7 +210,7 @@
         "contributor_ghizlan_intro": "Lalla Ghizlan Baryala, Amazigh cultural activist in Catalonia, collaborates with various organizations to promote the history, language, and culture of the Amazigh people in the region. She studied marketing and market research at UOC and completed a postgraduate program in Digital Marketing and e-commerce.",
         "contributor_yuxuan_photo": "",
         "contributor_yuxuan_website": "",
-        "contributor_yuxuan_intro": "placehodler",
+        "contributor_yuxuan_intro": "Yuxuan Peng develops and maintains Awal's web page.",
         "contact_heading": "ⵏⵢⴰⵍⴽⴰⵎ ⴷ ⴰⵡⴰⵍ",
         "contact_info": "For inquiries, suggestions, or more information, contact us at",
         "contact_text": "awal@collectivat.cat"
@@ -307,35 +315,35 @@
             "a": "Pas d'inquiétude ! Si vous avez une bonne compréhension de la langue, vous pouvez toujours faire des contributions précieuses. Utilisez le bouton 'Phrase Aléatoire' pour charger automatiquement une phrase source, puis fournissez sa traduction en tamazight. De plus, vous pouvez extraire des phrases de sources non soumises à des droits d'auteur, telles que Wikipédia, pour diversifier le type de traductions que nous recueillons."
         },
         "q2": {
-            "q": "J'ai corrigé une erreur dans la sortie de la traduction automatique, mais elle continue de faire la même erreur. Ma contribution n'est-elle pas enregistrée ?",
-            "a": "Vos corrections sont enregistrées dans notre base de données, mais elles n'affecteront pas immédiatement la traduction automatique. L'amélioration se produira à une phase ultérieure, après avoir recueilli suffisamment de traductions de qualité de contributeurs comme vous. Ainsi, vos efforts sont précieux et contribueront à améliorer le moteur de traduction avec le temps."
+            "q": "I fixed a mistake in the machine translation output, but it still makes the same error. Is my contribution not being saved?",
+            "a": "Your contributions are saved in our database, but they won't immediately affect the machine translation. The improvement will happen in a later phase, after we collect enough quality translations from contributors like you. So, your efforts are valuable and will contribute to enhancing the translation engine over time."
         },
         "q3": {
-            "q": "Comment sont calculés les scores de contribution pour les traductions ?",
-            "a": "Vos points de contribution sont déterminés par la longueur en caractères à la fois de la phrase source que vous saisissez et de sa traduction. Si vous saisissez manuellement la source et traduisez de zéro (c'est-à-dire sans utiliser 'Pré-traduire'), vos points seront la somme des caractères des deux phrases. Si vous utilisez le moteur de traduction automatique en cliquant sur 'Pré-traduire', vos points pour la traduction seront basés sur le nombre d'éditions de caractères que vous apportez à la sortie de la traduction automatique. Si vous chargez une phrase source depuis la base de données avec 'Phrase aléatoire', vous ne gagnerez des points que pour votre traduction, pas pour la phrase source."
+            "q": "ⵎⴰⵏⵎⴽ ⵙ ⵍⴰ ⵜⵜⵓⵙⵙⵉⴹⵉⵏⵏⵜ ⵜⵏⵇⵇⴰⴹ ⵏ ⵡⴰⵔⵔⴰⴳ ⵉ ⵜⵙⵓⵖⵍⵉⵏ?",
+            "a": "Your contribution points are determined by the character length of both the source sentence you input and its translation. If you manually input the source and translate from scratch (i.e., without using 'Pre-translate'), your points will be the total characters in both sentences. If you use the machine translation engine by clicking 'Pre-translate,' your points for the translation will be based on the number of character edits you make to the machine-translated output. If you load a source phrase from the database using 'Random sentence,' you'll only earn points for your translation, not the source sentence."
         },
         "q4": {
-            "q": "Est-ce que je gagne des points avec les contributions vocales dans Common Voice ?",
-            "a": "Malheureusement, pour le moment, le système de points est uniquement basé sur les contributions de traduction. À l'avenir, nous aimerions également inclure les contributions vocales dans les points de contribution."
+            "q": "ⵉⵙ ⵍⴰ ⵜⵜⴰⵔⴳⵖ ⵜⵉⵏⵇⵇⴰⴹ ⵙⴳ ⵡⴰⵔⵔⴰⴳⵏ ⵉⴳⵕⴹⴰⵏⵏ ⴳ ⴽⴰⵎⵏⴼⵓⵢⵙ?",
+            "a": "ⵙ ⵜⵎⴳⵕⵥⴰ, ⴳ ⵜⵉⵣⵉ ⴰ, ⵢⵓⵜⴳ ⵓⵏⴳⵔⴰⵡ ⵏ ⵜⵏⵇⵇⴰⴹ ⵖⴰⵙ ⵖⴼ ⵡⴰⵔⵔⴰⴳⵏ ⵏ ⵓⵙⵓⵖⵍ. ⵏⵔⴰ ⴰⴷ ⵏⵙⵙⵓⵎⵓ ⴳ ⵢⵉⵎⴰⵍ ⴰⵡⴷ ⴰⵔⵔⴰⴳⵏ ⵉⴳⵕⴹⴰⵏⵏ ⴳ ⵜⵏⵇⵇⴰⴹ ⵏ ⵡⴰⵔⵔⴳ."
         },
         "q5": {
-            "q": "I forgot my password and cannot access my account. What should I do?",
-            "a": "We are still working on password recovery. In the meanwhile, you can open another account and contact us at awal@collectivat.cat so that we transfer your points to your new account. "
+            "q": "ⵜⵜⵓⵖ ⵜⴰⴳⵓⵔⵉ ⵏ ⵓⵣⵔⴰⵢ ⵉⵏⵓ ⴷ ⵓⵔ ⵣⵎⵉⵔⵖ ⴰⴷ ⴰⴷⴼⵖ ⵙ ⵓⵎⵉⴹⴰⵏ ⵉⵏⵓ. ⵎⴰ ⵙ ⴷ ⵉⵇⵇⴰⵏ ⴰⴷ ⵜ ⵙⴽⵔⵖ?",
+            "a": "ⵏⵙⵓⵍ ⵍⴰ ⵏⵙⵡⵓⵔⵉ ⵖⴼ ⵓⵙⵙⴰⴹⵓ ⵏ ⵜⴳⵓⵔⵉ ⵏ ⵓⵣⵔⴰⵢ. ⴳ ⵜⵉⵣⵉ ⴰ, ⵜⵣⵎⵔⵎ ⴰⴷ ⵜⵕⵥⵎⵎ ⴰⵎⵉⴹⴰⵏ ⵢⴰⴹⵏ, ⵜⵏⵢⴰⵍⴽⴰⵎⵎ ⴰⴽⵉⴷⵏⵖ ⴳ awal@collectivat.cat ⵃⵎⴰ ⴰⴷ ⵏⵙⵎⴰⵜⵜⵉ ⵜⵉⵏⵇⵇⴰⴹ ⵏⵏⵓⵏ ⵖⵔ ⵓⵎⵉⴹⴰⵏ ⵏⵏⵓⵏ ⴰⵎⴰⵢⵏⵓ."
         },
         "q6": {
-            "q": "I already have an account in AWAL. Do I need to create one also in Common Voice?",
-            "a": "Even though it's not obligatory, we recommend creating an account in Common Voice. This way, you can see how much you have contributed and fill in your details in your profile. "
+            "q": "ⵉⵍⵍⴰ ⵢⴰⴷ ⴷⴰⵔⵉ ⵢⴰⵏ ⵓⵎⵉⴹⴰⵏ ⴳ \"ⴰⵡⴰⵍ\". ⵉⵙ ⵓⵙⵔⵖ ⴰⴷ ⵙⵏⴼⵍⵓⵍⵖ ⵢⴰⵏ ⴰⵡⴷ ⴳ ⴽⴰⵎⵏⴼⵓⵢⵙ?",
+            "a": "ⵎⵇⵇⴰⵔ ⵓⵔ ⵉⴳⵉ ⵓⵛⵛⵉⵍ, ⵍⴰ ⵏⵜⵜⵡⵚⵚⴰ ⵙ ⵓⵙⵏⴼⵍⵓⵍ ⵏ ⴽⵔⴰ ⵏ ⵓⵎⵉⴹⴰⵏ ⴳ ⴽⴰⵎⵏⴼⵓⵢⵙ. ⵙ ⵜⵖⴰⵔⴰⵙⵜ ⴰ, ⵜⵣⵎⵔⵎ ⴰⴷ ⵜⵥⵕⵉⵎ ⵎⵏⵛⵜ ⴰⴷ ⵜⵓⵔⴳⵎ, ⵜⴽⵜⴰⵔⵎ ⵉⴼⵔⵓⵔⵉⵜⵏ ⵏⵏⵓⵏ ⴳ ⵉⴼⵔⵙ ⵏⵏⵓⵏ."
         }
     },
     "carousel": {
         "c1": {
-            "heading": "Awal Data Marathon: Unite for Tamazight!",
+            "heading": "ⴰⵎⴰⵕⴰⵟⵓⵏ ⵏ ⵉⵙⴼⴽⴰ ⵏ \"ⴰⵡⴰⵍ\" ⵎⵓⵏⴰⵜ ⵉ ⵜⵎⴰⵣⵉⵖⵜ!",
             "body": "Join us on February 17, 11:00 am - 8:00 pm at CIEMEN headquarters in Barcelona, for a collective effort in generating data to enrich the Tamazight language. Be part of the preservation and promotion of Amazigh culture. All ages, genders, and dialects welcome!",
             "link": "https://twitter.com/awaldigital"
         },
         "c2": {
-            "heading": "AWAL on Col·lectivaT's blog",
-            "body": "Introducing Project Awal for preserving and promoting the Tamazight language on the internet with a strong and united data community. ",
+            "heading": "\"ⴰⵡⴰⵍ\" ⴳ ⵓⴱⵍⵓⴳ ⵏ Col·lectivaT",
+            "body": "ⴰⵙⵎⵏⵉⴷ ⵏ ⵓⵙⵏⴼⴰⵔ ⴰⵡⴰⵍ ⵉ ⵓⵃⵟⵟⵓ ⴷ ⵓⵙⵙⴷⵓⵙ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⵣⵉⵖⵜ ⴳ ⵡⴰⵏⵜⵉⵔⵏⵉⵜ ⵙ ⵢⴰⵜ ⵜⴳⵔⴰⵡⵜ ⵏ ⵉⵙⴼⴽⴰ ⵉⴷⵓⵙⵏ ⵜⵎⵓⵏ.",
             "link": "https://collectivat.cat/blog/2024-01-22-awal-en/"
         }
     }
