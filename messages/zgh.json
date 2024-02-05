@@ -68,9 +68,9 @@
         "under_construction": "ⵜⵙⵓⵍ ⵜⴰⵙⵏⴰ ⴰ ⴷⴷⴰⵡ ⵓⵙⴱⵓⵖⵍⵓ.",
         "translating": "Translating",
         "success_loading": "New phrase loaded successfully.",
-        "success_translate": "Translation done",
-        "alert_input": "Please enter more than 1 character",
-        "alert_api": "Please Try again later, if the problem persists, please contact us.",
+        "success_translate": "Input phrase pre-translated. Please revise and correct the translation before submitting.",
+        "alert_input": "Please enter more than one character.",
+        "alert_api": "Translate engine not responsive. Please try again later.",
         "success_contribution": "ⵜⴰⵏⵎⵎⵉⵔⵜ ⵖⴼ ⵡⴰⵔⵔⴰⴳ ⵏⵏⵓⵏ! ⴱⵃⵕⴰ ⵜⵓⵔⵣⵎ",
         "success_contribution_points": "ⵜⵉⵏⵇⵇⴰⴹ ⵏ ⵡⴰⵔⵔⴰⴳ.",
         "select_var": "ⵎⴽ ⵜⵓⴼⵉⴷ, ⵙⵜⵉ ⴽⵔⴰ ⵏ ⵜⵎⵣⴰⵔⴰⵢⵜ ⵉ ⵜⵓⵜⵍⴰⵢⵉⵏ ⵜⵉⵎⴰⵣⵉⵖⵉⵏ",
@@ -120,7 +120,7 @@
         "heading_3": "ⵥⵕ ⵎⴰⵏⵉ ⴳ ⵜⴱⴷⴷⴻⴷ",
         "text_3": "ⵉ ⴽⵓ ⵜⴰⵙⵓⵖⵍⵙ ⵉⵜⵜⵓⵣⵎⵎⴻⵎⵏ ⴳ ⵓⵙⵓⵖⵍ ⵏ ⴰⵡⴰⵍ, ⵔⴰⴷ ⵜⴰⵔⵣⵎ ⵜⵉⵏⵇⵇⴰⴹ, ⵜⵙⵎⵣⴰⵣⴰⵍⵎ ⵉⵅⴼⴰⵡⵏ ⵏⵏⵓⵏ ⴰⴽⴷ ⵉⴳⵎⴰⵎⵏ ⵏ ⵜⴳⵔⴰⵡⵜ.",
         "heading_4": "ⴰⴼ ⵜⴳⵔⴰⵡⵜ ⵏ ⴰⵡⵍ",
-        "text_4_1": "ⵙⵙⵏ ⵓⴳⴳⴰⵔ ⵖⴼ ⵜⵙⵏⵜⴰⵢⵜ ⴷ ⵉⵎⵢⴰⵡⴰⵙⵏ ⵏⵏⵖ ⴳ",
+        "text_4_1": "ⵙⵙⵏ ⵓⴳⴳⴰⵔ ⵖⴼ ⵜⵙⵏⵜⴰⵢⵜ ⴷ ⵉⵎⵢⴰⵡⴰⵙⵏ ⵏⵏⵖ ⴳ ",
         "text_4_about": "ⵜⴰⵙⵏⴰ ⵏ ⵅⴼ.",
         "text_4_2": "ⴹⴼⵕ ⴰⵏⵖ ⴳ",
         "text_4_ins": "ⵉⵏⵙⵜⴰⴳⵕⴰⵎ",
@@ -311,8 +311,8 @@
     },
     "faq": {
         "q1": {
-            "q": "Je ne suis pas sûr de mes compétences en écriture en catalan/espagnol/français/arabe. Que dois-je faire ?",
-            "a": "Pas d'inquiétude ! Si vous avez une bonne compréhension de la langue, vous pouvez toujours faire des contributions précieuses. Utilisez le bouton 'Phrase Aléatoire' pour charger automatiquement une phrase source, puis fournissez sa traduction en tamazight. De plus, vous pouvez extraire des phrases de sources non soumises à des droits d'auteur, telles que Wikipédia, pour diversifier le type de traductions que nous recueillons."
+            "q": "I'm not confident in my writing skills in Catalan/Spanish/French/Arabic. What should I do?",
+            "a": "No need to worry! If you have a good understanding of the language, you can still make valuable contributions. Utilize the \"Random Sentence\" button to load a source sentence automatically, and then provide its translation into Tamazight. Additionally, you're welcome to extract sentences from non-copyrighted sources, such as Wikipedia, to diversify the type of translations we collect."
         },
         "q2": {
             "q": "I fixed a mistake in the machine translation output, but it still makes the same error. Is my contribution not being saved?",
@@ -338,7 +338,7 @@
     "carousel": {
         "c1": {
             "heading": "ⴰⵎⴰⵕⴰⵟⵓⵏ ⵏ ⵉⵙⴼⴽⴰ ⵏ \"ⴰⵡⴰⵍ\" ⵎⵓⵏⴰⵜ ⵉ ⵜⵎⴰⵣⵉⵖⵜ!",
-            "body": "Join us on February 17, 11:00 am - 8:00 pm at CIEMEN headquarters in Barcelona, for a collective effort in generating data to enrich the Tamazight language. Be part of the preservation and promotion of Amazigh culture. All ages, genders, and dialects welcome!",
+            "body": "ⵍⴽⵎⴰⵜ ⴰⵏⵖ ⴳ 17 ⴱⵕⴰⵢⵕ, 11:00 ⵏ ⵜⴰⵢⵍⴳⵉ - 8:00 ⵏ ⵜⵎⴷⴷⵉⵜ ⴳ ⵓⵙⵖⵉⵎ ⵏ CIEMEN ⴳ ⴱⴰⵕⵙⵉⵍⵓⵏⴰ, ⵉ ⵢⴰⵜ ⵜⵎⴰⴳⵍⴰⵢⵜ ⵜⴰⵎⴳⵔⵓⵜ ⵉ ⵓⵙⵙⴰⵔⵡ ⵏ ⵉⵙⴼⴽⴰ ⵉ ⵓⵙⴱⵓⵖⵍⵓ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⵣⵉⵖⵜ. ⴷⵔⵓ ⴳ ⵓⵃⵟⵟⵓ ⴷ ⵓⵙⵉⵍⵉ ⵏ ⵜⴷⵍⵙⴰ ⵜⴰⵎⴰⵣⵉⵖⵜ. ⵍⴰ ⵏⵙⴱⵔⵔⴰⴽ ⵙ ⵉⵡⵜⴰⵢⵏ ⴰⴽⴽⵯ, ⵉⴳⵏⵓⵙⵏ ⴰⴽⴽⵯ, ⴷ ⵜⵎⵣⴰⵔⴰⵢⵉⵏ ⴰⴽⴽⵯ!",
             "link": "https://twitter.com/awaldigital"
         },
         "c2": {

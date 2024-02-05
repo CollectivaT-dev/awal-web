@@ -315,7 +315,7 @@
         },
         "q2": {
             "q": "I fixed a mistake in the machine translation output, but it still makes the same error. Is my contribution not being saved?",
-            "a": "Your corrections are saved in our database, but they won't immediately affect the machine translation. The improvement will happen in a later phase, after we collect enough quality translations from contributors like you. So, your efforts are valuable and will contribute to enhancing the translation engine over time."
+            "a": "Your contributions are saved in our database, but they won't immediately affect the machine translation. The improvement will happen in a later phase, after we collect enough quality translations from contributors like you. So, your efforts are valuable and will contribute to enhancing the translation engine over time."
         },
         "q3": {
             "q": "How are contribution scores for translations calculated?",
@@ -337,7 +337,7 @@
     "carousel": {
         "c1": {
             "heading": "Awal Data Marathon: Unite for Tamazight!",
-            "body": "Join us on February 17, 11:00 am - 8:00 pm at CIEMEN headquarters in Barcelona, for a collective effort in generating data to enrich the Tamazight language. Be part of the preservation and promotion of Amazigh culture. All ages, genders, and dialects welcome!",
+            "body": "Join us on February 17, 11:00 am - 8:00 pm at CIEMEN headquarters in Barcelona or virtually, for a collective effort in generating data to enrich the Tamazight language. Be part of the preservation and promotion of Amazigh culture. All ages, genders, and dialects welcome!",
             "link": "https://twitter.com/awaldigital"
         },
         "c2": {
