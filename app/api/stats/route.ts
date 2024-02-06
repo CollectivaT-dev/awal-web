@@ -9,7 +9,7 @@ export async function GET(req: Request) {
         // total entries and validations for homepage
         const totalEntries = await prisma.contribution.count();
         const totalValidation = await prisma.contribution.count({
-            where: { isValidated: true },
+            where: { isValidated: true, validation: 2 },
         });
         // top ten for homepage
         const topTen = await prisma.user.findMany({
