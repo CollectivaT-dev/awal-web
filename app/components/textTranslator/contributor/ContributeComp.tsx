@@ -115,10 +115,13 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
                                     value={value}
                                     id={`${value}-${side}`}
                                     checked={radioGroupValue === value}
-                                    onCheckedChange={() => {
+                                    onCheckedChange={(checkedValue) => {
+                                        const newValue = checkedValue
+                                            ? value
+                                            : '';
                                         side === 'left'
-                                            ? setRightRadioValue(value)
-                                            : setLeftRadioValue(value);
+                                            ? setRightRadioValue(newValue)
+                                            : setLeftRadioValue(newValue);
                                     }}
                                 />
                                 <Label htmlFor={`${value}-${side}`}>
