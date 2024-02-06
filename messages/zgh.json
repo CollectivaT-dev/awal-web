@@ -66,10 +66,10 @@
     },
     "toasters": {
         "under_construction": "ⵜⵙⵓⵍ ⵜⴰⵙⵏⴰ ⴰ ⴷⴷⴰⵡ ⵓⵙⴱⵓⵖⵍⵓ.",
-        "translating": "Translating",
-        "success_loading": "New phrase loaded successfully.",
+        "translating": "ⴰⵙⵓⵖⵍ...",
+        "success_loading": "ⵜⴻⵜⵜⵓⵣⴷⴰⵎ ⵜⵡⵉⵏⵙⵜ ⵜⴰⵎⴰⵢⵏⵓⵜ ⵙ ⵓⵎⵓⵔⵙ.",
         "success_translate": "Input phrase pre-translated. Please revise and correct the translation before submitting.",
-        "alert_input": "Please enter more than one character.",
+        "alert_input": "ⵎⴽ ⵜⵓⴼⵉⴷ, ⵙⴽⵛⵎ ⵓⴳⴳⴰⵔ ⵏ ⵢⴰⵏ ⵓⵙⴽⴽⵉⵍ.",
         "alert_api": "Translate engine not responsive. Please try again later.",
         "success_contribution": "ⵜⴰⵏⵎⵎⵉⵔⵜ ⵖⴼ ⵡⴰⵔⵔⴰⴳ ⵏⵏⵓⵏ! ⴱⵃⵕⴰ ⵜⵓⵔⵣⵎ",
         "success_contribution_points": "ⵜⵉⵏⵇⵇⴰⴹ ⵏ ⵡⴰⵔⵔⴰⴳ.",
