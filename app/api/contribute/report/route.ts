@@ -5,7 +5,7 @@ export async function PATCH(req: Request, res: Response) {
     try {
         const body = await req.json();
         const validationCount = body.validation - 2;
-        const isValidated = validationCount <= -2;
+        const isDiscarded = validationCount <= -2;
         console.log(body);
         const contributionId = body.id; // ID of the contribution seen by the user
         const user = await prisma.user.findUnique({
@@ -30,10 +30,10 @@ export async function PATCH(req: Request, res: Response) {
             const updatedEntry = await prisma.contribution.updateMany({
                 where: { id: body.id },
                 data: {
-					reportMsg:body.reportMsg,
-					isReported: true,
+                    reportMsg: body.reportMsg,
+                    isReported: true,
                     validation: validationCount,
-                    isValidated,
+                    isDiscarded,
                 },
             });
             console.log(updatedEntry);

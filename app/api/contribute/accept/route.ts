@@ -21,7 +21,7 @@ export async function PATCH(req: Request, res: Response) {
             const updatedUser = await prisma.user.update({
                 where: { id: body.validatorId },
                 data: {
-                    score: { increment: 1 },
+                    score: { increment: 3 },
                     lastContribution: new Date(),
                     validationEntries: {
                         push: contributionId, // Append the contribution ID to the seenContributions array

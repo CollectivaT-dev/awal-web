@@ -6,7 +6,6 @@ import { useSession } from 'next-auth/react';
 import { MessagesProps, getDictionary } from '@/i18n';
 import { Suspense, useEffect, useState } from 'react';
 
-
 export default function ContributeLayout({
     children,
 }: {
@@ -17,7 +16,7 @@ export default function ContributeLayout({
     useEffect(() => {
         const fetchDictionary = async () => {
             const m = await getDictionary(locale);
-            setD(m);
+            setD(m as unknown as MessagesProps);
         };
         fetchDictionary();
     }, [locale]);
@@ -29,13 +28,14 @@ export default function ContributeLayout({
         return null;
     }
     const userId = session?.user.id;
+    const username = session?.user.username || '';
     console.log('contribution layout page debug session user', session?.user);
     if (session?.user) {
         return (
             <div>
                 <TranslatorNav />
 
-                <ContributeComp userId={userId} />
+                <ContributeComp userId={userId} username={username} />
                 {children}
             </div>
         );

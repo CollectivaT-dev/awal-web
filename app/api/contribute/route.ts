@@ -68,16 +68,11 @@ export async function POST(req: Request, res: Response) {
         }
         let updatedScore = existingUser.score + body.contributionPoint;
         console.log(updatedScore);
-        // check if languages are zgh or zgh-ber
-        let srcVar =
-            body.src === 'ber' || body.src === 'zgh' ? body.srcVar : null;
-        let tgtVar =
-            body.tgt === 'ber' || body.tgt === 'zgh' ? body.tgtVar : null;
-
         // create contribution entry
         const contribution = await prisma.contribution.create({
             data: {
                 userId: body.userId,
+                username: body.username,
                 src: body.src,
                 tgt: body.tgt,
                 src_text: body.src_text,
