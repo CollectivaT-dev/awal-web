@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/table';
 import { MessagesProps, getDictionary } from '@/i18n';
 import { useSession } from 'next-auth/react';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 interface StatsProps {
@@ -37,9 +38,11 @@ const Stats: React.FC<StatsProps> = ({ users }) => {
 
     return (
         <div className="w-full h-full p-10 flex-col-center  ">
-            <h1 className="text-xl text-slate-200 lg:text-2xl font-semibold capitalize my-10">
-                {d?.texts.statistic}
-            </h1>
+            <Link href={'/leaderboard'}>
+                <h1 className="text-xl text-slate-200 lg:text-2xl font-semibold capitalize my-10">
+                    {d?.texts.statistic}
+                </h1>
+            </Link>
             <div className="h-full p-10 flex-row-center border-2 border-opacity-80 shadow-xl shadow-slate-600/50 bg-yellow-200">
                 <Table className="flex flex-col ">
                     <TableHeader className="text-text-primary">

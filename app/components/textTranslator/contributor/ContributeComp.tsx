@@ -43,9 +43,10 @@ import useMediaQuery from '@/app/hooks/useMediaQuery';
 
 interface ContributeCompProps {
     userId: string;
+	username:string
 }
 
-const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
+const ContributeComp: React.FC<ContributeCompProps> = ({userId,username}) => {
     const [sourceText, setSourceText] = useState('');
     const [targetText, setTargetText] = useState('');
     const { locale } = useLocaleStore();
@@ -312,6 +313,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
             tgt_text: targetText,
             contributionPoint,
             userId,
+			username,
             srcVar,
             tgtVar,
         };
