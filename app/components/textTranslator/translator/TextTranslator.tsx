@@ -34,7 +34,6 @@ const TextTranslator = () => {
         fetchDictionary();
     }, [locale]);
     const { data: session } = useSession();
-    console.log(session);
     const [source, setSource] = useState('');
     const [target, setTarget] = useState('');
     const [sourceLanguage, setSourceLanguage] = useState('ca');
@@ -170,7 +169,7 @@ const TextTranslator = () => {
                 }
             }
         } catch (error) {
-            console.log('Error:', error);
+            console.error('Error:', error);
         } finally {
             if (
                 currentTranslationRequestId === translationRequestIdRef.current

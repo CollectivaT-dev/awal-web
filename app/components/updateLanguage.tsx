@@ -1,7 +1,6 @@
 // script.ts
 
 // Define an interface for the item
-import { useState } from 'react';
 export interface Item {
     value: string;
 }

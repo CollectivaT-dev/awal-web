@@ -38,15 +38,17 @@ import {
 import { Checkbox } from '@/components/ui/checkbox';
 import useLocaleStore from '@/app/hooks/languageStore';
 import { MessagesProps, getDictionary } from '@/i18n';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import useMediaQuery from '@/app/hooks/useMediaQuery';
 
 interface ContributeCompProps {
     userId: string;
-	username:string
+    username: string;
 }
 
-const ContributeComp: React.FC<ContributeCompProps> = ({userId,username}) => {
+const ContributeComp: React.FC<ContributeCompProps> = ({
+    userId,
+    username,
+}) => {
     const [sourceText, setSourceText] = useState('');
     const [targetText, setTargetText] = useState('');
     const { locale } = useLocaleStore();
@@ -313,7 +315,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({userId,username}) => {
             tgt_text: targetText,
             contributionPoint,
             userId,
-			username,
+            username,
             srcVar,
             tgtVar,
         };
@@ -576,8 +578,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({userId,username}) => {
                                             <AlertDialogTitle className="flex items-center justify-center">
                                                 <h4 className="text-sm font-semibold capitalize">
                                                     {
-                                                        d?.translator
-                                                            .help_pop_up.header
+                                                        d?.how_to_contribute_heading
                                                     }
                                                 </h4>
                                             </AlertDialogTitle>

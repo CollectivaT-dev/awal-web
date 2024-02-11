@@ -135,7 +135,7 @@ const AboutPage = () => {
                 </div>
                 <div className="flex-col-center w-1/3 whitespace-pre-line">
                     <Link
-                        href={'https://yuxuanize.vercel.app'}
+                        href={'https://www.yuxuanize.com'}
                         scroll={false}
                         target="_blank"
                     >

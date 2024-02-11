@@ -4,8 +4,8 @@ export const LanguageRelations: { [key: string]: string[] } = {
     en: ['ber', 'zgh'],
     es: ['zgh', 'ber'],
     fr: ['zgh', 'ber'],
-    ber: ['en', 'es', 'ca', 'fr', 'ary'],
-    zgh: ['en', 'es', 'ca', 'fr', 'ary'],
+    ber: ['en', 'es', 'ca', 'fr', 'ary', 'zgh'],
+    zgh: ['en', 'es', 'ca', 'fr', 'ary', 'ber'],
 };
 
 export const ContributionLanguageRelations: { [key: string]: string[] } = {
