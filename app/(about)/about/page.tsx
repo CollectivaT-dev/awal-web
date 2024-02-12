@@ -135,7 +135,7 @@ const AboutPage = () => {
                 </div>
                 <div className="flex-col-center w-1/3 whitespace-pre-line">
                     <Link
-                        href={'https://www.yuxuanize.com'}
+                        href={'https://www.yuxuanify.com'}
                         scroll={false}
                         target="_blank"
                     >
