@@ -308,7 +308,7 @@
         "tamazight_NLP_huggingface": "El grup Tamazight NLP publica conjunts de dades i models oberts a Hugging Face",
         "tamazight_wiki": "Viquipèdia en amazic",
         "TALAM_groups": "El portal TALAM recull aplicacions relacionades amb el processament automàtic del amazic",
-        "darija_open": "Darija Open Dataset és un projecte col·laboratiu de codi obert per a la traducció automàtica darija-anglès."
+        "darija_open": "Darija Open Dataset és un projecte col·laboratiu de codi obert per a la traducció automàtica darija-anglès. La base de dades de frases en darija d'Awal es basa en aquest conjunt de dades."
     },
     "faq": {
         "q1": {
