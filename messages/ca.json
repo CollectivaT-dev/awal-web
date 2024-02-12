@@ -69,7 +69,7 @@
         "translating": "Traduint",
         "success_loading": "Nova frase carregada amb èxit.",
         "success_translate": "Frase d'entrada pretraduïda. Si us plau, reviseu i corregiu la traducció abans de enviar-la.",
-        "alert_input": "Si us plau, introdueix més d'un caràcter.",
+        "alert_input": "Si us plau, indiqueu les variants que parleu o desmarqueu la casella \"Altre\".",
         "alert_api": "El motor de traducció no respon. Si us plau, torneu-ho a provar més tard.",
         "success_contribution": "Gràcies per la seva contribució! Acaba de guanyar",
         "success_contribution_points": "punts.",
@@ -304,9 +304,11 @@
     "resources": {
         "resources_heading": "Recursos",
         "awal_huggingface": "El projecte Awal es pot trobar al repositori de Hugging Face de Col·lectivaT",
+        "NLLB": "NLLB-200 és un conjunt de models de traducció automàtica multilingües creats per Meta. És el primer model de codi obert que inclou l'amazic. La versió utilitzada en aquest lloc web és el model de 600 milions de paràmetres.",
         "tamazight_NLP_huggingface": "El grup Tamazight NLP publica conjunts de dades i models oberts a Hugging Face",
         "tamazight_wiki": "Viquipèdia en amazic",
-        "TALAM_groups": "El portal TALAM recull aplicacions relacionades amb el processament automàtic del amazic"
+        "TALAM_groups": "El portal TALAM recull aplicacions relacionades amb el processament automàtic del amazic",
+        "darija_open": "Darija Open Dataset és un projecte col·laboratiu de codi obert per a la traducció automàtica darija-anglès. La base de dades de frases en darija d'Awal es basa en aquest conjunt de dades."
     },
     "faq": {
         "q1": {
@@ -336,9 +338,9 @@
     },
     "carousel": {
         "c1": {
-            "heading": "Marató de Dades Awal: Uneix-te per a l'Amazic!",
+            "heading": "Marató Lingüística Awal: Uneix-te per a l'Amazic!",
             "body": "Acompanya'ns el 17 de febrer, de 11:00 a 20:00 h, a la seu del CIEMEN a Barcelona, en un esforç col·lectiu per generar dades i enriquir la llengua amazic. Forma part de la preservació i promoció de la cultura amaziga. Totes les edats, gèneres i variants dialectals són benvingude/as!",
-            "link": "https://twitter.com/awaldigital"
+            "link": "https://www.facebook.com/events/952971629738855/"
         },
           "c2": {
             "heading": "AWAL al blog de Col·lectivaT",

@@ -330,9 +330,11 @@ export interface MessagesProps {
     resources: {
         resources_heading: string;
         awal_huggingface: string;
+        NLLB: string;
         tamazight_wiki: string;
         TALAM_groups: string;
         tamazight_NLP_huggingface: string;
+        darija_open: string;
     };
     faq: {
         q1: {
