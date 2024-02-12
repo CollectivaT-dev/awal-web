@@ -84,13 +84,6 @@ const formSchema = z
 
 type SettingFormValues = z.infer<typeof formSchema>;
 
-const languages = [
-    { label: 'english', value: 'english' },
-    { label: 'Spanish', value: 'spanish' },
-    { label: 'Catala', value: 'catala' },
-    { label: 'Arabic', value: 'arabic' },
-    { label: 'French', value: 'french' },
-] as const;
 export function SettingsPage() {
     const { locale } = useLocaleStore();
     const { data: session, update: sessionUpdate, status } = useSession();
@@ -109,7 +102,6 @@ export function SettingsPage() {
             arabic: false,
             french: false,
         });
-    const [otherVar, setOtherVar] = useState('');
     const [formState, setFormState] =
         useState<AmazicConfig.AmazicProps | null>();
     useEffect(() => {
@@ -119,6 +111,13 @@ export function SettingsPage() {
         };
         fetchDictionary();
     }, [locale]);
+    const languages = [
+        { label: 'English', value: 'english' },
+        { label: 'Spanish', value: 'spanish' },
+        { label: 'Catala', value: 'catala' },
+        { label: 'Arabic', value: 'arabic' },
+        { label: 'French', value: 'french' },
+    ] as const;
     if (appStatus === 'development') {
         console.log(session);
     }
@@ -670,7 +669,7 @@ export function SettingsPage() {
                         <Separator />
                         {/* //> variations */}
                         <div className="flex flex-col items-between justify-center space-y-10">
-                            <h1 className="text-sm mobile:text-2xl capitalize font-normal mobile:font-semibold">
+                            <h1 className="text-sm mobile:text-2xl font-normal mobile:font-semibold">
                                 {d?.setting.mark_proficiency_tamazight}
                             </h1>
                             <div className="grid grid-rows-1 lg:grid-cols-4">
@@ -1062,13 +1061,13 @@ export function SettingsPage() {
                             </div>
                             {/* other lang */}
                         </div>
-
+                        <Separator />
                         {/* other lang */}
                         <div>
+                            <h1 className="text-sm mb-3 mobile:text-2xl font-normal mobile:font-semibold">
+                                {d?.setting.mark_proficiency_other}
+                            </h1>
                             <FormItem className="flex flex-col">
-                                <FormLabel>
-                                    {d?.translator.select_lang}
-                                </FormLabel>
                                 <select
                                     onChange={(e) =>
                                         handleLanguageSelect(e.target.value)

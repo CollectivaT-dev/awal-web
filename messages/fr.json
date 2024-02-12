@@ -69,7 +69,7 @@
         "translating": "En cours de traduction",
         "success_loading": "Nouvelle phrase chargée avec succès.",
         "success_translate": "Phrase d'entrée prétraduite. Veuillez réviser et corriger la traduction avant de soumettre.",
-        "alert_input": "Veuillez saisir plus d'un caractère.",
+        "alert_input": "Veuillez indiquer la variante ou les variantes que vous parlez ou décochez la case \"Autre\".",
         "alert_api": "Le moteur de traduction ne répond pas. Veuillez réessayer ultérieurement.",
         "success_contribution": "Merci pour votre contribution ! Vous venez de gagner",
         "success_contribution_points": "points de contribution.",
@@ -336,9 +336,9 @@
     },
     "carousel": {
         "c1": {
-            "heading": "Marathon de Données Awal : Unis pour l'Amazigh !",
+            "heading": "Marathon linguistique Awal : Unis pour l'Amazigh !",
             "body": "Rejoignez-nous le 17 février, de 11h00 à 20h00, au siège du CIEMEN à Barcelone, pour un effort collectif visant à générer des données afin d'enrichir la langue amazig. Participez à la préservation et à la promotion de la culture amazig. Tous âges, genres et variantes dialectales sont les bienvenus !",
-            "link": "https://twitter.com/awaldigital"
+            "link": "https://www.facebook.com/events/952971629738855/"
         },
         "c2": {
             "heading": "AWAL sur le blog de Col·lectivaT",

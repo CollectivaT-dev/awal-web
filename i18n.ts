@@ -114,6 +114,7 @@ export interface MessagesProps {
 		translating:string;
 		alert_api:string;
 		success_translate:string
+		success_loading:string
     };
     text_with_link: {
         accept_terms: {

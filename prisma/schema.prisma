@@ -46,7 +46,7 @@ model User {
 model Contribution {
   id     String @id @default(auto()) @map("_id") @db.ObjectId
   userId String @db.ObjectId
-
+  username String?
   // standard api parameters
   src         String?
   tgt         String?
@@ -59,8 +59,9 @@ model Contribution {
   tgtVar      String?
   // validation check, every validation will give validation +1
   validation  Int?
-  // if an entry is has valiation score === -2 || +2 set isValidated to true and never show this entry again
+  // if an entry is has valiation score === +2 set isValidated to true and never show this entry again, if -2 then isDiscarded
   isValidated Boolean?
+  isDiscarded Boolean?
   // is reported by any user
   isReported  Boolean?
   reportMsg  String?

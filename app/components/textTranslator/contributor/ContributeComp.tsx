@@ -43,9 +43,10 @@ import useMediaQuery from '@/app/hooks/useMediaQuery';
 
 interface ContributeCompProps {
     userId: string;
+	username:string
 }
 
-const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
+const ContributeComp: React.FC<ContributeCompProps> = ({userId,username}) => {
     const [sourceText, setSourceText] = useState('');
     const [targetText, setTargetText] = useState('');
     const { locale } = useLocaleStore();
@@ -115,10 +116,13 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
                                     value={value}
                                     id={`${value}-${side}`}
                                     checked={radioGroupValue === value}
-                                    onCheckedChange={() => {
+                                    onCheckedChange={(checkedValue) => {
+                                        const newValue = checkedValue
+                                            ? value
+                                            : '';
                                         side === 'left'
-                                            ? setRightRadioValue(value)
-                                            : setLeftRadioValue(value);
+                                            ? setRightRadioValue(newValue)
+                                            : setLeftRadioValue(newValue);
                                     }}
                                 />
                                 <Label htmlFor={`${value}-${side}`}>
@@ -309,6 +313,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId }) => {
             tgt_text: targetText,
             contributionPoint,
             userId,
+			username,
             srcVar,
             tgtVar,
         };
