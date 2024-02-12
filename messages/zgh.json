@@ -51,10 +51,10 @@
             "translation_box": "ⵔⴰⴷ ⵜⵓⵎⴰⵏ ⵜⵙⵓⵖⵍⵜ ⴷⴰ..."
         },
         "notice": "ⵜⵓⵜⴳ ⵜⵙⵏⵙⵉ ⴰⴷ ⵖⴼ ⵢⴰⵏ ⵓⵏⵙⵎⴰⵙⵙⵓ ⵏ ⵓⵙⵓⵖⵍ ⵉⴱⴷⴷⵏ ⵖⴼ ⵓⵔⵣⵣⵓ ⵏⵏⴰ ⵢⴰⴽⴽⴰⵏ ⴳ ⵜⵓⴳⵜ ⵏ ⵜⵉⴽⴽⴰⵍ ⵜⵉⵢⵓⴼⴰ ⵓⵔ ⵏⵖⵉⴷⵏⵉⵏ. ⵉⴳ ⴷⴰ ⵜⵙⴰⵡⴰⵍⴷ ⵜⴰⵎⴰⵣⵉⵖⵜ, ⵜⵣⵎⵔⴷ ⴰⴷ ⴰⵏⵖ ⵜⴰⵡⵙⴷ ⴳ ⵓⵙⵖⵓⴷⵓ ⴷ ⵓⵙⵏⴰⵍ ⵏ ⵡⵓⴳⴳⴰⵔ ⵏ ⵜⵎⵣⴰⵔⴰⵢⵉⵏ ⵙ ⵡⴰⵣⴰⵏ ⵏ ⵜⵙⵓⵖⵍⵉⵏ.",
-        "help": "ⵎⴰⵏⵎⴽ ⴷⴰ ⵉⵙⵡⵓⵔⵓⵢ?",
+        "help": "ⵎⴰⵏⵎⴽ ⴰ ⵙ ⴷⴰ ⵉⵙⵡⵓⵔⵓⵢ?",
         "help_pop_up": {
-            "header": "ⵎⴰⵏⵎⴽ ⵙ ⵔⴰⴷ ⴰⵔⴳⵖ ⵜⵉⵙⵓⵖⵍⵉⵏ?",
-            "description": "lorem ipsum"
+            "header": "ⵎⴰⵏⵎⴽ ⴰ ⵙ ⵔⴰⴷ ⴰⵔⴳⵖ ⵜⵉⵙⵓⵖⵍⵉⵏ?",
+            "description": "ⴰⴹⵕⵉⵚ ⴰⵎⴰⵣⵉⵖ"
         }
     },
     "footer": {
@@ -65,14 +65,14 @@
         "leaderboard": "ⵜⵉⴼⵉⵍⵜ ⵏ ⵉⵎⵣⵡⴰⵔⵏ"
     },
     "toasters": {
-        "under_construction": "ⵜⵙⵓⵍ ⵜⴰⵙⵏⴰ ⴰ ⴷⴷⴰⵡ ⵓⵙⴱⵓⵖⵍⵓ.",
-        "translating": "ⴰⵙⵓⵖⵍ...",
+        "under_construction": "ⵜⵙⵓⵍ ⵜⴰⵙⵏⴰ ⴰⴷ ⴷⴷⴰⵡ ⵓⵙⵖⵉⵡⵙ.",
+        "translating": "ⴰⵙⵙⵓⵖⵍ...",
         "success_loading": "ⵜⴻⵜⵜⵓⵣⴷⴰⵎ ⵜⵡⵉⵏⵙⵜ ⵜⴰⵎⴰⵢⵏⵓⵜ ⵙ ⵓⵎⵓⵔⵙ.",
-        "success_translate": "Input phrase pre-translated. Please revise and correct the translation before submitting.",
-        "alert_input": "ⵎⴽ ⵜⵓⴼⵉⴷ, ⵙⴽⵛⵎ ⵓⴳⴳⴰⵔ ⵏ ⵢⴰⵏ ⵓⵙⴽⴽⵉⵍ.",
-        "alert_api": "Translate engine not responsive. Please try again later.",
-        "success_contribution": "ⵜⴰⵏⵎⵎⵉⵔⵜ ⵖⴼ ⵡⴰⵔⵔⴰⴳ ⵏⵏⵓⵏ! ⴱⵃⵕⴰ ⵜⵓⵔⵣⵎ",
-        "success_contribution_points": "ⵜⵉⵏⵇⵇⴰⴹ ⵏ ⵡⴰⵔⵔⴰⴳ.",
+        "success_translate": "ⴰⵙⴰⴷⴼ ⵏ ⵜⵡⵉⵏⵙⵜ ⵉⵜⵜⵡⴰⵙⵓⵖⵍ ⵙ ⵓⵎⵏⵣⵓⵢ. ⵎⴽ ⵜⵓⴼⵉⴷ ⵙⵙⵉⵔⵎ, ⵜⵙⵙⵖⵜⵉⴷ ⵜⴰⵙⵓⵖⵍⵜ ⴷⴰⵜ ⵏ ⵡⴰⵣⴰⵏ.",
+        "alert_input": "ⵎⴽ ⵜⵓⴼⵉⴷ, ⵙⴽⵛⵎ ⵜⴰⵎⵣⴰⵔⴰⵢⵜ/ⵜⵉⵎⵣⴰⵔⴰⵢⵉⵏ ⴷⴰ ⵜⵙⴰⵡⴰⵍⴷ ⵏⵉⵖ ⵜⴽⴽⵙⴷ ⴰⵕⵛⴰⵎ ⵉ ⵜⴼⵏⵉⵇⵜ \\\"ⵜⴰⵢⵢⴰⴹ\\\".",
+        "alert_api": "ⵓⵔ ⵉⵎⵔⴰⵔⴰ ⵓⵏⵙⵎⴰⵙⵙⵓ ⵏ ⵓⵙⵓⵖⵍ. ⵎⴽ ⵜⵓⴼⵉⴷ, ⴰⵔⵎ ⴷⴰⵖ ⴽⵓⴷⵏⵏⴰ",
+        "success_contribution": "ⵜⴰⵏⵎⵎⵉⵔⵜ ⵏⵏⵓⵏ ⵖⴼ ⵡⴰⵔⵔⴰⴳ ⵏⵏⵓⵏ! ⴱⵃⵕⴰ ⵜⵓⵔⵣⵎ",
+        "success_contribution_points": "ⵜⵏⵇⵇⴰⴹ ⵏ ⵡⴰⵔⵔⴰⴳ.",
         "select_var": "ⵎⴽ ⵜⵓⴼⵉⴷ, ⵙⵜⵉ ⴽⵔⴰ ⵏ ⵜⵎⵣⴰⵔⴰⵢⵜ ⵉ ⵜⵓⵜⵍⴰⵢⵉⵏ ⵜⵉⵎⴰⵣⵉⵖⵉⵏ",
         "alert_no_text": "ⵡⴰⵍⵓ ⴰⴹⵕⵉⵚ ⵉ ⵡⴰⵔⵔⴰⴳ",
         "alert_no_modify": "ⵎⴽ ⵜⵓⴼⵉⴷ, ⵙⵙⵓⵖⵍ ⴰⴹⵕⵉⵚ ⵃⵎⴰ ⴰⴷ ⵜ ⵜⴰⵔⴳⴷ.",
@@ -118,9 +118,9 @@
         "heading_2": "ⵍⴰ ⵏⵙⴱⵔⵔⴰⴽ ⵙ ⴽⵓⵢⴰⵏ",
         "text_2": "ⵉⵏⵏⵓⵕⵥⵎ ⵡⴰⵔⵔⴰⴳ ⵉ ⴽⵓⵢⴰⵏ ⵉⵣⵎⵔⵏ ⴰⴷ ⵉⵜⵜⴰⵔⴰ ⴰⵔ ⵢⴰⵇⵔⴰ ⵙ ⵜⵎⴰⵣⵉⵖⵜ. ⵍⴰ ⵏⵙⴼⵓⴳⵍⵓ ⵙ ⵓⵎⵢⴰⵏⴰⵡ ⴰⵏⴱⵖⵓⵔ ⵏ ⵜⵎⵣⴰⵔⴰⵢⵉⵏ ⵜⵉⵎⴰⵣⵉⵖⵉⵏ ⴷ ⵍⴰ ⵏⵙⴱⵔⵔⴰⴽ ⵙ ⵉⵎⵙⵉⵡⵍⵏ ⵙⴳ ⴽⵔⴰⵢⴳⴰⵜ ⵎⴰⵏⵉ.",
         "heading_3": "ⵥⵕ ⵎⴰⵏⵉ ⴳ ⵜⴱⴷⴷⴻⴷ",
-        "text_3": "ⵉ ⴽⵓ ⵜⴰⵙⵓⵖⵍⵙ ⵉⵜⵜⵓⵣⵎⵎⴻⵎⵏ ⴳ ⵓⵙⵓⵖⵍ ⵏ ⴰⵡⴰⵍ, ⵔⴰⴷ ⵜⴰⵔⵣⵎ ⵜⵉⵏⵇⵇⴰⴹ, ⵜⵙⵎⵣⴰⵣⴰⵍⵎ ⵉⵅⴼⴰⵡⵏ ⵏⵏⵓⵏ ⴰⴽⴷ ⵉⴳⵎⴰⵎⵏ ⵏ ⵜⴳⵔⴰⵡⵜ.",
+        "text_3": "ⵉ ⴽⵓ ⵜⴰⵙⵓⵖⵍⵙ ⵉⵜⵜⵓⵣⵎⵎⴻⵎⵏ ⴳ ⵓⵙⵓⵖⵍ ⵏ ⴰⵡⴰⵍ, ⵔⴰⴷ ⵜⴰⵔⵣⵎ ⵜⵉⵏⵇⵇⴰⴹ, ⵜⵙⵎⵣⴰⵣⴰⵍⵎ ⵉⵅⴼⴰⵡⵏ ⵏⵏⵓⵏ ⴰⴽⴷ ⵉⵔⵏⴰⵡⵏ ⵉⴳⵎⴰⵎⵏ ⵏ ⵜⴳⵔⴰⵡⵜ.",
         "heading_4": "ⴰⴼ ⵜⴳⵔⴰⵡⵜ ⵏ ⴰⵡⵍ",
-        "text_4_1": "ⵙⵙⵏ ⵓⴳⴳⴰⵔ ⵖⴼ ⵜⵙⵏⵜⴰⵢⵜ ⴷ ⵉⵎⵢⴰⵡⴰⵙⵏ ⵏⵏⵖ ⴳ ",
+        "text_4_1": "ⵙⵙⵏ ⵓⴳⴳⴰⵔ ⵖⴼ ⵜⵙⵏⵜⴰⵢⵜ ⴷ ⵉⵎⵢⴰⵡⴰⵙⵏ ⵏⵏⵖ ⴳ",
         "text_4_about": "ⵜⴰⵙⵏⴰ ⵏ ⵅⴼ.",
         "text_4_2": "ⴹⴼⵕ ⴰⵏⵖ ⴳ",
         "text_4_ins": "ⵉⵏⵙⵜⴰⴳⵕⴰⵎ",
@@ -135,27 +135,26 @@
         "item_3_normal": "ⴰⵔⵔⴰⴳ ⵏ ⵉⵙⴼⴽⴰ ⵉⴳⵕⴹⴰⵏⵏ ⴷⴳ ⴽⴰⵎⵏⴼⵓⵢⵙ, ⴷ ⵜⵉⴽⴽⵉ ⵏ ⵡⴰⵡⴰⵍ ⵉ ⵜⵎⴰⵣⵉⵖⵜ ⴳ ⵓⵎⴰⴹⴰⵍ ⴰⵎⵓⵟⵟⵓⵏ."
     },
     "texts": {
-        "data_marathon": "ⴷⴰⵜⴰⵜⵓⵏ ⵏ ⵓⵙⵓⵖⵍ ⵏ ⴰⵡⴰⵍ",
         "accept_mail_list": "ⵍⵜⵖ ⴳ ⵜⴱⵔⴰⵜ ⵏ ⵉⵏⵖⵎⵉⵙⵏ ⵏⵏⵖ.",
         "save_settings": "ⵃⴹⵓ ⵜⵉⵙⵖⴰⵍ",
         "loading": "ⴰⵣⴷⴰⵎ",
-        "welcome": "ⴱⵔⵔⴽ ⴷⴰⵖ",
-        "welcome_m": "ⴱⵔⵔⴽ ⴷⴰⵖ",
-        "welcome_f": "ⴱⵔⵔⴽ ⴷⴰⵖ",
+        "welcome": "ⴰⵏⵙⵓⴼ ⵙ ⵡⵓⵖⵓⵍ ⵏⵏⵓⵏ",
+        "welcome_m": "ⴰⵏⵙⵓⴼ ⵙ ⵡⵓⵖⵓⵍ ⵏⵏⵓⵏ",
+        "welcome_f": "ⴰⵏⵙⵓⴼ ⵙ ⵡⵓⵖⵓⵍ ⵏⵏⵓⵏ",
         "subscribe": "ⵍⵜⵖ ⴳ ⵜⵍⴳⴰⵎⵜ ⵏ ⵡⴰⵣⴰⵏ ⵏ ⵉⵎⴰⵢⵍⵏ",
-        "total_entries": "ⵜⵉⵙⵓⵖⵍⵉⵏ ⵜⵜⵢⴰⵔⴰⴳⵏⵉⵏ",
-        "total_validated_entries": "ⵜⵉⵙⵓⵖⵍⵉⵏ ⵣⵔⵢⵏⵉⵏ",
+        "total_entries": "ⵜⵙⵓⵖⵍⵉⵏ ⵜⵜⵢⴰⵔⴰⴳⵏⵉⵏ",
+        "total_validated_entries": "ⵜⵙⵓⵖⵍⵉⵏ ⵣⵔⵢⵏⵉⵏ",
         "total_voice_entries_number": "1",
-        "total_voice_entries": "ⵜⴰⵙⵔⴰⴳⵜ ⵉⵜⵜⵓⵙⵓⵙⵔⵏ",
+        "total_voice_entries": "ⵜⵙⵔⴰⴳⵜ ⵉⵜⵜⵓⵙⵓⵙⵔⵏ",
         "total_voice_validation_number": "1",
-        "total_voice_validation": "ⵜⴰⵙⵔⴰⴳⵜ ⵉⵣⵔⵢⵏ",
+        "total_voice_validation": "ⵜⵙⵔⴰⴳⵜ ⵉⵣⵔⵢⵏ",
         "have_account": "ⴷⴰⵔⵓⵏ ⴰⵎⵉⴹⴰⵏ?",
         "login_to_signup_1": "ⵉⵎⴰⵢⵏⵓⵜⵏ ⵖⵔ ⴰⵡⴰⵍ?",
         "login_to_signup_2": "ⵣⵎⵎⴻⵎ!",
         "statistic": "ⵜⵉⴼⵉⵍⵜ ⵏ ⵉⵎⵣⵡⴰⵔⵏ",
         "validate_report_heading": "ⵎⵍ ⴰⵔⵔⴰⴳ",
         "validate_report_text": "ⵎⴽ ⵜⵓⴼⵉⴷ, ⵉⵏⵉ ⴰⵏⵖ ⵙ ⵓⵙⴳⵣⵍ ⵎⴰ ⴰⴷ ⵉⵣⴳⵍⵏ ⴳ ⵡⴰⵔⵔⴰⴳ ⴰⴷ, ⵙ ⵎⴽⴷⴰ ⵉⵍⵍⴰⵏ ⴳ ⵜⴰⵔⴰⵜⵉⵏ ⵏ ⵜⴳⵔⴰⵡⵜ ⵏⵏⵖ.",
-        "faq_heading":"ⵉⵙⵇⵇⵙⵉⵜⵏ ⴷ ⵉⵜⵜⴰⵖⵓⵍⵏ",
+        "faq_heading": "ⵉⵙⵇⵇⵙⵉⵜⵏ ⴷ ⵉⵜⵜⴰⵖⵓⵍⵏ",
         "rank": "#"
     },
     "validator": {
@@ -181,58 +180,58 @@
         "mark_proficiency_tamazight": "ⵎⴽ ⵜⵓⴼⴰⵎ, ⵕⵛⵎⴰⵜ ⵜⵉⵙⵓⴳⴰⵔ ⵏⵏⵓⵏ ⴳ ⵜⵎⵣⴰⵔⴰⵢⵉⵏ ⵏ ⵜⵎⴰⵣⵉⵖⵜ:",
         "mark_proficiency_other": "ⵎⴽ ⵜⵓⴼⵉⴷ, ⵕⵛⵎ ⵜⵉⵢⵓⴳⴰ ⵏ ⵜⵓⵜⵍⴰⵢⵉⵏ ⵏⵏⴰ ⵙ ⵜⵣⵎⵔⴷ ⴰⴷ ⴳⵙⵏⵜ ⵜⴰⵔⴳⵜ:",
         "gender": {
-            "select": " ⵙⵜⵢⴰⵜ ⴰⴳⵏⵓⵙ ⵏⵏⵓⵏ",
+            "select": "ⵙⵜⵢⴰⵜ ⴰⴳⵏⵓⵙ ⵏⵏⵓⵏ",
             "m": "ⴰⵡⵜⵎ",
             "f": "ⵜⴰⵡⵜⵎⵜ",
-            "nb": "Non-binary",
-            "tr": "Transgender",
+            "nb": "ⴰⵔⴰⵙⵉⵏ",
+            "tr": "ⵎⵏⴼⵍⴰⴳⵏⵓⵙ",
             "other": "ⵡⴰⵢⵢⴰⴹ"
         },
-        "specify": "Please specify your variant."
+        "specify": "ⵎⴽ ⵜⵓⴼⴰⵎ, ⵥⵍⵢⴰⵜ ⵜⴰⵎⵣⴰⵔⴰⵢⵜ ⵏⵏⵓ."
     },
     "about": {
         "main_string_1": "ⵉⴳⴰ \"ⴰⵡⴰⵍ\" ⵢⴰⵏ ⵓⵙⵏⴼⴰⵔ ⵏⵏⴰ ⵉⵜⵜⴰⵔⴳⵏ ⴳ ⵓⵃⵟⵟⵓ ⴷ ⵓⵙⵙⴷⵓⵙ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⵣⵉⵖⵜ ⴳ ⵓⵙⴰⵢⵔⴰⵔ ⴰⵎⵓⵟⵟⵓⵏ ⵙ ⵓⵙⵖⵉⵡⵙ ⵏ ⵉⵎⴰⵙⵙⵏ ⵉⵎⴰⵢⵏⵓⵜⵏ ⵏⵏⴰ ⵉⵙⵙⵏⵀⴰⵍⵏ ⴰⵙⵙⵎⵔⵙ ⵏⵏⵙ ⴷ ⵓⴼⵙⴰⵔ ⵏⵏⵙ. ⵔⴰⴷ ⵜⴳ ⵜⴷⵔⴰⵡⵜ ⵏ ⵉⵎⵙⵉⵡⵍⵏ ⵙ ⵜⵎⴰⵣⵉⵖⵜ ⵜⵓⵛⵛⵉⵍⵜ ⵉ ⵓⴳⵔⵔⵓ ⵏ ⵉⵙⴼⴽⴰ, ⵉⴳⵕⴹⴰⵏⵏ ⴷ ⵡⵉⴷ ⵜⵜⵢⴰⵔⴰⵏⵉⵏ, ⵙ ⵜⵖⴰⵔⴰⵙⵜ ⵏ ⵉⵙⵓⵙⴰⵔ ⵉⴳⵕⴹⴰⵏⵏ ⴷ ⵜⵓⴳⵔⵉⵡⵜ ⵏ ⵉⴹⵕⵉⵚⵏ ⵜⵜⵡⴰⵙⵓⵖⵍⵏⵉⵏ ⵙⴳ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⴷⵔⵓⵙⵜ ⴰⴷ. ⵓⵔ ⵜⵡⴰⴷⵙ ⵜⵙⵏⵜⴰⵢⵜ ⴰⴷ ⴽⴰ ⵜⵙⵏⴼⵍⵓⵍ ⵉⵎⴰⵙⵙⵏ ⵉⵎⵓⵟⵟⵓⵏⵏ ⵉⵎⵕⵡⵉⵜⵏ, ⵎⴰⵛⵛ ⵜⵡⴰⴷⵙ ⴰⵡⴷ ⴰⵙⴰⵜⵜⵓⵢ ⴰⴼⵔⴰⴽ ⵏ ⵜⴳⵔⴰⵡⵜ ⵙ ⵜⵅⵅⵉⵜⵔⵜ ⵏ ⵉⵙⴼⴽⴰ ⵉⵙⵏⵉⵍⵙⴰⵏⵏ ⴷ ⵜⴻⵜⵉⴽⵏⵓⵍⵓⵊⵉⵢⵉⵏ ⵜⵉⵎⴰⵢⵏⵓⵜⵉⵏ ⵉ ⵓⵃⵟⵟⵓ ⵏ ⵜⵓⵜⵍⴰⵢⵜ, ⴰⵙⴰⵜⵜⵓⵢ ⵏ ⵓⴼⵔⴰⴽ ⵙ ⵜⵓⵙⵓⵔⵉⵏ ⵏ ⵜⵕⵥⵉ ⵜⴰⵎⵓⵟⵟⵓⵏⵜ ⴷ ⵓⵙⵙⵉⵎⵖⵓⵔ ⵏ ⵢⴰⵏ ⵓⵥⵟⵟⴰ ⵏ ⵉⵎⵣⵣⵓⵍⵏ. ⵉⴳⴰ \"ⴰⵡⴰⵍ\" ⵢⴰⵜ ⵜⵙⵏⵜⴰⵢⵜ ⵙⴳ ⵖⵓⵔ CIEMEN, Col·lectivaT ⴷ Casa Amaziga de Catalunya, ⵜⵙⵙⵥⵕⴼ ⵜⵜ ⵜⴳⵔⴰⵡⵜ ⵏ ⴱⴰⵕⵙⵉⵍⵓⵏⴰ ⴷ ⵓⵙⵇⵇⵉⵎ ⴰⵎⴰⵜⴰⵢ ⵏ ⴽⴰⵟⴰⵍⵓⵏⵢⴰ ⵙ ⵡⴰⵏⵏⴰⵍ ⵏ ⵜⵙⵏⵓⵔⴰⵢⵜ ⵜⴰⴽⴰⵟⴰⵍⵓⵏⵉⵜ ⵏ ⵓⵎⵢⴰⵡⴰⵙ ⴰⵏⴳⵎⵓ ⴷ ⵜⵣⵓⵏⵉ ⵏ ⵉⵣⵔⴼⴰⵏ ⵉⵏⴰⵎⵓⵏⵏ.",
         "ciemen_logo_url": "",
         "ciemen_web_url": "www.ciemen.cat",
-        "ciemen_intro": "CIEMEN is a cultural, not-for-profit, non-governmental Catalan organization with an international scope and over 40 years of experience in the field of stateless nations, minoritised peoples and diversity. It aims both to contribute to a better knowledge of peoples and nations that are marginalize or see their identity and existence threatened, and to support and foster the recognition and respect of individual and collective rights as a way to progress towards a lasting peace and democracy.",
+        "ciemen_intro": "ⵜⴳⴰ CIEMEN ⵢⴰⵜ ⵜⵎⴰⴷⴷⴰⵙⵜ ⵜⴰⴷⵍⵙⴰⵏⵜ ⵜⴰⴽⴰⵟⴰⵍⵓⵏⵉⵜ, ⵜⴰⵔ ⴰⵡⵜⵜⴰⵙ ⵓⵔⵔⵉⵣ, ⴷ ⵜⴰⵔⵓⵏⴱⵉⴹⵜ ⵙ ⵢⴰⵏ ⵓⵙⵡⵉⵔ ⴰⴳⵔⴰⵖⵍⴰⵏ ⴷ ⵡⵓⴳⴳⴰⵔ ⵏ 40 ⵉⵙⴳⴳⵯⴰⵙⵏ ⵏ ⵜⵉⵔⵎⵉⵜ ⴳ ⵢⵉⴳⵔ ⵏ ⵜⵎⵜⵜⴰ ⵜⴰⵔ ⴰⵡⴰⵏⴽ, ⵉⵖⵔⴼⴰⵏ ⵜⵜⵓⵙⵎⵥⵉⵢⵏⵉⵏ, ⴷ ⵓⵎⵢⴰⵏⴰⵡ. ⵜⵡⴰⴷⵙ ⴰⴷ ⵜⵙⵙⵉⵡⵙ ⴳ ⵢⴰⵜ ⵜⵓⵙⵙⵏⴰ ⵢⵓⴼⵏ ⵏ ⵉⵖⵔⴼⴰⵏ ⴷ ⵜⵎⵜⵜⴰ ⵏⵏⴰ ⵜⵜⵓⵙⵙⵉⵏⴼⵏⵉⵏ ⵏⵖ ⴷ ⵍⴰ ⵜⵜⴰⵏⵏⴰⵢⵏ ⵜⴰⵎⴰⴳⵉⵜ ⴷ ⵜⵉⵍⵉⵜ ⵏⵏⵙⵏ ⵜⵜⵓⵙⴷⵉⴷⴷⵉⵏⵜ, ⴷ ⴰⴷ ⵜⵙⵏⴰⵍ, ⵜⵙⵙⴷⵓⵙ ⵜⵓⵙⵏⵜ ⴷ ⵓⵣⵔⴰⴽ ⵏ ⵉⵣⵔⴼⴰⵏ ⵉⵎⵢⵉⵡⵏⵏ ⴷ ⵉⵎⴳⵔⵓⵜⵏ ⴰⵎ ⵢⴰⵜ ⵜⴱⵔⵉⴷⵜ ⵏ ⵓⵣⵣⵉⴳⵣ ⵖⵔ ⵓⴼⵔⴰ ⴷ ⵜⴷⵉⵎⵓⴽⵕⴰⵟⵉⵜ ⵉⵙⵓⵍⴰⵏⵏ.",
         "collectivat_logo_url": "",
         "collectivat_web_url": "www.collectivat.cat",
-        "collectivat_intro": "Col·lectivaT is a non-profit cooperative located in Barcelona, consisting of a diverse team with expertise in various fields. The organization focuses on developing open-source technologies, providing language and translation services, conducting training and research in the social sector, and offering strategic advice and support.\\nThrough its efforts, Col·lectivaT strives to address and diminish structural injustices and inequalities. The organization actively supports civil society organizations dedicated to working with minority cultures and languages to foster positive change.",
+        "collectivat_intro": "ⵜⴳⴰ Col·lectivaT ⵢⴰⵜ ⵜⵎⵢⴰⵡⵙⵜ ⵜⴰⵔ ⴰⵡⵜⵜⴰⵙ ⵓⵔⵔⵉⵣ ⵉⵍⵍⴰⵏ ⴳ ⴱⴰⵕⵙⵉⵍⵓⵏⴰ, ⵜⴰⵎⵓ ⵢⴰⵜ ⵜⵔⴰⴱⴱⵓⵜ ⵜⴰⵎⵢⴰⵏⴰⵡⵜ ⵙ ⵜⵎⵓⵣⴰⵢⵉⵏ ⴳ ⵉⴳⵔⴰⵏ ⵎⵣⴰⵔⴰⵢⵏⵉⵏ. ⵍⴰ ⵜⵙⴷⵉⴽⴽⵉⵏ ⵜⵎⴰⴷⴷⴰⵙⵜ ⵖⴼ ⵓⵙⵖⵉⵡⵙ ⵏ ⵜⴻⵜⵉⴽⵏⵓⵍⵓⵊⵉⵢⵉⵏ ⵏ ⵓⵙⴰⴳⵎ ⵓⵕⵥⵉⵎ, ⴰⵙⴰⴳⴰ ⵏ ⵜⵏⵓⴼⴰ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⴷ ⵓⵙⵓⵖⵍ, ⴰⵙⵡⵓⴷⴷⵓ ⵏ ⵓⵙⵎⵓⵜⵜⴳ ⴷ ⵓⵔⵣⵣⵓ ⴳ ⵢⵉⴳⵔ ⴰⵏⴰⵎⵓⵏ, ⴷ ⵓⵙⵎⵏⵉⴷ ⵏ ⵉⵙⵙⴼⴰⵡⵏ ⴷ ⵡⴰⵏⵏⴰⵍ ⵉⵙⵜⵔⴰⵜⵉⵊⵉⵢⵏ.\\nⵍⴰ ⵜⴻⵜⵜⵎⴰⵖ, Col·lectivaT, ⵙ ⵜⵣⵎⵎⴰⵔ ⵏⵏⵙ, ⴰⴷ ⵜⵏⴰⵍ ⴷ ⴰⴷ ⵜⵙⵙⵉⴷⵔⵓⵙ ⵜⵉⵏⵓⵔⴰⴼ ⴷ ⵜⵎⵢⴰⴳⴰⵔⵉⵏ ⵜⵓⵚⴽⵉⵡⵉⵏ. ⵍⴰ ⵜⴻⵜⵜⵏⴰⵍ ⵜⵎⴰⴷⴷⴰⵙⵜ ⵙ ⵡⵓⵔⵎⵉⴷ ⵜⵉⵎⴰⴷⴷⴰⵙⵉⵏ ⵏ ⵡⴰⵎⵓⵏ ⴰⵖⴰⵔⵉⵎ ⵏⵏⴰ ⵙⵡⵓⵔⵉⵏⵉⵏ ⴰⴽⴷ ⵜⴷⵍⵙⴰⵡⵉⵏ ⴷ ⵜⵓⵜⵍⴰⵢⵉⵏ ⵜⵉⵎⴰⴷⵔⵓⵙⵉⵏ ⵅⴼ ⵓⵙⵙⴷⵓⵙ ⵏ ⵓⵙⵏⴼⵍ ⵓⵎⵏⵉⴳ.",
         "casa_amaziga_logo_url": "",
         "casa_amaziga_web_url": "https://casaamaziga.wordpress.com/",
-        "casa_amaziga_intro": "The Casa Amaziga de Catalunya is an entity that aims to be the reference for the Amazigh People in Catalonia and a meeting point between the Amazigh and Catalan communities.",
-        "main_text_2": "We would also like to highlight our key collaborators who play a vital role in Awal.",
+        "casa_amaziga_intro": "ⵜⴳⴰ Casa Amaziga de Catalunya ⵢⴰⵏ ⵉⵍⵉ ⵏⵏⴰ ⵉⵡⴰⴷⵙⵏ ⴰⴷ ⵉⴳ ⴰⵙⴰⵖⵓⵍ ⵉ the ⵓⴳⴷⵓⴷ ⴰⵎⴰⵣⵉⵖ ⴳ ⴽⴰⵟⴰⵍⵓⵏⵢⴰ ⴷ ⵢⴰⵜ ⵜⵏⵇⵇⵉⴹⵜ ⵏ ⵓⵏⵎⴰⴳⴰⵔ ⴳⵔ ⵜⴳⵔⴰⵡⵉⵏ ⵜⵉⵎⴰⵣⵉⵖⵉⵏ ⴷ ⵜⴽⴰⵟⴰⵍⵓⵏⵉⵢⵉⵏ.",
+        "main_text_2": "ⵏⵔⴰ ⴰⵡⴷ ⴰⴷ ⴷ ⵏⵙⵙⴰⴳⴳⵯ ⵉⵎⴰⵡⴰⵙⵏ ⵉⴷⵙⵍⴰⵏⵏ ⵏⵏⵖ ⵏⵏⴰ ⵢⵓⵔⴰⵔⵏ ⵢⴰⵜ ⵜⵉⵍⴰⵍⵜ ⵜⴰⵎⵇⵇⵕⴰⵏⵜ ⴳ ⴰⵡⴰⵍ.",
         "contributor_farida_photo": "",
         "contributor_farida_website": "",
-        "contributor_farida_intro": "Farida Boudichat Fortas. Linguist and teacher of Spanish, Catalan and English as foreign languages. She has realized sociolinguistic studies on the Amazigh language and collaborates with some entities to promote the language, especially its preservation and transmission.",
+        "contributor_farida_intro": "ⴼⴰⵔⵉⴷⴰ ⴱⵓⴷⵉⵛⴰⵜ ⴼⵓⵔⵜⴰⵙ. ⵜⴰⵎⵙⵏⵉⵍⵙⵜ ⴷ ⵜⵙⵍⵎⴰⴷⵜ ⵏ ⵜⵚⴱⴱⴰⵏⵢⵓⵜ, ⵜⴰⴽⴰⵟⴰⵍⵓⵏⵉⵜ ⴷ ⵜⵏⴳⵍⵉⵣⵜ ⴰⵎ ⵜⵓⵜⵍⴰⵢⵉⵏ ⵜⵉⴱⵕⵕⴰⵏⵉⵢⵉⵏ. ⵜⵙⴽⵔ ⵜⵉⵣⵔⴰⵡⵉⵏ ⵜⵉⵙⵏⵎⵓⵏⵉⵍⵙⵉⵏ ⵖⴼ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⵣⵉⵖⵜ ⴷ ⵍⴰ ⵜⴻⵜⵜⵎⵢⴰⵡⴰⵙ ⴰⴽⴷ ⴽⵔⴰ ⵏ ⵉⵍⵉⵜⵏ ⵖⴼ ⵓⵙⵉⵍⵉ ⵏ ⵜⵓⵜⵍⴰⵢⵜ, ⵙ ⵓⵥⵍⴰⵢ ⴰⵃⵟⵟⵓ ⵏⵏⵙ ⴷ ⵓⵙⵙⵉⵡⴹ ⵏⵏⵙ.",
         "contributor_ghizlan_photo": "",
         "contributor_ghizlan_website": "",
-        "contributor_ghizlan_intro": "Lalla Ghizlan Baryala, Amazigh cultural activist in Catalonia, collaborates with various organizations to promote the history, language, and culture of the Amazigh people in the region. She studied marketing and market research at UOC and completed a postgraduate program in Digital Marketing and e-commerce.",
+        "contributor_ghizlan_intro": "ⵍⴰⵍⵍⴰ ⵖⵉⵣⵍⴰⵏ ⴱⴰⵔⵢⴰⵍⴰ, ⵜⴰⵔⵎⴰⴷⵜ ⵜⴰⴷⵍⵙⴰⵏⵜ ⵜⴰⵎⴰⵣⵉⵖⵜ ⴷⵉ ⴽⴰⵟⴰⵍⵓⵏⵢⴰ, ⵍⴰ ⵜⴻⵜⵜⵎⵢⴰⵡⴰⵙ ⴰⴽⴷ ⵎⵏⵏⴰⵡⵜ ⵜⵎⴰⴷⴷⴰⵙⵉⵏ ⵖⴼ ⵜⵏⴽⵔⴰ ⵙ ⵓⵎⵣⵔⵓⵢ, ⵜⵓⵜⵍⴰⵢⵜ, ⴷ ⵜⴷⵍⵙⴰ ⵏ ⵓⴳⴷⵓⴷ ⴰⵎⴰⵣⵉⵖ ⴳ ⵜⵎⵏⴰⴹⵜ. ⵜⵖⵔⴰ ⴰⵙⴳⴷⵣ ⴷ ⵓⵔⵣⵣⵓ ⴰⴳⴰⴷⴰⵣ ⴳ UOC, ⵜⵙⵎⴷ ⵢⴰⵏ ⵓⵖⴰⵡⴰⵙ ⴷⴼⴼⵉⵔ ⴰⵙⵓⴼⵖ ⴳ ⵓⵙⴳⴷⵣ ⴰⵎⵓⵟⵟⵓⵏ ⴷ ⵜⵙⵖⵏⵣⵉⵜ ⵜⴰⵍⵉⴽⵟⵕⵓⵏⵉⵜ.",
         "contributor_yuxuan_photo": "",
         "contributor_yuxuan_website": "",
-        "contributor_yuxuan_intro": "Yuxuan Peng develops and maintains Awal's web page.",
+        "contributor_yuxuan_intro": "ⵢⵓⵛⵡⴰⵏ ⴱⵉⵏⴳ, ⴰⵎⵙⵖⵉⵡⵙ ⴰⵏⵎⴷⵓ, ⵍⴰ ⵉⵙⵖⵉⵡⵉⵙ ⴷ ⵍⴰ ⵜⵜ ⵉⵜⵜⵡⴷ ⵉ ⵜⴰⵙⵏⴰ ⵏ ⵓⵡⵉⴱ ⵏ ⴰⵡⴰⵍ.",
         "contact_heading": "ⵏⵢⴰⵍⴽⴰⵎ ⴷ ⴰⵡⴰⵍ",
-        "contact_info": "For inquiries, suggestions, or more information, contact us at",
+        "contact_info": "ⵉ ⵉⵙⵇⵙⵉⵜⵏ, ⵜⵉⵙⵓⵎⴰⵔ, ⵏⵖ ⵓⴳⴳⴰⵔ ⵏ ⵉⵏⵖⵎⵉⵙⵏ, ⵏⵢⴰⵍⴽⴰⵎ ⴷⵉⴷⵏⵖ ⴳ",
         "contact_text": "awal@collectivat.cat"
     },
     "terms": {
-        "contribution_terms_heading": "ⵜⵉⴼⴰⴷⵉⵡⵉⵏ",
-        "contribution_terms": "Awal is a non-profit initiative that contributes to the digitization of the Amazigh language through the collection of open-source datasets and the development of innovative tools.\\nAwal's web portal permits the free contribution of translated phrases for the objective of developing machine translation applications.\\nYou can only make contributions and validate translated phrases by signing up for the initiative. By signing up, you must agree to abide by these terms. \\nAwal also partners with Mozilla's Common Voice initiative for the collection of open-source speech datasets, enabling anyone to build voice-based applications for Tamazight. Please note that contributions to Common Voice are subject to",
+        "contribution_terms_heading": "ⵜⵉⴼⴰⴷⵉⵡⵉⵏ ⵏ ⵡⴰⵔⵔⴰⴳ",
+        "contribution_terms": "ⵉⴳⴰ ⴰⵡⴰⵍ ⵢⴰⵜ ⵜⵙⵏⵜⴰⵢⵜ ⵜⴰⵔ ⴰⵡⵜⵜⴰⵙ ⵓⵔⵔⵉⵣ ⵏⵏⴰ ⵉⵙⵙⵉⵡⵉⵙⵏ ⴳ ⵓⵙⵓⵟⵟⵏ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⵣⵉⵖⵜ ⵙ ⵓⴳⵔⵔⵓ ⵏ ⵜⴳⵔⵓⵎⵎⴰⵡⵉⵏ ⵏ ⵉⵙⴼⴽⴰ ⵏ ⵓⵙⴰⴳⵎ ⵓⵕⵥⵉⵎ ⴷ ⵓⵙⵖⵉⵡⵙ ⵏ ⵉⵎⴰⵙⵙⵏ ⵉⵎⴰⵢⵏⵓⵜⵏ.\\nⵍⴰ ⵉⵙⵙⵓⵔⵓⴳ ⵡⴰⵡⵡⵓⵔ ⵏ ⵓⵡⵉⴱ ⵏ ⴰⵡⴰⵍ ⵉ ⵡⴰⵔⵔⴰⴳ ⵏ ⵜⵡⵉⵏⴰⵙ ⵜⵜⵡⴰⵙⵓⵖⵍⵏⵉⵏ ⵙ ⵓⴱⵏⵏⴰⵏ ⵙ ⵓⵡⵜⵜⴰⵙ ⵏ ⵓⵙⵖⵉⵡⵙ ⵏ ⵜⵙⵏⵙⵉⵡⵉⵏ ⵏ ⵓⵙⵓⵖⵍ ⴰⵡⵔⵎⴰⵏ.\\nⵜⵣⵎⵔⵎ ⴰⴷ ⵜⵙⴽⴰⵔⵎ ⴰⵔⵔⴰⴳⵏ ⴷ ⵓⵣⵣⵔⴰⵢ ⵏ ⵜⵡⵉⵏⴰⵙ ⵜⵜⵡⴰⵙⵓⵖⵍⵏⵉⵏ ⵖⴰⵙ ⵙ ⵓⵣⵎⵎⴻⵎ ⴳ ⵜⵙⵏⵜⴰⵢⵜ. ⵙ ⵓⵣⵎⵎⴻⵎ, ⵉⵇⵇⴰⵏ ⴷ ⴰⴷ ⴷ ⵜⵎⵙⴰⵙⴰⴷ ⵖⴼ ⵓⵣⵔⴰⴽ ⵏ ⵜⴼⴰⴷⵉⵡⵉⵏ ⴰ. \\nⵉⴷⵔⴰ ⴰⵡⴰⵍ ⴰⵡⴷ ⴰⴽⴷ ⵜⵙⵏⵜⴰⵢⵜ ⵏ ⴽⴰⵎⵏⴼⵓⵢⵙ ⵏ ⵎⵓⵣⵉⵍⴰ ⵉ ⵓⴳⵔⵔⵓ ⵏ ⵜⴳⵔⵓⵎⵎⴰⵡⵉⵏ ⵏ ⵉⵙⴼⴽⴰ ⵏ ⵡⴰⵡⴰⵍ ⵏ ⵓⵙⴰⴳⵎ ⵓⵕⵥⵉⵎ, ⵏⵏⴰ ⵉⵜⵜⴰⵊⵊⴰⵏ ⴽⵓⵢⴰⵏ ⴰⴷ ⵉⵥⴽⵓ ⵜⵉⵙⵏⵙⵉⵡⵉⵏ ⵉⵥⴽⴰⵏ ⵖⴼ ⵡⴰⵡⴰⵍ ⵉ ⵜⵎⴰⵣⵉⵖⵜ. ⵎⴽ ⵜⵓⴼⵉⴷ, ⵖⴹⴼ ⵎⴰⵙ ⴷ ⴰⵔⵔⴰⴳ ⵉ ⴽⴰⵎⵏⴼⵓⵢⵙ ⵉⵍⵍⴰ ⴷⴷⴰⵡ",
         "mozilla_terms": "ⵜⵉⴼⴰⴷⵉⵡⵉⵏ ⵜⵓⵍⴳⵉⵏⵉⵏ ⵏ ⵎⵓⵣⵉⵍⴰ.",
-        "contribution_terms_continued": "In these terms, 'we,' 'our,' or 'us' refer to the collaborators and administrators of Awal, the non-profit initiative. 'You' or 'your' pertains to the user, contributor, or volunteer engaging with and contributing to the Awal platform.",
+        "contribution_terms_continued": "ⴳ ⵜⴼⴰⴷⵉⵡⵉⵏ ⴰ, ⵍⴰ ⵜⵜⴰⵖⵓⵍⵏ ⵜⴳⵓⵔⵉⵡⵉⵏ 'ⵏⴽⴽⵏⵉ' ⵏⵖ ⴷ 'ⵏⵏⵖ' ⵖⴼ ⵉⵎⴰⵡⴰⵙⵏ ⴷ ⵉⵎⵙⵙⵓⴳⵓⵔⵏ ⵏ ⴰⵡⴰⵍ, ⵜⴰⵙⵏⵜⴰⵢⵜ ⵜⴰⵔ ⴰⵡⵜⵜⴰⵙ ⵓⵔⵔⵉⵣ. ⵍⴰ ⵜⵜⴰⵖⵓⵍⵏⵜ ⵜⴳⵓⵔⵉⵡⵉⵏ 'ⴽⵯⵏⵏⵉ' ⵏⵖ ⴷ 'ⵏⵏⵓⵏ' ⵖⴼ ⵓⵏⵙⵙⵎⵔⵙ, ⴰⵎⴰⵔⴰⴳ, ⵏⵉⵖ ⵉⵎⵅⵙⵉ ⵏⵏⴰ ⵉⵜⵜⵎⵢⴰⴳⴳⴰⵏ ⴰⴽⴷ ⵜⵙⵉⵍⴰ ⵏ ⴰⵡⴰⵍ ⴰⵔ ⴷⴳⵙ ⵉⵜⵜⴰⵔⴳ.",
         "translation_contribution_heading": "ⴰⵔⵔⴰⴳⵏ ⵏ ⵓⵙⵓⵖⵍ",
-        "translation_contributions": "A translation contribution consists of a sentence in either Catalan, Spanish, English, Arabic, or French with its translation in Tamazight. You can translate from Tamazight to one of the other languages or vice versa. Contributions are accepted in both Tifinagh and the Latin alphabet.\\nThe contributions are stored initially in Col·lectivaT's private cloud databases and will be periodically made available with a",
-        "cc_license_link_text": "Creative Commons (CC) license",
+        "translation_contributions": "ⵢⵓⵎⴰ ⵡⴰⵔⵔⴰⴳ ⵏ ⵓⵙⵓⵖⵍ ⵢⴰⵜ ⵜⵡⵉⵏⵙⵜ ⵙ ⵜⴽⴰⵟⴰⵍⵓⵏⵉⵜ, ⵜⴰⵚⴱⴱⴰⵏⵢⵓⵜ, ⵜⴰⵏⴳⵍⵉⵣⵜ, ⵜⴰⵄⵕⴰⴱⵜ, ⵏⵉⵖ ⵜⴰⴼⵕⴰⵏⵚⵉⵚⵜ ⴰⴽⴷ ⵜⵙⵓⵖⵍⵜ ⵏⵏⵙ ⵙⵜⵎⴰⵣⵉⵖⵜ. ⵜⵣⵎⵔⴷ ⴰⴷ ⵜⵙⵙⵓⵖⵍⴷ ⵙⴳ ⵜⵎⴰⵣⵉⵖⵜ ⵖⵔ ⵢⴰⵜ ⵙⴳ ⵜⵓⵜⵍⴰⵢⵉⵏ ⴰⵏⵏ ⵢⴰⴹⵏⵉⵏ ⵏⵉⵖ ⵎⴽⴰⵏⵏ ⴰⵙ. ⵍⴰ ⵜⵜⵓⴷⴳⴳⴰⵏ ⵡⴰⵔⵔⴰⴳⵏ ⵙ ⵙⵉⵏ ⵉⵙⴽⴽⵉⵍⵏ, ⵜⵉⴼⵉⵏⴰⵖ ⴷ ⵓⵍⴰⵜⵉⵏ.\\nⵍⴰ ⵜⵜⵓⵅⵣⵉⵏⵏ ⵡⴰⵔⵔⴰⴳⵏ ⵙ ⵓⵎⵏⵣⵓⵢ ⴳ ⵜⵙⴳⵏⵓⵜ ⵜⵓⵙⵍⵉⴳⵜ ⵏ ⵜⵙⵉⵍⴰⵡⵉⵏ ⵏ ⵉⵙⴼⴽⴰ ⵏ Col·lectivaT ⴷ ⵔⴰⴷ ⵙⴰⴳⴰⵏ ⵙ ⵓⵡⴰⵍⴰⵏ ⵙ ⵢⴰⵜ",
+        "cc_license_link_text": "ⵜⵓⵔⴰⴳⵜ ⵏ ⴽⵔⵉⵢⴰⵜⵉⴼ ⴽⴰⵎⵏⵣ (CC)",
         "translation_continued_1": "ⴳ",
-        "repo_link_text": "Col·lectivaT's Hugging Face repository.",
-        "translation_continued_2": "This means that anyone can see the translations you make and use them as they like.\\nYou must refrain from including any personally identifiable information in the sentences you submit.\\nThe source sentences you translate from can either be your own creation or taken from non-copyrighted sources.\\nYour translations must also be your own creation, ensuring accuracy and respect while avoiding offensive or inappropriate content.\\nProject partners may conduct manual inspections of the contributions made by users. Failure to comply with any of these terms may result in the purging of your account and the removal of your contributions.",
-        "random_sentence_heading": "ⵜⵉⵡⵉⵏⴰⵙ ⵜⵉⴷⵀⵎⴰⵙⵉⵏ",
-        "random_sentence": "By using our “Random sentence” loading feature, you can access thousands of openly licensed sentences in all languages to translate. You can load as many times as you want and decide for yourself which one you want to translate.\\nMost of these sentences are community-uploaded sentences from the",
-        "tatoeba_platform_link_text": "ⵜⵉⵕⵉⵕⴹⵜ ⵏ ⵜⴰⵜⵓⴱⴰ",
-        "random_sentence_continued": "If you come across any sentence that you think is offensive, racist, sexist, discriminatory, hateful, or otherwise violates our community guidelines, you can use the 'Report' button, and we will promptly investigate the issue and, if necessary, take appropriate action, including the removal of the offending content from our database.",
-        "machine_translation_heading": "ⵜⴰⵎⴰⵛⵉⵏⵜ ⵏ ⵓⵙⵓⵖⵍ",
-        "machine_translation": "Awal Translate enables automatic translation between Tamazight and four languages. This feature is powered by",
-        "machine_translation_link_text": "Meta's NLLB model,",
+        "repo_link_text": "ⵓⵙⵔⵔⵓⵙ ⵏ Col·lectivaT ⴳ ⵀⴰⴳⴳⵉⵏⴼⴰⵢⵙ.",
+        "translation_continued_2": "ⵉⵏⴰⵎⴽ ⵓⵢⴰ ⵎⴰⵙ ⴷ ⵉⵣⵎⵔ ⴽⵓⵢⴰⵏ ⴰⴷ ⵉⵥⵕ ⵜⵉⵙⵓⵖⵍⵉⵏ ⵏⵏⴰ ⵜⵙⴽⵔⵎ, ⵉⵙⵙⵎⵔⵙ ⵜⵏⵜ ⵙ ⵎⴽⴷⴰ ⵉⵔⴰ.\\nⵉⵍⵍⴰ ⵖⵉⴼⵓⵏ ⴰⴷ ⵓⵔ ⵜⵙⵙⴰⵎⵓⵎ ⵉⵏⵖⵎⵉⵙⵏ ⵓⴷⵎⴰⵡⴰⵏⵏ ⵏ ⵜⵎⴰⴳⵉⵜ ⴳ ⵜⵡⵉⵏⴰⵙ ⵏⵏⴰ ⵜⴻⵜⵜⴰⵣⵏⵎ.\\nⵣⵎⵔⵏⵜ ⵜⵡⵉⵏⴰⵙ ⵜⵉⵙⵓⴳⴰⵎ ⵏⵏⴰ ⵙⴳ ⴷ ⵜⵙⵙⵓⵖⵓⵍⵎ ⴰⴷ ⴳⵏⵜ ⴰⵙⵏⴼⵍⵓⵍ ⵏⵏⵓⵏ ⵏⵖ ⴷ ⵜⵜⵢⴰⵙⴰⵢⵏⵜ ⴷ ⵙⴳ ⵉⵙⵓⴳⴰⵎ ⵓⵔ ⵉⵍⵉⵏ ⵉⵣⵔⴼⴰⵏ ⵏ ⵓⵎⴳⴰⵢ.\\nⵉⵇⵇⴰⵏ ⴷ ⴰⴷ ⴳⵏⵜ ⵜⵙⵓⵖⵍⵉⵏ ⵏⵏⵓⵏ ⴰⵡⴷ ⵏⵜⵜⵏⵜⵉ ⴰⵙⵏⴼⵍⵓⵍ ⵏⵏⵓⵏ, ⵜⴹⴽⵍⵎ ⵜⴰⵏⵖⴷⴰ ⴷ ⵓⵣⵔⴰⴽ, ⵜⴰⵏⴼⵎ ⵉ ⴳⴰⵔ ⴰⵡⴰⵍ ⵏⵉⵖ ⵜⵓⵎⴰⵢⵜ ⴷ ⵓⵔ ⵢⵓⵙⵉⵏ.\\nⵖⵉⵢⵏ ⵉⵎⴷⵔⴰⵡⵏ ⵏ ⵓⵙⵏⴼⴰⵜ ⴰⴷ ⵙⴽⵔⵏ ⵉⴳⴳⵉⵡⵙⵏ ⵏⴰⴼⵓⵙⵏ ⵉ ⵡⴰⵔⵔⴰⴳⵏ ⵏⵏⴰ ⵙⴽⵔⵏ ⵉⵏⵙⵙⵎⵔⵙⵏ. ⵉⵖⵉⵢ ⵡⴰⵔ ⴰⵎⵙⴰⵙⴰ ⴷ ⵢⴰⵜ ⵙⴳ ⵜⴼⴰⴷⵉⵡⵉⵏ ⴰⴷⴰⴷ ⵉⵙⵔⴳ ⴳ ⵜⵓⴽⴽⵙⴰ ⵏ ⵓⵎⵉⴹⴰⵏ ⵏⵏⵓⵏ ⴷ ⵓⵙⵉⵜⵜⵉ ⵏ ⵡⴰⵔⵔⴰⴳⵏ ⵏⵏⵓⵏ.",
+        "random_sentence_heading": "ⵜⵉⵡⵉⵏⴰⵙ ⵜⵉⴳⴰⵛⵓⵔⴰⵏⵉⵏ",
+        "random_sentence": "ⵙ ⵓⵙⵙⵎⵔⵙ ⵏ ⵜⵎⵥⵍⴰⵢⵜ ⵏ ⵓⵣⴷⴰⵎ ⵏⵏⵖ “ⵜⴰⵡⵉⵏⵙⵜ ⵜⴰⴳⴰⵛⵓⵔⴰⵏⵜ”, ⵜⵣⵎⵔⴷ ⴰⴷ ⵜⴰⴷⴼⴷ ⵖⵔ ⵉⴼⴹⴰⵡⵏ ⵏ ⵜⵡⵉⵏⴰⵙ ⴷⴷⴰⵡ ⵜⵓⵔⴰⴳⵜ ⵉⵕⵥⵎⵏ ⵙ ⵜⵓⵜⵍⴰⵢⵉⵏ ⴰⴽⴽⵯ ⵃⵎⴰ ⴰⴷ ⵜⵏⵜ ⵜⵙⵙⵓⵖⵍⴷ. ⵜⵣⵎⵔⴷ ⴰⴷ ⵜⵣⴷⵎⴷ ⵓⵏⵛⵜ ⵏⵏⴰ ⵜⵔⵉⴷ, ⵜⵖⵜⵙⵎ ⵙ ⵉⵎⴰⵏ ⵏⵏⵓⵏ ⵎⴰⵏⴰ ⵜⵔⴰⵎ ⴰⴷ ⵜⵜⵜⵙⵙⵓⵖⵍⵎ.\\nⴰⵎⴰⵜⴰ ⵏ ⵜⵡⵉⵏⴰⵙ ⴰⴷ ⴳⴰⵏⵜ ⵜⵉⵡⵉⵏⴰⵙ ⵏⵏⴰ ⵜⵙⵙⴽⵜⵔ ⵜⴳⵔⴰⵡⵜ ⴳ",
+        "tatoeba_platform_link_text": "ⵜⵙⵉⵍⴰ ⵏ ⵜⴰⵜⵓⴱⴰ",
+        "random_sentence_continued": "ⵎⴽ ⵜⵎⵍⴰⵍⴰⵎ ⴷ ⴽⵔⴰ ⵏ ⵜⵡⵉⵏⵙⵜ ⵏⵏⴰ ⵜⵖⴰⵍⵎ ⵎⴰⵙ ⵜⴳⴰ ⵜⴰⵔⴳⴳⵉⵎⵜ, ⵜⴰⵥⵕⴰⵥⵓⵕⵜ, ⵜⴰⵥⵕⴰⴳⵏⵓⵙⵜ, ⵜⴰⵎⵙⵏⵓⵃⵢⵓⵜ, ⵜⵓⴽⵙⵉⵏⵜ, ⵏⵉⵖ ⵜⵕⵥⴰ ⵜⴰⵔⴰⵜⵉⵏ ⵏ ⵜⴳⵔⴰⵡⵜ ⵏⵏⵖ, ⵜⵣⵎⵔⵎ ⴰⴷ ⵜⵙⵙⵎⵔⵙⵎ ⴰⴱⵔⴰ 'ⵎⵍ', ⴷ ⵏⴽⴽⵏⵉ ⵔⴰⴷ ⵏⵛⵓⴷⴷⵓ ⴳ ⵜⵎⵓⴽⵔⵉⵙⵜ ⵙ ⵓⴷⵖⵢⴰⵏ, ⵏⵙⴽⵔ ⵜⵉⵎⴳⴳⵉⵜ ⴷ ⵢⵓⵙⴰⵏ, ⴳ ⵜⴰⵎⵓ ⵜⵓⴽⴽⵙⴰ ⵏ ⴳⴰⵔ ⵜⵓⵎⴰⵢⵜ ⵙⴳ ⵜⵙⵉⵍⴰ ⵏ ⵉⵙⴼⴽⴰ ⵏⵏⵖ.",
+        "machine_translation_heading": "ⴰⵙⵓⵖⵍ ⵏ ⵜⵎⴰⵛⵉⵏⵜ",
+        "machine_translation": "ⵉⵙⵙⵓⵔⴳ ⵓⵙⵓⵖⵍ ⵏ ⴰⵡⴰⵍ ⴰⵙⵓⵖⵍ ⴰⵡⵔⵎⴰⵏ ⴳⵔ ⵜⵎⴰⵣⵉⵖⵜ ⴷ ⴽⴽⵓⵥⵜ ⵜⵓⵜⵍⴰⵢⵉⵏ. ⵜⴻⵜⵜⵡⴰⵏⵏⴰⵍ ⵜⵎⵥⵍⴰⵢⵜ ⴰⴷ ⵙ",
+        "machine_translation_link_text": "ⵓⵣⵓⵔⵜ NLLB ⵏ ⵎⵉⵜⴰ,",
         "machine_translation_continued": "an open-source model published for research purposes. However, the quality of Tamazight translations is currently quite low due to limited resources. One of the project's objectives is to enhance this model using the high-quality data we collect.\\nWhen making contributions, you have the option to use the machine translation feature to generate the translation to work with. However, it's crucial to edit this sentence appropriately to ensure accuracy. Machine-translated sentences without any edits are not accepted. Misuse of the machine translation feature may lead to the removal of your contributed phrases or even the suspension of your user account.",
         "validation_heading": "ⴰⵣⵣⵔⴰⵢ ⵏ ⵜⵙⵓⵖⵍⵜ",
         "validation": "Awal also allows community validation of translated phrases. This is to ensure accuracy of the sentences we collect which is essential in obtaining accurate models. You can accept good translations and reject the ones with containing major errors, misspellings and mistranslations. Minor errors and variant differences shouldn't be counted as errors.",
@@ -311,16 +310,16 @@
     },
     "faq": {
         "q1": {
-            "q": "I'm not confident in my writing skills in Catalan/Spanish/French/Arabic. What should I do?",
-            "a": "No need to worry! If you have a good understanding of the language, you can still make valuable contributions. Utilize the \"Random Sentence\" button to load a source sentence automatically, and then provide its translation into Tamazight. Additionally, you're welcome to extract sentences from non-copyrighted sources, such as Wikipedia, to diversify the type of translations we collect."
+            "q": "Je ne suis pas sûr de mes compétences en écriture en catalan/espagnol/français/arabe. Que dois-je faire ?",
+            "a": "Pas d'inquiétude ! Si vous avez une bonne compréhension de la langue, vous pouvez toujours faire des contributions précieuses. Utilisez le bouton 'Phrase Aléatoire' pour charger automatiquement une phrase source, puis fournissez sa traduction en tamazight. De plus, vous pouvez extraire des phrases de sources non soumises à des droits d'auteur, telles que Wikipédia, pour diversifier le type de traductions que nous recueillons."
         },
         "q2": {
-            "q": "I fixed a mistake in the machine translation output, but it still makes the same error. Is my contribution not being saved?",
-            "a": "Your contributions are saved in our database, but they won't immediately affect the machine translation. The improvement will happen in a later phase, after we collect enough quality translations from contributors like you. So, your efforts are valuable and will contribute to enhancing the translation engine over time."
+            "q": "J'ai corrigé une erreur dans la sortie de la traduction automatique, mais elle continue de faire la même erreur. Ma contribution n'est-elle pas enregistrée ?",
+            "a": "Vos corrections sont enregistrées dans notre base de données, mais elles n'affecteront pas immédiatement la traduction automatique. L'amélioration se produira à une phase ultérieure, après avoir recueilli suffisamment de traductions de qualité de contributeurs comme vous. Ainsi, vos efforts sont précieux et contribueront à améliorer le moteur de traduction avec le temps."
         },
         "q3": {
             "q": "ⵎⴰⵏⵎⴽ ⵙ ⵍⴰ ⵜⵜⵓⵙⵙⵉⴹⵉⵏⵏⵜ ⵜⵏⵇⵇⴰⴹ ⵏ ⵡⴰⵔⵔⴰⴳ ⵉ ⵜⵙⵓⵖⵍⵉⵏ?",
-            "a": "Your contribution points are determined by the character length of both the source sentence you input and its translation. If you manually input the source and translate from scratch (i.e., without using 'Pre-translate'), your points will be the total characters in both sentences. If you use the machine translation engine by clicking 'Pre-translate,' your points for the translation will be based on the number of character edits you make to the machine-translated output. If you load a source phrase from the database using 'Random sentence,' you'll only earn points for your translation, not the source sentence."
+            "a": "Vos points de contribution sont déterminés par la longueur en caractères à la fois de la phrase source que vous saisissez et de sa traduction. Si vous saisissez manuellement la source et traduisez de zéro (c'est-à-dire sans utiliser 'Pré-traduire'), vos points seront la somme des caractères des deux phrases. Si vous utilisez le moteur de traduction automatique en cliquant sur 'Pré-traduire', vos points pour la traduction seront basés sur le nombre d'éditions de caractères que vous apportez à la sortie de la traduction automatique. Si vous chargez une phrase source depuis la base de données avec 'Phrase aléatoire', vous ne gagnerez des points que pour votre traduction, pas pour la phrase source."
         },
         "q4": {
             "q": "ⵉⵙ ⵍⴰ ⵜⵜⴰⵔⴳⵖ ⵜⵉⵏⵇⵇⴰⴹ ⵙⴳ ⵡⴰⵔⵔⴰⴳⵏ ⵉⴳⵕⴹⴰⵏⵏ ⴳ ⴽⴰⵎⵏⴼⵓⵢⵙ?",
@@ -339,7 +338,7 @@
         "c1": {
             "heading": "ⴰⵎⴰⵕⴰⵟⵓⵏ ⵏ ⵉⵙⴼⴽⴰ ⵏ \"ⴰⵡⴰⵍ\" ⵎⵓⵏⴰⵜ ⵉ ⵜⵎⴰⵣⵉⵖⵜ!",
             "body": "ⵍⴽⵎⴰⵜ ⴰⵏⵖ ⴳ 17 ⴱⵕⴰⵢⵕ, 11:00 ⵏ ⵜⴰⵢⵍⴳⵉ - 8:00 ⵏ ⵜⵎⴷⴷⵉⵜ ⴳ ⵓⵙⵖⵉⵎ ⵏ CIEMEN ⴳ ⴱⴰⵕⵙⵉⵍⵓⵏⴰ, ⵉ ⵢⴰⵜ ⵜⵎⴰⴳⵍⴰⵢⵜ ⵜⴰⵎⴳⵔⵓⵜ ⵉ ⵓⵙⵙⴰⵔⵡ ⵏ ⵉⵙⴼⴽⴰ ⵉ ⵓⵙⴱⵓⵖⵍⵓ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⵣⵉⵖⵜ. ⴷⵔⵓ ⴳ ⵓⵃⵟⵟⵓ ⴷ ⵓⵙⵉⵍⵉ ⵏ ⵜⴷⵍⵙⴰ ⵜⴰⵎⴰⵣⵉⵖⵜ. ⵍⴰ ⵏⵙⴱⵔⵔⴰⴽ ⵙ ⵉⵡⵜⴰⵢⵏ ⴰⴽⴽⵯ, ⵉⴳⵏⵓⵙⵏ ⴰⴽⴽⵯ, ⴷ ⵜⵎⵣⴰⵔⴰⵢⵉⵏ ⴰⴽⴽⵯ!",
-            "link": "https://www.facebook.com/events/952971629738855/"
+            "link": "https://twitter.com/awaldigital"
         },
         "c2": {
             "heading": "\"ⴰⵡⴰⵍ\" ⴳ ⵓⴱⵍⵓⴳ ⵏ Col·lectivaT",
