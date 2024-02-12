@@ -58,6 +58,15 @@ const ResourcesPage = () => {
                         {d?.resources.TALAM_groups}
                     </Link>
                 </li>
+                <li>
+                    <Link
+                        scroll={false}
+                        target="_blank"
+                        href={'https://darija-open-dataset.github.io/'}
+                    >
+                        {d?.resources.darija_open}
+                    </Link>
+                </li>
             </ol>
         </div>
     );
