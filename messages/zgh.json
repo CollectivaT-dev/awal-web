@@ -304,22 +304,24 @@
     "resources": {
         "resources_heading": "ⵉⵙⵓⴳⴰⵎ",
         "awal_huggingface": "Awal project can be found in Col·lectivaT's huggingface repository",
+        "NLLB": "NLLB-200 is a set of multilingual machine translation models created by Meta. It's the first open source model that includes Tamazight. The version used in this website is the 600 million parameter model.",
         "tamazight_NLP_huggingface": "Tamazight NLP group publishes open datasets and models in huggingface",
         "tamazight_wiki": "ⵡⵉⴽⵉⴱⵉⴷⵢⴰ ⵜⴰⵎⴰⵣⵉⵖⵜ",
-        "TALAM_groups": "TALAM portal groups applications in relation with automatic processing of Tamazight."
+        "TALAM_groups": "TALAM portal groups applications in relation with automatic processing of Tamazight.",
+        "darija_open": "Darija Open Dataset is an open source collaborative project for Darija-English machine translation."
     },
     "faq": {
         "q1": {
-            "q": "Je ne suis pas sûr de mes compétences en écriture en catalan/espagnol/français/arabe. Que dois-je faire ?",
-            "a": "Pas d'inquiétude ! Si vous avez une bonne compréhension de la langue, vous pouvez toujours faire des contributions précieuses. Utilisez le bouton 'Phrase Aléatoire' pour charger automatiquement une phrase source, puis fournissez sa traduction en tamazight. De plus, vous pouvez extraire des phrases de sources non soumises à des droits d'auteur, telles que Wikipédia, pour diversifier le type de traductions que nous recueillons."
+            "q": "I'm not confident in my writing skills in Catalan/Spanish/French/Arabic. What should I do?",
+            "a": "No need to worry! If you have a good understanding of the language, you can still make valuable contributions. Utilize the \"Random Sentence\" button to load a source sentence automatically, and then provide its translation into Tamazight. Additionally, you're welcome to extract sentences from non-copyrighted sources, such as Wikipedia, to diversify the type of translations we collect."
         },
         "q2": {
-            "q": "J'ai corrigé une erreur dans la sortie de la traduction automatique, mais elle continue de faire la même erreur. Ma contribution n'est-elle pas enregistrée ?",
-            "a": "Vos corrections sont enregistrées dans notre base de données, mais elles n'affecteront pas immédiatement la traduction automatique. L'amélioration se produira à une phase ultérieure, après avoir recueilli suffisamment de traductions de qualité de contributeurs comme vous. Ainsi, vos efforts sont précieux et contribueront à améliorer le moteur de traduction avec le temps."
+            "q": "I fixed a mistake in the machine translation output, but it still makes the same error. Is my contribution not being saved?",
+            "a": "Your corrections are saved in our database, but they won't immediately affect the machine translation. The improvement will happen in a later phase, after we collect enough quality translations from contributors like you. So, your efforts are valuable and will contribute to enhancing the translation engine over time."
         },
         "q3": {
             "q": "ⵎⴰⵏⵎⴽ ⵙ ⵍⴰ ⵜⵜⵓⵙⵙⵉⴹⵉⵏⵏⵜ ⵜⵏⵇⵇⴰⴹ ⵏ ⵡⴰⵔⵔⴰⴳ ⵉ ⵜⵙⵓⵖⵍⵉⵏ?",
-            "a": "Vos points de contribution sont déterminés par la longueur en caractères à la fois de la phrase source que vous saisissez et de sa traduction. Si vous saisissez manuellement la source et traduisez de zéro (c'est-à-dire sans utiliser 'Pré-traduire'), vos points seront la somme des caractères des deux phrases. Si vous utilisez le moteur de traduction automatique en cliquant sur 'Pré-traduire', vos points pour la traduction seront basés sur le nombre d'éditions de caractères que vous apportez à la sortie de la traduction automatique. Si vous chargez une phrase source depuis la base de données avec 'Phrase aléatoire', vous ne gagnerez des points que pour votre traduction, pas pour la phrase source."
+            "a": "Your contribution points are determined by the character length of both the source sentence you input and its translation. If you manually input the source and translate from scratch (i.e., without using 'Pre-translate'), your points will be the total characters in both sentences. If you use the machine translation engine by clicking 'Pre-translate,' your points for the translation will be based on the number of character edits you make to the machine-translated output. If you load a source phrase from the database using 'Random sentence,' you'll only earn points for your translation, not the source sentence."
         },
         "q4": {
             "q": "ⵉⵙ ⵍⴰ ⵜⵜⴰⵔⴳⵖ ⵜⵉⵏⵇⵇⴰⴹ ⵙⴳ ⵡⴰⵔⵔⴰⴳⵏ ⵉⴳⵕⴹⴰⵏⵏ ⴳ ⴽⴰⵎⵏⴼⵓⵢⵙ?",

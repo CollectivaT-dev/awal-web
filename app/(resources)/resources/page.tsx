@@ -35,6 +35,17 @@ const ResourcesPage = () => {
                     <Link
                         scroll={false}
                         target="_blank"
+                        href={
+                            'https://huggingface.co/facebook/nllb-200-distilled-600M'
+                        }
+                    >
+                        {d?.resources.NLLB}
+                    </Link>
+                </li>
+                <li>
+                    <Link
+                        scroll={false}
+                        target="_blank"
                         href={'https://huggingface.co/Tamazight-NLP'}
                     >
                         {d?.resources.tamazight_NLP_huggingface}
