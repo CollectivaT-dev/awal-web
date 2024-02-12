@@ -82,7 +82,7 @@
         "alert_select_variant": "Please select your proficiency level",
         "success_contribution": "Thank you for your contribution! You've just earned",
         "success_contribution_points": "contribution points.",
-        "alert_input": "Please enter more than one character.",
+        "alert_input": "Please enter the variant(s) you speak or uncheck the \"Other\" box.",
         "alert_api": "Translate engine not responsive. Please try again later.",
         "success_translate": "Input phrase pre-translated. Please revise and correct the translation before submitting.",
         "success_update": "Profile updated successfully.",
@@ -336,9 +336,9 @@
     },
     "carousel": {
         "c1": {
-            "heading": "Awal Data Marathon: Unite for Tamazight!",
+            "heading": "Awal Linguistic Marathon: Unite for Tamazight!",
             "body": "Join us on February 17, 11:00 am - 8:00 pm at CIEMEN headquarters in Barcelona or virtually, for a collective effort in generating data to enrich the Tamazight language. Be part of the preservation and promotion of Amazigh culture. All ages, genders, and dialects welcome!",
-            "link": "https://twitter.com/awaldigital"
+            "link": "https://www.facebook.com/events/952971629738855/"
         },
         "c2": {
             "heading": "AWAL on Col·lectivaT's blog",
