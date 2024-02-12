@@ -303,10 +303,12 @@
     },
     "resources": {
         "resources_heading": "Resources",
-        "awal_huggingface": "Awal project can be found in Col·lectivaT's huggingface repository",
-        "tamazight_NLP_huggingface": "Tamazight NLP group publishes open datasets and models in huggingface",
+        "awal_huggingface": "Datasets collected as part of Awal project can be found in Col·lectivaT's Hugging Face repository.",
+        "NLLB": "NLLB-200 is a set of multilingual machine translation models created by Meta. It's the first open source model that includes Tamazight. The version used in this website is the 600 million parameter model.",
+        "tamazight_NLP_huggingface": "Tamazight NLP group publishes open datasets and models in Hugging Face.",
         "tamazight_wiki": "Tamazight wikipedia",
-        "TALAM_groups": "TALAM portal groups applications in relation with automatic processing of Tamazight. "
+        "TALAM_groups": "TALAM portal groups applications in relation with automatic processing of Tamazight.",
+        "darija_open": "Darija Open Dataset is an open source collaborative project for Darija-English machine translation."
     },
     "faq": {
         "q1": {

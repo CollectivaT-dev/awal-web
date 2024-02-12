@@ -35,6 +35,17 @@ const ResourcesPage = () => {
                     <Link
                         scroll={false}
                         target="_blank"
+                        href={
+                            'https://huggingface.co/facebook/nllb-200-distilled-600M'
+                        }
+                    >
+                        {d?.resources.NLLB}
+                    </Link>
+                </li>
+                <li>
+                    <Link
+                        scroll={false}
+                        target="_blank"
                         href={'https://huggingface.co/Tamazight-NLP'}
                     >
                         {d?.resources.tamazight_NLP_huggingface}
@@ -56,6 +67,15 @@ const ResourcesPage = () => {
                         href={'https://tal.ircam.ma/talam/'}
                     >
                         {d?.resources.TALAM_groups}
+                    </Link>
+                </li>
+                <li>
+                    <Link
+                        scroll={false}
+                        target="_blank"
+                        href={'https://darija-open-dataset.github.io/'}
+                    >
+                        {d?.resources.darija_open}
                     </Link>
                 </li>
             </ol>

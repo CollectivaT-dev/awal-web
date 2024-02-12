@@ -304,9 +304,11 @@
     "resources": {
         "resources_heading": "Ressources",
         "awal_huggingface": "Le projet Awal peut être trouvé dans le référentiel Hugging Face de Col·lectivaT",
+        "NLLB": "NLLB-200 est un ensemble de modèles de traduction automatique multilingues créés par Meta. C'est le premier modèle open source qui inclut le tamazight. La version utilisée sur ce site web est le modèle de 600 millions de paramètres.",
         "tamazight_NLP_huggingface": "Le groupe Tamazight NLP publie des ensembles de données et des modèles ouverts sur Hugging Face",
         "tamazight_wiki": "Wikipédia en Tamazight",
-        "TALAM_groups": "Le portail TALAM regroupe des applications liées au traitement automatique du Tamazight"
+        "TALAM_groups": "Le portail TALAM regroupe des applications liées au traitement automatique du Tamazight",
+        "darija_open": "Darija Open Dataset est un projet collaboratif open source pour la traduction automatique darija-anglais."
     },
     "faq": {
         "q1": {
