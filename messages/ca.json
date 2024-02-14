@@ -50,12 +50,7 @@
             "type_to_translate": "Introduïu aquí el text que voleu traduir...",
             "translation_box": "La traducció apareixerà aquí..."
         },
-        "notice": "Aquesta aplicació es basa en un motor de traducció basat en la recerca que moltes vegades proporciona resultats inexactes. Si parles amazic, pots ajudar-nos a millorar i habilitar més variants contribuint amb traduccions.",
-        "help": "Com funciona?",
-        "help_pop_up": {
-            "header": "Com aportar traduccions?",
-            "description": "lorem ipsum "
-        }
+        "notice": "Aquesta aplicació es basa en un motor de traducció basat en la recerca que moltes vegades proporciona resultats inexactes. Si parles amazic, pots ajudar-nos a millorar i habilitar més variants contribuint amb traduccions."
     },
     "footer": {
         "legal": "Avís legal",
