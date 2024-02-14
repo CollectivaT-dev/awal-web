@@ -14,12 +14,12 @@ export default function HomepageLayout({
 }) {
     const [totalEntries, setTotalEntries] = useState(0);
     const [topTen, setTopTen] = useState([]);
-	const [totalValidation, setTotalValidation] = useState(0)
+    const [totalValidation, setTotalValidation] = useState(0);
     const apiUrl =
         process.env.NODE_ENV === 'development'
             ? 'http://localhost:3000'
             : `https://awaldigital.org`;
-console.log(apiUrl)
+    console.log(apiUrl);
     // get total entries
     useEffect(() => {
         const fetchData = async () => {
@@ -27,10 +27,10 @@ console.log(apiUrl)
                 // delete dependency array to fetch on page refresh
                 const req = await axios.get(`${apiUrl}/api/stats`);
                 console.log(req.data.topTen);
-				console.log(req.data.totalValidation)
+                console.log(req.data.totalValidation);
                 setTotalEntries(req.data.totalEntries);
                 setTopTen(req.data.topTen);
-				setTotalValidation(req.data.totalValidation)
+                setTotalValidation(req.data.totalValidation);
             } catch (error) {
                 console.log('Error fetching data:', error);
             }
@@ -38,14 +38,17 @@ console.log(apiUrl)
         fetchData();
     }, [apiUrl]);
     console.log(topTen);
-	console.log(totalValidation)
+    console.log(totalValidation);
     return (
         <div className="flex flex-col items-center justify-center">
             <ClientProvider>
-                <Translation totalEntries={totalEntries} totalValidation={totalValidation} />
+                <Translation
+                    totalEntries={totalEntries}
+                    totalValidation={totalValidation}
+                />
                 <ProjectIntro />
                 <EventCarousel />
-                <Stats users={topTen} />
+                 <Stats users={topTen} />
                 {children}
             </ClientProvider>
         </div>
