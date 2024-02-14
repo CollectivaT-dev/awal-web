@@ -78,6 +78,15 @@ const ResourcesPage = () => {
                         {d?.resources.darija_open}
                     </Link>
                 </li>
+                <li>
+                    <Link
+                        scroll={false}
+                        target="_blank"
+                        href={'https://youtube.com/@TamazightForAll?si=v465LDveFfj6U0Fu'}
+                    >
+                        {d?.resources.tamazight_for_all}
+                    </Link>
+                </li>
             </ol>
         </div>
     );

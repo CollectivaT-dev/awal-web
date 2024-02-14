@@ -335,6 +335,7 @@ export interface MessagesProps {
         TALAM_groups: string;
         tamazight_NLP_huggingface: string;
         darija_open: string;
+        tamazight_for_all: string;
     };
     faq: {
         q1: {

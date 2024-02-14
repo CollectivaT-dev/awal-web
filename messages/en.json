@@ -303,7 +303,8 @@
         "tamazight_NLP_huggingface": "Tamazight NLP group publishes open datasets and models in Hugging Face.",
         "tamazight_wiki": "Tamazight wikipedia",
         "TALAM_groups": "TALAM portal groups applications in relation with automatic processing of Tamazight.",
-        "darija_open": "Darija Open Dataset is an open source collaborative project for Darija-English machine translation. Awal's Darija sentence database is based on this dataset. "
+        "darija_open": "Darija Open Dataset is an open source collaborative project for Darija-English machine translation. Awal's Darija sentence database is based on this dataset. ",
+        "tamazight_for_all": "Tamazight For All is a YouTube channel where you can find lessons, discussions, and short stories in Tamazight, along with insights into Amazigh culture."
     },
     "faq": {
         "q1": {
