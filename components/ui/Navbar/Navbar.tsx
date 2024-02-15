@@ -19,6 +19,9 @@ import {
     DropdownMenuTrigger,
 } from '../dropdown-menu';
 import { Globe } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
+import Loading from '@/loading';
 
 const AppBar = () => {
     const { data: session, status } = useSession();
@@ -28,6 +31,8 @@ const AppBar = () => {
     // get locale and set new local
     const { locale, setLocale } = useLocaleStore();
     const [d, setD] = useState<MessagesProps>();
+    const [loading, setLoading] = useState(false);
+    const router = useRouter();
     useEffect(() => {
         const fetchDictionary = async () => {
             const m = await getDictionary(locale);
@@ -35,9 +40,20 @@ const AppBar = () => {
         };
         fetchDictionary();
     }, [locale]);
-
+const url = process.env.NODE_ENV === 'development'? 'http://localhost:3000' : 'https://awaldigital.org'
     const changeLocale = (newLocale: string) => {
         setLocale(newLocale);
+        console.log(newLocale);
+        try {
+            setLoading(true);
+            router.push(`${url}/?lang=${newLocale}`, {
+                scroll: false,
+            });
+        } catch (error: any) {
+            toast.error(error.message);
+        } finally {
+            setLoading(false);
+        }
     };
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -66,9 +82,12 @@ const AppBar = () => {
     const handleClick = () => {
         setOpen(!open);
     };
+    if (loading) {
+        return <Loading />;
+    }
     return (
         <div
-            className="relative flex flex-row   items-center gap-4 p-4 " // Use flex-col and flex-row classes for responsive behavior
+            className="relative flex flex-row items-center gap-4 p-4 " // Use flex-col and flex-row classes for responsive behavior
             ref={menuRef}
         >
             {/* menu button */}

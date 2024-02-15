@@ -12,6 +12,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { headers } from 'next/headers';
 import { Suspense } from 'react';
 import Loading from './loading';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -20,12 +21,12 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-    children,
+    children
 }: {
     children: React.ReactNode;
 }) {
     const Locale = headers().get('Accept-Language')?.slice(0, 2) ?? 'ca';
-
+console.log(headers())
     return (
         <html lang={Locale}>
             <body className={inter.className}>
