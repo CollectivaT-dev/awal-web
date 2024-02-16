@@ -1,4 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+
 
 export { default } from 'next-auth/middleware';
 
@@ -10,7 +12,7 @@ export const config = {
 const PUBLIC_FILE = /\.(.*)$/
 
 export async function middleware(req: NextRequest) {
-
+	
   if (
     req.nextUrl.pathname.startsWith('/_next') ||
     req.nextUrl.pathname.includes('/api/') ||

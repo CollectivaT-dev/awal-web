@@ -6,6 +6,9 @@ import ClientProvider from '@/providers/ClientProvider';
 import EventCarousel from './components/EventCarousel';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useSearchParams } from 'next/navigation';
+import useLocaleStore from '../hooks/languageStore';
+import { useRouter } from 'next/navigation';
 
 export default function HomepageLayout({
     children,
@@ -20,6 +23,13 @@ export default function HomepageLayout({
             ? 'http://localhost:3000'
             : `https://awaldigital.org`;
     console.log(apiUrl);
+    const { setLocale } = useLocaleStore();
+    const lang = useSearchParams().get('lang') || 'ca';
+    useEffect(() => {
+        if (lang) {
+            setLocale(lang);
+        }
+    }, [lang, setLocale]);
     // get total entries
     useEffect(() => {
         const fetchData = async () => {
@@ -48,7 +58,7 @@ export default function HomepageLayout({
                 />
                 <ProjectIntro />
                 <EventCarousel />
-                 <Stats users={topTen} />
+                <Stats users={topTen} />
                 {children}
             </ClientProvider>
         </div>
