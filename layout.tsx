@@ -13,7 +13,7 @@ import Loading from './loading';
 const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
     title: 'Awal',
-    description: 'Internet parla l\'Amazic!',
+    description: "Internet parla l'Amazic!",
 };
 
 export default function RootLayout({
@@ -30,7 +30,6 @@ export default function RootLayout({
                     <ClientProvider>
                         <SessionProviders>
                             <ToastProvider />
-                            {/* <RegisterModal/> */}
                             <Suspense fallback={<Loading />}>
                                 <Navbar />
                             </Suspense>
