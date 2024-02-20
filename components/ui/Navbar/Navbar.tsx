@@ -40,7 +40,10 @@ const AppBar = () => {
         };
         fetchDictionary();
     }, [locale]);
-const url = process.env.NODE_ENV === 'development'? 'http://localhost:3000' : 'https://awaldigital.org'
+    const url =
+        process.env.NODE_ENV === 'development'
+            ? 'http://localhost:3000'
+            : 'https://awaldigital.org';
     const changeLocale = (newLocale: string) => {
         setLocale(newLocale);
         console.log(newLocale);

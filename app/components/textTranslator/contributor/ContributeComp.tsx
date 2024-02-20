@@ -778,8 +778,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                                             <AlertDialogTitle className="flex items-center justify-center">
                                                 <h4 className="text-sm font-semibold capitalize">
                                                     {
-                                                        d?.translator
-                                                            .help_pop_up.header
+                                                        d?.how_to_contribute_heading
                                                     }
                                                 </h4>
                                             </AlertDialogTitle>
