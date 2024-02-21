@@ -63,12 +63,15 @@ const AppBar = () => {
         }
     };
     console.log(user);
-    // testing
+	// hardcoded for now, need to fetch from prisma later according to sub status
+	const mailingList = ['yuxuan<yuxuan.peng@pm.me>']
+    // publication temp button
     const handleEmail = async () => {
         try {
             await SendEmail({
                 from: 'Awal<do-not-reply@awaldigital.org>',
-                to: ['yuxuan.peng@pm.me'],
+				// ! need to change for publication
+                to:mailingList,
                 subject: 'test email',
                 react: Publication({
                     firstName: 'yuxuan',

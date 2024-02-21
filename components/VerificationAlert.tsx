@@ -1,9 +1,5 @@
 'use client';
-import prisma from '@/lib/prisma';
-import { Button } from './ui/button';
-import crypto from 'crypto';
-import { SendEmail } from '@/app/actions/emails/SendEmail';
-import EmailVerification from '@/app/components/Emails/EmailVerification';
+
 import axios from 'axios';
 import { useState } from 'react';
 import { X } from 'lucide-react';
@@ -12,21 +8,19 @@ interface VerificationAlertProps {
     data: { userId?: string; email: string; isVerified?: boolean };
 }
 const VerificationAlert: React.FC<VerificationAlertProps> = ({ data }) => {
-    const emailVerificationToken = crypto
-        .randomBytes(32)
-        .toString('base64')
-        .replace(/\+/g, '-')
-        .replace(/\//g, '_')
-        .replace(/=+$/, '');
-    console.log(data);
+    // console.log(data);
+    const url =
+        process.env.NODE_ENV === 'development'
+            ? 'http://localhost:3000'
+            : 'https://awaldigital.org';
     const [open, setOpen] = useState(true);
     const handleVerification = async () => {
         try {
             const res = await axios.post(
-                'http://localhost:3000/api/auth/verify-email',
+                `${url}/api/auth/verify-email`,
                 JSON.stringify(data.userId),
             );
-            console.log(res)
+            console.log(res);
         } catch (error) {
             console.log(error);
         }

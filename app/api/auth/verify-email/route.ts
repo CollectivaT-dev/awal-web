@@ -29,7 +29,7 @@ export async function POST(req: Request) {
                 await SendEmail({
                     from: 'Awal Email Verification<do-not-reply@awaldigital.org>',
                     //! need to change
-                    to: ['yuxuan.peng@pm.me'],
+                    to: [user.email],
                     subject: 'Verify your email address',
                     react: EmailVerification({
                         email: user.email!,

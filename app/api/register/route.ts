@@ -13,12 +13,11 @@ import EmailVerification from '@/app/components/Emails/EmailVerification';
 export async function POST(req: Request) {
     try {
         const body = await req.json();
-        console.log(body);
+        // console.log(body);
         // Check if username already exists
         const existingUsernameUser = await prisma.user.findUnique({
             where: { username: body.username.toLowerCase().replace(/\s/g, '') },
         });
-
         if (existingUsernameUser) {
             return new NextResponse(
                 JSON.stringify({ error: 'Username already in use' }),
@@ -45,8 +44,12 @@ export async function POST(req: Request) {
                 },
             );
         }
-
-        console.log(existingUsernameUser, existingEmailUser);
+        const emailVerificationToken = crypto
+            .randomBytes(32)
+            .toString('base64url');
+        const resetPasswordToken = crypto.randomBytes(32).toString('base64url');
+        // console.log(emailVerificationToken);
+        // console.log(existingUsernameUser, existingEmailUser);
         const user = await prisma.user.create({
             data: {
                 username: body.username,
@@ -56,25 +59,25 @@ export async function POST(req: Request) {
                 isSubscribed: body.isSubscribed,
                 score: 0,
                 gender: 'other',
+                emailVerificationToken,
+                resetPasswordToken,
             },
         });
-        console.log(user);
-        console.log(user);
-        const emailVerificationToken = crypto
-            .randomBytes(32)
-            .toString('base64url');
-        const today = new Date();
-        await prisma.user.update({
-            where: { id: user.id },
-            data: { emailVerificationToken },
-        });
+        // console.log(user);
+        // console.log(user);
 
-        await SendEmail({
-            from: '',
+        SendEmail({
+            from: 'Awal Email Verification<do-not-reply@awaldigital.org>',
             to: [user.email],
             subject: 'Verify your email',
-            react:EmailVerification({ email: user.email!, emailVerificationToken: emailVerificationToken }),
-        });
+            react: EmailVerification({
+                email: user.email!,
+                emailVerificationToken,
+            }),
+        })
+            .then(() => {})
+            .catch((error) => {});
+
         const { password, ...userWithoutPassword } = user;
 
         return new NextResponse(JSON.stringify(userWithoutPassword), {

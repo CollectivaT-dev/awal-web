@@ -12,22 +12,29 @@ const VerifyEmailPage = async ({ searchParams }: VerifyEmailPageProps) => {
                 emailVerificationToken: searchParams.token as string,
             },
         });
+        console.log(user);
         if (!user) {
             return { message: 'User not found', status: 404 };
         }
 
-        await prisma.user.update({
+        const updatedUser = await prisma.user.update({
             where: {
                 emailVerificationToken: searchParams.token as string,
             },
             data: {
                 isVerified: true,
-                emailVerificationToken: null,
+                emailVerificationToken: `${searchParams.token}_verified`,
+            },
+            select: {
+                isVerified: true,
             },
         });
-
+        // console.log(updatedUser);
+        // if (user?.isVerified) {
+        //     return;
+        // }
         return (
-            <div>
+            <div className="h-screen">
                 <h1>Thank your Verifying the Email</h1>
                 <a href={'/'} className="underline">
                     HomePage
@@ -36,9 +43,9 @@ const VerifyEmailPage = async ({ searchParams }: VerifyEmailPageProps) => {
         );
     } else {
         return (
-            <div>
+            <div className="h-screen ">
                 <h1>Verify Email</h1>
-                No email verification token found. Check your email.
+                Email has been verified. Check your email for instructions,
             </div>
         );
     }
