@@ -321,9 +321,13 @@ const AppBar = () => {
                     </motion.div>
                 )}
             </div>
-            {!user?.isVerified && user?.email?.includes('test') && (
+            {!user?.isVerified||user?.email?.includes('test') && (
                 <VerificationAlert
-                    data={{ userId: user?.id, email: user?.email }}
+                    data={{
+                        userId: user?.id,
+                        email: user?.email,
+                        isVerified: user?.isVerified,
+                    }}
                 />
             )}
         </>

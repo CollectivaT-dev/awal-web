@@ -5,8 +5,11 @@ import crypto from 'crypto';
 import { SendEmail } from '@/app/actions/emails/SendEmail';
 import EmailVerification from '@/app/components/Emails/EmailVerification';
 import axios from 'axios';
+import { useState } from 'react';
+import { X } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
 interface VerificationAlertProps {
-    data: { userId?: string; email: string };
+    data: { userId?: string; email: string; isVerified?: boolean };
 }
 const VerificationAlert: React.FC<VerificationAlertProps> = ({ data }) => {
     const emailVerificationToken = crypto
@@ -15,32 +18,43 @@ const VerificationAlert: React.FC<VerificationAlertProps> = ({ data }) => {
         .replace(/\+/g, '-')
         .replace(/\//g, '_')
         .replace(/=+$/, '');
-    console.log(data.userId);
-
+    console.log(data);
+    const [open, setOpen] = useState(true);
     const handleVerification = async () => {
         try {
             const res = await axios.post(
                 'http://localhost:3000/api/auth/verify-email',
-                data.userId,
+                JSON.stringify(data.userId),
             );
-            console.log(res);
-            // await SendEmail({
-            //     from: 'Awal Email Verification<do-not-reply@awaldigital.org>',
-            //     to: [data.email],
-            //     subject: 'Verify your email address',
-            //     react: EmailVerification({
-            //         email: data.email,
-            //         emailVerificationToken,
-            //     }),
-            // });
+            console.log(res)
         } catch (error) {
             console.log(error);
         }
     };
     return (
-        <div>
-            <Button onClick={handleVerification}>d</Button>
-        </div>
+        <AnimatePresence>
+            {open && (
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <div className="flex flex-row justify-center items-center py-1 bg-slate-300">
+                        <span className="mx-auto">
+                            Please{' '}
+                            <span
+                                className="underline cursor-pointer"
+                                onClick={handleVerification}
+                            >
+                                verify your email
+                            </span>
+                        </span>
+                        <X className="mx-2" onClick={() => setOpen(false)} />
+                    </div>
+                </motion.div>
+            )}
+        </AnimatePresence>
     );
 };
 export default VerificationAlert;

@@ -18,13 +18,12 @@ const EmailVerification: React.FC<EmailVerificationProps> = ({
                 welcome to AWAL, verify your <b>{email} </b>
             </h1>
             <p>click on the link below to verify your email address.</p>
-            <Link
-                href={`${url}/api/auth/verify-email?t=${emailVerificationToken}`}
-                scroll={false}
+            <a
+                href={`${url}/verification?token=${emailVerificationToken}`}
                 target="_blank"
             >
                 Click Here
-            </Link>
+            </a>
         </div>
     );
 };
