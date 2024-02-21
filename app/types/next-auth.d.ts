@@ -7,6 +7,7 @@ declare module 'next-auth' {
         score?: number;
 		username?: string;
 		gender?:string
+		isVerified?: boolean
     }
     interface Session {
         user?: User;

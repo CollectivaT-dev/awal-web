@@ -12,7 +12,10 @@ export const resetPassword = async (email: string) => {
     });
     console.log(user);
     if (!user) {
-        return JSON.stringify({ message: 'User not found' }), { status: 404 };
+        return (
+            JSON.stringify({ message: 'User not found', status: 404 }),
+            { message: 'User not found', status: 404 }
+        );
     }
     // generate token
     const resetPasswordToken = crypto.randomBytes(32).toString('base64url');
@@ -32,7 +35,7 @@ export const resetPassword = async (email: string) => {
     });
     try {
         await SendEmail({
-            from: 'admin<admin@awaldigital.org>',
+            from: 'Awal Reset Password<do-not-reply@awaldigital.org>',
             to: [user.email],
             subject: 'Reset password',
             react: ResetPassword({
@@ -40,12 +43,9 @@ export const resetPassword = async (email: string) => {
                 resetPasswordToken,
             }) as React.ReactElement,
         });
-        toast.success('Email sent successfully');
     } catch (error) {
         console.log(error);
         toast.error('error while sending email, try again later');
     }
-    return (
-        JSON.stringify({ message: 'Email sent successfully' }), { status: 200 }
-    );
+    return { message: 'Email sent successfully', status: 200 };
 };
