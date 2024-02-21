@@ -22,6 +22,9 @@ import { Globe } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import Loading from '@/loading';
+import { SendEmail } from '@/app/actions/emails/SendEmail';
+import Publication from '@/app/components/Emails/Publication';
+import { isAxiosError } from 'axios';
 
 const AppBar = () => {
     const { data: session, status } = useSession();
@@ -58,6 +61,27 @@ const AppBar = () => {
             setLoading(false);
         }
     };
+    // testing
+    const handleEmail = async () => {
+        try {
+            await SendEmail({
+                from: 'admin<alp@awaldigital.org>',
+                to: ['yuxuan.peng@pm.me'],
+                subject: 'test email',
+                react: Publication({
+                    firstName: 'yuxuan',
+                }) as React.ReactElement,
+            });
+
+            toast.success('Email sent successfully');
+        } catch (error) {
+            if (isAxiosError(error)) throw new Error(error.message);
+            else {
+                console.log(error);
+            }
+            toast.error('error while sending email, try again later');
+        }
+    };
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (
@@ -81,7 +105,6 @@ const AppBar = () => {
             document.removeEventListener('keydown', handleKeyDown);
         };
     }, []);
-
     const handleClick = () => {
         setOpen(!open);
     };
@@ -256,6 +279,11 @@ const AppBar = () => {
                     className="absolute top-full left-3 bg-text-accent py-4 px-10 z-10 rounded-xl"
                 >
                     <ul className="space-y-2 mt-2">
+                        {user?.email?.includes('test' || 'alp') && (
+                            <Button onClick={handleEmail}>
+                                send test email
+                            </Button>
+                        )}
                         <li>
                             <Link href={'/translate'} scroll={false}>
                                 {d?.menu.translator}

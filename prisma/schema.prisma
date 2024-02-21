@@ -20,7 +20,7 @@ model User {
   password String?
   gender   String?
   age      Int?
-
+  role String?
   isSubscribed Boolean?
   isPrivacy    Boolean?
   isVerified   Boolean?
@@ -40,6 +40,9 @@ model User {
   tarifit    Json?
   other 	 Json?
 
+  resetPasswordToken String? 
+  resetPasswordTokenExpiration DateTime?
+  emailVerificationToken String?
   contribution Contribution[]
 }
 
