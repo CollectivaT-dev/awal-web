@@ -108,13 +108,19 @@ const AboutPage = () => {
             {/* individuals */}
             <div className=" flex flex-row items-start justify-center space-x-10 my-10 mx-10">
                 <div className="flex-col-center w-1/4 whitespace-pre-line">
-                    <Image
-                        src={'/contributors/farida.jpg'}
-                        alt="Farida Boudichat Fortas"
-                        width={100}
-                        height={100}
-                        className="mb-2"
-                    />
+                    <Link
+                        href={'https://www.linkedin.com/in/farida-boudichat-52735218b/'}
+                        scroll={false}
+                        target="_blank"
+                    >
+                        <Image
+                            src={'/contributors/farida.jpg'}
+                            alt="Farida Boudichat Fortas"
+                            width={100}
+                            height={100}
+                            className="mb-2"
+                        />
+                    </Link>
                     <h1 className="font-semibold text-xl my-2">
                         Farida Boudichat Fortas
                     </h1>
