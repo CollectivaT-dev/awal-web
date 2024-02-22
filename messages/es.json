@@ -198,13 +198,16 @@
         "main_text_2": "Nos gustaría destacar también a las personas que colaboran con Awal y que juegan un papel fundamental.",
         "contributor_farida_photo": "",
         "contributor_farida_website": "",
-        "contributor_farida_intro": "Farida Boudichat Fortas. Lingüista y profesora de español, catalán e inglés como lenguas extranjeras. Ha realizado estudios sociolingüísticos sobre la lengua amazigh y colabora con algunas entidades para promover la lengua, especialmente su preservación y transmisión.",
+        "contributor_farida_intro": "Farida Boudichat Fortas. Lingüista y profesora de español, catalán e inglés como lenguas extranjeras. Ha realizado estudios sociolingüísticos sobre la lengua amazigh y colabora con varias entidades para promover la lengua, especialmente su preservación y transmisión.",
         "contributor_ghizlan_photo": "",
         "contributor_ghizlan_website": "",
         "contributor_ghizlan_intro": "Lalla Ghizlan Baryala. Activista cultural amazigh en Cataluña, colabora con diferentes entidades para divulgar la historia, lengua y cultura amazigh en el país. Ha estudiado marketing e investigación de mercados en la UOC y un postgrado en Marketing Digital y e-commerce.",
         "contributor_yuxuan_photo": "",
         "contributor_yuxuan_website": "",
         "contributor_yuxuan_intro": "Yuxuan Peng desarrolla y mantiene la página web de Awal.",
+        "contributor_brahim_photo": "",
+        "contributor_brahim_website": "",
+        "contributor_brahim_intro": "Brahim Essaidi, autor, escritor y traductor amazigh. Localizó el sitio web de Awal y Common Voice. Contribuye a Awal, Common Voice y otros proyectos de código abierto dedicados a promover el idioma amazigh.",
         "contact_heading": "Ponte en contacto con Awal",
         "contact_info": "Para consultas, sugerencias o más información, contáctanos a",
         "contact_text": "awal@collectivat.cat"
@@ -334,9 +337,9 @@
     },
     "carousel": {
         "c1": {
-            "heading": "Maratón Lingüístico Awal: ¡Únete por el Amazigh!",
-            "body": "Acompáñanos el 17 de febrero, de 11:00 a 20:00 h, en la sede del CIEMEN en Barcelona, en un esfuerzo colectivo para generar datos y enriquecer la lengua amazigh. Forma parte de la preservación y promoción de la cultura amazigh. ¡Todas las edades, géneros y variantes dialectales son bienvenidxs!",
-            "link": "https://www.facebook.com/events/952971629738855/"
+            "heading": "\"Awal, el proyecto popular que quiere hacer que internet hable amazic\"",
+            "body": "Lee sobre el Proyecto Awal y su primer datatón en Nationalia.",
+            "link": "https://www.nationalia.cat/noticia/11589/awal-el-projecte-popular-que-vol-fer-que-internet-parli-amazic"
           },
         "c2": {
             "heading": "AWAL en el blog de Col·lectivaT",

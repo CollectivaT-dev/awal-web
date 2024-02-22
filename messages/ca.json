@@ -205,6 +205,9 @@
         "contributor_yuxuan_photo": "",
         "contributor_yuxuan_website": "",
         "contributor_yuxuan_intro": "Yuxuan Peng desenvolupa i manté la pàgina web d'Awal.",
+        "contributor_brahim_photo": "",
+        "contributor_brahim_website": "",
+        "contributor_brahim_intro": "Brahim Essaidi, autor, escriptor i traductor amazic. Va localitzar el lloc web d'Awal i Common Voice. Contribueix a Awal, Common Voice i altres projectes de codi obert dedicats a promoure la llengua amazic.",
         "contact_heading": "Posa't en contacte amb Awal",
         "contact_info": "Per a consultes, suggeriments o més informació, contacta'ns a",
         "contact_text": "awal@collectivat.cat"
@@ -334,9 +337,9 @@
     },
     "carousel": {
         "c1": {
-            "heading": "Marató Lingüística Awal: Uneix-te per a l'Amazic!",
-            "body": "Acompanya'ns el 17 de febrer, de 11:00 a 20:00 h, a la seu del CIEMEN a Barcelona, en un esforç col·lectiu per generar dades i enriquir la llengua amazic. Forma part de la preservació i promoció de la cultura amaziga. Totes les edats, gèneres i variants dialectals són benvingude/as!",
-            "link": "https://www.facebook.com/events/952971629738855/"
+            "heading": "\"Awal, el projecte popular que vol fer que internet parli amazic\"",
+            "body": "Llegeix sobre el Projecte Awal i el seu primer datatón a Nationalia.",
+            "link": "https://www.nationalia.cat/noticia/11589/awal-el-projecte-popular-que-vol-fer-que-internet-parli-amazic"
         },
           "c2": {
             "heading": "AWAL al blog de Col·lectivaT",

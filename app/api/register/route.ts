@@ -6,6 +6,9 @@ interface ReqBodyProps {
     email: string;
     password: string;
 }
+import crypto from 'crypto';
+import { SendEmail } from '@/app/actions/emails/SendEmail';
+import EmailVerification from '@/app/components/Emails/EmailVerification';
 
 export async function POST(req: Request) {
     try {
@@ -13,7 +16,7 @@ export async function POST(req: Request) {
         console.log(body);
         // Check if username already exists
         const existingUsernameUser = await prisma.user.findUnique({
-            where: { username:body.username.toLowerCase().replace(/\s/g, '') },
+            where: { username: body.username.toLowerCase().replace(/\s/g, '') },
         });
 
         if (existingUsernameUser) {
@@ -57,7 +60,21 @@ export async function POST(req: Request) {
         });
         console.log(user);
         console.log(user);
+        const emailVerificationToken = crypto
+            .randomBytes(32)
+            .toString('base64url');
+        const today = new Date();
+        await prisma.user.update({
+            where: { id: user.id },
+            data: { emailVerificationToken },
+        });
 
+        await SendEmail({
+            from: '',
+            to: [user.email],
+            subject: 'Verify your email',
+            react:EmailVerification({ email: user.email!, emailVerificationToken: emailVerificationToken }),
+        });
         const { password, ...userWithoutPassword } = user;
 
         return new NextResponse(JSON.stringify(userWithoutPassword), {
