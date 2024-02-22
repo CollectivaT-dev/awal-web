@@ -107,48 +107,77 @@ const AboutPage = () => {
 
             {/* individuals */}
             <div className=" flex flex-row items-start justify-center space-x-10 my-10 mx-10">
-                <div className="flex-col-center w-1/3 whitespace-pre-line">
-                    <Image
-                        src={'/p3.jpg'}
-                        alt="Farida Boudichat Fortas"
-                        width={50}
-                        height={50}
-                        className="mb-2"
-                    />
+                <div className="flex-col-center w-1/4 whitespace-pre-line">
+                    <Link
+                        href={'https://www.linkedin.com/in/farida-boudichat-52735218b/'}
+                        scroll={false}
+                        target="_blank"
+                    >
+                        <Image
+                            src={'/contributors/farida.jpg'}
+                            alt="Farida Boudichat Fortas"
+                            width={100}
+                            height={100}
+                            className="mb-2"
+                        />
+                    </Link>
                     <h1 className="font-semibold text-xl my-2">
                         Farida Boudichat Fortas
                     </h1>
                     {d?.about.contributor_farida_intro}
                 </div>
-                <div className="flex-col-center w-1/3 whitespace-pre-line">
-                    <Image
-                        src={'/p2.jpg'}
-                        alt="Lalla Ghizlan Baryala"
-                        width={50}
-                        height={50}
-                        className="mb-2"
-                    />
+                <div className="flex-col-center w-1/4 whitespace-pre-line">
+                    <Link
+                        href={'https://www.instagram.com/amazightalks/'}
+                        scroll={false}
+                        target="_blank"
+                    >
+                        <Image
+                            src={'/contributors/ghizlan.jpg'}
+                            alt="Lalla Ghizlan Baryala"
+                            width={100}
+                            height={100}
+                            className="mb-2"
+                        />
+                    </Link>
                     <h1 className="font-semibold text-xl my-2">
                         Lalla Ghizlan Baryala
                     </h1>
                     {d?.about.contributor_ghizlan_intro}
                 </div>
-                <div className="flex-col-center w-1/3 whitespace-pre-line">
+                <div className="flex-col-center w-1/4 whitespace-pre-line">
                     <Link
-                        href={'https://www.yuxuanify.com'}
+                        href={'https://github.com/ppalladio'}
                         scroll={false}
                         target="_blank"
                     >
                         <Image
-                            src={'/p1.jpg'}
+                            src={'/contributors/yuxuan.jpg'}
                             alt="Yuxuan Peng"
-                            width={50}
-                            height={50}
+                            width={100}
+                            height={100}
                             className="mb-2"
                         />
                     </Link>
                     <h1 className="font-semibold text-xl my-2">Yuxuan Peng</h1>
                     {d?.about.contributor_yuxuan_intro}
+                </div>
+                <div className="flex-col-center w-1/4 whitespace-pre-line">
+                    <Link
+                        href={'https://www.facebook.com/essaidib2'}
+                        scroll={false}
+                        target="_blank"
+                    >
+                        <Image
+                            src={'/contributors/Brahim.jpeg'}
+                            alt="Brahim Essaidi"
+                            width={100}
+                            height={100}
+                            className="mb-2"
+                        />
+                    </Link>
+                    <h1 className="font-semibold text-xl my-2">Brahim Essaidi</h1>
+                    {d?.about.contributor_brahim_intro}
                 </div>
             </div>
             <div className=" mb-10 ">

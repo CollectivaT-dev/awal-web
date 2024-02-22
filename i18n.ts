@@ -235,6 +235,9 @@ export interface MessagesProps {
         contributor_yuxuan_photo: string;
         contributor_yuxuan_website: string;
         contributor_yuxuan_intro: string;
+        contributor_brahim_photo: string;
+        contributor_brahim_website: string;
+        contributor_brahim_intro: string;
         contact_heading: string;
 
         contact_info: string;
