@@ -4,11 +4,11 @@ import EmailVerification from '@/app/components/Emails/EmailVerification';
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
+import { STATUS_CODES } from 'http';
 
 export async function POST(req: Request) {
     const userId = await req.json();
-
-    console.log(userId);
+    // console.log(userId);
     try {
         const user = await prisma.user.findUnique({
             where: {
@@ -79,4 +79,48 @@ export async function POST(req: Request) {
         console.log(error);
         return error;
     }
+}
+export async function PATCH(req: Request) {
+    const { token: emailVerificationToken } = await req.json();
+    console.log(emailVerificationToken);
+
+    const user = await prisma.user.findUnique({
+        where: {
+            emailVerificationToken,
+        },
+    });
+    if (!user) {
+        return new NextResponse(
+            JSON.stringify({
+                message: 'Invalid token',
+            }),
+            {
+                status: 400,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            },
+        );
+    }
+    console.log(user);
+    // if (!user) {
+    // 	return { message: 'User not found', status: 404 };
+    // }
+
+    const updatedUser = await prisma.user.update({
+        where: {
+            emailVerificationToken,
+        },
+        data: {
+            isVerified: true,
+            emailVerificationToken: `${emailVerificationToken}_verified`,
+        },
+    });
+    // console.log(updatedUser);
+    // if (user?.isVerified) {
+    //     return;
+    // }
+    return new NextResponse(JSON.stringify(updatedUser), {
+        status: 200,
+    });
 }

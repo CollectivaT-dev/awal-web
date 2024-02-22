@@ -72,7 +72,7 @@ export default function RegisterForm() {
                 toast.success(
                     `${dictionary?.toasters.success_registration}` +
                         `${' '}` +
-                        `+'please check your email for a verification link'`,
+                        `'please check your email for a verification link'`,
                 );
             } else {
                 toast.error(`${dictionary?.toasters.alert_try_again}`);

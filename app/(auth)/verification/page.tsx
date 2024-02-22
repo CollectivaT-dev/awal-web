@@ -1,38 +1,38 @@
-import prisma from '@/lib/prisma';
-import React from 'react';
+'use client';
+import axios from 'axios';
+import { getSession, useSession } from 'next-auth/react';
+import React, { useEffect, useState } from 'react';
 interface VerifyEmailPageProps {
     searchParams: { [key: string]: string | string[] | undefined };
 }
 
-const VerifyEmailPage = async ({ searchParams }: VerifyEmailPageProps) => {
-    console.log(searchParams);
-    if (searchParams.token) {
-        const user = await prisma.user.findUnique({
-            where: {
-                emailVerificationToken: searchParams.token as string,
-            },
-        });
-        console.log(user);
-        if (!user) {
-            return { message: 'User not found', status: 404 };
-        }
+const VerifyEmailPage = ({ searchParams }: VerifyEmailPageProps) => {
+    const verificationToken = searchParams?.token || '';
+    // console.log(update, session);
+    // console.log(searchParams.token);
+    const url =
+        process.env.NODE_ENV === 'development'
+            ? 'http://localhost:3000'
+            : 'https://awaldigital.org';
+    useEffect(() => {
+        //IIFE
+        (async () => {
+            try {
+                const res = await axios.patch(`${url}/api/auth/verify-email`, {
+                    token: verificationToken,
+                });
+                console.log(res);
+                if (res.status === 400) {
+                    console.log('400 error');
+                }
+                // await getSession();
+            } catch (error) {
+                console.log(error);
+            }
+        })();
+    }, [verificationToken]);
 
-        const updatedUser = await prisma.user.update({
-            where: {
-                emailVerificationToken: searchParams.token as string,
-            },
-            data: {
-                isVerified: true,
-                emailVerificationToken: `${searchParams.token}_verified`,
-            },
-            select: {
-                isVerified: true,
-            },
-        });
-        // console.log(updatedUser);
-        // if (user?.isVerified) {
-        //     return;
-        // }
+    if (searchParams.token) {
         return (
             <div className="h-screen">
                 <h1>Thank your Verifying the Email</h1>

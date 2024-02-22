@@ -361,7 +361,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                 setTranslated(false);
             }
             const updatedUser = res.data;
-            console.log(res.data.score);
+            // console.log(res.data.score);
             sessionUpdate({ user: updatedUser });
         } catch (error) {
             console.log(error);

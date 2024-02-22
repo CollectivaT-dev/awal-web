@@ -63,15 +63,15 @@ const AppBar = () => {
         }
     };
     console.log(user);
-	// hardcoded for now, need to fetch from prisma later according to sub status
-	const mailingList = ['yuxuan<yuxuan.peng@pm.me>']
+    // hardcoded for now, need to fetch from prisma later according to sub status
+    const mailingList = ['yuxuan<yuxuan.peng@pm.me>'];
     // publication temp button
     const handleEmail = async () => {
         try {
             await SendEmail({
                 from: 'Awal<do-not-reply@awaldigital.org>',
-				// ! need to change for publication
-                to:mailingList,
+                // ! need to change for publication
+                to: mailingList,
                 subject: 'test email',
                 react: Publication({
                     firstName: 'yuxuan',
@@ -324,7 +324,7 @@ const AppBar = () => {
                     </motion.div>
                 )}
             </div>
-            {!user?.isVerified||user?.email?.includes('test') && (
+            {!user?.isVerified && user?.email && user && (
                 <VerificationAlert
                     data={{
                         userId: user?.id,
