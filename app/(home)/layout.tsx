@@ -28,10 +28,7 @@ export default function HomepageLayout({
     console.log(session);
     const { setLocale } = useLocaleStore();
     const lang = useSearchParams().get('lang') || 'ca';
-	const a = async () => {
-       updateUser= await getCurrentUser();
-    };
-    console.log(updateUser);
+
     useEffect(() => {
         if (session?.user?.isVerified === true) {
             update({ user: session?.user });
