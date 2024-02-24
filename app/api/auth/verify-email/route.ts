@@ -121,7 +121,9 @@ export async function PATCH(req: Request) {
     });
     
 
-    return new NextResponse(JSON.stringify(updatedUser), {
-        status:200,header:{"Content-Type":"application/json " }
-    });
-}
+    return new NextResponse(
+JSON.stringify(updatedUser), 
+{status:200,
+header:{"Content-Type":"application/json"}}
+);
+
