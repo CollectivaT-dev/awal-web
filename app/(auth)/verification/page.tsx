@@ -2,6 +2,7 @@
 import axios from 'axios';
 import { getSession, useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast'
 interface VerifyEmailPageProps {
     searchParams: { [key: string]: string | string[] | undefined };
 }
@@ -24,8 +25,8 @@ const [isVerified, setIsVerified]=useState(false)
                     token: verificationToken,
                 });
                 console.log(res);
-                if (res.status === 400) {
-                    console.log('400 error');
+                if (res.status === 406) {
+                    toast.error('validation token not valid, please try to resend the verification email')
                 }
 if(res.status ===200 && res.data.isVerified){
 update({user:res.data)}
