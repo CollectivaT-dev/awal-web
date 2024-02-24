@@ -103,9 +103,12 @@ export async function PATCH(req: Request) {
         );
     }
     console.log(user);
-    // if (!user) {
-    // 	return { message: 'User not found', status: 404 };
-    // }
+    if (!user) {
+    return new NextResponse(
+ JSON.stringyify(
+{message:"token doesn't match anything"}
+),{status:406,headers:{'Content-Type':'application/json'}
+})}
 
     const updatedUser = await prisma.user.update({
         where: {
@@ -116,11 +119,9 @@ export async function PATCH(req: Request) {
             emailVerificationToken: `${emailVerificationToken}_verified`,
         },
     });
-    // console.log(updatedUser);
-    // if (user?.isVerified) {
-    //     return;
-    // }
+    
+
     return new NextResponse(JSON.stringify(updatedUser), {
-        status: 200,
+        status:200,header:{"Content-Type":"application/json " }
     });
 }
