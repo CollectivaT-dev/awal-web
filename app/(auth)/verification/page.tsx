@@ -29,7 +29,7 @@ const [isVerified, setIsVerified]=useState(false)
                     toast.error('validation token not valid, please try to resend the verification email')
                 }
 if(res.status ===200 && res.data.isVerified){
-update({user:res.data)}
+update({user:res.data})
 setIsVerified(true)
                 // await getSession();
             } catch (error) {
@@ -38,7 +38,7 @@ setIsVerified(true)
         })();
     }, [verificationToken]);
 
-    if (IsVerfied) {
+    if (isVerfied) {
         return (
             <div className="h-screen flex flex-col items-center justify-center space-y-2">
                 <h1 className='text-3xl my-3 font-semibold'>Thank your Verifying the Email</h1>
