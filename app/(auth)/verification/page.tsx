@@ -11,6 +11,7 @@ const VerifyEmailPage = ({ searchParams }: VerifyEmailPageProps) => {
 const {data:session, update}=useSession()
     // console.log(update, session);
     // console.log(searchParams.token);
+const [isVerified, setIsVerified]=useState(false)
     const url =
         process.env.NODE_ENV === 'development'
             ? 'http://localhost:3000'
@@ -28,6 +29,7 @@ const {data:session, update}=useSession()
                 }
 if(res.status ===200 && res.data.isVerified){
 update({user:res.data)}
+setIsVerified(true)
                 // await getSession();
             } catch (error) {
                 console.log(error);
@@ -35,10 +37,10 @@ update({user:res.data)}
         })();
     }, [verificationToken]);
 
-    if (searchParams.token) {
+    if (IsVerfied) {
         return (
-            <div className="h-screen">
-                <h1>Thank your Verifying the Email</h1>
+            <div className="h-screen flex flex-col items-center justify-center space-y-2">
+                <h1 className='text-3xl my-3 font-semibold'>Thank your Verifying the Email</h1>
                 <a href={'/'} className="underline">
                     HomePage
                 </a>
@@ -46,9 +48,9 @@ update({user:res.data)}
         );
     } else {
         return (
-            <div className="h-screen ">
-                <h1>Verify Email</h1>
-                Email has been verified. Check your email for instructions,
+            <div className="h-screen flex flex-col items-center justify-center space-y-2">
+                <h1 className='text-3xl font-semibold'>Verify Email failed</h1>
+                <p> some thing went wrong, or this email has been verified, please try to resend verification email. if problem persist, contact us for help</p>
             </div>
         );
     }
