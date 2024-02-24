@@ -8,6 +8,7 @@ interface VerifyEmailPageProps {
 
 const VerifyEmailPage = ({ searchParams }: VerifyEmailPageProps) => {
     const verificationToken = searchParams?.token || '';
+const {data:session, update}=useSession()
     // console.log(update, session);
     // console.log(searchParams.token);
     const url =
@@ -25,6 +26,8 @@ const VerifyEmailPage = ({ searchParams }: VerifyEmailPageProps) => {
                 if (res.status === 400) {
                     console.log('400 error');
                 }
+if(res.status ===200 && res.data.isVerified){
+update({user:res.data)}
                 // await getSession();
             } catch (error) {
                 console.log(error);
