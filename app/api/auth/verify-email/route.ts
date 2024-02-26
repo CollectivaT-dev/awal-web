@@ -4,11 +4,9 @@ import EmailVerification from '@/app/components/Emails/EmailVerification';
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
-import { STATUS_CODES } from 'http';
 
 export async function POST(req: Request) {
     const userId = await req.json();
-    // console.log(userId);
     try {
         const user = await prisma.user.findUnique({
             where: {
@@ -19,16 +17,15 @@ export async function POST(req: Request) {
                 isVerified: true,
             },
         });
-        console.log(user);
+        // console.log(user);
         if (user?.isVerified === false || user?.isVerified === null) {
             const emailVerificationToken = crypto
                 .randomBytes(32)
-                .toString('base64');
+                .toString('base64url');
 
             try {
                 await SendEmail({
                     from: 'Awal Email Verification<do-not-reply@awaldigital.org>',
-                    //! need to change
                     to: [user.email],
                     subject: 'Verify your email address',
                     react: EmailVerification({
@@ -102,13 +99,13 @@ export async function PATCH(req: Request) {
             },
         );
     }
-    console.log(user);
+ 
     if (!user) {
-    return new NextResponse(
- JSON.stringyify(
-{message:"token doesn't match anything"}
-),{status:406,headers:{'Content-Type':'application/json'}
-})}
+        return new NextResponse(
+            JSON.stringify({ message: "token doesn't match anything" }),
+            { status: 406, headers: { 'Content-Type': 'application/json' } },
+        );
+    }
 
     const updatedUser = await prisma.user.update({
         where: {
@@ -119,11 +116,9 @@ export async function PATCH(req: Request) {
             emailVerificationToken: `${emailVerificationToken}_verified`,
         },
     });
-    
 
-    return new NextResponse(
-JSON.stringify(updatedUser), 
-{status:200,
-header:{"Content-Type":"application/json"}}
-);
-
+    return new NextResponse(JSON.stringify(updatedUser), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+    });
+}

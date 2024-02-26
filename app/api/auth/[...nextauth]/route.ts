@@ -56,13 +56,12 @@ export const handler: AuthOptions = NextAuth({
         jwt({ token, trigger, session, user }) {
             console.log(trigger);
             console.log(session?.user);
-            // const l = trigger === 'update' && session?.user ? true : false;
-            // console.log(l);
+
             console.log(session);
             if (session?.user.gender === null) {
                 session.user.gender = 'other';
             }
-            if (trigger === 'update' && session?.user) {
+            if (trigger === 'update' && session.user) {
                 token.score = session.user.score;
                 // console.log(session.user.score);
                 token.username = session.user.username;

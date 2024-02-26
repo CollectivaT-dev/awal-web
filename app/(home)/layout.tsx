@@ -10,14 +10,12 @@ import { useSearchParams } from 'next/navigation';
 import useLocaleStore from '../hooks/languageStore';
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
-import getCurrentUser from '../actions/get/getCurrentUser';
 
 export default function HomepageLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
-    const { update, data: session } = useSession();
     const [totalEntries, setTotalEntries] = useState(0);
     const [topTen, setTopTen] = useState([]);
     const [totalValidation, setTotalValidation] = useState(0);
@@ -25,15 +23,11 @@ export default function HomepageLayout({
         process.env.NODE_ENV === 'development'
             ? 'http://localhost:3000'
             : `https://awaldigital.org`;
-    console.log(session);
+    // console.log(session);
     const { setLocale } = useLocaleStore();
     const lang = useSearchParams().get('lang') || 'ca';
 
-    useEffect(() => {
-        if (session?.user?.isVerified === true) {
-            update({ user: session?.user });
-        }
-    }, []);
+
     useEffect(() => {
         if (lang) {
             setLocale(lang);
@@ -56,8 +50,8 @@ export default function HomepageLayout({
         };
         fetchData();
     }, [apiUrl]);
-    console.log(topTen);
-    console.log(totalValidation);
+    // console.log(topTen);
+    // console.log(totalValidation);
     return (
         <div className="flex flex-col items-center justify-center">
             <ClientProvider>

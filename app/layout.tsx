@@ -12,6 +12,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { headers } from 'next/headers';
 import { Suspense } from 'react';
 import Loading from './loading';
+import getCurrentUser from './actions/get/getCurrentUser';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,12 +22,12 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-    children
+    children,
 }: {
     children: React.ReactNode;
 }) {
     const Locale = headers().get('Accept-Language')?.slice(0, 2) ?? 'ca';
-console.log(headers())
+
     return (
         <html lang={Locale}>
             <body className={inter.className}>
@@ -36,7 +37,7 @@ console.log(headers())
                             <ToastProvider />
                             {/* <RegisterModal/> */}
                             <Suspense fallback={<Loading />}>
-                                <Navbar />
+                                <Navbar/>
                             </Suspense>
                             {children}
                             <Footer />

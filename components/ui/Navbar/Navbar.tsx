@@ -28,9 +28,10 @@ import { isAxiosError } from 'axios';
 import VerificationAlert from '@/components/VerificationAlert';
 
 const AppBar = () => {
-    const { data: session, status } = useSession();
-    const user = session?.user;
-    const [open, setOpen] = useState(false);
+    // console.log(user.isVerified);
+    const {data:session } = useSession();
+    const user = session?.user
+	const [open, setOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
     // get locale and set new local
     const { locale, setLocale } = useLocaleStore();
@@ -62,7 +63,6 @@ const AppBar = () => {
             setLoading(false);
         }
     };
-    console.log(user);
     // hardcoded for now, need to fetch from prisma later according to sub status
     const mailingList = ['yuxuan<yuxuan.peng@pm.me>'];
     // publication temp button
@@ -329,7 +329,7 @@ const AppBar = () => {
                     data={{
                         userId: user?.id,
                         email: user?.email,
-                        isVerified: user?.isVerified,
+                        isVerified: user?.isVerified as boolean,
                     }}
                 />
             )}
