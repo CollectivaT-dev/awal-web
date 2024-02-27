@@ -111,10 +111,10 @@ export interface MessagesProps {
         alert_select_variant: string;
         success_report: string;
         alert_input: string;
-		translating:string;
-		alert_api:string;
-		success_translate:string
-		success_loading:string
+        translating: string;
+        alert_api: string;
+        success_translate: string;
+        success_loading: string;
     };
     text_with_link: {
         accept_terms: {
@@ -127,7 +127,7 @@ export interface MessagesProps {
             link_text_1: string;
             link_text_2: string;
             link_text_3: string;
-			link_text_4:string
+            link_text_4: string;
         };
     };
     error_msg: {
@@ -349,6 +349,22 @@ export interface MessagesProps {
             q: string;
             a: string;
         };
+        q3: {
+            q: string;
+            a: string;
+        };
+        q4: {
+            q: string;
+            a: string;
+        };
+        q5: {
+            q: string;
+            a: string;
+        };
+        q6: {
+            q: string;
+            a: string;
+        };
     };
     carousel: {
         c1: {
@@ -356,5 +372,24 @@ export interface MessagesProps {
             body: string;
             link: string;
         };
+        c2: {
+            heading: string;
+            body: string;
+            link: string;
+        };
+        c3: {
+            heading: string;
+            body: string;
+            link: string;
+        };
     };
+	home:string
+	verificationPageRedirection:string
+	verificationTokenError:string
+	verificationPageSuccessTitle:string
+	verificationPageErrorTitle:string
+	verificationPageErrorMessage:string
+	verificationAlert:string
+	verificationEmailSuccess:string
+	verificationEmailError:string
 }

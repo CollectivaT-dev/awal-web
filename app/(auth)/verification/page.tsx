@@ -1,4 +1,6 @@
 'use client';
+import useLocaleStore from '@/app/hooks/languageStore';
+import { MessagesProps, getDictionary } from '@/i18n';
 import axios from 'axios';
 import { getSession, useSession } from 'next-auth/react';
 import Link from 'next/link';
@@ -10,8 +12,17 @@ interface VerifyEmailPageProps {
 }
 
 const VerifyEmailPage = ({ searchParams }: VerifyEmailPageProps) => {
+    const { locale } = useLocaleStore();
+    const [dictionary, setDictionary] = useState<MessagesProps>();
+    useEffect(() => {
+        const fetchDictionary = async () => {
+            const m = await getDictionary(locale);
+            setDictionary(m as unknown as MessagesProps);
+        };
+        fetchDictionary();
+    }, [locale]);
     const verificationToken = searchParams?.token || '';
-	// console.log(verificationToken)
+    // console.log(verificationToken)
     const { data: session, update } = useSession();
     const user = session?.user;
     // console.log(update, session);
@@ -37,22 +48,20 @@ const VerifyEmailPage = ({ searchParams }: VerifyEmailPageProps) => {
                     router.refresh();
                 }
                 if (res.status === 406) {
-                    toast.error(
-                        'validation token not valid, please try to resend the verification email',
-                    );
+                    toast.error(`${dictionary?.verificationTokenError}`);
                 }
             } catch (error) {
                 console.log(error);
             }
         };
         handleVerification();
-    }, [url, verificationToken, update]);
+    }, [url, verificationToken, update, dictionary]);
     // console.log(isVerified);
     useEffect(() => {
         if (isVerified) {
             setTimeout(() => {
                 update({ user: { ...user, isVerified: true } });
-                router.push('/',{scroll:false});
+                router.push('/', { scroll: false });
             }, 2000);
         }
     }, [isVerified, update, router, user]);
@@ -60,24 +69,21 @@ const VerifyEmailPage = ({ searchParams }: VerifyEmailPageProps) => {
         return (
             <div className="h-screen flex flex-col items-center justify-center space-y-2">
                 <h1 className="text-3xl my-3 font-semibold">
-                    Thank your Verifying the Email
+                    {dictionary?.verificationPageSuccessTitle}
                 </h1>
-                <span>Now Redirecting to</span>{' '}
+                <span>{dictionary?.verificationPageRedirection}</span>
                 <Link href={'/'} className="underline">
-                    Home
+                    {dictionary?.home}
                 </Link>
             </div>
         );
     } else {
         return (
             <div className="h-screen flex flex-col items-center justify-center space-y-2">
-                <h1 className="text-3xl font-semibold">Verify Email failed</h1>
-                <p>
-                    {' '}
-                    some thing went wrong, or this email has been verified,
-                    please try to resend verification email. if problem persist,
-                    contact us for help
-                </p>
+                <h1 className="text-3xl font-semibold">
+                    {dictionary?.verificationPageErrorTitle}
+                </h1>
+                <p>{dictionary?.verificationPageErrorMessage}</p>
             </div>
         );
     }

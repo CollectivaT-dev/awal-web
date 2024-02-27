@@ -1,14 +1,26 @@
 'use client';
 
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
+import useLocaleStore from '@/app/hooks/languageStore';
+import { MessagesProps, getDictionary } from '@/i18n';
+import toast from 'react-hot-toast';
 interface VerificationAlertProps {
     data: { userId?: string; email: string; isVerified?: boolean };
 }
 const VerificationAlert: React.FC<VerificationAlertProps> = ({ data }) => {
     // console.log(data);
+    const { locale } = useLocaleStore();
+    const [dictionary, setDictionary] = useState<MessagesProps>();
+    useEffect(() => {
+        const fetchDictionary = async () => {
+            const m = await getDictionary(locale);
+            setDictionary(m as unknown as MessagesProps);
+        };
+        fetchDictionary();
+    }, [locale]);
     const url =
         process.env.NODE_ENV === 'development'
             ? 'http://localhost:3000'
@@ -20,9 +32,15 @@ const VerificationAlert: React.FC<VerificationAlertProps> = ({ data }) => {
                 `${url}/api/auth/verify-email`,
                 JSON.stringify(data.userId),
             );
-            console.log(res);
+            if (res.status === 200) {
+                toast.success(`${dictionary?.verificationEmailSuccess}`);
+            }
+            // console.log(res);
         } catch (error) {
-            console.log(error);
+			if(error){
+				toast.error(`${dictionary?.verificationEmailError}`);
+			}
+            // console.log(error);
         }
     };
     return (
@@ -35,15 +53,15 @@ const VerificationAlert: React.FC<VerificationAlertProps> = ({ data }) => {
                     transition={{ duration: 0.5 }}
                 >
                     <div className="flex flex-row justify-center items-center py-1 bg-slate-300">
-                        <span className="mx-auto">
-                            Please{' '}
-                            <span
-                                className="underline cursor-pointer"
-                                onClick={handleVerification}
-                            >
-                                verify your email
-                            </span>
+                        {/* <span className="mx-auto"> */}
+
+                        <span
+                            className="underline cursor-pointer"
+                            onClick={handleVerification}
+                        >
+                            {dictionary?.verificationAlert}
                         </span>
+                        {/* </span> */}
                         <X className="mx-2" onClick={() => setOpen(false)} />
                     </div>
                 </motion.div>

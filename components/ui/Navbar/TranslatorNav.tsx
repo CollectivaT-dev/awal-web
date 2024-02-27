@@ -16,7 +16,6 @@ const TranslatorNav = () => {
     const pathname = usePathname();
     const { locale } = useLocaleStore();
     const [d, setD] = useState<MessagesProps>();
-
     useEffect(() => {
         const fetchDictionary = async () => {
             const m = await getDictionary(locale);
@@ -46,7 +45,7 @@ const TranslatorNav = () => {
     };
     return (
         <>
-            <Separator className="bg-text-primary mx-auto my-5 " />
+            <Separator className="bg-text-primary mx-auto mb-5 " />
             <div className="flex gap-4 ml-10 my-5">
                 <Link href={'/translate'} scroll={false}>
                     <Button
@@ -72,6 +71,7 @@ const TranslatorNav = () => {
                     >
                         {d?.nav.validate}
                     </Button>
+
                 </div>
             </div>
         </>

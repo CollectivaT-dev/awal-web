@@ -8,17 +8,16 @@ import ClientProvider from '@/providers/ClientProvider';
 import Footer from '@/components/ui/Footer';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-
 import { headers } from 'next/headers';
 import { Suspense } from 'react';
 import Loading from './loading';
-import getCurrentUser from './actions/get/getCurrentUser';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
     title: 'Awal',
     description: "Internet parla l'Amazic!",
+    keywords: 'translation, amazic, catalan, tamazight, marginalized',
 };
 
 export default function RootLayout({
@@ -27,7 +26,6 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     const Locale = headers().get('Accept-Language')?.slice(0, 2) ?? 'ca';
-
     return (
         <html lang={Locale}>
             <body className={inter.className}>
@@ -37,7 +35,7 @@ export default function RootLayout({
                             <ToastProvider />
                             {/* <RegisterModal/> */}
                             <Suspense fallback={<Loading />}>
-                                <Navbar/>
+                                <Navbar />
                             </Suspense>
                             {children}
                             <Footer />

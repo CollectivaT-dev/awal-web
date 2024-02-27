@@ -70,9 +70,7 @@ export default function RegisterForm() {
             if (registrationResponse.status === 200) {
                 // i18n
                 toast.success(
-                    `${dictionary?.toasters.success_registration}` +
-                        `${' '}` +
-                        `'please check your email for a verification link'`,
+                    `${dictionary?.toasters.success_registration}`,
                 );
             } else {
                 toast.error(`${dictionary?.toasters.alert_try_again}`);
