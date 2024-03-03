@@ -355,5 +355,7 @@
     "verificationPageErrorMessage": "some thing went wrong, or this email has been verified,please try to resend verification email. if problem persist, contact us for help",
     "verificationAlert": "verify your email",
     "verificationEmailSuccess": "Verification email sent successfully, please check your registraion email",
-    "verificationEmailError": "Failed to send verification email, please try again later, if the problem persist, contact us for help"
+    "verificationEmailError": "Failed to send verification email, please try again later, if the problem persist, contact us for help",
+    "contributorInputPlaceholder": "input text",
+    "contributorOutputPlaceholder": "contribute text"
 }

@@ -35,7 +35,7 @@ export namespace OtherLanguagesConfig {
     export interface OtherLanguagesProps {
         english?: boolean;
         french?: boolean;
-        catala?: boolean;
+        catalan?: boolean;
         arabic?: boolean;
         spanish?: boolean;
     }
@@ -43,7 +43,7 @@ export namespace OtherLanguagesConfig {
         otherLanguages: {
             english: false,
             french: false,
-            catala: false,
+            catalan: false,
             arabic: false,
             spanish: false,
         },
@@ -57,7 +57,7 @@ export namespace OtherLanguagesConfig {
         .object({
             english: z.boolean(),
             french: z.boolean(),
-            catala: z.boolean(),
+            catalan: z.boolean(),
             arabic: z.boolean(),
             spanish: z.boolean(),
         })

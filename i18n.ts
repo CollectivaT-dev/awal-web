@@ -383,13 +383,15 @@ export interface MessagesProps {
             link: string;
         };
     };
-	home:string
-	verificationPageRedirection:string
-	verificationTokenError:string
-	verificationPageSuccessTitle:string
-	verificationPageErrorTitle:string
-	verificationPageErrorMessage:string
-	verificationAlert:string
-	verificationEmailSuccess:string
-	verificationEmailError:string
+    home: string;
+    verificationPageRedirection: string;
+    verificationTokenError: string;
+    verificationPageSuccessTitle: string;
+    verificationPageErrorTitle: string;
+    verificationPageErrorMessage: string;
+    verificationAlert: string;
+    verificationEmailSuccess: string;
+    verificationEmailError: string;
+    contributorInputPlaceholder: string;
+    contributorOutputPlaceholder: string;
 }

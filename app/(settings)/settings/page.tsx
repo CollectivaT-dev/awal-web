@@ -51,7 +51,7 @@ const formSchema = z
             .object({
                 english: z.boolean().default(false),
                 french: z.boolean().default(false),
-                catala: z.boolean().default(false),
+                catalan: z.boolean().default(false),
                 spanish: z.boolean().default(false),
                 arabic: z.boolean().default(false),
             })
@@ -98,7 +98,7 @@ export function SettingsPage() {
         useState<OtherLanguagesConfig.OtherLanguagesProps>({
             english: false,
             spanish: false,
-            catala: false,
+            catalan: false,
             arabic: false,
             french: false,
         });
@@ -114,7 +114,7 @@ export function SettingsPage() {
     const languages = [
         { label: 'English', value: 'english' },
         { label: 'Spanish', value: 'spanish' },
-        { label: 'Catala', value: 'catala' },
+        { label: 'Catalan', value: 'catalan' },
         { label: 'Arabic', value: 'arabic' },
         { label: 'French', value: 'french' },
     ] as const;
@@ -151,7 +151,7 @@ export function SettingsPage() {
             languages: {
                 english: false,
                 spanish: false,
-                catala: false,
+                catalan: false,
                 arabic: false,
                 french: false,
             },
@@ -193,7 +193,7 @@ export function SettingsPage() {
                     languages: {
                         english: false,
                         spanish: false,
-                        catala: false,
+                        catalan: false,
                         arabic: false,
                         french: false,
                     },
@@ -245,7 +245,7 @@ export function SettingsPage() {
                     languages: mergedData.languages || {
                         english: false,
                         spanish: false,
-                        catala: false,
+                        catalan: false,
                         arabic: false,
                         french: false,
                     },
@@ -294,7 +294,7 @@ export function SettingsPage() {
                 // fallback value
                 english: false,
                 spanish: false,
-                catala: false,
+                catalan: false,
                 arabic: false,
                 french: false,
             },
