@@ -205,6 +205,9 @@
         "contributor_yuxuan_photo": "",
         "contributor_yuxuan_website": "",
         "contributor_yuxuan_intro": "Yuxuan Peng développe et maintient la page web d'Awal.",
+        "contributor_brahim_photo": "",
+        "contributor_brahim_website": "",
+        "contributor_brahim_intro": "Brahim Essaidi, auteur, écrivain et traducteur amazigh. A localisé le site Web d'Awal et Common Voice. Contribue à Awal, Common Voice et d'autres projets open source dédiés à promouvoir la langue tamazight.",
         "contact_heading": "Contactez Awal",
         "contact_info": "Pour toute question, suggestion ou plus d'informations, contactez-nous à",
         "contact_text": "awal@collectivat.cat"
@@ -334,9 +337,9 @@
     },
     "carousel": {
         "c1": {
-            "heading": "Marathon linguistique Awal : Unis pour l'Amazigh !",
-            "body": "Rejoignez-nous le 17 février, de 11h00 à 20h00, au siège du CIEMEN à Barcelone, pour un effort collectif visant à générer des données afin d'enrichir la langue amazig. Participez à la préservation et à la promotion de la culture amazig. Tous âges, genres et variantes dialectales sont les bienvenus !",
-            "link": "https://www.facebook.com/events/952971629738855/"
+            "heading": "\"Awal, le projet populaire qui veut faire parler internet amazigh\"",
+            "body": "Découvrez le projet Awal et son premier datathon sur Nationalia.",
+            "link": "https://www.nationalia.info/new/11589/awal-the-popular-project-that-wants-to-make-the-internet-speak-amazigh"
         },
         "c2": {
             "heading": "AWAL sur le blog de Col·lectivaT",

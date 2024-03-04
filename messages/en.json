@@ -198,13 +198,16 @@
         "main_text_2": "We would also like to highlight our key collaborators who play a vital role in Awal.",
         "contributor_farida_photo": "",
         "contributor_farida_website": "",
-        "contributor_farida_intro": "Farida Boudichat Fortas. Linguist and teacher of Spanish, Catalan and English as foreign languages. She has realized sociolinguistic studies on the Amazigh language and collaborates with some entities to promote the language, especially its preservation and transmission.",
+        "contributor_farida_intro": "Farida Boudichat Fortas, Linguist and teacher of Spanish, Catalan and English as foreign languages. She has completed sociolinguistic studies on the Tamazight language and collaborates with various entities to promote the language, especially its preservation and transmission.",
         "contributor_ghizlan_photo": "",
         "contributor_ghizlan_website": "",
         "contributor_ghizlan_intro": "Lalla Ghizlan Baryala, Amazigh cultural activist in Catalonia, collaborates with various organizations to promote the history, language, and culture of the Amazigh people in the region. She studied marketing and market research at UOC and completed a postgraduate program in Digital Marketing and e-commerce.",
         "contributor_yuxuan_photo": "",
         "contributor_yuxuan_website": "",
         "contributor_yuxuan_intro": "Yuxuan Peng, full stack developer, develops and maintains Awal's web page.",
+        "contributor_brahim_photo": "",
+        "contributor_brahim_website": "",
+        "contributor_brahim_intro": "Brahim Essaidi, Amazigh author, writer and translator. Localized Awal website and Common Voice. Contributes to Awal, Common Voice and other open source projects dedicated to promote Tamazight language.",
         "contact_heading": "Contact Awal",
         "contact_info": "For inquiries, suggestions, or more information, contact us at",
         "contact_text": "awal@collectivat.cat"
@@ -334,13 +337,13 @@
     },
     "carousel": {
         "c1": {
-            "heading": "Awal Linguistic Marathon: Unite for Tamazight!",
-            "body": "Join us on February 17, 11:00 am - 8:00 pm at CIEMEN headquarters in Barcelona or virtually, for a collective effort in generating data to enrich the Tamazight language. Be part of the preservation and promotion of Amazigh culture. All ages, genders, and dialects welcome!",
-            "link": "https://www.facebook.com/events/952971629738855/"
+            "heading": "\"Awal, the popular project that wants to make the internet speak Amazigh\" on Nationalia",
+            "body": "Read about Project Awal and its first datathon on Nationalia.",
+            "link": "https://www.nationalia.info/new/11589/awal-the-popular-project-that-wants-to-make-the-internet-speak-amazigh"
         },
         "c2": {
             "heading": "AWAL on Col·lectivaT's blog",
-            "body": "Introducing Project Awal for preserving and promoting the Tamazight language on the internet with a strong and united data community. ",
+            "body": "Introducing Project Awal for preserving and promoting the Tamazight language on the internet with a strong and united data community.",
             "link": "https://collectivat.cat/blog/2024-01-22-awal-en/"
         }
     }
