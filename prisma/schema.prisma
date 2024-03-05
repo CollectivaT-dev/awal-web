@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -23,7 +20,7 @@ model User {
   role String?
   isSubscribed Boolean?
   isPrivacy    Boolean?
-  isVerified   Boolean?
+  isVerified   Boolean? @default(false)
 
   createdAt         DateTime  @default(now())
   updatedAt         DateTime? @default(now())
@@ -40,9 +37,9 @@ model User {
   tarifit    Json?
   other 	 Json?
 
-  resetPasswordToken String? 
+  resetPasswordToken String? @unique
   resetPasswordTokenExpiration DateTime?
-  emailVerificationToken String?
+  emailVerificationToken String? @unique
   contribution Contribution[]
 }
 
