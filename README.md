@@ -1,24 +1,20 @@
-# Adding feature of Email verification
+## About Awal
 
-Now verification email will be sent on registration and on click of the alert banner.
+Awal is a project that contributes to preserving and promoting the Amazigh language in the digital space by developing innovative tools that facilitate its use and dissemination.
 
-## Potential Errors
+The participation of Amazigh speakers will be essential to collect data, both oral and written, through voice recordings and the collection of translated texts from this minority language. The initiative aims not only to create effective digital tools but also to raise community awareness of the importance of linguistic data and new technologies to preserve the language, to raise awareness of the effects of the digital divide, and to grow a network of professionals.
 
-<ol>
-<li>Since Resend https://resend.com/ is a free tier, it has a limit of daily 100 calls and monthly 3000 calls</li>
-<li>Tokens are mandatorily unique, if two same token is generated, validation will fail </li>
-</ol>
+Awal is an initiative by CIEMEN, Col·lectivaT, and Casa Amaziga de Catalunya and is funded by the Municipality of Barcelona and Generalitat de Catalunya with the support of the Catalan Development Cooperation Agency and the Department of Social Rights.
 
-## Potential improvements
+## Get in touch with us
 
-<ol>
-<li>Verification status is updated in the same page of verification, but not in the same useEffect hook. A side effect of infinite redering of the page is presented, to mitigate this error, a timeout function is implemented to redirect user to home page after 2 second 
+[Web](https://awaldigital.org)
+[Facebook](https://www.facebook.com/aawaldigital)
+[Instagram](https://www.instagram.com/awaldigital/)
+[Twitter](https://twitter.com/Awaldigital)
+[Email](mailto:awal@collectivat.cat)
 
-```bash 
-@\app\(auth)\verification\page.tsx [L60-L67]
-```
-</li>
-</ol>
+# LICENSE
 
+Awal web page and it's source code is licensed with [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/).
 
-updated at 27/07/2024

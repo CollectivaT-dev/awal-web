@@ -34,6 +34,7 @@ export function ResetPasswordForm() {
     // const [message, setMessage] = useState<string>('');
     const onSubmit = async (data: z.infer<typeof FormSchema>) => {
         const message = await resetPassword(data.email);
+
         message.status === 200
             ? toast.success('email sent successfully')
             : message.status === 404
@@ -43,6 +44,7 @@ export function ResetPasswordForm() {
         // try {
         //     const res = axios.post('api/auth/reset-password');
         // } catch (error) {}
+
     };
 
     return (

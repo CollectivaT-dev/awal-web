@@ -3,7 +3,6 @@ import prisma from '@/lib/prisma';
 import crypto from 'crypto';
 import { SendEmail } from '../emails/SendEmail';
 import ResetPassword from '@/app/components/Emails/ResetPassword';
-import toast from 'react-hot-toast';
 export const resetPassword = async (email: string) => {
     const user = await prisma.user.findUnique({
         where: {
@@ -45,7 +44,6 @@ export const resetPassword = async (email: string) => {
         });
     } catch (error) {
         console.log(error);
-        toast.error('error while sending email, try again later');
     }
     return { message: 'Email sent successfully', status: 200 };
 };
