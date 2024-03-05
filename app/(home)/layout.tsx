@@ -9,6 +9,7 @@ import axios from 'axios';
 import { useSearchParams } from 'next/navigation';
 import useLocaleStore from '../hooks/languageStore';
 import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 
 export default function HomepageLayout({
     children,
@@ -22,9 +23,11 @@ export default function HomepageLayout({
         process.env.NODE_ENV === 'development'
             ? 'http://localhost:3000'
             : `https://awaldigital.org`;
-    console.log(apiUrl);
+    // console.log(session);
     const { setLocale } = useLocaleStore();
     const lang = useSearchParams().get('lang') || 'ca';
+
+
     useEffect(() => {
         if (lang) {
             setLocale(lang);
@@ -47,8 +50,8 @@ export default function HomepageLayout({
         };
         fetchData();
     }, [apiUrl]);
-    console.log(topTen);
-    console.log(totalValidation);
+    // console.log(topTen);
+    // console.log(totalValidation);
     return (
         <div className="flex flex-col items-center justify-center">
             <ClientProvider>

@@ -68,7 +68,10 @@ export default function RegisterForm() {
             });
 
             if (registrationResponse.status === 200) {
-                toast.success(`${dictionary?.toasters.success_registration}`);
+                // i18n
+                toast.success(
+                    `${dictionary?.toasters.success_registration}`,
+                );
             } else {
                 toast.error(`${dictionary?.toasters.alert_try_again}`);
             }
@@ -77,17 +80,16 @@ export default function RegisterForm() {
                 email,
                 password,
             });
-
+            router.push('/');
             // Redirect to signIn page
             if (loginAttempt.status === 200) {
                 router.push('/signIn', { scroll: false });
             }
-            router.push('/', { scroll: false });
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
                 const errorData = error.response.data;
-                console.log(errorData);
-                console.log(error);
+                // console.log(errorData);
+                // console.log(error);
                 // check first for username dup then for email, error msg in such order
                 if (error.response.status === 409) {
                     if (errorData && typeof errorData === 'object') {

@@ -13,7 +13,7 @@ import EmailVerification from '@/app/components/Emails/EmailVerification';
 export async function POST(req: Request) {
     try {
         const body = await req.json();
-        console.log(body);
+
         // console.log(body);
         // Check if username already exists
         const existingUsernameUser = await prisma.user.findUnique({
@@ -65,6 +65,7 @@ export async function POST(req: Request) {
             },
         });
 
+
         SendEmail({
             from: 'Awal Email Verification<do-not-reply@awaldigital.org>',
             to: [user.email],
@@ -90,3 +91,4 @@ export async function POST(req: Request) {
         return new NextResponse(null, { status: 500 });
     }
 }
+
