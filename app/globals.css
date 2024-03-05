@@ -104,3 +104,9 @@ body,
     height: 100%;
     @apply flex flex-col justify-center items-stretch bg-text-primary px-20 py-[3.25rem] cursor-pointer;
 }
+.text-stroke {
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+        1px 1px 0 black;
+    -webkit-text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+        1px 1px 0 black;
+}

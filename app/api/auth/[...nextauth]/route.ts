@@ -20,8 +20,6 @@ export const handler: AuthOptions = NextAuth({
             async authorize(credentials, req) {
                 const url = 'http://localhost:3000';
                 const reqUrl = (req?.headers as any).origin;
-                console.log(reqUrl);
-                console.log(typeof url);
                 if (!credentials?.email || !credentials?.password) {
                     throw new Error('Invalid credentials');
                 }
@@ -51,24 +49,24 @@ export const handler: AuthOptions = NextAuth({
         }),
     ],
     // session: {
-    //     strategy: 'database',
+    //     strategy: 'jwt',
     //     maxAge: 15 * 24 * 60 * 60,
     // },
     callbacks: {
         jwt({ token, trigger, session, user }) {
             console.log(trigger);
             console.log(session?.user);
-            const l = trigger === 'update' && session?.user ? true : false;
-            console.log(l);
-			if(session?.user.gender ===null){
-			session.user.gender = 'female';	
-			}
-            if (trigger === 'update' && session?.user) {
+
+            console.log(session);
+            if (session?.user.gender === null) {
+                session.user.gender = 'other';
+            }
+            if (trigger === 'update' && session.user) {
                 token.score = session.user.score;
-                console.log(session.user.score);
+                // console.log(session.user.score);
                 token.username = session.user.username;
+                token.isVerified = session.user.isVerified;
                 console.log(token);
-				
             }
             console.log(token);
             return { ...token, ...user };

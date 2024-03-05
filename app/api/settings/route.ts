@@ -122,8 +122,8 @@ export async function PATCH(req: Request) {
                     french: body.languages.french
                         ? body.languages.french
                         : false,
-                    catala: body.languages.catala
-                        ? body.languages.catala
+                    catalan: body.languages.catalan
+                        ? body.languages.catalan
                         : false,
                     spanish: body.languages.spanish
                         ? body.languages.spanish

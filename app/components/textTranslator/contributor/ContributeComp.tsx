@@ -361,7 +361,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                 setTranslated(false);
             }
             const updatedUser = res.data;
-            console.log(res.data.score);
+            // console.log(res.data.score);
             sessionUpdate({ user: updatedUser });
         } catch (error) {
             console.log(error);
@@ -507,10 +507,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                                 <Textarea
                                     value={sourceText}
                                     className="border border-gray-300 h-[50vh] rounded-md shadow"
-                                    placeholder={
-                                        d?.translator.placeholder
-                                            .type_to_translate
-                                    }
+                                    placeholder={d?.contributorInputPlaceholder}
                                     id="src_message"
                                     onChange={(e) =>
                                         setSourceText(e.target.value)
@@ -715,8 +712,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                                     value={sourceText}
                                     className="border border-gray-300 h-auto rounded-md shadow"
                                     placeholder={
-                                        d?.translator.placeholder
-                                            .type_to_translate
+                                        d?.contributorOutputPlaceholder
                                     }
                                     id="src_message"
                                     onChange={(e) =>

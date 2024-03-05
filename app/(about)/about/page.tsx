@@ -22,6 +22,7 @@ const AboutPage = () => {
 
     return (
         <div className="min-h-screen flex-col-center text-md mobile:text-xl mx-5 whitespace-pre-wrap mt-10 mobile:mt-20">
+            <h1 className="text-3xl font-semibold ">{d?.menu.about}</h1>
             {d?.about.main_string_1}
             {/*  organizations */}
             <div className=" flex flex-row items-start justify-center space-x-10 my-10 mx-10">
@@ -109,7 +110,9 @@ const AboutPage = () => {
             <div className=" flex flex-row items-start justify-center space-x-10 my-10 mx-10">
                 <div className="flex-col-center w-1/4 whitespace-pre-line">
                     <Link
-                        href={'https://www.linkedin.com/in/farida-boudichat-52735218b/'}
+                        href={
+                            'https://www.linkedin.com/in/farida-boudichat-52735218b/'
+                        }
                         scroll={false}
                         target="_blank"
                     >
@@ -176,7 +179,9 @@ const AboutPage = () => {
                             className="mb-2"
                         />
                     </Link>
-                    <h1 className="font-semibold text-xl my-2">Brahim Essaidi</h1>
+                    <h1 className="font-semibold text-xl my-2">
+                        Brahim Essaidi
+                    </h1>
                     {d?.about.contributor_brahim_intro}
                 </div>
             </div>
