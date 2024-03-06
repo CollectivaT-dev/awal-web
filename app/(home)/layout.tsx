@@ -10,12 +10,15 @@ import { useSearchParams } from 'next/navigation';
 import useLocaleStore from '../hooks/languageStore';
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
+import ContactForm from '../components/contactForm/ContactForm';
 
 export default function HomepageLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
+    const { data: session } = useSession();
+    console.log(session);
     const [totalEntries, setTotalEntries] = useState(0);
     const [topTen, setTopTen] = useState([]);
     const [totalValidation, setTotalValidation] = useState(0);
@@ -26,7 +29,6 @@ export default function HomepageLayout({
     // console.log(session);
     const { setLocale } = useLocaleStore();
     const lang = useSearchParams().get('lang') || 'ca';
-
 
     useEffect(() => {
         if (lang) {
@@ -62,6 +64,13 @@ export default function HomepageLayout({
                 <ProjectIntro />
                 <EventCarousel />
                 <Stats users={topTen} />
+                <ContactForm
+                    data={{
+                        email: session?.user?.email || '',
+                        id: session?.user?.id || '',
+                        username: session?.user?.username || '',
+                    }}
+                />
                 {children}
             </ClientProvider>
         </div>
