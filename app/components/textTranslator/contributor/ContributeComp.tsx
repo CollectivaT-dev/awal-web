@@ -507,7 +507,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                                 <Textarea
                                     value={sourceText}
                                     className="border border-gray-300 h-[50vh] rounded-md shadow"
-                                    placeholder={d?.contributorInputPlaceholder}
+                                    placeholder={d?.texts.contributor_input_placeholder}
                                     id="src_message"
                                     onChange={(e) =>
                                         setSourceText(e.target.value)
@@ -712,7 +712,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                                     value={sourceText}
                                     className="border border-gray-300 h-auto rounded-md shadow"
                                     placeholder={
-                                        d?.contributorOutputPlaceholder
+                                        d?.texts.contributor_output_placeholder
                                     }
                                     id="src_message"
                                     onChange={(e) =>

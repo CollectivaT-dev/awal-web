@@ -48,7 +48,9 @@ const VerifyEmailPage = ({ searchParams }: VerifyEmailPageProps) => {
                     router.refresh();
                 }
                 if (res.status === 406) {
-                    toast.error(`${dictionary?.verificationTokenError}`);
+                    toast.error(
+                        `${dictionary?.email.verification.token_error}`,
+                    );
                 }
             } catch (error) {
                 console.log(error);
@@ -69,11 +71,11 @@ const VerifyEmailPage = ({ searchParams }: VerifyEmailPageProps) => {
         return (
             <div className="h-screen flex flex-col items-center justify-center space-y-2">
                 <h1 className="text-3xl my-3 font-semibold">
-                    {dictionary?.verificationPageSuccessTitle}
+                    {dictionary?.email.verification.success_title}
                 </h1>
-                <span>{dictionary?.verificationPageRedirection}</span>
+                <span>{dictionary?.email.verification.page_redirect}</span>
                 <Link href={'/'} className="underline">
-                    {dictionary?.home}
+                    {dictionary?.texts.home}
                 </Link>
             </div>
         );
@@ -81,9 +83,9 @@ const VerifyEmailPage = ({ searchParams }: VerifyEmailPageProps) => {
         return (
             <div className="h-screen flex flex-col items-center justify-center space-y-2">
                 <h1 className="text-3xl font-semibold">
-                    {dictionary?.verificationPageErrorTitle}
+                    {dictionary?.email.verification.error_title}
                 </h1>
-                <p>{dictionary?.verificationPageErrorMessage}</p>
+                <p>{dictionary?.email.verification.error_msg}</p>
             </div>
         );
     }
