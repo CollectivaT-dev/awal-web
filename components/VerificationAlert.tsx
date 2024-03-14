@@ -33,13 +33,15 @@ const VerificationAlert: React.FC<VerificationAlertProps> = ({ data }) => {
                 JSON.stringify(data.userId),
             );
             if (res.status === 200) {
-                toast.success(`${dictionary?.verificationEmailSuccess}`);
+                toast.success(
+                    `${dictionary?.email.verification.success_email}`,
+                );
             }
             // console.log(res);
         } catch (error) {
-			if(error){
-				toast.error(`${dictionary?.verificationEmailError}`);
-			}
+            if (error) {
+                toast.error(`${dictionary?.email.verification.error_email}`);
+            }
             // console.log(error);
         }
     };
@@ -59,7 +61,7 @@ const VerificationAlert: React.FC<VerificationAlertProps> = ({ data }) => {
                             className="underline cursor-pointer"
                             onClick={handleVerification}
                         >
-                            {dictionary?.verificationAlert}
+                            {dictionary?.email.verification.alert}
                         </span>
                         {/* </span> */}
                         <X className="mx-2" onClick={() => setOpen(false)} />

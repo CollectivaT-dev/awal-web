@@ -82,7 +82,7 @@
         "success_translate": "Input phrase pre-translated. Please revise and correct the translation before submitting.",
         "success_update": "Profile updated successfully.",
         "success_loading": "New phrase loaded successfully.",
-        "success_registration": "Successful, thank you for signing up! Now, please check your email for a verification link",
+        "success_registration": "Thank you for signing up! Now, please check your email for the verification link and sign in to start contributing.",
         "success_copy": "Translation copied to clipboard!",
         "success_signIn": "Successfully signed in!",
         "validation_success_report": "Contribution reported. Thank you for your attention."
@@ -150,7 +150,10 @@
         "validate_report_heading": "Report contribution",
         "validate_report_text": "Please tell us briefly what's wrong with this contribution according to our community guidelines.",
         "faq_heading": "Frequently Asked Questions",
-        "rank": "#"
+        "rank": "#",
+        "home": "Home",
+        "contributor_input_placeholder": "Write a text to translate, or load one using 'Random Sentence' button.",
+        "contributor_output_placeholder": "Write here the translation of the text on the left in the selected language."
     },
     "validator": {
         "alert_no_more_entries": "No more entries to validate for language pair and variant. You can contribute more translations meanwhile.",
@@ -347,15 +350,16 @@
             "link": "https://collectivat.cat/blog/2024-01-22-awal-en/"
         }
     },
-    "home": "Home",
-    "verificationPageRedirection": "Now redirecting you ",
-    "verificationTokenError": "validation token not valid, please try to resend the verification email",
-    "verificationPageSuccessTitle": "Thank your Verifying the Email",
-    "verificationPageErrorTitle": "Verify Email failed",
-    "verificationPageErrorMessage": "some thing went wrong, or this email has been verified,please try to resend verification email. if problem persist, contact us for help",
-    "verificationAlert": "verify your email",
-    "verificationEmailSuccess": "Verification email sent successfully, please check your registraion email",
-    "verificationEmailError": "Failed to send verification email, please try again later, if the problem persist, contact us for help",
-    "contributorInputPlaceholder": "input text",
-    "contributorOutputPlaceholder": "contribute text"
+    "email": {
+        "verification": {
+            "page_redirect": "Now redirecting you...",
+            "token_error": "Validation token not valid, please try to resend the verification email.",
+            "success_title": "Thank your verifying your Email.",
+            "error_title": "Email verification failed.",
+            "error_msg": "Something went wrong. If you still see the banner, please try to resend verification email. If problem persist, contact us for help.",
+            "success_email": "Verification email sent successfully, please check your inbox and click on the link to complete verification.",
+            "alert": "Please verify your email.",
+            "error_email": "Failed to send verification email. Make sure you wrote your email correctly in your profile page. If the problem persist, contact us for help."
+        }
+    }
 }

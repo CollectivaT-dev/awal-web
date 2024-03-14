@@ -181,6 +181,10 @@ export interface MessagesProps {
         validate_report_text: string;
         faq_heading: string;
         rank: string;
+        home: string;
+
+        contributor_input_placeholder: string;
+        contributor_output_placeholder: string;
     };
     validator: {
         alert_no_more_entries: string;
@@ -383,15 +387,16 @@ export interface MessagesProps {
             link: string;
         };
     };
-    home: string;
-    verificationPageRedirection: string;
-    verificationTokenError: string;
-    verificationPageSuccessTitle: string;
-    verificationPageErrorTitle: string;
-    verificationPageErrorMessage: string;
-    verificationAlert: string;
-    verificationEmailSuccess: string;
-    verificationEmailError: string;
-    contributorInputPlaceholder: string;
-    contributorOutputPlaceholder: string;
+    email: {
+        verification: {
+            page_redirect: string;
+            token_error: string;
+            success_title: string;
+            error_title: string;
+            error_msg: string;
+            success_email: string;
+            alert: string;
+            error_email: string;
+        };
+    };
 }

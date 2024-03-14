@@ -77,7 +77,7 @@
         "alert_email": "Adresse courriel déjà enregistrée",
         "alert_email_username": "Nom d'utilisateur ou courriel déjà utilisé",
         "success_update": "Profil mis à jour avec succès.",
-        "success_registration": "Réussite ! Merci de vous être inscrit ! Maintenant, connectez-vous pour commencer à contribuer.",
+        "success_registration": "Réussite ! Merci de vous être inscrit ! Maintenant, veuillez vérifier votre courrier électronique pour le lien de vérification et connectez-vous pour commencer à contribuer.",
         "loading_updating": "Mise à jour de votre profil...",
         "alert_email_pwd": "Veuillez fournir une adresse courriel et un mot de passe valides.",
         "success_copy": "Traduction copiée dans le presse-papiers !",
@@ -150,7 +150,10 @@
         "validate_report_heading": "Signaler la contribution",
         "validate_report_text": "Veuillez nous dire brièvement ce qui ne va pas avec cette contribution selon nos lignes directrices communautaires.",
         "faq_heading":"Foire aux questions",
-        "rank":"#"
+        "rank":"#",
+        "home": "Accueil",
+        "contributor_input_placeholder": "Écrivez une phrase à traduire ou chargez-en une avec le bouton 'Phrase Aléatoire'.",
+        "contributor_output_placeholder": "Écrivez ici la traduction du texte à gauche dans la langue sélectionnée."
     },
     "validator": {
         "alert_no_more_entries": "Il n'y a plus d'entrées à valider pour la paire de langues et la variante sélectionnée. Vous pouvez contribuer avec plus de traductions entre-temps.",
@@ -346,5 +349,17 @@
             "body": "Présentation du projet Awal pour la préservation et la promotion de la langue amazig sur Internet avec une communauté de données forte et unie.",
             "link": "https://collectivat.cat/blog/2024-01-22-awal-en/"
         }
+    },
+    "email": {
+      "verification": {
+        "page_redirect": "Redirection en cours...",
+        "token_error": "Le jeton de validation n'est pas valide, veuillez essayer de renvoyer l'email de vérification.",
+        "success_title": "Merci d'avoir vérifié votre e-mail.",
+        "error_title": "La vérification de l'e-mail a échoué.",
+        "error_msg": "Quelque chose s'est mal passé. Si vous voyez toujours la bannière, veuillez essayer de renvoyer l'e-mail de vérification. Si le problème persiste, contactez-nous pour obtenir de l'aide.",
+        "success_email": "L'email de vérification a été envoyé avec succès. Veuillez vérifier votre boîte de réception et cliquer sur le lien pour terminer la vérification.",
+        "alert": "Veuillez vérifier votre e-mail.",
+        "error_email": "Impossible d'envoyer l'e-mail de vérification. Assurez-vous d'avoir correctement écrit votre e-mail dans votre page de profil. Si le problème persiste, contactez-nous pour obtenir de l'aide."
+      }
     }
 }

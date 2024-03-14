@@ -46,7 +46,7 @@
         "framer-motion": "^11.0.5",
         "js-levenshtein": "^1.1.6",
         "lodash": "^4.17.21",
-        "lucide-react": "^0.336.0",
+        "lucide-react": "^0.350.0",
         "negotiator": "^0.6.3",
         "next": "^14.0.3",
         "next-auth": "^4.24.5",

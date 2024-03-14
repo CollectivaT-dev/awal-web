@@ -107,8 +107,8 @@
         "alert_age": "ⵓⵔ ⵉⵣⵎⵉⵔ ⵓⵡⵜⴰⵢ ⴰⴷ ⵉⵣⵔⵉ 120."
     },
     "page_intro": {
-        "title": "ⴰⵏⵜⵉⵔⵏⵉⵜ ⵉⵙⴰⵡⴰⵍ ⵜⴰⵎⴰⵣⵉⵖⵜ",
-        "CTA_text": "ⵉⴳⴰ \"ⴰⵡⴰⵍ\" ⵢⴰⵜ ⵜⵙⵏⵜⴰⵢⵜ ⵏ ⵜⴳⵔⴰⵡⵜ ⵉ ⵓⵙⵙⴷⵓⵙ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⵣⵉⵖⵜ ⴳ ⵢⵉⴳⵔ ⴰⵎⵓⵟⵟⵓⵏ. ⴰⵙⵎⵎⴰⵇⵇⵍ ⵏⵏⵖ ⵉⴼⴰⵡ: ⴰⵣⵣⵎⵔ ⵏ ⵜⵎⴰⵣⵉⵖⵜ ⴰⴷ ⵜⴼⵍⵓⵊⵊⵓ ⴰⴽⴷ ⵜⴻⵜⵉⴽⵏⵓⵍⵓⵊⵉⵜ ⵏ ⵓⵙⴰⴳⵯⵎ ⵓⵕⵥⵉⵎ, ⵏⵉⵔⵉ ⴽⵯⵏ ⴰⴷ ⵜⵙⵎⴷⵎ ⴰⵢⴰ.",
+        "title": "ⴰⵏⵜⵉⵔⵏⵉⵜ ⵉⵙⴰⵡⴰⵍ ⵜⴰⵎⴰⵣⵉⵖⵜ!",
+        "CTA_text": "ⵉⴳⴰ ⴰⵡⴰⵍ ⵢⴰⵜ ⵜⵙⵏⵜⴰⵢⵜ ⵏ ⵜⴳⵔⴰⵡⵜ ⵉ ⵓⵙⵙⴷⵓⵙ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⵣⵉⵖⵜ ⴳ ⵢⵉⴳⵔ ⴰⵎⵓⵟⵟⵓⵏ. ⴰⵙⵎⵎⴰⵇⵇⵍ ⵏⵏⵖ ⵉⴼⴰⵡ: ⴰⵣⵣⵎⵔ ⵏ ⵜⵎⴰⵣⵉⵖⵜ ⴰⴷ ⵜⴼⵍⵓⵊⵊⵓ ⴰⴽⴷ ⵜⴻⵜⵉⴽⵏⵓⵍⵓⵊⵉⵜ ⵏ ⵓⵙⴰⴳⵯⵎ ⵓⵕⵥⵉⵎ, ⵏⵉⵔⵉ ⴽⵯⵏ ⴰⴷ ⵜⵙⵎⴷⵎ ⴰⵢⴰ.",
         "heading_1": "ⵎⴰⵏⵎⴽ ⴰ ⵙ ⵜⵣⵎⵔⴷ ⴰⴷ ⵜⴰⵔⴳⴷ?",
         "heading_2": "ⵍⴰ ⵏⵙⴱⵔⵔⴰⴽ ⵙ ⴽⵓⵢⴰⵏ",
         "text_2": "ⵉⵏⵏⵓⵕⵥⵎ ⵡⴰⵔⵔⴰⴳ ⵉ ⴽⵓⵢⴰⵏ ⵉⵣⵎⵔⵏ ⴰⴷ ⵉⵜⵜⴰⵔⴰ ⴰⵔ ⵢⴰⵇⵔⴰ ⵙ ⵜⵎⴰⵣⵉⵖⵜ. ⵍⴰ ⵏⵙⴼⵓⴳⵍⵓ ⵙ ⵓⵎⵢⴰⵏⴰⵡ ⴰⵏⴱⵖⵓⵔ ⵏ ⵜⵎⵣⴰⵔⴰⵢⵉⵏ ⵜⵉⵎⴰⵣⵉⵖⵉⵏ ⴷ ⵍⴰ ⵏⵙⴱⵔⵔⴰⴽ ⵙ ⵉⵎⵙⵉⵡⵍⵏ ⵙⴳ ⴽⵔⴰⵢⴳⴰⵜ ⵎⴰⵏⵉ.",
@@ -150,7 +150,10 @@
         "validate_report_heading": "ⵎⵍ ⴰⵔⵔⴰⴳ",
         "validate_report_text": "ⵎⴽ ⵜⵓⴼⵉⴷ, ⵉⵏⵉ ⴰⵏⵖ ⵙ ⵓⵙⴳⵣⵍ ⵎⴰ ⴰⴷ ⵉⵣⴳⵍⵏ ⴳ ⵡⴰⵔⵔⴰⴳ ⴰⴷ, ⵙ ⵎⴽⴷⴰ ⵉⵍⵍⴰⵏ ⴳ ⵜⴰⵔⴰⵜⵉⵏ ⵏ ⵜⴳⵔⴰⵡⵜ ⵏⵏⵖ.",
         "faq_heading": "ⵉⵙⵇⵇⵙⵉⵜⵏ ⴷ ⵉⵜⵜⴰⵖⵓⵍⵏ",
-        "rank": "#"
+        "rank": "#",
+        "home": "Home",
+        "contributor_input_placeholder": "Write a text to translate, or load one using 'Random Sentence' button.",
+        "contributor_output_placeholder": "Write here the translation of the text on the left in the selected language."
     },
     "validator": {
         "alert_no_more_entries": "ⵡⴰⵍⵓ ⵜⵓⴷⵉⴼⵉⵏ ⵉ ⵓⵣⵣⵔⴰⵢ ⴳ ⵜⵢⵓⴳⴰ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⴷ ⵜⵎⵣⴰⵔⴰⵢⵜ. ⵜⵣⵎⵔⴷ ⴰⴷ ⵜⴰⵔⴳⴷ ⵓⴳⴳⴰⵔ ⵏ ⵜⵙⵓⵖⵍⵉⵏ ⴳ ⵜⵉⵣⵉ ⴰⴷ.",
@@ -185,7 +188,7 @@
         "specify": "ⵎⴽ ⵜⵓⴼⴰⵎ, ⵥⵍⵢⴰⵜ ⵜⴰⵎⵣⴰⵔⴰⵢⵜ ⵏⵏⵓ."
     },
     "about": {
-        "main_string_1": "ⵉⴳⴰ \"ⴰⵡⴰⵍ\" ⵢⴰⵏ ⵓⵙⵏⴼⴰⵔ ⵏⵏⴰ ⵉⵜⵜⴰⵔⴳⵏ ⴳ ⵓⵃⵟⵟⵓ ⴷ ⵓⵙⵙⴷⵓⵙ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⵣⵉⵖⵜ ⴳ ⵓⵙⴰⵢⵔⴰⵔ ⴰⵎⵓⵟⵟⵓⵏ ⵙ ⵓⵙⵖⵉⵡⵙ ⵏ ⵉⵎⴰⵙⵙⵏ ⵉⵎⴰⵢⵏⵓⵜⵏ ⵏⵏⴰ ⵉⵙⵙⵏⵀⴰⵍⵏ ⴰⵙⵙⵎⵔⵙ ⵏⵏⵙ ⴷ ⵓⴼⵙⴰⵔ ⵏⵏⵙ. ⵔⴰⴷ ⵜⴳ ⵜⴷⵔⴰⵡⵜ ⵏ ⵉⵎⵙⵉⵡⵍⵏ ⵙ ⵜⵎⴰⵣⵉⵖⵜ ⵜⵓⵛⵛⵉⵍⵜ ⵉ ⵓⴳⵔⵔⵓ ⵏ ⵉⵙⴼⴽⴰ, ⵉⴳⵕⴹⴰⵏⵏ ⴷ ⵡⵉⴷ ⵜⵜⵢⴰⵔⴰⵏⵉⵏ, ⵙ ⵜⵖⴰⵔⴰⵙⵜ ⵏ ⵉⵙⵓⵙⴰⵔ ⵉⴳⵕⴹⴰⵏⵏ ⴷ ⵜⵓⴳⵔⵉⵡⵜ ⵏ ⵉⴹⵕⵉⵚⵏ ⵜⵜⵡⴰⵙⵓⵖⵍⵏⵉⵏ ⵙⴳ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⴷⵔⵓⵙⵜ ⴰⴷ. ⵓⵔ ⵜⵡⴰⴷⵙ ⵜⵙⵏⵜⴰⵢⵜ ⴰⴷ ⴽⴰ ⵜⵙⵏⴼⵍⵓⵍ ⵉⵎⴰⵙⵙⵏ ⵉⵎⵓⵟⵟⵓⵏⵏ ⵉⵎⵕⵡⵉⵜⵏ, ⵎⴰⵛⵛ ⵜⵡⴰⴷⵙ ⴰⵡⴷ ⴰⵙⴰⵜⵜⵓⵢ ⴰⴼⵔⴰⴽ ⵏ ⵜⴳⵔⴰⵡⵜ ⵙ ⵜⵅⵅⵉⵜⵔⵜ ⵏ ⵉⵙⴼⴽⴰ ⵉⵙⵏⵉⵍⵙⴰⵏⵏ ⴷ ⵜⴻⵜⵉⴽⵏⵓⵍⵓⵊⵉⵢⵉⵏ ⵜⵉⵎⴰⵢⵏⵓⵜⵉⵏ ⵉ ⵓⵃⵟⵟⵓ ⵏ ⵜⵓⵜⵍⴰⵢⵜ, ⴰⵙⴰⵜⵜⵓⵢ ⵏ ⵓⴼⵔⴰⴽ ⵙ ⵜⵓⵙⵓⵔⵉⵏ ⵏ ⵜⵕⵥⵉ ⵜⴰⵎⵓⵟⵟⵓⵏⵜ ⴷ ⵓⵙⵙⵉⵎⵖⵓⵔ ⵏ ⵢⴰⵏ ⵓⵥⵟⵟⴰ ⵏ ⵉⵎⵣⵣⵓⵍⵏ. ⵉⴳⴰ \"ⴰⵡⴰⵍ\" ⵢⴰⵜ ⵜⵙⵏⵜⴰⵢⵜ ⵙⴳ ⵖⵓⵔ CIEMEN, Col·lectivaT ⴷ Casa Amaziga de Catalunya, ⵜⵙⵙⵥⵕⴼ ⵜⵜ ⵜⴳⵔⴰⵡⵜ ⵏ ⴱⴰⵕⵙⵉⵍⵓⵏⴰ ⴷ ⵓⵙⵇⵇⵉⵎ ⴰⵎⴰⵜⴰⵢ ⵏ ⴽⴰⵟⴰⵍⵓⵏⵢⴰ ⵙ ⵡⴰⵏⵏⴰⵍ ⵏ ⵜⵙⵏⵓⵔⴰⵢⵜ ⵜⴰⴽⴰⵟⴰⵍⵓⵏⵉⵜ ⵏ ⵓⵎⵢⴰⵡⴰⵙ ⴰⵏⴳⵎⵓ ⴷ ⵜⵣⵓⵏⵉ ⵏ ⵉⵣⵔⴼⴰⵏ ⵉⵏⴰⵎⵓⵏⵏ.",
+        "main_string_1": "ⵉⴳⴰ ⴰⵡⴰⵍ ⵢⴰⵏ ⵓⵙⵏⴼⴰⵔ ⵏⵏⴰ ⵉⵜⵜⴰⵔⴳⵏ ⴳ ⵓⵃⵟⵟⵓ ⴷ ⵓⵙⵙⴷⵓⵙ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⵣⵉⵖⵜ ⴳ ⵓⵙⴰⵢⵔⴰⵔ ⴰⵎⵓⵟⵟⵓⵏ ⵙ ⵓⵙⵖⵉⵡⵙ ⵏ ⵉⵎⴰⵙⵙⵏ ⵉⵎⴰⵢⵏⵓⵜⵏ ⵏⵏⴰ ⵉⵙⵙⵏⵀⴰⵍⵏ ⴰⵙⵙⵎⵔⵙ ⵏⵏⵙ ⴷ ⵓⴼⵙⴰⵔ ⵏⵏⵙ. ⵔⴰⴷ ⵜⴳ ⵜⴷⵔⴰⵡⵜ ⵏ ⵉⵎⵙⵉⵡⵍⵏ ⵙ ⵜⵎⴰⵣⵉⵖⵜ ⵜⵓⵛⵛⵉⵍⵜ ⵉ ⵓⴳⵔⵔⵓ ⵏ ⵉⵙⴼⴽⴰ, ⵉⴳⵕⴹⴰⵏⵏ ⴷ ⵡⵉⴷ ⵜⵜⵢⴰⵔⴰⵏⵉⵏ, ⵙ ⵜⵖⴰⵔⴰⵙⵜ ⵏ ⵉⵙⵓⵙⴰⵔ ⵉⴳⵕⴹⴰⵏⵏ ⴷ ⵜⵓⴳⵔⵉⵡⵜ ⵏ ⵉⴹⵕⵉⵚⵏ ⵜⵜⵡⴰⵙⵓⵖⵍⵏⵉⵏ ⵙⴳ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⴷⵔⵓⵙⵜ ⴰⴷ. ⵓⵔ ⵜⵡⴰⴷⵙ ⵜⵙⵏⵜⴰⵢⵜ ⴰⴷ ⴽⴰ ⵜⵙⵏⴼⵍⵓⵍ ⵉⵎⴰⵙⵙⵏ ⵉⵎⵓⵟⵟⵓⵏⵏ ⵉⵎⵕⵡⵉⵜⵏ, ⵎⴰⵛⵛ ⵜⵡⴰⴷⵙ ⴰⵡⴷ ⴰⵙⴰⵜⵜⵓⵢ ⴰⴼⵔⴰⴽ ⵏ ⵜⴳⵔⴰⵡⵜ ⵙ ⵜⵅⵅⵉⵜⵔⵜ ⵏ ⵉⵙⴼⴽⴰ ⵉⵙⵏⵉⵍⵙⴰⵏⵏ ⴷ ⵜⴻⵜⵉⴽⵏⵓⵍⵓⵊⵉⵢⵉⵏ ⵜⵉⵎⴰⵢⵏⵓⵜⵉⵏ ⵉ ⵓⵃⵟⵟⵓ ⵏ ⵜⵓⵜⵍⴰⵢⵜ, ⴰⵙⴰⵜⵜⵓⵢ ⵏ ⵓⴼⵔⴰⴽ ⵙ ⵜⵓⵙⵓⵔⵉⵏ ⵏ ⵜⵕⵥⵉ ⵜⴰⵎⵓⵟⵟⵓⵏⵜ ⴷ ⵓⵙⵙⵉⵎⵖⵓⵔ ⵏ ⵢⴰⵏ ⵓⵥⵟⵟⴰ ⵏ ⵉⵎⵣⵣⵓⵍⵏ. ⵉⴳⴰ ⴰⵡⴰⵍ ⵢⴰⵜ ⵜⵙⵏⵜⴰⵢⵜ ⵙⴳ ⵖⵓⵔ CIEMEN, Col·lectivaT ⴷ Casa Amaziga de Catalunya, ⵜⵙⵙⵥⵕⴼ ⵜⵜ ⵜⴳⵔⴰⵡⵜ ⵏ ⴱⴰⵕⵙⵉⵍⵓⵏⴰ ⴷ ⵓⵙⵇⵇⵉⵎ ⴰⵎⴰⵜⴰⵢ ⵏ ⴽⴰⵟⴰⵍⵓⵏⵢⴰ ⵙ ⵡⴰⵏⵏⴰⵍ ⵏ ⵜⵙⵏⵓⵔⴰⵢⵜ ⵜⴰⴽⴰⵟⴰⵍⵓⵏⵉⵜ ⵏ ⵓⵎⵢⴰⵡⴰⵙ ⴰⵏⴳⵎⵓ ⴷ ⵜⵣⵓⵏⵉ ⵏ ⵉⵣⵔⴼⴰⵏ ⵉⵏⴰⵎⵓⵏⵏ.",
         "ciemen_logo_url": "",
         "ciemen_web_url": "www.ciemen.cat",
         "ciemen_intro": "ⵜⴳⴰ CIEMEN ⵢⴰⵜ ⵜⵎⴰⴷⴷⴰⵙⵜ ⵜⴰⴷⵍⵙⴰⵏⵜ ⵜⴰⴽⴰⵟⴰⵍⵓⵏⵉⵜ, ⵜⴰⵔ ⴰⵡⵜⵜⴰⵙ ⵓⵔⵔⵉⵣ, ⴷ ⵜⴰⵔⵓⵏⴱⵉⴹⵜ ⵙ ⵢⴰⵏ ⵓⵙⵡⵉⵔ ⴰⴳⵔⴰⵖⵍⴰⵏ ⴷ ⵡⵓⴳⴳⴰⵔ ⵏ 40 ⵉⵙⴳⴳⵯⴰⵙⵏ ⵏ ⵜⵉⵔⵎⵉⵜ ⴳ ⵢⵉⴳⵔ ⵏ ⵜⵎⵜⵜⴰ ⵜⴰⵔ ⴰⵡⴰⵏⴽ, ⵉⵖⵔⴼⴰⵏ ⵜⵜⵓⵙⵎⵥⵉⵢⵏⵉⵏ, ⴷ ⵓⵎⵢⴰⵏⴰⵡ. ⵜⵡⴰⴷⵙ ⴰⴷ ⵜⵙⵙⵉⵡⵙ ⴳ ⵢⴰⵜ ⵜⵓⵙⵙⵏⴰ ⵢⵓⴼⵏ ⵏ ⵉⵖⵔⴼⴰⵏ ⴷ ⵜⵎⵜⵜⴰ ⵏⵏⴰ ⵜⵜⵓⵙⵙⵉⵏⴼⵏⵉⵏ ⵏⵖ ⴷ ⵍⴰ ⵜⵜⴰⵏⵏⴰⵢⵏ ⵜⴰⵎⴰⴳⵉⵜ ⴷ ⵜⵉⵍⵉⵜ ⵏⵏⵙⵏ ⵜⵜⵓⵙⴷⵉⴷⴷⵉⵏⵜ, ⴷ ⴰⴷ ⵜⵙⵏⴰⵍ, ⵜⵙⵙⴷⵓⵙ ⵜⵓⵙⵏⵜ ⴷ ⵓⵣⵔⴰⴽ ⵏ ⵉⵣⵔⴼⴰⵏ ⵉⵎⵢⵉⵡⵏⵏ ⴷ ⵉⵎⴳⵔⵓⵜⵏ ⴰⵎ ⵢⴰⵜ ⵜⴱⵔⵉⴷⵜ ⵏ ⵓⵣⵣⵉⴳⵣ ⵖⵔ ⵓⴼⵔⴰ ⴷ ⵜⴷⵉⵎⵓⴽⵕⴰⵟⵉⵜ ⵉⵙⵓⵍⴰⵏⵏ.",
@@ -207,9 +210,9 @@
         "contributor_yuxuan_intro": "ⵢⵓⵛⵡⴰⵏ ⴱⵉⵏⴳ, ⴰⵎⵙⵖⵉⵡⵙ ⴰⵏⵎⴷⵓ, ⵍⴰ ⵉⵙⵖⵉⵡⵉⵙ ⴷ ⵍⴰ ⵜⵜ ⵉⵜⵜⵡⴷ ⵉ ⵜⴰⵙⵏⴰ ⵏ ⵓⵡⵉⴱ ⵏ ⴰⵡⴰⵍ.",
         "contributor_brahim_photo": "",
         "contributor_brahim_website": "",
-        "contributor_brahim_intro": "Brahim Essaidi, Amazigh author, writer and translator. Localized Awal website and Common Voice. Contributes to Awal, Common Voice and other open source projects dedicated to promote Tamazight language.",
+        "contributor_brahim_intro": "ⴱⵕⴰⵀⵉⵎ ⵙⵙⵄⵉⴷⵉ, ⴰⵎⴳⴰⵢ ⴷ ⵓⵎⴰⵔⴰ ⴰⵎⴰⵣⵉⵖ ⴷ ⵓⵎⵙⵙⵓⵖⵍ. ⵉⵙⵙⴷⵖⵔ ⴰⵙⵉⵜⵡⵉⴱ ⵏ ⴰⵡⴰⵍ ⴷ ⴽⴰⵎⵏⴼⵓⵢⵙ ⵙ ⵜⵎⴰⵣⵉⵖⵜ. ⴰⵔ ⵉⵜⵜⴰⵔⴳ ⴳ ⴰⵡⴰⵍ, ⴽⴰⵎⵏⴼⵓⵢⵙ ⴷ ⵉⵙⵏⴼⴰⵔⵏ ⵢⴰⴹⵏⵉⵏ ⵏ ⵓⵙⴰⴳⵎ ⵓⵕⵥⵉⵎ ⵜⵜⵓⵥⵍⴰⵢⵏⵉⵏ ⵉ ⵜⵏⴽⵔⴰ ⵙ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⵣⵉⵖⵜ.",
         "contact_heading": "ⵏⵢⴰⵍⴽⴰⵎ ⴷ ⴰⵡⴰⵍ",
-        "contact_info": "ⵉ ⵉⵙⵇⵙⵉⵜⵏ, ⵜⵉⵙⵓⵎⴰⵔ, ⵏⵖ ⵓⴳⴳⴰⵔ ⵏ ⵉⵏⵖⵎⵉⵙⵏ, ⵏⵢⴰⵍⴽⴰⵎ ⴷⵉⴷⵏⵖ ⴳ",
+        "contact_info": "ⵉ ⵉⵙⵇⵙⵉⵜⵏ, ⵜⵉⵙⵓⵎⴰⵔ, ⵏⵉⵖ ⵓⴳⴳⴰⵔ ⵏ ⵉⵏⵖⵎⵉⵙⵏ, ⵏⵢⴰⵍⴽⴰⵎ ⴷⵉⴷⵏⵖ ⴳ",
         "contact_text": "awal@collectivat.cat"
     },
     "terms": {
@@ -230,38 +233,38 @@
         "machine_translation_heading": "ⴰⵙⵓⵖⵍ ⵏ ⵜⵎⴰⵛⵉⵏⵜ",
         "machine_translation": "ⵉⵙⵙⵓⵔⴳ ⵓⵙⵓⵖⵍ ⵏ ⴰⵡⴰⵍ ⴰⵙⵓⵖⵍ ⴰⵡⵔⵎⴰⵏ ⴳⵔ ⵜⵎⴰⵣⵉⵖⵜ ⴷ ⴽⴽⵓⵥⵜ ⵜⵓⵜⵍⴰⵢⵉⵏ. ⵜⴻⵜⵜⵡⴰⵏⵏⴰⵍ ⵜⵎⵥⵍⴰⵢⵜ ⴰⴷ ⵙ",
         "machine_translation_link_text": "ⵓⵣⵓⵔⵜ NLLB ⵏ ⵎⵉⵜⴰ,",
-        "machine_translation_continued": "ⵢⴰⵏ ⵓⵣⵓⵔⵜ ⵏ ⵓⵙⴰⴳⵎ ⵓⵕⵥⵉⵎ ⵉⵜⵜⵓⴼⵙⴰⵔ ⵉ ⵉⵡⵜⵜⴰⵙⵏ ⵏ ⵓⵔⵣⵣⵓ. ⵎⴰⵛⵛ ⵖⵉⵍⴰ ⵜⴷⵔⵓⵙ ⴽⵉⴳⴰⵏ ⵜⵕⵡⵉ ⵏ ⵜⵙⵓⵖⵍⵉⵏ ⵏ ⵜⵎⴰⵣⵉⵖⵜ ⵙ ⵓⵙⵔⴰⴳ ⵏ ⵉⵙⵓⴳⴰⵎ ⵜⵜⵓⵙⵡⵓⵜⵜⴰⵏⵉⵏ. ⵉⴳⴰ ⵓⵙⵖⵓⴷⵓ ⵏ ⵓⵣⵓⵔⵜ ⴰⴷ ⵢⴰⵏ ⵙⴳ ⵉⵡⵜⵜⴰⵙⵏ ⵏ ⵓⵙⵏⴼⴰⵔ ⵙ ⵓⵙⵙⵎⵔⵙ ⵏ ⵉⵙⴼⴽⴰ ⵏ ⵜⵕⵡⵉ ⵢⴰⵜⵜⵓⵢⵏ ⵏⵏⴰ ⵏⴳⵔⵓ.\nⴰⴷⴷⴰⵢ ⵜⴻⵜⵜⴰⵔⵎ, ⵖⵓⵔⵓⵏ ⵜⴰⴷⵖⵔⵜ ⵏ ⵓⵙⵙⵎⵔⵙ ⵏ ⵜⵎⵥⵍⴰⵢⵜ ⵏ ⵓⵙⵓⵖⵍ ⴰⵡⵔⵎⴰⵏ ⵃⵎⴰ ⴰⴷ ⵜⵙⵙⴰⵔⵓⵎ ⵜⴰⵙⵓⵖⵍⵜ ⵏⵏⴰ ⵖⴼ ⵔⴰⴷ ⵜⵙⵡⵓⵔⵉⵎ. ⵎⴰⵛⵛ ⵉⵇⵇⴰⵏ ⴷ ⴰⴷ ⵜⵙⵏⴼⵍⵎ ⵜⴰⵡⵉⵏⵙⵜ ⴰⴷ ⵙ ⵜⵖⴰⵔⴰⵙⵜ ⴷ ⵢⵓⵙⴰⵏ ⵃⵎⴰ ⴰⴷ ⵜⴹⴽⵍⵎ ⵜⴰⵏⵖⴷⴰ. ⵓⵔ ⴷⴰ ⵜⵜⵓⴷⴳⴳⵉⴰⵏⵜ ⵜⵡⵉⵏⴰⵙ ⵜⵜⵡⴰⵙⵓⵖⵍⵏⵉⵏ ⵙ ⵓⵡⵔⵎⴰⵏ ⵎⵉⵏ ⴰⵡⴷ ⴽⵔⴰ ⵏ ⵓⵙⵏⴼⵍ. ⵉⵖⵉⵢ ⴳⴰⵔ ⴰⵙⵙⵎⵔⵙ ⵏ ⵜⵎⵥⵍⴰⵢⵜ ⵏ ⵓⵙⵓⵖⵍ ⴰⵡⵔⵎⴰⵏ ⴰⴷ ⵉⵙⵔⴳ ⴳ ⵓⵙⵉⵜⵜⵉ ⵏ ⵜⵡⵉⵏⴰⵙ ⵏⵏⴰ ⵜⵓⵔⴳⵎ ⵏⵉⵖ ⴷ ⴰⴽⴽⵯ ⴰⵙⴱⵉⴷⴷ ⵏ ⵓⵎⵉⴹⴰⵏ ⵏ ⵓⵏⵙⵙⵎⵔⵙ ⵏⵏⵓⵏ.",
+        "machine_translation_continued": "ⵢⴰⵏ ⵓⵣⵓⵔⵜ ⵏ ⵓⵙⴰⴳⵎ ⵓⵕⵥⵉⵎ ⵉⵜⵜⵓⴼⵙⴰⵔ ⵉ ⵉⵡⵜⵜⴰⵙⵏ ⵏ ⵓⵔⵣⵣⵓ. ⵎⴰⵛⵛ ⵖⵉⵍⴰ ⵜⴷⵔⵓⵙ ⴽⵉⴳⴰⵏ ⵜⵕⵡⵉ ⵏ ⵜⵙⵓⵖⵍⵉⵏ ⵏ ⵜⵎⴰⵣⵉⵖⵜ ⵙ ⵓⵙⵔⴰⴳ ⵏ ⵉⵙⵓⴳⴰⵎ ⵜⵜⵓⵙⵡⵓⵜⵜⴰⵏⵉⵏ. ⵉⴳⴰ ⵓⵙⵖⵓⴷⵓ ⵏ ⵓⵣⵓⵔⵜ ⴰⴷ ⵢⴰⵏ ⵙⴳ ⵉⵡⵜⵜⴰⵙⵏ ⵏ ⵓⵙⵏⴼⴰⵔ ⵙ ⵓⵙⵙⵎⵔⵙ ⵏ ⵉⵙⴼⴽⴰ ⵏ ⵜⵕⵡⵉ ⵢⴰⵜⵜⵓⵢⵏ ⵏⵏⴰ ⵏⴳⵔⵓ.\\nⴰⴷⴷⴰⵢ ⵜⴻⵜⵜⴰⵔⵎ, ⵖⵓⵔⵓⵏ ⵜⴰⴷⵖⵔⵜ ⵏ ⵓⵙⵙⵎⵔⵙ ⵏ ⵜⵎⵥⵍⴰⵢⵜ ⵏ ⵓⵙⵓⵖⵍ ⴰⵡⵔⵎⴰⵏ ⵃⵎⴰ ⴰⴷ ⵜⵙⵙⴰⵔⵓⵎ ⵜⴰⵙⵓⵖⵍⵜ ⵏⵏⴰ ⵖⴼ ⵔⴰⴷ ⵜⵙⵡⵓⵔⵉⵎ. ⵎⴰⵛⵛ ⵉⵇⵇⴰⵏ ⴷ ⴰⴷ ⵜⵙⵏⴼⵍⵎ ⵜⴰⵡⵉⵏⵙⵜ ⴰⴷ ⵙ ⵜⵖⴰⵔⴰⵙⵜ ⴷ ⵢⵓⵙⴰⵏ ⵃⵎⴰ ⴰⴷ ⵜⴹⴽⵍⵎ ⵜⴰⵏⵖⴷⴰ. ⵓⵔ ⴷⴰ ⵜⵜⵓⴷⴳⴳⵉⴰⵏⵜ ⵜⵡⵉⵏⴰⵙ ⵜⵜⵡⴰⵙⵓⵖⵍⵏⵉⵏ ⵙ ⵓⵡⵔⵎⴰⵏ ⵎⵉⵏ ⴰⵡⴷ ⴽⵔⴰ ⵏ ⵓⵙⵏⴼⵍ. ⵉⵖⵉⵢ ⴳⴰⵔ ⴰⵙⵙⵎⵔⵙ ⵏ ⵜⵎⵥⵍⴰⵢⵜ ⵏ ⵓⵙⵓⵖⵍ ⴰⵡⵔⵎⴰⵏ ⴰⴷ ⵉⵙⵔⴳ ⴳ ⵓⵙⵉⵜⵜⵉ ⵏ ⵜⵡⵉⵏⴰⵙ ⵏⵏⴰ ⵜⵓⵔⴳⵎ ⵏⵉⵖ ⴷ ⴰⴽⴽⵯ ⴰⵙⴱⵉⴷⴷ ⵏ ⵓⵎⵉⴹⴰⵏ ⵏ ⵓⵏⵙⵙⵎⵔⵙ ⵏⵏⵓⵏ.",
         "validation_heading": "ⴰⵣⵣⵔⴰⵢ ⵏ ⵜⵙⵓⵖⵍⵜ",
         "validation": "ⵍⴰ ⵉⵜⵜⴰⵊⵊⴰ ⴰⵡⴰⵍ ⴰⵡⴷ ⴰⵣⵣⵔⴰⵢ ⵏ ⵜⴳⵔⴰⵡⵜ ⵉ ⵜⵡⵉⵏⴰⵙ ⵜⵜⵡⴰⵙⵓⵖⵍⵏⵉⵏ. ⴰⵢⴰ ⵃⵎⴰ ⴰⴷ ⵏⴹⴽⵍ ⵜⴰⵏⵖⴷⴰ ⵏ ⵜⵡⵉⵏⴰⵙ ⴷⴰ ⵏⴳⵔⵓ ⵏⵏⴰ ⵔⴰⴷ ⵉⴳ ⵜⵓⵛⵛⵉⵍⵉⵏ ⴳ ⵡⴰⵡⴰⴹ ⵏ ⵜⵏⵖⴷⴰ ⵏ ⵉⵣⵓⵔⵜⵏ. ⵜⵣⵎⵔⵎ ⴰⴷ ⵜⴷⴳⴳⵉⵎ ⵜⵉⵙⵓⵖⵍⵉⵏ ⵖⵓⴷⴰⵏⵉⵏ ⴷ ⴰⴷ ⵜⴰⴳⵯⵉⵎ ⵜⵉⵏⵏⴰ ⵓⵎⴰⵏⵉⵏ ⵉⵣⴳⴰⵍⵏ ⵉⵎⵇⵇⵔⴰⵏⵏ, ⵉⵣⴳⴰⵍⵏ ⵏ ⵓⵙⵏⵎⴰⵔⵔⴰ ⴷ ⵜⵙⵓⵖⵍⵉⵏ ⵣⴳⵍⵏⵉⵏ. ⵓⵔ ⴷ ⵉⵇⵇⴰⵏ ⴰⴷ ⵜⵜⵓⵙⵙⵉⴹⵏⵏ ⵉⵣⴳⴰⵍⵏ ⵉⵎⵥⵥⵢⴰⵏⵏ ⴷ ⵉⵏⵓⵃⵢⵓⵜⵏ ⵏ ⵜⵎⵣⴰⵔⴰⵢⵉⵏ ⴰⵎ ⵉⵣⴳⴰⵍⵏ.",
         "profile_heading": "ⵉⴼⵔⵙ ⵏ ⵓⵏⵙⵙⵎⵔⵙ",
-        "profile": "ⵓⵔ ⵔⴰⴷ ⵢⵓⵎⴰⵏ ⵢⵉⵙⵎ, ⵉⵙⵎ ⵏ ⵓⵏⵙⵙⵎⵔⵙ ⴷ ⵡⴰⵏⵏⵙⴰ ⵏ ⵉⵎⴰⵢⵍ ⵏⵏⵓⵏ ⵉ ⵓⴳⴷⵓⴷ ⵙ ⴰⵡⴷ ⵢⴰⵜ ⵜⵖⴰⵔⴰⵙⵜ.\nⴰⵔ ⴰⵏⵖ ⵜⵜⴰⵊⵊⴰⵏ ⵉⵏⵖⵎⵉⵙⵏ ⵉⴷⵉⵎⵓⴳⵔⴰⴼⵉⵢⵏ ⵣⵓⵏ ⴷ ⴰⵡⵜⴰⵢ, ⴰⴳⵏⵓⵙ, ⴷ ⵜⵙⵓⴳⵔⵜ ⵜⴰⵙⵏⵉⵍⵙⴰⵏⵜ ⴰⴷ ⵏⵙⵙⵏ ⵖⴼ ⵉⴼⵔⵙ ⵏ ⵉⵎⴰⵔⴰⴳⵏ ⵏⵏⵖ ⴷ ⴰⴷ ⵏⵙⵜⵍ ⵜⵓⴷⵎⴰⵡⵉⵏ, ⵜⵉⵕⵡⵉ, ⴷ ⵓⵏⵛⵜ ⵏ ⵉⵙⴼⴽⴰ ⵏⵏⴰ ⵏⴳⵔⵓ. ⵙ ⵜⵉⴽⴽⵉ ⵏ ⵉⵏⵖⵎⵉⵙⵏ ⴰⴷ, ⵜⵙⵙⵓⵔⴳⵎ ⴰⴼⵙⴰⵔ ⵏ ⵜⵙⵓⵖⵍⵉⵏ ⵏⵏⵓⵏ ⵎⵓⵏⵏⵜ ⴰⴽⴷ ⵉⵏⵖⵎⵉⵙⵏ ⴰ.\nⵉⴳⴰ ⵢⵉⵙⵎ ⵏ ⵓⵏⵙⵙⵎⵔⵙ ⵏⵏⵓⵏ ⴰⴳⴷⵓⴷⴰⵏ ⴷ ⵉⵖⵉⵢ ⴰⴷ ⵉⵜⵜⵓⴷⵔⴰⵙ ⴳ ⵜⴼⵉⵍⵜ ⵏ ⵉⵎⵣⵡⴰⵔⵏ ⵜⴰⴳⴷⵓⴷⴰⵏⵜ ⵜⴰⵎⴰ ⵏ ⵜⵏⵇⵇⴰⴹ ⵏ ⵡⴰⵔⵔⴰⴳ ⵏⵏⴰ ⵜⵓⵔⵣⵎ. ⵖⵓⵔⵓⵏ ⴰⵣⵔⴼ ⴰⴷ ⵜⴷⵖⵔⵎ ⵉⵙⵎ ⵏ ⵓⵏⵙⵙⵎⵔⵙ ⵏⵏⴰ ⵜⵔⴰⵎ. ⵉⵖⵉⵢ ⵢⵉⵙⵎ ⵏ ⵓⵏⵙⵙⵎⵔⵙ ⵏⵏⵓⵏ ⴰⴷ ⵢⴰⵎⵓ ⴳ ⵜⴳⵔⵓⵎⵎⴰⵡⵉⵏ ⵏ ⵉⵙⴼⴽⴰ ⵜⵜⵓⴼⵙⴰⵔⵏⵉⵏ ⴳ ⵜⴰⵎⴰ ⵏ ⵜⵙⵓⵖⵍⵉⵏ ⵏⵏⴰ ⵜⵓⵣⵏⵎ.",
+        "profile": "ⵓⵔ ⵔⴰⴷ ⵢⵓⵎⴰⵏ ⵢⵉⵙⵎ, ⵉⵙⵎ ⵏ ⵓⵏⵙⵙⵎⵔⵙ ⴷ ⵡⴰⵏⵏⵙⴰ ⵏ ⵉⵎⴰⵢⵍ ⵏⵏⵓⵏ ⵉ ⵓⴳⴷⵓⴷ ⵙ ⴰⵡⴷ ⵢⴰⵜ ⵜⵖⴰⵔⴰⵙⵜ.\\nⴰⵔ ⴰⵏⵖ ⵜⵜⴰⵊⵊⴰⵏ ⵉⵏⵖⵎⵉⵙⵏ ⵉⴷⵉⵎⵓⴳⵔⴰⴼⵉⵢⵏ ⵣⵓⵏ ⴷ ⴰⵡⵜⴰⵢ, ⴰⴳⵏⵓⵙ, ⴷ ⵜⵙⵓⴳⵔⵜ ⵜⴰⵙⵏⵉⵍⵙⴰⵏⵜ ⴰⴷ ⵏⵙⵙⵏ ⵖⴼ ⵉⴼⵔⵙ ⵏ ⵉⵎⴰⵔⴰⴳⵏ ⵏⵏⵖ ⴷ ⴰⴷ ⵏⵙⵜⵍ ⵜⵓⴷⵎⴰⵡⵉⵏ, ⵜⵉⵕⵡⵉ, ⴷ ⵓⵏⵛⵜ ⵏ ⵉⵙⴼⴽⴰ ⵏⵏⴰ ⵏⴳⵔⵓ. ⵙ ⵜⵉⴽⴽⵉ ⵏ ⵉⵏⵖⵎⵉⵙⵏ ⴰⴷ, ⵜⵙⵙⵓⵔⴳⵎ ⴰⴼⵙⴰⵔ ⵏ ⵜⵙⵓⵖⵍⵉⵏ ⵏⵏⵓⵏ ⵎⵓⵏⵏⵜ ⴰⴽⴷ ⵉⵏⵖⵎⵉⵙⵏ ⴰ.\\nⵉⴳⴰ ⵢⵉⵙⵎ ⵏ ⵓⵏⵙⵙⵎⵔⵙ ⵏⵏⵓⵏ ⴰⴳⴷⵓⴷⴰⵏ ⴷ ⵉⵖⵉⵢ ⴰⴷ ⵉⵜⵜⵓⴷⵔⴰⵙ ⴳ ⵜⴼⵉⵍⵜ ⵏ ⵉⵎⵣⵡⴰⵔⵏ ⵜⴰⴳⴷⵓⴷⴰⵏⵜ ⵜⴰⵎⴰ ⵏ ⵜⵏⵇⵇⴰⴹ ⵏ ⵡⴰⵔⵔⴰⴳ ⵏⵏⴰ ⵜⵓⵔⵣⵎ. ⵖⵓⵔⵓⵏ ⴰⵣⵔⴼ ⴰⴷ ⵜⴷⵖⵔⵎ ⵉⵙⵎ ⵏ ⵓⵏⵙⵙⵎⵔⵙ ⵏⵏⴰ ⵜⵔⴰⵎ. ⵉⵖⵉⵢ ⵢⵉⵙⵎ ⵏ ⵓⵏⵙⵙⵎⵔⵙ ⵏⵏⵓⵏ ⴰⴷ ⵢⴰⵎⵓ ⴳ ⵜⴳⵔⵓⵎⵎⴰⵡⵉⵏ ⵏ ⵉⵙⴼⴽⴰ ⵜⵜⵓⴼⵙⴰⵔⵏⵉⵏ ⴳ ⵜⴰⵎⴰ ⵏ ⵜⵙⵓⵖⵍⵉⵏ ⵏⵏⴰ ⵜⵓⵣⵏⵎ.",
         "scoring_heading": "ⴰⵙⵏⵇⴹ",
-        "scoring": "Contributors earn points for each translation they make. The points you gain are proportional to the length of the source phrase you input (when not using the “Random Sentence” feature) and the corresponding translation. If you utilize the machine translation feature, your target score will be calculated based on the number of changes you make.\\nIt's important to note that scoring is designed solely for friendly competition and does not imply any form of compensation.",
+        "scoring": "ⵍⴰ ⵜⵜⴰⵔⵣⵏ ⵉⵎⴰⵔⴰⴳⵏ ⵜⵉⵏⵇⵇⴰⴹ ⵖⴼ ⴽⵓ ⵜⴰⵙⵓⵖⵍⵜ ⵙⴽⵔⵏ ⵜⵜ. ⵍⴰ ⵜⵜⵊⵔⵔⴰⴷⵏⵜ ⵜⵏⵇⵇⴰⴹ ⵏⵏⴰ ⵜⵓⵔⵣⵎ ⵙ ⵜⵖⵣⵉ ⵏ ⵜⵡⵉⵏⵙⵜ ⵜⴰⵙⴰⴳⵎⵜ ⵏⵏⴰ ⵜⵙⵙⴽⵛⵎⵎ (ⴰⴷⴷⴰⵢ ⵓⵔ ⵜⵙⵙⵎⵔⵉⵙⵎ ⵜⴰⵎⵥⵍⴰⵢⵜ ⵏ \"ⵜⴰⵡⵉⵏⵙⵜ ⵜⴰⴳⴰⵛⵓⵔⴰⵏⵜ\") ⴷ ⵜⵙⵓⵖⵍⵜ ⵜⴰⴳⴷⴰⵣⴰⵍⵜ. ⵎⴽ ⵜⵙⵙⵎⵔⵙⵎ ⵜⴰⵎⵥⵍⴰⵢⵜ ⵏ ⵓⵙⵓⵖⵍ ⴰⵡⵔⵎⴰⵏ, ⵔⴰ ⵉⵜⵜⵓⵙⵙⵉⴹⵏ ⵓⵙⵏⵇⴹ ⵏⵏⵓⵏ ⵙ ⵜⵓⵚⴽⴰ ⵖⴼ ⵓⵎⴹⴰⵏ ⵏ ⵉⵙⵏⴼⵍⵏ ⵏⵏⴰ ⵜⵙⴽⵔⵎ.\\nⵉⵅⴰⵜⵔ ⴰⴷ ⵜⵏⵥⵓⵎ ⵎⴰⵙ ⴷ ⴰⵙⵏⵇⵇⴹ ⵉⵜⵜⵓⵙⵖⵉⵡⵙ ⵖⴰⵙ ⵉ  ⵓⵎⵃⵉⵣⵡⵔ ⴰⴷⵓⴽⵍⴰⵏ ⴷ ⵓⵔ ⵉⴳⵉ ⴽⵔⴰ ⵏ ⵜⵖⴰⵔⴰⵙⵜ ⵏ ⵡⴰⵔⵔⴰⵣ.",
         "communication_heading": "ⴰⵎⵚⴰⵡⴰⴹ",
-        "communication": "If you register for an account in Awal, you may receive emails from us in connection with your account. If you subscribe to our mailing list, you will receive additional information about the initiative like updates to the webpage, invitation to events and publication of news and resources.",
-        "disclaimer_heading": "Disclaimers",
-        "disclaimer": "Awal and its associated services are provided 'as is' and 'as available,' without any warranties or representations, express or implied. The use of our services is at your own risk.\\nWe do not guarantee the accuracy, completeness, or reliability of the content provided by contributors. Users should independently verify any information obtained through Awal or the resources published before relying on it.\\nContributors are responsible for their own conduct, and by using Awal, they agree not to violate any laws, infringe on third-party rights, or submit inappropriate content. We reserve the right to remove any content or suspend accounts that violate these terms. Spanish laws applies to these terms.\\nTo the fullest extent permitted by applicable law, Awal and its affiliates, officers, employees, agents, partners, and licensors shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues.\\nAwal may contain links to third-party websites or services that are not owned or controlled by us. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party sites or services.\\nAwal respects the intellectual property rights of others. If you believe that your work has been copied or used in a way that constitutes copyright infringement, please contact us at awal@collectivat.cat.\\nWe reserve the right to modify, suspend, or terminate our services, terms, or policies at any time without prior notice. It is the user's responsibility to regularly review our terms for any updates.\\nWhile we implement measures to protect user data, we cannot guarantee the security of information transmitted over the internet. Users provide information at their own risk.\\nWe can suspend or end anyone's account in Awal at any time for any reason. If we decide to suspend or end your access, we will try notify you by the email address associated with your account or the next time you attempt to access our web page.\\nPlease refer to our Privacy Policy for details on how we collect, use, and protect your personal information. Our Legal Notice provides important information about the terms and conditions of using Awal services, while the Cookie Policy explains how we use cookies to enhance your browsing experience. By using this website, you agree to these terms and policies."
+        "communication": "ⵉⴳ ⵜⵣⵎⵎⴻⵎⵎ ⵙ ⴽⵔⴰ ⵏ ⵓⵎⵉⴹⴰⵏ ⴳ ⴰⵡⴰⵍ, ⵉⵖⵉⵢ ⴰⴷ ⵜⵟⵟⴼⵎ ⵉⵎⴰⵢⵍⵏ ⵙⴳ ⴷⴰⵔⵏⵖ ⵙ ⵓⵣⴷⴰⵢ ⴰⴽⴷ ⵓⵎⵉⴹⴰⵏ ⵏⵏⵓⵏ. ⵉⴳ ⵜⵍⵜⵖⵎ ⴳ ⵜⵍⴳⴰⵎⵜ ⵏ ⵡⴰⵣⴰⵏ ⵏ ⵉⵎⴰⵢⵍ ⵏⵏⵖ, ⵔⴰⴷ ⵜⵟⵟⴼⵎ ⵉⵏⵖⵎⵉⵙⵏ ⵓⵔⵏⵉⵡⵏ ⵖⴼ ⵜⵙⵏⵜⴰⵢⵜ ⵣⵓⵏ ⴷ ⵉⵙⴷⵖⵉⵜⵏ ⵉ ⵜⴰⵙⵏⴰ ⵏ ⵓⵡⵉⴱ, ⵜⴰⵖⵓⵔⵉ ⵙ ⵜⵎⵙⴰⵔⵉⵏ ⴷ ⵜⵥⵕⵉⴳⵉⵏ ⵏ ⵉⵏⵖⵎⵉⵙⵏ ⴷ ⵉⵙⵓⴳⴰⵎ.",
+        "disclaimer_heading": "ⴰⵙⵔⵓⵙ ⵏ ⵜⵎⵙⵜⴳⴳⴰⵔⵜ",
+        "disclaimer": "ⵉⵜⵜⵓⴼⴽⴰ ⴰⵡⴰⵍ ⴷ ⵜⵏⵓⴼⴰ ⵖⵔⵙ ⵉⵇⵇⵏⵏ ⵙ 'ⵎⴽⴷⴰ ⴳⴰⵏ' ⴷ 'ⵎⴽⴷⴰ ⵙ ⵙⴰⴳⴰⵏ', ⴱⵍⴰ ⴽⵔⴰ ⵏ ⵉⴹⴰⴽⴰⵍⵏ ⵏⵉⵖ ⵉⵙⵎⴷⵢⴰⵜⵏ, ⵜⵜⵓⵏⵏⴰⵏ ⵏⵉⵖ ⴼⴼⵔⵏ. ⴽⵯⵏⵏⵉ ⴰⴷ ⵉⴳⴰⵏ ⵉⵎⵙⵜⴳⴳⴰⵔⵏ ⵖⴼ ⵓⵙⵙⵎⵔⵙ ⵏ ⵜⵏⵓⴼⴰ ⵏⵏⵖ.\\nⵓⵔ ⴷⴰ ⵏⵜⵜⴹⴽⴰⵍ ⴰⵏⵖⴰⴷ, ⵜⵉⵎⴷⵉ, ⵏⵉⵖ ⵜⴰⵖⵥⴰⵏⵜ ⵏ ⵜⵓⵎⴰⵢⵜ ⵏⵏⴰ ⴼⴽⴰⵏ ⵉⵎⴰⵔⴰⴳⵏ. ⵉⵍⵍⴰ ⵖⴼ ⵉⵏⵙⵙⵎⵔⵙⵏ ⴰⴷ ⵙⵙⵉⴷⴻⴷⵏ, ⵙ ⵜⵖⴰⵔⴰⵙⵜ ⵜⴰⵙⵉⵎⴰⵏⵜ, ⵉⵏⵖⵎⵉⵙⵏ ⵏⵏⴰ ⵓⵙⵉⵏ ⵙⴳ ⴰⵡⴰⵍ ⵏⵉⵖ ⵉⵙⵓⴳⴰⵎ ⵜⵜⵓⵥⵕⴰⴳⵏⵉⵏ ⴷⴰⵜ ⴰⴷ ⴼⵍⵍⴰⵙⵏ ⴰⵡⵉⵏ.\\nⴳⴰⵏ ⵉⵎⴰⵔⴰⴳⵏ ⵉⵎⵙⵜⴳⴳⴰⵔⵏ ⵖⴼ ⵜⵎⵙⴽⵉⵔⵜ ⵏⵏⵙⵏ, ⴷ ⵙ ⵓⵙⵙⵎⵔⵙ ⵏ ⴰⵡⴰⵍ, ⵎⵙⴰⵙⴰⵏ ⴷ ⵖⴼ ⴰⴷ ⵓⵔ ⵕⵥⵉⵏ ⴰⵡⴷ ⵢⴰⵏ ⵓⵙⴰⴹⵓⴼ, ⴰⴷ ⵏⵏ ⵓⵔ ⵣⵔⵉⵏ ⵙ ⵉⵣⵔⴼⴰⵏ ⵏ ⵓⴳⵎⴰⵎ ⵡⵉⵙⵙ ⴽⵕⴰⴹ, ⴷ ⴰⴷ ⵓⵔ ⴰⵣⵏⵏ ⵜⵓⵎⴰⵢⵜ ⵓⵔ ⵉⴼⴼⵓⵍⵉⵙⵏ. ⴷⴰⵔⵏⵖ ⴰⵣⵔⴼ ⴰⴷ ⵏⵙⵉⵜⵜⵉ ⵜⵓⵎⴰⵢⵜ ⵏⵉⵖ ⵏⵙⴱⴷⴷ ⵉⵎⵉⴹⴰⵏⵏ ⵏⵏⴰ ⵉⵕⵥⴰⵏ ⵜⵉⴼⴰⴷⵉⵡⵉⵏ ⴰⴷ. ⵍⴰ ⵜⵜⵓⵙⵏⵉⵙⵏ ⵉⵙⴰⴹⵓⴼⵏ ⵏ ⵚⴱⴰⵏⵢⴰ ⵖⴼ ⵜⴼⴰⴷⵉⵡⵉⵏ ⴰⴷ.\\nⴰⵔ ⵜⵜⵎⵉ ⵏ ⵓⵏⵛⵜ ⵏⵏⴰ ⵉⵙⵙⵓⵔⴳ ⵓⵙⴰⴹⵓⴼ, ⴰⵡⴰⵍ ⴷ ⵎⴰⴷ ⴰⵙ ⵉⴹⴼⴰⵕⵏ, ⵉⵎⵙⵜⴳⴳⴰⵔⵏ, ⵉⵎⵙⵡⵓⵔⵉⵢⵏ, ⵉⴳⵏⵙⴰⵙⵏ, ⵉⵎⴷⵔⴰⵡⵏ, ⴷ ⵉⵎⵙⵙⵓⵔⴳⵏ ⵓⵔ ⵔⴰⴷ ⴳⵉⵏ ⵉⵎⵙⵜⴳⴳⴰⵔⵏ ⵖⴼ ⴽⵔⴰ ⵏ ⵓⵎⴰⵍⴰⴷ ⴰⵔⵓⵙⵔⵉⴷ, ⴰⴳⴰⵛⵓⵔⴰⵏ, ⵉⵎⵥⵍⵉ, ⵓⴹⴼⵉⵕ, ⵏⵉⵖ ⴰⵏⴼⴳⴰⵔ, ⵏⵉⵖ ⴷ ⵖⴼ ⴽⵔⴰ ⵏ ⵓⵎⵕⵎⵉⵥ ⵏ ⵡⴰⵔⵔⴰⵣⵏ ⵏⵉⵖ ⵉⵙⴽⵛⴰⵎ. ⵉⵖⵉⵢ ⴰⴷ ⵢⴰⵎⵓ ⴰⵡⴰⵍ ⴽⵔⴰ ⵏ ⵉⵙⵖⴰⵏ ⵖⵔ ⵉⵙⵉⵜⵏ ⵏ ⵓⴳⵎⴰⵎ ⵡⵉⵙⵙ ⴽⵕⴰⴹ ⵏⵉⵖ ⵜⵉⵏⵓⴼⴰ ⵏⵏⴰ ⵓⵔ ⵏⵍⵉ ⵏⵉⵖ ⴳⵉⵙⵏⵜ ⵏⴻⵏⴱⵉⴹ. ⵓⵔ ⵏⴻⵏⴱⵉⴹ ⴷ ⵓⵔ ⵏⴳⵉ ⵉⵎⵙⵜⴳⴳⴰⵔⵏ ⵖⴼ ⵜⵓⵎⴰⵢⵜ, ⵜⵉⵙⵔⵜⵉⵜⵉⵏ ⵏ ⵜⵉⵏⵏⵓⵜⵍⴰ, ⵏⵉⵖ ⵉⴳⵉⵜⵏ ⵏ ⵉⵙⵉⵜⵏ ⵏⵉⵖ ⵜⵉⵏⵓⴼⴰ ⵏ ⴽⵔⴰ ⵏ ⵓⴳⵎⴰⵎ ⵡⵉⵙⵙ ⴽⵕⴰⴹ. ⵍⴰ ⵉⵜⵜⵣⵔⴰⴽ ⴰⵡⴰⵍ ⵉⵣⵔⴼⴰⵏ ⵏ ⵜⵉⵍⵉⵜ ⵜⴰⵡⵏⴳⵉⵎⵜ ⵏ ⵡⵉⵢⵢⴰⴹ. ⵎⴽ ⵜⵖⴰⵍⵎ ⵎⴰⵙ ⴷ ⵜⴻⵜⵜⵓⵏⵖⵍ ⵏⵉⵖ ⵜⴻⵜⵜⵓⵙⵙⵎⵔⵙ ⵜⵡⵓⵔⵉ ⵏⵏⵓⵏ ⵙ ⴽⵔⴰ ⵏ ⵜⵖⴰⵔⴰⵙⵜ ⵢⴰⵎⵓⵏ ⵜⵉⵕⵥⵉ ⵏ ⵉⵣⵔⴼⴰⵏ ⵏ ⵓⵎⴳⴰⵢ, ⵎⴽ ⵜⵓⴼⴰⵎ, ⵏⵢⴰⵍⴽⴰⵎⴰⵜ ⴷⵉⴷⵏⵖ ⴳ awal@collectivat.cat.\\nⴷⴰⵔⵏⵖ ⴰⵣⵔⴼ ⴰⴷ ⵏⵙⵏⴼⵍ, ⵏⵙⴱⴷⴷ, ⵏⵉⵖ ⵏⵙⵎⴷ ⵜⵉⵏⵓⴼⴰ, ⵜⵉⴼⴰⴷⵉⵡⵉⵏ, ⵏⵉⵖ ⵜⵉⵙⵔⵜⵉⵜⵉⵏ ⵏⵏⵖ ⴳ ⵡⴰⴽⵓⴷ ⵏⵏⴰ ⴽⴰ ⴱⵍⴰ ⴽⵔⴰ ⵏ ⵜⵓⵙⵎⵉⵔⵜ ⵜⵓⵣⵡⵉⵔⵜ. ⵜⴳⴰ ⵜⵎⵙⵜⴳⴳⴰⵔⵜ ⵏ ⵓⵏⵙⵙⵎⵔⵙ ⴰⴷ ⵏⵏ ⴰⵀⴰ ⵉⵜⵜⴰⴳⴳⵯⴰ ⵜⵉⴼⴰⴷⵉⵡⵉⵏ ⵏⵏⵖ ⵃⵎⴰ ⴰⴷ ⵉⵙⵙⵏ ⵖⴼ ⵉⵙⴷⵖⵉⵜⵏ.\\nⴰⴽⵓⴷ ⵏⵣⵣⴳⴰⵔ ⵉⵙⵇⵇⵓⵍⵏ ⵉ ⵏⴼⵔⴳ ⵉⵙⴼⴽⴰ ⵏ ⵓⵏⵙⵙⵎⵔⵙ, ⵓⵔ ⵏⵣⵎⵉⵔ ⴰⴷ ⵏⴹⴽⵍ ⵜⴰⵏⴼⵔⵓⵜ ⵏ ⵉⵏⵖⵎⵉⵙⵏ ⵜⵜⵎⴰⵜⵜⴰⵢⵏⵉⵏ ⴷⴳ ⵡⴰⵏⵜⵉⵔⵏⵉⵜ. ⵍⴰ ⴰⴽⴽⴰⵏ ⵉⵏⵙⵙⵎⵔⵙⵏ ⵉⵏⵖⵎⵉⵙⵏ ⴷⴷⴰⵡ ⵜⵎⵙⵜⴳⴳⴰⵔⵜ ⵏⵏⵙⵏ. ⵏⵣⵎⵔ ⴰⴷ ⵏⵙⴱⴷⴷ ⵏⵉⵖ ⴷ ⴰⴷ ⵏⵙⵎⴷ ⴰⵎⵉⴹⴰⵏ ⴽⵔⴰ ⵏ ⵢⴰⵏ ⴳ ⴽⵔⴰ ⵏ ⵡⴰⴽⵓⴷ ⴷ ⵙ ⴽⵔⴰ ⵏ ⵓⵙⵔⴰⴳ ⵎⴽⵏⵏⴰ ⵔⴰⵏ ⴳⵏⵜ. ⵎⴽ ⵏⵖⵜⵙ ⴰⴷ ⵏⵙⴱⴷⴷ ⵏⵉⵖ ⴰⴷ ⵏⵙⵎⴷ ⴰⴷⴰⴼ ⵏⵏⵓⵏ, ⵔⴰⴷ ⵏⴰⵔⵎ ⴰⴷ ⴽⵯⵏ ⵏⵙⵏⵖⵎⵙ ⵙ ⵡⴰⵏⵙⴰ ⵏ ⵉⵎⴰⵢⵍ ⵉⵇⵇⵏⵏ ⵖⵔ ⵓⵎⵉⴹⴰⵏ ⵏⵏⵓⵏ ⵏⵉⵖ ⴷ ⴳ ⵜⵉⴽⴽⵍⵜ ⵜⵓⴹⴼⵉⵕⵜ ⵏⵏⴰ ⵜⵓⵔⵎⵎ ⴰⴷ ⵜⴰⴷⴼⵎ ⵖⵔ ⵜⴰⵙⵏⴰ ⵏ ⵓⵡⵉⴱ ⵏⵏⵖ. ⵎⴽ ⵜⵓⴼⴰⵎ, ⴰⵖⵓⵍⴰⵜ ⵖⵔ ⵜⵙⵔⵜⵉⵜ ⵏ ⵜⵉⵏⵏⵓⵜⵍⴰ ⵏⵏⵖ ⵉ ⵉⴼⵔⵓⵔⵉⵜⵏ ⵖⴼ ⵎⴰⵏⵎⴽ ⵙ ⵍⴰ ⵏⴳⵔⵔⵓ, ⵍⴰ ⵏⵙⵙⵎⵔⴰⵙ, ⴷ ⵍⴰ ⵏⴼⴼⵔⴳ ⵉⵏⵖⵎⵉⵙⵏ ⵓⴷⵎⴰⵡⴰⵏⵏ ⵏⵏⵓⵏ. ⵍⴰ ⵜⴰⴽⴽⴰ ⵜⵎⵏⵏⵉⵜ ⵜⵓⵍⴳⵉⵏⵜ ⵏⵏⵖ ⵉⵏⵖⵎⵉⵙⵏ ⵉⵅⴰⵜⴰⵔⵏ ⵖⴼ ⵜⴼⴰⴷⵉⵡⵉⵏ ⴷ ⵉⵔⵎⴰⵡⵏ ⵏ ⵓⵙⵙⵎⵔⵙ ⵏ ⵜⵏⵓⴼⴰ ⵏ ⴰⵡⴰⵍ, ⴳ ⵜⵙⴳⴰ ⵢⴰⴹⵏ, ⵍⴰ ⵜⵙⵙⴼⵔⵓ ⵜⵙⵔⵜⵉⵜ ⵏ ⵓⴽⵓⴽⵉ ⵎⴰⵏⵎⴽ ⵙ ⴷⴰ ⵏⵙⵙⵎⵔⴰⵙ ⵉⴽⵓⴽⵉⵜⵏ ⵃⵎⴰ ⴰⴷ ⵏⵙⵖⵓⴷⵓ ⵜⵉⵔⵎⵉⵜ ⵏ ⵓⵙⵜⴰⵔⴰ ⵏⵏⵓⵏ. ⵙ ⵓⵙⵙⵎⵔⵙ ⵏ ⵓⵙⵉⵜ ⴰⴷ, ⵜⵎⵙⴰⵙⴰⵎⴷ ⵖⴼ ⵜⴼⴰⴷⵉⵡⵉⵏ ⴷ ⵜⵙⵔⵜⵉⵜⵉⵏ ⴰⴷ."
     },
     "how_to_contribute_heading": "ⵎⴰⵏⵎⴽ ⵙ ⵔⴰⴷ ⴰⵔⴳⵖ?",
-    "how_it_works_contribution": "Awal aims to create a high-quality and open-source machine translation application for Tamazight. The road to this goal goes through collecting many high-quality translated sentences in Tamazight. You can submit translations easily and in a fun way through this application. What you need to do is:",
-    "how_it_works_contribution_1": "Select the language pair you want to translate using the drop-down menus. The language you want to translate from is on the left side of the screen, and the language you want to translate to is on the right side of the screen.",
-    "how_it_works_contribution_2": "Write or load a sentence to translate on the left panel. You can be creative or take it from somewhere you have permissions to take. For example, this could be a text with Creative Commons license like wikipedia. If you like, you can also load a random sentence from our database using the button “Random Sentence”. Remember that the source phrase can be a word, a phrase, or a complete sentence but never more than one sentence. If you're translating from Tamazight, make sure you mark the variant below using the checkboxes. If you don't understand the sentence or don't like to translate, you can always load another sentence. If, somehow you come across an offensive or erroneous source phrase, make sure you report it using the “Report” button, and we will review it for its removal from our database.",
-    "how_it_works_contribution_3": "Next, you should write the sentence's translation on the right panel. To help you start, you can use the prototype machine translation feature which will give you an approximate (bad) translation. Make sure you write a translation that's accurate and well-written. You can always consult the useful resources we list below. If you're translating to Tamazight, make sure you mark the variant using the checkboxes below.",
-    "how_it_works_contribution_4": "Once you're done translating the sentence, hit the “Contribute” button, and your contribution will be saved. You will gain contribution points proportional to the length of the source phrase you input (when not using the “Random Sentence” feature) and the corresponding translation. If you utilize the machine translation feature, your target score will be calculated based on the number of changes you make.",
-    "how_it_works_contribution_continued": "For additional information, refer to the contribution terms. If you need assistance, feel free to contact us at awal@collectivat.cat. Thank you for your valuable contribution!",
+    "how_it_works_contribution": "ⵉⵡⴰⵜⵜⵙ ⴰⵡⴰⵍ ⴰⴷ ⵉⵙⵏⴼⵍⵓⵍ ⵢⴰⵜ ⵜⵙⵏⵙⵉ ⵏ ⵓⵙⵓⵖⵍ ⴰⵡⵔⵎⴰⵏ ⵎⵎⵓ ⵜⵕⵡⵉ ⵢⴰⵜⵜⵓⵢⵏ ⴷ ⵓⵙⴰⴳⵎ ⵓⵕⵥⵉⵎ ⵉ ⵜⵎⴰⵣⵉⵖⵜ. ⵉⵜⵜⴷⴷⵓ ⵓⴱⵔⵉⴷ ⵖⵔ ⵓⵡⵜⵜⴰⵙ ⴰⴷ ⵙⴳ ⵓⴳⵔⵔⵓ ⵏ ⵓⵃⵟⵟⴰⵏ ⵏ ⵜⵡⵉⵏⴰⵙ ⵜⵜⵡⴰⵙⵓⵖⵍⵏⵉⵏ ⵙ ⵜⵕⵡⵉ ⵢⴰⵜⵜⵓⵢⵏ ⵙ ⵜⵎⴰⵣⵉⵖⵜ. ⵜⵣⵎⵔⵎ ⴰⴷ ⵜⴰⵣⵏⵎ ⵜⵉⵙⵓⵖⵍⵉⵏ ⵙ ⵓⵏⵀⴰⵍ ⴷ ⵙ ⵢⴰⵜ ⵜⵖⴰⵔⴰⵙⵜ ⵉⴼⵊⵊⵉⵊⵏ ⵙⴳ ⵜⵙⵏⵙⵉ ⴰⴷ. ⴰⵢⵏⵏⴰ ⵜⵓⵙⵔⴷ ⴰⴷ ⵜ ⵜⵙⴽⵔⴷ ⵉⴳⴰ ⵜ:",
+    "how_it_works_contribution_1": "ⵙⵜⵢ ⵜⴰⵢⵓⴳⴰ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⵏⵏⴰ ⵜⵔⵉⴷ ⴰⴷ ⵜⵜ ⵜⵙⵙⵓⵖⵍⴷ ⵙ ⵓⵙⵙⵎⵔⵙ ⵏ ⵡⵓⵎⵓⵖⵏ ⴼⵜⵜⵉⵏⵉⵏ. ⵜⵍⵍⴰ ⵜⵓⵜⵍⴰⵢⵜ ⵏⵏⴰ ⵜⵔⵉⴷ ⴰⴷ ⴷ ⵙⴳⵉⵙ ⵜⵙⵙⵓⵖⵓⵍⴷ ⴳ ⵜⵙⴳⴰ ⵜⵥⵍⵎⴰⴹⵜ ⵏ ⵓⴳⴷⵉⵍ, ⵜⵉⵍⵉ ⵜⵓⵜⵍⴰⵢⵜ ⵏⵏⴰ ⵜⵔⵉⴷ ⴰⴷ ⵖⵔⵙ ⵜⵙⵙⵓⵖⵍⴷ ⴳ ⵜⵙⴳⴰ ⵜⴰⴼⴰⵙⵉⵜ ⵏ ⵓⴳⴷⵉⵍ.",
+    "how_it_works_contribution_2": "ⴰⵔⴰ ⵏⵉⵖ ⴷ ⵣⴷⵎ ⴽⵔⴰ ⵏ ⵜⵡⵉⵏⵙⵜ ⴰⴷ ⵜⵜ ⵜⵙⵙⵓⵖⵍⴷ ⴳ ⵓⴳⴰⵍⵉⵙ ⴰⵥⵍⵎⴰⴹ. ⵜⵣⵎⵔⴷ ⴰⴷ ⵜⵜ ⵜⵙⵏⴼⵍⵓⵍⴷ ⵏⵉⵖ ⵜⵜ ⵉⴷ ⵜⵓⵙⵉⴷ ⵙⴳ ⴽⵔⴰ ⵏ ⵎⴰⵏⵉ ⵏⵏⴰ ⴷⴰⵔⴽ ⵜⵓⵔⴰⴳⵜ ⴰⴷ ⵜⵜ ⵙⴳⵉⵙ ⵜⴰⵙⵉⴷ. ⵙ ⵓⵎⴷⵢⴰ, ⵉⵖⵉⵢ ⵓⵢⴰ ⴰⴷ ⵉⴳ ⴽⵔⴰ ⵏ ⵓⴹⵕⵉⵚ ⵙ ⵜⵓⵔⴰⴳⵜ ⵏ ⴽⵔⵢⴰⵜⵉⴼ ⴽⴰⵎⵏⵣ ⵣⵓⵏ ⴷ ⵡⵉⴽⵉⴱⵉⴷⵢⴰ. ⵉⴳ ⵜⵔⵉⴷ, ⵜⵣⵎⵔⴷ ⴰⵡⴷ ⴰⴷ ⵜⵣⴷⵎⴷ ⴽⵔⴰ ⵏ ⵜⵡⵉⵏⵙⵜ ⵜⴰⴳⴰⵛⵓⵔⴰⵏⵜ ⵙⴳ ⵜⵙⵉⵍⴰ ⵏ ⵉⵙⴼⴽⴰ ⵏⵏⵖ ⵙ ⵓⵙⵙⵎⵔⵙ ⵏ ⵓⴱⵔⴰ \"ⵜⴰⵡⵉⵏⵙⵜ ⵜⴰⴳⴰⵛⵓⵔⴰⵏⵜ\". ⴽⵯⵜⵉ ⵎⴰⵙ ⴷ ⵜⴰⵡⵉⵏⵙⵜ ⵜⴰⵙⴰⴳⵎⵜ ⵜⵣⵎⵔ ⴰⴷ ⵜⴳ ⵢⴰⵜ ⵜⴳⵓⵔⵉ, ⵢⴰⵜ ⵜⵡⵉⵏⵙⵜ, ⵏⵖ ⵢⴰⵜ ⵜⵡⵉⵏⵙⵜ ⵉⵎⴷⵏ ⵎⴰⵛⵛ ⴰⴷ ⵙⴰⵔ ⵓⵔ ⵜⴳ ⵓⴳⴳⴰⵔ ⵏ ⵢⴰⵜ ⵜⵡⵉⵏⵙⵜ. ⵉⴳ ⴷⴰ ⵜⵙⵙⵓⵖⵓⵍⴷ ⵙⴳ ⵜⵎⴰⵣⵉⵖⵜ, ⵃⵇⵇⴰ ⵎⴰⵙ ⵜⵕⵛⵎⴷ ⵜⴰⵎⵣⴰⵔⴰⵢⵜ ⴷⴷⴰⵡ ⴷⴰ ⵙ ⵓⵙⵙⵎⵔⵙ ⵏ ⵜⴼⵏⵉⵇⵇⵉⵏ ⵏ ⵓⵕⵛⴰⵎ. ⵎⴽ ⵓⵔ ⵜⵔⵎⵉⵙⴷ ⵜⴰⵡⵉⵏⵙⵜ ⵏⵉⵖ ⴷ ⵓⵔ ⵜⵅⵙⴷ ⴰⴷ ⵜⵜ ⵜⵙⵙⵓⵖⵍⴷ, ⵜⵣⵎⵔⴷ ⴰⵀⴰ ⴰⴷ ⵜⵣⴷⵎⴷ ⵜⴰⵡⵉⵏⵙⵜ ⵢⴰⴹⵏ. ⵎⴽ ⵜⵎⵏⴰⵍⴰⵎ, ⵙ ⵢⴰⵜ ⵜⵖⴰⵔⴰⵙⵜ ⵏⵉⵖ ⵙ ⵜⴰⵢⵢⴰⴹ, ⴰⴽⴷ ⴽⵔⴰ ⵏ ⵜⵡⵉⵏⵙⵜ ⵜⴰⵙⴰⴳⵎⵜ ⵉⴳⴰⵏ ⵜⴰⵔⴳⴳⵉⵎⵜ ⵏⵉⵖ ⵜⵣⴳⵍ, ⴰⴷ ⵓⵔ ⵜⴻⵜⵜⵓⴷ ⴰⴷ ⵜⵜ ⵜⵎⵍⴷ ⵙ ⵓⵙⵙⵎⵔⵙⵏ ⵓⴱⵔⴰ \"ⵎⵍ\", ⵔⴰⴷ ⵜⵜ ⵏⵙⵙⵉⵔⵎ ⵉ ⵓⵙⵉⵜⵜⵉ ⵏⵏⵙ ⵙⴳ ⵜⵙⵉⵍⴰ ⵏ ⵉⵙⴼⴽⴰ ⵏⵏⵖ.",
+    "how_it_works_contribution_3": "ⵉⵍⵎⵎⴰ, ⵉⵅⵚⵚⴰ ⴽⵯⵏ ⴰⴷ ⵜⴰⵔⴰⵎ ⵜⴰⵙⵓⵖⵍⵜ ⵏ ⵜⵡⵉⵏⵙⵜ ⴳ ⵓⴳⴰⵍⵉⵙ ⴰⴼⴰⵙⵉ. ⵃⵎⴰ ⴰⴷ ⴰⵡⵏ ⵏⴰⵡⵙ ⴳ ⵓⵙⵙⵏⵜⵉ, ⵜⵣⵎⵔⵎ ⴰⴷ ⵜⵙⵙⵎⵔⵙⵎ ⵜⴰⵎⵥⵍⴰⵢⵜ ⵏ ⵓⵎⵓⴷⵎ ⴰⵎⵏⵣⵓ ⵏ ⵓⵙⵓⵖⵍ ⴰⵡⵔⵎⴰⵏ ⵏⵏⴰ ⵔⴰⴷ ⴰⵡⵏ ⵉⴼⴽ ⵢⴰⵜ ⵜⵙⵓⵖⵍⵜ ⵜⴰⵎⴰⴷⴰⵙⵜ (ⵉⵅⵛⵏⵏ). ⵃⵇⵇⴰⵎ ⵎⴰⵙ ⵜⴰⵔⴰⵎ ⵢⴰⵜ ⵜⵙⵓⵖⵍⵜ ⵉⴳⴰⵏ ⵜⵓⵏⵖⵉⴷⵜ, ⵜⴻⵜⵜⵢⴰⵔⴰ ⵙ ⵜⵖⴰⵔⴰⵙⵜ ⵉⵥⵉⵍⵏ. ⵜⵣⵎⵔⵎ ⴰⵀⴰ ⴰⴷ ⵜⴰⵖⵓⵍⵎ ⵖⵔ ⵉⵙⵓⴳⴰⵎ ⵓⵏⴼⵓⵜⵏ ⵏⵏⴰ ⵏⴷⵔⵙ ⴳ ⵡⴰⴷⴷⴰⵢ. ⵎⴽ ⵍⴰ ⵜⵙⵙⵓⵖⵓⵍⵎ ⵖⵔ ⵜⵎⴰⵣⵉⵖⵜ, ⵃⵇⵇⴰⵎ ⵎⴰⵙ ⵜⵕⵛⵎⵎ ⵜⴰⵎⵣⴰⵔⴰⵢⵜ ⵙ ⵓⵙⵙⵎⵔⵙ ⵏ ⵜⴼⵏⵉⵇⵇⵉⵏ ⵏ ⵓⵕⵛⴰⵎ ⴳ ⵡⴰⴷⴷⴰⵢ.",
+    "how_it_works_contribution_4": "ⴰⴷⴷⴰⵢ ⵜⵙⵎⴷⵎ ⴰⵙⵓⵖⵍ ⵏ ⵜⵡⵉⵏⵙⵜ, ⴽⵍⵉⴽⵉⵢⴰⵜ ⵖⴼ ⵓⴱⵔⴰ “ⴰⵔⴳ”, ⵔⴰⴷ ⵉⵜⵜⵓⵃⴹⴰ ⵡⴰⵔⵔⴰⴳ ⵏⵏⵓⵏ. ⵔⴰⴷ ⵜⴰⵔⵣⵎ ⵜⵉⵏⵇⵇⴰⴹ ⵏ ⵡⴰⵔⵔⴰⴳ ⵊⵔⵔⴷⵏⵉⵏ ⴷ ⵜⵖⵣⵉ ⵏ ⵜⵡⵉⵏⵙⵜ ⵜⴰⵙⴰⴳⵎⵜ ⵏⵏⴰ ⵜⵙⴽⵛⵎⵎ (ⵉⴳ ⵓⵔ ⵜⵙⵙⵎⵔⵉⵙⵎ ⵜⴰⵎⵥⵍⴰⵢⵜ “ⵜⴰⵡⵉⵏⵙⵜ ⵜⴰⴳⴰⵛⵓⵔⴰⵏⵜ”) ⴷ ⵜⵙⵓⵖⵍⵜ ⵜⴰⴳⴷⴰⵣⴰⵍⵜ. ⵎⴽ ⵜⵙⵙⵎⵔⵙⵎ ⵜⴰⵎⵥⵍⴰⵢⵜ ⵏ ⵓⵙⵓⵖⵍ ⴰⵡⵔⵎⴰⵏ, ⵔⴰⴷ ⵉⵜⵜⵓⵙⵙⵉⴹⵏ ⵓⵙⵏⵇⴹ ⵏⵏⵓⵏ ⵙ ⵜⵓⵥⴽⴰ ⵖⴼ ⵓⵎⴹⴰⵏ ⵏ ⵉⵙⵏⴼⵍⵏ ⵏⵏⴰ ⵜⵙⴽⵔⵎ.",
+    "how_it_works_contribution_continued": "ⵉ ⵓⴳⴳⴰⵔ ⵏ ⵉⵏⵖⵎⵉⵙⵏ, ⴷⴷⵓ ⵖⵔ ⵜⴼⴰⴷⵉⵡⵉⵏ ⵏ ⵡⴰⵔⵔⴰⴳ. ⵎⴽ ⵜⵓⵙⵔⵎ ⵜⵉⵡⵉⵙⵉ, ⵏⵢⴰⵍⴽⴰⵎⴰⵜ ⴷⵉⴷⵏⵖ ⴳ awal@collectivat.cat. ⵜⴰⵎⵎⵉⵔⵜ ⵏⵏⵓⵏ ⵖⴼ ⵡⴰⵔⵔⴰⴳ ⵏⵏⵓⵏ ⵉⵍⴰⵏ ⴰⵜⵉⴳ!",
     "how_to_validate_heading": "ⵎⴰⵏⵎⴽ ⵙ ⵔⴰⴷ ⵣⵣⵔⴰⵢⵖ?",
-    "how_it_works_validation": "Validating translations is an essential step to maintain the integrity of the dataset and contribute to the development of a reliable machine translation application for Tamazight. In this screen, you will be shown translations made by other volunteers and verify if they're acceptable or not.",
-    "how_it_works_validation_1": "Start by selecting the language pair and Tamazight variant for validations. You will see another volunteer's translation contribution. The source sentence will be displayed on the left panel, and the translated sentence is on the right panel.",
-    "how_it_works_validation_2": "Assess the quality of the translation, keeping in mind that we aim for acceptability rather than perfection. Consider the following guidelines:",
-    "how_it_works_validation_2_1": "Confirm if the translation conveys the meaning of the original sentence.",
-    "how_it_works_validation_2_2": "Ensure that key terms and concepts are translated appropriately without losing their intended sense.",
-    "how_it_works_validation_2_3": "Assess the fluency and natural flow of the translation. A good translation reads smoothly and feels natural in the target language.",
-    "how_it_works_validation_2_4": "Verify that the translation adheres to grammatical rules and punctuation conventions of the target language.",
-    "how_it_works_validation_2_5": "If a sentence comes up with words you are not sure of, you can always hit “Skip” to load another contribution.",
-    "how_it_works_validation_2_6": "If you come across an offensive or harmful sentence (both source and translation), use the “Report” button.",
-    "how_it_works_validation_2_7": "If you come across something that these guidelines don't cover, please vote according to your best judgement. If you really can't decide, skip to the next contribution.",
-    "how_it_works_validation_3": "If you find the translation acceptable, click the check icon; if not, click the cross icon.",
-    "how_it_works_validation_continued": "For additional information, refer to the contribution terms. If you need assistance, feel free to contact us at awal@collectivat.cat. Thank you for your valuable contribution!",
+    "how_it_works_validation": "ⵉⴳⴰ ⵓⵣⵣⵔⴰⵢ ⵏ ⵜⵡⵉⵏⴰⵙ ⵢⴰⵜ ⵜⵙⵓⵔⵉⴼⵜ ⵜⴰⴷⵙⵍⴰⵏⵜ ⵉ ⵜⵏⵟⵟⵓⴼⵜ ⵏ ⵡⵓⵖⵓⴷ ⵏ ⵜⴳⵔⵓⵎⵎⴰ ⵏ ⵉⵙⴼⴽⴰ ⴷ ⵓⵙⵙⵉⵡⵙ ⴳ ⵓⵙⵖⵉⵡⵙ ⵏ ⵢⴰⵜ ⵜⵙⵏⵙⵉ ⵜⴰⵏⴼⵍⵓⵙⵜ ⵏ ⵓⵙⵓⵖⵍ ⴰⵡⵔⵎⴰⵏ ⵉ ⵜⵎⴰⵣⵉⵖⵜ. ⴳ ⵓⴳⴷⵉⵍⴰ, ⵔⴰⴷ ⴰⵡⵏ ⵜⵜⵓⵎⴰⵏⵏⵜ ⴽⵔⴰ ⵏ ⵜⵙⵓⵖⵍⵉⵏ ⵙⴽⵔⵏ ⵜⵏⵜ ⵉⵎⵅⵙⴰⵏ ⵢⴰⴹⵏⵉⵏ, ⵣⵣⵔⵢ ⵜⵏⵜ ⵉⵙ ⵜⵜⵓⴷⴳⴳⴰⵏⵜ ⵏⵉⵖ ⵓⵀⵓ.",
+    "how_it_works_validation_1": "ⵙⵙⵏⵜⵉⵎ ⵙ ⵓⵙⵜⴰⵢ ⵏ ⵜⵢⵓⴳⴰ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⴷ ⵜⵎⵣⴰⵔⴰⵢⵜ ⵜⴰⵎⴰⵣⵉⵖⵜ ⵉ ⵉⵣⵣⵔⴰⵢⵏ. ⵔⴰⴷ ⵜⴰⵏⵏⴰⵢⵎ ⴰⵔⵔⴰⴳ ⵏ ⵓⵙⵓⵖⵍ ⵏ ⵉⵎⵖⵙⵉ ⵢⴰⴹⵏ. ⵔⴰⴷ ⵜⵓⵎⴰⵏ ⵜⵡⵉⵏⵙⵜ ⵜⴰⵙⴰⴳⵎⵜ ⴳ ⵓⴳⴰⵍⵉⵙ ⴰⵥⵍⵎⴰⴹ, ⴷ ⵜⵡⵉⵏⵙⵜ ⵉⵜⵜⵡⴰⵙⵓⵖⵍⵏ ⴳ ⵓⴳⴰⵍⵉⵙ ⴰⴼⴰⵙⵉ.",
+    "how_it_works_validation_2": "ⵙⵜⵍⴰⵜ ⵜⵉⵕⵡⵉ ⵏ ⵜⵙⵓⵖⵍⵉⵏ, ⵜⴳⵎ ⴳ ⵉⵅⴼⴰⵡⵏ ⵏⵏⵓⵏ ⵎⴰⵙ ⵏⵡⴰⵜⵜⵙ ⴰⴷⴳⴳⵉ ⵓⵔ ⴷ ⵜⴰⴼⵉⵍⴰⵡⵜ. ⵙⴽⵔ ⵙ ⵜⴰⵔⴰⵜⵉⵏ ⴰⴷ:",
+    "how_it_works_validation_2_1": "ⵙⵙⴷⴻⴷ ⵎⴰⵙ ⵜⵙⵙⵉⵡⴹ ⵜⵙⵓⵖⵍⵜ ⴰⵏⴰⵎⴽ ⵏ ⵜⵡⵉⵏⵙⵜ ⵜⴰⵙⴰⵍⴰⵏⵜ.",
+    "how_it_works_validation_2_2": "ⴹⴽⵍ ⵎⴰⵙ ⵜⵜⵡⴰⵙⵓⵖⵍⵏ ⵉⵔⵎⴰⵡⵏ ⴷ ⵉⵔⵎⵎⵓⵙⵏ ⵉⴷⵙⵍⴰⵏⵏ ⵙ ⵜⵖⴰⵔⴰⵙⵜ ⴷ ⵢⵓⵙⴰⵏ ⵎⵉⵏ ⴰⴷ ⵉⵊⵍⵓ ⵓⵏⴰⴽ.",
+    "how_it_works_validation_2_3": "ⵙⵜⵍ ⴰⵙⵉⵖⴷ ⴷ ⵓⵏⵖⴰⵍ ⴰⴳⴰⵎⴰⵏ ⵏ ⵜⵙⵓⵖⵍⵜ. ⵍⴰ ⵜⴻⵜⵜⵓⵖⵔⴰ ⵜⵙⵓⵖⵍⵜ ⵉⵥⵉⵍⵏ ⵙ ⵓⵍⵎⴰⴹ, ⵜⴳ ⵜⴰⴳⴰⵎⴰⵏⵜ ⴳ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵡⵜⵜⴰⵙⵜ.",
+    "how_it_works_validation_2_4": "ⵙⵙⵏⵥⵓ ⵎⴰⵙ ⵜⵣⵔⴽ ⵜⵙⵓⵖⵍⵜ ⵉⵍⵓⴳⵏⵏ ⵉⵏⵊⵕⵓⵎⵏ ⴷ ⵜⵎⵉⵜⴰⵔ ⵏ ⵓⵙⵏⵇⵇⴹ ⴳ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵡⵜⵜⴰⵙⵜ.",
+    "how_it_works_validation_2_5": "ⵎⴽ ⵜⵓⵎⴰ ⴽⵔⴰ ⵏ ⵜⵡⵉⵏⵙⵜ ⵜⵉⴳⵓⵔⵉⵡⵉⵏ ⵏⵏⴰ ⴳ ⵓⵔ ⵜⵃⵇⵇⴰⵎ, ⵜⵣⵎⵔⵎ ⴰⵀⴰ ⴰⴷ ⵜⴽⵍⵉⴽⵉⵎ ⵖⴼ “ⴰⵏⴼ” ⵃⵎⴰ ⴰⴷ ⵜⵣⴷⵎⵎ ⴰⵔⵔⴰⴳ ⵢⴰⴹⵏ.",
+    "how_it_works_validation_2_6": "ⵎⴽ ⵜⵎⵏⴰⵍⴰⵎ ⴰⴽⴷ ⴽⵔⴰ ⵏ ⵜⵡⵉⵙⵜ ⵉⴹⵕⵕⴰⵏ ⵏⵉⵖ ⴷ ⵜⴰⵣⴰⵡⴰⵔⵜ (ⵜⴰⵙⴰⴳⵎⵜ ⴷ ⵜⵙⵓⵖⵍⵜ ⵙ ⵙⵏⴰⵜ), ⵙⵙⵎⵔⵙ ⴰⴱⵔⴰ “ⵎⵍ”.",
+    "how_it_works_validation_2_7": "ⵎⴽ ⵜⵎⵍⴰⵍⴰⵎ ⴷ ⴽⵔⴰ ⵏ ⵜⵖⴰⵡⵙⴰ ⵏⵏⴰ ⵓⵔ ⴷⵉⵍⵏⵜ ⵜⴰⵔⴰⵜⵉⵏ ⴰⴷ, ⵙⵙⵜⵢⴰⵜ ⵙ ⵎⴽⴷⴰ ⵉⵍⵍⴰⵏ ⴳ ⵢⵉⴱⴹⵉ ⴰⵎⵓⴼⴰⵢ ⵏⵏⵓⵏ. ⵎⴽ ⵓⵔ ⵜⵣⵎⵉⵔⵎ ⴰⴷ ⵜⵖⵜⵙⵎ, ⴰⵏⴼⴰⵜ ⵖⵔ ⵡⴰⵔⵔⴰⴳ ⵓⴹⴼⵉⵕ.",
+    "how_it_works_validation_3": "ⵎⴽ ⵜⵓⴼⵉⴷ ⵜⴰⵙⵓⵖⵍⵜ ⵜⴻⵜⵜⵓⴷⴳⴳⴰ, ⴽⵍⵉⴽⵉ ⵖⴼ ⵜⴰⵢⴽⵓⵏⵜ ✔; ⵎⴽ ⵓⵀⵓ, ⴽⵍⵉⴽⵉ ⵖⴼ ⵜⴰⵢⴽⵓⵏⵜ ✖.",
+    "how_it_works_validation_continued": "ⵉ ⵡⵓⴳⴳⴰⵔ ⵏ ⵉⵏⵖⵎⵉⵙⵏ, ⵥⵕ ⵜⵉⴼⴰⴷⵉⵡⵉⵏ ⵏ ⵡⴰⵔⵔⴰⴳ. ⵎⴽ ⵜⵓⵙⵔⴷ ⵜⵉⵡⵉⵙⵉ, ⵏⵢⴰⵍⴽⴰⵎ ⴷⵉⴷⵏⵖ ⴳ awal@collectivat.cat. ⵜⴰⵏⵎⵎⵉⵔⵜ ⵖⴼ ⵡⴰⵔⵔⴰⴳ ⵏⵏⵓⵏⵉⵍⴰⵏ ⴰⵜⵉⴳ!",
     "legal": {
         "legal_title": "Avis legal",
         "legal_text_1": "Col·lectivaT SCCL, responsable del lloc web Awal, d'ara endavant, el RESPONSABLE, posa a disposició dels usuaris aquest document, amb el qual pretén fer complir les obligacions que estableix la Llei 34/2002, de 11 de juliol, de Serveis de la Societat de la Informació i de Comerç Electrònic (LSSICE), BOE Nº 166, així com informar tots els usuaris del lloc web sobre quines son les condicions d'ús.\\nQualsevol persona que accedeixi a aquest lloc web assumeix el paper d'usuari i es compromet a l'observança i compliment rigorós de les disposicións que s'hi estableixen, així com a qualsevol altra disposició legal que s'hi apliqui.\\nCol·lectivaT SCCL, es reserva el dret de modificar qualsevol tipus d'informació que pugui aparèixer al lloc web, sense obligació de preavisar o assabentar els usuaris d'aquestes obligacions, atès que es considera suficient la publicació al lloc web de l'Associació Bloc4.",
@@ -312,15 +315,15 @@
     "faq": {
         "q1": {
             "q": "ⵓⵔ ⴼⵍⵉⵙⵖ ⴳ ⵉⴼⵓⴽⴽⵙⵏ ⵏ ⵜⵉⵔⵔⴰ ⵉⵏⵓ ⵙ ⵜⴽⴰⵟⴰⵍⵓⵏⵉⵜ/ⵜⴰⵚⴱⴱⴰⵏⵢⵓⵜ/ⵜⴰⴼⵕⴰⵏⵚⵉⵚⵜ/ⵜⴰⵄⵕⴰⴱⵜ. ⵎⴰ ⵔⴰⴷ ⵙⴽⵔⵖ?",
-            "a": "No need to worry! If you have a good understanding of the language, you can still make valuable contributions. Utilize the \"Random Sentence\" button to load a source sentence automatically, and then provide its translation into Tamazight. Additionally, you're welcome to extract sentences from non-copyrighted sources, such as Wikipedia, to diversify the type of translations we collect."
+            "a": "ⵓⵔ ⵉⵍⵍⵉ ⵓⵎⵏⵓⵙ! ⵎⴽ ⴷⴰⵔⵓⵏ ⵉⵍⵍⴰ ⵓⵔⵎⴰⵙ ⴰⵚⴱⵃⴰⵏ ⵏ ⵜⵓⵜⵍⴰⵢⵜ, ⵜⵣⵎⵔⵎ ⴰⴷ ⵜⵙⴽⵔⵎ ⴰⵔⵔⴰⴳⵏ ⵍⴰⵏⵉⵏ ⴰⵜⵉⴳ. ⵙⵙⵎⵔⵙⴰⵜ  ⴰⴱⵔⴰ ⵏ \\\"ⵜⴰⵡⵉⵏⵙⵜ ⵜⴰⴳⴰⵛⵓⵔⴰⵏⵜ\\\" ⵃⵎⴰ ⴰⴷ ⵜⵣⴷⵎⵎ ⵜⴰⵡⵉⵏⵙⵜ ⵜⴰⵙⴰⴳⵎⵜ ⵙ ⵓⵡⵔⵎⴰⵏ, ⵜⴼⴽⵎ ⵉⵍⵎⵎⴰ ⵜⴰⵙⵓⵖⵍⵜ ⵏⵏⵙ ⵙ ⵜⵎⴰⵣⵉⵖⵜ. ⵜⵣⵎⵔⵎ ⴰⵡⴷ ⴰⴷ ⴷ ⵜⵙⵙⵓⴽⴼⵎ ⵜⵉⵡⵉⵏⴰⵙ ⵙⴳ ⵉⵙⵓⴳⴰⵎ ⵓⵔ ⵉⵍⵉⵏ ⵉⵣⵔⴼⴰⵏ ⵏ ⵓⵎⴳⴰⵢ, ⴰⵎ ⵡⵄⴽⵉⴱⵉⴷⵢⴰ, ⵃⵎⴰ ⴰⴷ ⵏⵙⵎⵢⴰⵏⴰⵡ ⴰⵏⴰⵡⵏ ⵏ ⵜⵡⵉⵏⴰⵙ ⵏⵏⴰ ⵏⴳⵔⴰ."
         },
         "q2": {
-            "q": "ⵙⵙⵖⵜⵉⵖ ⵢⴰⵏ ⵓⵣⴳⴰⵍ ⴳ ⵜⵢⴰⴼⵓⵜ ⵏ ⵓⵙⵓⵖⵍ ⴰⵡⵔⵎⴰⵏ, ⵎⴰⵛⵛ ⵉⵙⵓⵍ ⵍⴰ ⵉⵙⴽⴰⵔ ⴰⵣⴳⴰⵍ ⴰⵏⵏ ⵏⵉⵜ. ⵉⵙ ⴷ ⵓⵔ ⵉⵜⵜⵓⵃⴹⴰ ⵡⴰⵔⵔⴰⴳ ⵉⵏⵓ?",
-            "a": "Your corrections are saved in our database, but they won't immediately affect the machine translation. The improvement will happen in a later phase, after we collect enough quality translations from contributors like you. So, your efforts are valuable and will contribute to enhancing the translation engine over time."
+            "q": "ⵙⵙⵖⵜⵉⵖ ⵢⴰⵏ ⵓⵣⴳⴰⵍ ⴳ ⵜⵢⴰⴼⵓⵜ ⵏ ⵓⵙⵓⵖⵍ ⴰⵡⵔⵎⴰⵏ, ⵎⴰⵛⵛ ⵉⵙⵓⵍ ⵍⴰ ⵉⵙⴽⴰⵔ ⴰⵣⴳⴰⵍ ⴰⵏⵏ ⵏⵉⵜ. ⵉⵙ ⴷ ⵓⵔ  ⵉⵜⵜⵓⵃⴹⴰ ⵡⴰⵔⵔⴰⴳ ⵉⵏⵓ?",
+            "a": "ⵜⵜⵓⵃⴹⴰⵏ ⵉⵙⵖⵜⵉⵜⵏ ⵏⵏⵓⵏ ⴳ ⵜⵙⵉⵍⴰ ⵏ ⵉⵙⴼⴽⴰ ⵏⵏⵖ, ⵎⴰⵛⵛ ⵓⵔ ⵔⴰⴷ ⴹⵉⵚⵏ ⵙ ⵓⴷⵖⵢⴰⵏ ⴳ ⵓⵙⵓⵖⵍ ⴰⵡⵔⵎⴰⵏ. ⵔⴰⴷ ⵉⵎⵙⴰⵔ ⵓⵙⵖⵓⴷⵓ ⴳ ⵜⵡⵉⵏⵙⵜ ⴷ ⵉⴷⴷⴰⵏ, ⴷⴼⴼⵉⵔ ⵎⴰⵢⴷ ⵏⴳⵔⴰ ⵜⵉⵙⵓⵖⵍⵉⵏ ⵏ ⵜⵕⵡⵉ ⴳⵓⵎⵏⵉⵏ ⵙⴳ ⵉⵎⴰⵔⴰⴳⵏ ⵣⵓⵏ ⴷ ⴽⵯⵏⵏⵉ. ⵓⴽⴰⵏ, ⵜⵉⵣⵎⵎⴰⵔ ⵏⵏⵓⵏ ⵍⴰⵏⵜ ⴰⵜⵉⴳ ⴷ ⵔⴰⴷ ⵙⵙⵉⵡⵙⵏⵜ ⴳ ⵓⵙⵖⵓⴷⵓ ⵏ ⵓⵏⵙⵎⴰⵙⵙⵓ ⵏ ⵓⵙⵓⵖⵍ ⴷⴳ ⵡⴰⴽⵓⴷ."
         },
         "q3": {
             "q": "ⵎⴰⵏⵎⴽ ⵙ ⵍⴰ ⵜⵜⵓⵙⵙⵉⴹⵉⵏⵏⵜ ⵜⵏⵇⵇⴰⴹ ⵏ ⵡⴰⵔⵔⴰⴳ ⵉ ⵜⵙⵓⵖⵍⵉⵏ?",
-            "a": "ⵜⵜⵓⵃⴹⴰⵏ ⵉⵙⵖⵜⵉⵜⵏ ⵏⵏⵓⵏ ⴳ ⵜⵙⵉⵍⴰ ⵏ ⵉⵙⴼⴽⴰ ⵏⵏⵖ, ⵎⴰⵛⵛ ⵓⵔ ⵔⴰⴷ ⴹⵉⵚⵏ ⵙ ⵓⴷⵖⵢⴰⵏ ⴳ ⵓⵙⵓⵖⵍ ⴰⵡⵔⵎⴰⵏ. ⵔⴰⴷ ⵉⵎⵙⴰⵔ ⵓⵙⵖⵓⴷⵓ ⴳ ⵜⵡⵉⵏⵙⵜ ⴷ ⵉⴷⴷⴰⵏ, ⴷⴼⴼⵉⵔ ⵎⴰⵢⴷ ⵏⴳⵔⴰ ⵜⵉⵙⵓⵖⵍⵉⵏ ⵏ ⵜⵕⵡⵉ ⴳⵓⵎⵏⵉⵏ ⵙⴳ ⵉⵎⴰⵔⴰⴳⵏ ⵣⵓⵏ ⴷ ⴽⵯⵏⵏⵉ. ⵓⴽⴰⵏ, ⵜⵉⵣⵎⵎⴰⵔ ⵏⵏⵓⵏ ⵍⴰⵏⵜ ⴰⵜⵉⴳ ⴷ ⵔⴰⴷ ⵙⵙⵉⵡⵙⵏⵜ ⴳ ⵓⵙⵖⵓⴷⵓ ⵏ ⵓⵏⵙⵎⴰⵙⵙⵓ ⵏ ⵓⵙⵓⵖⵍ ⴷⴳ ⵡⴰⴽⵓⴷ."
+            "a": "ⵍⴰ ⵜⵜⵓⵙⵡⵓⵜⵜⵓⵏⵜ ⵜⵏⵇⵇⴰⴹ ⵏ ⵡⴰⵔⵔⴰⴳ ⵏⵏⵓⵏ ⵙ ⵓⵎⴹⴰⵏ ⵏ ⵉⵙⴽⴽⵉⵍⵏ ⴳ ⵜⵡⵉⵏⵙⵜ ⵜⴰⵙⴰⴳⵎⵜ ⵏⵏⴰ ⵜⵙⴽⵛⵎⵎ ⴷ ⵜⵙⵓⵖⵍⵜ ⵏⵏⵙ. ⵎⴽ ⵜⵙⴽⵛⵎⵎ ⵙ ⵓⴼⵓⵙ ⵜⴰⵡⵉⵏⵙⵜ ⵜⴰⵙⴰⴳⵎⵜ ⴷ ⵜⵙⵓⵖⵍⵜ ⵏⵏⵙ ⵙⴳ ⵓⵎⵢⴰ (ⵣⵄⵎⴰ, ⵎⵉⵏ ⴰⵙⵙⵎⵔ ⵏ 'ⴰⵙⵓⵖⵍ ⴰⵎⵏⵣⵓ'), ⵔⴰⴷ ⴳⵉⵏⵜ ⵜⵏⵇⵇⴰⴹ ⵏⵏⵓⵏ ⵜⴰⵎⵓⵜⵜⵓⵔⵜ ⵏ ⵓⵎⴹⴰⵏ ⵏ ⵉⵙⴽⴽⵉⵍⵏ ⴳ ⵜⵡⵉⵏⴰⵙ ⵙ ⵙⵏⴰⵜ. ⵎⴽ ⵜⵙⵙⵎⵔⵙⵎ ⴰⵏⵙⵎⴰⵙⵙⵓ ⵏ ⵓⵙⵓⵖⵍ ⴰⵡⵔⵎⴰⵏ ⵙ ⵓⴽⵍⵉⴽ ⵖⴼ 'ⴰⵙⵓⵖⵍ ⴰⵎⵏⵣⵓ', ⵔⴰⴷ ⵜⵜⵓⵥⴽⴰⵏⵜ ⵜⵏⵇⵇⴰⴹ ⵏ ⵓⵙⵓⵖⵍ ⵏⵏⵓⵏ ⵖⴼ ⵓⵎⴹⴰⵏ ⵏ ⵉⵙⴽⴽⵉⵍⵏ ⵏⵏⴰ ⵜⵙⵏⴼⵍⵎ ⴳ ⵜⵢⴰⴼⵓⵜ ⵏ ⵓⵙⵓⵖⵍ ⴰⵡⵔⵎⴰⵏ. ⵎⴽ ⵜⵣⴷⵎⵎ ⴽⵔⴰ ⵏ ⵜⵡⵉⵏⵙⵜ ⵜⴰⵙⴰⴳⵎⵜ ⵙⴳ ⵜⵙⵉⵍⴰ ⵏ ⵉⵙⴼⴽⴰ ⵙ ⵓⵙⵙⵎⵔⵙ ⵏ 'ⵜⴰⵡⵉⵏⵙⵜ ⵜⴰⴳⴰⵛⵓⵔⴰⵏⵜ', ⵔⴰⴷ ⵜⴰⵔⵣⵎ ⵜⵉⵏⵇⵇⴰⴹ ⵖⴰⵙ ⵖⴼ ⵜⵙⵓⵖⵍⵜ ⵏⵏⵓⵏ, ⵓⵔ ⴷ ⵖⴼ ⵜⵡⵉⵏⵙⵜ ⵜⴰⵙⴰⴳⵎⵜ."
         },
         "q4": {
             "q": "ⵉⵙ ⵍⴰ ⵜⵜⴰⵔⴳⵖ ⵜⵉⵏⵇⵇⴰⴹ ⵙⴳ ⵡⴰⵔⵔⴰⴳⵏ ⵉⴳⵕⴹⴰⵏⵏ ⴳ ⴽⴰⵎⵏⴼⵓⵢⵙ?",
@@ -331,20 +334,32 @@
             "a": "ⵏⵙⵓⵍ ⵍⴰ ⵏⵙⵡⵓⵔⵉ ⵖⴼ ⵓⵙⵙⴰⴹⵓ ⵏ ⵜⴳⵓⵔⵉ ⵏ ⵓⵣⵔⴰⵢ. ⴳ ⵜⵉⵣⵉ ⴰ, ⵜⵣⵎⵔⵎ ⴰⴷ ⵜⵕⵥⵎⵎ ⴰⵎⵉⴹⴰⵏ ⵢⴰⴹⵏ, ⵜⵏⵢⴰⵍⴽⴰⵎⵎ ⴰⴽⵉⴷⵏⵖ ⴳ awal@collectivat.cat ⵃⵎⴰ ⴰⴷ ⵏⵙⵎⴰⵜⵜⵉ ⵜⵉⵏⵇⵇⴰⴹ ⵏⵏⵓⵏ ⵖⵔ ⵓⵎⵉⴹⴰⵏ ⵏⵏⵓⵏ ⴰⵎⴰⵢⵏⵓ."
         },
         "q6": {
-            "q": "ⵉⵍⵍⴰ ⵢⴰⴷ ⴷⴰⵔⵉ ⵢⴰⵏ ⵓⵎⵉⴹⴰⵏ ⴳ \"ⴰⵡⴰⵍ\". ⵉⵙ ⵓⵙⵔⵖ ⴰⴷ ⵙⵏⴼⵍⵓⵍⵖ ⵢⴰⵏ ⴰⵡⴷ ⴳ ⴽⴰⵎⵏⴼⵓⵢⵙ?",
+            "q": "ⵉⵍⵍⴰ ⵢⴰⴷ ⴷⴰⵔⵉ ⵢⴰⵏ ⵓⵎⵉⴹⴰⵏ ⴳ ⴰⵡⴰⵍ. ⵉⵙ ⵓⵙⵔⵖ ⴰⴷ ⵙⵏⴼⵍⵓⵍⵖ ⵢⴰⵏ ⴰⵡⴷ ⴳ ⴽⴰⵎⵏⴼⵓⵢⵙ?",
             "a": "ⵎⵇⵇⴰⵔ ⵓⵔ ⵉⴳⵉ ⵓⵛⵛⵉⵍ, ⵍⴰ ⵏⵜⵜⵡⵚⵚⴰ ⵙ ⵓⵙⵏⴼⵍⵓⵍ ⵏ ⴽⵔⴰ ⵏ ⵓⵎⵉⴹⴰⵏ ⴳ ⴽⴰⵎⵏⴼⵓⵢⵙ. ⵙ ⵜⵖⴰⵔⴰⵙⵜ ⴰ, ⵜⵣⵎⵔⵎ ⴰⴷ ⵜⵥⵕⵉⵎ ⵎⵏⵛⵜ ⴰⴷ ⵜⵓⵔⴳⵎ, ⵜⴽⵜⴰⵔⵎ ⵉⴼⵔⵓⵔⵉⵜⵏ ⵏⵏⵓⵏ ⴳ ⵉⴼⵔⵙ ⵏⵏⵓⵏ."
         }
     },
     "carousel": {
         "c1": {
-            "heading": "ⴰⵎⴰⵕⴰⵟⵓⵏ ⵏ ⵉⵙⴼⴽⴰ ⵏ \"ⴰⵡⴰⵍ\" ⵎⵓⵏⴰⵜ ⵉ ⵜⵎⴰⵣⵉⵖⵜ!",
-            "body": "ⵍⴽⵎⴰⵜ ⴰⵏⵖ ⴳ 17 ⴱⵕⴰⵢⵕ, 11:00 ⵏ ⵜⴰⵢⵍⴳⵉ - 8:00 ⵏ ⵜⵎⴷⴷⵉⵜ ⴳ ⵓⵙⵖⵉⵎ ⵏ CIEMEN ⴳ ⴱⴰⵕⵙⵉⵍⵓⵏⴰ, ⵉ ⵢⴰⵜ ⵜⵎⴰⴳⵍⴰⵢⵜ ⵜⴰⵎⴳⵔⵓⵜ ⵉ ⵓⵙⵙⴰⵔⵡ ⵏ ⵉⵙⴼⴽⴰ ⵉ ⵓⵙⴱⵓⵖⵍⵓ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⵣⵉⵖⵜ. ⴷⵔⵓ ⴳ ⵓⵃⵟⵟⵓ ⴷ ⵓⵙⵉⵍⵉ ⵏ ⵜⴷⵍⵙⴰ ⵜⴰⵎⴰⵣⵉⵖⵜ. ⵍⴰ ⵏⵙⴱⵔⵔⴰⴽ ⵙ ⵉⵡⵜⴰⵢⵏ ⴰⴽⴽⵯ, ⵉⴳⵏⵓⵙⵏ ⴰⴽⴽⵯ, ⴷ ⵜⵎⵣⴰⵔⴰⵢⵉⵏ ⴰⴽⴽⵯ!",
+            "heading": "\\\"ⴰⵡⴰⵍ, ⴰⵙⵏⴼⴰⵔ ⴰⵖⵔⴼⴰⵏ ⵏⵏⴰ ⵉⵔⴰⵏ ⴰⴷ ⵢⴰⵊⵊ ⴰⵏⵜⵉⵔⵏⵉⵜ ⴰⵔ ⵉⵙⴰⵡⴰⵍ ⵜⴰⵎⴰⵣⵉⵖⵜ\\\"",
+            "body": "ⵖⵔ ⵖⴼ ⵓⵙⵏⴼⴰⵔ ⴰⵡⴰⵍ ⴷ ⵓⴷⴰⵜⴰⵜⵓⵏ ⴰⵎⵣⵡⴰⵔⵓ ⵏⵏⵙ ⴳ ⵏⴰⵛⵏⴰⵍⵢⴰ.",
             "link": "https://www.nationalia.info/new/11589/awal-the-popular-project-that-wants-to-make-the-internet-speak-amazigh"
         },
         "c2": {
-            "heading": "\"ⴰⵡⴰⵍ\" ⴳ ⵓⴱⵍⵓⴳ ⵏ Col·lectivaT",
+            "heading": "ⴰⵡⴰⵍ ⴳ ⵓⴱⵍⵓⴳ ⵏ Col·lectivaT",
             "body": "ⴰⵙⵎⵏⵉⴷ ⵏ ⵓⵙⵏⴼⴰⵔ ⴰⵡⴰⵍ ⵉ ⵓⵃⵟⵟⵓ ⴷ ⵓⵙⵙⴷⵓⵙ ⵏ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⵣⵉⵖⵜ ⴳ ⵡⴰⵏⵜⵉⵔⵏⵉⵜ ⵙ ⵢⴰⵜ ⵜⴳⵔⴰⵡⵜ ⵏ ⵉⵙⴼⴽⴰ ⵉⴷⵓⵙⵏ ⵜⵎⵓⵏ.",
             "link": "https://collectivat.cat/blog/2024-01-22-awal-en/"
+        }
+    },
+    "email": {
+        "verification": {
+            "page_redirect": "Now redirecting you...",
+            "token_error": "Validation token not valid, please try to resend the verification email.",
+            "success_title": "Thank your verifying your Email.",
+            "error_title": "Email verification failed.",
+            "error_msg": "Something went wrong. If you still see the banner, please try to resend verification email. If problem persist, contact us for help.",
+            "success_email": "Verification email sent successfully, please check your inbox and click on the link to complete verification.",
+            "alert": "Please verify your email.",
+            "error_email": "Failed to send verification email. Make sure you wrote your email correctly in your profile page. If the problem persist, contact us for help."
         }
     }
 }
