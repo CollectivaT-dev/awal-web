@@ -77,7 +77,7 @@
         "alert_email": "Correu electrònic ja en ús",
         "alert_email_username": "Nom d'usuari o correu electrònic ja en ús",
         "success_update": "Perfil actualitzat amb èxit.",
-        "success_registration": "Èxit! Gràcies per registrar-te! Ara, inicia la sessió per començar a contribuir.",
+        "success_registration": "Èxit! Gràcies per registrar-te! Ara, si us plau, comproveu el vostre correu electrònic per trobar l'enllaç de verificació i inicieu la sessió per començar a contribuir.",
         "loading_updating": "Actualitzant el teu perfil...",
         "alert_email_pwd": "Si us plau, proporciona una adreça de correu electrònic i una contrasenya vàlida.",
         "success_copy": "Traducció copiada al porta-retalls!",
@@ -150,7 +150,10 @@
         "validate_report_heading": "Informar contribució",
         "validate_report_text": "Expliqueu breument què hi ha de malament amb aquesta contribució segons les directrius de la nostra comunitat.",
         "faq_heading":"Preguntes Freqüents",
-        "rank":"#"
+        "rank":"#",
+        "home": "Inici",
+        "contributor_input_placeholder": "Escriviu un text per traduir, o carregueu-ne una amb el botó 'Frase Aleatòria'.",
+        "contributor_output_placeholder": "Escriviu aquí la traducció del text a l'esquerra en el idioma seleccionat."
     },
     "validator": {
         "alert_no_more_entries": "No hi ha més entrades per validar per al parell de llengües i variant seleccionat. Pots contribuir amb més traduccions mentrestant.",
@@ -346,5 +349,17 @@
             "body": "Presentació del projecte Awal per preservar i promoure la llengua amazic a internet amb una comunitat de dades forta i unida.",
             "link": "https://collectivat.cat/blog/2024-01-22-awal-ca/"
         }
+    },
+    "email": {
+      "verification": {
+        "page_redirect": "Ara us redireccionarem...",
+        "token_error": "El token de validació no és vàlid, si us plau, intenteu reenviar el correu electrònic de verificació.",
+        "success_title": "Gràcies per verificar el vostre correu electrònic.",
+        "error_title": "Ha fallat la verificació del correu electrònic.",
+        "error_msg": "Alguna cosa ha anat malament. Si encara veieu la pancarta, si us plau, intenteu reenviar el correu electrònic de verificació. Si el problema persisteix, poseu-vos en contacte amb nosaltres per obtenir ajuda.",
+        "success_email": "El correu electrònic de verificació s'ha enviat correctament. Si us plau, comproveu la vostra safata d'entrada i feu clic al l'enllaç per completar la verificació.",
+        "alert": "Si us plau, verifiqueu el vostre correu electrònic.",
+        "error_email": "No s'ha pogut enviar el correu electrònic de verificació. Assegureu-vos d'haver escrit correctament el vostre correu electrònic a la pàgina del vostre perfil. Si el problema persisteix, poseu-vos en contacte amb nosaltres per obtenir ajuda."
+      }
     }
 }

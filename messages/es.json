@@ -77,7 +77,7 @@
         "alert_email": "El correo electrónico ya está registrado",
         "alert_email_username": "El nombre de usuario o correo electrónico ya está en uso",
         "success_update": "Perfil actualizado con éxito.",
-        "success_registration": "¡Éxito! ¡Gracias por registrarte! Ahora, inicia sesión para empezar a contribuir.",
+        "success_registration": "¡Gracias por registrarte! Ahora, revise su correo electrónico para ver el enlace de verificación e inicie sesión para comenzar a contribuir.",
         "loading_updating": "Actualizando tu perfil...",
         "alert_email_pwd": "Por favor, proporciona una dirección de correo electrónico y una contraseña válida.",
         "success_copy": "Traducción copiada al portapapeles!",
@@ -150,7 +150,10 @@
         "validate_report_heading": "Informar contribución",
         "validate_report_text": "Por favor, explíquenos brevemente qué está mal con esta contribución según nuestras pautas comunitarias.",
         "faq_heading":"Preguntas Frecuentes",
-        "rank": "#"
+        "rank": "#",
+        "home": "Inicio",
+        "contributor_input_placeholder": "Escribe un texto para traducir, o cárga una usando el botón 'Frase Aleatoria'.",
+        "contributor_output_placeholder": "Escribe aquí la traducción del texto a la izquierda en el idioma seleccionado."
     },
     "validator": {
         "alert_no_more_entries": "No hay más entradas para validar para el par de idiomas y variante seleccionada. Puedes contribuir con más traducciones mientras tanto.",
@@ -346,5 +349,17 @@
             "body": "Presentación del proyecto Awal para preservar y promover la lengua amazigh en Internet con una comunidad de datos fuerte y unida.",
             "link": "https://collectivat.cat/blog/2024-01-22-awal-es/"
         }
-    } 
+    },
+    "email": {
+      "verification": {
+        "page_redirect": "Ahora te estamos redirigiendo...",
+        "token_error": "El token de validación no es válido, por favor intenta volver a enviar el correo de verificación.",
+        "success_title": "Gracias por verificar tu correo electrónico.",
+        "error_title": "La verificación del correo electrónico falló.",
+        "error_msg": "Algo salió mal. Si aún ves el banner, por favor intenta volver a enviar el correo de verificación. Si el problema persiste, contáctanos para obtener ayuda.",
+        "success_email": "El correo de verificación se ha enviado correctamente. Por favor, revisa tu bandeja de entrada y haz clic en el enlace para completar la verificación.",
+        "alert": "Por favor, verifica tu correo electrónico.",
+        "error_email": "No se pudo enviar el correo de verificación. Asegúrate de haber escrito correctamente tu correo electrónico en tu página de perfil. Si el problema persiste, contáctanos para obtener ayuda."
+      }
+    }
 }
