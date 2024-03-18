@@ -35,7 +35,6 @@ import {
 import Loading from '@/app/loading';
 import { Badge } from '@/components/ui/badge';
 import { X } from 'lucide-react';
-import useMediaQuery from '@/app/hooks/useMediaQuery';
 
 const formSchema = z
     .object({
@@ -119,7 +118,7 @@ export function SettingsPage() {
         { label: 'French', value: 'french' },
     ] as const;
     if (appStatus === 'development') {
-        console.log(session);
+//        console.log(session);
     }
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -169,7 +168,7 @@ export function SettingsPage() {
                 setLoading(true);
                 const response = await axios.get('/api/settings');
                 const userData = response.data;
-                console.log(userData);
+        //        console.log(userData);
                 const defaultData = {
                     age: 0,
                     central: {
@@ -261,8 +260,8 @@ export function SettingsPage() {
 
         fetchData();
     }, [form]);
-    console.log(form.formState);
-    console.log(selectedLanguages);
+   // console.log(form.formState);
+    //console.log(selectedLanguages);
     //# 2 update user data
     const handleUpdate = async (updateData: SettingFormValues) => {
         const { score, ...dataWithoutScore } = updateData;
@@ -299,8 +298,8 @@ export function SettingsPage() {
                 french: false,
             },
         };
-        console.log(updateData);
-        console.log(newData);
+//        console.log(updateData);
+//        console.log(newData);
 
         const toastId = toast.loading(`${d?.toasters.loading_updating}`);
 
@@ -310,7 +309,7 @@ export function SettingsPage() {
             toast.success(`${d?.toasters.success_update}`, {
                 id: toastId,
             });
-            console.log(updateData);
+    //        console.log(updateData);
             sessionUpdate({ user: { ...session?.user, ...dataWithoutScore } });
             router.refresh();
             setLoading(false);
@@ -337,17 +336,17 @@ export function SettingsPage() {
         }
     };
     const onSubmit = async (data: SettingFormValues) => {
-        console.log('submit', data);
+//        console.log('submit', data);
         setLoading(true);
         const combinedData = {
             userId,
             ...data,
             isSubscribed: form.getValues('isSubscribed'),
         };
-        console.log(combinedData);
+//        console.log(combinedData);
         await handleUpdate(combinedData);
     };
-    console.log(form.formState);
+   // console.log(form.formState);
     //# 3 dialect settings
     const handleCentralChecked = () => {
         const isChecked = !form.getValues('central.isChecked');

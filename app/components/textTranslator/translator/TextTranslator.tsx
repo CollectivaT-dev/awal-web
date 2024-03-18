@@ -140,8 +140,8 @@ const TextTranslator = () => {
                 token: process.env.NEXT_PUBLIC_API_TOKEN,
             };
         }
-        console.log(requestData?.batch);
-        console.log(source);
+        //console.log(requestData?.batch);
+        //console.log(source);
         const config = {
             method: 'post',
             maxBodyLength: Infinity,
@@ -158,7 +158,7 @@ const TextTranslator = () => {
         try {
             setIsLoading(true);
             const response = await axios.request(config);
-            console.log(response.data);
+            //console.log(response.data);
             if (
                 currentTranslationRequestId === translationRequestIdRef.current
             ) {

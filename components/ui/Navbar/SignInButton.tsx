@@ -12,9 +12,8 @@ import { User } from 'lucide-react';
 
 const SignInButton = () => {
     const { data: session, status } = useSession();
-    const [menuOpen, setMenuOpen] = useState(false);
-    console.log(status);
-    console.log('sign in button check', session);
+    //console.log(status);
+    //console.log('sign in button check', session);
     const pathname = usePathname();
     const { locale } = useLocaleStore();
 

@@ -79,11 +79,11 @@ const ValidateComp = () => {
     const [entry, setEntry] = useState<any>();
     const updatedSession = async () => {
         const session = await getSession();
-        console.log(session);
+        //console.log(session);
     };
     const { locale } = useLocaleStore();
     const [d, setD] = useState<MessagesProps>();
-    console.log(session);
+    //console.log(session);
     useEffect(() => {
         const fetchDictionary = async () => {
             const m = await getDictionary(locale);
@@ -130,8 +130,8 @@ const ValidateComp = () => {
     };
 
     useEffect(() => {
-        console.log('Left Radio Value:', srcVar);
-        console.log('Right Radio Value:', tgtVar);
+        //console.log('Left Radio Value:', srcVar);
+        //console.log('Right Radio Value:', tgtVar);
     }, [tgtVar, srcVar]);
     // Update target language options when source language changes
     useEffect(() => {
@@ -207,7 +207,7 @@ const ValidateComp = () => {
         });
 
         const fetchData = async () => {
-            console.log('Fetching data for', sourceLanguage, targetLanguage);
+            //console.log('Fetching data for', sourceLanguage, targetLanguage);
             const srcLangCode = getLanguageCode(sourceLanguage);
             const tgtLangCode = getLanguageCode(targetLanguage);
             const apiUrl =
@@ -219,7 +219,7 @@ const ValidateComp = () => {
                     srcLangCode,
                 )}&tgt=${encodeURIComponent(tgtLangCode)}`;
                 const res = await axios.get(url);
-                console.log(res);
+                //console.log(res);
                 if (res.status === 200 && res.data) {
                     setSourceText(res.data.src_text || '');
                     setTargetText(res.data.tgt_text || '');
@@ -271,13 +271,13 @@ const ValidateComp = () => {
     // validate post route
     const handleValidate = async () => {
         const data = { ...entry, validatorId: session?.user?.id };
-        console.log(data);
+        //console.log(data);
         try {
             const res = await axios.patch('/api/contribute/accept', data);
             const validationScore = 3;
             const updatedUser = res.data;
             const { score, ...userWithoutScore } = updatedUser;
-            console.log(userWithoutScore);
+            //console.log(userWithoutScore, updatedUser);
             sessionUpdate({ user: updatedUser });
             toast.success(
                 `${
@@ -287,7 +287,7 @@ const ValidateComp = () => {
                 }`,
             );
         } catch (error) {
-            console.log(error);
+            //console.log(error);
         }
         setTriggerFetch((prev) => prev + 1);
     };
@@ -298,10 +298,8 @@ const ValidateComp = () => {
             const res = await axios.patch('/api/contribute/reject', data);
             const validationScore = 3;
             const updatedUser = res.data;
-            sessionUpdate({ user: updatedUser });
-            console.log(updatedUser);
             const { score, ...userWithoutScore } = updatedUser;
-            console.log(userWithoutScore);
+            //console.log(userWithoutScore, updatedUser);
             sessionUpdate({ user: updatedUser });
             toast.success(
                 `${
@@ -311,7 +309,7 @@ const ValidateComp = () => {
                 }`,
             );
         } catch (error) {
-            console.log(error);
+            //console.log(error);
             toast(`${d?.validator.alert_no_more_entries}`, {
                 icon: '❌',
             });
@@ -332,7 +330,7 @@ const ValidateComp = () => {
             sessionUpdate({ user: updatedUser });
             toast.success(`${d?.toasters.success_report}`);
         } catch (error) {
-            console.log(error);
+            //console.log(error);
             toast(`${d?.validator.alert_no_more_entries}`, {
                 icon: '❌',
             });
@@ -340,15 +338,15 @@ const ValidateComp = () => {
         setTriggerFetch((prev) => prev + 1);
     };
     const handleNext = async () => {
-        console.log('Fetching next entry');
+        //console.log('Fetching next entry');
         try {
             const data = {
                 ...entry,
                 validatorId: session?.user?.id, // Explicitly include the ID of validator
             };
-            console.log('Sending request with data:', data);
+            //console.log('Sending request with data:', data);
             const res = await axios.patch('/api/contribute', data);
-            console.log('Response received:', res);
+            //console.log('Response received:', res);
 
             // Assuming the API returns the next entry in the response
             if (res.status === 200 && res.data) {

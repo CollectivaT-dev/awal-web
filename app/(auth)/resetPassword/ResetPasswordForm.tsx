@@ -40,7 +40,7 @@ export function ResetPasswordForm() {
             : message.status === 404
             ? toast.error('user not found')
             : toast.error('error while sending email, try again later');
-        console.log(message);
+        // console.log(message);
         // try {
         //     const res = axios.post('api/auth/reset-password');
         // } catch (error) {}

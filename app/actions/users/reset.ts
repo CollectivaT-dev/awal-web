@@ -9,7 +9,7 @@ export const resetPassword = async (email: string) => {
             email,
         },
     });
-    console.log(user);
+    //  console.log(user);
     if (!user) {
         return (
             JSON.stringify({ message: 'User not found', status: 404 }),
@@ -43,7 +43,7 @@ export const resetPassword = async (email: string) => {
             }) as React.ReactElement,
         });
     } catch (error) {
-        console.log(error);
+        //  console.log(error);
     }
     return { message: 'Email sent successfully', status: 200 };
 };

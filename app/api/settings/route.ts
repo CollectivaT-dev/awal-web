@@ -3,11 +3,11 @@ import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 
 export async function PATCH(req: Request) {
-    console.log(req);
+     //console.log(req);
     try {
         const body = await req.json();
-        console.log(body.userId);
-        console.log(body);
+         //console.log(body.userId);
+         //console.log(body);
         const existingUser = await prisma.user.findFirst({
             where: {
                 OR: [
@@ -21,8 +21,8 @@ export async function PATCH(req: Request) {
                 NOT: { id: body.userId },
             },
         });
-        console.log(existingUser);
-        console.log(existingUser);
+         //console.log(existingUser);
+         //console.log(existingUser);
         if (existingUser) {
             return new NextResponse(
                 JSON.stringify({ error: 'username and email error' }),
@@ -35,7 +35,7 @@ export async function PATCH(req: Request) {
             );
         }
 
-        // Validation checks for central, tachelhit, and tarifit
+        //Validation checks for central, tachelhit, and tarifit
         if (
             (body.central?.isChecked &&
                 (body.central.oral === 0 ||
@@ -60,7 +60,7 @@ export async function PATCH(req: Request) {
                 },
             );
         }
-        console.log(body.other.body.length);
+         //console.log(body.other.body.length);
         if (body.other?.isChecked && body.other.body.length === 0) {
             return new NextResponse(
                 JSON.stringify({ error: 'Non Empty String' }),
@@ -136,7 +136,7 @@ export async function PATCH(req: Request) {
                 isPrivacy: body.isPrivacy ? body.isPrivacy : true,
             },
         });
-        console.log({ ...user });
+         //console.log({ ...user });
 
         return NextResponse.json({
             user,
@@ -158,7 +158,7 @@ export async function PATCH(req: Request) {
 export async function GET(req: Request) {
     const currentUser = await getCurrentUser();
 
-    console.log(currentUser);
+     //console.log(currentUser);
     if (!currentUser) {
         return new NextResponse(JSON.stringify({ message: 'Unauthorized' }), {
             status: 401,
@@ -172,7 +172,7 @@ export async function GET(req: Request) {
             id: currentUser.id,
         },
     });
-    console.log(user);
+     //console.log(user);
 
     return new NextResponse(JSON.stringify(user), {
         status: 200,

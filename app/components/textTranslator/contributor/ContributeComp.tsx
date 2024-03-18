@@ -86,7 +86,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
     // check if the user modified the machine translation, if they used the translate button, this is done simply checking if the contribution field has any manual changes
     const [translated, setTranslated] = useState(false);
     const router = useRouter();
-    console.log(session);
+    //console.log(session);
     const { update: sessionUpdate } = useSession();
     const [isLoading, setIsLoading] = useState(false);
     // read from local storage
@@ -142,8 +142,8 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
 
     // check point
     useEffect(() => {
-        console.log('Left Radio Value:', srcVar);
-        console.log('Right Radio Value:', tgtVar);
+        //console.log('Left Radio Value:', srcVar);
+        //console.log('Right Radio Value:', tgtVar);
     }, [tgtVar, srcVar]);
     // Update target language options when source language changes
     useEffect(() => {
@@ -241,7 +241,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
     const handleGenerate = async () => {
         setRandomClicked(true);
         const srcLanguageCode = getLanguageCode(sourceLanguage);
-        console.log(srcLanguageCode);
+        //console.log(srcLanguageCode);
         const config = {
             method: 'GET',
             maxBodyLength: Infinity,
@@ -253,11 +253,11 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
         const fetchData = async () => {
             try {
                 const res = await axios.request(config);
-                console.log(res.data.sentence);
+                //console.log(res.data.sentence);
                 setSourceText(res.data.sentence);
                 setFetchedText(res.data.sentence);
             } catch (error) {
-                console.log(error);
+                //console.log(error);
             }
         };
         toast.promise(fetchData(), {
@@ -280,10 +280,10 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
         setEntryScore(srcScore + distance);
         setTotalScore((prevScore) => prevScore + srcScore + distance);
 
-        console.log(srcScore);
-        console.log(distance);
+        //console.log(srcScore);
+        //console.log(distance);
 
-        console.log(totalScore);
+        //console.log(totalScore);
     }, [
         initialTranslatedText,
         targetText,
@@ -292,12 +292,12 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
         sourceText,
         translateClicked,
     ]);
-    // console.log('fetchedText', fetchedText);
-    // console.log('entryScore', entryScore);
-    // console.log('totalScore', totalScore);
-    // console.log('randomClicked', randomClicked);
-    // console.log('transclicked', translateClicked);
-    // console.log('translated', translated);
+    // //console.log('fetchedText', fetchedText);
+    // //console.log('entryScore', entryScore);
+    // //console.log('totalScore', totalScore);
+    // //console.log('randomClicked', randomClicked);
+    // //console.log('transclicked', translateClicked);
+    // //console.log('translated', translated);
 
     // contribution post route
     const handleContribute = async () => {
@@ -333,7 +333,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
         //     toast.error(`${d?.toasters.select_var}`);
         //     return;
         // }
-        console.log(data);
+        //console.log(data);
         if (data.userId.length === 0) {
             router.push('/signIn', { scroll: false });
         }
@@ -361,16 +361,16 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                 setTranslated(false);
             }
             const updatedUser = res.data;
-            // console.log(res.data.score);
+            // //console.log(res.data.score);
             sessionUpdate({ user: updatedUser });
         } catch (error) {
-            console.log(error);
+            //console.log(error);
         } finally {
             setIsLoading(false);
         }
         setTimeout(async () => {
             const updatedSession = await getSession();
-            console.log(updatedSession);
+            //console.log(updatedSession);
         }, 1000); // Delay of 1 second
     };
 
@@ -422,7 +422,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                 const response = await axios.request(config);
                 setInitialTranslatedText(response.data.translation);
 
-                console.log(response.data);
+                //console.log(response.data);
                 // Check if response data is an array
                 if (Array.isArray(response.data.translation)) {
                     // If it's an array, join the array elements with a newline character to form a string
@@ -432,7 +432,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                     setTargetText(response.data.translation);
                 }
             } catch (error) {
-                console.log('Error:', error);
+                //console.log('Error:', error);
             }
         };
         toast.promise(translate(), {

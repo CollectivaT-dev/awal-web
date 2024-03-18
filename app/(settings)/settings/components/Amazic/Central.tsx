@@ -11,7 +11,6 @@ import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { AmazicConfig } from '@/app/(settings)/SettingsConfig';
 import { SelectButton } from '../SelectButton';
-import { Input } from '@/components/ui/input';
 
 //unchecked status
 const LanguageSchema = z.object({
@@ -65,7 +64,7 @@ const Central = ({
     dataTo: (data: AmazicConfig.AmazicProps) => void;
     dataFrom?: AmazicConfig.AmazicProps;
 }) => {
-    console.log(dataFrom);
+   // console.log(dataFrom);
 
     const [formState, setFormState] =
         useState<AmazicConfig.AmazicProps | null>();

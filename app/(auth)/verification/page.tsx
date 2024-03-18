@@ -2,17 +2,17 @@
 import useLocaleStore from '@/app/hooks/languageStore';
 import { MessagesProps, getDictionary } from '@/i18n';
 import axios from 'axios';
-import { getSession, useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 interface VerifyEmailPageProps {
     searchParams: { [key: string]: string | string[] | undefined };
 }
 
 const VerifyEmailPage = ({ searchParams }: VerifyEmailPageProps) => {
-    const { locale } = useLocaleStore();
+	const { locale } = useLocaleStore();
     const [dictionary, setDictionary] = useState<MessagesProps>();
     useEffect(() => {
         const fetchDictionary = async () => {
@@ -22,14 +22,13 @@ const VerifyEmailPage = ({ searchParams }: VerifyEmailPageProps) => {
         fetchDictionary();
     }, [locale]);
     const verificationToken = searchParams?.token || '';
-    // console.log(verificationToken)
     const { data: session, update } = useSession();
     const user = session?.user;
-    // console.log(update, session);
-    // console.log(searchParams.token);
+
     const [isVerified, setIsVerified] = useState(false);
     const router = useRouter();
-    const url =
+
+	const url =
         process.env.NODE_ENV === 'development'
             ? 'http://localhost:3000'
             : 'https://awaldigital.org';
@@ -41,8 +40,8 @@ const VerifyEmailPage = ({ searchParams }: VerifyEmailPageProps) => {
                 const res = await axios.patch(`${url}/api/auth/verify-email`, {
                     token: verificationToken,
                 });
-                console.log(res.status);
-                console.log(res.data);
+                //  console.log(res.status);
+                // console.log(res.data);
                 if (res.status === 200) {
                     setIsVerified(true);
                     router.refresh();
@@ -53,12 +52,12 @@ const VerifyEmailPage = ({ searchParams }: VerifyEmailPageProps) => {
                     );
                 }
             } catch (error) {
-                console.log(error);
+                // console.log(error);
             }
         };
         handleVerification();
     }, [url, verificationToken, update, dictionary]);
-    // console.log(isVerified);
+    //  console.log(isVerified);
     useEffect(() => {
         if (isVerified) {
             setTimeout(() => {

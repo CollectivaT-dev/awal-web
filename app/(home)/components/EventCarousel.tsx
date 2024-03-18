@@ -34,8 +34,8 @@ const EventCarousel = () => {
     }, [locale]);
     const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
     // get carousel object from json
-    const c: Carousel = d?.carousel ?? {};
-    console.log(c);
+   const c: Carousel = d?.carousel ?? {};
+    // console.log(c);
     return (
         <>
             {isAboveLgScreen ? (
