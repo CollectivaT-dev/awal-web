@@ -5,7 +5,6 @@ export default async function ValidateLayout({
 }: {
     children: React.ReactNode;
 }) {
-	console.log("first")
     return (
         <div>
 			

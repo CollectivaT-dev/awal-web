@@ -51,7 +51,7 @@ const AppBar = () => {
             : 'https://awaldigital.org';
     const changeLocale = (newLocale: string) => {
         setLocale(newLocale);
-        console.log(newLocale);
+        //console.log(newLocale);
         try {
             setLoading(true);
             router.push(`${url}/?lang=${newLocale}`, {
@@ -82,7 +82,7 @@ const AppBar = () => {
         } catch (error) {
             if (isAxiosError(error)) throw new Error(error.message);
             else {
-                console.log(error);
+                //console.log(error);
             }
             toast.error('error while sending email, try again later');
         }

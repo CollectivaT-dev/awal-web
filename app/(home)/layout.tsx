@@ -39,13 +39,13 @@ export default function HomepageLayout({
             try {
                 // delete dependency array to fetch on page refresh
                 const req = await axios.get(`${apiUrl}/api/stats`);
-                console.log(req.data.topTen);
-                console.log(req.data.totalValidation);
+                // console.log(req.data.topTen);
+                // console.log(req.data.totalValidation);
                 setTotalEntries(req.data.totalEntries);
                 setTopTen(req.data.topTen);
                 setTotalValidation(req.data.totalValidation);
             } catch (error) {
-                console.log('Error fetching data:', error);
+                // console.log('Error fetching data:', error);
             }
         };
         fetchData();

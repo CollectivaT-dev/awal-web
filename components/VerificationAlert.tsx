@@ -34,13 +34,13 @@ const VerificationAlert: React.FC<VerificationAlertProps> = ({ data }) => {
             );
             if (res.status === 200) {
                 toast.success(
-                    `${dictionary?.email.verification.success_email}`,
+                    `${dictionary?.email?.verification.success_email}`,
                 );
             }
             // console.log(res);
         } catch (error) {
             if (error) {
-                toast.error(`${dictionary?.email.verification.error_email}`);
+                toast.error(`${dictionary?.email?.verification.error_email}`);
             }
             // console.log(error);
         }
@@ -61,7 +61,7 @@ const VerificationAlert: React.FC<VerificationAlertProps> = ({ data }) => {
                             className="underline cursor-pointer"
                             onClick={handleVerification}
                         >
-                            {dictionary?.email.verification.alert}
+                            {dictionary?.email?.verification.alert}
                         </span>
                         {/* </span> */}
                         <X className="mx-2" onClick={() => setOpen(false)} />

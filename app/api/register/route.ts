@@ -14,8 +14,8 @@ export async function POST(req: Request) {
     try {
         const body = await req.json();
 
-        // console.log(body);
-        // Check if username already exists
+       // // console.log(body);
+       // Check if username already exists
         const existingUsernameUser = await prisma.user.findUnique({
             where: { username: body.username.toLowerCase().replace(/\s/g, '') },
         });
@@ -49,8 +49,8 @@ export async function POST(req: Request) {
             .randomBytes(32)
             .toString('base64url');
         const resetPasswordToken = crypto.randomBytes(32).toString('base64url');
-        // console.log(emailVerificationToken);
-        // console.log(existingUsernameUser, existingEmailUser);
+       // // console.log(emailVerificationToken);
+       // // console.log(existingUsernameUser, existingEmailUser);
         const user = await prisma.user.create({
             data: {
                 username: body.username,
@@ -87,7 +87,7 @@ export async function POST(req: Request) {
             },
         });
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         return new NextResponse(null, { status: 500 });
     }
 }

@@ -18,7 +18,7 @@ export const handler: AuthOptions = NextAuth({
                 },
             },
             async authorize(credentials, req) {
-                const url = 'http://localhost:3000';
+                const url = 'httplocalhost:3000';
                 const reqUrl = (req?.headers as any).origin;
                 if (!credentials?.email || !credentials?.password) {
                     throw new Error('Invalid credentials');
@@ -27,8 +27,8 @@ export const handler: AuthOptions = NextAuth({
                 const res = await fetch(
                     `${
                         url === reqUrl
-                            ? 'http://localhost:3000/api/signIn'
-                            : 'https://awaldigital.org/api/signIn'
+                            ? 'httplocalhost:3000/api/signIn'
+                            : 'httpsawaldigital.org/api/signIn'
                     }`,
                     {
                         method: 'POST',
@@ -39,11 +39,11 @@ export const handler: AuthOptions = NextAuth({
                     },
                 );
                 const data = await res.json();
-                console.log(data);
+                //   console.log(data);
                 if (res.ok && data.email) {
                     return data;
                 }
-                console.log(data);
+                //   console.log(data);
                 return null;
             },
         }),
@@ -54,21 +54,23 @@ export const handler: AuthOptions = NextAuth({
     // },
     callbacks: {
         jwt({ token, trigger, session, user }) {
-            console.log(trigger);
-            console.log(session?.user);
+            //   console.log(trigger);
+            //   console.log(session?.user);
 
-            console.log(session);
+            //   console.log(session);
             if (session?.user.gender === null) {
                 session.user.gender = 'other';
             }
+            //   console.log(token);
             if (trigger === 'update' && session.user) {
-                token.score = session.user.score;
-                // console.log(session.user.score);
+                //   console.log(session.user);
+                    token.score = session.user.score;
+               
                 token.username = session.user.username;
                 token.isVerified = session.user.isVerified;
-                console.log(token);
+                //   console.log(token);
             }
-            console.log(token);
+            //   console.log(token);
             return { ...token, ...user };
         },
         async session({ session, token }) {
@@ -76,7 +78,7 @@ export const handler: AuthOptions = NextAuth({
             return session;
         },
     },
-    //the customized pages must be located in @/auth/... https://next-auth.js.org/configuration/pages folder names and path must coincides, route.ts cant be in the same folder
+    //the customized pages must be located in @/auth/... httpsnext-auth.js.org/configuration/pages folder names and path must coincides, route.ts cant be in the same folder
     pages: {
         signIn: '/signIn',
     },

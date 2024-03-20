@@ -8,19 +8,18 @@ import { useSession } from 'next-auth/react';
 
 export default function ContributeLayout({
     children,
-}: {
+}:  {
     children: React.ReactNode;
 }) {
-    const { locale } = useLocaleStore();
 
-    console.log('contribution layout page debug');
+    // console.log('contribution layout page debug');
     const { data: session, status } = useSession();
-    console.log('contribution layout page debug status', status);
+    // console.log('contribution layout page debug status', status);
 
     if (!session?.user) {
         return null;
     }
-    console.log('contribution layout page debug session user', session?.user);
+    // console.log('contribution layout page debug session user', session?.user);
     if (session?.user) {
         return (
             <div>

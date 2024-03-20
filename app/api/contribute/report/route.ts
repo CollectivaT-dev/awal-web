@@ -6,7 +6,7 @@ export async function PATCH(req: Request, res: Response) {
         const body = await req.json();
         const validationCount = body.validation - 2;
         const isDiscarded = validationCount <= -2;
-        console.log(body);
+         // console.log(body);
         const contributionId = body.id; // ID of the contribution seen by the user
         const user = await prisma.user.findUnique({
             where: { id: body.validatorId },
@@ -14,7 +14,7 @@ export async function PATCH(req: Request, res: Response) {
                 reportedEntries: true,
             },
         });
-        console.log(user);
+         // console.log(user);
         // check if the entry is already in the reportedEntries string[], in this case, if the user report this sentence, it will not show again
         if (!user?.reportedEntries.includes(contributionId)) {
             const updatedUser = await prisma.user.update({
@@ -26,7 +26,7 @@ export async function PATCH(req: Request, res: Response) {
                     },
                 },
             });
-            console.log(updatedUser);
+             // console.log(updatedUser);
             const updatedEntry = await prisma.contribution.updateMany({
                 where: { id: body.id },
                 data: {
@@ -36,15 +36,15 @@ export async function PATCH(req: Request, res: Response) {
                     isDiscarded,
                 },
             });
-            console.log(updatedEntry);
-            console.log(updatedUser);
+             // console.log(updatedEntry);
+             // console.log(updatedUser);
             return new NextResponse(
                 JSON.stringify({ ...updatedUser, updatedEntry }),
                 {},
             );
         } else {
             // If the contributionId is already reported, just return the user data without updating
-            console.log(user);
+             // console.log(user);
             return new NextResponse(JSON.stringify({ user }), {
                 status: 406,
                 statusText: 'already reported',

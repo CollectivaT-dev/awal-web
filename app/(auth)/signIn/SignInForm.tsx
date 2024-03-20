@@ -53,24 +53,24 @@ const SignInForm: React.FC<SignInFormProps> = ({callbackUrl }) => {
     async function onSubmit(data: SignInFormValue) {
         try {
             const { email, password } = data;
-            console.log(data);
+            // console.log(data);
             const res = await signIn('credentials', {
                 email,
                 password,
                 redirect: false,
             });
-            console.log(res);
+           //  console.log(res);
             if (res?.status === 200) {
                 toast.success(`${d?.toasters.success_signIn}`);
             } else {
-                console.log(data);
+             //    console.log(data);
                 toast.error(`${d?.toasters.alert_email_pwd}`);
             }
             if (!res?.error) {
                 router.push(callbackUrl ?? '/', { scroll: false });
             }
         } catch (error) {
-            console.log(error);
+       //      console.log(error);
             toast.error(`${d?.toasters.alert_try_again}`);
         }
     }

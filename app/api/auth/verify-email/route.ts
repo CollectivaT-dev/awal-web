@@ -17,7 +17,7 @@ export async function POST(req: Request) {
                 isVerified: true,
             },
         });
-        // console.log(user);
+        //console.log(user);
         if (user?.isVerified === false || user?.isVerified === null) {
             const emailVerificationToken = crypto
                 .randomBytes(32)
@@ -46,9 +46,9 @@ export async function POST(req: Request) {
                     //     emailVerificationToken: true,
                     // },
                 });
-                // console.log(updatedUser)
+                //console.log(updatedUser)
             } catch (error) {
-                console.log(error);
+               // console.log(error);
                 return new NextResponse(
                     JSON.stringify({
                         message: 'Failed to send verification email',
@@ -73,13 +73,13 @@ export async function POST(req: Request) {
             status: 200,
         });
     } catch (error) {
-        console.log(error);
+       // console.log(error);
         return error;
     }
 }
 export async function PATCH(req: Request) {
     const { token: emailVerificationToken } = await req.json();
-    console.log(emailVerificationToken);
+   // console.log(emailVerificationToken);
 
     const user = await prisma.user.findUnique({
         where: {

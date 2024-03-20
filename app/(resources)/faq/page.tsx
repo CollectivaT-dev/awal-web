@@ -15,7 +15,7 @@ const FaqPage = () => {
         const fetchDictionary = async () => {
             const m = await getDictionary(locale);
             setDictionary(m as unknown as MessagesProps);
-            console.log(m as unknown as MessagesProps);
+         //   console.log(m as unknown as MessagesProps);
         };
         fetchDictionary();
     }, [locale]);

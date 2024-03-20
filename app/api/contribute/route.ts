@@ -7,13 +7,13 @@ import { parse } from 'url';
 export async function GET(req: Request, res: Response) {
     try {
         const { query } = parse(req.url, true);
-        console.log(query);
+         //console.log(query);
         const src = Array.isArray(query.src) ? query.src[0] : query.src;
         const tgt = Array.isArray(query.tgt) ? query.tgt[0] : query.tgt;
         const session = await getCurrentUser();
-        console.log(session);
-        console.log(src);
-        console.log(tgt);
+         //console.log(session);
+         //console.log(src);
+         //console.log(tgt);
         if (!src || !tgt) {
             return new NextResponse(null, {
                 status: 400,
@@ -33,7 +33,7 @@ export async function GET(req: Request, res: Response) {
                 },
             },
         });
-        console.log(randomEntry);
+         //console.log(randomEntry);
         if (!randomEntry) {
             return new NextResponse(null, {
                 status: 406,
@@ -44,7 +44,7 @@ export async function GET(req: Request, res: Response) {
             status: 200,
         });
     } catch (error) {
-        console.log(error);
+         //console.log(error);
         return new NextResponse(null, {
             status: 500,
             statusText: 'Internal Server Error',
@@ -56,19 +56,19 @@ export async function POST(req: Request, res: Response) {
     try {
         const body = await req.json();
 
-        console.log(body);
+         //console.log(body);
         const existingUser = await prisma.user.findUnique({
             where: {
                 id: body.userId,
             },
         });
-        console.log(existingUser);
+         //console.log(existingUser);
         if (!existingUser) {
             redirect('/signIn');
         }
         let updatedScore = existingUser.score + body.contributionPoint;
-        console.log(updatedScore);
-        // create contribution entry
+         //console.log(updatedScore);
+        //create contribution entry
         const contribution = await prisma.contribution.create({
             data: {
                 userId: body.userId,
@@ -101,40 +101,40 @@ export async function POST(req: Request, res: Response) {
                 score: updatedScore,
             },
         });
-        console.log(contribution);
-        console.log(updatedUser);
+         //console.log(contribution);
+         //console.log(updatedUser);
         return new NextResponse(JSON.stringify(updatedUser), {});
     } catch (error) {
-        return console.log(error);
+        return  //console.log(error);
     }
 }
 
 export async function PATCH(req: Request, res: Response) {
     try {
         const body = await req.json();
-        console.log(body);
-        const contributionId = body.id; // ID of the contribution seen by the user
+         //console.log(body);
+        const contributionId = body.id; //ID of the contribution seen by the user
         const user = await prisma.user.findUnique({
             where: { id: body.validatorId },
             select: {
                 validationEntries: true,
             },
         });
-        // check if the entry is already in the string[]
+        //check if the entry is already in the string[]
         if (!user?.validationEntries.includes(contributionId)) {
             const updatedUser = await prisma.user.update({
                 where: { id: body.validatorId },
                 data: {
                     validationEntries: {
-                        push: contributionId, // Append the contribution ID to the seenContributions array
+                        push: contributionId, //Append the contribution ID to the seenContributions array
                     },
                 },
             });
-            console.log(updatedUser);
+             //console.log(updatedUser);
             return new NextResponse(JSON.stringify({ updatedUser }), {});
         } else {
-            // If the contributionId is already present, just return the user data without updating
-            console.log(user);
+            //If the contributionId is already present, just return the user data without updating
+             //console.log(user);
             return new NextResponse(JSON.stringify({ user }), {});
         }
     } catch (error) {

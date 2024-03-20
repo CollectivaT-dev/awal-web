@@ -48,7 +48,7 @@ const LeaderBoardPage = () => {
                     const totalEntries = res.data.totalLeaderboardEntries;
                     setTotalPages(Math.ceil(totalEntries / 10)); // Assuming 10 is your page size
                 } else {
-                    console.log('No data received');
+                 //   console.log('No data received');
                 }
                 setLoading(false);
             } catch (error) {

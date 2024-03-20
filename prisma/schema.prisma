@@ -61,7 +61,7 @@ model Contribution {
   validation  Int?
   // if an entry is has valiation score === +2 set isValidated to true and never show this entry again, if -2 then isDiscarded
   isValidated Boolean?
-  isDiscarded Boolean?
+//   isDiscarded Boolean?
   // is reported by any user
   isReported  Boolean?
   reportMsg  String?

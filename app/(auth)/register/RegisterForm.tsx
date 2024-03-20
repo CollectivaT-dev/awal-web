@@ -64,14 +64,12 @@ export default function RegisterForm() {
                 email,
                 password,
                 isPrivacy,
-                isSubscribed: isSubscribed || false,
+                isSubscribed: isSubscribed ?? false,
             });
 
             if (registrationResponse.status === 200) {
                 // i18n
-                toast.success(
-                    `${dictionary?.toasters.success_registration}`,
-                );
+                toast.success(`${dictionary?.toasters.success_registration}`);
             } else {
                 toast.error(`${dictionary?.toasters.alert_try_again}`);
             }

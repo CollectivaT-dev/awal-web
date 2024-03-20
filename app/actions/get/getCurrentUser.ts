@@ -10,7 +10,7 @@ export async function getSession() {
 export default async function getCurrentUser() {
     try {
         const session = await getSession();
-        console.log(session);
+        // console.log(session);
         if (!session?.user?.email) {
             return null;
         }
@@ -20,7 +20,7 @@ export default async function getCurrentUser() {
                 email: session.user.email as string,
             },
         });
-        console.log(currentUser);
+        // console.log(currentUser);
         if (!currentUser) {
             return null;
         }
