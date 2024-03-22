@@ -18,7 +18,7 @@ export const handler: AuthOptions = NextAuth({
                 },
             },
             async authorize(credentials, req) {
-                const url = 'httplocalhost:3000';
+                const url = 'http://localhost:3000';
                 const reqUrl = (req?.headers as any).origin;
                 if (!credentials?.email || !credentials?.password) {
                     throw new Error('Invalid credentials');
@@ -27,8 +27,8 @@ export const handler: AuthOptions = NextAuth({
                 const res = await fetch(
                     `${
                         url === reqUrl
-                            ? 'httplocalhost:3000/api/signIn'
-                            : 'httpsawaldigital.org/api/signIn'
+                            ? 'http://localhost:3000/api/signIn'
+                            : 'https://awaldigital.org/api/signIn'
                     }`,
                     {
                         method: 'POST',
@@ -78,7 +78,7 @@ export const handler: AuthOptions = NextAuth({
             return session;
         },
     },
-    //the customized pages must be located in @/auth/... httpsnext-auth.js.org/configuration/pages folder names and path must coincides, route.ts cant be in the same folder
+    //the customized pages must be located in @/auth/... https://next-auth.js.org/configuration/pages folder names and path must coincides, route.ts cant be in the same folder
     pages: {
         signIn: '/signIn',
     },

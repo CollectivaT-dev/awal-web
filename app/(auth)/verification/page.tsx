@@ -80,12 +80,16 @@ const VerifyEmailPage = ({ searchParams }: VerifyEmailPageProps) => {
         );
     } else {
         return (
-            <div className="h-screen flex flex-col items-center justify-center space-y-2">
+			<>
+			(
+            )
+			<div className="h-screen flex flex-col items-center justify-center space-y-2">
                 <h1 className="text-3xl font-semibold">
                     {dictionary?.email.verification.error_title}
                 </h1>
                 <p>{dictionary?.email.verification.error_msg}</p>
             </div>
+			</>
         );
     }
 };
