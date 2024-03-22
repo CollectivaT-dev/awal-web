@@ -203,45 +203,45 @@ export function SettingsPage() {
                 };
                 const mergedData = {
                     ...userData,
-                    age: userData.age || defaultData.age,
-                    central: userData.central || defaultData.central,
-                    tachelhit: userData.tachelhit || defaultData.tachelhit,
-                    tarifit: userData.tarifit || defaultData.tarifit,
-                    languages: userData.languages || defaultData.languages,
-                    other: userData.other || defaultData.other,
+                    age: userData.age ?? defaultData.age,
+                    central: userData.central ?? defaultData.central,
+                    tachelhit: userData.tachelhit ?? defaultData.tachelhit,
+                    tarifit: userData.tarifit ?? defaultData.tarifit,
+                    languages: userData.languages ?? defaultData.languages,
+                    other: userData.other ?? defaultData.other,
                 };
                 setFetchedData(mergedData);
                 form.reset({
-                    name: mergedData.name || '',
-                    surname: mergedData.surname || '',
+                    name: mergedData.name ?? '',
+                    surname: mergedData.surname ?? '',
                     email: mergedData.email,
                     username: mergedData.username,
-                    age: mergedData.age || 0,
-                    gender: mergedData.gender || '',
-                    isSubscribed: mergedData.isSubscribed || false,
+                    age: mergedData.age ?? 0,
+                    gender: mergedData.gender ?? '',
+                    isSubscribed: mergedData.isSubscribed ?? false,
                     other: {
-                        isChecked: mergedData.other?.isChecked || false,
-                        body: mergedData.other?.body || '',
+                        isChecked: mergedData.other?.isChecked ?? false,
+                        body: mergedData.other?.body ?? '',
                     },
                     central: {
-                        isChecked: mergedData.central?.isChecked || false,
-                        oral: mergedData.central?.oral || 0,
-                        written_lat: mergedData.central?.written_lat || 0,
-                        written_tif: mergedData.central?.written_tif || 0,
+                        isChecked: mergedData.central?.isChecked ?? false,
+                        oral: mergedData.central?.oral ?? 0,
+                        written_lat: mergedData.central?.written_lat ?? 0,
+                        written_tif: mergedData.central?.written_tif ?? 0,
                     },
                     tachelhit: {
-                        isChecked: mergedData.tachelhit?.isChecked || false,
-                        oral: mergedData.tachelhit?.oral || 0,
-                        written_lat: mergedData.tachelhit?.written_lat || 0,
-                        written_tif: mergedData.tachelhit?.written_tif || 0,
+                        isChecked: mergedData.tachelhit?.isChecked ?? false,
+                        oral: mergedData.tachelhit?.oral ?? 0,
+                        written_lat: mergedData.tachelhit?.written_lat ?? 0,
+                        written_tif: mergedData.tachelhit?.written_tif ?? 0,
                     },
                     tarifit: {
-                        isChecked: mergedData.tarifit?.isChecked || false,
-                        oral: mergedData.tarifit?.oral || 0,
-                        written_lat: mergedData.tarifit?.written_lat || 0,
-                        written_tif: mergedData.tarifit?.written_tif || 0,
+                        isChecked: mergedData.tarifit?.isChecked ?? false,
+                        oral: mergedData.tarifit?.oral ?? 0,
+                        written_lat: mergedData.tarifit?.written_lat ?? 0,
+                        written_tif: mergedData.tarifit?.written_tif ?? 0,
                     },
-                    languages: mergedData.languages || {
+                    languages: mergedData.languages ?? {
                         english: false,
                         spanish: false,
                         catalan: false,
@@ -269,27 +269,27 @@ export function SettingsPage() {
             ...updateData,
             other: {
                 isChecked: form.getValues('other.isChecked'),
-                body: form.getValues('other.body') || '',
+                body: form.getValues('other.body') ?? '',
             },
             central: {
                 isChecked: form.getValues('central.isChecked'),
-                oral: form.getValues('central.oral') || 0,
-                written_lat: form.getValues('central.written_lat') || 0,
-                written_tif: form.getValues('central.written_tif') || 0,
+                oral: form.getValues('central.oral') ?? 0,
+                written_lat: form.getValues('central.written_lat') ?? 0,
+                written_tif: form.getValues('central.written_tif') ?? 0,
             },
             tachelhit: {
                 isChecked: form.getValues('tachelhit.isChecked'),
-                oral: form.getValues('tachelhit.oral') || 0,
-                written_lat: form.getValues('tachelhit.written_lat') || 0,
-                written_tif: form.getValues('tachelhit.written_tif') || 0,
+                oral: form.getValues('tachelhit.oral') ?? 0,
+                written_lat: form.getValues('tachelhit.written_lat') ?? 0,
+                written_tif: form.getValues('tachelhit.written_tif') ?? 0,
             },
             tarifit: {
                 isChecked: form.getValues('tarifit.isChecked'),
-                oral: form.getValues('tarifit.oral') || 0,
-                written_lat: form.getValues('tarifit.written_lat') || 0,
-                written_tif: form.getValues('tarifit.written_tif') || 0,
+                oral: form.getValues('tarifit.oral') ?? 0,
+                written_lat: form.getValues('tarifit.written_lat') ?? 0,
+                written_tif: form.getValues('tarifit.written_tif') ?? 0,
             },
-            languages: form.getValues('languages') || {
+            languages: form.getValues('languages') ?? {
                 // fallback value
                 english: false,
                 spanish: false,
@@ -402,7 +402,7 @@ export function SettingsPage() {
             body: prevState?.body ?? '',
         }));
     };
-    handleOtherChecked;
+
     const handleButtonChange = useCallback(
         (field: string, value: number) => {
             form.setValue(field as keyof SettingFormValues, value, {
@@ -714,7 +714,7 @@ export function SettingsPage() {
                                                                 currentValue={
                                                                     form.watch(
                                                                         'central.oral',
-                                                                    ) || 0
+                                                                    ) ?? 0
                                                                 }
                                                                 name="central.oral"
                                                                 onChange={
@@ -741,7 +741,7 @@ export function SettingsPage() {
                                                                 currentValue={
                                                                     form.watch(
                                                                         'central.written_lat',
-                                                                    ) || 0
+                                                                    ) ?? 0
                                                                 }
                                                                 name="central.written_lat"
                                                                 onChange={
@@ -768,7 +768,7 @@ export function SettingsPage() {
                                                                 currentValue={
                                                                     form.watch(
                                                                         'central.written_tif',
-                                                                    ) || 0
+                                                                    ) ?? 0
                                                                 }
                                                                 name="central.written_tif"
                                                                 onChange={
@@ -827,7 +827,7 @@ export function SettingsPage() {
                                                                 currentValue={
                                                                     form.watch(
                                                                         'tachelhit.oral',
-                                                                    ) || 0
+                                                                    ) ?? 0
                                                                 }
                                                                 name="tachelhit.oral"
                                                                 onChange={
@@ -855,7 +855,7 @@ export function SettingsPage() {
                                                                 currentValue={
                                                                     form.watch(
                                                                         'tachelhit.written_lat',
-                                                                    ) || 0
+                                                                    ) ?? 0
                                                                 }
                                                                 name="tachelhit.written_lat"
                                                                 onChange={
@@ -882,7 +882,7 @@ export function SettingsPage() {
                                                                 currentValue={
                                                                     form.watch(
                                                                         'tachelhit.written_tif',
-                                                                    ) || 0
+                                                                    ) ?? 0
                                                                 }
                                                                 name="tachelhit.written_tif"
                                                                 onChange={
@@ -941,7 +941,7 @@ export function SettingsPage() {
                                                                 currentValue={
                                                                     form.watch(
                                                                         'tarifit.oral',
-                                                                    ) || 0
+                                                                    ) ?? 0
                                                                 }
                                                                 name="tarifit.oral"
                                                                 onChange={
@@ -968,7 +968,7 @@ export function SettingsPage() {
                                                                 currentValue={
                                                                     form.watch(
                                                                         'tarifit.written_lat',
-                                                                    ) || 0
+                                                                    ) ?? 0
                                                                 }
                                                                 name="tarifit.written_lat"
                                                                 onChange={
@@ -995,7 +995,7 @@ export function SettingsPage() {
                                                                 currentValue={
                                                                     form.watch(
                                                                         'tarifit.written_tif',
-                                                                    ) || 0
+                                                                    ) ?? 0
                                                                 }
                                                                 name="tarifit.written_tif"
                                                                 onChange={

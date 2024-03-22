@@ -19,7 +19,7 @@ const ResetPassword: React.FC<ResetPasswordProps> = ({
             </h1>
             <p>to reset password, click on the link below</p>
             <Link
-                href={`${url}/api/auth/reset-password?t=${resetPasswordToken}`}
+                href={`${url}/api/auth/reset-password?token=${resetPasswordToken}`}
                 scroll={false}
                 target="_blank"
             >

@@ -1,73 +1,119 @@
 'use client';
-
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import { z } from 'zod';
-
+import useLocaleStore from '@/app/hooks/languageStore';
 import { Button } from '@/components/ui/button';
 import {
-    Form,
     FormControl,
     FormDescription,
     FormField,
     FormItem,
     FormLabel,
     FormMessage,
+    Form,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { useState } from 'react';
+import { MessagesProps, getDictionary } from '@/i18n';
+import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios';
-import { resetPassword } from '@/app/actions/users/reset';
+import { signOut, useSession } from 'next-auth/react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
+import * as z from 'zod';
+interface ResetPasswordFormProps {
+    data: { id: string; resetPasswordTokenExpiration: string; token: string };
+}
 
-const FormSchema = z.object({
-    email: z.string().email(),
-});
-
-export function ResetPasswordForm() {
-    const form = useForm<z.infer<typeof FormSchema>>({
-        resolver: zodResolver(FormSchema),
-        defaultValues: {
-            email: '',
-        },
+const formSchema = z
+    .object({
+        password: z.string().min(1, { message: 'Necessari' }),
+        confirmPassword: z.string().min(1, { message: 'Necessari' }),
+    })
+    .refine((data) => data.password === data.confirmPassword, {
+        message: 'Les contrasenyes no coincideixen',
+        path: ['confirmPassword'],
     });
-    // const [message, setMessage] = useState<string>('');
-    const onSubmit = async (data: z.infer<typeof FormSchema>) => {
-        const message = await resetPassword(data.email);
 
-        message.status === 200
-            ? toast.success('email sent successfully')
-            : message.status === 404
-            ? toast.error('user not found')
-            : toast.error('error while sending email, try again later');
-        // console.log(message);
-        // try {
-        //     const res = axios.post('api/auth/reset-password');
-        // } catch (error) {}
-
+const ResetPasswordForm = ({
+    data: { id, resetPasswordTokenExpiration, token },
+}: ResetPasswordFormProps) => {
+    const { locale } = useLocaleStore();
+    const [dictionary, setDictionary] = useState<MessagesProps>();
+    const form = useForm<z.infer<typeof formSchema>>({
+        resolver: zodResolver(formSchema),
+    });
+    useEffect(() => {
+        const fetchDictionary = async () => {
+            const m = await getDictionary(locale);
+            setDictionary(m as unknown as MessagesProps);
+        };
+        fetchDictionary();
+    }, [locale]);
+    const { data: session } = useSession();
+    const user = session?.user;
+    const router = useRouter();
+    const url =
+        process.env.NODE_ENV === 'development'
+            ? 'http://localhost:3000'
+            : 'https://awaldigital.org';
+    console.log(token);
+    const onSubmit = async (data: z.infer<typeof formSchema>) => {
+        console.log(data);
+        try {
+            const res = await axios.patch(`${url}/api/auth/reset-password`, {
+                token,
+                data,
+            });
+            if (res.status === 200) {
+                toast.success('password Updated,please sign in again');
+                router.refresh();
+                signOut({
+                    redirect: true,
+                    callbackUrl: '/signIn',
+                });
+            }
+            if (res.status === 406) {
+                toast.error(`${dictionary?.email.verification.token_error}`);
+            }
+        } catch (error) {
+            console.log(error);
+        }
     };
 
+    //  console.log(isVerified);
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         router.push('/', { scroll: false });
+    //     }, 2000);
+    // }, [router, user]);
     return (
         <Form {...form}>
-            <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="w-2/3 space-y-6"
-            >
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                 <FormField
                     control={form.control}
-                    name="email"
+                    name="password"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Email</FormLabel>
+                            <FormLabel>{dictionary?.user.password}</FormLabel>
                             <FormControl>
-                                <Input
-                                    placeholder="example@awaldigital.org"
-                                    {...field}
-                                />
+                                <Input {...field} type="password" />
                             </FormControl>
-                            <FormDescription>
-                                Email for recovery
-                            </FormDescription>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+                <FormField
+                    control={form.control}
+                    name="confirmPassword"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>
+                                {dictionary?.user.confirm_password}
+                            </FormLabel>
+                            <FormControl>
+                                <Input {...field} type="password" />
+                            </FormControl>
                             <FormMessage />
                         </FormItem>
                     )}
@@ -76,4 +122,5 @@ export function ResetPasswordForm() {
             </form>
         </Form>
     );
-}
+};
+export default ResetPasswordForm;

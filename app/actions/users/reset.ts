@@ -3,6 +3,7 @@ import prisma from '@/lib/prisma';
 import crypto from 'crypto';
 import { SendEmail } from '../emails/SendEmail';
 import ResetPassword from '@/app/components/Emails/ResetPassword';
+import { Niconne } from 'next/font/google';
 export const resetPassword = async (email: string) => {
     const user = await prisma.user.findUnique({
         where: {
@@ -35,7 +36,7 @@ export const resetPassword = async (email: string) => {
     try {
         await SendEmail({
             from: 'Awal Reset Password<do-not-reply@awaldigital.org>',
-            to: [user.email],
+            to: 'nine.slide@gmail.com',
             subject: 'Reset password',
             react: ResetPassword({
                 email,
@@ -45,5 +46,5 @@ export const resetPassword = async (email: string) => {
     } catch (error) {
         //  console.log(error);
     }
-    return { message: 'Email sent successfully', status: 200 };
+    // return { message: 'Email sent successfully', status: 200 };
 };
