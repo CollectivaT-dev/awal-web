@@ -18,13 +18,13 @@ const ResetPassword: React.FC<ResetPasswordProps> = ({
                 Reset Password for <b>{email}</b>{' '}
             </h1>
             <p>to reset password, click on the link below</p>
-            <Link
-                href={`${url}/api/auth/reset-password?token=${resetPasswordToken}`}
-                scroll={false}
+            <a
+                href={`${url}/resetPassword?token=${resetPasswordToken}`}
+                onScroll={(e) => e.preventDefault()}
                 target="_blank"
             >
                 Reset Password
-            </Link>
+            </a>
         </div>
     );
 };

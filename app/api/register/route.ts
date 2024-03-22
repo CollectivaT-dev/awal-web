@@ -49,8 +49,8 @@ export async function POST(req: Request) {
             .randomBytes(32)
             .toString('base64url');
         const resetPasswordToken = crypto.randomBytes(32).toString('base64url');
-       // // console.log(emailVerificationToken);
-       // // console.log(existingUsernameUser, existingEmailUser);
+       // console.log(emailVerificationToken);
+       // console.log(existingUsernameUser, existingEmailUser);
         const user = await prisma.user.create({
             data: {
                 username: body.username,

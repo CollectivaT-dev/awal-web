@@ -32,7 +32,7 @@ const formSchema = z.object({
 });
 
 type SignInFormValue = z.infer<typeof formSchema>;
-const SignInForm: React.FC<SignInFormProps> = ({callbackUrl }) => {
+const SignInForm: React.FC<SignInFormProps> = ({ callbackUrl }) => {
     const form = useForm<SignInFormValue>({
         resolver: zodResolver(formSchema),
     });
@@ -59,18 +59,18 @@ const SignInForm: React.FC<SignInFormProps> = ({callbackUrl }) => {
                 password,
                 redirect: false,
             });
-           //  console.log(res);
+            //  console.log(res);
             if (res?.status === 200) {
                 toast.success(`${d?.toasters.success_signIn}`);
             } else {
-             //    console.log(data);
+                //    console.log(data);
                 toast.error(`${d?.toasters.alert_email_pwd}`);
             }
             if (!res?.error) {
                 router.push(callbackUrl ?? '/', { scroll: false });
             }
         } catch (error) {
-       //      console.log(error);
+            //      console.log(error);
             toast.error(`${d?.toasters.alert_try_again}`);
         }
     }
@@ -131,10 +131,18 @@ const SignInForm: React.FC<SignInFormProps> = ({callbackUrl }) => {
                     </div>
                 </form>
             </Form>
-            <div className="mt-10">
-                {d?.texts.login_to_signup_1}{' '}
-                <Link href={'/register'} className="underline">
-                    {d?.texts.login_to_signup_2}
+            <div className="flex flex-col space-y-2">
+                <div className="mt-10">
+                    {d?.texts.login_to_signup_1}{' '}
+                    <Link href={'/register'} className="underline">
+                        {d?.texts.login_to_signup_2}
+                    </Link>
+                </div>
+                <Link
+                    href={'/resetPassword/provideEmail'}
+                    className="underline"
+                >
+                    forgot your password?
                 </Link>
             </div>
         </div>
