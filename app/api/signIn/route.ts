@@ -8,21 +8,23 @@ interface ReqBodyProps {
 
 export async function POST(req: Request) {
     const body: ReqBodyProps = await req.json();
+	console.log(body)
     const user = await prisma.user.findUnique({
         where: {
             email: body.email,
         },
     });
+    // console.log(!user);
+
     if (!user) {
         return new NextResponse(
             JSON.stringify({ message: 'check your password and email' }),
             {
-                status: 400,
+                status: 405,
                 headers: { 'Content-Type': 'application/json' },
             },
         );
     }
-
     const passwordCheck = await bcrypt.compare(
         body.password,
         user.password as string,

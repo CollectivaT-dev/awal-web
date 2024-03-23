@@ -39,7 +39,7 @@ const SignInForm: React.FC<SignInFormProps> = ({ callbackUrl }) => {
     const form = useForm<SignInFormValue>({
         resolver: zodResolver(formSchema),
     });
-	const [loginError, setLoginError] = useState("")
+    const [loginError, setLoginError] = useState('');
     const router = useRouter();
     const { locale } = useLocaleStore();
     const { data: session } = useSession();
@@ -54,32 +54,33 @@ const SignInForm: React.FC<SignInFormProps> = ({ callbackUrl }) => {
     if (session?.user) {
         router.push('/', { scroll: false });
     }
+    const url =
+        process.env.NODE_ENV === 'development'
+            ? 'http://localhost:3000'
+            : 'https://awaldigital.org';
     async function onSubmit(data: SignInFormValue) {
         try {
             const { email, password } = data;
-            const res = await signIn('credentials', {
+            const res = await axios.post(`${url}/api/signIn`, {
                 email,
                 password,
-                redirect: false,
             });
-			console.log(res?.error)
+            console.log(res);
             if (res?.status === 200) {
                 toast.success(`${d?.toasters.success_signIn}`);
             } else {
-				const errorMsg = res?.error
-				setLoginError(errorMsg as string)
-				toast.error(`${d?.toasters.alert_email_pwd}`);
-            }
-            if (!res?.error) {
-                router.push(callbackUrl ?? '/', { scroll: false });
+                toast.error(`${d?.toasters.alert_email_pwd}`);
             }
         } catch (error) {
-			console.log(error)	
-			if(axios.isAxiosError(error)&&error.response)
-			{
-			console.log(error?.response?.data?.message);
-			setLoginError(error.response?.data?.message);
-			}
+            if (
+                axios.isAxiosError(error) &&
+                error.response &&
+                (error?.response?.status === 405 ||
+                    error?.response?.status === 401)
+            ) {
+                const errorMsg = error?.response?.data?.message;
+                setLoginError(errorMsg);
+            }
             toast.error(`${d?.toasters.alert_try_again}`);
         }
     }
@@ -146,17 +147,25 @@ const SignInForm: React.FC<SignInFormProps> = ({ callbackUrl }) => {
                     {d?.texts.login_to_signup_2}
                 </Link>
             </div>
-		{loginError ?
-            <Alert className=' w-[50vw] m-4'>
-                <AlertCircle className="h-4" />
-                <AlertTitle>Error</AlertTitle>
-                <AlertDescription className='flex flex-row  justify-between items-center '>
-                   {loginError} 
-				<div>
-				<Clipboard onClick={() => {navigator.clipboard.writeText(loginError), toast.success(`error copied to clipboard, send it to admin`)}}/>
-				   </div>
-                </AlertDescription>
-            </Alert>: null}
+            {loginError ? (
+                <Alert className=" w-[50vw] m-4">
+                    <AlertCircle className="h-4" />
+                    <AlertTitle>Error</AlertTitle>
+                    <AlertDescription className="flex flex-row  justify-between items-center ">
+                        {loginError}
+                        <div>
+                            <Clipboard
+                                onClick={() => {
+                                    navigator.clipboard.writeText(loginError),
+                                        toast.success(
+                                            `error copied to clipboard, send it to admin`,
+                                        );
+                                }}
+                            />
+                        </div>
+                    </AlertDescription>
+                </Alert>
+            ) : null}
         </div>
     );
 };
