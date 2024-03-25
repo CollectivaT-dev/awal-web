@@ -54,16 +54,14 @@ const SignInForm: React.FC<SignInFormProps> = ({ callbackUrl }) => {
     if (session?.user) {
         router.push('/', { scroll: false });
     }
-    const url =
-        process.env.NODE_ENV === 'development'
-            ? 'http://localhost:3000'
-            : 'https://awaldigital.org';
+
     async function onSubmit(data: SignInFormValue) {
         try {
             const { email, password } = data;
-            const res = await axios.post(`${url}/api/signIn`, {
+            const res = await signIn(`credentials`, {
                 email,
                 password,
+                callbackUrl: '/',
             });
             console.log(res);
             if (res?.status === 200) {
