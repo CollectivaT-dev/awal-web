@@ -53,7 +53,7 @@ const AboutPage = () => {
                 </div>
                 <div className="w-1/3 flex-col-center whitespace-pre-line ">
                     <Link
-                        href={'www.collectivat.cat'}
+                        href={'https://www.collectivat.cat/'}
                         scroll={false}
                         target="_blank"
                         className="mb-2"
@@ -66,7 +66,7 @@ const AboutPage = () => {
                         />
                     </Link>
                     <Link
-                        href={'www.collectivat.cat'}
+                        href={'https://www.collectivat.cat/'}
                         scroll={false}
                         target="_blank"
                         className="font-semibold text-xl my-2"
