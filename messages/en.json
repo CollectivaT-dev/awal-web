@@ -340,11 +340,16 @@
     },
     "carousel": {
         "c1": {
+            "heading": "Celebrating Progress and Looking Ahead: The Journey of Awal",
+            "body": "Read about latest updates on Awal on Col·lectivaT's blog",
+            "link": "https://collectivat.cat/blog/2024-03-20-awal-ii-en/"
+        },
+        "c2": {
             "heading": "\"Awal, the popular project that wants to make the internet speak Amazigh\" on Nationalia",
             "body": "Read about Project Awal and its first datathon on Nationalia.",
             "link": "https://www.nationalia.info/new/11589/awal-the-popular-project-that-wants-to-make-the-internet-speak-amazigh"
         },
-        "c2": {
+        "c3": {
             "heading": "AWAL on Col·lectivaT's blog",
             "body": "Introducing Project Awal for preserving and promoting the Tamazight language on the internet with a strong and united data community.",
             "link": "https://collectivat.cat/blog/2024-01-22-awal-en/"

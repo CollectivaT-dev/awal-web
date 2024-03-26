@@ -340,11 +340,16 @@
     },
     "carousel": {
         "c1": {
+            "heading": "Celebrant el progrés i mirant cap al futur: El viatge d'Awal",
+            "body": "Llegeix sobre les últimes actualitzacions d'Awal al blog de Col·lectivaT",
+            "link": "https://collectivat.cat/blog/2024-03-20-awal-ii-ca/"
+        },
+        "c2": {
             "heading": "\"Awal, el projecte popular que vol fer que internet parli amazic\"",
             "body": "Llegeix sobre el Projecte Awal i el seu primer datatón a Nationalia.",
             "link": "https://www.nationalia.cat/noticia/11589/awal-el-projecte-popular-que-vol-fer-que-internet-parli-amazic"
         },
-          "c2": {
+        "c3": {
             "heading": "AWAL al blog de Col·lectivaT",
             "body": "Presentació del projecte Awal per preservar i promoure la llengua amazic a internet amb una comunitat de dades forta i unida.",
             "link": "https://collectivat.cat/blog/2024-01-22-awal-ca/"
