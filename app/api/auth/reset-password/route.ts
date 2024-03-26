@@ -1,5 +1,4 @@
 import prisma from '@/lib/prisma';
-import { time } from 'console';
 import { NextRequest, NextResponse } from 'next/server';
 import bcrypt from 'bcrypt';
 import crypto from 'crypto';
@@ -7,6 +6,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     console.log(body);
     const currentTimer = new Date();
+	console.log(currentTimer)
     try {
         const token = body.token ?? '';
         const requestedUser = await prisma.user.findUnique({
@@ -18,6 +18,7 @@ export async function POST(request: NextRequest) {
                 resetPasswordTokenExpiration: true,
             },
         });
+		console.log(requestedUser)
         if (!requestedUser) {
             return new NextResponse(
                 JSON.stringify({
@@ -52,6 +53,7 @@ export async function POST(request: NextRequest) {
             headers: { 'Content-Type': 'application/json' },
         });
     } catch (error) {
+		console.log(error)
         return new NextResponse(
             JSON.stringify({
                 message: 'Internal Server Error',
@@ -81,6 +83,7 @@ export async function PATCH(request: NextRequest) {
                 updatedAt: true,
             },
         });
+		console.log(user)
         if (!user) {
             return new NextResponse(
                 JSON.stringify({

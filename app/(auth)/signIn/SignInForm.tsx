@@ -20,6 +20,9 @@ import * as z from 'zod';
 import useLocaleStore from '@/app/hooks/languageStore';
 import { MessagesProps, getDictionary } from '@/i18n';
 import { useEffect, useState } from 'react';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { AlertCircle, Clipboard } from 'lucide-react';
+import axios from 'axios';
 
 interface SignInFormProps {
     className?: string;
@@ -32,10 +35,12 @@ const formSchema = z.object({
 });
 
 type SignInFormValue = z.infer<typeof formSchema>;
+
 const SignInForm: React.FC<SignInFormProps> = ({ callbackUrl }) => {
     const form = useForm<SignInFormValue>({
         resolver: zodResolver(formSchema),
     });
+    const [loginError, setLoginError] = useState('');
     const router = useRouter();
     const { locale } = useLocaleStore();
     const { data: session } = useSession();
@@ -50,30 +55,37 @@ const SignInForm: React.FC<SignInFormProps> = ({ callbackUrl }) => {
     if (session?.user) {
         router.push('/', { scroll: false });
     }
+
     async function onSubmit(data: SignInFormValue) {
         try {
             const { email, password } = data;
-            // console.log(data);
-            const res = await signIn('credentials', {
+            const res = await signIn(`credentials`, {
                 email,
                 password,
-                redirect: false,
+                callbackUrl: '/',
             });
+
             //  console.log(res);
             if (res?.status === 200) {
                 toast.success(`${d?.toasters.success_signIn}`);
             } else {
                 //    console.log(data);
+
                 toast.error(`${d?.toasters.alert_email_pwd}`);
             }
-            if (!res?.error) {
-                router.push(callbackUrl ?? '/', { scroll: false });
-            }
         } catch (error) {
-            //      console.log(error);
-            toast.error(`${d?.toasters.alert_try_again}`);
+            if (
+                axios.isAxiosError(error) &&
+                error.response &&
+                (error?.response?.status === 405 ||
+                    error?.response?.status === 401)
+            ) {
+                const errorMsg = error?.response?.data?.message;
+                setLoginError(errorMsg);
+            }
         }
     }
+
     return (
         <div className="min-h-screen flex-col-center">
             <Form {...form}>
@@ -145,6 +157,25 @@ const SignInForm: React.FC<SignInFormProps> = ({ callbackUrl }) => {
                     forgot your password?
                 </Link>
             </div>
+            {loginError ? (
+                <Alert className=" w-[50vw] m-4">
+                    <AlertCircle className="h-4" />
+                    <AlertTitle>Error</AlertTitle>
+                    <AlertDescription className="flex flex-row  justify-between items-center ">
+                        {loginError}
+                        <div>
+                            <Clipboard
+                                onClick={() => {
+                                    navigator.clipboard.writeText(loginError),
+                                        toast.success(
+                                            `error copied to clipboard, send it to admin`,
+                                        );
+                                }}
+                            />
+                        </div>
+                    </AlertDescription>
+                </Alert>
+            ) : null}
         </div>
     );
 };

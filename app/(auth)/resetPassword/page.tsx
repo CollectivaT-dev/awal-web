@@ -17,7 +17,7 @@ const ResetPasswordPage: React.FC<ResetPasswordPageProps> = ({
         process.env.NODE_ENV === 'development'
             ? 'http://localhost:3000'
             : 'https://awaldigital.org';
-    // console.log(token);
+    console.log(token);
     useEffect(() => {
         const handleTokenVerify = async () => {
             try {
