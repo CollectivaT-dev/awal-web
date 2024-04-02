@@ -61,23 +61,35 @@ const SignInForm: React.FC<SignInFormProps> = ({ callbackUrl }) => {
             const res = await signIn(`credentials`, {
                 email,
                 password,
-                callbackUrl: '/',
+                redirect: false,
             });
             console.log(res);
             if (res?.status === 200) {
                 toast.success(`${d?.toasters.success_signIn}`);
             } else {
+                // if return is not 200
+                if (res?.error) {
+                    setLoginError(res?.error);
+                }
                 toast.error(`${d?.toasters.alert_email_pwd}`);
             }
         } catch (error) {
+            // in case of res undefined
+            console.log(error);
+            // handle 401 and 405
             if (
                 axios.isAxiosError(error) &&
                 error.response &&
                 (error?.response?.status === 405 ||
                     error?.response?.status === 401)
             ) {
+                console.log(error);
                 const errorMsg = error?.response?.data?.message;
                 setLoginError(errorMsg);
+            }
+            // handle unexpected
+            if (axios.isAxiosError(error) && error.response) {
+                setLoginError(error.response.data.message);
             }
             toast.error(`${d?.toasters.alert_try_again}`);
         }
@@ -146,7 +158,7 @@ const SignInForm: React.FC<SignInFormProps> = ({ callbackUrl }) => {
                 </Link>
             </div>
             {loginError ? (
-                <Alert className=" w-[50vw] m-4">
+                <Alert className="w-[50vw] m-4">
                     <AlertCircle className="h-4" />
                     <AlertTitle>Error</AlertTitle>
                     <AlertDescription className="flex flex-row  justify-between items-center ">
