@@ -141,10 +141,10 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
     };
 
     // check point
-    useEffect(() => {
-        //console.log('Left Radio Value:', srcVar);
-        //console.log('Right Radio Value:', tgtVar);
-    }, [tgtVar, srcVar]);
+    // useEffect(() => {
+    //     //console.log('Left Radio Value:', srcVar);
+    //     //console.log('Right Radio Value:', tgtVar);
+    // }, [tgtVar, srcVar]);
     // Update target language options when source language changes
     useEffect(() => {
         const updateLanguages = () => {

@@ -64,6 +64,7 @@ const SignInForm: React.FC<SignInFormProps> = ({ callbackUrl }) => {
                 redirect: false,
             });
             console.log(res);
+			
             if (res?.status === 200) {
                 toast.success(`${d?.toasters.success_signIn}`);
             } else {

@@ -21,6 +21,7 @@ import useLocaleStore from '@/app/hooks/languageStore';
 import { MessagesProps, getDictionary } from '@/i18n';
 import Link from 'next/link';
 import useMediaQuery from '@/app/hooks/useMediaQuery';
+import { CopyButton } from '../../CopyButton';
 
 const TextTranslator = () => {
     const { locale } = useLocaleStore();
@@ -98,19 +99,7 @@ const TextTranslator = () => {
         }
     };
 
-    const handleCopy = () => {
-        if (target) {
-            navigator.clipboard
-                .writeText(target)
-                .then(() => {
-                    toast.success(`${d?.toasters.success_copy}`);
-                })
-                .catch((err) => {
-                    console.error(`${d?.toasters.alert_try_again}`, err);
-                    toast.error(`${d?.toasters.alert_copy}`);
-                });
-        }
-    };
+   
     const handleTranslate = useCallback(async () => {
         if (!source || sourceLanguage === targetLanguage) {
             setTarget('');
@@ -274,9 +263,7 @@ const TextTranslator = () => {
                         <div className="w-1/2 ">
                             <div className="flex flex-row justify-between items-center">
                                 <TgtLanguageSelection />
-                                <Button size={'icon'} onClick={handleCopy}>
-                                    <Copy size={20} />
-                                </Button>
+                                <CopyButton text={target} d={d} />
                             </div>
                             <div className="relative">
                                 <Textarea
@@ -333,9 +320,7 @@ const TextTranslator = () => {
                         <div className="w-full">
                             <div className="flex flex-row justify-between items-center">
                                 <TgtLanguageSelection />
-                                <Button size={'icon'} onClick={handleCopy}>
-                                    <Copy size={20} />
-                                </Button>
+                                <CopyButton text={target} d={d} />
                             </div>
                             <div className="relative">
                                 <Textarea
