@@ -51,15 +51,15 @@ const ValidateComp = () => {
     const [sourceText, setSourceText] = useState('');
     const [targetText, setTargetText] = useState('');
     const [sourceLanguage, setSourceLanguage] = useState(
-        localStorage.getItem('sourceLanguage') || 'ca',
+        localStorage.getItem('sourceLanguage') ?? 'ca',
     );
     const [reportInput, setReportInput] = useState('');
 
     const [targetLanguage, setTargetLanguage] = useState(
-        localStorage.getItem('targetLanguage') || 'zgh',
+        localStorage.getItem('targetLanguage') ?? 'zgh',
     );
     const [srcVar, setLeftRadioValue] = useState(
-        localStorage.getItem('srcVar') || '',
+        localStorage.getItem('srcVar') ?? '',
     );
     const [tgtVar, setRightRadioValue] = useState(
         localStorage.getItem('tgtVar') || '',
@@ -328,7 +328,7 @@ const ValidateComp = () => {
             sessionUpdate({ user: updatedUser });
             const { score, ...userWithoutScore } = updatedUser;
             sessionUpdate({ user: updatedUser });
-            toast.success(`${d?.toasters.success_report}`);
+            toast.success(`${d?.toasters.validation_success_report}`);
         } catch (error) {
             //console.log(error);
             toast(`${d?.validator.alert_no_more_entries}`, {

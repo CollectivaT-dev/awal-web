@@ -22,6 +22,7 @@ import { MessagesProps, getDictionary } from '@/i18n';
 import Link from 'next/link';
 import useMediaQuery from '@/app/hooks/useMediaQuery';
 import { CopyButton } from '../../CopyButton';
+import { handleTranslate } from './translationUtils';
 
 const TextTranslator = () => {
     const { locale } = useLocaleStore();
@@ -99,74 +100,74 @@ const TextTranslator = () => {
         }
     };
 
-   
-    const handleTranslate = useCallback(async () => {
-        if (!source || sourceLanguage === targetLanguage) {
-            setTarget('');
-            setIsLoading(false);
-            return;
-        }
-        const srcLanguageCode = sourceLanguage;
-        const tgtLanguageCode = targetLanguage;
+    // const handleTranslate = useCallback(async () => {
+    //     if (!source || sourceLanguage === targetLanguage) {
+    //         setTarget('');
+    //         setIsLoading(false);
+    //         return;
+    //     }
+    //     const srcLanguageCode = sourceLanguage;
+    //     const tgtLanguageCode = targetLanguage;
 
-        // send request data differently according to line break: (text or batch ['',''])
-        let requestData;
-        // remove the last line if there are any \n
-        const processedSource = source.replace(/\n$/, '');
+    //     // send request data differently according to line break: (text or batch ['',''])
+    //     let requestData;
+    //     // remove the last line if there are any \n
+    //     const processedSource = source.replace(/\n$/, '');
 
-        if (source.includes('\n') && !source.endsWith('\n')) {
-            requestData = {
-                src: srcLanguageCode,
-                tgt: tgtLanguageCode,
-                batch: processedSource.split('\n'),
-                token: process.env.NEXT_PUBLIC_API_TOKEN,
-            };
-        } else {
-            requestData = {
-                src: srcLanguageCode,
-                tgt: tgtLanguageCode,
-                text: processedSource,
-                token: process.env.NEXT_PUBLIC_API_TOKEN,
-            };
-        }
-        //console.log(requestData?.batch);
-        //console.log(source);
-        const config = {
-            method: 'post',
-            maxBodyLength: Infinity,
-            url: `${process.env.NEXT_PUBLIC_API_URL}/translate/`,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            data: requestData,
-        };
+    //     if (source.includes('\n') && !source.endsWith('\n')) {
+    //         requestData = {
+    //             src: srcLanguageCode,
+    //             tgt: tgtLanguageCode,
+    //             batch: processedSource.split('\n'),
+    //             token: process.env.NEXT_PUBLIC_API_TOKEN,
+    //         };
+    //     } else {
+    //         requestData = {
+    //             src: srcLanguageCode,
+    //             tgt: tgtLanguageCode,
+    //             text: processedSource,
+    //             token: process.env.NEXT_PUBLIC_API_TOKEN,
+    //         };
+    //     }
+    //     //console.log(requestData?.batch);
+    //     //console.log(source);
+    //     const config = {
+    //         method: 'post',
+    //         maxBodyLength: Infinity,
+    //         url: `${process.env.NEXT_PUBLIC_API_URL}/translate/`,
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         data: requestData,
+    //     };
 
-        const currentTranslationRequestId = Date.now();
-        translationRequestIdRef.current = currentTranslationRequestId;
+    //     const currentTranslationRequestId = Date.now();
+    //     translationRequestIdRef.current = currentTranslationRequestId;
 
-        try {
-            setIsLoading(true);
-            const response = await axios.request(config);
-            //console.log(response.data);
-            if (
-                currentTranslationRequestId === translationRequestIdRef.current
-            ) {
-                if (Array.isArray(response.data.translation)) {
-                    setTarget(response.data.translation.join('\n'));
-                } else {
-                    setTarget(response.data.translation);
-                }
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        } finally {
-            if (
-                currentTranslationRequestId === translationRequestIdRef.current
-            ) {
-                setIsLoading(false);
-            }
-        }
-    }, [source, sourceLanguage, targetLanguage]);
+    //     try {
+    //         setIsLoading(true);
+    //         const response = await axios.request(config);
+    // 		console.log("res")
+    //         //console.log(response.data);
+    //         if (
+    //             currentTranslationRequestId === translationRequestIdRef.current
+    //         ) {
+    //             if (Array.isArray(response.data.translation)) {
+    //                 setTarget(response.data.translation.join('\n'));
+    //             } else {
+    //                 setTarget(response.data.translation);
+    //             }
+    //         }
+    //     } catch (error) {
+    //         console.error('Error:', error);
+    //     } finally {
+    //         if (
+    //             currentTranslationRequestId === translationRequestIdRef.current
+    //         ) {
+    //             setIsLoading(false);
+    //         }
+    //     }
+    // }, [source, sourceLanguage, targetLanguage]);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         const inputValue = e.target.value;
@@ -239,7 +240,14 @@ const TextTranslator = () => {
         </DropdownMenu>
     );
     useEffect(() => {
-        handleTranslate();
+        handleTranslate({
+            source,
+            sourceLanguage,
+            targetLanguage,
+            translationRequestIdRef,
+            setTarget,
+            setIsLoading,
+        });
     }, [source, sourceLanguage, targetLanguage, handleTranslate]);
 
     return (
