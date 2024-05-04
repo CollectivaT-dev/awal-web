@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 interface TranslationUtilsProps {
     source: string;
     sourceLanguage: string;
@@ -18,7 +17,6 @@ export const handleTranslate = async ({
     setTarget,
     setIsLoading,
 }: TranslationUtilsProps) => {
-
     if (!source || sourceLanguage === targetLanguage) {
         setTarget('');
         setIsLoading(false);
@@ -53,13 +51,14 @@ export const handleTranslate = async ({
     try {
         setIsLoading(true);
         const response = await axios.request(axiosConfig);
-        
-        if (currentTranslationRequestId === translationRequestIdRef.current) {
-            if (Array.isArray(response.data.translation)) {
-                setTarget(response.data.translation.join('\n'));
-            } else {
-                setTarget(response.data.translation);
-            }
+
+        if (
+            currentTranslationRequestId === translationRequestIdRef.current &&
+            !Array.isArray(response.data.translation)
+        ) {
+            setTarget(response.data.translation);
+        } else {
+            setTarget(response.data.translation.join('\n'));
         }
     } catch (error) {
         console.error('Error:', error);

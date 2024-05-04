@@ -1,5 +1,11 @@
 'use client';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, {
+    useCallback,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+} from 'react';
 import { ChevronDown, Copy, Loader, Loader2 } from 'lucide-react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -12,10 +18,9 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import axios from 'axios';
+import debounce from 'lodash.debounce';
 
 import { LanguageRelations } from '../TranslatorConfig';
-import toast from 'react-hot-toast';
 import { useSession } from 'next-auth/react';
 import useLocaleStore from '@/app/hooks/languageStore';
 import { MessagesProps, getDictionary } from '@/i18n';
@@ -23,6 +28,7 @@ import Link from 'next/link';
 import useMediaQuery from '@/app/hooks/useMediaQuery';
 import { CopyButton } from '../../CopyButton';
 import { handleTranslate } from './translationUtils';
+import { DebouncedFunc } from 'lodash';
 
 const TextTranslator = () => {
     const { locale } = useLocaleStore();
@@ -100,75 +106,6 @@ const TextTranslator = () => {
         }
     };
 
-    // const handleTranslate = useCallback(async () => {
-    //     if (!source || sourceLanguage === targetLanguage) {
-    //         setTarget('');
-    //         setIsLoading(false);
-    //         return;
-    //     }
-    //     const srcLanguageCode = sourceLanguage;
-    //     const tgtLanguageCode = targetLanguage;
-
-    //     // send request data differently according to line break: (text or batch ['',''])
-    //     let requestData;
-    //     // remove the last line if there are any \n
-    //     const processedSource = source.replace(/\n$/, '');
-
-    //     if (source.includes('\n') && !source.endsWith('\n')) {
-    //         requestData = {
-    //             src: srcLanguageCode,
-    //             tgt: tgtLanguageCode,
-    //             batch: processedSource.split('\n'),
-    //             token: process.env.NEXT_PUBLIC_API_TOKEN,
-    //         };
-    //     } else {
-    //         requestData = {
-    //             src: srcLanguageCode,
-    //             tgt: tgtLanguageCode,
-    //             text: processedSource,
-    //             token: process.env.NEXT_PUBLIC_API_TOKEN,
-    //         };
-    //     }
-    //     //console.log(requestData?.batch);
-    //     //console.log(source);
-    //     const config = {
-    //         method: 'post',
-    //         maxBodyLength: Infinity,
-    //         url: `${process.env.NEXT_PUBLIC_API_URL}/translate/`,
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //         data: requestData,
-    //     };
-
-    //     const currentTranslationRequestId = Date.now();
-    //     translationRequestIdRef.current = currentTranslationRequestId;
-
-    //     try {
-    //         setIsLoading(true);
-    //         const response = await axios.request(config);
-    // 		console.log("res")
-    //         //console.log(response.data);
-    //         if (
-    //             currentTranslationRequestId === translationRequestIdRef.current
-    //         ) {
-    //             if (Array.isArray(response.data.translation)) {
-    //                 setTarget(response.data.translation.join('\n'));
-    //             } else {
-    //                 setTarget(response.data.translation);
-    //             }
-    //         }
-    //     } catch (error) {
-    //         console.error('Error:', error);
-    //     } finally {
-    //         if (
-    //             currentTranslationRequestId === translationRequestIdRef.current
-    //         ) {
-    //             setIsLoading(false);
-    //         }
-    //     }
-    // }, [source, sourceLanguage, targetLanguage]);
-
     const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         const inputValue = e.target.value;
         setSource(inputValue);
@@ -239,17 +176,40 @@ const TextTranslator = () => {
             </DropdownMenuContent>
         </DropdownMenu>
     );
-    useEffect(() => {
-        handleTranslate({
-            source,
-            sourceLanguage,
-            targetLanguage,
-            translationRequestIdRef,
-            setTarget,
-            setIsLoading,
-        });
-    }, [source, sourceLanguage, targetLanguage, handleTranslate]);
+    // useMemo ensures that the debounce function is only recreated when one of its dependencies (source, sourceLanguage, targetLanguage, translationRequestIdRef, setTarget, or setIsLoading) changes. Without useMemo, the debounce function would be recreated on every render, potentially leading to unnecessary performance overhead.
+    const debouncedHandleTranslate: DebouncedFunc<() => Promise<void>> =
+        useMemo(
+            () =>
+                debounce(
+                    () =>
+                        handleTranslate({
+                            source,
+                            sourceLanguage,
+                            targetLanguage,
+                            translationRequestIdRef,
+                            setTarget,
+                            setIsLoading,
+                        }),
+                    // debounce times = 2s
+                    2000,
+                ),
+            [
+                source,
+                sourceLanguage,
+                targetLanguage,
+                translationRequestIdRef,
+                setTarget,
+                setIsLoading,
+            ],
+        );
 
+    // Use the debounced function in useEffect
+    useEffect(() => {
+        debouncedHandleTranslate();
+        return () => {
+            debouncedHandleTranslate.cancel(); // Cancel the debounced function on unmount or dependency change
+        };
+    }, [debouncedHandleTranslate]);
     return (
         <>
             {isAboveLgScreen ? (
