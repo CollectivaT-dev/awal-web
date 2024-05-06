@@ -190,8 +190,8 @@ const TextTranslator = () => {
                             setTarget,
                             setIsLoading,
                         }),
-                    // debounce times = 2s
-                    2000,
+                    // debounce times = 1s
+                    1000,
                 ),
             [
                 source,
