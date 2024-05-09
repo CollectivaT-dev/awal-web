@@ -13,15 +13,12 @@ import {
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import axios from 'axios';
-
 import {
     ContributionLanguageRelations,
     getLanguageCode,
 } from '../TranslatorConfig';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
-import { RadioGroup } from '@/components/ui/radio-group';
-import { Label } from '@/components/ui/label';
 import { getSession, useSession } from 'next-auth/react';
 import Link from 'next/link';
 
@@ -35,12 +32,11 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
-import { Checkbox } from '@/components/ui/checkbox';
 import useLocaleStore from '@/app/hooks/languageStore';
 import { MessagesProps, getDictionary } from '@/i18n';
 import useMediaQuery from '@/app/hooks/useMediaQuery';
 import { HandleTranslate } from './contributorUtils';
-
+import { LanguageRadioGroup } from './LanguageRadioGroup';
 interface ContributeCompProps {
     userId: string;
     username: string;
@@ -71,16 +67,16 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
     }, [locale]);
 
     const [sourceLanguage, setSourceLanguage] = useState(
-        localStorage.getItem('sourceLanguage') || 'ca',
+        localStorage.getItem('sourceLanguage') ?? 'ca',
     );
     const [targetLanguage, setTargetLanguage] = useState(
-        localStorage.getItem('targetLanguage') || 'es',
+        localStorage.getItem('targetLanguage') ?? 'es',
     );
     const [tgtVar, setLeftRadioValue] = useState(
-        localStorage.getItem('tgtVar') || '',
+        localStorage.getItem('tgtVar') ?? '',
     );
     const [srcVar, setRightRadioValue] = useState(
-        localStorage.getItem('srcVar') || '',
+        localStorage.getItem('srcVar') ?? '',
     );
     const [totalScore, setTotalScore] = useState(session?.user?.score || 0);
 
@@ -97,49 +93,6 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
         localStorage.setItem('tgtVar', tgtVar);
         localStorage.setItem('srcVar', srcVar);
     }, [sourceLanguage, targetLanguage, tgtVar, srcVar]);
-
-    // render variations conditionally
-    const renderRadioGroup = (side: 'left' | 'right') => {
-        const languagesToRender =
-            (side === 'left' && ['zgh', 'ber'].includes(sourceLanguage)) ||
-            (side === 'right' && ['zgh', 'ber'].includes(targetLanguage));
-
-        if (languagesToRender) {
-            const radioGroupValue = side === 'left' ? srcVar : tgtVar;
-
-            return (
-                <RadioGroup className="flex flex-row mt-3 justify-between">
-                    {['Central', 'Tarifit', 'Tachelhit', 'Other'].map(
-                        (value) => (
-                            <div
-                                className="flex flex-row justify-start items-center space-x-2"
-                                key={value}
-                            >
-                                <Checkbox
-                                    value={value}
-                                    id={`${value}-${side}`}
-                                    checked={radioGroupValue === value}
-                                    onCheckedChange={(checkedValue) => {
-                                        const newValue = checkedValue
-                                            ? value
-                                            : '';
-                                        side === 'left'
-                                            ? setRightRadioValue(newValue)
-                                            : setLeftRadioValue(newValue);
-                                    }}
-                                />
-                                <Label htmlFor={`${value}-${side}`}>
-                                    {value}
-                                </Label>
-                            </div>
-                        ),
-                    )}
-                </RadioGroup>
-            );
-        } else {
-            return null;
-        }
-    };
 
     // check point
     // useEffect(() => {
@@ -453,7 +406,15 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                                 </Button>
                             </div>
 
-                            {renderRadioGroup('left')}
+                            {LanguageRadioGroup({
+                                side: 'left',
+                                sourceLanguage,
+                                targetLanguage,
+                                srcVar,
+                                tgtVar,
+                                setLeftRadioValue,
+                                setRightRadioValue,
+                            })}
                             <div className="flex flex-row justify-between items-center pt-10 w-full">
                                 <div className="flex flex-row space-x-3">
                                     <Button
@@ -589,7 +550,15 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                                 </Button>
                             </div>
 
-                            {renderRadioGroup('right')}
+                            {LanguageRadioGroup({
+                                side: 'right',
+                                sourceLanguage,
+                                targetLanguage,
+                                srcVar,
+                                tgtVar,
+                                setLeftRadioValue,
+                                setRightRadioValue,
+                            })}
                             <div className="flex justify-end mt-10">
                                 <Button
                                     variant={'default'}
@@ -671,7 +640,15 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                                 </Button>
                             </div>
 
-                            {renderRadioGroup('left')}
+							{LanguageRadioGroup({
+                                side: 'left',
+                                sourceLanguage,
+                                targetLanguage,
+                                srcVar,
+                                tgtVar,
+                                setLeftRadioValue,
+                                setRightRadioValue,
+                            })}
                             <div className="flex-row-between pt-10 w-full">
                                 <div className="flex flex-row space-x-3">
                                     <Button
@@ -799,7 +776,15 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                                 </Button>
                             </div>
 
-                            {renderRadioGroup('right')}
+							{LanguageRadioGroup({
+                                side: 'right',
+                                sourceLanguage,
+                                targetLanguage,
+                                srcVar,
+                                tgtVar,
+                                setLeftRadioValue,
+                                setRightRadioValue,
+                            })}
                             <div className="flex justify-end mt-10">
                                 <Button
                                     variant={'default'}
