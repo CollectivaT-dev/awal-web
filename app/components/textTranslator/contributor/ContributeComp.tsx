@@ -34,9 +34,13 @@ import {
 } from '@/components/ui/alert-dialog';
 import useLocaleStore from '@/app/hooks/languageStore';
 import { MessagesProps, getDictionary } from '@/i18n';
-import useMediaQuery from '@/app/hooks/useMediaQuery';
-import { HandleTranslate } from './contributorUtils';
+import {
+    HandleTranslate,
+    HandleGenerate,
+    EntryScoreCalc,
+} from './contributorUtils';
 import { LanguageRadioGroup } from './LanguageRadioGroup';
+import { LanguageSelectorDropdown } from '../LanguageSelectorDropdown';
 interface ContributeCompProps {
     userId: string;
     username: string;
@@ -190,53 +194,19 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
         [sourceLanguage, contributeLanguages],
     );
 
-    // src_text generate get route, load sentence
-    const handleGenerate = async () => {
-        setRandomClicked(true);
-        const srcLanguageCode = getLanguageCode(sourceLanguage);
-        //console.log(srcLanguageCode);
-        const config = {
-            method: 'GET',
-            maxBodyLength: Infinity,
-            url: `${process.env.NEXT_PUBLIC_API_URL}/translate/random/${srcLanguageCode}`,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
-        const fetchData = async () => {
-            try {
-                const res = await axios.request(config);
-                //console.log(res.data.sentence);
-                setSourceText(res.data.sentence);
-                setFetchedText(res.data.sentence);
-            } catch (error) {
-                //console.log(error);
-            }
-        };
-        toast.promise(fetchData(), {
-            loading: `${d?.texts.loading}`,
-            success: `${d?.toasters.success_loading}`,
-            error: (err) => `${d?.toasters.alert_api}${console.error(err)}`,
-        });
-    };
-
     // contribution score calc logic
     useEffect(() => {
-        let distance = 0;
-        if (targetText.length === 0 && translated) {
-            setTranslateClicked(false);
-            distance = 0;
-        }
-        let comparisonText = translateClicked ? initialTranslatedText : '';
-        distance = levenshtein(comparisonText, targetText);
-        let srcScore = randomClicked ? 0 : sourceText.length;
-        setEntryScore(srcScore + distance);
-        setTotalScore((prevScore) => prevScore + srcScore + distance);
-
-        //console.log(srcScore);
-        //console.log(distance);
-
-        //console.log(totalScore);
+        EntryScoreCalc({
+            targetText,
+            sourceText,
+            translated,
+            initialTranslatedText,
+            translateClicked,
+            setTranslateClicked,
+            randomClicked,
+            setEntryScore,
+            setTotalScore,
+        });
     }, [
         initialTranslatedText,
         targetText,
@@ -246,11 +216,6 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
         translateClicked,
     ]);
 
-    // machine translation route
-
-    const handleReport = async () => {
-        toast.error('Report not yet implemented');
-    };
     const handleContribute = async () => {
         const srcLanguageCode = getLanguageCode(sourceLanguage);
         const tgtLanguageCode = getLanguageCode(targetLanguage);
@@ -345,6 +310,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                     onValueChange={handleSourceLanguageChange}
                 >
                     {renderLanguageOptions(true)}
+                    {/* {LanguageSelectorDropdown({sourceLanguage,isSourceLanguage:true})} */}
                 </DropdownMenuRadioGroup>
             </DropdownMenuContent>
         </DropdownMenu>
@@ -370,6 +336,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                     onValueChange={handleTargetLanguageChange}
                 >
                     {renderLanguageOptions(false)}
+                    {/* {LanguageSelectorDropdown({sourceLanguage,isSourceLanguage:false})} */}
                 </DropdownMenuRadioGroup>
             </DropdownMenuContent>
         </DropdownMenu>
@@ -381,7 +348,15 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                     <div className="flex flex-row justify-between lg:items-center items-baseline">
                         <SrcLanguageSelection />
                         <Button
-                            onClick={handleGenerate}
+                            onClick={() =>
+                                HandleGenerate({
+                                    setRandomClicked,
+                                    sourceLanguage,
+                                    setSourceText,
+                                    setFetchedText,
+                                    d,
+                                })
+                            }
                             variant="default"
                             className="rounded-full bg-text-secondary"
                         >
@@ -423,8 +398,8 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                     <div className="flex flex-row justify-between items-center w-full my-5">
                         <div className="flex flex-row space-x-3">
                             <Button
-                                onClick={async () =>
-                                    await HandleTranslate({
+                                onClick={() =>
+                                    HandleTranslate({
                                         sourceText,
                                         sourceLanguage,
                                         targetLanguage,
@@ -441,13 +416,13 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                                 {d?.translator.translate}
                             </Button>
                         </div>
-                        <Button
+                        {/* <Button
                             variant={'destructive'}
                             className="rounded-full bg-red-500"
                             onClick={handleReport}
                         >
                             {d?.translator.report}
-                        </Button>
+                        </Button> */}
                     </div>
                 </div>
 
