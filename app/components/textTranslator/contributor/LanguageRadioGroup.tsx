@@ -42,7 +42,7 @@ export const LanguageRadioGroup = ({
                                 const newValue = checkedValue ? value : '';
                                 side === 'left'
                                     ? setRightRadioValue(newValue)
-                                    : setLeftRadioValue(newValue);console.log(`${value}-${side}`);
+                                    : setLeftRadioValue(newValue);
                             }}
                         />
 				
