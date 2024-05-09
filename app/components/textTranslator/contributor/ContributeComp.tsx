@@ -39,6 +39,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import useLocaleStore from '@/app/hooks/languageStore';
 import { MessagesProps, getDictionary } from '@/i18n';
 import useMediaQuery from '@/app/hooks/useMediaQuery';
+import { HandleTranslate } from './contributorUtils';
 
 interface ContributeCompProps {
     userId: string;
@@ -292,14 +293,12 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
         sourceText,
         translateClicked,
     ]);
-    // //console.log('fetchedText', fetchedText);
-    // //console.log('entryScore', entryScore);
-    // //console.log('totalScore', totalScore);
-    // //console.log('randomClicked', randomClicked);
-    // //console.log('transclicked', translateClicked);
-    // //console.log('translated', translated);
 
-    // contribution post route
+    // machine translation route
+
+    const handleReport = async () => {
+        toast.error('Report not yet implemented');
+    };
     const handleContribute = async () => {
         const srcLanguageCode = getLanguageCode(sourceLanguage);
         const tgtLanguageCode = getLanguageCode(targetLanguage);
@@ -373,79 +372,6 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
             //console.log(updatedSession);
         }, 1000); // Delay of 1 second
     };
-
-    // machine translation route
-    const handleTranslate = async () => {
-        if (!sourceText || sourceLanguage === targetLanguage) {
-            setTargetText('');
-            setTranslateClicked(true);
-            setTranslated(false);
-            return;
-        }
-        setTranslateClicked(true);
-        setTranslated(false);
-
-        const srcLanguageCode = sourceLanguage;
-        const tgtLanguageCode = targetLanguage;
-
-        // send request data differently according to line break: (text or batch ['',''])
-        let requestData;
-        // remove the last line if there are any \n
-        const processedSource = sourceText.replace(/\n$/, '');
-
-        if (sourceText.includes('\n') && !sourceText.endsWith('\n')) {
-            requestData = {
-                src: srcLanguageCode,
-                tgt: tgtLanguageCode,
-                batch: processedSource.split('\n'),
-                token: process.env.NEXT_PUBLIC_API_TOKEN,
-            };
-        } else {
-            requestData = {
-                src: srcLanguageCode,
-                tgt: tgtLanguageCode,
-                text: processedSource,
-                token: process.env.NEXT_PUBLIC_API_TOKEN,
-            };
-        }
-        const config = {
-            method: 'post',
-            maxBodyLength: Infinity,
-            url: `${process.env.NEXT_PUBLIC_API_URL}/translate/`,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            data: requestData,
-        };
-        const translate = async () => {
-            try {
-                const response = await axios.request(config);
-                setInitialTranslatedText(response.data.translation);
-
-                //console.log(response.data);
-                // Check if response data is an array
-                if (Array.isArray(response.data.translation)) {
-                    // If it's an array, join the array elements with a newline character to form a string
-                    setTargetText(response.data.translation.join('\n'));
-                } else {
-                    // If it's not an array, assume it's a string and set it directly
-                    setTargetText(response.data.translation);
-                }
-            } catch (error) {
-                //console.log('Error:', error);
-            }
-        };
-        toast.promise(translate(), {
-            loading: `${d?.toasters.translating}`,
-            success: `${d?.toasters.success_translate}`,
-            error: (err) => `${d?.toasters.alert_api}${console.error(err)}`,
-        });
-    };
-
-    const handleReport = async () => {
-        toast.error('Report not yet implemented');
-    };
-
     const SrcLanguageSelection = () => (
         <DropdownMenu>
             <DropdownMenuTrigger className="mb-5" asChild>
@@ -507,7 +433,9 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                                 <Textarea
                                     value={sourceText}
                                     className="border border-gray-300 h-[50vh] rounded-md shadow"
-                                    placeholder={d?.texts.contributor_input_placeholder}
+                                    placeholder={
+                                        d?.texts.contributor_input_placeholder
+                                    }
                                     id="src_message"
                                     onChange={(e) =>
                                         setSourceText(e.target.value)
@@ -536,7 +464,18 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                                         {d?.translator.generate}
                                     </Button>
                                     <Button
-                                        onClick={handleTranslate}
+                                        onClick={async () =>
+                                            await HandleTranslate({
+                                                sourceText,
+                                                sourceLanguage,
+                                                targetLanguage,
+                                                setTargetText,
+                                                setTranslateClicked,
+                                                setTranslated,
+                                                setInitialTranslatedText,
+                                                d,
+                                            })
+                                        }
                                         variant="default"
                                         className="rounded-full bg-text-primary"
                                     >
@@ -736,7 +675,18 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                             <div className="flex-row-between pt-10 w-full">
                                 <div className="flex flex-row space-x-3">
                                     <Button
-                                        onClick={handleTranslate}
+                                        onClick={async () =>
+                                            await HandleTranslate({
+                                                sourceText,
+                                                sourceLanguage,
+                                                targetLanguage,
+                                                setTargetText,
+                                                setTranslateClicked,
+                                                setTranslated,
+                                                setInitialTranslatedText,
+                                                d,
+                                            })
+                                        }
                                         variant="default"
                                         className="rounded-full bg-text-primary"
                                     >

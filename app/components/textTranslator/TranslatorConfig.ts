@@ -1,3 +1,4 @@
+
 export const LanguageRelations: { [key: string]: string[] } = {
     ary: ['zgh', 'ber'],
     ca: ['zgh', 'ber'],

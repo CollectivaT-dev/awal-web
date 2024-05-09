@@ -26,7 +26,7 @@ import useLocaleStore from '@/app/hooks/languageStore';
 import { MessagesProps, getDictionary } from '@/i18n';
 import Link from 'next/link';
 import useMediaQuery from '@/app/hooks/useMediaQuery';
-import { CopyButton } from '../../CopyButton';
+import { CopyButton } from '../../../../components/CopyButton';
 import { handleTranslate } from './translationUtils';
 import { DebouncedFunc } from 'lodash';
 
