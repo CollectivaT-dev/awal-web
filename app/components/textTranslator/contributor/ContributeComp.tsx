@@ -1,17 +1,8 @@
 'use client';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { ChevronDown, Eraser, HelpCircle } from 'lucide-react';
+import React, {  useEffect, useState } from 'react';
+import { Eraser, HelpCircle } from 'lucide-react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuLabel,
-    DropdownMenuRadioGroup,
-    DropdownMenuRadioItem,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
 import axios from 'axios';
 import {
     ContributionLanguageRelations,
@@ -21,7 +12,6 @@ import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import { getSession, useSession } from 'next-auth/react';
 import Link from 'next/link';
-
 import { AlertDialog, AlertDialogCancel } from '@radix-ui/react-alert-dialog';
 import {
     AlertDialogAction,
@@ -115,55 +105,6 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
 
         updateLanguages();
     }, [sourceLanguage, targetLanguage]);
-
-    const contributeLanguages: { [key: string]: string } = useMemo(
-        () => ({
-            en: 'English',
-            zgh: 'ⵜⴰⵎⴰⵣⵉⵖⵜ',
-            ber: 'Tamaziɣt',
-            es: 'Español',
-            ca: 'Català',
-            fr: 'Français',
-            ary: 'الدارجة',
-        }),
-        [],
-    );
-    const getNextLanguage = (
-        currentLanguage: string,
-        availableLanguages: string[],
-    ) => {
-        if (availableLanguages.length === 0) return 'ca';
-        const currentIndex = availableLanguages.indexOf(currentLanguage);
-        const nextIndex = (currentIndex + 1) % availableLanguages.length;
-        return availableLanguages[nextIndex];
-    };
-
-    const handleSourceLanguageChange = (language: string) => {
-        setSourceLanguage(language);
-        const availableTargetLanguages =
-            ContributionLanguageRelations[language] || [];
-        if (!availableTargetLanguages.includes(targetLanguage)) {
-            setTargetLanguage(availableTargetLanguages[0] || 'ca');
-        }
-        // Resetting the dialect selection
-        if (!['zgh', 'ber'].includes(language)) setLeftRadioValue('');
-    };
-
-    const handleTargetLanguageChange = (language: string) => {
-        setTargetLanguage(language);
-        const availableSourceLanguages = Object.keys(
-            ContributionLanguageRelations,
-        ).filter((key) =>
-            ContributionLanguageRelations[key].includes(language),
-        );
-        if (!availableSourceLanguages.includes(sourceLanguage)) {
-            setSourceLanguage(
-                getNextLanguage(sourceLanguage, availableSourceLanguages),
-            );
-        }
-        // Resetting the dialect selection
-        if (!['zgh', 'ber'].includes(language)) setRightRadioValue('');
-    };
 
     // contribution score calc logic
     useEffect(() => {
@@ -260,7 +201,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
             //console.log(updatedSession);
         }, 1000); // Delay of 1 second
     };
-    
+
     return (
         <div className="text-translator">
             <div className="lg:flex-row flex flex-col justify-center items-baseline px-10 lg:space-x-10">
@@ -271,12 +212,11 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                             targetLanguage={targetLanguage}
                             d={d}
                             isOriginLanguage={true}
-                            handleSourceLanguageChange={
-                                handleSourceLanguageChange
-                            }
-                            handleTargetLanguageChange={
-                                handleTargetLanguageChange
-                            }
+                            language={sourceLanguage}
+                            setSourceLanguage={setSourceLanguage}
+                            setTargetLanguage={setTargetLanguage}
+                            setRightRadioValue={setRightRadioValue}
+                            setLeftRadioValue={setLeftRadioValue}
                         />
                         <Button
                             onClick={() =>
@@ -361,15 +301,14 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                     <div className="flex flex-row justify-between lg:items-center items-baseline">
                         <LanguageSelection
                             sourceLanguage={sourceLanguage}
-                            isOriginLanguage={false}
-                            d={d}
                             targetLanguage={targetLanguage}
-                            handleSourceLanguageChange={
-                                handleSourceLanguageChange
-                            }
-                            handleTargetLanguageChange={
-                                handleTargetLanguageChange
-                            }
+                            d={d}
+                            isOriginLanguage={false}
+                            language={sourceLanguage}
+                            setSourceLanguage={setSourceLanguage}
+                            setTargetLanguage={setTargetLanguage}
+                            setRightRadioValue={setRightRadioValue}
+                            setLeftRadioValue={setLeftRadioValue}
                         />
 
                         <AlertDialog>

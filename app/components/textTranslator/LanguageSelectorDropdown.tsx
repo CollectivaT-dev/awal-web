@@ -1,4 +1,4 @@
-import { useCallback, useMemo, Dispatch, SetStateAction } from 'react';
+import { useMemo, Dispatch, SetStateAction } from 'react';
 import { ContributionLanguageRelations } from './TranslatorConfig';
 import {
     DropdownMenuRadioItem,
@@ -12,6 +12,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { MessagesProps } from '@/i18n';
 import { ChevronDown } from 'lucide-react';
+import { HandleLanguageChange } from './LanguageChangeHandler';
 
 interface LanguageSelectorDropdownProps {
     isSourceLanguage: boolean;
@@ -22,11 +23,13 @@ interface LanguageSelectionDropdownProps {
     d?: MessagesProps;
     sourceLanguage: string;
     targetLanguage: string;
-    handleSourceLanguageChange: (value:string) => void;
-    handleTargetLanguageChange: (value:string) => void;
+    setSourceLanguage: Dispatch<SetStateAction<string>>;
+    setTargetLanguage: Dispatch<SetStateAction<string>>;
+    setRightRadioValue: Dispatch<SetStateAction<string>>;
+    setLeftRadioValue: Dispatch<SetStateAction<string>>;
 }
 interface ContributeLanguages {
-    [key: string]: string; 
+    [key: string]: string;
 }
 
 export const RenderLanguageOptions = ({
@@ -77,8 +80,10 @@ export const LanguageSelection = ({
     d,
     sourceLanguage,
     targetLanguage,
-    handleSourceLanguageChange,
-    handleTargetLanguageChange,
+    setSourceLanguage,
+    setTargetLanguage,
+    setRightRadioValue,
+    setLeftRadioValue,
 }: LanguageSelectionDropdownProps) => {
     const contributeLanguages: { [key: string]: string } = useMemo(
         () => ({
@@ -112,11 +117,15 @@ export const LanguageSelection = ({
                 <DropdownMenuSeparator />
                 <DropdownMenuRadioGroup
                     value={isOriginLanguage ? sourceLanguage : targetLanguage}
-                    onValueChange={
-                        isOriginLanguage
-                            ? handleSourceLanguageChange
-                            : handleTargetLanguageChange
-                    }
+                    onValueChange={HandleLanguageChange({
+                        sourceLanguage,
+                        targetLanguage,
+                        isSourceLanguage: isOriginLanguage,
+                        setSourceLanguage,
+                        setTargetLanguage,
+                        setRightRadioValue,
+                        setLeftRadioValue,
+                    })}
                 >
                     {RenderLanguageOptions({
                         isSourceLanguage: isOriginLanguage,
