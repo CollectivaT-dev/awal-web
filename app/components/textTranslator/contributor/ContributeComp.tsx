@@ -40,7 +40,7 @@ import {
     EntryScoreCalc,
 } from './contributorUtils';
 import { LanguageRadioGroup } from './LanguageRadioGroup';
-import { LanguageSelectorDropdown } from '../LanguageSelectorDropdown';
+import { LanguageSelection } from '../LanguageSelectorDropdown';
 interface ContributeCompProps {
     userId: string;
     username: string;
@@ -57,7 +57,6 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
     const [fetchedText, setFetchedText] = useState('');
     const [randomClicked, setRandomClicked] = useState(false);
     const [translateClicked, setTranslateClicked] = useState(false);
-    const levenshtein = require('js-levenshtein');
     const { data: session } = useSession();
     const [entryScore, setEntryScore] = useState(0);
     const [initialTranslatedText, setInitialTranslatedText] = useState('');
@@ -86,7 +85,6 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
     // check if the user modified the machine translation, if they used the translate button, this is done simply checking if the contribution field has any manual changes
     const [translated, setTranslated] = useState(false);
     const router = useRouter();
-    //console.log(session);
     const { update: sessionUpdate } = useSession();
     const [isLoading, setIsLoading] = useState(false);
     // read from local storage
@@ -97,12 +95,6 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
         localStorage.setItem('srcVar', srcVar);
     }, [sourceLanguage, targetLanguage, tgtVar, srcVar]);
 
-    // check point
-    // useEffect(() => {
-    //     //console.log('Left Radio Value:', srcVar);
-    //     //console.log('Right Radio Value:', tgtVar);
-    // }, [tgtVar, srcVar]);
-    // Update target language options when source language changes
     useEffect(() => {
         const updateLanguages = () => {
             const relatedToSource =
@@ -172,27 +164,6 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
         // Resetting the dialect selection
         if (!['zgh', 'ber'].includes(language)) setRightRadioValue('');
     };
-
-    const renderLanguageOptions = useCallback(
-        (isSourceLanguage: boolean) => {
-            let availableLanguages = isSourceLanguage
-                ? Object.keys(ContributionLanguageRelations)
-                : ContributionLanguageRelations[sourceLanguage] || [];
-
-            return availableLanguages
-                .sort((a, b) =>
-                    contributeLanguages[a].localeCompare(
-                        contributeLanguages[b],
-                    ),
-                )
-                .map((key) => (
-                    <DropdownMenuRadioItem key={key} value={key}>
-                        {contributeLanguages[key]}
-                    </DropdownMenuRadioItem>
-                ));
-        },
-        [sourceLanguage, contributeLanguages],
-    );
 
     // contribution score calc logic
     useEffect(() => {
@@ -289,64 +260,24 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
             //console.log(updatedSession);
         }, 1000); // Delay of 1 second
     };
-    const SrcLanguageSelection = () => (
-        <DropdownMenu>
-            <DropdownMenuTrigger className="mb-5" asChild>
-                <Button
-                    variant="outline"
-                    className="text-text-primary  bg-transparent border-text-primary"
-                >
-                    {contributeLanguages[sourceLanguage]}
-                    <ChevronDown className="pl-2 " />
-                </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56 bg-[#EFBB3F] border-[#EFBB3F] text-text-primary">
-                <DropdownMenuLabel>
-                    {d?.translator.select_lang}
-                </DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuRadioGroup
-                    value={sourceLanguage}
-                    onValueChange={handleSourceLanguageChange}
-                >
-                    {renderLanguageOptions(true)}
-                    {/* {LanguageSelectorDropdown({sourceLanguage,isSourceLanguage:true})} */}
-                </DropdownMenuRadioGroup>
-            </DropdownMenuContent>
-        </DropdownMenu>
-    );
-    const TgtLanguageSelection = () => (
-        <DropdownMenu>
-            <DropdownMenuTrigger className="mb-5" asChild>
-                <Button
-                    variant="outline"
-                    className="text-text-primary  bg-transparent border-text-primary"
-                >
-                    {contributeLanguages[targetLanguage]}
-                    <ChevronDown className="pl-2 " />
-                </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56 bg-[#EFBB3F] border-[#EFBB3F] text-text-primary">
-                <DropdownMenuLabel>
-                    {d?.translator.select_lang}
-                </DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuRadioGroup
-                    value={targetLanguage}
-                    onValueChange={handleTargetLanguageChange}
-                >
-                    {renderLanguageOptions(false)}
-                    {/* {LanguageSelectorDropdown({sourceLanguage,isSourceLanguage:false})} */}
-                </DropdownMenuRadioGroup>
-            </DropdownMenuContent>
-        </DropdownMenu>
-    );
+    
     return (
         <div className="text-translator">
             <div className="lg:flex-row flex flex-col justify-center items-baseline px-10 lg:space-x-10">
                 <div className="lg:w-1/2 w-full mb-10 flex-col">
                     <div className="flex flex-row justify-between lg:items-center items-baseline">
-                        <SrcLanguageSelection />
+                        <LanguageSelection
+                            sourceLanguage={sourceLanguage}
+                            targetLanguage={targetLanguage}
+                            d={d}
+                            isOriginLanguage={true}
+                            handleSourceLanguageChange={
+                                handleSourceLanguageChange
+                            }
+                            handleTargetLanguageChange={
+                                handleTargetLanguageChange
+                            }
+                        />
                         <Button
                             onClick={() =>
                                 HandleGenerate({
@@ -428,7 +359,18 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
 
                 <div className="lg:w-1/2 w-full ">
                     <div className="flex flex-row justify-between lg:items-center items-baseline">
-                        <TgtLanguageSelection />
+                        <LanguageSelection
+                            sourceLanguage={sourceLanguage}
+                            isOriginLanguage={false}
+                            d={d}
+                            targetLanguage={targetLanguage}
+                            handleSourceLanguageChange={
+                                handleSourceLanguageChange
+                            }
+                            handleTargetLanguageChange={
+                                handleTargetLanguageChange
+                            }
+                        />
 
                         <AlertDialog>
                             <AlertDialogTrigger asChild>

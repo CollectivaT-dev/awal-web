@@ -1,16 +1,39 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, Dispatch, SetStateAction } from 'react';
 import { ContributionLanguageRelations } from './TranslatorConfig';
-import { DropdownMenuRadioItem } from '@/components/ui/dropdown-menu';
+import {
+    DropdownMenuRadioItem,
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuLabel,
+    DropdownMenuRadioGroup,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
+import { MessagesProps } from '@/i18n';
+import { ChevronDown } from 'lucide-react';
 
 interface LanguageSelectorDropdownProps {
     isSourceLanguage: boolean;
-	sourceLanguage: string;
+    sourceLanguage: string;
+}
+interface LanguageSelectionDropdownProps {
+    isOriginLanguage: boolean;
+    d?: MessagesProps;
+    sourceLanguage: string;
+    targetLanguage: string;
+    handleSourceLanguageChange: (value:string) => void;
+    handleTargetLanguageChange: (value:string) => void;
+}
+interface ContributeLanguages {
+    [key: string]: string; 
 }
 
-export const LanguageSelectorDropdown = ({
-    isSourceLanguage,sourceLanguage,
+export const RenderLanguageOptions = ({
+    isSourceLanguage,
+    sourceLanguage,
 }: LanguageSelectorDropdownProps) => {
-    const contributeLanguages = useMemo(
+    const contributeLanguages: ContributeLanguages = useMemo(
         () => ({
             en: 'English',
             zgh: 'ⵜⴰⵎⴰⵣⵉⵖⵜ',
@@ -22,31 +45,85 @@ export const LanguageSelectorDropdown = ({
         }),
         [],
     );
+    const availableLanguages = useMemo(() => {
+        return isSourceLanguage
+            ? Object.keys(ContributionLanguageRelations)
+            : ContributionLanguageRelations[sourceLanguage] || [];
+    }, [isSourceLanguage, sourceLanguage]);
 
-    useCallback(
-        (isSourceLanguage: boolean) => {
-            let availableLanguages = isSourceLanguage
-                ? Object.keys(ContributionLanguageRelations)
-                : ContributionLanguageRelations[sourceLanguage] || [];
+    // Sort the languages
+    const sortedLanguages = useMemo(() => {
+        return availableLanguages.sort((lang1, lang2) =>
+            contributeLanguages[lang1].localeCompare(
+                contributeLanguages[lang2],
+            ),
+        );
+    }, [availableLanguages, contributeLanguages]);
 
-            return availableLanguages
-                .sort((lang1, lang2) =>
-                    contributeLanguages[lang1].localeCompare(contributeLanguages[lang2])
-                )
-                .map(languageKey => (
-                    <DropdownMenuRadioItem key={languageKey} value={languageKey}>
-                        {contributeLanguages[languageKey]}
-                    </DropdownMenuRadioItem>
-                ));
-        },
-        [sourceLanguage, contributeLanguages]
+    // Map the sorted languages to components
+    const languageItems = useMemo(() => {
+        return sortedLanguages.map((languageKey) => (
+            <DropdownMenuRadioItem key={languageKey} value={languageKey}>
+                {contributeLanguages[languageKey]}
+            </DropdownMenuRadioItem>
+        ));
+    }, [sortedLanguages, contributeLanguages]);
+
+    return <div>{languageItems}</div>;
+};
+
+export const LanguageSelection = ({
+    isOriginLanguage,
+    d,
+    sourceLanguage,
+    targetLanguage,
+    handleSourceLanguageChange,
+    handleTargetLanguageChange,
+}: LanguageSelectionDropdownProps) => {
+    const contributeLanguages: { [key: string]: string } = useMemo(
+        () => ({
+            en: 'English',
+            zgh: 'ⵜⴰⵎⴰⵣⵉⵖⵜ',
+            ber: 'Tamaziɣt',
+            es: 'Español',
+            ca: 'Català',
+            fr: 'Français',
+            ary: 'الدارجة',
+        }),
+        [],
     );
-
-    const sortedLanguages = useMemo(() => getSortedLanguages(true), [getSortedLanguages]);
-
     return (
-        <div>
-            {sortedLanguages}
-        </div>
+        <DropdownMenu>
+            <DropdownMenuTrigger className="mb-5" asChild>
+                <Button
+                    variant="outline"
+                    className="text-text-primary  bg-transparent border-text-primary"
+                >
+                    {isOriginLanguage
+                        ? contributeLanguages[sourceLanguage]
+                        : contributeLanguages[targetLanguage]}
+                    <ChevronDown className="pl-2" />
+                </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56 bg-[#EFBB3F] border-[#EFBB3F] text-text-primary">
+                <DropdownMenuLabel>
+                    {d?.translator.select_lang}
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuRadioGroup
+                    value={isOriginLanguage ? sourceLanguage : targetLanguage}
+                    onValueChange={
+                        isOriginLanguage
+                            ? handleSourceLanguageChange
+                            : handleTargetLanguageChange
+                    }
+                >
+                    {RenderLanguageOptions({
+                        isSourceLanguage: isOriginLanguage,
+                        sourceLanguage: sourceLanguage,
+                    })}
+                </DropdownMenuRadioGroup>
+            </DropdownMenuContent>
+        </DropdownMenu>
     );
 };
