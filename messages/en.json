@@ -19,6 +19,7 @@
         "ary": "الدارجة"
     },
     "variation": {
+		"std":"Standard",
         "central": "Central",
         "tif": "Tarifit",
         "tachelhit": "Tachelhit",

@@ -91,7 +91,7 @@ const ValidateComp = () => {
         };
         fetchDictionary();
     }, [locale]);
-    const variants = ['Central', 'Tarifit', 'Tachelhit', 'Other']; // List of all variants
+    const variants = ['Standard','Central', 'Tarifit', 'Tachelhit', 'Other']; // List of all variants
 
     // render variations conditionally
     const renderRadioGroup = (side: 'left' | 'right') => {
@@ -103,7 +103,7 @@ const ValidateComp = () => {
             const radioGroupValue = side === 'left' ? srcVar : tgtVar;
             return (
                 <RadioGroup className="flex flex-row mt-3 justify-between">
-                    {['Central', 'Tarifit', 'Tachelhit', 'Other'].map(
+                    {variants.map(
                         (value) => (
                             <div
                                 className="flex flex-row justify-start items-center space-x-2"
@@ -114,7 +114,7 @@ const ValidateComp = () => {
                                     id={`${value}-${side}`}
                                     checked={radioGroupValue === value}
                                     onCheckedChange={() => {}}
-                                    disabled // Make radio button unselectable
+                                    disabled 
                                 />
                                 <Label htmlFor={`${value}-${side}`}>
                                     {value}

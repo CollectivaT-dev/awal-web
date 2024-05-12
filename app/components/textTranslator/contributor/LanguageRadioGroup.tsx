@@ -27,9 +27,8 @@ export const LanguageRadioGroup = ({
         const radioGroupValue = side === 'left' ? srcVar : tgtVar;
 
         return (
-            // TODO: adding standing when api is ready
             <RadioGroup className="flex flex-row mt-3 justify-between">
-                {['Central', 'Tarifit', 'Tachelhit', 'Other'].map((value) => (
+                {['Standard','Central', 'Tarifit', 'Tachelhit', 'Other'].map((value) => (
                     <div
                         className="flex flex-row justify-start items-center space-x-2"
                         key={value}

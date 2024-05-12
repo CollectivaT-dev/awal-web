@@ -1,5 +1,5 @@
 'use client';
-import React, {  useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Eraser, HelpCircle } from 'lucide-react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -212,7 +212,6 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                             targetLanguage={targetLanguage}
                             d={d}
                             isOriginLanguage={true}
-                            
                             setSourceLanguage={setSourceLanguage}
                             setTargetLanguage={setTargetLanguage}
                             setRightRadioValue={setRightRadioValue}
@@ -304,7 +303,6 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                             targetLanguage={targetLanguage}
                             d={d}
                             isOriginLanguage={false}
-                          
                             setSourceLanguage={setSourceLanguage}
                             setTargetLanguage={setTargetLanguage}
                             setRightRadioValue={setRightRadioValue}
