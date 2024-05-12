@@ -212,7 +212,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                             targetLanguage={targetLanguage}
                             d={d}
                             isOriginLanguage={true}
-                            language={sourceLanguage}
+                            
                             setSourceLanguage={setSourceLanguage}
                             setTargetLanguage={setTargetLanguage}
                             setRightRadioValue={setRightRadioValue}
@@ -304,7 +304,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                             targetLanguage={targetLanguage}
                             d={d}
                             isOriginLanguage={false}
-                            language={sourceLanguage}
+                          
                             setSourceLanguage={setSourceLanguage}
                             setTargetLanguage={setTargetLanguage}
                             setRightRadioValue={setRightRadioValue}
