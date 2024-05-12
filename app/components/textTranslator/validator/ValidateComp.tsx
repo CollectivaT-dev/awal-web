@@ -46,6 +46,7 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import useMediaQuery from '@/app/hooks/useMediaQuery';
+import { VariantsRadioGroup } from '../VariantsRadioGroup';
 
 const ValidateComp = () => {
     const [sourceText, setSourceText] = useState('');
@@ -91,44 +92,7 @@ const ValidateComp = () => {
         };
         fetchDictionary();
     }, [locale]);
-    const variants = ['Standard','Central', 'Tarifit', 'Tachelhit', 'Other']; // List of all variants
-
-    // render variations conditionally
-    const renderRadioGroup = (side: 'left' | 'right') => {
-        const languagesToRender =
-            (side === 'left' && ['zgh', 'ber'].includes(sourceLanguage)) ||
-            (side === 'right' && ['zgh', 'ber'].includes(targetLanguage));
-
-        if (languagesToRender) {
-            const radioGroupValue = side === 'left' ? srcVar : tgtVar;
-            return (
-                <RadioGroup className="flex flex-row mt-3 justify-between">
-                    {variants.map(
-                        (value) => (
-                            <div
-                                className="flex flex-row justify-start items-center space-x-2"
-                                key={value}
-                            >
-                                <Checkbox
-                                    value={value}
-                                    id={`${value}-${side}`}
-                                    checked={radioGroupValue === value}
-                                    onCheckedChange={() => {}}
-                                    disabled 
-                                />
-                                <Label htmlFor={`${value}-${side}`}>
-                                    {value}
-                                </Label>
-                            </div>
-                        ),
-                    )}
-                </RadioGroup>
-            );
-        } else {
-            return null;
-        }
-    };
-
+    const variants = ['Standard', 'Central', 'Tarifit', 'Tachelhit', 'Other']; // List of all variants
     useEffect(() => {
         //console.log('Left Radio Value:', srcVar);
         //console.log('Right Radio Value:', tgtVar);
@@ -434,7 +398,17 @@ const ValidateComp = () => {
                                 id="src_message"
                                 readOnly
                             />
-                            {renderRadioGroup('left')}
+                            {VariantsRadioGroup({
+                                isContributor: false,
+                                side: 'left',
+                                sourceLanguage,
+                                targetLanguage,
+                                srcVar,
+                                tgtVar,
+                                setLeftRadioValue,
+                                setRightRadioValue,
+                            })}
+                            {/* {renderRadioGroup('left')} */}
                             <div className="flex flex-row justify-between items-center pt-10 w-full">
                                 {sourceText.length > 0 &&
                                 targetText.length > 0 ? (
@@ -606,7 +580,16 @@ const ValidateComp = () => {
                                 readOnly
                             />
 
-                            {renderRadioGroup('right')}
+                            {VariantsRadioGroup({
+                                isContributor: false,
+                                side: 'right',
+                                sourceLanguage,
+                                targetLanguage,
+                                srcVar,
+                                tgtVar,
+                                setLeftRadioValue,
+                                setRightRadioValue,
+                            })}
                         </div>
                     </div>
                     <div className="flex-row-center space-x-4 my-3">
@@ -644,7 +627,16 @@ const ValidateComp = () => {
                                 id="src_message"
                                 readOnly
                             />
-                            {renderRadioGroup('left')}
+                                 {VariantsRadioGroup({
+                                isContributor: false,
+                                side: 'left',
+                                sourceLanguage,
+                                targetLanguage,
+                                srcVar,
+                                tgtVar,
+                                setLeftRadioValue,
+                                setRightRadioValue,
+                            })}
                             <div className="flex flex-row justify-between items-center pt-10 w-full">
                                 {sourceText.length > 0 &&
                                 targetText.length > 0 ? (
@@ -816,7 +808,16 @@ const ValidateComp = () => {
                                 readOnly
                             />
 
-                            {renderRadioGroup('right')}
+{VariantsRadioGroup({
+                                isContributor: false,
+                                side: 'right',
+                                sourceLanguage,
+                                targetLanguage,
+                                srcVar,
+                                tgtVar,
+                                setLeftRadioValue,
+                                setRightRadioValue,
+                            })}
                         </div>
                     </div>
                     <div className="flex-row-center space-x-4 my-3">

@@ -29,7 +29,7 @@ import {
     HandleGenerate,
     EntryScoreCalc,
 } from './contributorUtils';
-import { LanguageRadioGroup } from './LanguageRadioGroup';
+import { VariantsRadioGroup } from '../VariantsRadioGroup';
 import { LanguageSelection } from '../LanguageSelectorDropdown';
 interface ContributeCompProps {
     userId: string;
@@ -255,7 +255,8 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                         )}
                     </div>
                     <div>
-                        {LanguageRadioGroup({
+                        {VariantsRadioGroup({
+                            isContributor: true,
                             side: 'left',
                             sourceLanguage,
                             targetLanguage,
@@ -386,7 +387,8 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                         )}
                     </div>
 
-                    {LanguageRadioGroup({
+                    {VariantsRadioGroup({
+                        isContributor: true,
                         side: 'right',
                         sourceLanguage,
                         targetLanguage,

@@ -17,7 +17,8 @@ model User {
   password String?
   gender   String?
   age      Int?
-  role String?
+  role 	   String?
+  origin   String?
   isSubscribed Boolean?
   isPrivacy    Boolean?
   isVerified   Boolean? @default(false)

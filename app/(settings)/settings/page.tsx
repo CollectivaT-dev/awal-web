@@ -46,6 +46,7 @@ const formSchema = z
         gender: z.string(),
         score: z.number(),
         isVerified: z.boolean().optional(),
+		origin:z.string().optional(),
         languages: z
             .object({
                 english: z.boolean().default(false),
@@ -129,6 +130,7 @@ export function SettingsPage() {
             username: '',
             isSubscribed: false,
             age: 0,
+			origin:"",
             central: {
                 isChecked: false,
                 oral: 1,
@@ -171,6 +173,7 @@ export function SettingsPage() {
         //        console.log(userData);
                 const defaultData = {
                     age: 0,
+					origin:"",
                     central: {
                         isChecked: false,
                         oral: 1,
@@ -203,6 +206,7 @@ export function SettingsPage() {
                 };
                 const mergedData = {
                     ...userData,
+					origin:userData.origin || defaultData.origin,
                     age: userData.age || defaultData.age,
                     central: userData.central || defaultData.central,
                     tachelhit: userData.tachelhit || defaultData.tachelhit,
@@ -218,6 +222,7 @@ export function SettingsPage() {
                     username: mergedData.username,
                     age: mergedData.age || 0,
                     gender: mergedData.gender || '',
+					origin: mergedData.origin || '',
                     isSubscribed: mergedData.isSubscribed || false,
                     other: {
                         isChecked: mergedData.other?.isChecked || false,
@@ -647,6 +652,24 @@ export function SettingsPage() {
                                         </FormItem>
                                     );
                                 }}
+                            />
+							{/* country of origin */}
+							  <FormField
+                                control={form.control}
+                                name="origin"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>{d?.user.origin} </FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                disabled={loading}
+                                                {...field}
+                                                placeholder={d?.user.origin}
+                                            />
+                                        </FormControl>
+                                        <FormMessage className="text-white" />
+                                    </FormItem>
+                                )}
                             />
                         </div>
                         {/* subscribe check */}

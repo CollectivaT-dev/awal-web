@@ -396,6 +396,7 @@ interface User {
     gender: string;
     name: string;
     surname: string;
+	origin:string;
 }
 
 interface Menu {

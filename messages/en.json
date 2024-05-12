@@ -19,7 +19,7 @@
         "ary": "الدارجة"
     },
     "variation": {
-		"std":"Standard",
+        "std": "Standard",
         "central": "Central",
         "tif": "Tarifit",
         "tachelhit": "Tachelhit",
@@ -40,7 +40,8 @@
         "age": "Age",
         "gender": "Gender",
         "name": "Name",
-        "surname": "Surname"
+        "surname": "Surname",
+        "origin": "Country of Origin"
     },
     "translator": {
         "select_lang": "Select Language",

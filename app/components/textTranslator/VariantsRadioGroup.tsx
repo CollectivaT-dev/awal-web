@@ -1,7 +1,8 @@
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { RadioGroup } from '@/components/ui/radio-group';
-interface RadioGroupProps {
+interface VariantsRadioGroupProps {
+    isContributor: boolean;
     side: 'left' | 'right';
     sourceLanguage: string;
     targetLanguage: string;
@@ -10,7 +11,10 @@ interface RadioGroupProps {
     setLeftRadioValue: (value: string) => void;
     setRightRadioValue: (value: string) => void;
 }
-export const LanguageRadioGroup = ({
+const variants = ['Standard', 'Central', 'Tarifit', 'Tachelhit', 'Other']; // List of all variants
+
+export const VariantsRadioGroup = ({
+    isContributor,
     side,
     sourceLanguage,
     targetLanguage,
@@ -18,7 +22,7 @@ export const LanguageRadioGroup = ({
     tgtVar,
     setLeftRadioValue,
     setRightRadioValue,
-}: RadioGroupProps) => {
+}: VariantsRadioGroupProps) => {
     const languagesToRender =
         (side === 'left' && ['zgh', 'ber'].includes(sourceLanguage)) ||
         (side === 'right' && ['zgh', 'ber'].includes(targetLanguage));
@@ -28,7 +32,7 @@ export const LanguageRadioGroup = ({
 
         return (
             <RadioGroup className="flex flex-row mt-3 justify-between">
-                {['Standard','Central', 'Tarifit', 'Tachelhit', 'Other'].map((value) => (
+                {variants.map((value) => (
                     <div
                         className="flex flex-row justify-start items-center space-x-2"
                         key={value}
@@ -37,14 +41,23 @@ export const LanguageRadioGroup = ({
                             value={value}
                             id={`${value}-${side}`}
                             checked={radioGroupValue === value}
-                            onCheckedChange={(checkedValue) => {
-                                const newValue = checkedValue ? value : '';
-                                side === 'left'
-                                    ? setRightRadioValue(newValue)
-                                    : setLeftRadioValue(newValue);
-                            }}
+                            onCheckedChange={
+                                isContributor
+                                    ? (checkedValue) => {
+                                          const newValue = checkedValue
+                                              ? value
+                                              : '';
+                                          if (side === 'left') {
+                                              setLeftRadioValue(newValue);
+                                          } else {
+                                              setRightRadioValue(newValue);
+                                          }
+                                      }
+                                    : () => {}
+                            }
+                            disabled={!isContributor}
                         />
-				
+
                         <Label htmlFor={`${value}-${side}`}>{value}</Label>
                     </div>
                 ))}
