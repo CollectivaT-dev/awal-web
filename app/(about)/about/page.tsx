@@ -107,7 +107,7 @@ const AboutPage = () => {
             <Separator className="w-1/2 my-3" />
 
             {/* individuals */}
-            <div className=" flex flex-row items-start justify-center space-x-10 my-10 mx-10">
+            <div className=" sm:flex sm:flex-row sm:items-start sm:justify-center flex flex-col  space-x-10 my-10 mx-10">
                 <div className="flex-col-center w-1/4 whitespace-pre-line">
                     <Link
                         href={

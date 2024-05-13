@@ -47,6 +47,8 @@ import {
 import { Input } from '@/components/ui/input';
 import useMediaQuery from '@/app/hooks/useMediaQuery';
 import { VariantsRadioGroup } from '../VariantsRadioGroup';
+import { HandleValidate } from './ValidateHandler';
+import { HandleReject } from './RejectEntryHandler';
 
 const ValidateComp = () => {
     const [sourceText, setSourceText] = useState('');
@@ -233,53 +235,52 @@ const ValidateComp = () => {
     }, [sourceLanguage, targetLanguage, validatorToaster, triggerFetch]);
 
     // validate post route
-    const handleValidate = async () => {
-        const data = { ...entry, validatorId: session?.user?.id };
-        //console.log(data);
-        try {
-            const res = await axios.patch('/api/contribute/accept', data);
-            const validationScore = 3;
-            const updatedUser = res.data;
-            const { score, ...userWithoutScore } = updatedUser;
-            //console.log(userWithoutScore, updatedUser);
-            sessionUpdate({ user: updatedUser });
-            toast.success(
-                `${
-                    d?.validator.success_validation.text_before_link
-                }${' '}${validationScore}${' '}${
-                    d?.validator.success_validation.text_after_link
-                }`,
-            );
-        } catch (error) {
-            //console.log(error);
-        }
-        setTriggerFetch((prev) => prev + 1);
-    };
+    // const handleValidate = async () => {
+    //     const data = { ...entry, validatorId: session?.user?.id };
+    //     try {
+    //         const res = await axios.patch('/api/contribute/accept', data);
+    //         const validationScore = 3;
+    //         const updatedUser = res.data;
+    //         const { score, ...userWithoutScore } = updatedUser;
+    //         //console.log(userWithoutScore, updatedUser);
+    //         sessionUpdate({ user: updatedUser });
+    //         toast.success(
+    //             `${
+    //                 d?.validator.success_validation.text_before_link
+    //             }${' '}${validationScore}${' '}${
+    //                 d?.validator.success_validation.text_after_link
+    //             }`,
+    //         );
+    //     } catch (error) {
+    //         //console.log(error);
+    //     }
+    //     setTriggerFetch((prev) => prev + 1);
+    // };
 
-    const handleRejection = async () => {
-        const data = { ...entry, validatorId: session?.user?.id };
-        try {
-            const res = await axios.patch('/api/contribute/reject', data);
-            const validationScore = 3;
-            const updatedUser = res.data;
-            const { score, ...userWithoutScore } = updatedUser;
-            //console.log(userWithoutScore, updatedUser);
-            sessionUpdate({ user: updatedUser });
-            toast.success(
-                `${
-                    d?.validator.success_validation.text_before_link
-                }${' '}${validationScore}${' '}${
-                    d?.validator.success_validation.text_after_link
-                }`,
-            );
-        } catch (error) {
-            //console.log(error);
-            toast(`${d?.validator.alert_no_more_entries}`, {
-                icon: '❌',
-            });
-        }
-        setTriggerFetch((prev) => prev + 1);
-    };
+    // const handleRejection = async () => {
+    //     const data = { ...entry, validatorId: session?.user?.id };
+    //     try {
+    //         const res = await axios.patch('/api/contribute/reject', data);
+    //         const validationScore = 3;
+    //         const updatedUser = res.data;
+    //         const { score, ...userWithoutScore } = updatedUser;
+    //         //console.log(userWithoutScore, updatedUser);
+    //         sessionUpdate({ user: updatedUser });
+    //         toast.success(
+    //             `${
+    //                 d?.validator.success_validation.text_before_link
+    //             }${' '}${validationScore}${' '}${
+    //                 d?.validator.success_validation.text_after_link
+    //             }`,
+    //         );
+    //     } catch (error) {
+    //         //console.log(error);
+    //         toast(`${d?.validator.alert_no_more_entries}`, {
+    //             icon: '❌',
+    //         });
+    //     }
+    //     setTriggerFetch((prev) => prev + 1);
+    // };
     const handleReport = async () => {
         const data = {
             ...entry,
@@ -385,463 +386,231 @@ const ValidateComp = () => {
         </DropdownMenu>
     );
     return (
-        <>
-            {isAboveLgScreen ? (
-                <div className="text-translator">
-                    <div className="flex flex-row justify-center items-baseline px-10 space-x-10">
-                        <div className="w-1/2">
-                            <SrcLanguageSelection />
-                            <Textarea
-                                value={sourceText}
-                                className="border border-gray-300 h-[50vh] rounded-md shadow"
-                                placeholder={``}
-                                id="src_message"
-                                readOnly
-                            />
-                            {VariantsRadioGroup({
-                                isContributor: false,
-                                side: 'left',
-                                sourceLanguage,
-                                targetLanguage,
-                                srcVar,
-                                tgtVar,
-                                setLeftRadioValue,
-                                setRightRadioValue,
-                            })}
-                            {/* {renderRadioGroup('left')} */}
-                            <div className="flex flex-row justify-between items-center pt-10 w-full">
-                                {sourceText.length > 0 &&
-                                targetText.length > 0 ? (
-                                    <Dialog>
-                                        <DialogTrigger asChild>
-                                            <Button variant={'destructive'}>
+        <div className="text-translator">
+            <div className="flex lg:flex-row flex-col justify-center items-baseline px-10 lg:space-x-10 space-y-10">
+                <div className="lg:w-1/2 w-full">
+                    <SrcLanguageSelection />
+                    <Textarea
+                        value={sourceText}
+                        className="border border-gray-300 lg:h-[50vh] h-auto rounded-md shadow"
+                        placeholder={``}
+                        id="src_message"
+                        readOnly
+                    />
+                    {VariantsRadioGroup({
+                        isContributor: false,
+                        side: 'left',
+                        sourceLanguage,
+                        targetLanguage,
+                        srcVar,
+                        tgtVar,
+                        setLeftRadioValue,
+                        setRightRadioValue,
+                    })}
+                    <div className="flex flex-row justify-between items-center pt-10 w-full">
+                        {sourceText.length > 0 && targetText.length > 0 ? (
+                            <Dialog>
+                                <DialogTrigger asChild>
+                                    <Button variant={'destructive'}>
+                                        {d?.translator.report}
+                                    </Button>
+                                </DialogTrigger>
+                                <DialogContent className="sm:max-w-md">
+                                    <DialogHeader>
+                                        <DialogTitle className="capitalize">
+                                            {d?.texts.validate_report_heading}
+                                        </DialogTitle>
+                                        <DialogDescription className="capitalize">
+                                            {d?.texts.validate_report_text}{' '}
+                                        </DialogDescription>
+                                    </DialogHeader>
+                                    <div className="flex items-center space-x-2">
+                                        <div className="grid flex-1 gap-2">
+                                            <Input
+                                                value={reportInput}
+                                                onChange={(e) => {
+                                                    setReportInput(
+                                                        e.target.value,
+                                                    );
+                                                }}
+                                            />
+                                        </div>
+                                    </div>
+                                    <DialogFooter className="sm:justify-start">
+                                        <DialogClose asChild>
+                                            <Button
+                                                type="submit"
+                                                onClick={handleReport}
+                                            >
                                                 {d?.translator.report}
                                             </Button>
-                                        </DialogTrigger>
-                                        <DialogContent className="sm:max-w-md">
-                                            <DialogHeader>
-                                                <DialogTitle className="capitalize">
-                                                    {
-                                                        d?.texts
-                                                            .validate_report_heading
-                                                    }
-                                                </DialogTitle>
-                                                <DialogDescription className="capitalize">
-                                                    {
-                                                        d?.texts
-                                                            .validate_report_text
-                                                    }{' '}
-                                                </DialogDescription>
-                                            </DialogHeader>
-                                            <div className="flex items-center space-x-2">
-                                                <div className="grid flex-1 gap-2">
-                                                    <Input
-                                                        value={reportInput}
-                                                        onChange={(e) => {
-                                                            setReportInput(
-                                                                e.target.value,
-                                                            );
-                                                        }}
-                                                    />
-                                                </div>
-                                            </div>
-                                            <DialogFooter className="sm:justify-start">
-                                                <DialogClose asChild>
-                                                    <Button
-                                                        type="submit"
-                                                        onClick={handleReport}
-                                                    >
-                                                        {d?.translator.report}
-                                                    </Button>
-                                                </DialogClose>
-                                            </DialogFooter>
-                                        </DialogContent>
-                                    </Dialog>
-                                ) : null}
-                            </div>
-                        </div>
+                                        </DialogClose>
+                                    </DialogFooter>
+                                </DialogContent>
+                            </Dialog>
+                        ) : null}
+                    </div>
+                </div>
 
-                        <div className="w-1/2 ">
-                            <div className="flex flex-row justify-between items-center">
-                                <TgtLanguageSelection />
-                                <AlertDialog>
-                                    <AlertDialogTrigger asChild>
-                                        <Button
-                                            size={'lg'}
-                                            className="cursor-pointer rounded-3xl m-1 text-xs capitalize"
-                                        >
+                <div className="lg:w-1/2 w-full ">
+                    <div className="flex flex-row justify-between items-center">
+                        <TgtLanguageSelection />
+                        <AlertDialog>
+                            <AlertDialogTrigger asChild>
+                                <Button
+                                    size={'lg'}
+                                    className="cursor-pointer rounded-3xl m-1 text-xs capitalize"
+                                >
+                                    {d?.how_to_validate_heading}
+                                    <HelpCircle className="ml-2" size={15} />
+                                </Button>
+                            </AlertDialogTrigger>
+                            <AlertDialogContent className="flex flex-col max-h-[50%] overflow-hidden">
+                                <AlertDialogHeader>
+                                    {' '}
+                                    <AlertDialogTitle className="flex items-center justify-center">
+                                        <h4 className="text-sm font-semibold capitalize">
                                             {d?.how_to_validate_heading}
-                                            <HelpCircle
-                                                className="ml-2"
-                                                size={15}
-                                            />
-                                        </Button>
-                                    </AlertDialogTrigger>
-                                    <AlertDialogContent className="flex flex-col max-h-[50%] overflow-hidden">
-                                        <AlertDialogHeader>
-                                            {' '}
-                                            <AlertDialogTitle className="flex items-center justify-center">
-                                                <h4 className="text-sm font-semibold capitalize">
-                                                    {d?.how_to_validate_heading}
-                                                </h4>
-                                            </AlertDialogTitle>
-                                        </AlertDialogHeader>
-                                        <div className="flex-grow overflow-auto">
-                                            <AlertDialogDescription className="text-left whitespace-pre-wrap">
-                                                {d?.how_it_works_validation}
-                                                <ol className="list-disc space-y-2 my-4 mx-5 flex-row ">
+                                        </h4>
+                                    </AlertDialogTitle>
+                                </AlertDialogHeader>
+                                <div className="flex-grow overflow-auto">
+                                    <AlertDialogDescription className="text-left whitespace-pre-wrap">
+                                        {d?.how_it_works_validation}
+                                        <ol className="list-disc space-y-2 my-4 mx-5 flex-row ">
+                                            <li>
+                                                {d?.how_it_works_validation_1}
+                                            </li>
+                                            <li>
+                                                {d?.how_it_works_validation_2}
+                                                <ol className="list-disc pl-4">
                                                     <li>
                                                         {
-                                                            d?.how_it_works_validation_1
+                                                            d?.how_it_works_validation_2_1
                                                         }
                                                     </li>
                                                     <li>
                                                         {
-                                                            d?.how_it_works_validation_2
+                                                            d?.how_it_works_validation_2_2
                                                         }
-                                                        <ol className="list-disc pl-4">
-                                                            <li>
-                                                                {
-                                                                    d?.how_it_works_validation_2_1
-                                                                }
-                                                            </li>
-                                                            <li>
-                                                                {
-                                                                    d?.how_it_works_validation_2_2
-                                                                }
-                                                            </li>
-                                                            <li>
-                                                                {
-                                                                    d?.how_it_works_validation_2_3
-                                                                }
-                                                            </li>
-                                                            <li>
-                                                                {
-                                                                    d?.how_it_works_validation_2_4
-                                                                }
-                                                            </li>
+                                                    </li>
+                                                    <li>
+                                                        {
+                                                            d?.how_it_works_validation_2_3
+                                                        }
+                                                    </li>
+                                                    <li>
+                                                        {
+                                                            d?.how_it_works_validation_2_4
+                                                        }
+                                                    </li>
 
-                                                            <li>
-                                                                {
-                                                                    d?.how_it_works_validation_2_5
-                                                                }
-                                                            </li>
+                                                    <li>
+                                                        {
+                                                            d?.how_it_works_validation_2_5
+                                                        }
+                                                    </li>
 
-                                                            <li>
-                                                                {
-                                                                    d?.how_it_works_validation_2_6
-                                                                }
-                                                            </li>
-                                                            <li>
-                                                                {
-                                                                    d?.how_it_works_validation_2_6
-                                                                }
-                                                            </li>
-                                                            <li>
-                                                                {
-                                                                    d?.how_it_works_validation_2_7
-                                                                }
-                                                            </li>
-                                                        </ol>
+                                                    <li>
+                                                        {
+                                                            d?.how_it_works_validation_2_6
+                                                        }
                                                     </li>
                                                     <li>
                                                         {
-                                                            d?.how_it_works_validation_3
+                                                            d?.how_it_works_validation_2_6
                                                         }
                                                     </li>
-                                                    {
-                                                        d?.how_it_works_validation_continued
-                                                    }
+                                                    <li>
+                                                        {
+                                                            d?.how_it_works_validation_2_7
+                                                        }
+                                                    </li>
                                                 </ol>
-                                                {
-                                                    d?.how_it_works_contribution_continued
-                                                }
-                                            </AlertDialogDescription>
-                                        </div>
-                                        <AlertDialogFooter className="flex-shrink-0">
-                                            {' '}
-                                            <AlertDialogCancel>
-                                                {d?.btn.cancel}
-                                            </AlertDialogCancel>
-                                            <AlertDialogAction>
-                                                {d?.btn.continue}
-                                            </AlertDialogAction>
-                                        </AlertDialogFooter>
-                                    </AlertDialogContent>
-                                </AlertDialog>
-                            </div>
-
-                            <Textarea
-                                id="tgt_message"
-                                className="border border-gray-300 h-[50vh] rounded-md shadow"
-                                placeholder={``}
-                                value={targetText}
-                                onChange={(e) => setTargetText(e.target.value)}
-                                readOnly
-                            />
-
-                            {VariantsRadioGroup({
-                                isContributor: false,
-                                side: 'right',
-                                sourceLanguage,
-                                targetLanguage,
-                                srcVar,
-                                tgtVar,
-                                setLeftRadioValue,
-                                setRightRadioValue,
-                            })}
-                        </div>
+                                            </li>
+                                            <li>
+                                                {d?.how_it_works_validation_3}
+                                            </li>
+                                            {
+                                                d?.how_it_works_validation_continued
+                                            }
+                                        </ol>
+                                        {d?.how_it_works_contribution_continued}
+                                    </AlertDialogDescription>
+                                </div>
+                                <AlertDialogFooter className="flex-shrink-0">
+                                    {' '}
+                                    <AlertDialogCancel>
+                                        {d?.btn.cancel}
+                                    </AlertDialogCancel>
+                                    <AlertDialogAction>
+                                        {d?.btn.continue}
+                                    </AlertDialogAction>
+                                </AlertDialogFooter>
+                            </AlertDialogContent>
+                        </AlertDialog>
                     </div>
-                    <div className="flex-row-center space-x-4 my-3">
-                        <Check
-                            className="bg-green-500 rounded-full h-10 w-10 cursor-pointer p-2"
-                            onClick={handleValidate}
-                        />
-                        <X
-                            className="bg-red-500 rounded-full h-10 w-10 cursor-pointer p-2"
-                            onClick={handleRejection}
-                        />
-                    </div>
-                    <div
-                        className="flex items-center justify-center my-2
+
+                    <Textarea
+                        id="tgt_message"
+                        className="border border-gray-300 lg:h-[50vh] h-auto rounded-md shadow"
+                        placeholder={``}
+                        value={targetText}
+                        onChange={(e) => setTargetText(e.target.value)}
+                        readOnly
+                    />
+
+                    {VariantsRadioGroup({
+                        isContributor: false,
+                        side: 'right',
+                        sourceLanguage,
+                        targetLanguage,
+                        srcVar,
+                        tgtVar,
+                        setLeftRadioValue,
+                        setRightRadioValue,
+                    })}
+                </div>
+            </div>
+            <div className="flex-row-center space-x-4 my-3">
+                <Check
+                    className="bg-green-500 rounded-full h-10 w-10 cursor-pointer p-2"
+                    onClick={() =>
+                        HandleValidate({
+                            entry,
+                            session,
+                            sessionUpdate,
+                            d,
+                            setTriggerFetch,
+                        })
+                    }
+                />
+                <X
+                    className="bg-red-500 rounded-full h-10 w-10 cursor-pointer p-2"
+                    onClick={() => {
+                        HandleReject({
+                            entry,
+                            session,
+                            sessionUpdate,
+                            d,
+                            setTriggerFetch,
+                        });
+                    }}
+                />
+            </div>
+            <div
+                className="flex items-center justify-center my-2
 			"
-                    >
-                        <Button
-                            variant={'default'}
-                            className="cursor-pointer"
-                            onClick={handleNext}
-                        >
-                            {d?.btn.skip}
-                        </Button>
-                    </div>
-                </div>
-            ) : (
-                <div className="text-translator">
-                    <div className="flex flex-col justify-center items-baseline px-10">
-                        <div className="w-full">
-                            <SrcLanguageSelection />
-                            <Textarea
-                                value={sourceText}
-                                className="border border-gray-300 h-auto rounded-md shadow"
-                                placeholder={``}
-                                id="src_message"
-                                readOnly
-                            />
-                                 {VariantsRadioGroup({
-                                isContributor: false,
-                                side: 'left',
-                                sourceLanguage,
-                                targetLanguage,
-                                srcVar,
-                                tgtVar,
-                                setLeftRadioValue,
-                                setRightRadioValue,
-                            })}
-                            <div className="flex flex-row justify-between items-center pt-10 w-full">
-                                {sourceText.length > 0 &&
-                                targetText.length > 0 ? (
-                                    <Dialog>
-                                        <DialogTrigger asChild>
-                                            <Button variant={'destructive'}>
-                                                {d?.translator.report}
-                                            </Button>
-                                        </DialogTrigger>
-                                        <DialogContent className="sm:max-w-md">
-                                            <DialogHeader>
-                                                <DialogTitle className="capitalize">
-                                                    {
-                                                        d?.texts
-                                                            .validate_report_heading
-                                                    }
-                                                </DialogTitle>
-                                                <DialogDescription className="capitalize">
-                                                    {
-                                                        d?.texts
-                                                            .validate_report_text
-                                                    }{' '}
-                                                </DialogDescription>
-                                            </DialogHeader>
-                                            <div className="flex items-center space-x-2">
-                                                <div className="grid flex-1 gap-2">
-                                                    <Input
-                                                        value={reportInput}
-                                                        onChange={(e) => {
-                                                            setReportInput(
-                                                                e.target.value,
-                                                            );
-                                                        }}
-                                                    />
-                                                </div>
-                                            </div>
-                                            <DialogFooter className="sm:justify-start">
-                                                <DialogClose asChild>
-                                                    <Button
-                                                        type="submit"
-                                                        onClick={handleReport}
-                                                    >
-                                                        {d?.translator.report}
-                                                    </Button>
-                                                </DialogClose>
-                                            </DialogFooter>
-                                        </DialogContent>
-                                    </Dialog>
-                                ) : null}
-                            </div>
-                        </div>
-
-                        <div className="w-full">
-                            <div className="flex flex-row justify-between items-baseline">
-                                <TgtLanguageSelection />
-                                <AlertDialog>
-                                    <AlertDialogTrigger asChild>
-                                        <Button
-                                            size={'lg'}
-                                            className="cursor-pointer rounded-3xl m-1 text-xs capitalize"
-                                        >
-                                            {d?.how_to_validate_heading}
-                                            <HelpCircle
-                                                className="ml-2"
-                                                size={15}
-                                            />
-                                        </Button>
-                                    </AlertDialogTrigger>
-                                    <AlertDialogContent className="flex flex-col max-h-[50%] overflow-hidden">
-                                        <AlertDialogHeader>
-                                            {' '}
-                                            <AlertDialogTitle className="flex items-center justify-center">
-                                                <h4 className="text-sm font-semibold capitalize">
-                                                    {d?.how_to_validate_heading}
-                                                </h4>
-                                            </AlertDialogTitle>
-                                        </AlertDialogHeader>
-                                        <div className="flex-grow overflow-auto">
-                                            <AlertDialogDescription className="text-left whitespace-pre-wrap">
-                                                {d?.how_it_works_validation}
-                                                <ol className="list-disc space-y-2 my-4 mx-5 flex-row ">
-                                                    <li>
-                                                        {
-                                                            d?.how_it_works_validation_1
-                                                        }
-                                                    </li>
-                                                    <li>
-                                                        {
-                                                            d?.how_it_works_validation_2
-                                                        }
-                                                        <ol className="list-disc pl-4">
-                                                            <li>
-                                                                {
-                                                                    d?.how_it_works_validation_2_1
-                                                                }
-                                                            </li>
-                                                            <li>
-                                                                {
-                                                                    d?.how_it_works_validation_2_2
-                                                                }
-                                                            </li>
-                                                            <li>
-                                                                {
-                                                                    d?.how_it_works_validation_2_3
-                                                                }
-                                                            </li>
-                                                            <li>
-                                                                {
-                                                                    d?.how_it_works_validation_2_4
-                                                                }
-                                                            </li>
-
-                                                            <li>
-                                                                {
-                                                                    d?.how_it_works_validation_2_5
-                                                                }
-                                                            </li>
-
-                                                            <li>
-                                                                {
-                                                                    d?.how_it_works_validation_2_6
-                                                                }
-                                                            </li>
-                                                            <li>
-                                                                {
-                                                                    d?.how_it_works_validation_2_6
-                                                                }
-                                                            </li>
-                                                            <li>
-                                                                {
-                                                                    d?.how_it_works_validation_2_7
-                                                                }
-                                                            </li>
-                                                        </ol>
-                                                    </li>
-                                                    <li>
-                                                        {
-                                                            d?.how_it_works_validation_3
-                                                        }
-                                                    </li>
-                                                    {
-                                                        d?.how_it_works_validation_continued
-                                                    }
-                                                </ol>
-                                                {
-                                                    d?.how_it_works_contribution_continued
-                                                }
-                                            </AlertDialogDescription>
-                                        </div>
-                                        <AlertDialogFooter className="flex-shrink-0">
-                                            {' '}
-                                            <AlertDialogCancel>
-                                                {d?.btn.cancel}
-                                            </AlertDialogCancel>
-                                            <AlertDialogAction>
-                                                {d?.btn.continue}
-                                            </AlertDialogAction>
-                                        </AlertDialogFooter>
-                                    </AlertDialogContent>
-                                </AlertDialog>
-                            </div>
-
-                            <Textarea
-                                id="tgt_message"
-                                className="border border-gray-300 h-auto rounded-md shadow"
-                                placeholder={``}
-                                value={targetText}
-                                onChange={(e) => setTargetText(e.target.value)}
-                                readOnly
-                            />
-
-{VariantsRadioGroup({
-                                isContributor: false,
-                                side: 'right',
-                                sourceLanguage,
-                                targetLanguage,
-                                srcVar,
-                                tgtVar,
-                                setLeftRadioValue,
-                                setRightRadioValue,
-                            })}
-                        </div>
-                    </div>
-                    <div className="flex-row-center space-x-4 my-3">
-                        <Check
-                            className="bg-green-500 rounded-full h-10 w-10 cursor-pointer p-2"
-                            onClick={handleValidate}
-                        />
-                        <X
-                            className="bg-red-500 rounded-full h-10 w-10 cursor-pointer p-2"
-                            onClick={handleRejection}
-                        />
-                    </div>
-                    <div className="flex items-center justify-center my-2">
-                        <Button
-                            variant={'default'}
-                            className="cursor-pointer"
-                            onClick={handleNext}
-                        >
-                            {d?.btn.skip}
-                        </Button>
-                    </div>
-                </div>
-            )}
-        </>
+            >
+                <Button
+                    variant={'default'}
+                    className="cursor-pointer"
+                    onClick={handleNext}
+                >
+                    {d?.btn.skip}
+                </Button>
+            </div>
+        </div>
     );
 };
 
