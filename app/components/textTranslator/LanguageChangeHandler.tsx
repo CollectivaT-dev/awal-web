@@ -7,8 +7,8 @@ interface HandleLanguageChangeProps {
     targetLanguage: string;
     setSourceLanguage: Dispatch<SetStateAction<string>>;
     setTargetLanguage: Dispatch<SetStateAction<string>>;
-    setRightRadioValue: Dispatch<SetStateAction<string>>;
-    setLeftRadioValue: Dispatch<SetStateAction<string>>;
+    setTgtVar: Dispatch<SetStateAction<string>>;
+    setSrcVar: Dispatch<SetStateAction<string>>;
 }
 const getNextLanguage = (
     currentLanguage: string,
@@ -28,8 +28,8 @@ export const HandleLanguageChange = (params: HandleLanguageChangeProps) => {
             isSourceLanguage,
             setSourceLanguage,
             setTargetLanguage,
-            setRightRadioValue,
-            setLeftRadioValue,
+            setTgtVar,
+            setSrcVar,
         } = params;
         // Always set the language based on whether it's source or target
         if (isSourceLanguage) {
@@ -46,7 +46,7 @@ export const HandleLanguageChange = (params: HandleLanguageChangeProps) => {
                 setTargetLanguage(availableTargetLanguages[0] || 'ca'); // Default to 'ca' if no valid target found
             }
             if (!['zgh', 'ber'].includes(newLanguage)) {
-                setLeftRadioValue(''); // Reset the left radio value if the new language is not 'zgh' or 'ber'
+                setSrcVar(''); // Reset the left radio value if the new language is not 'zgh' or 'ber'
             }
         } else {
             const availableSourceLanguages = Object.keys(
@@ -62,7 +62,7 @@ export const HandleLanguageChange = (params: HandleLanguageChangeProps) => {
                 setSourceLanguage(nextLanguage); // Update source language if the current one isn't available
             }
             if (!['zgh', 'ber'].includes(newLanguage)) {
-                setRightRadioValue(''); // Reset the right radio value if the new language is not 'zgh' or 'ber'
+                setTgtVar(''); // Reset the right radio value if the new language is not 'zgh' or 'ber'
             }
         }
     };

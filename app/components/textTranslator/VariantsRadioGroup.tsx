@@ -1,6 +1,7 @@
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { RadioGroup } from '@/components/ui/radio-group';
+import { Dispatch, SetStateAction } from 'react';
 interface VariantsRadioGroupProps {
     isContributor: boolean;
     side: 'left' | 'right';
@@ -8,8 +9,8 @@ interface VariantsRadioGroupProps {
     targetLanguage: string;
     srcVar: string;
     tgtVar: string;
-    setLeftRadioValue: (value: string) => void;
-    setRightRadioValue: (value: string) => void;
+    setSrcVar: Dispatch<SetStateAction<string>>;
+    setTgtVar: Dispatch<SetStateAction<string>>;
 }
 const variants = ['Standard', 'Central', 'Tarifit', 'Tachelhit', 'Other']; // List of all variants
 
@@ -20,8 +21,8 @@ export const VariantsRadioGroup = ({
     targetLanguage,
     srcVar,
     tgtVar,
-    setLeftRadioValue,
-    setRightRadioValue,
+    setSrcVar,
+    setTgtVar,
 }: VariantsRadioGroupProps) => {
     const languagesToRender =
         (side === 'left' && ['zgh', 'ber'].includes(sourceLanguage)) ||
@@ -29,7 +30,6 @@ export const VariantsRadioGroup = ({
 
     if (languagesToRender) {
         const radioGroupValue = side === 'left' ? srcVar : tgtVar;
-
         return (
             <RadioGroup className="flex flex-row mt-3 justify-between">
                 {variants.map((value) => (
@@ -44,18 +44,21 @@ export const VariantsRadioGroup = ({
                             onCheckedChange={
                                 isContributor
                                     ? (checkedValue) => {
+                                          console.log("🚀 ~ checkedValue:", checkedValue,value)
                                           const newValue = checkedValue
                                               ? value
                                               : '';
+											  console.log(newValue)
                                           if (side === 'left') {
-                                              setLeftRadioValue(newValue);
+                                              setSrcVar(newValue);
                                           } else {
-                                              setRightRadioValue(newValue);
+                                              setTgtVar(newValue);
                                           }
+										  
+										 
                                       }
-                                    : () => {}
+                                    : () => {console.log("in validator comp, radio not selectable")}
                             }
-                            disabled={!isContributor}
                         />
 
                         <Label htmlFor={`${value}-${side}`}>{value}</Label>

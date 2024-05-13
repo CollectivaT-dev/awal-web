@@ -25,8 +25,8 @@ interface LanguageSelectionDropdownProps {
     targetLanguage: string;
     setSourceLanguage: Dispatch<SetStateAction<string>>;
     setTargetLanguage: Dispatch<SetStateAction<string>>;
-    setRightRadioValue: Dispatch<SetStateAction<string>>;
-    setLeftRadioValue: Dispatch<SetStateAction<string>>;
+    setTgtVar: Dispatch<SetStateAction<string>>;
+    setSrcVar: Dispatch<SetStateAction<string>>;
 }
 interface ContributeLanguages {
     [key: string]: string;
@@ -82,8 +82,8 @@ export const LanguageSelection = ({
     targetLanguage,
     setSourceLanguage,
     setTargetLanguage,
-    setRightRadioValue,
-    setLeftRadioValue,
+    setTgtVar,
+    setSrcVar,
 }: LanguageSelectionDropdownProps) => {
     const contributeLanguages: { [key: string]: string } = useMemo(
         () => ({
@@ -123,8 +123,8 @@ export const LanguageSelection = ({
                         isSourceLanguage: isOriginLanguage,
                         setSourceLanguage,
                         setTargetLanguage,
-                        setRightRadioValue,
-                        setLeftRadioValue,
+                        setTgtVar,
+                        setSrcVar,
                     })}
                 >
                     {RenderLanguageOptions({

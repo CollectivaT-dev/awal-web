@@ -64,12 +64,8 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
     const [targetLanguage, setTargetLanguage] = useState(
         localStorage.getItem('targetLanguage') ?? 'es',
     );
-    const [tgtVar, setLeftRadioValue] = useState(
-        localStorage.getItem('tgtVar') ?? '',
-    );
-    const [srcVar, setRightRadioValue] = useState(
-        localStorage.getItem('srcVar') ?? '',
-    );
+    const [tgtVar, setTgtVar] = useState(localStorage.getItem('tgtVar') ?? '');
+    const [srcVar, setSrcVar] = useState(localStorage.getItem('srcVar') ?? '');
     const [totalScore, setTotalScore] = useState(session?.user?.score || 0);
 
     // check if the user modified the machine translation, if they used the translate button, this is done simply checking if the contribution field has any manual changes
@@ -214,24 +210,9 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                             isOriginLanguage={true}
                             setSourceLanguage={setSourceLanguage}
                             setTargetLanguage={setTargetLanguage}
-                            setRightRadioValue={setRightRadioValue}
-                            setLeftRadioValue={setLeftRadioValue}
+                            setTgtVar={setTgtVar}
+                            setSrcVar={setSrcVar}
                         />
-                        <Button
-                            onClick={() =>
-                                HandleGenerate({
-                                    setRandomClicked,
-                                    sourceLanguage,
-                                    setSourceText,
-                                    setFetchedText,
-                                    d,
-                                })
-                            }
-                            variant="default"
-                            className="rounded-full bg-text-secondary"
-                        >
-                            {d?.translator.generate}
-                        </Button>
                     </div>
                     <div className="relative">
                         <Textarea
@@ -262,12 +243,27 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                             targetLanguage,
                             srcVar,
                             tgtVar,
-                            setLeftRadioValue,
-                            setRightRadioValue,
+                            setSrcVar,
+                            setTgtVar,
                         })}
                     </div>
                     <div className="flex flex-row justify-between items-center w-full my-5">
                         <div className="flex flex-row space-x-3">
+                            <Button
+                                onClick={() =>
+                                    HandleGenerate({
+                                        setRandomClicked,
+                                        sourceLanguage,
+                                        setSourceText,
+                                        setFetchedText,
+                                        d,
+                                    })
+                                }
+                                variant="default"
+                                className="rounded-full bg-text-secondary"
+                            >
+                                {d?.translator.generate}
+                            </Button>
                             <Button
                                 onClick={() =>
                                     HandleTranslate({
@@ -306,8 +302,8 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                             isOriginLanguage={false}
                             setSourceLanguage={setSourceLanguage}
                             setTargetLanguage={setTargetLanguage}
-                            setRightRadioValue={setRightRadioValue}
-                            setLeftRadioValue={setLeftRadioValue}
+                            setTgtVar={setTgtVar}
+                            setSrcVar={setSrcVar}
                         />
 
                         <AlertDialog>
@@ -394,8 +390,8 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                         targetLanguage,
                         srcVar,
                         tgtVar,
-                        setLeftRadioValue,
-                        setRightRadioValue,
+                        setSrcVar,
+                        setTgtVar,
                     })}
                     <div className="flex justify-end mt-10">
                         <Button

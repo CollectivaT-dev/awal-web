@@ -61,12 +61,8 @@ const ValidateComp = () => {
     const [targetLanguage, setTargetLanguage] = useState(
         localStorage.getItem('targetLanguage') ?? 'zgh',
     );
-    const [srcVar, setLeftRadioValue] = useState(
-        localStorage.getItem('srcVar') ?? '',
-    );
-    const [tgtVar, setRightRadioValue] = useState(
-        localStorage.getItem('tgtVar') || '',
-    );
+    const [srcVar, setSrcVar] = useState(localStorage.getItem('srcVar') ?? '');
+    const [tgtVar, setTgtVar] = useState(localStorage.getItem('tgtVar') || '');
     const isAboveLgScreen = useMediaQuery('(min-width: 1024px)');
     const [triggerFetch, setTriggerFetch] = useState(0);
     // Update local storage when the language or variation changes
@@ -138,7 +134,7 @@ const ValidateComp = () => {
         setSourceLanguage(language);
         localStorage.setItem('sourceLanguage', language);
         if (!['zgh', 'ber'].includes(language)) {
-            setLeftRadioValue('');
+            setSrcVar('');
             localStorage.setItem('srcVar', '');
         }
     };
@@ -147,7 +143,7 @@ const ValidateComp = () => {
         setTargetLanguage(language);
         localStorage.setItem('targetLanguage', language);
         if (!['zgh', 'ber'].includes(language)) {
-            setRightRadioValue('');
+            setTgtVar('');
             localStorage.setItem('tgtVar', '');
         }
     };
@@ -194,10 +190,10 @@ const ValidateComp = () => {
                         id: toastId,
                     });
                     if (['zgh', 'ber'].includes(sourceLanguage)) {
-                        setLeftRadioValue(res.data.srcVar || '');
+                        setSrcVar(res.data.srcVar || '');
                     }
                     if (['zgh', 'ber'].includes(targetLanguage)) {
-                        setRightRadioValue(res.data.tgtVar || '');
+                        setTgtVar(res.data.tgtVar || '');
                     }
                 } else {
                     console.error('No data available');
@@ -320,10 +316,10 @@ const ValidateComp = () => {
                 setEntry(res.data);
                 // Update variants if applicable
                 if (['zgh', 'ber'].includes(sourceLanguage)) {
-                    setLeftRadioValue(res.data.srcVar || '');
+                    setSrcVar(res.data.srcVar || '');
                 }
                 if (['zgh', 'ber'].includes(targetLanguage)) {
-                    setRightRadioValue(res.data.tgtVar || '');
+                    setTgtVar(res.data.tgtVar || '');
                 }
             } else {
                 console.error('No next entry available');
@@ -404,8 +400,8 @@ const ValidateComp = () => {
                         targetLanguage,
                         srcVar,
                         tgtVar,
-                        setLeftRadioValue,
-                        setRightRadioValue,
+                        setSrcVar,
+                        setTgtVar,
                     })}
                     <div className="flex flex-row justify-between items-center pt-10 w-full">
                         {sourceText.length > 0 && targetText.length > 0 ? (
@@ -567,8 +563,8 @@ const ValidateComp = () => {
                         targetLanguage,
                         srcVar,
                         tgtVar,
-                        setLeftRadioValue,
-                        setRightRadioValue,
+                        setSrcVar,
+                        setTgtVar,
                     })}
                 </div>
             </div>
