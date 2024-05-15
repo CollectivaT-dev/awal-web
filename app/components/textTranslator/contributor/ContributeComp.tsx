@@ -4,10 +4,7 @@ import { Eraser, HelpCircle } from 'lucide-react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import axios from 'axios';
-import {
-    ContributionLanguageRelations,
-    getLanguageCode,
-} from '../TranslatorConfig';
+import { ContributionLanguageRelations, getLanguageCode } from '../TranslatorConfig';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import { getSession, useSession } from 'next-auth/react';
@@ -24,22 +21,16 @@ import {
 } from '@/components/ui/alert-dialog';
 import useLocaleStore from '@/app/hooks/languageStore';
 import { MessagesProps, getDictionary } from '@/i18n';
-import {
-    HandleTranslate,
-    HandleGenerate,
-    EntryScoreCalc,
-} from './contributorUtils';
+import { HandleTranslate, HandleGenerate, EntryScoreCalc } from './contributorUtils';
 import { VariantsRadioGroup } from '../VariantsRadioGroup';
 import { LanguageSelection } from '../LanguageSelectorDropdown';
+
 interface ContributeCompProps {
     userId: string;
     username: string;
 }
 
-const ContributeComp: React.FC<ContributeCompProps> = ({
-    userId,
-    username,
-}) => {
+const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => {
     const [sourceText, setSourceText] = useState('');
     const [targetText, setTargetText] = useState('');
     const { locale } = useLocaleStore();
@@ -58,12 +49,8 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
         fetchDictionary();
     }, [locale]);
 
-    const [sourceLanguage, setSourceLanguage] = useState(
-        localStorage.getItem('sourceLanguage') ?? 'ca',
-    );
-    const [targetLanguage, setTargetLanguage] = useState(
-        localStorage.getItem('targetLanguage') ?? 'es',
-    );
+    const [sourceLanguage, setSourceLanguage] = useState(localStorage.getItem('sourceLanguage') ?? 'ca');
+    const [targetLanguage, setTargetLanguage] = useState(localStorage.getItem('targetLanguage') ?? 'es');
     const [tgtVar, setTgtVar] = useState(localStorage.getItem('tgtVar') ?? '');
     const [srcVar, setSrcVar] = useState(localStorage.getItem('srcVar') ?? '');
     const [totalScore, setTotalScore] = useState(session?.user?.score || 0);
@@ -83,19 +70,13 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
 
     useEffect(() => {
         const updateLanguages = () => {
-            const relatedToSource =
-                ContributionLanguageRelations[sourceLanguage] || [];
-            const relatedToTarget =
-                ContributionLanguageRelations[targetLanguage] || [];
+            const relatedToSource = ContributionLanguageRelations[sourceLanguage] || [];
+            const relatedToTarget = ContributionLanguageRelations[targetLanguage] || [];
 
             if (!relatedToSource.includes(targetLanguage)) {
-                setTargetLanguage(
-                    relatedToSource.length > 0 ? relatedToSource[0] : '',
-                );
+                setTargetLanguage(relatedToSource.length > 0 ? relatedToSource[0] : '');
             } else if (!relatedToTarget.includes(sourceLanguage)) {
-                setSourceLanguage(
-                    relatedToTarget.length > 0 ? relatedToTarget[0] : '',
-                );
+                setSourceLanguage(relatedToTarget.length > 0 ? relatedToTarget[0] : '');
             }
         };
 
@@ -115,14 +96,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
             setEntryScore,
             setTotalScore,
         });
-    }, [
-        initialTranslatedText,
-        targetText,
-        translated,
-        randomClicked,
-        sourceText,
-        translateClicked,
-    ]);
+    }, [initialTranslatedText, targetText, translated, randomClicked, sourceText, translateClicked]);
 
     const handleContribute = async () => {
         const srcLanguageCode = getLanguageCode(sourceLanguage);
@@ -163,16 +137,10 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
         }
         try {
             setIsLoading(true);
-            const res = await axios.post(
-                `/api/contribute`,
-                JSON.stringify(data),
-            );
+            const res = await axios.post(`/api/contribute`, JSON.stringify(data));
             toast.success(
                 <span>
-                    {d?.toasters.success_contribution}{' '}
-                    <span className="font-bold text-clay-500">
-                        {contributionPoint}
-                    </span>{' '}
+                    {d?.toasters.success_contribution} <span className="font-bold text-clay-500">{contributionPoint}</span>{' '}
                     {d?.toasters.success_contribution_points}
                 </span>,
             );
@@ -308,10 +276,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
 
                         <AlertDialog>
                             <AlertDialogTrigger asChild>
-                                <Button
-                                    size={'lg'}
-                                    className="cursor-pointer rounded-3xl m-1 text-xs capitalize"
-                                >
+                                <Button size={'lg'} className="cursor-pointer rounded-3xl m-1 text-xs capitalize">
                                     {d?.how_to_contribute_heading}
                                     <HelpCircle className="ml-2" size={15} />
                                 </Button>
@@ -319,38 +284,24 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                             <AlertDialogContent className="flex flex-col max-h-[50%] overflow-auto">
                                 <AlertDialogHeader>
                                     <AlertDialogTitle className="flex items-center justify-center">
-                                        <h4 className="text-sm font-semibold capitalize">
-                                            {d?.how_to_contribute_heading}
-                                        </h4>
+                                        <h4 className="text-sm font-semibold capitalize">{d?.how_to_contribute_heading}</h4>
                                     </AlertDialogTitle>
                                 </AlertDialogHeader>{' '}
                                 <div className="flex-grow overflow-auto">
                                     <AlertDialogDescription className="text-left whitespace-pre-wrap">
                                         {d?.how_it_works_contribution}
                                         <ol className="list-disc space-y-2 my-4 mx-5 flex-row ">
-                                            <li>
-                                                {d?.how_it_works_contribution_1}
-                                            </li>
-                                            <li>
-                                                {d?.how_it_works_contribution_2}
-                                            </li>
-                                            <li>
-                                                {d?.how_it_works_contribution_3}
-                                            </li>
-                                            <li>
-                                                {d?.how_it_works_contribution_4}
-                                            </li>
+                                            <li>{d?.how_it_works_contribution_1}</li>
+                                            <li>{d?.how_it_works_contribution_2}</li>
+                                            <li>{d?.how_it_works_contribution_3}</li>
+                                            <li>{d?.how_it_works_contribution_4}</li>
                                         </ol>
                                         {d?.how_it_works_contribution_continued}
                                     </AlertDialogDescription>
                                 </div>
                                 <AlertDialogFooter className="flex-shrink-0">
-                                    <AlertDialogCancel>
-                                        {d?.btn.cancel}
-                                    </AlertDialogCancel>
-                                    <AlertDialogAction>
-                                        {d?.btn.continue}
-                                    </AlertDialogAction>
+                                    <AlertDialogCancel>{d?.btn.cancel}</AlertDialogCancel>
+                                    <AlertDialogAction>{d?.btn.continue}</AlertDialogAction>
                                 </AlertDialogFooter>
                             </AlertDialogContent>
                         </AlertDialog>
@@ -359,9 +310,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                         <Textarea
                             id="tgt_message"
                             className="border border-gray-300 rounded-md lg:h-[50vh] h-auto shadow"
-                            placeholder={
-                                d?.translator.placeholder.translation_box
-                            }
+                            placeholder={d?.translator.placeholder.translation_box}
                             value={targetText}
                             onChange={(e) => {
                                 setTargetText(e.target.value);
@@ -394,11 +343,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
                         setTgtVar,
                     })}
                     <div className="flex justify-end mt-10">
-                        <Button
-                            variant={'default'}
-                            onClick={handleContribute}
-                            className="rounded-full bg-text-primary"
-                        >
+                        <Button variant={'default'} onClick={handleContribute} className="rounded-full bg-text-primary">
                             {d?.btn.contribute}
                         </Button>
                     </div>
@@ -406,31 +351,17 @@ const ContributeComp: React.FC<ContributeCompProps> = ({
             </div>
 
             <div className="mt-10 flex flex-col bg-[#EFBB3F] lg:w-1/3 max-w-full rounded-md shadow-sm lg:px-4  p-5 lg:ml-10 mx-10 mb-5">
-                <h1 className="font-bold capitalize">
-                    {d?.text_with_link.dic_link.text_before_link}
-                </h1>
+                <h1 className="font-bold capitalize">{d?.text_with_link.dic_link.text_before_link}</h1>
                 <Link href={'https://www.amazic.cat/'} target="_blank">
                     {d?.text_with_link.dic_link.link_text_1}
                 </Link>
-                <Link
-                    href={'https://tal.ircam.ma/dglai_new/'}
-                    target="_blank"
-                    scroll={false}
-                >
+                <Link href={'https://tal.ircam.ma/dglai_new/'} target="_blank" scroll={false}>
                     {d?.text_with_link.dic_link.link_text_2}
                 </Link>
-                <Link
-                    href={'https://amazigh.moroccanlanguages.com/'}
-                    target="_blank"
-                    scroll={false}
-                >
+                <Link href={'https://amazigh.moroccanlanguages.com/'} target="_blank" scroll={false}>
                     {d?.text_with_link.dic_link.link_text_3}
                 </Link>
-                <Link
-                    href={'https://amawalwarayni.com/'}
-                    target="_blank"
-                    scroll={false}
-                >
+                <Link href={'https://amawalwarayni.com/'} target="_blank" scroll={false}>
                     {d?.text_with_link.dic_link.link_text_4}
                 </Link>
             </div>

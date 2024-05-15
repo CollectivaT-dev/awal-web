@@ -18,7 +18,6 @@ export const HandleValidate = async ({entry, session, sessionUpdate, d, setTrigg
 		const validationScore = 3;
 		const updatedUser = res.data;
 		const { score, ...userWithoutScore } = updatedUser;
-		//console.log(userWithoutScore, updatedUser);
 		sessionUpdate({ user: updatedUser });
 		toast.success(
 			`${

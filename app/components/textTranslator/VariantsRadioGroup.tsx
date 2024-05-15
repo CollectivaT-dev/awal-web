@@ -14,29 +14,15 @@ interface VariantsRadioGroupProps {
 }
 const variants = ['Standard', 'Central', 'Tarifit', 'Tachelhit', 'Other']; // List of all variants
 
-export const VariantsRadioGroup = ({
-    isContributor,
-    side,
-    sourceLanguage,
-    targetLanguage,
-    srcVar,
-    tgtVar,
-    setSrcVar,
-    setTgtVar,
-}: VariantsRadioGroupProps) => {
-    const languagesToRender =
-        (side === 'left' && ['zgh', 'ber'].includes(sourceLanguage)) ||
-        (side === 'right' && ['zgh', 'ber'].includes(targetLanguage));
+export const VariantsRadioGroup = ({ isContributor, side, sourceLanguage, targetLanguage, srcVar, tgtVar, setSrcVar, setTgtVar }: VariantsRadioGroupProps) => {
+    const languagesToRender = (side === 'left' && ['zgh', 'ber'].includes(sourceLanguage)) || (side === 'right' && ['zgh', 'ber'].includes(targetLanguage));
 
     if (languagesToRender) {
         const radioGroupValue = side === 'left' ? srcVar : tgtVar;
         return (
             <RadioGroup className="flex flex-row mt-3 justify-between">
                 {variants.map((value) => (
-                    <div
-                        className="flex flex-row justify-start items-center space-x-2"
-                        key={value}
-                    >
+                    <div className="flex flex-row justify-start items-center space-x-2" key={value}>
                         <Checkbox
                             value={value}
                             id={`${value}-${side}`}
@@ -44,20 +30,18 @@ export const VariantsRadioGroup = ({
                             onCheckedChange={
                                 isContributor
                                     ? (checkedValue) => {
-                                          console.log("🚀 ~ checkedValue:", checkedValue,value)
-                                          const newValue = checkedValue
-                                              ? value
-                                              : '';
-											  console.log(newValue)
+                                          console.log('🚀 ~ checkedValue:', checkedValue, value);
+                                          const newValue = checkedValue ? value : '';
+                                          console.log(newValue);
                                           if (side === 'left') {
                                               setSrcVar(newValue);
                                           } else {
                                               setTgtVar(newValue);
                                           }
-										  
-										 
                                       }
-                                    : () => {console.log("in validator comp, radio not selectable")}
+                                    : () => {
+                                          console.log('in validator comp, radio not selectable');
+                                      }
                             }
                         />
 
