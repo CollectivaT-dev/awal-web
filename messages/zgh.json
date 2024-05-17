@@ -19,6 +19,7 @@
         "ary": "الدارجة"
     },
     "variation": {
+        "std": "ⵜⴰⵎⴰⵣⵉⵖⵜ ⵜⴰⵏⴰⵡⴰⵢⵜ",
         "central": "ⴰⵏⴰⵎⵎⴰⵙ",
         "tif": "ⵜⴰⵔⵉⴼⵉⵜ",
         "tachelhit": "ⵜⴰⵛⵍⵃⵉⵜ",
@@ -141,7 +142,7 @@
         "total_entries": "ⵜⵙⵓⵖⵍⵉⵏ ⵜⵜⵢⴰⵔⴰⴳⵏⵉⵏ",
         "total_validated_entries": "ⵜⵙⵓⵖⵍⵉⵏ ⵣⵔⵢⵏⵉⵏ",
         "total_voice_entries_number": "1",
-        "total_voice_entries": "ⵜⵙⵔⴰⴳⵜ ⵉⵜⵜⵓⵙⵓⵙⵔⵏ",
+        "total_voice_entries": "ⵜⵙⵔⴰⴳⵉⵏ ⵜⵜⵓⵙⵓⵙⵔⵏⵉⵏ",
         "total_voice_validation_number": "1",
         "total_voice_validation": "ⵜⵙⵔⴰⴳⵜ ⵉⵣⵔⵢⵏ",
         "have_account": "ⴷⴰⵔⵓⵏ ⴰⵎⵉⴹⴰⵏ?",
@@ -341,8 +342,8 @@
     },
     "carousel": {
         "c1": {
-            "heading": "Celebrating Progress and Looking Ahead: The Journey of Awal",
-            "body": "Read about latest updates on Awal on Col·lectivaT's blog",
+            "heading": "ⴰⵙⴼⵓⴳⵍⵓ ⵙ ⵡⴰⵍⴰⵢ ⴷ ⵓⵙⵎⵎⴰⵇⵇⵍ ⵙ ⵢⵉⵎⴰⵍ: ⴰⵎⵓⴷⴷⵓ ⵏ ⴰⵡⴰⵍ",
+            "body": "ⵖⵔ ⵅⴼ ⵉⵙⴷⵖⵉⵜⵏ ⵉⵎⴳⴳⵓⵔⴰ ⴳ ⴰⵡⴰⵍ ⴳ ⵓⴱⵍⵓⴳ ⵏ Col·lectivaT",
             "link": "https://collectivat.cat/blog/2024-03-20-awal-ii-en/"
         },
         "c2": {
