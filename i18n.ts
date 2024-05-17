@@ -2,8 +2,7 @@ export const locales = ['ca', 'en', 'zgh', 'fr', 'ary', 'es'];
 export type Locale = (typeof locales)[number];
 
 export const defaultLocale = locales[0];
-export const isAvailableLocale = (locale: unknown): locale is Locale =>
-    typeof locale === 'string' && locales.includes(locale);
+export const isAvailableLocale = (locale: unknown): locale is Locale => typeof locale === 'string' && locales.includes(locale);
 
 const dictionaries = {
     ca: () => import('@/messages/ca.json').then((module) => module.default),
@@ -396,7 +395,9 @@ export interface User {
     gender: string;
     name: string;
     surname: string;
-	origin:string;
+    residence_country: string;
+    residence_province: string;
+    residence_city: string;
 }
 
 interface Menu {

@@ -18,7 +18,7 @@ model User {
   gender   String?
   age      Int?
   role 	   String?
-  origin   String?
+  residence   Json?
   isSubscribed Boolean?
   isPrivacy    Boolean?
   isVerified   Boolean? @default(false)
