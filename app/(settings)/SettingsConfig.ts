@@ -33,6 +33,7 @@ export namespace AmazicConfig {
 }
 export namespace OtherLanguagesConfig {
     export interface OtherLanguagesProps {
+		
         english?: boolean;
         french?: boolean;
         catalan?: boolean;

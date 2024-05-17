@@ -40,7 +40,6 @@ export async function PATCH(req: Request) {
                 },
             });
         }
-        //console.log(body.other.body.length);
         if (body.other?.isChecked && body.other.body.length === 0) {
             return new NextResponse(JSON.stringify({ error: 'Non Empty String' }), {
                 status: 406,
