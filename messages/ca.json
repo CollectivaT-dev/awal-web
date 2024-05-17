@@ -39,7 +39,8 @@
         "age": "Anys",
         "gender": "Gènere",
         "name": "Nom",
-        "surname": "Cognom"
+        "surname": "Cognom",
+        "origin": "País de residència"
     },
     "translator": {
         "select_lang": "Selecciona l'idioma",

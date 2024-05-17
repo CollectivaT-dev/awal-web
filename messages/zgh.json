@@ -39,7 +39,8 @@
         "age": "ⴰⵡⵜⴰⵢ",
         "gender": "ⴰⴳⵏⵓⵙ",
         "name": "ⵉⵙⵎ",
-        "surname": "ⵉⵙⵎ ⵏ ⵜⵡⵊⴰ"
+        "surname": "ⵉⵙⵎ ⵏ ⵜⵡⵊⴰ",
+        "origin": "ⵜⴰⵎⵓⵔⵜ"
     },
     "translator": {
         "select_lang": "ⵙⵜⵢ ⵜⵓⵜⵍⴰⵢⵜ",

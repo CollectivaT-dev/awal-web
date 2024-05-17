@@ -39,7 +39,8 @@
         "age": "Edad",
         "gender": "Género",
         "name": "Nombre",
-        "surname": "Apellido"
+        "surname": "Apellido",
+        "origin": "País de residencia"
     },
     "translator": {
         "select_lang": "Selecciona el Idioma",
