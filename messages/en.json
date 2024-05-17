@@ -41,7 +41,7 @@
         "gender": "Gender",
         "name": "Name",
         "surname": "Surname",
-        "origin": "Country of Origin"
+        "origin": "Country of Residence"
     },
     "translator": {
         "select_lang": "Select Language",
