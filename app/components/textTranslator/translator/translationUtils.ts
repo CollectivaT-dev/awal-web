@@ -30,11 +30,10 @@ export const handleTranslate = async ({
         src: srcLanguageCode,
         tgt: tgtLanguageCode,
         token: process.env.NEXT_PUBLIC_API_TOKEN,
-        ...(source.includes('\n') && !source.endsWith('\n')
+        ...(source.includes('\n')
             ? { batch: source.replace(/\n$/, '').split('\n') }
             : { text: source.replace(/\n$/, '') }),
     };
-
     const axiosConfig = {
         method: 'post',
         maxBodyLength: Infinity,

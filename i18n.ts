@@ -387,7 +387,7 @@ interface Placeholder {
     translation_box: string;
 }
 
-interface User {
+export interface User {
     username: string;
     email: string;
     password: string;
@@ -396,6 +396,7 @@ interface User {
     gender: string;
     name: string;
     surname: string;
+	origin:string;
 }
 
 interface Menu {

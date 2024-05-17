@@ -13,44 +13,31 @@ import EmailVerification from '@/app/components/Emails/EmailVerification';
 export async function POST(req: Request) {
     try {
         const body = await req.json();
-
-       // // console.log(body);
-       // Check if username already exists
         const existingUsernameUser = await prisma.user.findUnique({
             where: { username: body.username.toLowerCase().replace(/\s/g, '') },
         });
         if (existingUsernameUser) {
-            return new NextResponse(
-                JSON.stringify({ error: 'Username already in use' }),
-                {
-                    status: 409,
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+            return new NextResponse(JSON.stringify({ error: 'Username already in use' }), {
+                status: 409,
+                headers: {
+                    'Content-Type': 'application/json',
                 },
-            );
+            });
         }
         const existingEmailUser = await prisma.user.findUnique({
             where: { email: body.email.toLowerCase() },
         });
 
         if (existingEmailUser) {
-            return new NextResponse(
-                JSON.stringify({ error: 'Email already in use' }),
-                {
-                    status: 409,
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+            return new NextResponse(JSON.stringify({ error: 'Email already in use' }), {
+                status: 409,
+                headers: {
+                    'Content-Type': 'application/json',
                 },
-            );
+            });
         }
-        const emailVerificationToken = crypto
-            .randomBytes(32)
-            .toString('base64url');
+        const emailVerificationToken = crypto.randomBytes(32).toString('base64url');
         const resetPasswordToken = crypto.randomBytes(32).toString('base64url');
-       // // console.log(emailVerificationToken);
-       // // console.log(existingUsernameUser, existingEmailUser);
         const user = await prisma.user.create({
             data: {
                 username: body.username,
@@ -64,7 +51,6 @@ export async function POST(req: Request) {
                 resetPasswordToken,
             },
         });
-
 
         SendEmail({
             from: 'Awal Email Verification<do-not-reply@awaldigital.org>',
@@ -91,4 +77,3 @@ export async function POST(req: Request) {
         return new NextResponse(null, { status: 500 });
     }
 }
-

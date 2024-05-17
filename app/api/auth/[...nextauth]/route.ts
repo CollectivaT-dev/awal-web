@@ -24,20 +24,13 @@ export const handler: AuthOptions = NextAuth({
                     throw new Error('Invalid credentials');
                 }
                 //> the local host needs to be changed to actual url
-                const res = await fetch(
-                    `${
-                        url === reqUrl
-                            ? 'http://localhost:3000/api/signIn'
-                            : 'https://awaldigital.org/api/signIn'
-                    }`,
-                    {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(credentials),
+                const res = await fetch(`${url === reqUrl ? 'http://localhost:3000/api/signIn' : 'https://awaldigital.org/api/signIn'}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
                     },
-                );
+                    body: JSON.stringify(credentials),
+                });
                 const data = await res.json();
                 //   console.log(data);
                 if (res.ok && data.email) {
@@ -64,8 +57,8 @@ export const handler: AuthOptions = NextAuth({
             //   console.log(token);
             if (trigger === 'update' && session.user) {
                 //   console.log(session.user);
-                    token.score = session.user.score;
-               
+                token.score = session.user.score;
+
                 token.username = session.user.username;
                 token.isVerified = session.user.isVerified;
                 //   console.log(token);
