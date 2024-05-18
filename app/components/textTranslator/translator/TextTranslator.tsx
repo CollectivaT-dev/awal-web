@@ -1,12 +1,11 @@
 'use client';
 import React, {
-    useCallback,
     useEffect,
     useMemo,
     useRef,
     useState,
 } from 'react';
-import { ChevronDown, Copy, Loader, Loader2 } from 'lucide-react';
+import { ChevronDown, Loader } from 'lucide-react';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import {
@@ -50,6 +49,7 @@ const TextTranslator = () => {
     const translationRequestIdRef = useRef<number | null>(null);
 
     const translateLanguages: { [key: string]: string } = {
+		ar:"لعربية الفصحى",
         ca: 'Català',
         en: 'English',
         zgh: 'ⵜⴰⵎⴰⵣⵉⵖⵜ',

@@ -409,6 +409,7 @@ interface Menu {
 }
 
 interface Variation {
+	std:string;
     central: string;
     tif: string;
     tachelhit: string;

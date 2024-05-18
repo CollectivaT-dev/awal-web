@@ -10,15 +10,7 @@ import { useRouter } from 'next/navigation';
 import { getSession, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { AlertDialog, AlertDialogCancel } from '@radix-ui/react-alert-dialog';
-import {
-    AlertDialogAction,
-    AlertDialogContent,
-    AlertDialogDescription,
-    AlertDialogFooter,
-    AlertDialogHeader,
-    AlertDialogTitle,
-    AlertDialogTrigger,
-} from '@/components/ui/alert-dialog';
+import { AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
 import useLocaleStore from '@/app/hooks/languageStore';
 import { MessagesProps, getDictionary } from '@/i18n';
 import { HandleTranslate, HandleGenerate, EntryScoreCalc } from './contributorUtils';
@@ -140,8 +132,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
             const res = await axios.post(`/api/contribute`, JSON.stringify(data));
             toast.success(
                 <span>
-                    {d?.toasters.success_contribution} <span className="font-bold text-clay-500">{contributionPoint}</span>{' '}
-                    {d?.toasters.success_contribution_points}
+                    {d?.toasters.success_contribution} <span className="font-bold text-clay-500">{contributionPoint}</span> {d?.toasters.success_contribution_points}
                 </span>,
             );
             router.refresh();
@@ -213,25 +204,28 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
                             tgtVar,
                             setSrcVar,
                             setTgtVar,
+                            d,
                         })}
                     </div>
                     <div className="flex flex-row justify-between items-center w-full my-5">
                         <div className="flex flex-row space-x-3">
-                            <Button
-                                onClick={() =>
-                                    HandleGenerate({
-                                        setRandomClicked,
-                                        sourceLanguage,
-                                        setSourceText,
-                                        setFetchedText,
-                                        d,
-                                    })
-                                }
-                                variant="default"
-                                className="rounded-full bg-text-secondary"
-                            >
-                                {d?.translator.generate}
-                            </Button>
+                            {sourceLanguage !== 'ar' && (
+                                <Button
+                                    onClick={() =>
+                                        HandleGenerate({
+                                            setRandomClicked,
+                                            sourceLanguage,
+                                            setSourceText,
+                                            setFetchedText,
+                                            d,
+                                        })
+                                    }
+                                    variant="default"
+                                    className="rounded-full bg-text-secondary"
+                                >
+                                    {d?.translator.generate}
+                                </Button>
+                            )}
                             <Button
                                 onClick={() =>
                                     HandleTranslate({
@@ -251,13 +245,6 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
                                 {d?.translator.translate}
                             </Button>
                         </div>
-                        {/* <Button
-                            variant={'destructive'}
-                            className="rounded-full bg-red-500"
-                            onClick={handleReport}
-                        >
-                            {d?.translator.report}
-                        </Button> */}
                     </div>
                 </div>
 
@@ -340,6 +327,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
                         srcVar,
                         tgtVar,
                         setSrcVar,
+                        d,
                         setTgtVar,
                     })}
                     <div className="flex justify-end mt-10">
