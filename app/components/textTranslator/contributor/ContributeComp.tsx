@@ -59,6 +59,19 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
         localStorage.setItem('tgtVar', tgtVar);
         localStorage.setItem('srcVar', srcVar);
     }, [sourceLanguage, targetLanguage, tgtVar, srcVar]);
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.metaKey || event.ctrlKey && event.key === 'Enter') {
+                handleContribute();
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [sourceText, targetText, entryScore, translateClicked, translated, initialTranslatedText, randomClicked, d]);
 
     useEffect(() => {
         const updateLanguages = () => {
@@ -114,16 +127,6 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
             toast.error(`${d?.toasters.alert_no_text}`);
             return;
         }
-        // if (
-        //     ((srcLanguageCode === 'ber' || srcLanguageCode === 'zgh') &&
-        //         !srcVar) ||
-        //     ((tgtLanguageCode === 'ber' || tgtLanguageCode === 'zgh') &&
-        //         !tgtVar)
-        // ) {
-        //     toast.error(`${d?.toasters.select_var}`);
-        //     return;
-        // }
-        //console.log(data);
         if (data.userId.length === 0) {
             router.push('/signIn', { scroll: false });
         }
