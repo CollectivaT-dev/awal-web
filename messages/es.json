@@ -41,7 +41,9 @@
         "gender": "Género",
         "name": "Nombre",
         "surname": "Apellido",
-        "origin": "País de residencia"
+        "residence_country": "País de Residencia",
+        "residence_province": "Provincia de Residencia",
+        "residence_city": "Ciudad de Residencia"
     },
     "translator": {
         "select_lang": "Selecciona el Idioma",

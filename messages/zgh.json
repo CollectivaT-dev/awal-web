@@ -41,7 +41,9 @@
         "gender": "ⴰⴳⵏⵓⵙ",
         "name": "ⵉⵙⵎ",
         "surname": "ⵉⵙⵎ ⵏ ⵜⵡⵊⴰ",
-        "origin": "ⵜⴰⵎⵓⵔⵜ"
+        "residence_country": "Country of Residence",
+        "residence_province": "Province of Residence",
+        "residence_city": "City of Residence"
     },
     "translator": {
         "select_lang": "ⵙⵜⵢ ⵜⵓⵜⵍⴰⵢⵜ",

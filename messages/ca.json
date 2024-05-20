@@ -41,7 +41,9 @@
         "gender": "Gènere",
         "name": "Nom",
         "surname": "Cognom",
-        "origin": "País de residència"
+        "residence_country": "País de Residència",
+        "residence_province": "Província de Residència",
+        "residence_city": "Ciutat de Residència"
     },
     "translator": {
         "select_lang": "Selecciona l'idioma",
