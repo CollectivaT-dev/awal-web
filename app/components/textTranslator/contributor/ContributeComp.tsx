@@ -16,6 +16,7 @@ import { MessagesProps, getDictionary } from '@/i18n';
 import { HandleTranslate, HandleGenerate, EntryScoreCalc } from './contributorUtils';
 import { VariantsRadioGroup } from '../VariantsRadioGroup';
 import { LanguageSelection } from '../LanguageSelectorDropdown';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
 
 interface ContributeCompProps {
     userId: string;
@@ -61,7 +62,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
     }, [sourceLanguage, targetLanguage, tgtVar, srcVar]);
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
-            if (event.metaKey || event.ctrlKey && event.key === 'Enter') {
+            if (event.ctrlKey && event.key === 'Enter') {
                 handleContribute();
             }
         };
@@ -72,6 +73,41 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
             window.removeEventListener('keydown', handleKeyDown);
         };
     }, [sourceText, targetText, entryScore, translateClicked, translated, initialTranslatedText, randomClicked, d]);
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.altKey && event.key === 'r') {
+                HandleGenerate({ setRandomClicked, sourceLanguage, setSourceText, setFetchedText, d });
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [sourceText, targetText, entryScore, translateClicked, translated, initialTranslatedText, randomClicked, d, sourceLanguage]);
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.altKey && event.key === 't') {
+                HandleTranslate({
+                    sourceText,
+                    sourceLanguage,
+                    targetLanguage,
+                    setTargetText,
+                    setTranslateClicked,
+                    setTranslated,
+                    setInitialTranslatedText,
+                    d,
+                });
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [sourceText, targetText, entryScore, translateClicked, translated, initialTranslatedText, randomClicked, d, sourceLanguage, targetLanguage]);
 
     useEffect(() => {
         const updateLanguages = () => {
@@ -162,8 +198,8 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
 
     return (
         <div className="text-translator">
-            <div className="lg:flex-row flex flex-col justify-center items-baseline px-10 lg:space-x-10">
-                <div className="lg:w-1/2 w-full mb-10 flex-col">
+            <div className="lg:flex-row flex flex-col justify-center items-baseline px-10 lg:space-x-10  mb-10">
+                <div className="lg:w-1/2 w-full flex-col flex relative">
                     <div className="flex flex-row justify-between lg:items-center items-baseline">
                         <LanguageSelection
                             sourceLanguage={sourceLanguage}
@@ -197,7 +233,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
                             </Button>
                         )}
                     </div>
-                    <div>
+                    <div className="py-2">
                         {VariantsRadioGroup({
                             isContributor: true,
                             side: 'left',
@@ -210,48 +246,9 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
                             d,
                         })}
                     </div>
-                    <div className="flex flex-row justify-between items-center w-full my-5">
-                        <div className="flex flex-row space-x-3">
-                            {sourceLanguage !== 'ar' && (
-                                <Button
-                                    onClick={() =>
-                                        HandleGenerate({
-                                            setRandomClicked,
-                                            sourceLanguage,
-                                            setSourceText,
-                                            setFetchedText,
-                                            d,
-                                        })
-                                    }
-                                    variant="default"
-                                    className="rounded-full bg-text-secondary"
-                                >
-                                    {d?.translator.generate}
-                                </Button>
-                            )}
-                            <Button
-                                onClick={() =>
-                                    HandleTranslate({
-                                        sourceText,
-                                        sourceLanguage,
-                                        targetLanguage,
-                                        setTargetText,
-                                        setTranslateClicked,
-                                        setTranslated,
-                                        setInitialTranslatedText,
-                                        d,
-                                    })
-                                }
-                                variant="default"
-                                className="rounded-full bg-text-primary"
-                            >
-                                {d?.translator.translate}
-                            </Button>
-                        </div>
-                    </div>
                 </div>
 
-                <div className="lg:w-1/2 w-full ">
+                <div className="lg:w-1/2 w-full flex flex-col relative">
                     <div className="flex flex-row justify-between lg:items-center items-baseline">
                         <LanguageSelection
                             sourceLanguage={sourceLanguage}
@@ -321,27 +318,83 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
                             </Button>
                         )}
                     </div>
-
-                    {VariantsRadioGroup({
-                        isContributor: true,
-                        side: 'right',
-                        sourceLanguage,
-                        targetLanguage,
-                        srcVar,
-                        tgtVar,
-                        setSrcVar,
-                        d,
-                        setTgtVar,
-                    })}
-                    <div className="flex justify-end mt-10">
-                        <Button variant={'default'} onClick={handleContribute} className="rounded-full bg-text-primary">
-                            {d?.btn.contribute}
-                        </Button>
+                    <div className="py-2">
+                        {VariantsRadioGroup({
+                            isContributor: true,
+                            side: 'right',
+                            sourceLanguage,
+                            targetLanguage,
+                            srcVar,
+                            tgtVar,
+                            setSrcVar,
+                            d,
+                            setTgtVar,
+                        })}
                     </div>
                 </div>
             </div>
-
-            <div className="mt-10 flex flex-col bg-[#EFBB3F] lg:w-1/3 max-w-full rounded-md shadow-sm lg:px-4  p-5 lg:ml-10 mx-10 mb-5">
+            {/* btns */}
+            <div className="relative">
+                <div className="flex space-x-3 absolute left-10 bottom-[-20px]">
+                    <div className="flex flex-row space-x-3">
+                        <HoverCard openDelay={100} closeDelay={100}>
+                            <HoverCardTrigger asChild>
+                                <Button
+                                    onClick={() =>
+                                        HandleGenerate({
+                                            setRandomClicked,
+                                            sourceLanguage,
+                                            setSourceText,
+                                            setFetchedText,
+                                            d,
+                                        })
+                                    }
+                                    variant="default"
+                                    className="rounded-full bg-text-secondary"
+                                >
+                                    {d?.translator.generate}
+                                </Button>
+                            </HoverCardTrigger>
+                            <HoverCardContent className="w-[100%] text-sm text-slate-700 ">Alt/Option + R</HoverCardContent>
+                        </HoverCard>
+                        <HoverCard openDelay={100} closeDelay={100}>
+                            <HoverCardTrigger asChild>
+                                <Button
+                                    onClick={() =>
+                                        HandleTranslate({
+                                            sourceText,
+                                            sourceLanguage,
+                                            targetLanguage,
+                                            setTargetText,
+                                            setTranslateClicked,
+                                            setTranslated,
+                                            setInitialTranslatedText,
+                                            d,
+                                        })
+                                    }
+                                    variant="default"
+                                    className="rounded-full bg-text-primary"
+                                >
+                                    {d?.translator.translate}
+                                </Button>
+                            </HoverCardTrigger>
+                            <HoverCardContent className="w-[100%] text-sm text-slate-700">Alt/Option + T</HoverCardContent>
+                        </HoverCard>
+                    </div>
+                </div>
+                <div className="absolute right-10 bottom-[-20px]">
+                    {' '}
+                    <HoverCard openDelay={100} closeDelay={100}>
+                        <HoverCardTrigger asChild>
+                            <Button variant={'default'} onClick={handleContribute} className="rounded-full bg-text-primary">
+                                {d?.btn.contribute}
+                            </Button>
+                        </HoverCardTrigger>
+                        <HoverCardContent className="w-[100%] text-sm text-slate-700">Ctrl + Enter</HoverCardContent>
+                    </HoverCard>
+                </div>{' '}
+            </div>
+            <div className="mt-20 flex flex-col bg-[#EFBB3F] lg:w-1/3 max-w-full rounded-md shadow-sm lg:px-4  p-5 lg:ml-10 mx-10 mb-5">
                 <h1 className="font-bold capitalize">{d?.text_with_link.dic_link.text_before_link}</h1>
                 <Link href={'https://www.amazic.cat/'} target="_blank">
                     {d?.text_with_link.dic_link.link_text_1}
