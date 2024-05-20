@@ -1,6 +1,7 @@
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { RadioGroup } from '@/components/ui/radio-group';
+import { MessagesProps } from '@/i18n';
 import { Dispatch, SetStateAction } from 'react';
 interface VariantsRadioGroupProps {
     isContributor: boolean;
@@ -9,14 +10,14 @@ interface VariantsRadioGroupProps {
     targetLanguage: string;
     srcVar: string;
     tgtVar: string;
+    d?: MessagesProps;
     setSrcVar: Dispatch<SetStateAction<string>>;
     setTgtVar: Dispatch<SetStateAction<string>>;
 }
-const variants = ['Standard', 'Central', 'Tarifit', 'Tachelhit', 'Other']; // List of all variants
 
-export const VariantsRadioGroup = ({ isContributor, side, sourceLanguage, targetLanguage, srcVar, tgtVar, setSrcVar, setTgtVar }: VariantsRadioGroupProps) => {
+export const VariantsRadioGroup = ({ isContributor, side, sourceLanguage, targetLanguage, srcVar, tgtVar, setSrcVar, setTgtVar, d }: VariantsRadioGroupProps) => {
     const languagesToRender = (side === 'left' && ['zgh', 'ber'].includes(sourceLanguage)) || (side === 'right' && ['zgh', 'ber'].includes(targetLanguage));
-
+    const variants = [d?.variation.std as string, d?.variation.central as string, d?.variation.tif as string, d?.variation.tachelhit as string, d?.variation.other as string]; // List of all variants
     if (languagesToRender) {
         const radioGroupValue = side === 'left' ? srcVar : tgtVar;
         return (

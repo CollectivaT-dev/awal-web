@@ -18,60 +18,14 @@ import { MessagesProps, getDictionary } from '@/i18n';
 import useLocaleStore from '@/app/hooks/languageStore';
 import { Separator } from '@/components/ui/separator';
 import { SelectButton } from './components/SelectButton';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Loading from '@/app/loading';
 import { Badge } from '@/components/ui/badge';
 import { X } from 'lucide-react';
 import { TextInput } from './components/FormFields/TextInput';
 import AgeInput from './components/FormFields/AgeInput';
 import GenderSelector from './components/FormFields/GenderSelector';
-import OriginSelector from './components/FormFields/OriginSelector';
-
-const formSchema = z
-    .object({
-        name: z.string(),
-        surname: z.string(),
-        username: z.string().min(1),
-        email: z.string().email(),
-        age: z.number().max(120).default(0),
-        gender: z.string(),
-        score: z.number(),
-        isVerified: z.boolean().optional(),
-        origin: z.string().optional(),
-        languages: z
-            .object({
-                english: z.boolean().default(false),
-                french: z.boolean().default(false),
-                catalan: z.boolean().default(false),
-                spanish: z.boolean().default(false),
-                arabic: z.boolean().default(false),
-            })
-            .partial(),
-        central: z.object({
-            isChecked: z.boolean().default(false),
-            oral: z.number().optional(),
-            written_tif: z.number().optional(),
-            written_lat: z.number().optional(),
-        }),
-        tachelhit: z.object({
-            isChecked: z.boolean().default(false),
-            oral: z.number().optional(),
-            written_tif: z.number().optional(),
-            written_lat: z.number().optional(),
-        }),
-        tarifit: z.object({
-            isChecked: z.boolean().default(false),
-            oral: z.number().optional(),
-            written_tif: z.number().optional(),
-            written_lat: z.number().optional(),
-        }),
-        other: z.object({
-            isChecked: z.boolean().default(false),
-            body: z.string(),
-        }),
-        isSubscribed: z.boolean().default(false).optional(),
-    })
-    .partial();
+import ResidenceSelector from './components/FormFields/ResidenceSelector';
+import { defaultValues, formResetData, formSchema, formUpdateData } from '../formSetup';
 
 type SettingFormValues = z.infer<typeof formSchema>;
 
@@ -91,7 +45,7 @@ export function SettingsPage() {
         arabic: false,
         french: false,
     });
-    const [formState, setFormState] = useState<AmazicConfig.AmazicProps | null>();
+    const [_formState, setFormState] = useState<AmazicConfig.AmazicProps | null>();
     useEffect(() => {
         const fetchDictionary = async () => {
             const m = await getDictionary(locale);
@@ -111,46 +65,45 @@ export function SettingsPage() {
     }
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
-        defaultValues: {
-            name: '',
-            surname: '',
-            email: '',
-            username: '',
-            isSubscribed: false,
-            age: 0,
-            origin: '',
-            central: {
-                isChecked: false,
-                oral: 1,
-                written_lat: 1,
-                written_tif: 1,
-            },
-            tachelhit: {
-                isChecked: false,
-                oral: 1,
-                written_lat: 1,
-                written_tif: 1,
-            },
-            tarifit: {
-                isChecked: false,
-                oral: 1,
-                written_lat: 1,
-                written_tif: 1,
-            },
-            languages: {
-                english: false,
-                spanish: false,
-                catalan: false,
-                arabic: false,
-                french: false,
-            },
-            other: {
-                isChecked: false,
-                body: '',
-            },
-        },
+        defaultValues,
     });
-
+    const defaultData = {
+        age: 0,
+        residence: {
+            country: '',
+            province: '',
+            city: '',
+        },
+        central: {
+            isChecked: false,
+            oral: 1,
+            written_lat: 1,
+            written_tif: 1,
+        },
+        tachelhit: {
+            isChecked: false,
+            oral: 1,
+            written_lat: 1,
+            written_tif: 1,
+        },
+        tarifit: {
+            isChecked: false,
+            oral: 1,
+            written_lat: 1,
+            written_tif: 1,
+        },
+        languages: {
+            english: false,
+            spanish: false,
+            catalan: false,
+            arabic: false,
+            french: false,
+        },
+        other: {
+            isChecked: false,
+            body: '',
+        },
+    };
     //# 1 fetch userData and set form values
     useEffect(() => {
         const fetchData = async () => {
@@ -159,42 +112,10 @@ export function SettingsPage() {
                 const response = await axios.get('/api/settings');
                 const userData = response.data;
                 //        console.log(userData);
-                const defaultData = {
-                    age: 0,
-                    origin: '',
-                    central: {
-                        isChecked: false,
-                        oral: 1,
-                        written_lat: 1,
-                        written_tif: 1,
-                    },
-                    tachelhit: {
-                        isChecked: false,
-                        oral: 1,
-                        written_lat: 1,
-                        written_tif: 1,
-                    },
-                    tarifit: {
-                        isChecked: false,
-                        oral: 1,
-                        written_lat: 1,
-                        written_tif: 1,
-                    },
-                    languages: {
-                        english: false,
-                        spanish: false,
-                        catalan: false,
-                        arabic: false,
-                        french: false,
-                    },
-                    other: {
-                        isChecked: false,
-                        body: '',
-                    },
-                };
+
                 const mergedData = {
                     ...userData,
-                    origin: userData.origin || defaultData.origin,
+                    residence: userData.residence || defaultData.residence,
                     age: userData.age || defaultData.age,
                     central: userData.central || defaultData.central,
                     tachelhit: userData.tachelhit || defaultData.tachelhit,
@@ -203,45 +124,7 @@ export function SettingsPage() {
                     other: userData.other || defaultData.other,
                 };
                 setFetchedData(mergedData);
-                form.reset({
-                    name: mergedData.name || '',
-                    surname: mergedData.surname || '',
-                    email: mergedData.email,
-                    username: mergedData.username,
-                    age: mergedData.age || 0,
-                    gender: mergedData.gender || '',
-                    origin: mergedData.origin || '',
-                    isSubscribed: mergedData.isSubscribed || false,
-                    other: {
-                        isChecked: mergedData.other?.isChecked || false,
-                        body: mergedData.other?.body || '',
-                    },
-                    central: {
-                        isChecked: mergedData.central?.isChecked || false,
-                        oral: mergedData.central?.oral || 0,
-                        written_lat: mergedData.central?.written_lat || 0,
-                        written_tif: mergedData.central?.written_tif || 0,
-                    },
-                    tachelhit: {
-                        isChecked: mergedData.tachelhit?.isChecked || false,
-                        oral: mergedData.tachelhit?.oral || 0,
-                        written_lat: mergedData.tachelhit?.written_lat || 0,
-                        written_tif: mergedData.tachelhit?.written_tif || 0,
-                    },
-                    tarifit: {
-                        isChecked: mergedData.tarifit?.isChecked || false,
-                        oral: mergedData.tarifit?.oral || 0,
-                        written_lat: mergedData.tarifit?.written_lat || 0,
-                        written_tif: mergedData.tarifit?.written_tif || 0,
-                    },
-                    languages: mergedData.languages || {
-                        english: false,
-                        spanish: false,
-                        catalan: false,
-                        arabic: false,
-                        french: false,
-                    },
-                });
+                form.reset(formResetData(mergedData));
                 setSelectedLanguages(mergedData.languages);
                 setLoading(false);
             } catch (error) {
@@ -256,39 +139,12 @@ export function SettingsPage() {
     //# 2 update user data
     const handleUpdate = async (updateData: SettingFormValues) => {
         const { score, ...dataWithoutScore } = updateData;
+        // console.log(updateData)
         const newData = {
             ...updateData,
-            other: {
-                isChecked: form.getValues('other.isChecked'),
-                body: form.getValues('other.body') || '',
-            },
-            central: {
-                isChecked: form.getValues('central.isChecked'),
-                oral: form.getValues('central.oral') || 0,
-                written_lat: form.getValues('central.written_lat') || 0,
-                written_tif: form.getValues('central.written_tif') || 0,
-            },
-            tachelhit: {
-                isChecked: form.getValues('tachelhit.isChecked'),
-                oral: form.getValues('tachelhit.oral') || 0,
-                written_lat: form.getValues('tachelhit.written_lat') || 0,
-                written_tif: form.getValues('tachelhit.written_tif') || 0,
-            },
-            tarifit: {
-                isChecked: form.getValues('tarifit.isChecked'),
-                oral: form.getValues('tarifit.oral') || 0,
-                written_lat: form.getValues('tarifit.written_lat') || 0,
-                written_tif: form.getValues('tarifit.written_tif') || 0,
-            },
-            languages: form.getValues('languages') || {
-                // fallback value
-                english: false,
-                spanish: false,
-                catalan: false,
-                arabic: false,
-                french: false,
-            },
+            ...formUpdateData(form),
         };
+        // console.log(newData);
         //        console.log(updateData);
         //        console.log(newData);
 
@@ -469,9 +325,9 @@ export function SettingsPage() {
                             {/* // age */}
                             <AgeInput d={d} form={form} loading={loading} />
                             {/* //> gender */}
-							<GenderSelector d={d} form={form} />
+                            <GenderSelector d={d} form={form} />
                             {/* country of origin */}
-							<OriginSelector d={d} form={form} />
+                            <ResidenceSelector d={d} form={form} residence={form.getValues('residence') ?? defaultData.residence} />
                         </div>
                         {/* subscribe check */}
                         <FormField
@@ -518,11 +374,7 @@ export function SettingsPage() {
                                                         <FormLabel>{d?.setting.oral} </FormLabel>
 
                                                         <FormControl>
-                                                            <SelectButton
-                                                                currentValue={form.watch('central.oral') || 0}
-                                                                name="central.oral"
-                                                                onChange={handleButtonChange}
-                                                            />
+                                                            <SelectButton currentValue={form.watch('central.oral') || 0} name="central.oral" onChange={handleButtonChange} />
                                                         </FormControl>
                                                     </FormItem>
                                                 )}
@@ -534,11 +386,7 @@ export function SettingsPage() {
                                                     <FormItem>
                                                         <FormLabel>{d?.setting.written_lat}</FormLabel>
                                                         <FormControl>
-                                                            <SelectButton
-                                                                currentValue={form.watch('central.written_lat') || 0}
-                                                                name="central.written_lat"
-                                                                onChange={handleButtonChange}
-                                                            />
+                                                            <SelectButton currentValue={form.watch('central.written_lat') || 0} name="central.written_lat" onChange={handleButtonChange} />
                                                         </FormControl>
                                                     </FormItem>
                                                 )}
@@ -550,11 +398,7 @@ export function SettingsPage() {
                                                     <FormItem>
                                                         <FormLabel>{d?.setting.written_tif} </FormLabel>
                                                         <FormControl>
-                                                            <SelectButton
-                                                                currentValue={form.watch('central.written_tif') || 0}
-                                                                name="central.written_tif"
-                                                                onChange={handleButtonChange}
-                                                            />
+                                                            <SelectButton currentValue={form.watch('central.written_tif') || 0} name="central.written_tif" onChange={handleButtonChange} />
                                                         </FormControl>
                                                     </FormItem>
                                                 )}
@@ -591,11 +435,7 @@ export function SettingsPage() {
                                                         <FormLabel> {d?.setting.oral} </FormLabel>
 
                                                         <FormControl>
-                                                            <SelectButton
-                                                                currentValue={form.watch('tachelhit.oral') || 0}
-                                                                name="tachelhit.oral"
-                                                                onChange={handleButtonChange}
-                                                            />
+                                                            <SelectButton currentValue={form.watch('tachelhit.oral') || 0} name="tachelhit.oral" onChange={handleButtonChange} />
                                                         </FormControl>
                                                     </FormItem>
                                                 )}
@@ -607,11 +447,7 @@ export function SettingsPage() {
                                                     <FormItem>
                                                         <FormLabel> {d?.setting.written_lat} </FormLabel>
                                                         <FormControl>
-                                                            <SelectButton
-                                                                currentValue={form.watch('tachelhit.written_lat') || 0}
-                                                                name="tachelhit.written_lat"
-                                                                onChange={handleButtonChange}
-                                                            />
+                                                            <SelectButton currentValue={form.watch('tachelhit.written_lat') || 0} name="tachelhit.written_lat" onChange={handleButtonChange} />
                                                         </FormControl>
                                                     </FormItem>
                                                 )}
@@ -623,11 +459,7 @@ export function SettingsPage() {
                                                     <FormItem>
                                                         <FormLabel>{d?.setting.written_tif} </FormLabel>
                                                         <FormControl>
-                                                            <SelectButton
-                                                                currentValue={form.watch('tachelhit.written_tif') || 0}
-                                                                name="tachelhit.written_tif"
-                                                                onChange={handleButtonChange}
-                                                            />
+                                                            <SelectButton currentValue={form.watch('tachelhit.written_tif') || 0} name="tachelhit.written_tif" onChange={handleButtonChange} />
                                                         </FormControl>
                                                     </FormItem>
                                                 )}
@@ -664,11 +496,7 @@ export function SettingsPage() {
                                                         <FormLabel> {d?.setting.oral} </FormLabel>
 
                                                         <FormControl>
-                                                            <SelectButton
-                                                                currentValue={form.watch('tarifit.oral') || 0}
-                                                                name="tarifit.oral"
-                                                                onChange={handleButtonChange}
-                                                            />
+                                                            <SelectButton currentValue={form.watch('tarifit.oral') || 0} name="tarifit.oral" onChange={handleButtonChange} />
                                                         </FormControl>
                                                     </FormItem>
                                                 )}
@@ -680,11 +508,7 @@ export function SettingsPage() {
                                                     <FormItem>
                                                         <FormLabel>{d?.setting.written_lat}</FormLabel>
                                                         <FormControl>
-                                                            <SelectButton
-                                                                currentValue={form.watch('tarifit.written_lat') || 0}
-                                                                name="tarifit.written_lat"
-                                                                onChange={handleButtonChange}
-                                                            />
+                                                            <SelectButton currentValue={form.watch('tarifit.written_lat') || 0} name="tarifit.written_lat" onChange={handleButtonChange} />
                                                         </FormControl>
                                                     </FormItem>
                                                 )}
@@ -696,11 +520,7 @@ export function SettingsPage() {
                                                     <FormItem>
                                                         <FormLabel>{d?.setting.written_tif}</FormLabel>
                                                         <FormControl>
-                                                            <SelectButton
-                                                                currentValue={form.watch('tarifit.written_tif') || 0}
-                                                                name="tarifit.written_tif"
-                                                                onChange={handleButtonChange}
-                                                            />
+                                                            <SelectButton currentValue={form.watch('tarifit.written_tif') || 0} name="tarifit.written_tif" onChange={handleButtonChange} />
                                                         </FormControl>
                                                     </FormItem>
                                                 )}

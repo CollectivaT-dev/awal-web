@@ -41,7 +41,9 @@
         "gender": "Gender",
         "name": "Name",
         "surname": "Surname",
-        "origin": "Country of Residence"
+        "residence_country": "Country of Residence",
+        "residence_province": "Province of Residence",
+        "residence_city": "City of Residence"
     },
     "translator": {
         "select_lang": "Select Language",
@@ -169,7 +171,7 @@
     "btn": {
         "continue": "Continue",
         "cancel": "Cancel",
-        "contribute": "Contribute",
+        "contribute": "Contribute (Ctrl/Cmd + Enter)",
         "clear": "Clear text",
         "skip": "Skip"
     },
