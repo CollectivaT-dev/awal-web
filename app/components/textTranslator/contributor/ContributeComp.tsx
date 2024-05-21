@@ -357,7 +357,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
                                     {d?.translator.generate}
                                 </Button>
                             </HoverCardTrigger>
-                            <HoverCardContent className="w-[100%] text-sm text-slate-700 ">Alt/Option + R</HoverCardContent>
+                            <HoverCardContent className="w-[100%] text-sm text-slate-700 ">F1</HoverCardContent>
                         </HoverCard>
                         <HoverCard openDelay={100} closeDelay={100}>
                             <HoverCardTrigger asChild>
@@ -380,7 +380,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
                                     {d?.translator.translate}
                                 </Button>
                             </HoverCardTrigger>
-                            <HoverCardContent className="w-[100%] text-sm text-slate-700">Alt/Option + T</HoverCardContent>
+                            <HoverCardContent className="w-[100%] text-sm text-slate-700">F2</HoverCardContent>
                         </HoverCard>
                     </div>
                 </div>
