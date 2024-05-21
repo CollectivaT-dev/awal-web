@@ -19,7 +19,7 @@
         "ary": "الدارجة"
     },
     "variation": {
-        "std": "Marocain standard",
+        "std": "Tamazight standard marocain",
         "central": "Central",
         "tif": "Tarifit",
         "tachelhit": "Tachelhit",
@@ -99,7 +99,7 @@
         },
         "dic_link": {
             "text_before_link": "Ressources Utiles",
-            "link_text_1": "Dictionnaire Catalan-Amazigh",
+            "link_text_1": "Dictionnaire Catalan-Tamazight",
             "link_text_2": "Dictionnaire Général de la Langue Amazighe",
             "link_text_3": "Dictionnaire Anglais-Tamazight",
             "link_text_4": "Dictionnaire arabe-tamazight AmaWar"
