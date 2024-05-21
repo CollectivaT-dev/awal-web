@@ -171,7 +171,7 @@
     "btn": {
         "continue": "Continue",
         "cancel": "Cancel",
-        "contribute": "Contribute (Ctrl/Cmd + Enter)",
+        "contribute": "Contribute (Ctrl + Enter)",
         "clear": "Clear text",
         "skip": "Skip"
     },

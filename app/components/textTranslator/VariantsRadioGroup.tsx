@@ -46,7 +46,9 @@ export const VariantsRadioGroup = ({ isContributor, side, sourceLanguage, target
                             }
                         />
 
-                        <Label htmlFor={`${value}-${side}`}>{value}</Label>
+                        <Label htmlFor={`${value}-${side}`} className=" lg:text-base text-[12px]">
+                            {value}
+                        </Label>
                     </div>
                 ))}
             </RadioGroup>
