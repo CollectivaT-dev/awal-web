@@ -75,7 +75,8 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
     }, [sourceText, targetText, entryScore, translateClicked, translated, initialTranslatedText, randomClicked, d]);
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
-            if (event.altKey && event.key === 'r') {
+            // if (event.altKey && event.key === 'r') {
+            if ((event.altKey || event.metaKey) && event.key === 'r') {
                 HandleGenerate({ setRandomClicked, sourceLanguage, setSourceText, setFetchedText, d });
             }
         };
@@ -88,7 +89,8 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
     }, [sourceText, targetText, entryScore, translateClicked, translated, initialTranslatedText, randomClicked, d, sourceLanguage]);
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
-            if (event.altKey && event.key === 't') {
+            // if (event.altKey && event.key === 't') {
+            if ((event.altKey || event.metaKey) && event.key === 't') {
                 HandleTranslate({
                     sourceText,
                     sourceLanguage,
