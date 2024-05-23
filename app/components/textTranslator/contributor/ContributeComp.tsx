@@ -76,7 +76,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
             // if (event.altKey && event.key === 'r') {
-            if (event.key === 'F1') {
+            if (event.key === 'f2') {
                 HandleGenerate({ setRandomClicked, sourceLanguage, setSourceText, setFetchedText, d });
             }
         };
@@ -90,7 +90,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
             // if (event.altKey && event.key === 't') {
-            if (event.key === 'F2') {
+            if (event.key === 'F4') {
                 HandleTranslate({
                     sourceText,
                     sourceLanguage,
@@ -357,7 +357,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
                                     {d?.translator.generate}
                                 </Button>
                             </HoverCardTrigger>
-                            <HoverCardContent className="w-[100%] text-sm text-slate-700 ">F1</HoverCardContent>
+                            <HoverCardContent className="w-[100%] text-sm text-slate-700 ">F2</HoverCardContent>
                         </HoverCard>
                         <HoverCard openDelay={100} closeDelay={100}>
                             <HoverCardTrigger asChild>
@@ -380,7 +380,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
                                     {d?.translator.translate}
                                 </Button>
                             </HoverCardTrigger>
-                            <HoverCardContent className="w-[100%] text-sm text-slate-700">F2</HoverCardContent>
+                            <HoverCardContent className="w-[100%] text-sm text-slate-700">F4</HoverCardContent>
                         </HoverCard>
                     </div>
                 </div>
