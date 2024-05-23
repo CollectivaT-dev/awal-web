@@ -9,16 +9,8 @@ import { motion } from 'framer-motion';
 import { Skeleton } from '../skeleton';
 import useLocaleStore from '@/app/hooks/languageStore';
 import { MessagesProps, getDictionary } from '@/i18n';
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuLabel,
-    DropdownMenuRadioGroup,
-    DropdownMenuRadioItem,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from '../dropdown-menu';
-import { Globe } from 'lucide-react';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuTrigger } from '../dropdown-menu';
+import { Globe, X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import Loading from '@/loading';
@@ -29,9 +21,9 @@ import VerificationAlert from '@/components/VerificationAlert';
 
 const AppBar = () => {
     // console.log(user.isVerified);
-    const {data:session } = useSession();
-    const user = session?.user
-	const [open, setOpen] = useState(false);
+    const { data: session } = useSession();
+    const user = session?.user;
+    const [open, setOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
     // get locale and set new local
     const { locale, setLocale } = useLocaleStore();
@@ -45,10 +37,7 @@ const AppBar = () => {
         };
         fetchDictionary();
     }, [locale]);
-    const url =
-        process.env.NODE_ENV === 'development'
-            ? 'http://localhost:3000'
-            : 'https://awaldigital.org';
+    const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://awaldigital.org';
     const changeLocale = (newLocale: string) => {
         setLocale(newLocale);
         //console.log(newLocale);
@@ -89,10 +78,7 @@ const AppBar = () => {
     };
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
-            if (
-                menuRef.current &&
-                !menuRef.current.contains(event.target as Node)
-            ) {
+            if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
                 setOpen(false);
             }
         };
@@ -117,61 +103,29 @@ const AppBar = () => {
         return <Loading />;
     }
     return (
-        <>
+        <div className="flex flex-row h-auto justify-stretch items-baseline">
             <div
-                className="relative flex flex-row items-center gap-4 p-4 " // Use flex-col and flex-row classes for responsive behavior
+                className="flex flex-row justify-center items-center relative" // Use flex-col and flex-row classes for responsive behavior
                 ref={menuRef}
             >
                 {/* menu button */}
-                <motion.button
-                    variants={{
-                        open: { rotate: 90, scale: 1 },
-                        closed: { rotate: 0, scale: 1 },
-                    }}
-                    animate={open ? 'open' : 'closed'}
-                >
-                    <Button
-                        size={'icon'}
-                        onClick={handleClick}
-                        className="bg-transparent hover:bg-transparent mr-3"
-                    >
-                        {open ? (
-                            <Image
-                                src={'/logo_line.svg'}
-                                height={100}
-                                width={100}
-                                alt="menu_icon"
-                            />
-                        ) : (
-                            <Image
-                                src={'/logo_line.svg'}
-                                height={100}
-                                width={100}
-                                alt="menu_icon"
-                            />
-                        )}
+                <motion.button animate={open ? 'open' : 'closed'}>
+                    <Button size={'icon'} onClick={handleClick} className="bg-transparent hover:bg-transparent mr-3 absolute left-1 top-2">
+                        {open ? <X height={100} width={100} className="left-0 top-0 text-black" /> : <Image src={'/logo_line.svg'} height={100} width={100} alt="menu_icon" />}
                     </Button>
                 </motion.button>
                 {/* char logo */}
-                <div className="w-[7%] hidden lg:inline-block">
-                    <Link href={'/'} scroll={false}>
-                        <Image
-                            src={'/logo_awal.svg'}
-                            width={`${110}`}
-                            height={30}
-                            alt="logo_zgh"
-                            className=" bg-yellow-500 w-full px-[3px] py-[3px] laptop:px-[8px] laptop:py-[6px]"
-                        />
+                <div className="absolute left-20 top-0">
+                    <div className="w-[7%] hidden lg:inline-block">
+                        <Link href={'/'} scroll={false}>
+                            <Image src={'/logo_awal.svg'} width={`${110}`} height={30} alt="logo_zgh" className=" bg-yellow-500 px-[3px] py-[3px] laptop:px-[8px] laptop:py-[6px]" />
+                        </Link>
+                    </div>
+                    {/* awal link */}
+                    <Link className=" text-yellow-500 text-md font-bold md:font-normal md:text-[2.5rem] lg:ml-5" href={'/'} scroll={false}>
+                        AWAL
                     </Link>
                 </div>
-                {/* awal link */}
-                <Link
-                    className=" text-yellow-500 text-md font-bold md:font-normal md:text-[2.5rem] "
-                    href={'/'}
-                    scroll={false}
-                >
-                    AWAL
-                </Link>
                 {/* sign in */}
                 <div className="flex flex-row items-center justify-center space-x-3 ml-auto">
                     <SignInButton />
@@ -181,42 +135,27 @@ const AppBar = () => {
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <Button size={'icon'}>
-                                    <Globe width={20} />
+                                    <Globe width={50}  className='text-slate-100'/>
                                 </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent className="w-56">
-                                <DropdownMenuLabel>
-                                    {d?.translator.select_lang}
-                                </DropdownMenuLabel>
+                                <DropdownMenuLabel>{d?.translator.select_lang}</DropdownMenuLabel>
                                 <DropdownMenuSeparator />
-                                <DropdownMenuRadioGroup
-                                    value={locale}
-                                    onValueChange={changeLocale}
-                                >
-                                    <DropdownMenuRadioItem value="ca">
-                                        {d?.language?.ca}
-                                    </DropdownMenuRadioItem>
-                                    <DropdownMenuRadioItem value="es">
-                                        {d?.language?.es}
-                                    </DropdownMenuRadioItem>
-                                    <DropdownMenuRadioItem value="en">
-                                        {d?.language?.en}
-                                    </DropdownMenuRadioItem>
+                                <DropdownMenuRadioGroup value={locale} onValueChange={changeLocale}>
+                                    <DropdownMenuRadioItem value="ca">{d?.language?.ca}</DropdownMenuRadioItem>
+                                    <DropdownMenuRadioItem value="es">{d?.language?.es}</DropdownMenuRadioItem>
+                                    <DropdownMenuRadioItem value="en">{d?.language?.en}</DropdownMenuRadioItem>
 
-                                    <DropdownMenuRadioItem value="fr">
-                                        {d?.language?.fr}
-                                    </DropdownMenuRadioItem>
+                                    <DropdownMenuRadioItem value="fr">{d?.language?.fr}</DropdownMenuRadioItem>
                                     {/* <DropdownMenuRadioItem value="ary">
                             {d?.language?.ary}
                         </DropdownMenuRadioItem> */}
-                                    <DropdownMenuRadioItem value="zgh">
-                                        {d?.language?.zgh}
-                                    </DropdownMenuRadioItem>
+                                    <DropdownMenuRadioItem value="zgh">{d?.language?.zgh}</DropdownMenuRadioItem>
                                 </DropdownMenuRadioGroup>
                             </DropdownMenuContent>
                         </DropdownMenu>
                     </div>
-                    <div className="hidden lg:flex">
+                    <div className="hidden lg:flex w-auto h-auto">
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <Button>
@@ -224,38 +163,22 @@ const AppBar = () => {
                                     {locale === 'es' && d?.language?.es}
                                     {locale === 'ca' && d?.language?.ca}
                                     {locale === 'en' && d?.language?.en}
-                                    {/* {locale === 'ary' && d?.language?.ary} */}
                                     {locale === 'fr' && d?.language?.fr}
                                     {locale === 'zgh' && d?.language?.zgh}
                                 </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent className="w-56">
-                                <DropdownMenuLabel>
-                                    {d?.translator.select_lang}
-                                </DropdownMenuLabel>
+                                <DropdownMenuLabel>{d?.translator.select_lang}</DropdownMenuLabel>
                                 <DropdownMenuSeparator />
-                                <DropdownMenuRadioGroup
-                                    value={locale}
-                                    onValueChange={changeLocale}
-                                >
-                                    <DropdownMenuRadioItem value="ca">
-                                        {d?.language?.ca}
-                                    </DropdownMenuRadioItem>
-                                    <DropdownMenuRadioItem value="es">
-                                        {d?.language?.es}
-                                    </DropdownMenuRadioItem>
-                                    <DropdownMenuRadioItem value="en">
-                                        {d?.language?.en}
-                                    </DropdownMenuRadioItem>
-                                    <DropdownMenuRadioItem value="fr">
-                                        {d?.language?.fr}
-                                    </DropdownMenuRadioItem>
+                                <DropdownMenuRadioGroup value={locale} onValueChange={changeLocale}>
+                                    <DropdownMenuRadioItem value="ca">{d?.language?.ca}</DropdownMenuRadioItem>
+                                    <DropdownMenuRadioItem value="es">{d?.language?.es}</DropdownMenuRadioItem>
+                                    <DropdownMenuRadioItem value="en">{d?.language?.en}</DropdownMenuRadioItem>
+                                    <DropdownMenuRadioItem value="fr">{d?.language?.fr}</DropdownMenuRadioItem>
                                     {/* <DropdownMenuRadioItem value="ary">
                             {d?.language?.ary}
                         </DropdownMenuRadioItem> */}
-                                    <DropdownMenuRadioItem value="zgh">
-                                        {d?.language?.zgh}
-                                    </DropdownMenuRadioItem>
+                                    <DropdownMenuRadioItem value="zgh">{d?.language?.zgh}</DropdownMenuRadioItem>
                                 </DropdownMenuRadioGroup>
                             </DropdownMenuContent>
                         </DropdownMenu>
@@ -285,11 +208,7 @@ const AppBar = () => {
                         className="absolute top-full left-3 bg-text-accent py-4 px-10 z-10 rounded-xl"
                     >
                         <ul className="space-y-2 mt-2">
-                            {user?.email?.includes('test' || 'alp') && (
-                                <Button onClick={handleEmail}>
-                                    send test email
-                                </Button>
-                            )}
+                            {user?.email?.includes('test' || 'alp') && <Button onClick={handleEmail}>send test email</Button>}
                             <li>
                                 <Link href={'/translate'} scroll={false}>
                                     {d?.menu.translator}
@@ -333,7 +252,7 @@ const AppBar = () => {
                     }}
                 />
             )}
-        </>
+        </div>
     );
 };
 

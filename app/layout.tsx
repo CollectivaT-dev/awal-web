@@ -20,28 +20,22 @@ export const metadata: Metadata = {
     keywords: 'translation, amazic, catalan, tamazight, marginalized',
 };
 
-export default function RootLayout({
-    children,
-}: {
-    children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     const Locale = headers().get('Accept-Language')?.slice(0, 2) ?? 'ca';
     return (
         <html lang={Locale}>
-            <body className={inter.className}>
-                <div className=" bg-bg-gradient">
-                    <ClientProvider>
-                        <SessionProviders>
-                            <ToastProvider />
-                            {/* <RegisterModal/> */}
-                            <Suspense fallback={<Loading />}>
-                                <Navbar />
-                            </Suspense>
-                            {children}
-                            <Footer />
-                        </SessionProviders>
-                    </ClientProvider>
-                </div>
+            <body className={`${inter.className} bg-bg-gradient p-5`}>
+                <ClientProvider>
+                    <SessionProviders>
+                        <ToastProvider />
+                        <Suspense fallback={<Loading />}>
+                            <Navbar />
+                        </Suspense>
+                        {children}
+                        <Footer />
+                    </SessionProviders>
+                </ClientProvider>
+
                 <SpeedInsights />
                 <Analytics />
             </body>
