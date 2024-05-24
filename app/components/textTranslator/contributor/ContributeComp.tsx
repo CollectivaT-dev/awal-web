@@ -76,7 +76,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
             // if (event.altKey && event.key === 'r') {
-            if (event.key === 'f2') {
+            if (event.key === 'F2') {
                 HandleGenerate({ setRandomClicked, sourceLanguage, setSourceText, setFetchedText, d });
             }
         };
