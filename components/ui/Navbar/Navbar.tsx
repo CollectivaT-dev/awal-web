@@ -103,7 +103,7 @@ const AppBar = () => {
         return <Loading />;
     }
     return (
-        <div className="flex flex-row h-auto justify-stretch items-baseline">
+        <div className="flex flex-col h-auto justify-stretch items-baseline">
             <div
                 className="flex flex-row justify-center items-center relative" // Use flex-col and flex-row classes for responsive behavior
                 ref={menuRef}

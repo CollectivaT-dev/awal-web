@@ -19,9 +19,10 @@
 # misc
 .DS_Store
 *.pem
-/.cspell/
-/.vscode/
-
+.cspell/
+.vscode/
+.million/
+cspell.json
 # debug
 npm-debug.log*
 yarn-debug.log*
@@ -33,7 +34,6 @@ yarn-error.log*
 .env.*
 # vercel
 .vercel
-
 # typescript
 *.tsbuildinfo
 next-env.d.ts
