@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 import { Skeleton } from '../skeleton';
 import useLocaleStore from '@/app/hooks/languageStore';
 import { MessagesProps, getDictionary } from '@/i18n';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuLabel, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuTrigger } from '../dropdown-menu';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuTrigger } from '../dropdown-menu';
 import { Globe, X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
@@ -20,7 +20,6 @@ import { isAxiosError } from 'axios';
 import VerificationAlert from '@/components/VerificationAlert';
 
 const AppBar = () => {
-    // console.log(user.isVerified);
     const { data: session } = useSession();
     const user = session?.user;
     const [open, setOpen] = useState(false);
@@ -102,147 +101,145 @@ const AppBar = () => {
     if (loading) {
         return <Loading />;
     }
+    console.log(locale);
+    console.log(d?.language?.zgh);
     return (
-        <div className="flex flex-col h-auto justify-stretch items-baseline">
-            <div
-                className="flex flex-row justify-center items-center relative" // Use flex-col and flex-row classes for responsive behavior
-                ref={menuRef}
-            >
-                {/* menu button */}
-                <motion.button animate={open ? 'open' : 'closed'}>
-                    <Button size={'icon'} onClick={handleClick} className="bg-transparent hover:bg-transparent mr-3 absolute left-1 top-2">
-                        {open ? <X height={100} width={100} className="left-0 top-0 text-black" /> : <Image src={'/logo_line.svg'} height={100} width={100} alt="menu_icon" />}
-                    </Button>
-                </motion.button>
-                {/* char logo */}
-                <div className="absolute left-20 top-0">
-                    <div className="w-[7%] hidden lg:inline-block">
-                        <Link href={'/'} scroll={false}>
-                            <Image src={'/logo_awal.svg'} width={`${110}`} height={30} alt="logo_zgh" className=" bg-yellow-500 px-[3px] py-[3px] laptop:px-[8px] laptop:py-[6px]" />
-                        </Link>
-                    </div>
-                    {/* awal link */}
-                    <Link className=" text-yellow-500 text-md font-bold md:font-normal md:text-[2.5rem] lg:ml-5" href={'/'} scroll={false}>
-                        AWAL
-                    </Link>
-                </div>
-                {/* sign in */}
-                <div className="flex flex-row items-center justify-center space-x-3 ml-auto">
-                    <SignInButton />
-                    {/* user info rendering */}
+        <div className="flex flex-col h-auto w-auto justify-stretch items-baseline">
+            <header className="relative">
+                <div className="flex items-center justify-between px-4 py-3" ref={menuRef}>
+                    <div className="flex items-center gap-4">
+                        <motion.button animate={open ? 'open' : 'closed'}>
+                            <Button size={'icon'} onClick={handleClick} className="bg-transparent hover:bg-transparent mr-3">
+                                {open ? <X height={100} width={100} className="left-0 top-0 text-black" /> : <Image src={'/logo_line.svg'} height={100} width={100} alt="menu_icon" />}
+                            </Button>
+                        </motion.button>
+                        <div className="flex items-center">
+                            <Link href={'/'} scroll={false} className="w-[10em] hidden lg:flex">
+                                <Image src={'/logo_awal.svg'} width={100} height={100} alt="logo_zgh" className="bg-yellow-500 px-2 py-1 " />
+                            </Link>
 
-                    <div className="flex lg:hidden">
-                        <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                                <Button size={'icon'}>
-                                    <Globe width={50}  className='text-slate-100'/>
-                                </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent className="w-56">
-                                <DropdownMenuLabel>{d?.translator.select_lang}</DropdownMenuLabel>
-                                <DropdownMenuSeparator />
-                                <DropdownMenuRadioGroup value={locale} onValueChange={changeLocale}>
-                                    <DropdownMenuRadioItem value="ca">{d?.language?.ca}</DropdownMenuRadioItem>
-                                    <DropdownMenuRadioItem value="es">{d?.language?.es}</DropdownMenuRadioItem>
-                                    <DropdownMenuRadioItem value="en">{d?.language?.en}</DropdownMenuRadioItem>
-
-                                    <DropdownMenuRadioItem value="fr">{d?.language?.fr}</DropdownMenuRadioItem>
-                                    {/* <DropdownMenuRadioItem value="ary">
-                            {d?.language?.ary}
-                        </DropdownMenuRadioItem> */}
-                                    <DropdownMenuRadioItem value="zgh">{d?.language?.zgh}</DropdownMenuRadioItem>
-                                </DropdownMenuRadioGroup>
-                            </DropdownMenuContent>
-                        </DropdownMenu>
+                            {/* awal link */}
+                            <Link className="text-yellow-500/95 text-md font-bold md:font-normal md:text-[2.5rem] lg:ml-5" href={'/'} scroll={false}>
+                                AWAL
+                            </Link>
+                        </div>
                     </div>
-                    <div className="hidden lg:flex w-auto h-auto">
-                        <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                                <Button>
-                                    <Globe className="mr-3" />
-                                    {locale === 'es' && d?.language?.es}
-                                    {locale === 'ca' && d?.language?.ca}
-                                    {locale === 'en' && d?.language?.en}
-                                    {locale === 'fr' && d?.language?.fr}
-                                    {locale === 'zgh' && d?.language?.zgh}
-                                </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent className="w-56">
-                                <DropdownMenuLabel>{d?.translator.select_lang}</DropdownMenuLabel>
-                                <DropdownMenuSeparator />
-                                <DropdownMenuRadioGroup value={locale} onValueChange={changeLocale}>
-                                    <DropdownMenuRadioItem value="ca">{d?.language?.ca}</DropdownMenuRadioItem>
-                                    <DropdownMenuRadioItem value="es">{d?.language?.es}</DropdownMenuRadioItem>
-                                    <DropdownMenuRadioItem value="en">{d?.language?.en}</DropdownMenuRadioItem>
-                                    <DropdownMenuRadioItem value="fr">{d?.language?.fr}</DropdownMenuRadioItem>
-                                    {/* <DropdownMenuRadioItem value="ary">
-                            {d?.language?.ary}
-                        </DropdownMenuRadioItem> */}
-                                    <DropdownMenuRadioItem value="zgh">{d?.language?.zgh}</DropdownMenuRadioItem>
-                                </DropdownMenuRadioGroup>
-                            </DropdownMenuContent>
-                        </DropdownMenu>
+                    <div className="flex-grow"></div>
+                    <div className="flex items-center gap-4">
+                        <SignInButton />
+                        <div className="hidden lg:flex lg:flex-row lg:relative">
+                            <DropdownMenu>
+                                <DropdownMenuTrigger>
+                                    <Button className="w-[10rem]">
+                                        <Globe className="mr-3" color="white" />
+                                        {locale === 'es' && d?.language?.es}
+                                        {locale === 'ca' && d?.language?.ca}
+                                        {locale === 'en' && d?.language?.en}
+                                        {locale === 'fr' && d?.language?.fr}
+                                        {locale === 'zgh' && d?.language?.zgh}
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent className="absolute right-[2vw]  w-56 flex flex-col items-center justify-center h-auto ">
+                                    <DropdownMenuLabel>{d?.translator.select_lang}</DropdownMenuLabel>
+                                    <DropdownMenuSeparator />
+                                    <DropdownMenuRadioGroup value={locale} onValueChange={changeLocale}>
+                                        <DropdownMenuRadioItem value="ca">{d?.language?.ca}a</DropdownMenuRadioItem>
+                                        <DropdownMenuRadioItem value="es">{d?.language?.es}</DropdownMenuRadioItem>
+                                        <DropdownMenuRadioItem value="en">{d?.language?.en}</DropdownMenuRadioItem>
+                                        <DropdownMenuRadioItem value="fr">{d?.language?.fr}</DropdownMenuRadioItem>
+
+                                        <DropdownMenuRadioItem value="zgh">{d?.language?.zgh}</DropdownMenuRadioItem>
+                                    </DropdownMenuRadioGroup>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+                        </div>
+                        {/* for small screen */}
+                        <div className="lg:hidden flex flex-row relative">
+                            <DropdownMenu>
+                                <DropdownMenuTrigger>
+                                    <Button size={'icon'}>
+                                        <Globe className="m-3" color="white" />
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent className="absolute right-[2vw] mt-2 w-[10rem] flex flex-col items-center justify-center h-auto ">
+                                    <DropdownMenuLabel className="whitespace-nowrap">{d?.translator.select_lang}</DropdownMenuLabel>
+                                    <DropdownMenuSeparator />
+                                    <DropdownMenuRadioGroup value={locale} onValueChange={changeLocale}>
+                                        <DropdownMenuRadioItem value="ca">{d?.language?.ca}a</DropdownMenuRadioItem>
+                                        <DropdownMenuRadioItem value="es">{d?.language?.es}</DropdownMenuRadioItem>
+                                        <DropdownMenuRadioItem value="en">{d?.language?.en}</DropdownMenuRadioItem>
+                                        <DropdownMenuRadioItem value="fr">{d?.language?.fr}</DropdownMenuRadioItem>
+
+                                        <DropdownMenuRadioItem value="zgh">{d?.language?.zgh}</DropdownMenuRadioItem>
+                                    </DropdownMenuRadioGroup>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+                        </div>
+                        <div className="hidden lg:flex"></div>
                     </div>
                 </div>
-                {open && (
-                    <motion.div
-                        initial="hidden"
-                        animate="visible"
-                        exit="hidden"
-                        variants={{
-                            hidden: {
-                                opacity: 0,
-                                scale: 0.95,
-                                transition: {
-                                    duration: 0.2,
+                <div className="pl-[5%]">
+                    {open && (
+                        <motion.div
+                            initial="hidden"
+                            animate="visible"
+                            exit="hidden"
+                            variants={{
+                                hidden: {
+                                    opacity: 0,
+                                    scale: 0.95,
+                                    transition: {
+                                        duration: 0.2,
+                                    },
                                 },
-                            },
-                            visible: {
-                                opacity: 1,
-                                scale: 1,
-                                transition: {
-                                    duration: 0.2,
+                                visible: {
+                                    opacity: 1,
+                                    scale: 1,
+                                    transition: {
+                                        duration: 0.2,
+                                    },
                                 },
-                            },
-                        }}
-                        className="absolute top-full left-3 bg-text-accent py-4 px-10 z-10 rounded-xl"
-                    >
-                        <ul className="space-y-2 mt-2">
-                            {user?.email?.includes('test' || 'alp') && <Button onClick={handleEmail}>send test email</Button>}
-                            <li>
-                                <Link href={'/translate'} scroll={false}>
-                                    {d?.menu.translator}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={'/'} scroll={false}>
-                                    {d?.menu.voice}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={'/about'} scroll={false}>
-                                    {d?.menu.about}
-                                </Link>
-                            </li>{' '}
-                            <li>
-                                <Link href={'/resources'} scroll={false}>
-                                    {d?.menu.resources}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={'/leaderboard'} scroll={false}>
-                                    {d?.footer.leaderboard}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={'/faq'} scroll={false}>
-                                    {d?.menu.faq}
-                                </Link>
-                            </li>
-                        </ul>
-                    </motion.div>
-                )}
-            </div>
+                            }}
+                            className="bg-text-accent py-4 px-5 rounded-xl w-[20%] z-50 flex flex-col items-center justify-start "
+                        >
+                            <ul className="space-y-2 mt-2 bg-text-accent">
+                                {user?.email?.includes('test' || 'alp') && <Button onClick={handleEmail}>send test email</Button>}
+                                <li>
+                                    <Link href={'/translate'} scroll={false}>
+                                        {d?.menu.translator}
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={'/'} scroll={false}>
+                                        {d?.menu.voice}
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={'/about'} scroll={false}>
+                                        {d?.menu.about}
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={'/resources'} scroll={false}>
+                                        {d?.menu.resources}
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={'/leaderboard'} scroll={false}>
+                                        {d?.footer.leaderboard}
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={'/faq'} scroll={false}>
+                                        {d?.menu.faq}
+                                    </Link>
+                                </li>
+                            </ul>
+                        </motion.div>
+                    )}
+                </div>
+            </header>
+
             {!user?.isVerified && user?.email && user && (
                 <VerificationAlert
                     data={{

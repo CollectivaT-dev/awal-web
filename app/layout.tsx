@@ -24,7 +24,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     const Locale = headers().get('Accept-Language')?.slice(0, 2) ?? 'ca';
     return (
         <html lang={Locale}>
-            <body className={`${inter.className} bg-bg-gradient p-5`}>
+            <body className={`${inter.className} bg-bg-gradient py-2`}>
                 <ClientProvider>
                     <SessionProviders>
                         <ToastProvider />
