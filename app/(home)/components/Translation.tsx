@@ -199,15 +199,7 @@ const Translation: React.FC<TranslationProps> = ({
                         </div>
                     </ResizablePanel>
                 </ResizablePanelGroup>
-                // <div className="w-screen flex-col-center">
-                //     <div
-                //         className="textTranslatorParent"
-                //         onClick={handleTextTranslation}
-                //     ></div>
-                //     <div className="transVoiceParent"></div>
-
-                //     <div></div>
-                // </div>
+            
             )}
         </>
     );

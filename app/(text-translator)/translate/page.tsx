@@ -1,4 +1,4 @@
 const TranslatePage = () => {
-    return <div></div>;
+    return <div>aa</div>;
 };
 export default TranslatePage;
