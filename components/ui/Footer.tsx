@@ -13,7 +13,6 @@ import { MessagesProps, getDictionary } from '@/i18n';
 import { Mail } from 'lucide-react';
 import useMediaQuery from '@/app/hooks/useMediaQuery';
 import { LiaTelegramPlane } from 'react-icons/lia';
-
 const Footer = () => {
     const { locale } = useLocaleStore();
     const [d, setD] = useState<MessagesProps>();
