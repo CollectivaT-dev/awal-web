@@ -1,16 +1,20 @@
-'use client';
+'use client'
 import { useEffect, useState } from 'react';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { serialize } from 'next-mdx-remote/serialize';
-import remarkFrontmatter from 'remark-frontmatter';
+import dynamic from 'next/dynamic';
 import useLocaleStore from '@/app/hooks/languageStore';
 import axios from 'axios';
-import MdxStyle from '@/components/MdxStyle';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+
+// Dynamic import for MDXRemote component
+const MDXRemote = dynamic(() => import('next-mdx-remote').then(mod => mod.MDXRemote), { ssr: false });
+import MdxStyle from '@/components/MdxStyle'; 
+
+
 interface FrontMatter {
     title: string;
-    // date: string;
 }
-const PolicyPage = () => {
+
+const ContributionTermsPage = () => {
     const { locale } = useLocaleStore();
     const [mdxSource, setMdxSource] = useState<MDXRemoteSerializeResult | null>(null);
     const [frontMatter, setFrontMatter] = useState<FrontMatter | null>(null);
@@ -20,6 +24,10 @@ const PolicyPage = () => {
             const res = await axios.get(`/api/content/policies/contribution-terms`, { params: { locale } });
 
             const { content, frontMatter } = res.data;
+
+            // Dynamic import for serialize and remarkFrontmatter
+            const { serialize } = await import('next-mdx-remote/serialize');
+            const remarkFrontmatter = (await import('remark-frontmatter')).default;
 
             const mdxSource = await serialize(content, {
                 mdxOptions: {
@@ -46,4 +54,4 @@ const PolicyPage = () => {
     );
 };
 
-export default PolicyPage;
+export default ContributionTermsPage;
