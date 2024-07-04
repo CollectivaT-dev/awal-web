@@ -41,6 +41,7 @@ export async function POST(req: Request) {
     }
 
     const { password, ...userWithoutPassword } = user;
+	console.log(JSON.stringify(userWithoutPassword))
     return new NextResponse(JSON.stringify(userWithoutPassword), {
         status: 200,
         headers: { 'Content-Type': 'application/json' },
