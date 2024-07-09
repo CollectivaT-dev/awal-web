@@ -3,9 +3,9 @@
     "version": "1.0.3",
     "private": true,
     "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
+        "dev": "set NODE_OPTIONS=--max-http-header-size=12800000 && next dev",
+        "build": "set NODE_OPTIONS=--max-http-header-size=12800000 && next build",
+        "start": "set NODE_OPTIONS=--max-http-header-size=12800000 && next start",
         "lint": "next lint",
         "postinstall": "prisma generate"
     },
