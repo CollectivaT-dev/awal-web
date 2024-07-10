@@ -1,13 +1,15 @@
 import { getServerSession } from 'next-auth/next';
-import { handler } from '@/app/api/auth/[...nextauth]/route';
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import prisma from '@/lib/prisma';
 
 // Function to get the current session
+
+
 export async function getSession() {
-    const session = await getServerSession(handler);
-    console.log("🚀 ~ getSession ~ session:", session)
+    const session = await getServerSession(authOptions);
     return session;
 }
+
 
 export default async function getCurrentUser() {
     try {
