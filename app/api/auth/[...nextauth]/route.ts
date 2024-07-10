@@ -1,6 +1,5 @@
 import NextAuth, { AuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-
 export const handler: AuthOptions = NextAuth({
     providers: [
         CredentialsProvider({
@@ -31,22 +30,22 @@ export const handler: AuthOptions = NextAuth({
                     },
                     body: JSON.stringify(credentials),
                 });
+                console.log(res);
                 const data = await res.json();
-                //   console.log(data);
                 if (res.ok && data.email) {
                     return data;
                 }
-                //   console.log(data);
+                console.log('auth log 2' + data);
                 return null;
             },
         }),
     ],
-    // session: {
-    //     strategy: 'jwt',
-    //     maxAge: 15 * 24 * 60 * 60,
-    // },
+    session: {
+        strategy: 'jwt',
+        maxAge: 24 * 60 * 60, // 24 hours
+    },
     callbacks: {
-        jwt({ token, trigger, session, user }) {
+        async jwt({ token, trigger, session, user }) {
             //   console.log(trigger);
             //   console.log(session?.user);
 
@@ -64,6 +63,9 @@ export const handler: AuthOptions = NextAuth({
                 //   console.log(token);
             }
             //   console.log(token);
+            if (user) {
+                token.id = user.id;
+            }
             return { ...token, ...user };
         },
         async session({ session, token }) {
@@ -71,6 +73,7 @@ export const handler: AuthOptions = NextAuth({
             return session;
         },
     },
+
     //the customized pages must be located in @/auth/... https://next-auth.js.org/configuration/pages folder names and path must coincides, route.ts cant be in the same folder
     pages: {
         signIn: '/signIn',

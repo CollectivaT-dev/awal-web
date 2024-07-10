@@ -5,12 +5,12 @@ export const defaultLocale = locales[0];
 export const isAvailableLocale = (locale: unknown): locale is Locale => typeof locale === 'string' && locales.includes(locale);
 
 const dictionaries = {
-    ca: () => import('@/messages/ca.json').then((module) => module.default),
-    en: () => import('@/messages/en.json').then((module) => module.default),
-    es: () => import('@/messages/es.json').then((module) => module.default),
-    zgh: () => import('@/messages/zgh.json').then((module) => module.default),
+    ca: () => import('@/static/messages/ca.json').then((module) => module.default),
+    en: () => import('@/static/messages/en.json').then((module) => module.default),
+    es: () => import('@/static/messages/es.json').then((module) => module.default),
+    zgh: () => import('@/static/messages/zgh.json').then((module) => module.default),
     // ary: () => import('@/messages/ary.json').then((module) => module.default),
-    fr: () => import('@/messages/fr.json').then((module) => module.default),
+    fr: () => import('@/static/messages/fr.json').then((module) => module.default),
 };
 
 export const getDictionary = async (locale: string) => {

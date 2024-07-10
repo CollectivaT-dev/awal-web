@@ -67,7 +67,7 @@ export async function PATCH(req: Request) {
 
 export async function GET(req: Request) {
     const currentUser = await getCurrentUser();
-
+    // console.log(currentUser)
     if (!currentUser) {
         return new NextResponse(JSON.stringify({ message: 'Unauthorized' }), {
             status: 401,
@@ -81,7 +81,7 @@ export async function GET(req: Request) {
             id: currentUser.id,
         },
     });
-
+    // console.log(user)
     return new NextResponse(JSON.stringify(user), {
         status: 200,
         headers: {
