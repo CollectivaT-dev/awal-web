@@ -2,8 +2,9 @@ import prisma from '@/lib/prisma';
 import NextAuth, { AuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import jwt from 'jsonwebtoken';
+import { JWT } from 'next-auth/jwt';
 
-export const authOptions : AuthOptions = ({
+export const authOptions: AuthOptions = {
     providers: [
         CredentialsProvider({
             name: 'Credentials',
@@ -20,13 +21,13 @@ export const authOptions : AuthOptions = ({
                 },
             },
             async authorize(credentials, req) {
-                const url = 'http://localhost:3000';
                 const reqUrl = (req?.headers as any).origin;
+                console.log(reqUrl);
                 if (!credentials?.email || !credentials?.password) {
                     throw new Error('Invalid credentials');
                 }
                 // Change the local host to actual URL
-                const res = await fetch(`${url === reqUrl ? 'http://localhost:3000/api/signIn' : 'https://awaldigital.org/api/signIn'}`, {
+                const res = await fetch(`${reqUrl}/api/signIn`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -37,7 +38,6 @@ export const authOptions : AuthOptions = ({
                 if (res.ok && data.email) {
                     return data;
                 }
-                console.log('auth log 2' + data);
                 return null;
             },
         }),
@@ -47,17 +47,14 @@ export const authOptions : AuthOptions = ({
         maxAge: 24 * 60 * 60, // 24 hours
     },
     callbacks: {
-        async jwt({ token, trigger, session, user }) {
-            if (session?.user?.gender === null) {
+        jwt({ token, trigger, session, user }) {
+            if (session?.user.gender === null) {
                 session.user.gender = 'other';
             }
-            if (trigger === 'update' && session?.user) {
+            if (trigger === 'update' && session.user) {
                 token.score = session.user.score;
                 token.username = session.user.username;
                 token.isVerified = session.user.isVerified;
-            }
-            if (user) {
-                token.id = user.id;
             }
             return { ...token, ...user };
         },
@@ -89,7 +86,7 @@ export const authOptions : AuthOptions = ({
                     central: true,
                     tarifit: true,
                     other: true,
-                }
+                },
             });
             if (user) {
                 session.user = {
@@ -119,7 +116,7 @@ export const authOptions : AuthOptions = ({
                     other: user.other,
                 };
             }
-			console.log(session)
+            console.log(session);
             return session;
         },
     },
@@ -131,14 +128,22 @@ export const authOptions : AuthOptions = ({
             return encodedToken;
         },
         decode: async ({ secret, token }) => {
-            const decodedToken = jwt.verify(token, secret, { algorithms: ['HS256'] });
-            return decodedToken;
+            if (!token) {
+                throw new Error('Token is undefined');
+            }
+            try {
+                const decodedToken = jwt.verify(token, secret, { algorithms: ['HS256'] });
+                return decodedToken as JWT;
+            } catch (error) {
+                // Handle the error here
+                throw new Error('Failed to decode token');
+            }
         },
     },
     pages: {
         signIn: '/signIn',
     },
-});
+};
 const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
