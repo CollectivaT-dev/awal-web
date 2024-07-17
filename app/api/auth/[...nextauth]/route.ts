@@ -125,6 +125,7 @@ export const authOptions: AuthOptions = {
         encode: async ({ secret, token }) => {
             const payload = { id: token?.id };
             const encodedToken = jwt.sign(payload, secret, { algorithm: 'HS256' });
+            console.log("🚀 ~ encode: ~ encodedToken:", encodedToken)
             return encodedToken;
         },
         decode: async ({ secret, token }) => {
@@ -133,9 +134,9 @@ export const authOptions: AuthOptions = {
             }
             try {
                 const decodedToken = jwt.verify(token, secret, { algorithms: ['HS256'] });
+                console.log("🚀 ~ decode: ~ decodedToken:", decodedToken)
                 return decodedToken as JWT;
             } catch (error) {
-                // Handle the error here
                 throw new Error('Failed to decode token');
             }
         },
