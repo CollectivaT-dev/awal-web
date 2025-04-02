@@ -150,7 +150,7 @@ const AboutPage = () => {
                 </div>
                 <div className="flex-col-center w-1/4 whitespace-pre-line">
                     <Link
-                        href={'https://github.com/ppalladio'}
+                        href={'https://www.yuxuanize.com'}
                         scroll={false}
                         target="_blank"
                     >
