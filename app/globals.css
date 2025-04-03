@@ -1,12 +1,169 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-html,
-body,
-:root {
-    height: 100%;
-    color: #093953;
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --breakpoint-*: initial;
+    --breakpoint-mobile: 431px;
+    --breakpoint-tablet: 768px;
+    --breakpoint-laptop: 1366px;
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+
+    --background-image-bg-gradient: linear-gradient(180deg, #f9e4b2 6.19%, #cc6c46 80.1%);
+
+    --color-clay-100: #f2dad1;
+    --color-clay-200: #e5b5a3;
+    --color-clay-300: #d99174;
+    --color-clay-400: #cc6c46;
+    --color-clay-500: #bf4718;
+    --color-clay-600: #993913;
+    --color-clay-700: #732b0e;
+    --color-clay-800: #4c1c0a;
+    --color-clay-900: #260e05;
+
+    --color-yellow-100: #fcf1d9;
+    --color-yellow-200: #f9e4b2;
+    --color-yellow-300: #f5d68c;
+    --color-yellow-400: #f2c965;
+    --color-yellow-500: #efbb3f;
+    --color-yellow-600: #bf9632;
+    --color-yellow-700: #8f7026;
+    --color-yellow-800: #604b19;
+    --color-yellow-900: #30250d;
+
+    --color-text-primary: #093953;
+    --color-text-secondary: #bf4718;
+    --color-text-accent: #efbb3f;
+    --color-text-field: #fff1f5;
+    --color-border: hsl(var(--border));
+    --color-input: hsl(var(--input));
+    --color-ring: hsl(var(--ring));
+    --color-background: hsl(var(--background));
+    --color-foreground: hsl(var(--foreground));
+
+    --color-primary: hsl(var(--primary));
+    --color-primary-foreground: hsl(var(--primary-foreground));
+
+    --color-secondary: hsl(var(--secondary));
+    --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+    --color-destructive: hsl(var(--destructive));
+    --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+    --color-muted: hsl(var(--muted));
+    --color-muted-foreground: hsl(var(--muted-foreground));
+
+    --color-accent: hsl(var(--accent));
+    --color-accent-foreground: hsl(var(--accent-foreground));
+
+    --color-popover: hsl(var(--popover));
+    --color-popover-foreground: hsl(var(--popover-foreground));
+
+    --color-card: hsl(var(--card));
+    --color-card-foreground: hsl(var(--card-foreground));
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --animate-accordion-down: accordion-down 0.2s ease-out;
+    --animate-accordion-up: accordion-up 0.2s ease-out;
+
+    @keyframes accordion-down {
+        from {
+            height: 0;
+        }
+        to {
+            height: var(--radix-accordion-content-height);
+        }
+    }
+    @keyframes accordion-up {
+        from {
+            height: var(--radix-accordion-content-height);
+        }
+        to {
+            height: 0;
+        }
+    }
+}
+
+@utility container {
+    margin-inline: auto;
+    padding-inline: 2rem;
+    @media (width >= --theme(--breakpoint-mobile)) {
+        max-width: none;
+    }
+    @media (width >= 1400px) {
+        max-width: 1400px;
+    }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+@layer utilities {
+    html,
+    body,
+    :root {
+        height: 100%;
+        color: #093953;
+    }
+
+    .flex-row-center {
+        @apply flex flex-row justify-center items-center;
+    }
+    .flex-col-center {
+        @apply flex flex-col justify-center items-center;
+    }
+    .flex-row-between {
+        @apply flex flex-row justify-between items-center;
+    }
+    .transVoiceParent {
+        width: calc(50%);
+        height: 100%;
+        @apply flex flex-col justify-center items-stretch bg-[#EFBB3F] px-20 py-[3.25rem] cursor-pointer;
+    }
+    .transVoiceChild {
+        @apply rounded-full flex flex-col items-center justify-center mx-auto p-10 bg-[#FFE7EE];
+    }
+    .textTranslatorParent {
+        width: calc(50%);
+        height: 100%;
+        @apply flex flex-col justify-center items-stretch bg-text-primary px-20 py-[3.25rem] cursor-pointer;
+    }
+    .text-stroke {
+        text-shadow:
+            -1px -1px 0 black,
+            1px -1px 0 black,
+            -1px 1px 0 black,
+            1px 1px 0 black;
+        -webkit-text-shadow:
+            -1px -1px 0 black,
+            1px -1px 0 black,
+            -1px 1px 0 black,
+            1px 1px 0 black;
+    }
 }
 
 @layer base {
@@ -80,31 +237,4 @@ body,
     body {
         @apply bg-background text-foreground;
     }
-}
-
-.flex-row-center {
-    @apply flex flex-row justify-center items-center;
-}
-.flex-col-center {
-    @apply flex flex-col justify-center items-center;
-}
-.flex-row-between {
-    @apply flex flex-row justify-between items-center;
-}
-.transVoiceParent {
-    width: calc(50%);
-    height: 100%;
-    @apply flex flex-col justify-center items-stretch bg-[#EFBB3F] px-20 py-[3.25rem] cursor-pointer;
-}
-.transVoiceChild {
-    @apply rounded-full flex flex-col-center mx-auto p-10 bg-[#FFE7EE];
-}
-.textTranslatorParent {
-    width: calc(50%);
-    height: 100%;
-    @apply flex flex-col justify-center items-stretch bg-text-primary px-20 py-[3.25rem] cursor-pointer;
-}
-.text-stroke {
-    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-    -webkit-text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }

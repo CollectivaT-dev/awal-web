@@ -3,22 +3,14 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-
 import { Button } from '@/components/ui/button';
-import {
-    Form,
-    FormControl,
-    FormDescription,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from '@/components/ui/form';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { useState } from 'react';
-import axios from 'axios';
+import { useState, useEffect } from 'react';
 import { resetPassword } from '@/app/actions/users/reset';
 import toast from 'react-hot-toast';
+import useLocaleStore from '@/app/hooks/languageStore';
+import { getDictionary, MessagesProps } from '@/i18n';
 
 const FormSchema = z.object({
     email: z.string().email(),
@@ -31,28 +23,31 @@ export function ResetPasswordForm() {
             email: '',
         },
     });
+    const { locale } = useLocaleStore();
+    const [d, setD] = useState<MessagesProps>();
+    useEffect(() => {
+        const fetchDictionary = async () => {
+            const m = await getDictionary(locale);
+            setD(m as unknown as MessagesProps);
+        };
+        fetchDictionary();
+    }, [locale]);
     // const [message, setMessage] = useState<string>('');
     const onSubmit = async (data: z.infer<typeof FormSchema>) => {
-        const message = await resetPassword(data.email);
+        const response = await resetPassword(data.email);
 
-        message.status === 200
-            ? toast.success('email sent successfully')
-            : message.status === 404
-            ? toast.error('user not found')
-            : toast.error('error while sending email, try again later');
-        // console.log(message);
-        // try {
-        //     const res = axios.post('api/auth/reset-password');
-        // } catch (error) {}
-
+        if (response.status === 200) {
+            toast.success(`${d?.email.verification.reset_email_send_success}`);
+        } else if (response.status === 404) {
+            toast.error('user not found');
+        } else {
+            toast.error(`${d?.email.verification.reset_email_send_error}`);
+        }
     };
 
     return (
         <Form {...form}>
-            <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="w-2/3 space-y-6"
-            >
+            <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6 ">
                 <FormField
                     control={form.control}
                     name="email"
@@ -60,19 +55,14 @@ export function ResetPasswordForm() {
                         <FormItem>
                             <FormLabel>Email</FormLabel>
                             <FormControl>
-                                <Input
-                                    placeholder="example@awaldigital.org"
-                                    {...field}
-                                />
+                                <Input placeholder="example@awaldigital.org" {...field} />
                             </FormControl>
-                            <FormDescription>
-                                Email for recovery
-                            </FormDescription>
+                            <FormDescription>{d?.email.verification.email_recovery}</FormDescription>
                             <FormMessage />
                         </FormItem>
                     )}
                 />
-                <Button type="submit">Submit</Button>
+                <Button type="submit">{d?.email.verification.submit_btn}</Button>
             </form>
         </Form>
     );

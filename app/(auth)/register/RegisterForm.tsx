@@ -228,7 +228,7 @@ export default function RegisterForm() {
                     control={form.control}
                     name="isPrivacy"
                     render={({ field }) => (
-                        <FormItem className="flex flex-row justify-center items-center space-x-3 space-y-0 rounded-md border p-4 shadow">
+                        <FormItem className="flex flex-row justify-center items-center space-x-3 space-y-0 rounded-md border p-4 shadow-sm">
                             <FormControl>
                                 <Checkbox
                                     checked={field.value}
@@ -272,7 +272,7 @@ export default function RegisterForm() {
                     control={form.control}
                     name="isSubscribed"
                     render={({ field }) => (
-                        <FormItem className="flex flex-row justify-center items-center space-x-3 space-y-0 rounded-md border p-4 shadow">
+                        <FormItem className="flex flex-row justify-center items-center space-x-3 space-y-0 rounded-md border p-4 shadow-sm">
                             <FormControl>
                                 <Checkbox
                                     checked={field.value}

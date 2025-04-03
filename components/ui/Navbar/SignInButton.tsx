@@ -55,7 +55,7 @@ const SignInButton = () => {
                         </span>
                     </Button>
                 </div>
-                <div className="hidden lg:flex-grow"></div>
+                <div className="hidden lg:grow"></div>
                 <div className="hidden lg:flex lg:flex-row lg:justify-center lg:items-center lg:space-x-4  ">
                     <p className="text-text-primary text-xs mobile:text-lg">
                         {session.user.gender === 'f'

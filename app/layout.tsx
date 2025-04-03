@@ -19,21 +19,17 @@ export const metadata: Metadata = {
     description: "Internet parla l'Amazic!",
     keywords: 'translation, amazic, catalan, tamazight, marginalized',
 };
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+    const headersList = await headers(); // ✅ Now allowed
+    const Locale = headersList.get('accept-language') || 'en'; // fallback if null
 
-export default function RootLayout({
-    children,
-}: {
-    children: React.ReactNode;
-}) {
-    const Locale = headers().get('Accept-Language')?.slice(0, 2) ?? 'ca';
     return (
         <html lang={Locale}>
             <body className={inter.className}>
-                <div className=" bg-bg-gradient">
+                <div className="bg-bg-gradient">
                     <ClientProvider>
                         <SessionProviders>
                             <ToastProvider />
-                            {/* <RegisterModal/> */}
                             <Suspense fallback={<Loading />}>
                                 <Navbar />
                             </Suspense>

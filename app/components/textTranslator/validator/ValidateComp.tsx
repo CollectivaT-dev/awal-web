@@ -330,7 +330,7 @@ const ValidateComp = () => {
             <div className="flex lg:flex-row flex-col justify-center items-baseline px-10 lg:space-x-10 space-y-10">
                 <div className="lg:w-1/2 w-full">
                     <SrcLanguageSelection />
-                    <Textarea value={sourceText} className="border border-gray-300 lg:h-[50vh] h-auto rounded-md shadow" placeholder={``} id="src_message" readOnly />
+                    <Textarea value={sourceText} className="border border-gray-300 lg:h-[50vh] h-auto rounded-md shadow-sm" placeholder={``} id="src_message" readOnly />
                     {VariantsRadioGroup({
                         isContributor: false,
                         side: 'left',
@@ -393,7 +393,7 @@ const ValidateComp = () => {
                                         <h4 className="text-sm font-semibold capitalize">{d?.how_to_validate_heading}</h4>
                                     </AlertDialogTitle>
                                 </AlertDialogHeader>
-                                <div className="flex-grow overflow-auto">
+                                <div className="grow overflow-auto">
                                     <AlertDialogDescription className="text-left whitespace-pre-wrap">
                                         {d?.how_it_works_validation}
                                         <ol className="list-disc space-y-2 my-4 mx-5 flex-row ">
@@ -419,7 +419,7 @@ const ValidateComp = () => {
                                         {d?.how_it_works_contribution_continued}
                                     </AlertDialogDescription>
                                 </div>
-                                <AlertDialogFooter className="flex-shrink-0">
+                                <AlertDialogFooter className="shrink-0">
                                     {' '}
                                     <AlertDialogCancel>{d?.btn.cancel}</AlertDialogCancel>
                                     <AlertDialogAction>{d?.btn.continue}</AlertDialogAction>
@@ -430,7 +430,7 @@ const ValidateComp = () => {
 
                     <Textarea
                         id="tgt_message"
-                        className="border border-gray-300 lg:h-[50vh] h-auto rounded-md shadow"
+                        className="border border-gray-300 lg:h-[50vh] h-auto rounded-md shadow-sm"
                         placeholder={``}
                         value={targetText}
                         onChange={(e) => setTargetText(e.target.value)}

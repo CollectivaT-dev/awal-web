@@ -220,7 +220,7 @@ const TextTranslator = () => {
                             <Textarea
                                 value={source}
                                 onChange={handleInputChange}
-                                className=" bg-gray-100 h-[50vh] text-text-primary rounded-md shadow"
+                                className=" bg-gray-100 h-[50vh] text-text-primary rounded-md shadow-sm"
                                 placeholder={
                                     d?.translator.placeholder.type_to_translate
                                 }
@@ -237,7 +237,7 @@ const TextTranslator = () => {
                                 <Textarea
                                     id="message"
                                     value={target}
-                                    className="bg-gray-200 h-[50vh] text-text-primary rounded-md shadow"
+                                    className="bg-gray-200 h-[50vh] text-text-primary rounded-md shadow-sm"
                                     placeholder={
                                         d?.translator.placeholder
                                             .translation_box
@@ -277,7 +277,7 @@ const TextTranslator = () => {
                             <Textarea
                                 value={source}
                                 onChange={handleInputChange}
-                                className=" bg-gray-100 h-auto text-text-primary rounded-md shadow"
+                                className=" bg-gray-100 h-auto text-text-primary rounded-md shadow-sm"
                                 placeholder={
                                     d?.translator.placeholder.type_to_translate
                                 }
@@ -294,7 +294,7 @@ const TextTranslator = () => {
                                 <Textarea
                                     id="message"
                                     value={target}
-                                    className="bg-gray-200 h-auto text-text-primary rounded-md shadow"
+                                    className="bg-gray-200 h-auto text-text-primary rounded-md shadow-sm"
                                     placeholder={
                                         d?.translator.placeholder
                                             .translation_box
