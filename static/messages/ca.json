@@ -368,7 +368,16 @@
         "error_msg": "Alguna cosa ha anat malament. Si encara veieu la pancarta, si us plau, intenteu reenviar el correu electrònic de verificació. Si el problema persisteix, poseu-vos en contacte amb nosaltres per obtenir ajuda.",
         "success_email": "El correu electrònic de verificació s'ha enviat correctament. Si us plau, comproveu la vostra safata d'entrada i feu clic al l'enllaç per completar la verificació.",
         "alert": "Si us plau, verifiqueu el vostre correu electrònic.",
-        "error_email": "No s'ha pogut enviar el correu electrònic de verificació. Assegureu-vos d'haver escrit correctament el vostre correu electrònic a la pàgina del vostre perfil. Si el problema persisteix, poseu-vos en contacte amb nosaltres per obtenir ajuda."
+        "error_email": "No s'ha pogut enviar el correu electrònic de verificació. Assegureu-vos d'haver escrit correctament el vostre correu electrònic a la pàgina del vostre perfil. Si el problema persisteix, poseu-vos en contacte amb nosaltres per obtenir ajuda.",
+	"reset_password": "Restablir Contrasenya",
+	"reset_success": "Contrasenya restablerta amb èxit.",
+	"reset_email_send_success": "Correu electrònic de restabliment enviat correctament, si us plau, comprova la teva safata d'entrada i fes clic a l'enllaç per completar el restabliment de contrasenya.",
+	"email_recovery": "Correu electrònic per a la recuperació de contrasenya",
+	"submit_btn": "Enviar",
+	"reset_email_send_error": "Error en enviar el correu electrònic, torna-ho a provar més tard",
+	"password_mismatch": "Les contrasenyes no coincideixen",
+	"new_password": "Nova contrasenya",
+	"confirm_password": "Confirmar contrasenya"
       }
     }
 }
