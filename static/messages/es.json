@@ -368,7 +368,16 @@
         "error_msg": "Algo salió mal. Si aún ves el banner, por favor intenta volver a enviar el correo de verificación. Si el problema persiste, contáctanos para obtener ayuda.",
         "success_email": "El correo de verificación se ha enviado correctamente. Por favor, revisa tu bandeja de entrada y haz clic en el enlace para completar la verificación.",
         "alert": "Por favor, verifica tu correo electrónico.",
-        "error_email": "No se pudo enviar el correo de verificación. Asegúrate de haber escrito correctamente tu correo electrónico en tu página de perfil. Si el problema persiste, contáctanos para obtener ayuda."
+        "error_email": "No se pudo enviar el correo de verificación. Asegúrate de haber escrito correctamente tu correo electrónico en tu página de perfil. Si el problema persiste, contáctanos para obtener ayuda.",
+	"reset_password": "Restablecer Contraseña",
+	"reset_success": "Contraseña restablecida con éxito.",
+	"reset_email_send_success": "Correo electrónico de restablecimiento enviado correctamente, por favor, revisa tu bandeja de entrada y haz clic en el enlace para completar el restablecimiento de contraseña.",
+	"email_recovery": "Correo electrónico para recuperación de contraseña",
+	"submit_btn": "Enviar",
+	"reset_email_send_error": "Error al enviar el correo electrónico, inténtalo de nuevo más tarde",
+	"password_mismatch": "Las contraseñas no coinciden",
+	"new_password": "Nueva contraseña",
+	"confirm_password": "Confirmar contraseña"
       }
     }
 }
