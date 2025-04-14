@@ -7,7 +7,8 @@
         "signOut": "Cerrar Sesión",
         "translator": "Traductor",
         "contribute": "Contribuir",
-        "validate": "Validar"
+        "validate": "Validar",
+        "passwordResetBtn": "¿Has olvidado tu contraseña?"
     },
     "language": {
         "zgh": "ⵜⴰⵎⴰⵣⵉⵖⵜ",
@@ -88,7 +89,7 @@
         "success_signIn": "¡Sesión iniciada con éxito!",
         "alert_copy": "No se pudo copiar la traducción.",
         "alert_try_again": "Por favor, intenta de nuevo más tarde.",
-		"alert_select_variant":"Por favor, seleccione su nivel de competencia",
+        "alert_select_variant": "Por favor, seleccione su nivel de competencia",
         "validation_success_report": "Contribución reportada. Gracias por tu atención."
     },
     "text_with_link": {
@@ -150,10 +151,10 @@
         "total_voice_validation": "hora validada",
         "login_to_signup_1": "¿Nuevo en Awal?",
         "login_to_signup_2": "¡Regístrate!",
-        "statistic":"Clasificación de la Comunidad",
+        "statistic": "Clasificación de la Comunidad",
         "validate_report_heading": "Informar contribución",
         "validate_report_text": "Por favor, explíquenos brevemente qué está mal con esta contribución según nuestras pautas comunitarias.",
-        "faq_heading":"Preguntas Frecuentes",
+        "faq_heading": "Preguntas Frecuentes",
         "rank": "#",
         "home": "Inicio",
         "contributor_input_placeholder": "Escribe un texto para traducir, o cárga una usando el botón 'Frase Aleatoria'.",
@@ -173,7 +174,7 @@
         "cancel": "Cancelar",
         "contribute": "Contribuir",
         "clear": "Borrar el texto",
-        "skip":"Saltar"
+        "skip": "Saltar"
     },
     "setting": {
         "oral": "Oral",
@@ -352,7 +353,7 @@
             "heading": "\"Awal, el proyecto popular que quiere hacer que internet hable amazic\"",
             "body": "Lee sobre el Proyecto Awal y su primer datatón en Nationalia.",
             "link": "https://www.nationalia.cat/noticia/11589/awal-el-projecte-popular-que-vol-fer-que-internet-parli-amazic"
-          },
+        },
         "c3": {
             "heading": "AWAL en el blog de Col·lectivaT",
             "body": "Presentación del proyecto Awal para preservar y promover la lengua amazigh en Internet con una comunidad de datos fuerte y unida.",
@@ -360,24 +361,24 @@
         }
     },
     "email": {
-      "verification": {
-        "page_redirect": "Ahora te estamos redirigiendo...",
-        "token_error": "El token de validación no es válido, por favor intenta volver a enviar el correo de verificación.",
-        "success_title": "Gracias por verificar tu correo electrónico.",
-        "error_title": "La verificación del correo electrónico falló.",
-        "error_msg": "Algo salió mal. Si aún ves el banner, por favor intenta volver a enviar el correo de verificación. Si el problema persiste, contáctanos para obtener ayuda.",
-        "success_email": "El correo de verificación se ha enviado correctamente. Por favor, revisa tu bandeja de entrada y haz clic en el enlace para completar la verificación.",
-        "alert": "Por favor, verifica tu correo electrónico.",
-        "error_email": "No se pudo enviar el correo de verificación. Asegúrate de haber escrito correctamente tu correo electrónico en tu página de perfil. Si el problema persiste, contáctanos para obtener ayuda.",
-	"reset_password": "Restablecer Contraseña",
-	"reset_success": "Contraseña restablecida con éxito.",
-	"reset_email_send_success": "Correo electrónico de restablecimiento enviado correctamente, por favor, revisa tu bandeja de entrada y haz clic en el enlace para completar el restablecimiento de contraseña.",
-	"email_recovery": "Correo electrónico para recuperación de contraseña",
-	"submit_btn": "Enviar",
-	"reset_email_send_error": "Error al enviar el correo electrónico, inténtalo de nuevo más tarde",
-	"password_mismatch": "Las contraseñas no coinciden",
-	"new_password": "Nueva contraseña",
-	"confirm_password": "Confirmar contraseña"
-      }
+        "verification": {
+            "page_redirect": "Ahora te estamos redirigiendo...",
+            "token_error": "El token de validación no es válido, por favor intenta volver a enviar el correo de verificación.",
+            "success_title": "Gracias por verificar tu correo electrónico.",
+            "error_title": "La verificación del correo electrónico falló.",
+            "error_msg": "Algo salió mal. Si aún ves el banner, por favor intenta volver a enviar el correo de verificación. Si el problema persiste, contáctanos para obtener ayuda.",
+            "success_email": "El correo de verificación se ha enviado correctamente. Por favor, revisa tu bandeja de entrada y haz clic en el enlace para completar la verificación.",
+            "alert": "Por favor, verifica tu correo electrónico.",
+            "error_email": "No se pudo enviar el correo de verificación. Asegúrate de haber escrito correctamente tu correo electrónico en tu página de perfil. Si el problema persiste, contáctanos para obtener ayuda.",
+            "reset_password": "Restablecer Contraseña",
+            "reset_success": "Contraseña restablecida con éxito.",
+            "reset_email_send_success": "Correo electrónico de restablecimiento enviado correctamente, por favor, revisa tu bandeja de entrada y haz clic en el enlace para completar el restablecimiento de contraseña.",
+            "email_recovery": "Correo electrónico para recuperación de contraseña",
+            "submit_btn": "Enviar",
+            "reset_email_send_error": "Error al enviar el correo electrónico, inténtalo de nuevo más tarde",
+            "password_mismatch": "Las contraseñas no coinciden",
+            "new_password": "Nueva contraseña",
+            "confirm_password": "Confirmar contraseña"
+        }
     }
 }

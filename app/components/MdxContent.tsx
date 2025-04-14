@@ -1,5 +1,4 @@
 'use client';
-import dynamic from 'next/dynamic';
 import useLocaleStore from '@/app/hooks/languageStore';
 import MdxStyle from '@/components/MdxStyle';
 import useMdxContent from '../hooks/useMdxContent';

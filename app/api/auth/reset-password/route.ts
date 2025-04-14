@@ -97,8 +97,8 @@ export async function PATCH(req: Request) {
         where: { id: user.id },
         data: {
             password: hashed,
-            resetPasswordToken: null,
-            resetPasswordTokenExpiration: null,
+            resetPasswordToken: undefined,
+            resetPasswordTokenExpiration: undefined,
         },
     });
 

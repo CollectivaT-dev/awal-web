@@ -15,7 +15,6 @@ import { getDictionary, MessagesProps } from '@/i18n';
 const FormSchema = z.object({
     email: z.string().email(),
 });
-
 export function ResetPasswordForm() {
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
@@ -57,7 +56,10 @@ export function ResetPasswordForm() {
                             <FormControl>
                                 <Input placeholder="example@awaldigital.org" {...field} />
                             </FormControl>
-                            <FormDescription>{d?.email.verification.email_recovery}</FormDescription>
+                            <FormDescription>
+                                {d?.email.verification.email_recovery}
+                                <p>Please check your spam if you didn&apos;t receive the email</p>
+                            </FormDescription>
                             <FormMessage />
                         </FormItem>
                     )}

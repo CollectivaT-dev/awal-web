@@ -116,19 +116,19 @@ const SignInForm: React.FC<SignInFormProps> = ({ callbackUrl }) => {
                         />
                     </div>
 
-                    <div className="flex flex-col lg:flex-row gap-3 justify-center items-center">
-                        <Button variant={'outline'} type="submit" className="capitalize">
+                    <div className="flex flex-col  gap-y-5 justify-center items-center">
+                        <Button variant={'outline'} type="submit" className="capitalize cursor-pointer">
                             {d?.nav.signIn}
                         </Button>
                         <Button>
-                            <Link href={'/resetPassword'} className="underline">
+                            <Link href={'/resetPassword'} className="underline select-none">
                                 {d?.nav.passwordResetBtn}
                             </Link>
                         </Button>
                     </div>
                 </form>
             </Form>
-            <div className="mt-10">
+            <div className="mt-10 select-none">
                 {d?.texts.login_to_signup_1}{' '}
                 <Link href={'/register'} className="underline">
                     {d?.texts.login_to_signup_2}

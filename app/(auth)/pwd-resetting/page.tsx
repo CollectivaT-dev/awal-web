@@ -58,8 +58,14 @@ export default function ResetPasswordPage() {
     return (
         <div className="flex-col-center h-screen">
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4  w-2/3 relative">
-                <Input type="password" {...form.register('password')} placeholder={d?.email.verification.new_password} />
-                <Input type="password" {...form.register('confirm')} placeholder={d?.email.verification.confirm_password} />
+                <div className="space-y-2">
+                    <Input type="password" {...form.register('password')} placeholder={d?.email.verification.new_password} />
+                    {form.formState.errors.password && <p className="text-red-500 text-sm">{form.formState.errors.password.message}</p>}
+                </div>
+                <div className="space-y-2">
+                    <Input type="password" {...form.register('confirm')} placeholder={d?.email.verification.confirm_password} />
+                    {form.formState.errors.confirm && <p className="text-red-500 text-sm">{form.formState.errors.confirm.message}</p>}
+                </div>
                 <Button type="submit" className="absolute right-0 ">
                     {d?.email.verification.reset_password}
                 </Button>

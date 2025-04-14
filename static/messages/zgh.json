@@ -7,7 +7,8 @@
         "signOut": "ⴼⴼⵖ",
         "translator": "ⴰⵎⵙⵙⵓⵖⵍ",
         "contribute": "ⴰⵔⴳ",
-        "validate": "ⵣⵣⵔⵢ"
+        "validate": "ⵣⵣⵔⵢ",
+        "passwordResetBtn": "Forget password?"
     },
     "language": {
         "zgh": "ⵜⴰⵎⴰⵣⵉⵖⵜ",
@@ -373,11 +374,11 @@
             "reset_success": "Password reset successfully.",
             "reset_email_send_success": "Password email sent successfully, please check your inbox and click on the link to complete password reset.",
             "email_recovery": "Email for password recovery",
-			"submit_btn":"Submit",
-			"reset_email_send_error":"Error while sending email, try again later",
-			"password_mismatch":"Passwords do not match",
-			"new_password": "New password",
-			"confirm_password": "Confirm password"
+            "submit_btn": "Submit",
+            "reset_email_send_error": "Error while sending email, try again later",
+            "password_mismatch": "Passwords do not match",
+            "new_password": "New password",
+            "confirm_password": "Confirm password"
         }
     }
 }
