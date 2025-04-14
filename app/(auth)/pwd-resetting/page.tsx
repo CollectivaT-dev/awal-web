@@ -13,7 +13,7 @@ import { getDictionary, MessagesProps } from '@/i18n';
 
 const schema = z
     .object({
-        password: z.string().min(8, 'Min 8 chars'),
+        password: z.string().min(8, 'Password requires minimum of 8 characters'),
         confirm: z.string(),
     })
     .refine((data) => data.password === data.confirm, {
