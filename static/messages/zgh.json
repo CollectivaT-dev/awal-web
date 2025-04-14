@@ -368,7 +368,16 @@
             "error_msg": "ⵜⵣⴳⵍ ⴽⵔⴰ ⵏ ⵜⵖⴰⵡⵙⴰ. ⵎⴽ ⵜⵙⵓⵍⴷ ⵍⴰ ⵜⵥⵕⵕⴰⴷ ⵜⵉⵍⵍⵉⴼⵜ, ⵎⴽ ⵜⵓⴼⵉⴷ, ⴰⵔⵎ ⴰⴷ ⵜⴰⵍⵙⴷ ⴰⵣⴰⵏ ⵏ ⵉⵎⴰⵢⵍ ⵏ ⵜⵎⵏⵥⵉⵜ. ⵎⴽ ⵜⵙⵓⵍ ⵜⵎⵓⴽⵔⵉⵙⵜ, ⵏⵢⴰⵍⴽⴰⵎ ⴷⵉⴷⵏⵖ ⵃⵎⴰ ⴰⴷ ⵜⴰⴼⴷ ⵜⵉⵡⵉⵙⵉ.",
             "success_email": "ⵉⵜⵜⵢⴰⵣⴰⵏ ⵉⵎⴰⵢⵍ ⵏ ⵜⵎⵏⵥⵉⵜ ⵙ ⵓⵎⵓⵔⵙ, ⵎⴽ ⵜⵓⴼⴰⵎ, ⴰⴳⴳⵯⴰⵜ ⵏⵏ ⵜⴰⴼⵏⵉⵇⵜ ⵏ ⵉⵎⵉⵥ ⵏⵏⵓⵏ, ⵜⴽⵍⵉⴽⵉⵎ ⵖⴼ ⵓⵙⵖⵏ ⵃⵎⴰ ⴰⴷ ⵜⵙⵎⴷⵎ ⴰⵙⵙⵏⵥⵓ.",
             "alert": "ⵎⴽ ⵜⵓⴼⴰⵎ, ⵙⵙⵏⵥⵓⵢⴰⵜ ⵉⵎⴰⵢⵏ ⵏⵏⵓⵏ.",
-            "error_email": "ⵉⴳⵓⴼ ⵡⴰⵣⴰⵏ ⵏ ⵉⵎⴰⵢⵍ ⵏ ⵜⵎⵏⵥⵉⵜ. ⵃⵇⵇⴰⵢⴰⵜ ⵎⴰⵙ ⴷ ⵜⴰⵔⴰⵎ ⵉⵎⴰⵢⵍ ⵏⵏⵓⵏ ⵙ ⵜⵖⴰⵔⴰⵙⵜ ⵉⵏⵎⵏ ⴳ ⵜⴰⵙⵏⴰ ⵏ ⵉⴼⵔⵙ ⵏⵏⵓⵏ. ⵎⴽ ⵜⵙⵓⵍ ⵜⵎⵓⴽⵔⵉⵙⵜ, ⵏⵢⴰⵍⴽⴰⵎ ⴷⵉⴷⵏⵖ ⵃⵎⴰ ⴰⴷ ⵜⴰⴼⴷ ⵜⵉⵡⵉⵙⵉ."
+            "error_email": "ⵉⴳⵓⴼ ⵡⴰⵣⴰⵏ ⵏ ⵉⵎⴰⵢⵍ ⵏ ⵜⵎⵏⵥⵉⵜ. ⵃⵇⵇⴰⵢⴰⵜ ⵎⴰⵙ ⴷ ⵜⴰⵔⴰⵎ ⵉⵎⴰⵢⵍ ⵏⵏⵓⵏ ⵙ ⵜⵖⴰⵔⴰⵙⵜ ⵉⵏⵎⵏ ⴳ ⵜⴰⵙⵏⴰ ⵏ ⵉⴼⵔⵙ ⵏⵏⵓⵏ. ⵎⴽ ⵜⵙⵓⵍ ⵜⵎⵓⴽⵔⵉⵙⵜ, ⵏⵢⴰⵍⴽⴰⵎ ⴷⵉⴷⵏⵖ ⵃⵎⴰ ⴰⴷ ⵜⴰⴼⴷ ⵜⵉⵡⵉⵙⵉ.",
+            "reset_password": "Reset Password",
+            "reset_success": "Password reset successfully.",
+            "reset_email_send_success": "Password email sent successfully, please check your inbox and click on the link to complete password reset.",
+            "email_recovery": "Email for password recovery",
+			"submit_btn":"Submit",
+			"reset_email_send_error":"Error while sending email, try again later",
+			"password_mismatch":"Passwords do not match",
+			"new_password": "New password",
+			"confirm_password": "Confirm password"
         }
     }
 }
