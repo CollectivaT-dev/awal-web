@@ -13,11 +13,10 @@ import { getDictionary, MessagesProps } from '@/i18n';
 
 const schema = z
     .object({
-        password: z.string().min(8, 'Password requires minimum of 8 characters'),
+        password: z.string().min(8),
         confirm: z.string(),
     })
     .refine((data) => data.password === data.confirm, {
-        message: 'Passwords do not match',
         path: ['confirm'],
     });
 
@@ -49,10 +48,10 @@ export default function ResetPasswordPage() {
             if (req.status === 200) {
                 toast.success(`${d?.email.verification.reset_success}`);
             } else {
-                toast.error(req.data.message || 'Error resetting password');
+                toast.error(req.data.message ?? 'Error resetting password');
             }
         } catch (error: any) {
-            toast.error(error?.response?.data?.message || 'Something went wrong');
+            toast.error(error?.response?.data?.message ?? 'Something went wrong');
         }
     };
     return (
@@ -60,13 +59,13 @@ export default function ResetPasswordPage() {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4  w-2/3 relative">
                 <div className="space-y-2">
                     <Input type="password" {...form.register('password')} placeholder={d?.email.verification.new_password} />
-                    {form.formState.errors.password && <p className="text-red-500 text-sm">{form.formState.errors.password.message}</p>}
+                    {form.formState.errors.password && <p className="text-red-500 text-sm">{d?.email.verification.password_min_char}</p>}
                 </div>
                 <div className="space-y-2">
                     <Input type="password" {...form.register('confirm')} placeholder={d?.email.verification.confirm_password} />
-                    {form.formState.errors.confirm && <p className="text-red-500 text-sm">{form.formState.errors.confirm.message}</p>}
+                    {form.formState.errors.confirm && <p className="text-red-500 text-sm">{d?.email.verification.password_mismatch}</p>}
                 </div>
-                <Button type="submit" className="absolute right-0 ">
+                <Button type="submit" className="absolute right-0 cursor-pointer">
                     {d?.email.verification.reset_password}
                 </Button>
             </form>

@@ -51,14 +51,14 @@ export function ResetPasswordForm() {
                     control={form.control}
                     name="email"
                     render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="flex flex-col gap-y-2">
                             <FormLabel>Email</FormLabel>
                             <FormControl>
                                 <Input placeholder="example@awaldigital.org" {...field} />
                             </FormControl>
                             <FormDescription>
-                                {d?.email.verification.email_recovery}
-                                <p>Please check your spam if you didn&apos;t receive the email</p>
+                                <p>{d?.email.verification.email_recovery}</p>
+                                <p>{d?.email.verification.check_spam} </p>
                             </FormDescription>
                             <FormMessage />
                         </FormItem>

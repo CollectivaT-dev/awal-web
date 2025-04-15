@@ -2,15 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
-import {
-    Form,
-    FormControl,
-    FormDescription,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from '@/components/ui/form';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios';
@@ -26,7 +18,7 @@ const formSchema = z
     .object({
         username: z.string().min(1, { message: 'Necessari' }),
         email: z.string().email("L'adreça de correu no es vàlida"),
-        password: z.string().min(1, { message: 'Necessari' }),
+        password: z.string().min(8, { message: 'Necessari' }),
         confirmPassword: z.string().nonempty({ message: 'Necessari' }),
         isPrivacy: z.boolean(),
         isSubscribed: z.boolean().optional(),
@@ -94,22 +86,16 @@ export default function RegisterForm() {
                         if (errorData.error.includes('Email')) {
                             toast.error(`${dictionary?.toasters.alert_email}`);
                         } else if (errorData.error.includes('Username')) {
-                            toast.error(
-                                `${dictionary?.toasters.alert_username}`,
-                            );
+                            toast.error(`${dictionary?.toasters.alert_username}`);
                         } else {
-                            toast.error(
-                                `${dictionary?.toasters.alert_email_username}`,
-                            );
+                            toast.error(`${dictionary?.toasters.alert_email_username}`);
                         }
                     } else {
                         toast.error(`${dictionary?.toasters.alert_try_again}`);
                     }
                 } else {
                     // Handle other types of errors
-                    const errorMessage =
-                        errorData?.message ||
-                        `${dictionary?.toasters.alert_general}`;
+                    const errorMessage = errorData?.message || `${dictionary?.toasters.alert_general}`;
                     toast.error(errorMessage);
                 }
             }
@@ -130,10 +116,7 @@ export default function RegisterForm() {
     }
     return (
         <Form {...form}>
-            <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-8 min-h-screen flex flex-col justify-center items-center"
-            >
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 min-h-screen flex flex-col justify-center items-center">
                 <FormField
                     control={form.control}
                     name="username"
@@ -141,10 +124,7 @@ export default function RegisterForm() {
                         <FormItem>
                             <FormLabel>{dictionary?.user.username}</FormLabel>
                             <FormControl>
-                                <Input
-                                    {...field}
-                                    placeholder={`${dictionary?.user.username}`}
-                                />
+                                <Input {...field} placeholder={`${dictionary?.user.username}`} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -157,10 +137,7 @@ export default function RegisterForm() {
                         <FormItem>
                             <FormLabel>{dictionary?.user.email}</FormLabel>
                             <FormControl>
-                                <Input
-                                    {...field}
-                                    placeholder={`${dictionary?.user.email}`}
-                                />
+                                <Input {...field} placeholder={`${dictionary?.user.email}`} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -171,21 +148,11 @@ export default function RegisterForm() {
                     name="password"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel
-                                className={`capitalize ${
-                                    form.formState.errors.password
-                                        ? 'text-white'
-                                        : ''
-                                }`}
-                            >
+                            <FormLabel className={`capitalize ${form.formState.errors.password ? 'text-white' : ''}`}>
                                 {dictionary?.user.password}
                             </FormLabel>
                             <FormControl>
-                                <Input
-                                    {...field}
-                                    type="password"
-                                    placeholder={`${dictionary?.user.password}`}
-                                />
+                                <Input {...field} type="password" placeholder={`${dictionary?.user.password}`} />
                             </FormControl>
                             <FormMessage className="text-white" />
                         </FormItem>
@@ -196,30 +163,15 @@ export default function RegisterForm() {
                     name="confirmPassword"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel
-                                className={`capitalize ${
-                                    form.formState.errors.confirmPassword
-                                        ? 'text-white'
-                                        : ''
-                                }`}
-                            >
+                            <FormLabel className={`capitalize ${form.formState.errors.confirmPassword ? 'text-white' : ''}`}>
                                 {dictionary?.user.confirm_password}
                             </FormLabel>
                             <FormControl>
-                                <Input
-                                    {...field}
-                                    type="password"
-                                    placeholder={`${dictionary?.user.confirm_password}`}
-                                />
+                                <Input {...field} type="password" placeholder={`${dictionary?.user.confirm_password}`} />
                             </FormControl>
 
                             {form.formState.errors.confirmPassword && (
-                                <FormMessage className="text-white">
-                                    {
-                                        dictionary?.error_msg
-                                            .alert_password_coincide
-                                    }
-                                </FormMessage>
+                                <FormMessage className="text-white">{dictionary?.error_msg.alert_password_coincide}</FormMessage>
                             )}
                         </FormItem>
                     )}
@@ -230,39 +182,16 @@ export default function RegisterForm() {
                     render={({ field }) => (
                         <FormItem className="flex flex-row justify-center items-center space-x-3 space-y-0 rounded-md border p-4 shadow-sm">
                             <FormControl>
-                                <Checkbox
-                                    checked={field.value}
-                                    onCheckedChange={field.onChange}
-                                />
+                                <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                             </FormControl>
 
                             <div className="">
-                                <FormLabel
-                                    className={`capitalize ${
-                                        form.formState.errors.isPrivacy
-                                            ? 'text-white'
-                                            : ''
-                                    }`}
-                                >
-                                    {
-                                        dictionary?.text_with_link.accept_terms
-                                            .text_before_link
-                                    }{' '}
-                                    <Link
-                                        href={'/contribution-terms'}
-                                        target="_blank"
-                                        scroll={false}
-                                        className="text-blue-500"
-                                    >
-                                        {
-                                            dictionary?.text_with_link
-                                                .accept_terms.link_text
-                                        }
+                                <FormLabel className={`capitalize ${form.formState.errors.isPrivacy ? 'text-white' : ''}`}>
+                                    {dictionary?.text_with_link.accept_terms.text_before_link}{' '}
+                                    <Link href={'/contribution-terms'} target="_blank" scroll={false} className="text-blue-500">
+                                        {dictionary?.text_with_link.accept_terms.link_text}
                                     </Link>{' '}
-                                    {
-                                        dictionary?.text_with_link.accept_terms
-                                            .text_after_link
-                                    }
+                                    {dictionary?.text_with_link.accept_terms.text_after_link}
                                 </FormLabel>
                             </div>
                         </FormItem>
@@ -274,17 +203,23 @@ export default function RegisterForm() {
                     render={({ field }) => (
                         <FormItem className="flex flex-row justify-center items-center space-x-3 space-y-0 rounded-md border p-4 shadow-sm">
                             <FormControl>
-                                <Checkbox
-                                    checked={field.value}
-                                    onCheckedChange={field.onChange}
-                                />
+                                <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                             </FormControl>
 
                             <FormLabel>{dictionary?.texts.subscribe}</FormLabel>
                         </FormItem>
                     )}
                 />
-                <Button type="submit">{dictionary?.nav.signUp}</Button>
+                <div className="flex flex-col space-y-2">
+                    <Button type="submit" variant={'secondary'}>
+                        {dictionary?.nav.signUp}
+                    </Button>
+                    <Button variant={'ghost'}>
+                        <Link href={'/resetPassword'} className="underline select-none">
+                            {dictionary?.nav.passwordResetBtn}
+                        </Link>
+                    </Button>
+                </div>
             </form>
         </Form>
     );

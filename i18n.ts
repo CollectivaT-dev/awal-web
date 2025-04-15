@@ -90,6 +90,9 @@ interface Verification {
     password_mismatch: string;
     new_password: string;
     confirm_password: string;
+	check_spam:string;
+	password_min_char:string;
+
 }
 
 interface Carousel {
