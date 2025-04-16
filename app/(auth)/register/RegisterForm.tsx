@@ -18,7 +18,7 @@ const formSchema = z
     .object({
         username: z.string().min(1, { message: 'Necessari' }),
         email: z.string().email("L'adreça de correu no es vàlida"),
-        password: z.string().min(8, { message: 'Necessari' }),
+        password: z.string().min(1, { message: 'Necessari' }),
         confirmPassword: z.string().nonempty({ message: 'Necessari' }),
         isPrivacy: z.boolean(),
         isSubscribed: z.boolean().optional(),

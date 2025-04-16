@@ -378,7 +378,10 @@
             "reset_email_send_error": "Error al enviar el correo electrónico, inténtalo de nuevo más tarde",
             "password_mismatch": "Las contraseñas no coinciden",
             "new_password": "Nueva contraseña",
-            "confirm_password": "Confirmar contraseña"
+            "confirm_password": "Confirmar contraseña",
+			"check_spam": "Por favor, revisa tu carpeta de spam (correo no deseado) si no has recibido el correo electrónico",
+  "password_min_char": "La contraseña debe tener un mínimo de 8 caracteres"
+
         }
     }
 }

@@ -378,7 +378,10 @@
             "reset_email_send_error": "Error while sending email, try again later",
             "password_mismatch": "Passwords do not match",
             "new_password": "New password",
-            "confirm_password": "Confirm password"
+            "confirm_password": "Confirm password",
+			
+			"check_spam": "Si us plau, comprova la carpeta de correu brossa (spam) si no has rebut el correu electrònic",
+			"password_min_char": "La contrasenya ha de tenir un mínim de 8 caràcters"
         }
     }
 }
