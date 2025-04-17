@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios';
@@ -17,14 +17,14 @@ import { useEffect, useState } from 'react';
 const formSchema = z
     .object({
         username: z.string().min(1, { message: 'Necessari' }),
-        email: z.string().email("L'adreça de correu no es vàlida"),
-        password: z.string().min(1, { message: 'Necessari' }),
-        confirmPassword: z.string().nonempty({ message: 'Necessari' }),
+        email: z.string().email('Email not valid'),
+        password: z.string().min(8).nonempty({ message: 'non-empty' }),
+        confirmPassword: z.string().nonempty({ message: 'non-empty' }),
         isPrivacy: z.boolean(),
         isSubscribed: z.boolean().optional(),
     })
     .refine((data) => data.password === data.confirmPassword, {
-        message: 'Les contrasenyes no coincideixen',
+        message: 'password mismatch',
         path: ['confirmPassword'],
     });
 
@@ -101,19 +101,28 @@ export default function RegisterForm() {
             }
         }
     };
+    const formErrors = form.formState.errors;
 
-    if (form.formState.errors.username?.message?.includes('Required')) {
-        form.formState.errors.username.message = `${dictionary?.error_msg.alert_required}`;
+    if (formErrors.username?.message?.includes('Required')) {
+        formErrors.username.message = `${dictionary?.error_msg.alert_required}`;
     }
-    if (form.formState.errors.email?.message?.includes('Required')) {
-        form.formState.errors.email.message = `${dictionary?.error_msg.alert_required}`;
+
+    if (formErrors.email?.message?.includes('Required')) {
+        formErrors.email.message = `${dictionary?.error_msg.alert_required}`;
     }
-    if (form.formState.errors.password?.message?.includes('Required')) {
-        form.formState.errors.password.message = `${dictionary?.error_msg.alert_required}`;
+
+    if (formErrors.password?.message?.includes('at least')) {
+        formErrors.password.message = `${dictionary?.email.verification.password_min_char}`;
+    } else if (formErrors.password?.message?.includes('empty') || formErrors.password?.message?.includes('Required')) {
+        formErrors.password.message = `${dictionary?.error_msg.alert_required}`;
     }
-    if (form.formState.errors.confirmPassword?.message?.includes('Required')) {
-        form.formState.errors.confirmPassword.message = `${dictionary?.error_msg.alert_required}`;
+
+    if (formErrors.confirmPassword?.message?.includes('mismatch')) {
+        formErrors.confirmPassword.message = `${dictionary?.email.verification.password_mismatch}`;
+    } else if (formErrors.confirmPassword?.message?.includes('empty') || formErrors.confirmPassword?.message?.includes('Required')) {
+        formErrors.confirmPassword.message = `${dictionary?.error_msg.alert_required}`;
     }
+
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 min-h-screen flex flex-col justify-center items-center">
