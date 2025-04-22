@@ -11,6 +11,14 @@ const ResetPassword: React.FC<ResetPasswordProps> = ({ email, resetPasswordToken
             <h1>
                 Reset Password for <b>{email}</b>
             </h1>
+            <p
+                style={{
+                    fontWeight: 'semibold',
+                    fontSize: '14px',
+                }}
+            >
+                This link expires in 30 minutes.
+            </p>
             <p>To reset your password, click the link below:</p>
             <a
                 href={`${url}/pwd-resetting?t=${resetPasswordToken}`}

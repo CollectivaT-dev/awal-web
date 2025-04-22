@@ -75,15 +75,33 @@ export async function POST(req: Request) {
     }
 }
 export async function PATCH(req: Request) {
-    const { token, password } = await req.json();
+    const { token: resetPasswordToken, password } = await req.json();
 
-    if (!token || typeof token !== 'string') {
+    if (!resetPasswordToken || typeof resetPasswordToken !== 'string') {
         return NextResponse.json({ message: 'Missing token' }, { status: 400 });
+    }
+    // token validation to prevent multiple password reset
+    const validToken = await prisma.user.findUnique({
+        where: {
+            resetPasswordToken,
+        },
+        select: {
+            resetPasswordTokenExpiration: true,
+        },
+    });
+
+    if (!validToken) {
+        return NextResponse.json({ message: 'Invalid or expired token' }, { status: 404 });
+    }
+    // check for expired token
+    const now = new Date();
+    if (validToken?.resetPasswordTokenExpiration && validToken.resetPasswordTokenExpiration < now) {
+        return NextResponse.json({ message: 'Token expired' }, { status: 404 });
     }
 
     const user = await prisma.user.findUnique({
         where: {
-            resetPasswordToken: token,
+            resetPasswordToken,
         },
     });
 

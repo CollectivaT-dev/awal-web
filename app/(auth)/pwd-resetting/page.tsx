@@ -1,5 +1,5 @@
 'use client';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -23,6 +23,7 @@ const schema = z
 type FormData = z.infer<typeof schema>;
 
 export default function ResetPasswordPage() {
+    const router = useRouter();
     const searchParams = useSearchParams();
     const token = searchParams.get('t');
     const { locale } = useLocaleStore();
@@ -47,6 +48,7 @@ export default function ResetPasswordPage() {
 
             if (req.status === 200) {
                 toast.success(`${d?.email.verification.reset_success}`);
+                router.push('/signIn', { scroll: false });
             } else {
                 toast.error(req.data.message ?? 'Error resetting password');
             }
