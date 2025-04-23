@@ -7,7 +7,8 @@
         "signOut": "Déconnexion",
         "translator": "Traducteur",
         "contribute": "Contribuer",
-        "validate": "Valider"
+        "validate": "Valider",
+        "passwordResetBtn": "Mot de passe oublié ?"
     },
     "language": {
         "zgh": "ⵜⴰⵎⴰⵣⵉⵖⵜ",
@@ -148,7 +149,7 @@
         "total_validated_entries": "Traductions validées",
         "total_voice_entries_number": "2",
         "total_voice_entries": "heures enregistrées",
-        "total_voice_validation_number": "1",
+        "total_voice_validation_number": "2",
         "total_voice_validation": "heure validée",
         "statistic":"Classement de la Communauté",
         "validate_report_heading": "Signaler la contribution",
@@ -213,7 +214,7 @@
         "contributor_yuxuan_website": "",
         "contributor_yuxuan_intro": "Yuxuan Peng développe et maintient la page web d'Awal.",
         "contributor_brahim_photo": "",
-        "contributor_brahim_website": "",
+        "contributor_brahim_website": "https://www.yuxuanize.com",
         "contributor_brahim_intro": "Brahim Essaidi, auteur, écrivain et traducteur amazigh. A localisé le site Web d'Awal et Common Voice. Contribue à Awal, Common Voice et d'autres projets open source dédiés à promouvoir la langue tamazight.",
         "contact_heading": "Contactez Awal",
         "contact_info": "Pour toute question, suggestion ou plus d'informations, contactez-nous à",
@@ -368,7 +369,19 @@
         "error_msg": "Quelque chose s'est mal passé. Si vous voyez toujours la bannière, veuillez essayer de renvoyer l'e-mail de vérification. Si le problème persiste, contactez-nous pour obtenir de l'aide.",
         "success_email": "L'email de vérification a été envoyé avec succès. Veuillez vérifier votre boîte de réception et cliquer sur le lien pour terminer la vérification.",
         "alert": "Veuillez vérifier votre e-mail.",
-        "error_email": "Impossible d'envoyer l'e-mail de vérification. Assurez-vous d'avoir correctement écrit votre e-mail dans votre page de profil. Si le problème persiste, contactez-nous pour obtenir de l'aide."
+        "error_email": "Impossible d'envoyer l'e-mail de vérification. Assurez-vous d'avoir correctement écrit votre e-mail dans votre page de profil. Si le problème persiste, contactez-nous pour obtenir de l'aide.",
+        "reset_password": "Réinitialiser le Mot de Passe",
+        "reset_success": "Mot de passe réinitialisé avec succès.",
+        "reset_email_send_success": "E-mail de réinitialisation envoyé avec succès, veuillez vérifier votre boîte de réception et cliquer sur le lien pour compléter la réinitialisation du mot de passe.",
+        "email_recovery": "E-mail pour la récupération du mot de passe",
+        "submit_btn": "Envoyer",
+        "reset_email_send_error": "Erreur lors de l'envoi de l'e-mail, réessayez plus tard",
+        "password_mismatch": "Les mots de passe ne correspondent pas",
+        "new_password": "Nouveau mot de passe",
+        "confirm_password": "Confirmer le mot de passe",
+		"check_spam": "S'il vous plaît, vérifiez votre dossier de courriers indésirables (spam) si vous n'avez pas reçu l'e-mail",
+		"password_min_char": "Le mot de passe doit contenir au minimum 8 caractères"
+	  
       }
     }
 }

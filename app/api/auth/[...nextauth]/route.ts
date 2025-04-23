@@ -121,10 +121,13 @@ export const authOptions: AuthOptions = {
         },
     },
     jwt: {
-        secret: process.env.JWT_SECRET,
+        secret: process.env.NEXTAUTH_SECRET,
         encode: async ({ secret, token }) => {
+            if (!secret) throw new Error('No secret provided to encode JWT token');
             const payload = { id: token?.id };
+            console.log('🚀 ~ encode: ~ payload:', payload);
             const encodedToken = jwt.sign(payload, secret, { algorithm: 'HS256' });
+            console.log('🚀 ~ encode: ~ encodedToken:', encodedToken);
             return encodedToken;
         },
         decode: async ({ secret, token }) => {

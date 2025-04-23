@@ -7,7 +7,8 @@
         "signOut": "Sign Out",
         "translator": "Translator",
         "contribute": "Contribute",
-        "validate": "Validate"
+        "validate": "Validate",
+        "passwordResetBtn": "Forgot password?"
     },
     "language": {
         "zgh": "ⵜⴰⵎⴰⵣⵉⵖⵜ",
@@ -145,7 +146,7 @@
         "total_validated_entries": "translations validated",
         "total_voice_entries_number": "2",
         "total_voice_entries": "hours recorded",
-        "total_voice_validation_number": "1",
+        "total_voice_validation_number": "2",
         "total_voice_validation": "hour validated",
         "have_account": "have an account? ",
         "login_to_signup_1": "New to Awal?",
@@ -213,7 +214,7 @@
         "contributor_yuxuan_website": "",
         "contributor_yuxuan_intro": "Yuxuan Peng, full stack developer, develops and maintains Awal's web page.",
         "contributor_brahim_photo": "",
-        "contributor_brahim_website": "",
+        "contributor_brahim_website": "https://www.yuxuanize.com",
         "contributor_brahim_intro": "Brahim Essaidi, Amazigh author, writer and translator. Localized Awal website and Common Voice. Contributes to Awal, Common Voice and other open source projects dedicated to promote Tamazight language.",
         "contact_heading": "Contact Awal",
         "contact_info": "For inquiries, suggestions, or more information, contact us at",
@@ -368,7 +369,18 @@
             "error_msg": "Something went wrong. If you still see the banner, please try to resend verification email. If problem persist, contact us for help.",
             "success_email": "Verification email sent successfully, please check your inbox and click on the link to complete verification.",
             "alert": "Please verify your email.",
-            "error_email": "Failed to send verification email. Make sure you wrote your email correctly in your profile page. If the problem persist, contact us for help."
+            "error_email": "Failed to send verification email. Make sure you wrote your email correctly in your profile page. If the problem persist, contact us for help.",
+            "reset_password": "Reset Password",
+            "reset_success": "Password reset successfully.",
+            "reset_email_send_success": "Password email sent successfully, please check your inbox and click on the link to complete password reset.",
+            "email_recovery": "Email for password recovery",
+            "submit_btn": "Submit",
+            "reset_email_send_error": "Error while sending email, try again later",
+            "password_mismatch": "Passwords do not match",
+            "new_password": "New password",
+            "confirm_password": "Confirm password",
+            "check_spam": "Please check your spam if you didn't receive the email",
+            "password_min_char": "Password requires minimum of 8 characters"
         }
     }
 }

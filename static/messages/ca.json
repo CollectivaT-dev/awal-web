@@ -7,7 +7,8 @@
         "signOut": "Tanca la sessió",
         "translator": "Traductor",
         "contribute": "Contribuir",
-        "validate": "Validar"
+        "validate": "Validar",
+        "passwordResetBtn": "Has oblidat la contrasenya?"
     },
     "language": {
         "zgh": "ⵜⴰⵎⴰⵣⵉⵖⵜ",
@@ -119,7 +120,7 @@
         "heading_3": "Veure el teu ranquing",
         "text_3": "Guanyaràs punts per les traduccions i validacions que facis, i veuràs com et compares amb els altres membres de la comunitat al marcador públic.",
         "heading_4": "Descobreix la comunitat Awal",
-		"text_4_1": "Obtén més informació sobre la iniciativa i els nostres col·laboradors a la pàgina ",
+        "text_4_1": "Obtén més informació sobre la iniciativa i els nostres col·laboradors a la pàgina ",
         "text_4_about": "'Sobre Awal'. ",
         "text_4_2": "Segueix-nos a",
         "text_4_ins": "Instagram",
@@ -146,15 +147,15 @@
         "total_validated_entries": "Traduccions validades",
         "total_voice_entries_number": "2",
         "total_voice_entries": "hores registrades",
-        "total_voice_validation_number": "1",
+        "total_voice_validation_number": "2",
         "total_voice_validation": "hora validada",
         "login_to_signup_1": "Nou a Awal?",
         "login_to_signup_2": "Inscriu-te!",
-		"statistic":"Classificació de la Comunitat",
+        "statistic": "Classificació de la Comunitat",
         "validate_report_heading": "Informar contribució",
         "validate_report_text": "Expliqueu breument què hi ha de malament amb aquesta contribució segons les directrius de la nostra comunitat.",
-        "faq_heading":"Preguntes Freqüents",
-        "rank":"#",
+        "faq_heading": "Preguntes Freqüents",
+        "rank": "#",
         "home": "Inici",
         "contributor_input_placeholder": "Escriviu un text per traduir, o carregueu-ne una amb el botó 'Frase Aleatòria'.",
         "contributor_output_placeholder": "Escriviu aquí la traducció del text a l'esquerra en el idioma seleccionat."
@@ -173,7 +174,7 @@
         "cancel": "Cancel·la",
         "contribute": "Contribueix",
         "clear": "Buideu el text",
-        "skip":"Saltar"
+        "skip": "Saltar"
     },
     "setting": {
         "oral": "Oral",
@@ -213,14 +214,14 @@
         "contributor_yuxuan_website": "",
         "contributor_yuxuan_intro": "Yuxuan Peng desenvolupa i manté la pàgina web d'Awal.",
         "contributor_brahim_photo": "",
-        "contributor_brahim_website": "",
+        "contributor_brahim_website": "https://www.yuxuanize.com",
         "contributor_brahim_intro": "Brahim Essaidi, autor, escriptor i traductor amazic. Va localitzar el lloc web d'Awal i Common Voice. Contribueix a Awal, Common Voice i altres projectes de codi obert dedicats a promoure la llengua amazic.",
         "contact_heading": "Posa't en contacte amb Awal",
         "contact_info": "Per a consultes, suggeriments o més informació, contacta'ns a",
         "contact_text": "awal@collectivat.cat"
     },
     "terms": {
-        "contribution_terms_heading":"Condicions de contribució",
+        "contribution_terms_heading": "Condicions de contribució",
         "contribution_terms": "Awal és una iniciativa sense ànim de lucre que contribueix a la digitalització de la llengua amaziga mitjançant la recopilació de conjunts de dades obertes i el desenvolupament d'eines innovadores.\nEl portal web d'Awal permet la contribució lliure de frases traduïdes amb l'objectiu de desenvolupar aplicacions de traducció automàtica. Només podeu fer contribucions i validar frases traduïdes si us apunteu a la iniciativa. En registrar-vos, heu de comprometre-us a complir aquests termes.\nAwal també col·labora amb la iniciativa Common Voice de Mozilla per a la recopilació de conjunts de dades obertes de parla, permetent a qualsevol persona construir aplicacions basades en la veu per a l'amazic. Tingueu en compte que les contribucions a Common Voice estan subjectes als",
         "mozilla_terms": "termes legals de Mozilla.",
         "contribution_terms_continued": "En aquests termes, 'nosaltres', 'el nostre', 'ens' o '-nos' es refereixen als col·laboradors i administradors d'Awal, la iniciativa sense ànim de lucre. 'Tu', 'teu', 'vosaltres' o 'vostre' fa referència a l'usuari, col·laborador o voluntari que interacciona i contribueix a la plataforma d'Awal.",
@@ -360,15 +361,27 @@
         }
     },
     "email": {
-      "verification": {
-        "page_redirect": "Ara us redireccionarem...",
-        "token_error": "El token de validació no és vàlid, si us plau, intenteu reenviar el correu electrònic de verificació.",
-        "success_title": "Gràcies per verificar el vostre correu electrònic.",
-        "error_title": "Ha fallat la verificació del correu electrònic.",
-        "error_msg": "Alguna cosa ha anat malament. Si encara veieu la pancarta, si us plau, intenteu reenviar el correu electrònic de verificació. Si el problema persisteix, poseu-vos en contacte amb nosaltres per obtenir ajuda.",
-        "success_email": "El correu electrònic de verificació s'ha enviat correctament. Si us plau, comproveu la vostra safata d'entrada i feu clic al l'enllaç per completar la verificació.",
-        "alert": "Si us plau, verifiqueu el vostre correu electrònic.",
-        "error_email": "No s'ha pogut enviar el correu electrònic de verificació. Assegureu-vos d'haver escrit correctament el vostre correu electrònic a la pàgina del vostre perfil. Si el problema persisteix, poseu-vos en contacte amb nosaltres per obtenir ajuda."
-      }
+        "verification": {
+            "page_redirect": "Ara us redireccionarem...",
+            "token_error": "El token de validació no és vàlid, si us plau, intenteu reenviar el correu electrònic de verificació.",
+            "success_title": "Gràcies per verificar el vostre correu electrònic.",
+            "error_title": "Ha fallat la verificació del correu electrònic.",
+            "error_msg": "Alguna cosa ha anat malament. Si encara veieu la pancarta, si us plau, intenteu reenviar el correu electrònic de verificació. Si el problema persisteix, poseu-vos en contacte amb nosaltres per obtenir ajuda.",
+            "success_email": "El correu electrònic de verificació s'ha enviat correctament. Si us plau, comproveu la vostra safata d'entrada i feu clic al l'enllaç per completar la verificació.",
+            "alert": "Si us plau, verifiqueu el vostre correu electrònic.",
+            "error_email": "No s'ha pogut enviar el correu electrònic de verificació. Assegureu-vos d'haver escrit correctament el vostre correu electrònic a la pàgina del vostre perfil. Si el problema persisteix, poseu-vos en contacte amb nosaltres per obtenir ajuda.",
+            "reset_password": "Restablir Contrasenya",
+            "reset_success": "Contrasenya restablerta amb èxit.",
+            "reset_email_send_success": "Correu electrònic de restabliment enviat correctament, si us plau, comprova la teva safata d'entrada i fes clic a l'enllaç per completar el restabliment de contrasenya.",
+            "email_recovery": "Correu electrònic per a la recuperació de contrasenya",
+            "submit_btn": "Enviar",
+            "reset_email_send_error": "Error en enviar el correu electrònic, torna-ho a provar més tard",
+            "password_mismatch": "Les contrasenyes no coincideixen",
+            "new_password": "Nova contrasenya",
+            "confirm_password": "Confirmar contrasenya",
+			"check_spam": "Si us plau, comprova la carpeta de correu brossa (spam) si no has rebut el correu electrònic",
+			"password_min_char": "La contrasenya ha de tenir un mínim de 8 caràcters"
+		  
+        }
     }
 }

@@ -7,7 +7,8 @@
         "signOut": "ⴼⴼⵖ",
         "translator": "ⴰⵎⵙⵙⵓⵖⵍ",
         "contribute": "ⴰⵔⴳ",
-        "validate": "ⵣⵣⵔⵢ"
+        "validate": "ⵣⵣⵔⵢ",
+        "passwordResetBtn": "Forgot password?"
     },
     "language": {
         "zgh": "ⵜⴰⵎⴰⵣⵉⵖⵜ",
@@ -145,7 +146,7 @@
         "total_validated_entries": "ⵜⵙⵓⵖⵍⵉⵏ ⵣⵔⵢⵏⵉⵏ",
         "total_voice_entries_number": "1",
         "total_voice_entries": "ⵜⵙⵔⴰⴳⵉⵏ ⵜⵜⵓⵙⵓⵙⵔⵏⵉⵏ",
-        "total_voice_validation_number": "1",
+        "total_voice_validation_number": "2",
         "total_voice_validation": "ⵜⵙⵔⴰⴳⵜ ⵉⵣⵔⵢⵏ",
         "have_account": "ⴷⴰⵔⵓⵏ ⴰⵎⵉⴹⴰⵏ?",
         "login_to_signup_1": "ⵉⵎⴰⵢⵏⵓⵜⵏ ⵖⵔ ⴰⵡⴰⵍ?",
@@ -213,7 +214,7 @@
         "contributor_yuxuan_website": "",
         "contributor_yuxuan_intro": "ⵢⵓⵛⵡⴰⵏ ⴱⵉⵏⴳ, ⴰⵎⵙⵖⵉⵡⵙ ⴰⵏⵎⴷⵓ, ⵍⴰ ⵉⵙⵖⵉⵡⵉⵙ ⴷ ⵍⴰ ⵜⵜ ⵉⵜⵜⵡⴷ ⵉ ⵜⴰⵙⵏⴰ ⵏ ⵓⵡⵉⴱ ⵏ ⴰⵡⴰⵍ.",
         "contributor_brahim_photo": "",
-        "contributor_brahim_website": "",
+        "contributor_brahim_website": "https://www.yuxuanize.com",
         "contributor_brahim_intro": "ⴱⵕⴰⵀⵉⵎ ⵙⵙⵄⵉⴷⵉ, ⴰⵎⴳⴰⵢ ⴷ ⵓⵎⴰⵔⴰ ⴰⵎⴰⵣⵉⵖ ⴷ ⵓⵎⵙⵙⵓⵖⵍ. ⵉⵙⵙⴷⵖⵔ ⴰⵙⵉⵜⵡⵉⴱ ⵏ ⴰⵡⴰⵍ ⴷ ⴽⴰⵎⵏⴼⵓⵢⵙ ⵙ ⵜⵎⴰⵣⵉⵖⵜ. ⴰⵔ ⵉⵜⵜⴰⵔⴳ ⴳ ⴰⵡⴰⵍ, ⴽⴰⵎⵏⴼⵓⵢⵙ ⴷ ⵉⵙⵏⴼⴰⵔⵏ ⵢⴰⴹⵏⵉⵏ ⵏ ⵓⵙⴰⴳⵎ ⵓⵕⵥⵉⵎ ⵜⵜⵓⵥⵍⴰⵢⵏⵉⵏ ⵉ ⵜⵏⴽⵔⴰ ⵙ ⵜⵓⵜⵍⴰⵢⵜ ⵜⴰⵎⴰⵣⵉⵖⵜ.",
         "contact_heading": "ⵏⵢⴰⵍⴽⴰⵎ ⴷ ⴰⵡⴰⵍ",
         "contact_info": "ⵉ ⵉⵙⵇⵙⵉⵜⵏ, ⵜⵉⵙⵓⵎⴰⵔ, ⵏⵉⵖ ⵓⴳⴳⴰⵔ ⵏ ⵉⵏⵖⵎⵉⵙⵏ, ⵏⵢⴰⵍⴽⴰⵎ ⴷⵉⴷⵏⵖ ⴳ",
@@ -368,7 +369,19 @@
             "error_msg": "ⵜⵣⴳⵍ ⴽⵔⴰ ⵏ ⵜⵖⴰⵡⵙⴰ. ⵎⴽ ⵜⵙⵓⵍⴷ ⵍⴰ ⵜⵥⵕⵕⴰⴷ ⵜⵉⵍⵍⵉⴼⵜ, ⵎⴽ ⵜⵓⴼⵉⴷ, ⴰⵔⵎ ⴰⴷ ⵜⴰⵍⵙⴷ ⴰⵣⴰⵏ ⵏ ⵉⵎⴰⵢⵍ ⵏ ⵜⵎⵏⵥⵉⵜ. ⵎⴽ ⵜⵙⵓⵍ ⵜⵎⵓⴽⵔⵉⵙⵜ, ⵏⵢⴰⵍⴽⴰⵎ ⴷⵉⴷⵏⵖ ⵃⵎⴰ ⴰⴷ ⵜⴰⴼⴷ ⵜⵉⵡⵉⵙⵉ.",
             "success_email": "ⵉⵜⵜⵢⴰⵣⴰⵏ ⵉⵎⴰⵢⵍ ⵏ ⵜⵎⵏⵥⵉⵜ ⵙ ⵓⵎⵓⵔⵙ, ⵎⴽ ⵜⵓⴼⴰⵎ, ⴰⴳⴳⵯⴰⵜ ⵏⵏ ⵜⴰⴼⵏⵉⵇⵜ ⵏ ⵉⵎⵉⵥ ⵏⵏⵓⵏ, ⵜⴽⵍⵉⴽⵉⵎ ⵖⴼ ⵓⵙⵖⵏ ⵃⵎⴰ ⴰⴷ ⵜⵙⵎⴷⵎ ⴰⵙⵙⵏⵥⵓ.",
             "alert": "ⵎⴽ ⵜⵓⴼⴰⵎ, ⵙⵙⵏⵥⵓⵢⴰⵜ ⵉⵎⴰⵢⵏ ⵏⵏⵓⵏ.",
-            "error_email": "ⵉⴳⵓⴼ ⵡⴰⵣⴰⵏ ⵏ ⵉⵎⴰⵢⵍ ⵏ ⵜⵎⵏⵥⵉⵜ. ⵃⵇⵇⴰⵢⴰⵜ ⵎⴰⵙ ⴷ ⵜⴰⵔⴰⵎ ⵉⵎⴰⵢⵍ ⵏⵏⵓⵏ ⵙ ⵜⵖⴰⵔⴰⵙⵜ ⵉⵏⵎⵏ ⴳ ⵜⴰⵙⵏⴰ ⵏ ⵉⴼⵔⵙ ⵏⵏⵓⵏ. ⵎⴽ ⵜⵙⵓⵍ ⵜⵎⵓⴽⵔⵉⵙⵜ, ⵏⵢⴰⵍⴽⴰⵎ ⴷⵉⴷⵏⵖ ⵃⵎⴰ ⴰⴷ ⵜⴰⴼⴷ ⵜⵉⵡⵉⵙⵉ."
+            "error_email": "ⵉⴳⵓⴼ ⵡⴰⵣⴰⵏ ⵏ ⵉⵎⴰⵢⵍ ⵏ ⵜⵎⵏⵥⵉⵜ. ⵃⵇⵇⴰⵢⴰⵜ ⵎⴰⵙ ⴷ ⵜⴰⵔⴰⵎ ⵉⵎⴰⵢⵍ ⵏⵏⵓⵏ ⵙ ⵜⵖⴰⵔⴰⵙⵜ ⵉⵏⵎⵏ ⴳ ⵜⴰⵙⵏⴰ ⵏ ⵉⴼⵔⵙ ⵏⵏⵓⵏ. ⵎⴽ ⵜⵙⵓⵍ ⵜⵎⵓⴽⵔⵉⵙⵜ, ⵏⵢⴰⵍⴽⴰⵎ ⴷⵉⴷⵏⵖ ⵃⵎⴰ ⴰⴷ ⵜⴰⴼⴷ ⵜⵉⵡⵉⵙⵉ.",
+            "reset_password": "Reset Password",
+            "reset_success": "Password reset successfully.",
+            "reset_email_send_success": "Password email sent successfully, please check your inbox and click on the link to complete password reset.",
+            "email_recovery": "Email for password recovery",
+            "submit_btn": "Submit",
+            "reset_email_send_error": "Error while sending email, try again later",
+            "password_mismatch": "Passwords do not match",
+            "new_password": "New password",
+            "confirm_password": "Confirm password",
+			
+			"check_spam": "Si us plau, comprova la carpeta de correu brossa (spam) si no has rebut el correu electrònic",
+			"password_min_char": "La contrasenya ha de tenir un mínim de 8 caràcters"
         }
     }
 }

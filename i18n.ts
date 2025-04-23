@@ -81,6 +81,18 @@ interface Verification {
     success_email: string;
     alert: string;
     error_email: string;
+    reset_password: string;
+    reset_success: string;
+    reset_email_send_success: string;
+    email_recovery: string;
+    submit_btn: string;
+    reset_email_send_error: string;
+    password_mismatch: string;
+    new_password: string;
+    confirm_password: string;
+	check_spam:string;
+	password_min_char:string;
+
 }
 
 interface Carousel {
@@ -409,7 +421,7 @@ interface Menu {
 }
 
 interface Variation {
-	std:string;
+    std: string;
     central: string;
     tif: string;
     tachelhit: string;
@@ -435,4 +447,5 @@ interface Nav {
     translator: string;
     contribute: string;
     validate: string;
+    passwordResetBtn: string;
 }

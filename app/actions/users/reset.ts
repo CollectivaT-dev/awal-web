@@ -9,20 +9,15 @@ export const resetPassword = async (email: string) => {
             email,
         },
     });
-    //  console.log(user);
     if (!user) {
-        return (
-            JSON.stringify({ message: 'User not found', status: 404 }),
-            { message: 'User not found', status: 404 }
-        );
+        return JSON.stringify({ message: 'User not found', status: 404 }), { message: 'User not found', status: 404 };
     }
     // generate token
     const resetPasswordToken = crypto.randomBytes(32).toString('base64url');
     const today = new Date();
-    // expires in 2 hrs
-    const resetPasswordTokenExpiration = new Date(
-        today.setHours(today.getHours() + 2),
-    );
+    // expires in 30 minutes
+    const resetPasswordTokenExpiration = new Date(today.setMinutes(today.getHours() + 30));
+    console.log(resetPasswordToken, resetPasswordTokenExpiration);
     await prisma.user.update({
         where: {
             email,
@@ -42,8 +37,8 @@ export const resetPassword = async (email: string) => {
                 resetPasswordToken,
             }) as React.ReactElement,
         });
+        return { message: 'Email sent successfully', status: 200 };
     } catch (error) {
-        //  console.log(error);
+        return { message: 'error while sending email, try again later', status: 500 };
     }
-    return { message: 'Email sent successfully', status: 200 };
 };

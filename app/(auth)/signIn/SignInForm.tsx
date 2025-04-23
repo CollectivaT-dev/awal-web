@@ -1,14 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from '@/components/ui/form';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { signIn, useSession } from 'next-auth/react';
@@ -64,7 +57,7 @@ const SignInForm: React.FC<SignInFormProps> = ({ callbackUrl }) => {
                 redirect: false,
             });
             console.log(res);
-			
+
             if (res?.status === 200) {
                 toast.success(`${d?.toasters.success_signIn}`);
             } else {
@@ -78,12 +71,7 @@ const SignInForm: React.FC<SignInFormProps> = ({ callbackUrl }) => {
             // in case of res undefined
             console.log(error);
             // handle 401 and 405
-            if (
-                axios.isAxiosError(error) &&
-                error.response &&
-                (error?.response?.status === 405 ||
-                    error?.response?.status === 401)
-            ) {
+            if (axios.isAxiosError(error) && error.response && (error?.response?.status === 405 || error?.response?.status === 401)) {
                 console.log(error);
                 const errorMsg = error?.response?.data?.message;
                 setLoginError(errorMsg);
@@ -98,10 +86,7 @@ const SignInForm: React.FC<SignInFormProps> = ({ callbackUrl }) => {
     return (
         <div className="min-h-screen flex-col-center">
             <Form {...form}>
-                <form
-                    onSubmit={form.handleSubmit(onSubmit)}
-                    className="space-y-8 mt-10"
-                >
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mt-10">
                     <div className="flex flex-col justify-center items-center">
                         <FormField
                             control={form.control}
@@ -110,12 +95,7 @@ const SignInForm: React.FC<SignInFormProps> = ({ callbackUrl }) => {
                                 <FormItem>
                                     <FormLabel>{d?.user.email}</FormLabel>
                                     <FormControl>
-                                        <Input
-                                            type="text"
-                                            id="email"
-                                            placeholder={`${d?.user.email}`}
-                                            {...field}
-                                        />
+                                        <Input type="text" id="email" placeholder={`${d?.user.email}`} {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -128,12 +108,7 @@ const SignInForm: React.FC<SignInFormProps> = ({ callbackUrl }) => {
                                 <FormItem>
                                     <FormLabel>{d?.user.password}</FormLabel>
                                     <FormControl>
-                                        <Input
-                                            type="password"
-                                            id="password"
-                                            placeholder={`${d?.user.password}`}
-                                            {...field}
-                                        />
+                                        <Input type="password" id="password" placeholder={`${d?.user.password}`} {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -141,18 +116,19 @@ const SignInForm: React.FC<SignInFormProps> = ({ callbackUrl }) => {
                         />
                     </div>
 
-                    <div className="flex flex-col lg:flex-row gap-3 justify-center items-center">
-                        <Button
-                            variant={'outline'}
-                            type="submit"
-                            className="capitalize"
-                        >
+                    <div className="flex flex-col  gap-y-5 justify-center items-center">
+                        <Button variant={'outline'} type="submit" className="capitalize cursor-pointer">
                             {d?.nav.signIn}
+                        </Button>
+                        <Button>
+                            <Link href={'/resetPassword'} className="underline select-none">
+                                {d?.nav.passwordResetBtn}
+                            </Link>
                         </Button>
                     </div>
                 </form>
             </Form>
-            <div className="mt-10">
+            <div className="mt-10 select-none">
                 {d?.texts.login_to_signup_1}{' '}
                 <Link href={'/register'} className="underline">
                     {d?.texts.login_to_signup_2}
@@ -167,10 +143,7 @@ const SignInForm: React.FC<SignInFormProps> = ({ callbackUrl }) => {
                         <div>
                             <Clipboard
                                 onClick={() => {
-                                    navigator.clipboard.writeText(loginError),
-                                        toast.success(
-                                            `error copied to clipboard, send it to admin`,
-                                        );
+                                    navigator.clipboard.writeText(loginError), toast.success(`error copied to clipboard, send it to admin`);
                                 }}
                             />
                         </div>

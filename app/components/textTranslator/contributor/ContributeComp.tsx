@@ -217,7 +217,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
                     <div className="relative">
                         <Textarea
                             value={sourceText}
-                            className="border border-gray-300 lg:h-[50vh] h-auto rounded-md shadow"
+                            className="border border-gray-300 lg:h-[50vh] h-auto rounded-md shadow-sm"
                             placeholder={d?.texts.contributor_input_placeholder}
                             id="src_message"
                             onChange={(e) => setSourceText(e.target.value)}
@@ -276,7 +276,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
                                         <h4 className="text-sm font-semibold capitalize">{d?.how_to_contribute_heading}</h4>
                                     </AlertDialogTitle>
                                 </AlertDialogHeader>{' '}
-                                <div className="flex-grow overflow-auto">
+                                <div className="grow overflow-auto">
                                     <AlertDialogDescription className="text-left whitespace-pre-wrap">
                                         {d?.how_it_works_contribution}
                                         <ol className="list-disc space-y-2 my-4 mx-5 flex-row ">
@@ -288,7 +288,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
                                         {d?.how_it_works_contribution_continued}
                                     </AlertDialogDescription>
                                 </div>
-                                <AlertDialogFooter className="flex-shrink-0">
+                                <AlertDialogFooter className="shrink-0">
                                     <AlertDialogCancel>{d?.btn.cancel}</AlertDialogCancel>
                                     <AlertDialogAction>{d?.btn.continue}</AlertDialogAction>
                                 </AlertDialogFooter>
@@ -298,7 +298,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
                     <div className="relative">
                         <Textarea
                             id="tgt_message"
-                            className="border border-gray-300 rounded-md lg:h-[50vh] h-auto shadow"
+                            className="border border-gray-300 rounded-md lg:h-[50vh] h-auto shadow-sm"
                             placeholder={d?.translator.placeholder.translation_box}
                             value={targetText}
                             onChange={(e) => {
@@ -396,7 +396,7 @@ const ContributeComp: React.FC<ContributeCompProps> = ({ userId, username }) => 
                     </HoverCard>
                 </div>{' '}
             </div>
-            <div className="mt-20 flex flex-col bg-[#EFBB3F] lg:w-1/3 max-w-full rounded-md shadow-sm lg:px-4  p-5 lg:ml-10 mx-10 mb-5">
+            <div className="mt-20 flex flex-col bg-[#EFBB3F] lg:w-1/3 max-w-full rounded-md shadow-xs lg:px-4  p-5 lg:ml-10 mx-10 mb-5">
                 <h1 className="font-bold capitalize">{d?.text_with_link.dic_link.text_before_link}</h1>
                 <Link href={'https://www.amazic.cat/'} target="_blank">
                     {d?.text_with_link.dic_link.link_text_1}
