@@ -16,7 +16,7 @@ export const resetPassword = async (email: string) => {
     const resetPasswordToken = crypto.randomBytes(32).toString('base64url');
     const today = new Date();
     // expires in 30 minutes
-    const resetPasswordTokenExpiration = new Date(today.setMinutes(today.getHours() + 30));
+    const resetPasswordTokenExpiration = new Date(today.setMinutes(today.getMinutes() + 30));
     console.log(resetPasswordToken, resetPasswordTokenExpiration);
     await prisma.user.update({
         where: {
