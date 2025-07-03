@@ -108,7 +108,7 @@ const AboutPage = () => {
 
             {/* individuals */}
             <div className=" sm:flex sm:flex-row sm:items-start sm:justify-center flex flex-col  space-x-10 my-10 mx-10">
-                <div className="flex-col-center w-1/4 whitespace-pre-line">
+                <div className="flex-col-center w-1/5 whitespace-pre-line">
                     <Link
                         href={
                             'https://www.linkedin.com/in/farida-boudichat-52735218b/'
@@ -129,7 +129,7 @@ const AboutPage = () => {
                     </h1>
                     {d?.about.contributor_farida_intro}
                 </div>
-                <div className="flex-col-center w-1/4 whitespace-pre-line">
+                <div className="flex-col-center w-1/5 whitespace-pre-line">
                     <Link
                         href={'https://www.instagram.com/amazightalks/'}
                         scroll={false}
@@ -148,7 +148,24 @@ const AboutPage = () => {
                     </h1>
                     {d?.about.contributor_ghizlan_intro}
                 </div>
-                <div className="flex-col-center w-1/4 whitespace-pre-line">
+                <div className="flex-col-center w-1/5 whitespace-pre-line">
+                    <Link
+                        href={'https://alpoktem.github.io'}
+                        scroll={false}
+                        target="_blank"
+                    >
+                        <Image
+                            src={'/contributors/alp.jpeg'}
+                            alt="Alp Öktem"
+                            width={100}
+                            height={100}
+                            className="mb-2"
+                        />
+                    </Link>
+                    <h1 className="font-semibold text-xl my-2">Alp Öktem</h1>
+                    {d?.about.contributor_alp_intro}
+                </div>
+                <div className="flex-col-center w-1/5 whitespace-pre-line">
                     <Link
                         href={'https://www.yuxuanize.com'}
                         scroll={false}
@@ -165,7 +182,7 @@ const AboutPage = () => {
                     <h1 className="font-semibold text-xl my-2">Yuxuan Peng</h1>
                     {d?.about.contributor_yuxuan_intro}
                 </div>
-                <div className="flex-col-center w-1/4 whitespace-pre-line">
+                <div className="flex-col-center w-1/5 whitespace-pre-line">
                     <Link
                         href={'https://www.facebook.com/essaidib2'}
                         scroll={false}
