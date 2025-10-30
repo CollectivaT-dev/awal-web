@@ -69,7 +69,7 @@ export const handleTranslate = async ({
                     text: line,
                     source_lang: sourceGradioLang,
                     target_lang: targetGradioLang,
-                    max_length: 512,
+                    max_length: 250,
                     num_beams: 4,
                     repetition_penalty: 1.2,
                 });
