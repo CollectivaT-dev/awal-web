@@ -10,6 +10,7 @@
         "postinstall": "prisma generate"
     },
     "dependencies": {
+        "@gradio/client":"^1.13.3",
         "@hookform/resolvers": "^5.0.1",
         "@mdx-js/loader": "^3.1.0",
         "@mdx-js/react": "^3.1.0",
