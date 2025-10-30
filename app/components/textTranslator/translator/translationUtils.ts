@@ -1,4 +1,4 @@
-import axios from 'axios';
+import { Client } from "@gradio/client";
 
 interface TranslationUtilsProps {
     source: string;
@@ -8,6 +8,24 @@ interface TranslationUtilsProps {
     setTarget: (value: string) => void;
     setIsLoading: (value: boolean) => void;
 }
+
+// Map your platform's language codes to Gradio's pretty names
+const LANGUAGE_CODE_TO_GRADIO: Record<string, string> = {
+    'ca': 'Catalan',
+    'en': 'English',
+    'es': 'Spanish',
+    'fr': 'French',
+    'zgh': 'Standard Moroccan Tamazight',
+    'ber': 'Tachelhit/Central Atlas Tamazight (Latin)',
+    'ary': 'Moroccan Darija',
+    'ar': 'Modern Standard Arabic',
+    'de': 'German',
+    'nl': 'Dutch',
+    'ru': 'Russian',
+    'it': 'Italian',
+    'tr': 'Turkish',
+    'eo': 'Esperanto',
+};
 
 export const handleTranslate = async ({
     source,
@@ -22,42 +40,45 @@ export const handleTranslate = async ({
         setIsLoading(false);
         return;
     }
-    const srcLanguageCode = sourceLanguage;
-    const tgtLanguageCode = targetLanguage;
 
-    // send request data differently according to line break: (text or batch ['',''])
-    const requestData = {
-        src: srcLanguageCode,
-        tgt: tgtLanguageCode,
-        token: process.env.NEXT_PUBLIC_API_TOKEN,
-        ...(source.includes('\n')
-            ? { batch: source.replace(/\n$/, '').split('\n') }
-            : { text: source.replace(/\n$/, '') }),
-    };
-    const axiosConfig = {
-        method: 'post',
-        maxBodyLength: Infinity,
-        url: `${process.env.NEXT_PUBLIC_API_URL}/translate/`,
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        data: requestData,
-    };
+    // Convert language codes to Gradio format
+    const sourceGradioLang = LANGUAGE_CODE_TO_GRADIO[sourceLanguage];
+    const targetGradioLang = LANGUAGE_CODE_TO_GRADIO[targetLanguage];
+
+    if (!sourceGradioLang || !targetGradioLang) {
+        console.error(`Unsupported language: ${sourceLanguage} -> ${targetLanguage}`);
+        setIsLoading(false);
+        return;
+    }
 
     const currentTranslationRequestId = Date.now();
     translationRequestIdRef.current = currentTranslationRequestId;
 
     try {
         setIsLoading(true);
-        const response = await axios.request(axiosConfig);
+        
+        const client = await Client.connect("Tamazight-NLP/Finetuned-NLLB");
+        
+        const lines = source.includes('\n') 
+            ? source.replace(/\n$/, '').split('\n')
+            : [source.replace(/\n$/, '')];
+        
+        const translations = await Promise.all(
+            lines.map(async (line) => {
+                const result = await client.predict("/predict", {
+                    text: line,
+                    source_lang: sourceGradioLang,
+                    target_lang: targetGradioLang,
+                    max_length: 512,
+                    num_beams: 4,
+                    repetition_penalty: 1.2,
+                });
+                return result.data;
+            })
+        );
 
-        if (
-            currentTranslationRequestId === translationRequestIdRef.current &&
-            !Array.isArray(response.data.translation)
-        ) {
-            setTarget(response.data.translation);
-        } else {
-            setTarget(response.data.translation.join('\n'));
+        if (currentTranslationRequestId === translationRequestIdRef.current) {
+            setTarget(translations.join('\n'));
         }
     } catch (error) {
         console.error('Error:', error);
