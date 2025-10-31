@@ -57,7 +57,7 @@ export const handleTranslate = async ({
     try {
         setIsLoading(true);
         
-        const client = await Client.connect("Tamazight-NLP/Finetuned-NLLB");
+        const client = await Client.connect("alp/Finetuned-NLLB");
         
         const lines = source.includes('\n') 
             ? source.replace(/\n$/, '').split('\n')
@@ -70,7 +70,7 @@ export const handleTranslate = async ({
                     source_lang: sourceGradioLang,
                     target_lang: targetGradioLang,
                     max_length: 250,
-                    num_beams: 4,
+                    num_beams: 1,
                     repetition_penalty: 1.2,
                 });
                 return result.data;
