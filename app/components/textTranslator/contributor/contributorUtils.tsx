@@ -22,6 +22,24 @@ const LANGUAGE_CODE_TO_GRADIO: Record<string, string> = {
     'eo': 'Esperanto',
 };
 
+// Map your platform's language codes to Tatoeba's 3-letter ISO 639-3 codes
+const LANGUAGE_CODE_TO_TATOEBA: Record<string, string> = {
+    'ca': 'cat',
+    'en': 'eng',
+    'es': 'spa',
+    'fr': 'fra',
+    'zgh': 'zgh',
+    'ber': 'ber',
+    'ary': 'ary',
+    'ar': 'ara',
+    'de': 'deu',
+    'nl': 'nld',
+    'ru': 'rus',
+    'it': 'ita',
+    'tr': 'tur',
+    'eo': 'epo',
+};
+
 interface ContributorProps {
     sourceLanguage: string;
     d?: MessagesProps;
@@ -131,15 +149,46 @@ export const HandleGenerate = ({
     setRandomClicked(true);
     
     const fetchData = async () => {
-        // Temporary dummy sentence while feature is under maintenance
-        const dummyText = d?.texts?.maintenance || "Random sentence feature is under maintenance. Please enter your own text.";
-        setSourceText(dummyText);
-        setFetchedText(dummyText);
+        // Convert to Tatoeba language code
+        const tatoebaLangCode = LANGUAGE_CODE_TO_TATOEBA[sourceLanguage];
+        
+        if (!tatoebaLangCode) {
+            throw new Error(`Language ${sourceLanguage} not supported for random sentences`);
+        }
+
+        // Fetch random sentence from Tatoeba
+        const url = `https://tatoeba.org/en/sentences/show/${tatoebaLangCode}`;
+        
+        const response = await fetch(url, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            },
+            redirect: 'follow'
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch sentence: ${response.status}`);
+        }
+
+        const html = await response.text();
+        
+        // Extract sentence from title tag
+        const titleMatch = html.match(/<title>(.*?)<\/title>/);
+        
+        if (!titleMatch) {
+            throw new Error('Could not find sentence in response');
+        }
+
+        // Title format: "Sentence text - Language example sentence - Tatoeba"
+        const sentence = titleMatch[1].split(' - ')[0].trim();
+        
+        setSourceText(sentence);
+        setFetchedText(sentence);
     };
 
     toast.promise(fetchData(), {
         loading: `${d?.texts.loading}`,
-        success: `Feature temporarily unavailable`,
+        success: `${d?.toasters.success_loading}`,
         error: (err) => `${d?.toasters.alert_api}${console.error(err)}`,
     });
 };
