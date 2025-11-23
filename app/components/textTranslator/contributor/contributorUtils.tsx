@@ -1,9 +1,26 @@
 import { MessagesProps } from '@/i18n';
-import axios from 'axios';
-import { getLanguageCode } from '../TranslatorConfig';
+import { Client } from "@gradio/client";
 import toast from 'react-hot-toast';
 import { Dispatch, SetStateAction } from 'react';
 const levenshtein = require('js-levenshtein');
+
+// Map language codes to Gradio's pretty names
+const LANGUAGE_CODE_TO_GRADIO: Record<string, string> = {
+    'ca': 'Catalan',
+    'en': 'English',
+    'es': 'Spanish',
+    'fr': 'French',
+    'zgh': 'Standard Moroccan Tamazight',
+    'ber': 'Tachelhit/Central Atlas Tamazight (Latin)',
+    'ary': 'Moroccan Darija',
+    'ar': 'Modern Standard Arabic',
+    'de': 'German',
+    'nl': 'Dutch',
+    'ru': 'Russian',
+    'it': 'Italian',
+    'tr': 'Turkish',
+    'eo': 'Esperanto',
+};
 
 interface ContributorProps {
     sourceLanguage: string;
@@ -55,42 +72,48 @@ export const HandleTranslate = ({
     setTranslateClicked(true);
     setTranslated(false);
 
-    const srcLanguageCode = sourceLanguage;
-    const tgtLanguageCode = targetLanguage;
+    // Convert language codes to Gradio format
+    const sourceGradioLang = LANGUAGE_CODE_TO_GRADIO[sourceLanguage];
+    const targetGradioLang = LANGUAGE_CODE_TO_GRADIO[targetLanguage];
 
-    const requestData = {
-        src: srcLanguageCode,
-        tgt: tgtLanguageCode,
-        token: process.env.NEXT_PUBLIC_API_TOKEN,
-        ...(sourceText.includes('\n')
-            ? { batch: sourceText.replace(/\n$/, '').split('\n') }
-            : { text: sourceText.replace(/\n$/, '') }),
-    };
-    const config = {
-        method: 'post',
-        maxBodyLength: Infinity,
-        url: `${process.env.NEXT_PUBLIC_API_URL}/translate/`,
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        data: requestData,
-    };
+    if (!sourceGradioLang || !targetGradioLang) {
+        console.error(`Unsupported language: ${sourceLanguage} -> ${targetLanguage}`);
+        toast.error(d?.toasters.alert_api || 'Unsupported language pair');
+        return;
+    }
+
     const translate = async () => {
         try {
-            const response = await axios.request(config);
-            setInitialTranslatedText(response.data.translation);
-            // Check if response data is an array
-            if (Array.isArray(response.data.translation)) {
-                // If it's an array, join the array elements with a newline character to form a string
-                setTargetText(response.data.translation.join('\n'));
-            } else {
-                // If it's not an array, assume it's a string and set it directly
-                setTargetText(response.data.translation);
-            }
+            const client = await Client.connect("Tamazight-NLP/Finetuned-NLLB");
+            
+            // Handle line breaks - translate each line separately if needed
+            const lines = sourceText.includes('\n') 
+                ? sourceText.replace(/\n$/, '').split('\n')
+                : [sourceText.replace(/\n$/, '')];
+            
+            const translations = await Promise.all(
+                lines.map(async (line) => {
+                    const result = await client.predict("/predict", {
+                        text: line,
+                        source_lang: sourceGradioLang,
+                        target_lang: targetGradioLang,
+                        max_length: 400,
+                        num_beams: 4,
+                        repetition_penalty: 1.2,
+                    });
+                    return result.data;
+                })
+            );
+
+            const translatedText = translations.join('\n');
+            setInitialTranslatedText(translatedText);
+            setTargetText(translatedText);
         } catch (error) {
-            //console.log('Error:', error);
+            console.error('Translation error:', error);
+            throw error;
         }
     };
+
     toast.promise(translate(), {
         loading: `${d?.toasters.translating}`,
         success: `${d?.toasters.success_translate}`,
@@ -106,26 +129,17 @@ export const HandleGenerate = ({
     d,
 }: HandleGenerateProps) => {
     setRandomClicked(true);
-    const srcLanguageCode = getLanguageCode(sourceLanguage);
-    const config = {
-        method: 'GET',
-        maxBodyLength: Infinity,
-        url: `${process.env.NEXT_PUBLIC_API_URL}/translate/random/${srcLanguageCode}`,
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    };
+    
     const fetchData = async () => {
-        try {
-            const res = await axios.request(config);
-
-            setSourceText(res.data.sentence);
-            setFetchedText(res.data.sentence);
-        } catch (error) {}
+        // Temporary dummy sentence while feature is under maintenance
+        const dummyText = d?.texts?.maintenance || "Random sentence feature is under maintenance. Please enter your own text.";
+        setSourceText(dummyText);
+        setFetchedText(dummyText);
     };
+
     toast.promise(fetchData(), {
         loading: `${d?.texts.loading}`,
-        success: `${d?.toasters.success_loading}`,
+        success: `Feature temporarily unavailable`,
         error: (err) => `${d?.toasters.alert_api}${console.error(err)}`,
     });
 };
@@ -154,5 +168,4 @@ export const EntryScoreCalc = ({
 
     console.log(srcScore);
     console.log(distance);
-
 };
