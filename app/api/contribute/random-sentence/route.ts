@@ -46,7 +46,7 @@ export async function GET(request: NextRequest) {
         }
 
         const html = await response.text();
-        const titleMatch = html.match(/<title>(.*?)<\/title>/);
+        const titleMatch = html.match(/<title>([\s\S]*?)<\/title>/);
 
         if (!titleMatch) {
             throw new Error('Could not extract sentence');
