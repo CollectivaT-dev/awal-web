@@ -348,19 +348,14 @@
     },
     "carousel": {
         "c1": {
-            "heading": "Celebrem el progrés i mirem cap al futur: el viatge d’Awal",
-            "body": "Llegeix sobre les últimes actualitzacions d'Awal al blog de Col·lectivaT",
-            "link": "https://collectivat.cat/2024/03/celebrem-el-progres-i-mirem-cap-al-futur-el-viatge-dawal/"
+            "heading": "El futur digital de les llengües minoritzades depèn de l’acció comunitària, el suport institucional i l’assignació de recursos",
+            "body": "Llegeix sobre les últimes actualitzacions d'Awal a Nationalia",
+            "link": "https://www.nationalia.cat/opinio/11729/el-futur-digital-de-les-llengues-minoritzades-depen-de-laccio-comunitaria-el-suport-instit"
         },
         "c2": {
             "heading": "\"Awal, el projecte popular que vol fer que internet parli amazic\"",
             "body": "Llegeix sobre el Projecte Awal i el seu primer datatón a Nationalia.",
             "link": "https://www.nationalia.cat/noticia/11589/awal-el-projecte-popular-que-vol-fer-que-internet-parli-amazic"
-        },
-        "c3": {
-            "heading": "Awal: obrim pas a l’amazic en l’espai digital",
-            "body": "Presentació del projecte Awal per preservar i promoure la llengua amazic a internet amb una comunitat de dades forta i unida.",
-            "link": "https://collectivat.cat/2024/06/awal-obrim-pas-a-lamazic-en-lespai-digital/"
         }
     },
     "email": {
