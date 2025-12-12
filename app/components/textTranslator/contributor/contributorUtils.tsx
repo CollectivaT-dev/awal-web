@@ -102,7 +102,7 @@ export const HandleTranslate = ({
 
     const translate = async () => {
         try {
-            const client = await Client.connect("Tamazight-NLP/Finetuned-NLLB");
+            const client = await Client.connect("Tamazight-NLP/Finetuned-Quantized-NLLB");
             
             // Handle line breaks - translate each line separately if needed
             const lines = sourceText.includes('\n') 
