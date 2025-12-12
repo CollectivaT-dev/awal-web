@@ -57,7 +57,7 @@ export const handleTranslate = async ({
     try {
         setIsLoading(true);
         
-        const client = await Client.connect("alp/Finetuned-NLLB");
+        const client = await Client.connect("Tamazight-NLP/Finetuned-Quantized-NLLB");
         
         const lines = source.includes('\n') 
             ? source.replace(/\n$/, '').split('\n')
