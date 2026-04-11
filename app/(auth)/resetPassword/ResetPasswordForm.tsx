@@ -13,7 +13,7 @@ import useLocaleStore from '@/app/hooks/languageStore';
 import { getDictionary, MessagesProps } from '@/i18n';
 
 const FormSchema = z.object({
-    email: z.string().email(),
+    email: z.email(),
 });
 export function ResetPasswordForm() {
     const form = useForm<z.infer<typeof FormSchema>>({

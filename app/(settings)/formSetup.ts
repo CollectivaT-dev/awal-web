@@ -5,7 +5,7 @@ export const formSchema = z
         name: z.string(),
         surname: z.string(),
         username: z.string().min(1),
-        email: z.string().email(),
+        email: z.email(),
         age: z.number().max(120).default(0),
         gender: z.string(),
         score: z.number(),

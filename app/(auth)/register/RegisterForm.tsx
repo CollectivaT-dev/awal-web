@@ -17,9 +17,9 @@ import { useEffect, useState } from 'react';
 const formSchema = z
     .object({
         username: z.string().min(1, { message: 'Necessari' }),
-        email: z.string().email('Email not valid'),
-        password: z.string().min(8).nonempty({ message: 'non-empty' }),
-        confirmPassword: z.string().nonempty({ message: 'non-empty' }),
+        email: z.email('Email not valid'),
+        password: z.string().min(8, { message: 'non-empty' }),
+        confirmPassword: z.string().min(1, { message: 'non-empty' }),
         isPrivacy: z.boolean(),
         isSubscribed: z.boolean().optional(),
     })
