@@ -91,7 +91,7 @@ const Footer = () => {
                         </Link>
                         <Link
                             target="_blank"
-                            href={'mailto:awal@collectivat.cat'}
+                            href={'mailto:aawaldigital@gmail.com'}
                             scroll={false}
                         >
                             <Mail size={30} />
@@ -227,7 +227,7 @@ const Footer = () => {
                         </Link>
                         <Link
                             target="_blank"
-                            href={'mailto:awal@collectivat.cat'}
+                            href={'mailto:aawaldigital@gmail.com'}
                             scroll={false}
                         >
                             <Mail size={30} />

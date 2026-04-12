@@ -205,12 +205,12 @@ const AboutPage = () => {
             <div className=" mb-10 ">
                 {d?.about.contact_info}{' '}
                 <Link
-                    href={'mailto:awal@collectivat.cat'}
+                    href={'mailto:aawaldigital@gmail.com'}
                     className="underline"
                     target="_blank"
                     scroll={false}
                 >
-                    awal@collectivat.cat
+                    aawaldigital@gmail.com
                 </Link>
             </div>
         </div>
