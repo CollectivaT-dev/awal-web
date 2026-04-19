@@ -38,7 +38,7 @@ const ProjectIntro = () => {
                     <div className="flex-row-center">
                         <div className="flex flex-col w-1/2 text-gray-700">
                             <p>{d?.page_intro?.CTA_text}</p>
-                            <p className="pt-2">
+                            <div className="pt-2">
                                 <Heading
                                     title={`${d?.page_intro.heading_1}`}
                                     titleClassName="text-xl mb-2"
@@ -64,7 +64,7 @@ const ProjectIntro = () => {
                                         {d?.page_intro.item_3_normal}
                                     </li>
                                 </ul>
-                            </p>
+                            </div>
                         </div>
                         <Image
                             src={'/intro-icon.svg'}
@@ -149,7 +149,7 @@ const ProjectIntro = () => {
                     <div className="flex-col-center px-5">
                         <div className="flex-col-center text-gray-700">
                             <p>{d?.page_intro?.CTA_text}</p>
-                            <p className="pt-2">
+                            <div className="pt-2">
                                 <Heading
                                     title={`${d?.page_intro.heading_1}`}
                                     titleClassName="text-xl mb-2"
@@ -175,7 +175,7 @@ const ProjectIntro = () => {
                                         {d?.page_intro.item_3_normal}
                                     </li>
                                 </ul>
-                            </p>
+                            </div>
                         </div>
 
                         <div className="flex-col-center text-gray-700">

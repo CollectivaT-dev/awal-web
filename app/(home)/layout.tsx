@@ -6,8 +6,6 @@ import ClientProvider from '@/providers/ClientProvider';
 import EventCarousel from './components/EventCarousel';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useSearchParams } from 'next/navigation';
-import useLocaleStore from '../hooks/languageStore';
 
 
 export default function HomepageLayout({
@@ -22,15 +20,6 @@ export default function HomepageLayout({
         process.env.NODE_ENV === 'development'
             ? 'http://localhost:3000'
             : `https://awaldigital.org`;
-    const { setLocale } = useLocaleStore();
-    const lang = useSearchParams().get('lang') || 'ca';
-
-
-    useEffect(() => {
-        if (lang) {
-            setLocale(lang);
-        }
-    }, [lang, setLocale]);
     // get total entries
     useEffect(() => {
         const fetchData = async () => {
