@@ -21,7 +21,6 @@ import {
 import { Globe } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
-import Loading from '@/loading';
 import { SendEmail } from '@/app/actions/emails/SendEmail';
 import Publication from '@/app/components/Emails/Publication';
 import { isAxiosError } from 'axios';
@@ -36,7 +35,6 @@ const AppBar = () => {
     // get locale and set new local
     const { locale, setLocale } = useLocaleStore();
     const [d, setD] = useState<MessagesProps>();
-    const [loading, setLoading] = useState(false);
     const router = useRouter();
     useEffect(() => {
         const fetchDictionary = async () => {
@@ -45,22 +43,12 @@ const AppBar = () => {
         };
         fetchDictionary();
     }, [locale]);
-    const url =
-        process.env.NODE_ENV === 'development'
-            ? 'http://localhost:3000'
-            : 'https://awaldigital.org';
     const changeLocale = (newLocale: string) => {
-        setLocale(newLocale);
-        //console.log(newLocale);
         try {
-            setLoading(true);
-            router.push(`${url}/?lang=${newLocale}`, {
-                scroll: false,
-            });
+            setLocale(newLocale);
+            router.refresh();
         } catch (error: any) {
             toast.error(error.message);
-        } finally {
-            setLoading(false);
         }
     };
     // hardcoded for now, need to fetch from prisma later according to sub status
@@ -113,9 +101,6 @@ const AppBar = () => {
     const handleClick = () => {
         setOpen(!open);
     };
-    if (loading) {
-        return <Loading />;
-    }
     return (
         <>
             <div
@@ -123,7 +108,7 @@ const AppBar = () => {
                 ref={menuRef}
             >
                 {/* menu button */}
-                <motion.button
+                <motion.div
                     variants={{
                         open: { rotate: 90, scale: 1 },
                         closed: { rotate: 0, scale: 1 },
@@ -151,7 +136,7 @@ const AppBar = () => {
                             />
                         )}
                     </Button>
-                </motion.button>
+                </motion.div>
                 {/* char logo */}
                 <div className="w-[7%] hidden lg:inline-block">
                     <Link href={'/'} scroll={false}>

@@ -47,7 +47,6 @@ const Stats: React.FC<StatsProps> = ({ users }) => {
                 <Table className="flex flex-col ">
                     <TableHeader className="text-text-primary">
                         <TableRow>
-                            {' '}
                             <TableHead className="text-center">
                                 {d?.texts.rank}
                             </TableHead>
