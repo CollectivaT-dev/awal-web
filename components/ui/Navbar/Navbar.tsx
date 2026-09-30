@@ -113,62 +113,138 @@ const AppBar = () => {
     ];
     return (
         <>
-            <div
-                className="relative flex flex-row items-center gap-4 p-4 " // Use flex-col and flex-row classes for responsive behavior
-                ref={menuRef}
-            >
-                {/* menu button - small screens only, desktop uses the top nav below */}
-                <Button
-                    size={'icon'}
-                    onClick={handleClick}
-                    className="lg:hidden"
-                    aria-label={d?.menu.label}
-                    aria-expanded={open}
-                    aria-haspopup="menu"
-                >
-                    {open ? (
-                        <X width={22} height={22} />
-                    ) : (
-                        <Menu width={22} height={22} />
-                    )}
-                </Button>
-                {/* tifinagh glyph - home link on large screens */}
-                <Link
-                    href={'/'}
-                    scroll={false}
-                    className="hidden lg:inline-block mr-3"
-                >
-                    <Image
-                        src={'/logo_line.svg'}
-                        height={28}
-                        width={28}
-                        alt="Awal"
-                    />
-                </Link>
-                {/* char logo */}
-                <div className="w-[7%] hidden lg:inline-block">
-                    <Link href={'/'} scroll={false}>
-                        <Image
-                            src={'/logo_awal.svg'}
-                            width={`${110}`}
-                            height={30}
-                            alt="logo_zgh"
-                            className=" bg-yellow-500 w-full px-[3px] py-[3px] laptop:px-[8px] laptop:py-[6px]"
-                        />
+            <div className="relative" ref={menuRef}>
+                {/* brand row */}
+                <div className="flex flex-row items-center gap-4 p-4">
+                    {/* menu button - small screens only, desktop uses the top nav below */}
+                    <Button
+                        size={'icon'}
+                        onClick={handleClick}
+                        className="lg:hidden"
+                        aria-label={d?.menu.label}
+                        aria-expanded={open}
+                        aria-haspopup="menu"
+                    >
+                        {open ? (
+                            <X width={22} height={22} />
+                        ) : (
+                            <Menu width={22} height={22} />
+                        )}
+                    </Button>
+                    {/* char logo */}
+                    <div className="w-[7%] hidden lg:inline-block">
+                        <Link href={'/'} scroll={false}>
+                            <Image
+                                src={'/logo_awal.svg'}
+                                width={`${110}`}
+                                height={30}
+                                alt="logo_zgh"
+                                className=" bg-yellow-500 w-full px-[3px] py-[3px] laptop:px-[8px] laptop:py-[6px]"
+                            />
+                        </Link>
+                    </div>
+                    {/* awal link */}
+                    <Link
+                        className=" text-yellow-500 text-md font-bold md:font-normal md:text-[2.5rem] "
+                        href={'/'}
+                        scroll={false}
+                    >
+                        AWAL
                     </Link>
+                    {/* sign in */}
+                    <div className="flex flex-row items-center justify-center space-x-3 ml-auto">
+                        <SignInButton />
+                        {/* user info rendering */}
+
+                        <div className="flex lg:hidden">
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button size={'icon'}>
+                                        <Globe width={20} />
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent className="w-56">
+                                    <DropdownMenuLabel>
+                                        {d?.translator.select_lang}
+                                    </DropdownMenuLabel>
+                                    <DropdownMenuSeparator />
+                                    <DropdownMenuRadioGroup
+                                        value={locale}
+                                        onValueChange={changeLocale}
+                                    >
+                                        <DropdownMenuRadioItem value="ca">
+                                            {d?.language?.ca}
+                                        </DropdownMenuRadioItem>
+                                        <DropdownMenuRadioItem value="es">
+                                            {d?.language?.es}
+                                        </DropdownMenuRadioItem>
+                                        <DropdownMenuRadioItem value="en">
+                                            {d?.language?.en}
+                                        </DropdownMenuRadioItem>
+
+                                        <DropdownMenuRadioItem value="fr">
+                                            {d?.language?.fr}
+                                        </DropdownMenuRadioItem>
+                                        {/* <DropdownMenuRadioItem value="ary">
+                                {d?.language?.ary}
+                            </DropdownMenuRadioItem> */}
+                                        <DropdownMenuRadioItem value="zgh">
+                                            {d?.language?.zgh}
+                                        </DropdownMenuRadioItem>
+                                    </DropdownMenuRadioGroup>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+                        </div>
+                        <div className="hidden lg:flex">
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button>
+                                        <Globe className="mr-3" />
+                                        {locale === 'es' && d?.language?.es}
+                                        {locale === 'ca' && d?.language?.ca}
+                                        {locale === 'en' && d?.language?.en}
+                                        {/* {locale === 'ary' && d?.language?.ary} */}
+                                        {locale === 'fr' && d?.language?.fr}
+                                        {locale === 'zgh' && d?.language?.zgh}
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent className="w-56">
+                                    <DropdownMenuLabel>
+                                        {d?.translator.select_lang}
+                                    </DropdownMenuLabel>
+                                    <DropdownMenuSeparator />
+                                    <DropdownMenuRadioGroup
+                                        value={locale}
+                                        onValueChange={changeLocale}
+                                    >
+                                        <DropdownMenuRadioItem value="ca">
+                                            {d?.language?.ca}
+                                        </DropdownMenuRadioItem>
+                                        <DropdownMenuRadioItem value="es">
+                                            {d?.language?.es}
+                                        </DropdownMenuRadioItem>
+                                        <DropdownMenuRadioItem value="en">
+                                            {d?.language?.en}
+                                        </DropdownMenuRadioItem>
+                                        <DropdownMenuRadioItem value="fr">
+                                            {d?.language?.fr}
+                                        </DropdownMenuRadioItem>
+                                        {/* <DropdownMenuRadioItem value="ary">
+                                {d?.language?.ary}
+                            </DropdownMenuRadioItem> */}
+                                        <DropdownMenuRadioItem value="zgh">
+                                            {d?.language?.zgh}
+                                        </DropdownMenuRadioItem>
+                                    </DropdownMenuRadioGroup>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+                        </div>
+                    </div>
                 </div>
-                {/* awal link */}
-                <Link
-                    className=" text-yellow-500 text-md font-bold md:font-normal md:text-[2.5rem] "
-                    href={'/'}
-                    scroll={false}
-                >
-                    AWAL
-                </Link>
-                {/* top nav - large screens */}
+                {/* top nav - centered on its own row, large screens */}
                 <nav
                     aria-label={d?.menu.label}
-                    className="hidden lg:flex lg:items-center gap-3 ml-2 text-xs xl:gap-5 xl:ml-6 xl:text-sm"
+                    className="hidden lg:flex lg:items-center lg:justify-center gap-8 pb-4 text-sm"
                 >
                     {navItems.map((item) => {
                         const isActive = pathname === item.href;
@@ -177,9 +253,7 @@ const AppBar = () => {
                                 key={item.key}
                                 href={item.href}
                                 scroll={false}
-                                aria-current={
-                                    isActive ? 'page' : undefined
-                                }
+                                aria-current={isActive ? 'page' : undefined}
                                 className={cn(
                                     'transition-colors hover:text-yellow-500',
                                     isActive
@@ -192,95 +266,6 @@ const AppBar = () => {
                         );
                     })}
                 </nav>
-                {/* sign in */}
-                <div className="flex flex-row items-center justify-center space-x-3 ml-auto">
-                    <SignInButton />
-                    {/* user info rendering */}
-
-                    <div className="flex lg:hidden">
-                        <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                                <Button size={'icon'}>
-                                    <Globe width={20} />
-                                </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent className="w-56">
-                                <DropdownMenuLabel>
-                                    {d?.translator.select_lang}
-                                </DropdownMenuLabel>
-                                <DropdownMenuSeparator />
-                                <DropdownMenuRadioGroup
-                                    value={locale}
-                                    onValueChange={changeLocale}
-                                >
-                                    <DropdownMenuRadioItem value="ca">
-                                        {d?.language?.ca}
-                                    </DropdownMenuRadioItem>
-                                    <DropdownMenuRadioItem value="es">
-                                        {d?.language?.es}
-                                    </DropdownMenuRadioItem>
-                                    <DropdownMenuRadioItem value="en">
-                                        {d?.language?.en}
-                                    </DropdownMenuRadioItem>
-
-                                    <DropdownMenuRadioItem value="fr">
-                                        {d?.language?.fr}
-                                    </DropdownMenuRadioItem>
-                                    {/* <DropdownMenuRadioItem value="ary">
-                            {d?.language?.ary}
-                        </DropdownMenuRadioItem> */}
-                                    <DropdownMenuRadioItem value="zgh">
-                                        {d?.language?.zgh}
-                                    </DropdownMenuRadioItem>
-                                </DropdownMenuRadioGroup>
-                            </DropdownMenuContent>
-                        </DropdownMenu>
-                    </div>
-                    <div className="hidden lg:flex">
-                        <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                                <Button>
-                                    <Globe className="mr-3" />
-                                    {locale === 'es' && d?.language?.es}
-                                    {locale === 'ca' && d?.language?.ca}
-                                    {locale === 'en' && d?.language?.en}
-                                    {/* {locale === 'ary' && d?.language?.ary} */}
-                                    {locale === 'fr' && d?.language?.fr}
-                                    {locale === 'zgh' && d?.language?.zgh}
-                                </Button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent className="w-56">
-                                <DropdownMenuLabel>
-                                    {d?.translator.select_lang}
-                                </DropdownMenuLabel>
-                                <DropdownMenuSeparator />
-                                <DropdownMenuRadioGroup
-                                    value={locale}
-                                    onValueChange={changeLocale}
-                                >
-                                    <DropdownMenuRadioItem value="ca">
-                                        {d?.language?.ca}
-                                    </DropdownMenuRadioItem>
-                                    <DropdownMenuRadioItem value="es">
-                                        {d?.language?.es}
-                                    </DropdownMenuRadioItem>
-                                    <DropdownMenuRadioItem value="en">
-                                        {d?.language?.en}
-                                    </DropdownMenuRadioItem>
-                                    <DropdownMenuRadioItem value="fr">
-                                        {d?.language?.fr}
-                                    </DropdownMenuRadioItem>
-                                    {/* <DropdownMenuRadioItem value="ary">
-                            {d?.language?.ary}
-                        </DropdownMenuRadioItem> */}
-                                    <DropdownMenuRadioItem value="zgh">
-                                        {d?.language?.zgh}
-                                    </DropdownMenuRadioItem>
-                                </DropdownMenuRadioGroup>
-                            </DropdownMenuContent>
-                        </DropdownMenu>
-                    </div>
-                </div>
                 {open && (
                     <motion.div
                         initial="hidden"

@@ -3,9 +3,10 @@
     "version": "1.0.3",
     "private": true,
     "scripts": {
-        "dev": " next dev",
-        "build": " next build",
-        "start": " next start",
+    "dev": " next dev",
+    "build": " next build",
+    "start": " next start",
+    "preview": " next build && next start",
         "lint": "next lint",
         "postinstall": "prisma generate"
     },
