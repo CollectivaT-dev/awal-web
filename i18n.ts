@@ -99,6 +99,7 @@ interface Carousel {
     c1: C1;
     c2: C1;
     c3: C1;
+    c4: C1;
 }
 
 interface C1 {

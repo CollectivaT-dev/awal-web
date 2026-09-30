@@ -91,7 +91,11 @@ const EventCarousel = () => {
                             <CarouselItem key={key}>
                                 <div className="p-1">
                                     <Card>
-                                        <Link href={c[key].link} scroll={false}>
+                                        <Link
+                                            href={c[key].link}
+                                            scroll={false}
+                                            target="_blank"
+                                        >
                                             <CardContent className="flex aspect-square items-center justify-center p-6">
                                                 <span className="flex-col-center text-center space-y-2">
                                                     <h1 className="text-xl font-semibold">
