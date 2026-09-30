@@ -32,6 +32,7 @@
         "voice": "Veu",
         "about": "Sobre Awal",
         "resources": "Recursos",
+        "leaderboard": "Classificació",
         "faq": "FAQ"
     },
     "user": {
@@ -212,9 +213,9 @@
         "contributor_ghizlan_website": "",
         "contributor_ghizlan_intro": "Lalla Ghizlan Baryala. Activista cultural amaziga a Catalunya, col·labora amb diferents entitats per divulgar història, llengua i cultura amaziga al país. Ha estudiat màrqueting i investigació de mercats a la UOC i un postgrau de Màrqueting Digital i e-commerce",
         "contributor_alp_photo": "",
-	"contributor_alp_website": "https://alpoktem.github.io",
-	"contributor_alp_intro": "Alp Öktem (PhD) és un lingüista computacional i investigador especialitzat en tecnologies de la parla i traducció automàtica, amb enfocament en llengües amb pocs recursos i marginalitzades. És l'assessor tecnològic del projecte Awal.",
-	"contributor_yuxuan_photo": "",
+        "contributor_alp_website": "https://alpoktem.github.io",
+        "contributor_alp_intro": "Alp Öktem (PhD) és un lingüista computacional i investigador especialitzat en tecnologies de la parla i traducció automàtica, amb enfocament en llengües amb pocs recursos i marginalitzades. És l'assessor tecnològic del projecte Awal.",
+        "contributor_yuxuan_photo": "",
         "contributor_yuxuan_website": "",
         "contributor_yuxuan_intro": "Yuxuan Peng desenvolupa i manté la pàgina web d'Awal.",
         "contributor_brahim_photo": "",
@@ -388,9 +389,8 @@
             "password_mismatch": "Les contrasenyes no coincideixen",
             "new_password": "Nova contrasenya",
             "confirm_password": "Confirmar contrasenya",
-			"check_spam": "Si us plau, comprova la carpeta de correu brossa (spam) si no has rebut el correu electrònic",
-			"password_min_char": "La contrasenya ha de tenir un mínim de 8 caràcters"
-		  
+            "check_spam": "Si us plau, comprova la carpeta de correu brossa (spam) si no has rebut el correu electrònic",
+            "password_min_char": "La contrasenya ha de tenir un mínim de 8 caràcters"
         }
     }
 }

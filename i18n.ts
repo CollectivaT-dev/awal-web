@@ -419,6 +419,7 @@ interface Menu {
     voice: string;
     about: string;
     resources: string;
+    leaderboard: string;
     faq: string;
 }
 

@@ -105,10 +105,14 @@ const AppBar = () => {
     const pathname = usePathname();
     const navItems = [
         { key: 'translator', href: '/translate', label: d?.menu.translator },
-        { key: 'voice', href: '/', label: d?.menu.voice },
+        {
+            key: 'voice',
+            href: 'https://commonvoice.mozilla.org/zgh',
+            label: d?.menu.voice,
+        },
         { key: 'about', href: '/about', label: d?.menu.about },
         { key: 'resources', href: '/resources', label: d?.menu.resources },
-        { key: 'leaderboard', href: '/leaderboard', label: d?.footer.leaderboard },
+        { key: 'leaderboard', href: '/leaderboard', label: d?.menu.leaderboard },
         { key: 'faq', href: '/faq', label: d?.menu.faq },
     ];
     return (
@@ -247,13 +251,20 @@ const AppBar = () => {
                     className="hidden lg:flex lg:items-center lg:justify-center gap-10 pb-10 text-base font-medium tracking-wide"
                 >
                     {navItems.map((item) => {
+                        const isExternal = item.href.startsWith('http');
                         const isActive =
-                            item.href !== '/' && pathname === item.href;
+                            !isExternal && pathname === item.href;
                         return (
                             <Link
                                 key={item.key}
                                 href={item.href}
                                 scroll={false}
+                                target={isExternal ? '_blank' : undefined}
+                                rel={
+                                    isExternal
+                                        ? 'noopener noreferrer'
+                                        : undefined
+                                }
                                 aria-current={isActive ? 'page' : undefined}
                                 className={cn(
                                     'transition-colors hover:text-yellow-500',
@@ -296,13 +307,31 @@ const AppBar = () => {
                                     send test email
                                 </Button>
                             )}
-                            {navItems.map((item) => (
-                                <li key={item.key}>
-                                    <Link href={item.href} scroll={false}>
-                                        {item.label}
-                                    </Link>
-                                </li>
-                            ))}
+                            {navItems.map((item) => {
+                                const isExternal = item.href.startsWith(
+                                    'http'
+                                );
+                                return (
+                                    <li key={item.key}>
+                                        <Link
+                                            href={item.href}
+                                            scroll={false}
+                                            target={
+                                                isExternal
+                                                    ? '_blank'
+                                                    : undefined
+                                            }
+                                            rel={
+                                                isExternal
+                                                    ? 'noopener noreferrer'
+                                                    : undefined
+                                            }
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    </li>
+                                );
+                            })}
                         </ul>
                     </motion.div>
                 )}

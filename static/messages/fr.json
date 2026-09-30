@@ -1,395 +1,396 @@
 {
-  "nav": {
-    "signUp": "Rejoignez Awal",
-    "points": "Points de contribution",
-    "signIn": "Connexion",
-    "settings": "Profil",
-    "signOut": "Déconnexion",
-    "translator": "Traducteur",
-    "contribute": "Faire une contribution",
-    "validate": "Valider",
-    "passwordResetBtn": "Mot de passe oublié ?"
-  },
-  "language": {
-    "zgh": "ⵜⴰⵎⴰⵣⵉⵖⵜ",
-    "ber": "Tamaziɣt",
-    "ca": "Català",
-    "es": "Español",
-    "en": "English",
-    "fr": "Français",
-    "ary": "الدارجة"
-  },
-  "variation": {
-    "std": "Tamazight standard marocain",
-    "central": "Central",
-    "tif": "Tarifit",
-    "tachelhit": "Tachelhit",
-    "other": "Autre"
-  },
-  "menu": {
-      "label": "Menu",
-    "translator": "Traducteur",
-    "voice": "Voix",
-    "about": "À propos d’Awal",
-    "resources": "Ressources",
-    "faq": "FAQ"
-  },
-  "user": {
-    "username": "Nom d'utilisateur",
-    "email": "Courriel",
-    "password": "Mot de passe",
-    "confirm_password": "Confirmer le mot de passe",
-    "age": "Âge",
-    "gender": "Genre",
-    "name": "Prénom",
-    "surname": "Nom",
-    "residence_country": "Pays de résidence",
-    "residence_province": "Province de résidence",
-    "residence_city": "Ville de résidence"
-  },
-  "translator": {
-    "select_lang": "Sélectionnez la langue",
-    "generate": "Phrase aléatoire",
-    "translate": "Pré-traduire",
-    "report": "Signaler",
-    "placeholder": {
-      "type_to_translate": "Écrivez quelque chose à traduire...",
-      "translation_box": "La traduction apparaîtra ici..."
+    "nav": {
+        "signUp": "Rejoignez Awal",
+        "points": "Points de contribution",
+        "signIn": "Connexion",
+        "settings": "Profil",
+        "signOut": "Déconnexion",
+        "translator": "Traducteur",
+        "contribute": "Faire une contribution",
+        "validate": "Valider",
+        "passwordResetBtn": "Mot de passe oublié ?"
     },
-    "notice": "Cette application repose sur un moteur de traduction basé sur la recherche qui fournit parfois des résultats inexacts. Si vous parlez tamazight, vous pouvez nous aider à améliorer et à prendre en charge davantage de variantes en apportant des traductions."
-  },
-  "footer": {
-    "legal": "Mentions légales",
-    "privacy": "Politique de confidentialité",
-    "cookie": "Politique de cookies",
-    "contributionTerms": "Conditions de contribution",
-    "leaderboard": "Classement"
-  },
-  "toasters": {
-    "under_construction": "Cette page est en cours de développement.",
-    "translating": "En cours de traduction",
-    "success_loading": "Nouvelle phrase ajoutée.",
-    "success_translate": "Phrase d'entrée prétraduite. Veuillez relire et corriger la traduction avant de la soumettre.",
-    "alert_input": "Veuillez indiquer la variante ou les variantes que vous parlez ou décochez la case « Autre ».",
-    "alert_api": "Le moteur de traduction ne répond pas. Veuillez réessayer plus tard.",
-    "success_contribution": "Merci pour votre contribution ! Vous venez de gagner",
-    "success_contribution_points": "points de contribution.",
-    "select_var": "Veuillez sélectionner une variante pour les langues amazighes",
-    "alert_no_text": "Aucun texte à apporter.",
-    "alert_no_modify": "Veuillez traduire le texte pour apporter une contribution.",
-    "alert_privacy_check": "Veuillez lire et accepter les conditions de contribution pour continuer.",
-    "alert_general": "Une erreur s’est produite",
-    "alert_username": "Nom d'utilisateur déjà pris",
-    "alert_email": "Adresse courriel déjà enregistrée",
-    "alert_email_username": "Nom d'utilisateur ou courriel déjà utilisé",
-    "success_update": "Profil mis à jour avec succès.",
-    "success_registration": "C’est fait ! Merci pour votre inscription ! Merci de vérifier votre adresse de courrier électronique pour obtenir le lien de vérification. Vous pourrez ensuite vous connecter et commencer à faire une contribution.",
-    "loading_updating": "Mise à jour de votre profil...",
-    "alert_email_pwd": "Veuillez fournir une adresse courriel et un mot de passe valides.",
-    "success_copy": "Traduction copiée dans le presse-papiers",
-    "success_signIn": "Connexion réussie",
-    "alert_copy": "La traduction n'a pas pu être copiée.",
-    "alert_try_again": "Veuillez réessayer plus tard.",
-    "alert_select_variant": "Veuillez sélectionner votre niveau de compétence",
-    "validation_success_report": "Contribution signalée. Merci pour votre attention."
-  },
-  "text_with_link": {
-    "accept_terms": {
-      "text_before_link": "acceptez",
-      "link_text": "les conditions de contribution",
-      "text_after_link": "avant de terminer l'enregistrement"
+    "language": {
+        "zgh": "ⵜⴰⵎⴰⵣⵉⵖⵜ",
+        "ber": "Tamaziɣt",
+        "ca": "Català",
+        "es": "Español",
+        "en": "English",
+        "fr": "Français",
+        "ary": "الدارجة"
     },
-    "dic_link": {
-      "text_before_link": "Ressources utiles",
-      "link_text_1": "Dictionnaire catalan-tamazight",
-      "link_text_2": "Dictionnaire général de la langue amazighe",
-      "link_text_3": "Dictionnaire anglais-tamazight",
-      "link_text_4": "Dictionnaire arabe-tamazight AmaWar"
+    "variation": {
+        "std": "Tamazight standard marocain",
+        "central": "Central",
+        "tif": "Tarifit",
+        "tachelhit": "Tachelhit",
+        "other": "Autre"
+    },
+    "menu": {
+        "label": "Menu",
+        "translator": "Traducteur",
+        "voice": "Voix",
+        "about": "À propos d’Awal",
+        "resources": "Ressources",
+        "leaderboard": "Classement",
+        "faq": "FAQ"
+    },
+    "user": {
+        "username": "Nom d'utilisateur",
+        "email": "Courriel",
+        "password": "Mot de passe",
+        "confirm_password": "Confirmer le mot de passe",
+        "age": "Âge",
+        "gender": "Genre",
+        "name": "Prénom",
+        "surname": "Nom",
+        "residence_country": "Pays de résidence",
+        "residence_province": "Province de résidence",
+        "residence_city": "Ville de résidence"
+    },
+    "translator": {
+        "select_lang": "Sélectionnez la langue",
+        "generate": "Phrase aléatoire",
+        "translate": "Pré-traduire",
+        "report": "Signaler",
+        "placeholder": {
+            "type_to_translate": "Écrivez quelque chose à traduire...",
+            "translation_box": "La traduction apparaîtra ici..."
+        },
+        "notice": "Cette application repose sur un moteur de traduction basé sur la recherche qui fournit parfois des résultats inexacts. Si vous parlez tamazight, vous pouvez nous aider à améliorer et à prendre en charge davantage de variantes en apportant des traductions."
+    },
+    "footer": {
+        "legal": "Mentions légales",
+        "privacy": "Politique de confidentialité",
+        "cookie": "Politique de cookies",
+        "contributionTerms": "Conditions de contribution",
+        "leaderboard": "Classement"
+    },
+    "toasters": {
+        "under_construction": "Cette page est en cours de développement.",
+        "translating": "En cours de traduction",
+        "success_loading": "Nouvelle phrase ajoutée.",
+        "success_translate": "Phrase d'entrée prétraduite. Veuillez relire et corriger la traduction avant de la soumettre.",
+        "alert_input": "Veuillez indiquer la variante ou les variantes que vous parlez ou décochez la case « Autre ».",
+        "alert_api": "Le moteur de traduction ne répond pas. Veuillez réessayer plus tard.",
+        "success_contribution": "Merci pour votre contribution ! Vous venez de gagner",
+        "success_contribution_points": "points de contribution.",
+        "select_var": "Veuillez sélectionner une variante pour les langues amazighes",
+        "alert_no_text": "Aucun texte à apporter.",
+        "alert_no_modify": "Veuillez traduire le texte pour apporter une contribution.",
+        "alert_privacy_check": "Veuillez lire et accepter les conditions de contribution pour continuer.",
+        "alert_general": "Une erreur s’est produite",
+        "alert_username": "Nom d'utilisateur déjà pris",
+        "alert_email": "Adresse courriel déjà enregistrée",
+        "alert_email_username": "Nom d'utilisateur ou courriel déjà utilisé",
+        "success_update": "Profil mis à jour avec succès.",
+        "success_registration": "C’est fait ! Merci pour votre inscription ! Merci de vérifier votre adresse de courrier électronique pour obtenir le lien de vérification. Vous pourrez ensuite vous connecter et commencer à faire une contribution.",
+        "loading_updating": "Mise à jour de votre profil...",
+        "alert_email_pwd": "Veuillez fournir une adresse courriel et un mot de passe valides.",
+        "success_copy": "Traduction copiée dans le presse-papiers",
+        "success_signIn": "Connexion réussie",
+        "alert_copy": "La traduction n'a pas pu être copiée.",
+        "alert_try_again": "Veuillez réessayer plus tard.",
+        "alert_select_variant": "Veuillez sélectionner votre niveau de compétence",
+        "validation_success_report": "Contribution signalée. Merci pour votre attention."
+    },
+    "text_with_link": {
+        "accept_terms": {
+            "text_before_link": "acceptez",
+            "link_text": "les conditions de contribution",
+            "text_after_link": "avant de terminer l'enregistrement"
+        },
+        "dic_link": {
+            "text_before_link": "Ressources utiles",
+            "link_text_1": "Dictionnaire catalan-tamazight",
+            "link_text_2": "Dictionnaire général de la langue amazighe",
+            "link_text_3": "Dictionnaire anglais-tamazight",
+            "link_text_4": "Dictionnaire arabe-tamazight AmaWar"
+        }
+    },
+    "error_msg": {
+        "alert_required": "Requis",
+        "alert_password_coincide": "Les mots de passe doivent correspondre",
+        "alert_age": "L'âge ne peut pas dépasser 120."
+    },
+    "page_intro": {
+        "title": "Internet parle tamazight !",
+        "CTA_text": "Awal est une initiative communautaire visant à promouvoir la langue tamazight dans l’univers numérique. Notre vision est claire : autonomiser le tamazight pour prospérer grâce à la technologie open source. Et pour cela, nous avons besoin de vous.",
+        "heading_1": "Comment faire une contribution ?",
+        "heading_2": "Tout le monde est bienvenu",
+        "text_2": "La contribution est ouverte à toutes les personnes sachant lire et écrire en tamazight. Nous voulons rendre compte de la richesse de la diversité des variantes tamazight, en accueillant des locuteurs de tous horizons.",
+        "heading_3": "Découvrez votre position",
+        "text_3": "Pour chaque traduction enregistrée dans Awal Translate, vous gagnerez des points et verrez comment vous vous comparez avec les autres membres de la communauté.",
+        "heading_4": "Découvrez la communauté Awal",
+        "text_4_1": "Pour plus d'informations sur cette initiative et nos collaborateurs, rendez-vous sur la page ",
+        "text_4_about": "À propos ",
+        "text_4_2": "Suivez-nous sur",
+        "text_4_ins": "Instagram",
+        "text_4_X": "et X",
+        "text_4_3": "pour recevoir des nouvelles et vous connecter au réseau Awal.",
+        "CTA_button": "Rejoignez Awal",
+        "item_1_strong": "Traduisez avec un objectif : ",
+        "item_1_normal": "Démontrez vos compétences linguistiques en traduisant des phrases vers ou depuis le tamazight avec vos propres mots.",
+        "item_2_strong": "La validation compte : ",
+        "item_2_normal": "Validez les traductions effectuées par d'autres volontaires, afin de garantir la précision de la technologie résultante.",
+        "item_3_strong": "Faites entendre votre voix : ",
+        "item_3_normal": "Contribuez aux données vocales via Common Voice, pour donner au tamazight une voix dans le monde numérique."
+    },
+    "texts": {
+        "data_marathon": "Marathon de données Awal",
+        "accept_mail_list": "Inscrivez-vous à la liste de diffusion.",
+        "save_settings": "Sauvegarder les paramètres",
+        "loading": "Chargement",
+        "welcome": "Bienvenue à nouveau",
+        "welcome_m": "Bienvenue à nouveau",
+        "welcome_f": "Bienvenue à nouveau",
+        "subscribe": "Abonnez-vous à la liste de diffusion",
+        "login_to_signup_1": "Nouveau sur Awal ?",
+        "login_to_signup_2": "Inscrivez-vous !",
+        "total_entries": "Traductions apportées",
+        "total_validated_entries": "Traductions validées",
+        "total_voice_entries_number": "3",
+        "total_voice_entries": "heures enregistrées",
+        "total_voice_validation_number": "2",
+        "total_voice_validation": "heures validées",
+        "statistic": "Classement de la communauté",
+        "validate_report_heading": "Signaler la contribution",
+        "validate_report_text": "Veuillez nous dire brièvement pourquoi cette contribution enfreint nos lignes directrices communautaires.",
+        "faq_heading": "Foire aux questions",
+        "rank": "#",
+        "home": "Accueil",
+        "contributor_input_placeholder": "Écrivez une phrase à traduire ou chargez-en une avec le bouton 'Phrase aléatoire'.",
+        "contributor_output_placeholder": "Écrivez la traduction du texte à gauche dans la langue sélectionnée."
+    },
+    "validator": {
+        "alert_no_more_entries": "Il n'y a plus d'entrées à valider pour la paire de langues et la variante sélectionnées. En attendant, vous pouvez apporter plus de traductions.",
+        "alert_loading": "Chargement...",
+        "success_loading": "Nouvelle paire de traduction chargée.",
+        "success_validation": {
+            "text_before_link": "Merci pour votre validation ! Vous venez de gagner",
+            "text_after_link": "points."
+        }
+    },
+    "btn": {
+        "continue": "Continuer",
+        "cancel": "Annuler",
+        "contribute": "Faire une contribution",
+        "clear": "Effacer le texte",
+        "skip": "Passer"
+    },
+    "setting": {
+        "oral": "Oral",
+        "written_tif": "Écrit (Tifinagh)",
+        "written_lat": "Écrit (latin)",
+        "mark_proficiency_tamazight": "Veuillez indiquer votre compétence dans les dialectes tamazight :",
+        "mark_proficiency_other": "Veuillez indiquer les paires de langues dans lesquelles vous pouvez apporter une contribution :",
+        "gender": {
+            "select": "Sélectionnez votre genre",
+            "m": "Masculin",
+            "f": "Féminin",
+            "nb": "Non-binaire",
+            "tr": "Transgenre",
+            "other": "Autre"
+        },
+        "specify": "Veuillez indiquer votre variante."
+    },
+    "about": {
+        "main_string_1": "Awal est un projet qui contribue à préserver et promouvoir la langue amazighe dans l'espace numérique en développant des outils innovants pour en faciliter l'utilisation et la diffusion. \nLa participation des locuteurs amazighs est essentielle pour recueillir des données, à la fois orales et écrites, à travers des enregistrements vocaux et la collecte de textes traduits de cette langue minorisée. L'initiative vise non seulement à créer des outils numériques efficaces, mais aussi à sensibiliser la communauté à l'importance des données linguistiques et des nouvelles technologies pour préserver la langue, à sensibiliser aux effets de la fracture numérique et à développer un réseau de professionnels.\nAwal est une initiative du CIEMEN, Col·lectivaT et Casa Amaziga de Catalunya, financée par la mairie de Barcelone et le gouvernement catala, avec le soutien de l'Agence catalane de coopération au développement et du Département catalan des droits sociaux.",
+        "ciemen_logo_url": "",
+        "ciemen_web_url": "www.ciemen.cat",
+        "ciemen_intro": "Le Centre international Escarré pour les minorités ethniques et les nations (CIEMEN) est une organisation de la société civile catalane qui œuvre à faire connaître et promouvoir la réalité nationale catalane dans le monde, à diffuser la connaissance des peuples et des nations sans État et à défendre leurs droits collectifs. Fondée en exil en 1974, cette organisation a une longue tradition de travail en faveur du pays et des nations. CIEMEN est une entité singulière à bien des égards. Nous vous invitons à la découvrir plus en détail dans cette section.",
+        "collectivat_logo_url": "",
+        "collectivat_web_url": "www.collectivat.cat",
+        "collectivat_intro": "Col·lectivaT est une coopérative à but non lucratif sise à Barcelone, composée d'une équipe multidisciplinaire et spécialisée dans le développement de technologies open source, la prestation de services linguistiques et de traduction, la formation et la recherche sociale, ainsi que le conseil stratégique et le soutien.\nÀ travers son travail, l'organisation vise à contribuer à réduire les injustices et les inégalités structurelles, en soutenant les organisations de la société civile travaillant avec des cultures et des langues minoritaires.",
+        "casa_amaziga_logo_url": "",
+        "casa_amaziga_web_url": "https://casaamaziga.wordpress.com/",
+        "casa_amaziga_intro": "La Casa Amaziga de Catalunya est une entité qui aspire à être la référence du peuple amazigh en Catalogne et le point de rencontre entre la citoyenneté amazighe et catalane.",
+        "main_text_2": "Nous aimerions également mettre en avant les personnes qui collaborent avec Awal et qui jouent un rôle essentiel.",
+        "contributor_farida_photo": "",
+        "contributor_farida_website": "",
+        "contributor_farida_intro": "Farida Boudichat Fortas. Linguiste et professeure d'espagnol, catalan et anglais langues étrangères. Elle a réalisé des études sociolinguistiques sur la langue amazighe et collabore avec plusieurs entités pour promouvoir la langue, en particulier sa préservation et sa transmission.",
+        "contributor_ghizlan_photo": "",
+        "contributor_ghizlan_website": "",
+        "contributor_ghizlan_intro": "Lalla Ghizlan Baryala. Activiste culturelle amazighe en Catalogne, elle collabore avec différentes entités pour diffuser l'histoire, la langue et la culture amazighes dans le pays. Elle a fait des études de marketing et de recherche de marché à l'UOC et détient un diplôme supérieur en marketing digital et commerce électronique.",
+        "contributor_alp_photo": "",
+        "contributor_alp_website": "https://alpoktem.github.io",
+        "contributor_alp_intro": "Alp Öktem (PhD) est un linguiste computationnel et chercheur spécialisé dans les technologies de la parole et la traduction automatique, avec un focus sur les langues peu dotées et marginalisées. Il est le conseiller technologique du projet Awal.",
+        "contributor_yuxuan_photo": "",
+        "contributor_yuxuan_website": "",
+        "contributor_yuxuan_intro": "Yuxuan Peng est chargé du développement et de la maintenance du site internet d'Awal.",
+        "contributor_brahim_photo": "",
+        "contributor_brahim_website": "https://www.yuxuanize.com",
+        "contributor_brahim_intro": "Brahim Essaidi est écrivain et traducteur d’amazigh. Il a localisé le site Web d'Awal et Common Voice. Il contribue à Awal, Common Voice et d'autres projets open source dédiés à promouvoir la langue tamazight.",
+        "contact_heading": "Contactez Awal",
+        "contact_info": "Pour toute question, suggestion ou demande d’informations, veuillez nous contacter à",
+        "contact_text": "aawaldigital@gmail.com"
+    },
+    "terms": {
+        "contribution_terms_heading": "Conditions de contribution",
+        "contribution_terms": "Awal est une initiative à but non lucratif qui contribue à la numérisation de la langue tamazight à travers la collecte de données ouvertes et le développement d'outils innovants.\nLes internautes peuvent y contribuer librement en ajoutant au portail web des phrases traduites, dans l’objectif de développer des applications de traduction automatique. Pour ajouter et valider des phrases traduites, il est nécessaire de s’inscrire au préalable. En vous inscrivant, vous vous engagez à respecter les présentes conditions.\nAwal collabore également au projet Common Voice de Mozilla, qui vise à produire une base de données libre pour la reconnaissance automatique de la parole. De cette façon, tout le monde peut construire des applications basées sur la voix pour le tamazight. Veuillez noter que les contributions à Common Voice sont sujettes aux",
+        "mozilla_terms": "conditions légales de Mozilla.",
+        "contribution_terms_continued": "Dans les présentes condition, les termes « nous », « nos » ou « notre » font référence aux personnes collaboratrices et administratives d’Awal, initiative à but non lucratif. Les termes « vous », « vos » et votre » font référence aux personnes qui interagissent avec la plateforme Awal en tant qu’usagers, collaborateurs ou volontaires.",
+        "translation_contribution_heading": "Apport de traduction",
+        "translation_contributions": "Un apport de traduction consiste à saisir une phrase en catalan, espagnol, anglais, arabe ou français, accompagnée de sa traduction en tamazight. Vous pouvez traduire du tamazight vers une autre langue, ou vice versa. Vous pouvez apporter vos contributions en alphabet tifinagh ou latin.\nLes apports sont d’abord enregistrés dans les bases de données privées du cloud de Col·lectivaT. Elles seront régulièrement mises à disposition avec",
+        "cc_license_link_text": "une licence Creative Commons (CC)",
+        "translation_continued_1": "dans le",
+        "repo_link_text": "Référentiel Hugging Face de Col·lectivaT",
+        "translation_continued_2": "Cela signifie que n’importe qui peut voir vos traductions et les utiliser librement.\nVous devez vous abstenir d’ajouter des données à caractère personnel identifiables dans les phrases que vous ajoutez.\nVous pouvez rédiger vous-même les phrases originales que vous traduisez, ou les prendre dans des sources non soumises à des droits d’auteur.\nVous devez effectuer vous-même vos traductions en veillant à leur précision et en évitant tout contenu offensant ou inapproprié.\nLes partenaires du projet peuvent mener des inspections manuelles des contributions faites par les usagers. Le non-respect de l’une quelconque des présentes conditions peut impliquer la suppression de votre compte et le retrait de vos contributions.",
+        "random_sentence_heading": "Phrases aléatoires",
+        "random_sentence": "La fonction « phrase aléatoire » vous permet d’accéder à des milliers de phrases libres de droits dans toutes les langues à traduire. Vous pouvez en charger autant que vous voulez et décider celles que vous voulez traduire.\nLa plupart de ces phrases ont été ajoutées par des membres de la communauté",
+        "tatoeba_platform_link_text": "de la plateforme Tatoeba",
+        "random_sentence_continued": "Si vous trouvez une phrase qui vous semble offensante, raciste, sexiste, discriminatoire, ou qui enfreint d’une façon ou d'une autre nos recommandations communautaires, vous pouvez nous le signaler en cliquant sur le bouton correspondant. Nous réviserons rapidement la question et prendrons, le cas échéant, les mesures pertinentes, y compris le retrait du contenu offensant de notre base de données.",
+        "machine_translation_heading": "Traduction automatique",
+        "machine_translation": "Awal Translate permet la traduction automatique entre le tamazight et quatre autres langues. Cette fonction est alimentée par",
+        "machine_translation_link_text": "NLLB,",
+        "machine_translation_continued": "un modèle open source de Meta ayant des finalités de recherche. Toutefois, la qualité des traductions en tamazight est actuellement faible en raison des ressources limitées. L’un des objectifs du projet est d’améliorer ce modèle en utilisant les données de haute qualité que nous recueillons.\nLors de vos contributions, vous pouvez choisir la fonction de traduction automatique pour générer la traduction sur laquelle vous allez travailler. Toutefois, il est essentiel de corriger cette phrase pour en assurer l’exactitude. Les phrases traduites automatiquement sans aucune modification ne seront pas acceptées. L’utilisation indue de la fonction de traduction automatique peut entraîner le retrait des phrases que vous avez ajoutées, voire la suspension de votre compte.",
+        "validation_heading": "Validation des traductions.",
+        "validation": "Awal permet également la validation communautaire des phrases traduites. Cela permet de garantir l’exactitude des phrases que nous recueillons, un point essentiel pour obtenir des modèles précis. Vous pouvez accepter les traductions correctes et refuser celles qui contiennent des erreurs importantes ou des fautes d’orthographe. Les divergences mineurs ou les différentes dialectales ne doivent pas être considérées comme des erreurs.",
+        "profile_heading": "Profil utilisateur",
+        "profile": "Vous pouvez indiquer vos nom et prénom, âge, sexe et compétences linguistiques sur votre page de profil. Votre nom et votre adresse mail ne seront en aucun cas publiés.\nLes informations démographiques, comme l’âge, le sexe et les compétences linguistiques, nous permettent de mieux saisir le profil des personnes qui collaborent au projet et d’évaluer le degré de partialité, la qualité et la quantité des données que nous collectons. En nous fournissant de telles informations, vous nous autorisez à les publier aux côtés de vos traductions.\nVotre nom d’utilisateur est public et peut être inclus aux classements publics avec les points de contribution que vous avez obtenus. Le choix de votre nom d’utilisateur vous revient. Votre nom d’utilisateur peut être inclus dans les ensembles de données publiés aux côtés des traductions que vous avez soumises.",
+        "scoring_heading": "Score",
+        "scoring": "Les personnes contributrices gagnent des points pour chaque traduction qu'elles effectuent. Vous gagnerez des points de contribution proportionnels à la longueur de la phrase d'origine que vous saisissez (à condition de ne pas utiliser la fonction « phrase aléatoire ») et la traduction correspondante. Si vous utilisez la fonction de traduction automatique, votre score cible sera calculé en fonction du nombre de modifications que vous apportez.\nVeuillez noter que ce système de score est uniquement conçu à des fins de compétition amicale, et n'implique aucune forme de compensation.",
+        "communication_heading": "Communications",
+        "communication": "En vous inscrivant à Awal, vous pourrez recevoir des courriels liés à votre compte Inscrivez-vous à notre liste de diffusion pour recevoir des informations supplémentaires, comme les mises à jour du site, des invitations à des événements, ou encore la publication d'actualités et de ressources.",
+        "disclaimer_heading": "Exonérations de responsabilité",
+        "disclaimer": "Awal et ses services associés sont fournis « en l'état » et « selon leur disponibilité », sans aucune garantie ni représentation, expresse ou implicite. L'utilisation de nos services se fait sous votre entière responsabilité.\nNous ne garantissons pas l'exactitude, l'exhaustivité ou la fiabilité des contenus fournis par les personnes collaboratrices. Lors de votre accès à la page, vous êtes tenu de vérifier au préalable toute information obtenue à travers Awal ou par le biais des ressources publiées.\nLors de vos contributions, vous assumez l'entière responsabilité de votre comportement. En utilisant Awal, vous vous engagez à n’enfreindre aucune loi, à ne pas porter atteinte aux droits de tiers et à ne pas diffuser de contenu inapproprié. Nous nous réservons le droit de supprimer tout contenu ou de suspendre les comptes qui ne respectent pas ces conditions, lesquelles sont régies par la législation espagnole.\nDans la mesure permise par la loi, Awal ainsi que ses sociétés affiliées, administrateurs, employés, agents, partenaires et concédants ne sauraient être tenus responsables de tout dommage indirect, fortuit, spécial, accessoire ou punitif, ni de toute perte de bénéfices ou de revenus.\nAwal peut contenir des liens vers des sites web ou des services tiers qui ne sont pas la propriété de Awal et ne se trouvent pas sous son contrôle. Nous n'exerçons aucun contrôle sur le contenu, les politiques de confidentialité ou les pratiques afférentes à ces sites ou services tiers.\nAwal respecte les droits de propriété intellectuelle appartenant à des tiers. Si vous estimez que votre œuvre a été copiée ou utilisée d’une façon qui constitue une enfreinte aux droits d'auteur, veuillez nous contacter à l'adresse awal@collectiva.cat.\nNous nous réservons le droit de modifier, de suspendre ou de mettre fin à nos services, conditions ou politiques à tout moment, sans préavis. Il incombe aux utilisateurs de consulter régulièrement nos conditions pour prendre connaissance de toute mise à jour.\nMalgré les mesures de protection des données des utilisateurs que nous mettons en œuvre, nous ne pouvons garantir la sécurité des informations qu’ils transmettent sur internet, et qui sont fournies à leurs risques et périls.\nNous pouvons à tout moment suspendre ou résilier le compte de toute personne sur Awal, pour quelque motif que ce soit. Si nous décidons de suspendre ou de résilier votre compte, nous ferons en sorte de vous le notifier à l’adresse électronique associée à votre compte ou lors de votre prochaine tentative d’accès à notre site web.\nVeuillez consulter notre politique de confidentialité pour en savoir plus sur la collecte, l’utilisation et la protection de vos informations à caractère personnel. L’avis légal contient des informations importantes concernant les conditions d’utilisation des services d’Awal, tandis que la politique relative aux cookies explique comment nous améliorons votre expérience de navigation au moyen de cookies. L’utilisation du présent site implique l’acceptation des conditions mentionnées plus haut."
+    },
+    "how_to_contribute_heading": "Comment apporter une contribution ?",
+    "how_it_works_contribution": "Awal vise à créer une application de traduction automatique open source et de haute qualité pour le tamazight. Pour atteindre cet objectif, il faut collecter de nombreuses phrases traduites de qualité en tamazight. Cette application vous permet d’envoyer des traductions de manière facile et amusante. Voilà comment ça marche :",
+    "how_it_works_contribution_1": "Sélectionnez la paire de langues que vous souhaitez traduire à l'aide des menus déroulants. La langue que vous souhaitez traduire se trouve à gauche de l'écran, et la langue vers laquelle vous souhaitez traduire se trouve à droite.",
+    "how_it_works_contribution_2": "Écrivez ou téléchargez une phrase à traduire dans le panneau de gauche. Vous pouvez la rédiger vous-même ou prendre une phrase que vous avez l’autorisation d’utiliser, comme un texte sous licence Creative Commons (sur Wikipédia par exemple). Vous pouvez également télécharger une phrase aléatoire de notre base de données avec le bouton \"Phrase aléatoire\". Notez que le texte source peut être un mot ou une phrase complète, mais jamais plus d'une phrase. Si vous traduisez depuis le tamazight, veillez à bien cocher la variante dans les cases ci-dessous. Si vous ne comprenez pas la phrase ou ne souhaitez pas la traduire, vous pouvez en télécharger une autre. Si vous trouvez une phrase offensante ou incorrecte, veuillez nous la signaler avec le bouton correspondant. Après vérification, elle sera supprimée de notre base de données.",
+    "how_it_works_contribution_3": "Pour écrire la traduction de la phrase, il faut utiliser le panneau de droite. Pour vous aider à démarrer, vous pouvez utiliser la fonction de traduction automatique prototype qui vous fournira une traduction approximative (de qualité médiocre). Assurez-vous d’écrire une traduction précise et bien rédigée. Vous pouvez toujours consulter les ressources utiles que nous indiquons ci-dessous. Si vous traduisez vers le tamazight, veillez à bien cocher la variante dans les cases ci-dessous.",
+    "how_it_works_contribution_4": "Quand vous avez terminé de traduire la phrase, cliquez sur le bouton « Faire une contribution » et votre contribution sera enregistrée. Vous gagnerez des points de contribution proportionnels à la longueur de la phrase d'origine que vous saisissez (à condition de ne pas utiliser la fonction « phrase aléatoire ») et la traduction correspondante. Si vous utilisez la fonction de traduction automatique, votre score cible sera calculé en fonction du nombre de modifications que vous apportez.",
+    "how_it_works_contribution_continued": "Pour plus d'informations, veuillez consulter les conditions de contribution. Si vous avez besoin d'aide, n'hésitez pas à nous contacter à aawaldigital@gmail.com. Merci beaucoup pour votre précieuse contribution !",
+    "how_to_validate_heading": "Comment valider ?",
+    "how_it_works_validation": "Valider les traductions est une étape essentielle pour maintenir l'intégrité de l'ensemble de données et contribuer au développement d'une application de traduction automatique fiable pour le tamazight. Sur cet écran, vous verrez apparaître des traductions faites par d'autres volontaires et vous devrez vérifier si elles sont acceptables ou non.",
+    "how_it_works_validation_1": "Commencez par sélectionner la combinaison de langues et la variante de tamazight pour les validations. Vous verrez alors la contribution d'une autre personne volontaire. La phrase originale s’affiche dans le panneau de gauche et la phrase traduite, dans le panneau de droite.",
+    "how_it_works_validation_2": "Évaluez la qualité de la traduction, en tenant compte du fait que nous visons l'acceptabilité plutôt que la perfection. Prenez en compte les indications suivantes :",
+    "how_it_works_validation_2_1": "Confirmez si la traduction transmet le sens de la phrase d'origine.",
+    "how_it_works_validation_2_2": "Assurez-vous que les termes clés et les concepts sont traduits correctement sans perdre leur sens d'origine.",
+    "how_it_works_validation_2_3": "Évaluez la fluidité et le naturel de la traduction. Une bonne traduction se lit avec aisance et semble naturelle dans la langue cible.",
+    "how_it_works_validation_2_4": "Si une phrase contient des mots dont vous n'êtes pas sûr(e), vous pouvez cliquer sur « Ignorer » pour charger une autre contribution.",
+    "how_it_works_validation_2_5": "Vérifiez que la traduction respecte les règles grammaticales et les conventions de ponctuation de la langue cible.",
+    "how_it_works_validation_2_6": "Si vous trouvez une phrase offensante ou nuisible (dans l'original ou la traduction), utilisez le bouton \"Signaler\".",
+    "how_it_works_validation_2_7": "Si vous êtes dans un cas de figure qui n’est pas prévu ici, votez selon votre propre jugement. Si vous ne parvenez toujours pas à vous décider, passez à la contribution suivante.",
+    "how_it_works_validation_3": "Si vous estimez que la traduction est acceptable, cliquez sur l'icône représentant une coche ; dans le cas contraire, cliquez sur l'icône représentant une croix.",
+    "how_it_works_validation_continued": "Pour plus d'informations, veuillez consulter les conditions de contribution. Si vous avez besoin d'aide, n'hésitez pas à nous contacter à aawaldigital@gmail.com. Merci beaucoup pour votre précieuse contribution !",
+    "legal": {
+        "legal_title": "Avis légal",
+        "legal_text_1": "Col·lectivaT SCCL, responsable du site Awal (ci-après dénommé le RESPONSABLE) publie le présent avis ayant pour objet de faire respecter les obligations établies par la loi 34/2002, du 11 juillet, relative aux Services de la Société de l’Information et au Commerce Électronique (LSSICE), BOE n°166, ainsi que d’informer l’ensemble des utilisateurs du site des conditions d’utilisation.\nToute personne qui accède au site assume le rôle d’utilisateur et s’engage à observer et à respecter rigoureusement les dispositions qui y sont énoncées, ainsi que toute autre disposition légale applicable.\nCol·lectivaT SCCL CT se réserve le droit de modifier toute information pouvant apparaître sur le site, sans obligation de préavis ou de notification aux utilisateurs, la simple publication sur le site de l’Association Bloc4 étant réputée constituer une information suffisante.",
+        "legal_data_1_heading": "Données d’identification",
+        "legal_data_1_text": "Nom du domaine: www.awaldigital.org\nEntité responsable : Col·lectivaT SCCL\nIdentifiant fiscal : F67078097\nSiège social : Carrer Rocafort, 242 bis, 3r, 08029, Barcelone (Espagne)\nE-mail: info@collectivat.cat ou aawaldigital@gmail.com",
+        "legal_data_2_heading": "DROITS DE PROPRIÉTÉ INTELLECTUELLE ET INDUSTRIELLE",
+        "legal_data_2_text": "Le site web, y compris mais sans s’y restreindre sa programmation, son édition, sa compilation et tous autres éléments nécessaires à son fonctionnement, ainsi que les designs, logos, textes et/ou graphismes, est la propriété du RESPONSABLE ou, le cas échéant, bénéficie d'une licence ou d'une autorisation expresse de la part des auteurs. L'ensemble des contenus du site web est dûment protégé par la réglementation relative à la propriété intellectuelle et industrielle et est inscrit dans les registres publics correspondants.\nToute reproduction totale ou partielle, utilisation, exploitation, distribution et commercialisation desdits contenus, quelle qu’en soit la finalité, requiert l'autorisation écrite préalable du RESPONSABLE.\nTout usage non autorisé est réputé constituer une violation grave des droits de propriété intellectuelle ou industrielle.\nLes designs, logos, textes et/ou graphismes appartenant à des tiers autres que le RESPONSABLE et pouvant figurer sur le site web appartiennent à leurs propriétaires respectifs, qui sont responsables de toute controverse pouvant en découler. Le RESPONSABLE autorise expressément que des tiers puissent rediriger directement vers des contenus spécifiques du site web, et, en tout cas, rediriger vers le site web principal de www.bloc4.coop \nLe RESPONSABLE reconnaît en faveur de leurs titulaires les droits correspondants de propriété intellectuelle et industrielle, sans que le simple fait de les mentionner ou de les faire figurer sur le site web n'implique l'existence de droits ou de responsabilités y afférant, ni un soutien, un parrainage ou une recommandation quelconque de la part du RESPONSABLE.\nPour toute remarque relative à d’éventuelles infractions aux droits de propriété intellectuelle ou industrielle, ou relative à l'un quelconque des contenus du site web, vous pouvez nous contacter à l’adresse info@collectivat.cat",
+        "legal_data_3_heading": "EXONÉRATIONS DE RESPONSABILITÉ",
+        "legal_data_3_text": "Le RESPONSABLE décline toute responsabilité découlant des informations publiées sur son site web, dès lors qu'il n'a pas effectivement connaissance que ces informations aient été manipulées ou interceptées par un tiers ou, dans le cas contraire, s'il a agi avec diligence pour retirer les données ou en rendre l'accès impossible.\nUtilisation des cookies\nIl se peut que ce site web utilise des cookies techniques (petits fichiers d'information que le serveur envoie à l'ordinateur de l'utilisateur) afin d'exécuter certaines fonctions jugées essentielles au bon fonctionnement et à la visualisation du site  Dans tous les cas, les cookies utilisés sont de nature temporaire. Leur seule finalité est de faciliter une navigation plus efficace et ils disparaissent à l'issue de la session de l'utilisateur. Ces cookies ne fournissent en aucun cas des données à caractère personnel par eux-mêmes ni ne sont utilisés à des fins de collecte de telles données.\nPar ailleurs, le recours aux cookies permet au serveur hébergeant le site web de reconnaître le navigateur utilisé par l'utilisateur, dans le but de simplifier la navigation. Ainsi, par exemple, les utilisateurs peuvent avoir accès aux zones, services, promotions ou concours réservés aux utilisateurs préalablement enregistrés sans avoir à se réinscrire à chaque visite. Les cookies peuvent aussi être employés pour mesurer l'audience, analyser les paramètres de trafic, contrôler la progression et le nombre de visites, etc. Il s'agit dans ce cas de cookies techniquement facultatifs, mais avantageux pour l'utilisateur. Le présent site web n'installera pas de cookies non essentiels sans le consentement préalable de l'utilisateur.\nCe site web utilise des cookies.\nPolitique de redirection\nDepuis le site web, il est possible d’être redirigé vers des contenus hébergés sur des sites tiers. Étant donné que le RESPONSABLE ne peut pas contrôler en permanence le contenu publié par des tiers sur leurs sites respectifs, il décline toute responsabilité quant à ces contenus. Dans tous les cas, il s’engage à retirer immédiatement tout contenu susceptible de transgresser la législation nationale ou internationale, la morale ou l'ordre public, en supprimant instantanément la redirection vers le site concerné, et à en informer les autorités compétentes.\nLe RESPONSABLE ne saurait être tenu responsable des informations et contenus stockés, y compris mais sans s’y restreindre, sur des forums, chats, générateurs de blogs, commentaires, réseaux sociaux ou tout autre moyen permettant à des tiers de publier de manière indépendante des contenus sur le site web du RESPONSABLE. Néanmoins, conformément aux dispositions des articles 11 et 16 de la LSSICE, le RESPONSABLE reste à disposition de tous les utilisateurs, autorités et forces de sécurité collaborant activement au retrait ou, le cas échéant, au blocage de tout contenu susceptible d'affecter ou de transgresser la législation nationale ou internationale, les droits de tiers ou la morale et l'ordre public. Dans le cas où l'utilisateur considérerait que le site web contient du matériel susceptible d'être qualifié de la sorte, il est prié de le notifier immédiatement à l'administrateur du site. Le présent site web a été vérifié et testé pour fonctionner correctement. En principe, son fonctionnement est garanti 365 jours par an, 24 heures sur 24. Toutefois, le RESPONSABLE n’exclue pas la possibilité que des erreurs de programmation surviennent ou que des causes de force majeure, des catastrophes naturelles, des grèves ou des circonstances similaires rendent impossible l'accès au site web.\nADRESSES IP\nLes serveurs du site web peuvent détecter automatiquement l'adresse IP ainsi que le nom de domaine utilisés par l'utilisateur. Une adresse IP est un numéro attribué automatiquement à un ordinateur afin de permettre sa connexion à Internet. Toutes ces informations sont enregistrées dans un journal d'activité du serveur dûment consigné, ce qui permet de traiter ultérieurement les données pour obtenir des mesures strictement statistiques, comme le nombre d'impressions de pages, le nombre de visites sur les serveurs web, l'ordre de ces visites, le point d'accès, etc.",
+        "legal_data_4_heading": "ATTRIBUTION DE COMPÉTENCE",
+        "legal_data_4_text": "Pour la résolution de tout litige ou toute question relative à ce site web ou aux activités qui y sont menées, les parties acceptent expressément de se soumettre à la législation espagnole. Les juridictions compétentes pour le règlement de tout conflit découlant ou lié à son utilisation seront celles des tribunaux du domicile de l’UTILISATEUR ou du lieu d’exécution de l’obligation."
+    },
+    "cookies": {
+        "cookies_heading": "Politique de cookies",
+        "cookies_text_1": "Conformément à la réglementation en vigueur, nous fournissons aux utilisateurs des informations relatives aux cookies utilisés ainsi que les motifs de leur utilisation, et nous sollicitons leur consentement pour leur usage. Le site www.awaldigital.org  a recours  à la fois à des cookies propriétaires et à ceux de tiers afin d'offrir une meilleure expérience de navigation et un service de qualité. Toutefois, l'utilisateur peut bloquer la génération de cookies et les supprimer en sélectionnant l'option correspondante dans son navigateur. Si l’utilisateur bloque l'utilisation de cookies sur son navigateur, il est possible que certains services ou fonctionnalités du site web ne soient pas accessibles.\nDéfinition des cookies Les cookies permettent aux serveurs web de stocker et de récupérer des informations relatives aux utilisateurs. Il s’agit de petits fichiers texte que les pages web envoient au navigateur et qui sont stockés sur le terminal de l’utilisateur, qu’il s’agisse d’un ordinateur, d’un téléphone portable ou d’une tablette. Les informations ainsi stockées permettent, par exemple, de récupérer l’identifiant de l’utilisateur enregistré, le cas échéant, des données de connexion aux réseaux sociaux ou des préférences de navigation. Ces données sont conservées jusqu'à la visite suivante de l’utilisateur sur le site.\nComment sont utilisés les cookies et quel type d’informations peuvent-ils contenir ? Lors de la navigation sur le site www.awaldigital.org, le terminal de l’utilisateur peut recueillir les informations suivantes :",
+        "cookies_list_1": "Des données statistiques relatives à l’usage du site",
+        "cookies_list_2": "Le format préféré de l’utilisateur pour accéder au site depuis un dispositif mobile",
+        "cookies_list_3": "L’activité menée par l’utilisateur sur le site (pages consultées, recherches, etc.)",
+        "cookies_list_4": "Des données de connexion aux réseaux sociaux pour les utilisateurs se connectant via leur compte Facebook ou Twitter.",
+        "cookies_text_2": "Si vous bloquez l’utilisation des cookies par le navigateur, certains services du site web peuvent ne plus être disponibles.\nComment bloquer ou supprimer les cookies ? Vous pouvez autoriser, bloquer ou supprimer les cookies présents sur votre appareil en configurant les options de votre navigateur, que ce soit sur un ordinateur, un smartphone ou une tablette. Le fait de bloquer l’installation de cookies n’empêche toutefois pas la navigation effective sur le site."
+    },
+    "privacy": {
+        "privacy_heading": "Politique de confidentialité",
+        "privacy_item_1_txt_1_heading": "INFORMATIONS À LA PERSONNE UTILISATRICE",
+        "privacy_item_1_txt_1": "Qui est le responsable du traitement de vos données personnelles°?\nCol·lectivaT SCCL est le RESPONSABLE du traitement des données personnelles de la PERSONNE UTILISATRICE et vous informe que lesdites données sont traitées conformément aux dispositions du Règlement (UE) 2016/679 du 27 avril (RGPD) et de la Loi Organique 3/2018 du 5 décembre (LOPDGDD).\nDans quel but traitons-nous les données à caractère personnel vous concernant ?\nAfin de maintenir une relation commerciale avec la personne utilisatrice. Les opérations prévues pour le traitement sont les suivantes :\nPourquoi sommes-nous autorisés à traiter les données à caractère personnel vous concernant ?\nLeur traitement est prévu à l'article 6 du RGPD de la façon suivante :",
+        "privacy_item_1_li_1": "Envoyer des communications commerciales et du bulletin d'information, moyennant l’accord de la PERSONNE UTILISATRICE.",
+        "privacy_item_1_li_2": "Mener des études de marché, des analyses statistiques, etc., motivées par l'intérêt légitime du RESPONSABLE ; réaliser des commandes, des requêtes, etc., à la demande de la .PERSONNE UTILISATRICE.",
+        "privacy_item_1_txt_2": "Quelle est la durée de conservation de vos données personnelles ?\nLes données à caractère personnel vous concernant sont conservées pendant une durée n'excédant pas celle qui est strictement nécessaire à leur traitement, ou tant que des prescriptions légales en imposent la conservation. Une fois cette durée dépassée, elles sont supprimées au moyen de mesures de sécurité appropriées visant à garantir leur anonymisation ou leur destruction complète.\nÀ qui fournissons-nous les données à caractère personnel vous concernant ?\nNous pouvons transmettre des données personnelles à des tiers afin d’assurer le développement et l’exécution adéquats des finalités du traitement.\nQuels sont vos droits ?\nLes droits de la PERSONNE UTILISATRICE sont les suivants : ",
+        "privacy_item_1_li_3": "Droit de retirer son accord à tout moment",
+        "privacy_item_1_li_4": "Droit d'obtenir l’accès, la rectification, la portabilité et l’effacement de données la concernant, ainsi que de limiter ou de s’opposer à leur traitement.",
+        "privacy_item_1_li_5": "Droit de déposer une réclamation auprès de l’autorité de contrôle (www.aepd.es) si elle estime que le traitement n’est pas conforme à la réglementation en vigueur.",
+        "privacy_item_1_txt_3": "Coordonnées pour exercer vos droits :\nCol·lectivaT, SCCL, Carrer Rocafort, 242 bis, 2n, 08029, Barcelone (Espagne) info@collectivat.cat",
+        "privacy_item_2_txt_heading": "CARACTÈRE OBLIGATOIRE OU FACULTATIF DES INFORMATIONS FOURNIES PAR L’UTILISATEUR",
+        "privacy_item_2_txt": "En cochant les cases correspondantes et en saisissant les données dans les champs identifiés par un astérisque (*) sur le formulaire de contact ou présentés dans les formulaires de téléchargement, la PERSONNE UTILISATRICE accepte expressément, librement et de manière non équivoque que ses données sont indispensables au traitement de sa demande par le prestataire. Par conséquent, la communication des données dans les autres champs est facultative. La PERSONNE UTILISATRICE garantit que les données personnelles communiquées au RESPONSABLE sont exactes et s’engage à signaler toute modification.\nLe RESPONSABLE informe que toutes les données sollicitées via le site web sont obligatoires, car elles sont nécessaires pour garantir à la PERSONNE UTILISATRICE une prestation de service optimale.\nFaute de fournir l’ensemble des données, il ne sera pas garanti que les informations et les services fournis répondent pleinement aux besoins de la personne.",
+        "privacy_item_3_heading": "MESURES DE SÉCURITÉ",
+        "privacy_item_3_txt": "Le RESPONSABLE respecte toutes les exigences du RGPD et de la LOPDGDD relatives au traitement des données à caractère personnel qui lui ont été confiées, et notamment aux principes énoncés à l'article 5 du RGPD, qui exigent que les données soient traitées de manière licite, loyale et transparente au regard de la personne concernée, et qu'elles soient adéquates, pertinentes et limitées à ce qui est nécessaire au regard des finalités du traitement.\nLe RESPONSABLE garantit avoir mis en place les politiques techniques et organisationnelles appropriées pour appliquer les mesures de sécurité prévues par le RGPD et la LOPDGDD, afin de protéger les droits et libertés des PERSONNES UTILISATRICES, et a communiqué les informations nécessaires à l’exercice de leurs droits."
+    },
+    "resources": {
+        "resources_heading": "Ressources",
+        "awal_huggingface": "Le projet Awal peut être trouvé dans le référentiel Hugging Face de Col·lectivaT",
+        "NLLB": "NLLB-200 est un ensemble de modèles de traduction automatique multilingues créés par Meta. C'est le premier modèle open source qui inclut le tamazight. La version utilisée sur ce site internet est le modèle contenant 600 millions de paramètres.",
+        "tamazight_NLP_huggingface": "Le groupe Tamazight NLP publie des ensembles de données et des modèles ouverts sur Hugging Face",
+        "tamazight_wiki": "Wikipédia en Tamazight",
+        "TALAM_groups": "Le portail TALAM regroupe des applications liées au traitement automatique du Tamazight",
+        "darija_open": "Darija Open Dataset est un projet collaboratif open source pour la traduction automatique darija-anglais. La base de données de phrases en darija d'Awal repose sur cet ensemble de données.",
+        "tamazight_for_all": "Tamazight For All est une chaîne YouTube contenant des leçons, des discussions et des histoires courtes en Tamazight, ainsi que des réflexions sur la culture amazighe."
+    },
+    "faq": {
+        "q1": {
+            "q": "Je ne suis pas sûr/e de mes compétences en écriture en catalan/espagnol/français/arabe. Que dois-je faire ?",
+            "a": "Ne vous inquiétez pas ! Si vous avez une bonne compréhension de la langue, vos contributions nous sont quand même précieuses. Utilisez le bouton 'Phrase aléatoire' pour charger automatiquement une phrase source, puis ajouter sa traduction en tamazight. Vous pouvez également extraire des phrases de sources non soumises à des droits d’auteur, comme Wikipédia, pour diversifier le type de traductions que nous recueillons."
+        },
+        "q2": {
+            "q": "J’ai corrigé une erreur dans la phrase traduite automatiquement mais elle continue à apparaître. Est-ce que cela signifie que ma contribution n’a pas été prise en compte ?",
+            "a": "Vos corrections sont enregistrées dans notre base de données, mais elles n'affectent pas immédiatement la traduction automatique. L'amélioration se produira ultérieurement, après avoir recueilli suffisamment de traductions de qualité de contributeurs comme vous. C’est pourquoi vos efforts sont précieux et contribuent à améliorer le moteur de traduction avec le temps."
+        },
+        "q3": {
+            "q": "Comment sont calculés les scores de contribution pour les traductions ?",
+            "a": "Vos points de contribution sont déterminés par la longueur en caractères à la fois de la phrase source que vous saisissez et de sa traduction. Si vous saisissez manuellement la phrase source et la traduisez de zéro (c'est-à-dire sans utiliser l’option 'Pré-traduire'), vos points seront la somme des caractères des deux phrases. Si vous utilisez le moteur de traduction automatique en cliquant sur 'Pré-traduire', vos points pour la traduction seront basés sur le nombre d'éditions de caractères que vous apportez à la phrase traduite automatiquement. Si vous chargez une phrase source depuis la base de données avec la fonction 'Phrase aléatoire', vous gagnerez des points uniquement pour votre traduction, et pas pour la phrase source."
+        },
+        "q4": {
+            "q": "Est-ce que mes contributions vocales dans Common Voice me font gagner des points ?",
+            "a": "Hélas, pour le moment, le système de points ne concerne que les contributions de traduction. Notre objectif à terme est d'y inclure également les contributions vocales."
+        },
+        "q5": {
+            "q": "J'ai oublié mon mot de passe et je ne peux pas accéder à mon compte. Que dois-je faire ?",
+            "a": "Nous travaillons encore à la possibilité de récupérer les mots de passe. En attendant, vous pouvez ouvrir un nouveau compte et nous contacter à aawaldigital@gmail.com pour que nous transférions vos points sur ce nouveau compte."
+        },
+        "q6": {
+            "q": "J'ai déjà un compte sur AWAL. Dois-je en créer un également sur Common Voice ?",
+            "a": "Ce n’est pas obligatoire mais nous vous recommandons de créer un compte sur Common Voice. Cela vous permettra de visualiser vos contributions et de compléter votre profil."
+        }
+    },
+    "carousel": {
+        "c1": {
+            "heading": "Le tamazight dans l’enseignement public marocain : une course de fond",
+            "body": "Rapport avec analyse de données sur la situation du tamazight dans le système éducatif marocain.",
+            "link": "https://www.ciemen.cat/wp-content/uploads/2026/05/Le-tamazight-dans-lenseignement-public-marocain-une-course-de-fond-FR_MAQUETAT.pdf"
+        },
+        "c2": {
+            "heading": "Awal – Une technologie linguistique pour le tamazight portée par la communauté",
+            "body": "Recherche sur le processus de numérisation du tamazight avec la participation de la communauté.",
+            "link": "https://arxiv.org/pdf/2510.27407"
+        },
+        "c3": {
+            "heading": "Digital future of minoritized languages depends on community action, institutional support, and resource commitment",
+            "body": "Lisez les dernières mises à jour sur Awal sur Nationalia",
+            "link": "https://www.nationalia.info/opinion/11729/digital-future-of-minoritized-languages-depends-on-community-action-institutional-support-"
+        },
+        "c4": {
+            "heading": "\"Awal, le projet populaire qui veut qu’internet parle tamazight\"",
+            "body": "Découvrez le projet Awal et son premier datathon sur Nationalia.",
+            "link": "https://www.nationalia.info/new/11589/awal-the-popular-project-that-wants-to-make-the-internet-speak-amazigh"
+        }
+    },
+    "email": {
+        "verification": {
+            "page_redirect": "Redirection en cours...",
+            "token_error": "Le jeton de validation n'est pas valide, veuillez essayer de renvoyer l'email de vérification.",
+            "success_title": "Merci d'avoir vérifié votre e-mail.",
+            "error_title": "La vérification de l'e-mail a échoué.",
+            "error_msg": "Une erreur s’est produite. Si vous voyez toujours la bannière, veuillez essayer de renvoyer l'e-mail de vérification. Si le problème persiste, contactez-nous pour obtenir de l'aide.",
+            "success_email": "L'email de vérification a bien été envoyé. Veuillez consulter votre boîte de réception et cliquer sur le lien pour terminer la vérification.",
+            "alert": "Veuillez vérifier votre e-mail.",
+            "error_email": "Impossible d'envoyer l'e-mail de vérification. Assurez-vous d'avoir bien écrit votre e-mail sur votre page de profil. Si le problème persiste, contactez-nous pour obtenir de l'aide.",
+            "reset_password": "Réinitialiser le mot de passe",
+            "reset_success": "Mot de passe réinitialisé.",
+            "reset_email_send_success": "L’e-mail de réinitialisation a été envoyé, veuillez consulter votre boîte de réception et cliquer sur le lien pour terminer la réinitialisation du mot de passe.",
+            "email_recovery": "E-mail de récupération du mot de passe",
+            "submit_btn": "Envoyer",
+            "reset_email_send_error": "Erreur lors de l'envoi de l'e-mail, veuillez réessayer plus tard",
+            "password_mismatch": "Les mots de passe ne correspondent pas",
+            "new_password": "Nouveau mot de passe",
+            "confirm_password": "Confirmer le mot de passe",
+            "check_spam": "Veuillez vérifier que l’e-mail n’a pas atterri dans votre dossier de courriers indésirables (spam).",
+            "password_min_char": "Le mot de passe doit contenir au moins 8 caractères"
+        }
     }
-  },
-  "error_msg": {
-    "alert_required": "Requis",
-    "alert_password_coincide": "Les mots de passe doivent correspondre",
-    "alert_age": "L'âge ne peut pas dépasser 120."
-  },
-  "page_intro": {
-    "title": "Internet parle tamazight !",
-    "CTA_text": "Awal est une initiative communautaire visant à promouvoir la langue tamazight dans l’univers numérique. Notre vision est claire : autonomiser le tamazight pour prospérer grâce à la technologie open source. Et pour cela, nous avons besoin de vous.",
-    "heading_1": "Comment faire une contribution ?",
-    "heading_2": "Tout le monde est bienvenu",
-    "text_2": "La contribution est ouverte à toutes les personnes sachant lire et écrire en tamazight. Nous voulons rendre compte de la richesse de la diversité des variantes tamazight, en accueillant des locuteurs de tous horizons.",
-    "heading_3": "Découvrez votre position",
-    "text_3": "Pour chaque traduction enregistrée dans Awal Translate, vous gagnerez des points et verrez comment vous vous comparez avec les autres membres de la communauté.",
-    "heading_4": "Découvrez la communauté Awal",
-    "text_4_1": "Pour plus d'informations sur cette initiative et nos collaborateurs, rendez-vous sur la page ",
-    "text_4_about": "À propos ",
-    "text_4_2": "Suivez-nous sur",
-    "text_4_ins": "Instagram",
-    "text_4_X": "et X",
-    "text_4_3": "pour recevoir des nouvelles et vous connecter au réseau Awal.",
-    "CTA_button": "Rejoignez Awal",
-    "item_1_strong": "Traduisez avec un objectif : ",
-    "item_1_normal": "Démontrez vos compétences linguistiques en traduisant des phrases vers ou depuis le tamazight avec vos propres mots.",
-    "item_2_strong": "La validation compte : ",
-    "item_2_normal": "Validez les traductions effectuées par d'autres volontaires, afin de garantir la précision de la technologie résultante.",
-    "item_3_strong": "Faites entendre votre voix : ",
-    "item_3_normal": "Contribuez aux données vocales via Common Voice, pour donner au tamazight une voix dans le monde numérique."
-  },
-  "texts": {
-    "data_marathon": "Marathon de données Awal",
-    "accept_mail_list": "Inscrivez-vous à la liste de diffusion.",
-    "save_settings": "Sauvegarder les paramètres",
-    "loading": "Chargement",
-    "welcome": "Bienvenue à nouveau",
-    "welcome_m": "Bienvenue à nouveau",
-    "welcome_f": "Bienvenue à nouveau",
-    "subscribe": "Abonnez-vous à la liste de diffusion",
-    "login_to_signup_1": "Nouveau sur Awal ?",
-    "login_to_signup_2": "Inscrivez-vous !",
-    "total_entries": "Traductions apportées",
-    "total_validated_entries": "Traductions validées",
-    "total_voice_entries_number": "3",
-    "total_voice_entries": "heures enregistrées",
-    "total_voice_validation_number": "2",
-    "total_voice_validation": "heures validées",
-    "statistic": "Classement de la communauté",
-    "validate_report_heading": "Signaler la contribution",
-    "validate_report_text": "Veuillez nous dire brièvement pourquoi cette contribution enfreint nos lignes directrices communautaires.",
-    "faq_heading": "Foire aux questions",
-    "rank": "#",
-    "home": "Accueil",
-    "contributor_input_placeholder": "Écrivez une phrase à traduire ou chargez-en une avec le bouton 'Phrase aléatoire'.",
-    "contributor_output_placeholder": "Écrivez la traduction du texte à gauche dans la langue sélectionnée."
-  },
-  "validator": {
-    "alert_no_more_entries": "Il n'y a plus d'entrées à valider pour la paire de langues et la variante sélectionnées. En attendant, vous pouvez apporter plus de traductions.",
-    "alert_loading": "Chargement...",
-    "success_loading": "Nouvelle paire de traduction chargée.",
-    "success_validation": {
-      "text_before_link": "Merci pour votre validation ! Vous venez de gagner",
-      "text_after_link": "points."
-    }
-  },
-  "btn": {
-    "continue": "Continuer",
-    "cancel": "Annuler",
-    "contribute": "Faire une contribution",
-    "clear": "Effacer le texte",
-    "skip": "Passer"
-  },
-  "setting": {
-    "oral": "Oral",
-    "written_tif": "Écrit (Tifinagh)",
-    "written_lat": "Écrit (latin)",
-    "mark_proficiency_tamazight": "Veuillez indiquer votre compétence dans les dialectes tamazight :",
-    "mark_proficiency_other": "Veuillez indiquer les paires de langues dans lesquelles vous pouvez apporter une contribution :",
-    "gender": {
-      "select": "Sélectionnez votre genre",
-      "m": "Masculin",
-      "f": "Féminin",
-      "nb": "Non-binaire",
-      "tr": "Transgenre",
-      "other": "Autre"
-    },
-    "specify": "Veuillez indiquer votre variante."
-  },
-  "about": {
-    "main_string_1": "Awal est un projet qui contribue à préserver et promouvoir la langue amazighe dans l'espace numérique en développant des outils innovants pour en faciliter l'utilisation et la diffusion. \nLa participation des locuteurs amazighs est essentielle pour recueillir des données, à la fois orales et écrites, à travers des enregistrements vocaux et la collecte de textes traduits de cette langue minorisée. L'initiative vise non seulement à créer des outils numériques efficaces, mais aussi à sensibiliser la communauté à l'importance des données linguistiques et des nouvelles technologies pour préserver la langue, à sensibiliser aux effets de la fracture numérique et à développer un réseau de professionnels.\nAwal est une initiative du CIEMEN, Col·lectivaT et Casa Amaziga de Catalunya, financée par la mairie de Barcelone et le gouvernement catala, avec le soutien de l'Agence catalane de coopération au développement et du Département catalan des droits sociaux.",
-    "ciemen_logo_url": "",
-    "ciemen_web_url": "www.ciemen.cat",
-    "ciemen_intro": "Le Centre international Escarré pour les minorités ethniques et les nations (CIEMEN) est une organisation de la société civile catalane qui œuvre à faire connaître et promouvoir la réalité nationale catalane dans le monde, à diffuser la connaissance des peuples et des nations sans État et à défendre leurs droits collectifs. Fondée en exil en 1974, cette organisation a une longue tradition de travail en faveur du pays et des nations. CIEMEN est une entité singulière à bien des égards. Nous vous invitons à la découvrir plus en détail dans cette section.",
-    "collectivat_logo_url": "",
-    "collectivat_web_url": "www.collectivat.cat",
-    "collectivat_intro": "Col·lectivaT est une coopérative à but non lucratif sise à Barcelone, composée d'une équipe multidisciplinaire et spécialisée dans le développement de technologies open source, la prestation de services linguistiques et de traduction, la formation et la recherche sociale, ainsi que le conseil stratégique et le soutien.\nÀ travers son travail, l'organisation vise à contribuer à réduire les injustices et les inégalités structurelles, en soutenant les organisations de la société civile travaillant avec des cultures et des langues minoritaires.",
-    "casa_amaziga_logo_url": "",
-    "casa_amaziga_web_url": "https://casaamaziga.wordpress.com/",
-    "casa_amaziga_intro": "La Casa Amaziga de Catalunya est une entité qui aspire à être la référence du peuple amazigh en Catalogne et le point de rencontre entre la citoyenneté amazighe et catalane.",
-    "main_text_2": "Nous aimerions également mettre en avant les personnes qui collaborent avec Awal et qui jouent un rôle essentiel.",
-    "contributor_farida_photo": "",
-    "contributor_farida_website": "",
-    "contributor_farida_intro": "Farida Boudichat Fortas. Linguiste et professeure d'espagnol, catalan et anglais langues étrangères. Elle a réalisé des études sociolinguistiques sur la langue amazighe et collabore avec plusieurs entités pour promouvoir la langue, en particulier sa préservation et sa transmission.",
-    "contributor_ghizlan_photo": "",
-    "contributor_ghizlan_website": "",
-    "contributor_ghizlan_intro": "Lalla Ghizlan Baryala. Activiste culturelle amazighe en Catalogne, elle collabore avec différentes entités pour diffuser l'histoire, la langue et la culture amazighes dans le pays. Elle a fait des études de marketing et de recherche de marché à l'UOC et détient un diplôme supérieur en marketing digital et commerce électronique.",
-    "contributor_alp_photo": "",
-    "contributor_alp_website": "https://alpoktem.github.io",
-    "contributor_alp_intro": "Alp Öktem (PhD) est un linguiste computationnel et chercheur spécialisé dans les technologies de la parole et la traduction automatique, avec un focus sur les langues peu dotées et marginalisées. Il est le conseiller technologique du projet Awal.",
-    "contributor_yuxuan_photo": "",
-    "contributor_yuxuan_website": "",
-    "contributor_yuxuan_intro": "Yuxuan Peng est chargé du développement et de la maintenance du site internet d'Awal.",
-    "contributor_brahim_photo": "",
-    "contributor_brahim_website": "https://www.yuxuanize.com",
-    "contributor_brahim_intro": "Brahim Essaidi est écrivain et traducteur d’amazigh. Il a localisé le site Web d'Awal et Common Voice. Il contribue à Awal, Common Voice et d'autres projets open source dédiés à promouvoir la langue tamazight.",
-    "contact_heading": "Contactez Awal",
-    "contact_info": "Pour toute question, suggestion ou demande d’informations, veuillez nous contacter à",
-    "contact_text": "aawaldigital@gmail.com"
-  },
-  "terms": {
-    "contribution_terms_heading": "Conditions de contribution",
-    "contribution_terms": "Awal est une initiative à but non lucratif qui contribue à la numérisation de la langue tamazight à travers la collecte de données ouvertes et le développement d'outils innovants.\nLes internautes peuvent y contribuer librement en ajoutant au portail web des phrases traduites, dans l’objectif de développer des applications de traduction automatique. Pour ajouter et valider des phrases traduites, il est nécessaire de s’inscrire au préalable. En vous inscrivant, vous vous engagez à respecter les présentes conditions.\nAwal collabore également au projet Common Voice de Mozilla, qui vise à produire une base de données libre pour la reconnaissance automatique de la parole. De cette façon, tout le monde peut construire des applications basées sur la voix pour le tamazight. Veuillez noter que les contributions à Common Voice sont sujettes aux",
-    "mozilla_terms": "conditions légales de Mozilla.",
-    "contribution_terms_continued": "Dans les présentes condition, les termes « nous », « nos » ou « notre » font référence aux personnes collaboratrices et administratives d’Awal, initiative à but non lucratif. Les termes « vous », « vos » et votre » font référence aux personnes qui interagissent avec la plateforme Awal en tant qu’usagers, collaborateurs ou volontaires.",
-    "translation_contribution_heading": "Apport de traduction",
-    "translation_contributions": "Un apport de traduction consiste à saisir une phrase en catalan, espagnol, anglais, arabe ou français, accompagnée de sa traduction en tamazight. Vous pouvez traduire du tamazight vers une autre langue, ou vice versa. Vous pouvez apporter vos contributions en alphabet tifinagh ou latin.\nLes apports sont d’abord enregistrés dans les bases de données privées du cloud de Col·lectivaT. Elles seront régulièrement mises à disposition avec",
-    "cc_license_link_text": "une licence Creative Commons (CC)",
-    "translation_continued_1": "dans le",
-    "repo_link_text": "Référentiel Hugging Face de Col·lectivaT",
-    "translation_continued_2": "Cela signifie que n’importe qui peut voir vos traductions et les utiliser librement.\nVous devez vous abstenir d’ajouter des données à caractère personnel identifiables dans les phrases que vous ajoutez.\nVous pouvez rédiger vous-même les phrases originales que vous traduisez, ou les prendre dans des sources non soumises à des droits d’auteur.\nVous devez effectuer vous-même vos traductions en veillant à leur précision et en évitant tout contenu offensant ou inapproprié.\nLes partenaires du projet peuvent mener des inspections manuelles des contributions faites par les usagers. Le non-respect de l’une quelconque des présentes conditions peut impliquer la suppression de votre compte et le retrait de vos contributions.",
-    "random_sentence_heading": "Phrases aléatoires",
-    "random_sentence": "La fonction « phrase aléatoire » vous permet d’accéder à des milliers de phrases libres de droits dans toutes les langues à traduire. Vous pouvez en charger autant que vous voulez et décider celles que vous voulez traduire.\nLa plupart de ces phrases ont été ajoutées par des membres de la communauté",
-    "tatoeba_platform_link_text": "de la plateforme Tatoeba",
-    "random_sentence_continued": "Si vous trouvez une phrase qui vous semble offensante, raciste, sexiste, discriminatoire, ou qui enfreint d’une façon ou d'une autre nos recommandations communautaires, vous pouvez nous le signaler en cliquant sur le bouton correspondant. Nous réviserons rapidement la question et prendrons, le cas échéant, les mesures pertinentes, y compris le retrait du contenu offensant de notre base de données.",
-    "machine_translation_heading": "Traduction automatique",
-    "machine_translation": "Awal Translate permet la traduction automatique entre le tamazight et quatre autres langues. Cette fonction est alimentée par",
-    "machine_translation_link_text": "NLLB,",
-    "machine_translation_continued": "un modèle open source de Meta ayant des finalités de recherche. Toutefois, la qualité des traductions en tamazight est actuellement faible en raison des ressources limitées. L’un des objectifs du projet est d’améliorer ce modèle en utilisant les données de haute qualité que nous recueillons.\nLors de vos contributions, vous pouvez choisir la fonction de traduction automatique pour générer la traduction sur laquelle vous allez travailler. Toutefois, il est essentiel de corriger cette phrase pour en assurer l’exactitude. Les phrases traduites automatiquement sans aucune modification ne seront pas acceptées. L’utilisation indue de la fonction de traduction automatique peut entraîner le retrait des phrases que vous avez ajoutées, voire la suspension de votre compte.",
-    "validation_heading": "Validation des traductions.",
-    "validation": "Awal permet également la validation communautaire des phrases traduites. Cela permet de garantir l’exactitude des phrases que nous recueillons, un point essentiel pour obtenir des modèles précis. Vous pouvez accepter les traductions correctes et refuser celles qui contiennent des erreurs importantes ou des fautes d’orthographe. Les divergences mineurs ou les différentes dialectales ne doivent pas être considérées comme des erreurs.",
-    "profile_heading": "Profil utilisateur",
-    "profile": "Vous pouvez indiquer vos nom et prénom, âge, sexe et compétences linguistiques sur votre page de profil. Votre nom et votre adresse mail ne seront en aucun cas publiés.\nLes informations démographiques, comme l’âge, le sexe et les compétences linguistiques, nous permettent de mieux saisir le profil des personnes qui collaborent au projet et d’évaluer le degré de partialité, la qualité et la quantité des données que nous collectons. En nous fournissant de telles informations, vous nous autorisez à les publier aux côtés de vos traductions.\nVotre nom d’utilisateur est public et peut être inclus aux classements publics avec les points de contribution que vous avez obtenus. Le choix de votre nom d’utilisateur vous revient. Votre nom d’utilisateur peut être inclus dans les ensembles de données publiés aux côtés des traductions que vous avez soumises.",
-    "scoring_heading": "Score",
-    "scoring": "Les personnes contributrices gagnent des points pour chaque traduction qu'elles effectuent. Vous gagnerez des points de contribution proportionnels à la longueur de la phrase d'origine que vous saisissez (à condition de ne pas utiliser la fonction « phrase aléatoire ») et la traduction correspondante. Si vous utilisez la fonction de traduction automatique, votre score cible sera calculé en fonction du nombre de modifications que vous apportez.\nVeuillez noter que ce système de score est uniquement conçu à des fins de compétition amicale, et n'implique aucune forme de compensation.",
-    "communication_heading": "Communications",
-    "communication": "En vous inscrivant à Awal, vous pourrez recevoir des courriels liés à votre compte Inscrivez-vous à notre liste de diffusion pour recevoir des informations supplémentaires, comme les mises à jour du site, des invitations à des événements, ou encore la publication d'actualités et de ressources.",
-    "disclaimer_heading": "Exonérations de responsabilité",
-    "disclaimer": "Awal et ses services associés sont fournis « en l'état » et « selon leur disponibilité », sans aucune garantie ni représentation, expresse ou implicite. L'utilisation de nos services se fait sous votre entière responsabilité.\nNous ne garantissons pas l'exactitude, l'exhaustivité ou la fiabilité des contenus fournis par les personnes collaboratrices. Lors de votre accès à la page, vous êtes tenu de vérifier au préalable toute information obtenue à travers Awal ou par le biais des ressources publiées.\nLors de vos contributions, vous assumez l'entière responsabilité de votre comportement. En utilisant Awal, vous vous engagez à n’enfreindre aucune loi, à ne pas porter atteinte aux droits de tiers et à ne pas diffuser de contenu inapproprié. Nous nous réservons le droit de supprimer tout contenu ou de suspendre les comptes qui ne respectent pas ces conditions, lesquelles sont régies par la législation espagnole.\nDans la mesure permise par la loi, Awal ainsi que ses sociétés affiliées, administrateurs, employés, agents, partenaires et concédants ne sauraient être tenus responsables de tout dommage indirect, fortuit, spécial, accessoire ou punitif, ni de toute perte de bénéfices ou de revenus.\nAwal peut contenir des liens vers des sites web ou des services tiers qui ne sont pas la propriété de Awal et ne se trouvent pas sous son contrôle. Nous n'exerçons aucun contrôle sur le contenu, les politiques de confidentialité ou les pratiques afférentes à ces sites ou services tiers.\nAwal respecte les droits de propriété intellectuelle appartenant à des tiers. Si vous estimez que votre œuvre a été copiée ou utilisée d’une façon qui constitue une enfreinte aux droits d'auteur, veuillez nous contacter à l'adresse awal@collectiva.cat.\nNous nous réservons le droit de modifier, de suspendre ou de mettre fin à nos services, conditions ou politiques à tout moment, sans préavis. Il incombe aux utilisateurs de consulter régulièrement nos conditions pour prendre connaissance de toute mise à jour.\nMalgré les mesures de protection des données des utilisateurs que nous mettons en œuvre, nous ne pouvons garantir la sécurité des informations qu’ils transmettent sur internet, et qui sont fournies à leurs risques et périls.\nNous pouvons à tout moment suspendre ou résilier le compte de toute personne sur Awal, pour quelque motif que ce soit. Si nous décidons de suspendre ou de résilier votre compte, nous ferons en sorte de vous le notifier à l’adresse électronique associée à votre compte ou lors de votre prochaine tentative d’accès à notre site web.\nVeuillez consulter notre politique de confidentialité pour en savoir plus sur la collecte, l’utilisation et la protection de vos informations à caractère personnel. L’avis légal contient des informations importantes concernant les conditions d’utilisation des services d’Awal, tandis que la politique relative aux cookies explique comment nous améliorons votre expérience de navigation au moyen de cookies. L’utilisation du présent site implique l’acceptation des conditions mentionnées plus haut."
-  },
-  "how_to_contribute_heading": "Comment apporter une contribution ?",
-  "how_it_works_contribution": "Awal vise à créer une application de traduction automatique open source et de haute qualité pour le tamazight. Pour atteindre cet objectif, il faut collecter de nombreuses phrases traduites de qualité en tamazight. Cette application vous permet d’envoyer des traductions de manière facile et amusante. Voilà comment ça marche :",
-  "how_it_works_contribution_1": "Sélectionnez la paire de langues que vous souhaitez traduire à l'aide des menus déroulants. La langue que vous souhaitez traduire se trouve à gauche de l'écran, et la langue vers laquelle vous souhaitez traduire se trouve à droite.",
-  "how_it_works_contribution_2": "Écrivez ou téléchargez une phrase à traduire dans le panneau de gauche. Vous pouvez la rédiger vous-même ou prendre une phrase que vous avez l’autorisation d’utiliser, comme un texte sous licence Creative Commons (sur Wikipédia par exemple). Vous pouvez également télécharger une phrase aléatoire de notre base de données avec le bouton \"Phrase aléatoire\". Notez que le texte source peut être un mot ou une phrase complète, mais jamais plus d'une phrase. Si vous traduisez depuis le tamazight, veillez à bien cocher la variante dans les cases ci-dessous. Si vous ne comprenez pas la phrase ou ne souhaitez pas la traduire, vous pouvez en télécharger une autre. Si vous trouvez une phrase offensante ou incorrecte, veuillez nous la signaler avec le bouton correspondant. Après vérification, elle sera supprimée de notre base de données.",
-  "how_it_works_contribution_3": "Pour écrire la traduction de la phrase, il faut utiliser le panneau de droite. Pour vous aider à démarrer, vous pouvez utiliser la fonction de traduction automatique prototype qui vous fournira une traduction approximative (de qualité médiocre). Assurez-vous d’écrire une traduction précise et bien rédigée. Vous pouvez toujours consulter les ressources utiles que nous indiquons ci-dessous. Si vous traduisez vers le tamazight, veillez à bien cocher la variante dans les cases ci-dessous.",
-  "how_it_works_contribution_4": "Quand vous avez terminé de traduire la phrase, cliquez sur le bouton « Faire une contribution » et votre contribution sera enregistrée. Vous gagnerez des points de contribution proportionnels à la longueur de la phrase d'origine que vous saisissez (à condition de ne pas utiliser la fonction « phrase aléatoire ») et la traduction correspondante. Si vous utilisez la fonction de traduction automatique, votre score cible sera calculé en fonction du nombre de modifications que vous apportez.",
-  "how_it_works_contribution_continued": "Pour plus d'informations, veuillez consulter les conditions de contribution. Si vous avez besoin d'aide, n'hésitez pas à nous contacter à aawaldigital@gmail.com. Merci beaucoup pour votre précieuse contribution !",
-  "how_to_validate_heading": "Comment valider ?",
-  "how_it_works_validation": "Valider les traductions est une étape essentielle pour maintenir l'intégrité de l'ensemble de données et contribuer au développement d'une application de traduction automatique fiable pour le tamazight. Sur cet écran, vous verrez apparaître des traductions faites par d'autres volontaires et vous devrez vérifier si elles sont acceptables ou non.",
-  "how_it_works_validation_1": "Commencez par sélectionner la combinaison de langues et la variante de tamazight pour les validations. Vous verrez alors la contribution d'une autre personne volontaire. La phrase originale s’affiche dans le panneau de gauche et la phrase traduite, dans le panneau de droite.",
-  "how_it_works_validation_2": "Évaluez la qualité de la traduction, en tenant compte du fait que nous visons l'acceptabilité plutôt que la perfection. Prenez en compte les indications suivantes :",
-  "how_it_works_validation_2_1": "Confirmez si la traduction transmet le sens de la phrase d'origine.",
-  "how_it_works_validation_2_2": "Assurez-vous que les termes clés et les concepts sont traduits correctement sans perdre leur sens d'origine.",
-  "how_it_works_validation_2_3": "Évaluez la fluidité et le naturel de la traduction. Une bonne traduction se lit avec aisance et semble naturelle dans la langue cible.",
-  "how_it_works_validation_2_4": "Si une phrase contient des mots dont vous n'êtes pas sûr(e), vous pouvez cliquer sur « Ignorer » pour charger une autre contribution.",
-  "how_it_works_validation_2_5": "Vérifiez que la traduction respecte les règles grammaticales et les conventions de ponctuation de la langue cible.",
-  "how_it_works_validation_2_6": "Si vous trouvez une phrase offensante ou nuisible (dans l'original ou la traduction), utilisez le bouton \"Signaler\".",
-  "how_it_works_validation_2_7": "Si vous êtes dans un cas de figure qui n’est pas prévu ici, votez selon votre propre jugement. Si vous ne parvenez toujours pas à vous décider, passez à la contribution suivante.",
-  "how_it_works_validation_3": "Si vous estimez que la traduction est acceptable, cliquez sur l'icône représentant une coche ; dans le cas contraire, cliquez sur l'icône représentant une croix.",
-  "how_it_works_validation_continued": "Pour plus d'informations, veuillez consulter les conditions de contribution. Si vous avez besoin d'aide, n'hésitez pas à nous contacter à aawaldigital@gmail.com. Merci beaucoup pour votre précieuse contribution !",
-  "legal": {
-    "legal_title": "Avis légal",
-    "legal_text_1": "Col·lectivaT SCCL, responsable du site Awal (ci-après dénommé le RESPONSABLE) publie le présent avis ayant pour objet de faire respecter les obligations établies par la loi 34/2002, du 11 juillet, relative aux Services de la Société de l’Information et au Commerce Électronique (LSSICE), BOE n°166, ainsi que d’informer l’ensemble des utilisateurs du site des conditions d’utilisation.\nToute personne qui accède au site assume le rôle d’utilisateur et s’engage à observer et à respecter rigoureusement les dispositions qui y sont énoncées, ainsi que toute autre disposition légale applicable.\nCol·lectivaT SCCL CT se réserve le droit de modifier toute information pouvant apparaître sur le site, sans obligation de préavis ou de notification aux utilisateurs, la simple publication sur le site de l’Association Bloc4 étant réputée constituer une information suffisante.",
-    "legal_data_1_heading": "Données d’identification",
-    "legal_data_1_text": "Nom du domaine: www.awaldigital.org\nEntité responsable : Col·lectivaT SCCL\nIdentifiant fiscal : F67078097\nSiège social : Carrer Rocafort, 242 bis, 3r, 08029, Barcelone (Espagne)\nE-mail: info@collectivat.cat ou aawaldigital@gmail.com",
-    "legal_data_2_heading": "DROITS DE PROPRIÉTÉ INTELLECTUELLE ET INDUSTRIELLE",
-    "legal_data_2_text": "Le site web, y compris mais sans s’y restreindre sa programmation, son édition, sa compilation et tous autres éléments nécessaires à son fonctionnement, ainsi que les designs, logos, textes et/ou graphismes, est la propriété du RESPONSABLE ou, le cas échéant, bénéficie d'une licence ou d'une autorisation expresse de la part des auteurs. L'ensemble des contenus du site web est dûment protégé par la réglementation relative à la propriété intellectuelle et industrielle et est inscrit dans les registres publics correspondants.\nToute reproduction totale ou partielle, utilisation, exploitation, distribution et commercialisation desdits contenus, quelle qu’en soit la finalité, requiert l'autorisation écrite préalable du RESPONSABLE.\nTout usage non autorisé est réputé constituer une violation grave des droits de propriété intellectuelle ou industrielle.\nLes designs, logos, textes et/ou graphismes appartenant à des tiers autres que le RESPONSABLE et pouvant figurer sur le site web appartiennent à leurs propriétaires respectifs, qui sont responsables de toute controverse pouvant en découler. Le RESPONSABLE autorise expressément que des tiers puissent rediriger directement vers des contenus spécifiques du site web, et, en tout cas, rediriger vers le site web principal de www.bloc4.coop \nLe RESPONSABLE reconnaît en faveur de leurs titulaires les droits correspondants de propriété intellectuelle et industrielle, sans que le simple fait de les mentionner ou de les faire figurer sur le site web n'implique l'existence de droits ou de responsabilités y afférant, ni un soutien, un parrainage ou une recommandation quelconque de la part du RESPONSABLE.\nPour toute remarque relative à d’éventuelles infractions aux droits de propriété intellectuelle ou industrielle, ou relative à l'un quelconque des contenus du site web, vous pouvez nous contacter à l’adresse info@collectivat.cat",
-    "legal_data_3_heading": "EXONÉRATIONS DE RESPONSABILITÉ",
-    "legal_data_3_text": "Le RESPONSABLE décline toute responsabilité découlant des informations publiées sur son site web, dès lors qu'il n'a pas effectivement connaissance que ces informations aient été manipulées ou interceptées par un tiers ou, dans le cas contraire, s'il a agi avec diligence pour retirer les données ou en rendre l'accès impossible.\nUtilisation des cookies\nIl se peut que ce site web utilise des cookies techniques (petits fichiers d'information que le serveur envoie à l'ordinateur de l'utilisateur) afin d'exécuter certaines fonctions jugées essentielles au bon fonctionnement et à la visualisation du site  Dans tous les cas, les cookies utilisés sont de nature temporaire. Leur seule finalité est de faciliter une navigation plus efficace et ils disparaissent à l'issue de la session de l'utilisateur. Ces cookies ne fournissent en aucun cas des données à caractère personnel par eux-mêmes ni ne sont utilisés à des fins de collecte de telles données.\nPar ailleurs, le recours aux cookies permet au serveur hébergeant le site web de reconnaître le navigateur utilisé par l'utilisateur, dans le but de simplifier la navigation. Ainsi, par exemple, les utilisateurs peuvent avoir accès aux zones, services, promotions ou concours réservés aux utilisateurs préalablement enregistrés sans avoir à se réinscrire à chaque visite. Les cookies peuvent aussi être employés pour mesurer l'audience, analyser les paramètres de trafic, contrôler la progression et le nombre de visites, etc. Il s'agit dans ce cas de cookies techniquement facultatifs, mais avantageux pour l'utilisateur. Le présent site web n'installera pas de cookies non essentiels sans le consentement préalable de l'utilisateur.\nCe site web utilise des cookies.\nPolitique de redirection\nDepuis le site web, il est possible d’être redirigé vers des contenus hébergés sur des sites tiers. Étant donné que le RESPONSABLE ne peut pas contrôler en permanence le contenu publié par des tiers sur leurs sites respectifs, il décline toute responsabilité quant à ces contenus. Dans tous les cas, il s’engage à retirer immédiatement tout contenu susceptible de transgresser la législation nationale ou internationale, la morale ou l'ordre public, en supprimant instantanément la redirection vers le site concerné, et à en informer les autorités compétentes.\nLe RESPONSABLE ne saurait être tenu responsable des informations et contenus stockés, y compris mais sans s’y restreindre, sur des forums, chats, générateurs de blogs, commentaires, réseaux sociaux ou tout autre moyen permettant à des tiers de publier de manière indépendante des contenus sur le site web du RESPONSABLE. Néanmoins, conformément aux dispositions des articles 11 et 16 de la LSSICE, le RESPONSABLE reste à disposition de tous les utilisateurs, autorités et forces de sécurité collaborant activement au retrait ou, le cas échéant, au blocage de tout contenu susceptible d'affecter ou de transgresser la législation nationale ou internationale, les droits de tiers ou la morale et l'ordre public. Dans le cas où l'utilisateur considérerait que le site web contient du matériel susceptible d'être qualifié de la sorte, il est prié de le notifier immédiatement à l'administrateur du site. Le présent site web a été vérifié et testé pour fonctionner correctement. En principe, son fonctionnement est garanti 365 jours par an, 24 heures sur 24. Toutefois, le RESPONSABLE n’exclue pas la possibilité que des erreurs de programmation surviennent ou que des causes de force majeure, des catastrophes naturelles, des grèves ou des circonstances similaires rendent impossible l'accès au site web.\nADRESSES IP\nLes serveurs du site web peuvent détecter automatiquement l'adresse IP ainsi que le nom de domaine utilisés par l'utilisateur. Une adresse IP est un numéro attribué automatiquement à un ordinateur afin de permettre sa connexion à Internet. Toutes ces informations sont enregistrées dans un journal d'activité du serveur dûment consigné, ce qui permet de traiter ultérieurement les données pour obtenir des mesures strictement statistiques, comme le nombre d'impressions de pages, le nombre de visites sur les serveurs web, l'ordre de ces visites, le point d'accès, etc.",
-    "legal_data_4_heading": "ATTRIBUTION DE COMPÉTENCE",
-    "legal_data_4_text": "Pour la résolution de tout litige ou toute question relative à ce site web ou aux activités qui y sont menées, les parties acceptent expressément de se soumettre à la législation espagnole. Les juridictions compétentes pour le règlement de tout conflit découlant ou lié à son utilisation seront celles des tribunaux du domicile de l’UTILISATEUR ou du lieu d’exécution de l’obligation."
-  },
-  "cookies": {
-    "cookies_heading": "Politique de cookies",
-    "cookies_text_1": "Conformément à la réglementation en vigueur, nous fournissons aux utilisateurs des informations relatives aux cookies utilisés ainsi que les motifs de leur utilisation, et nous sollicitons leur consentement pour leur usage. Le site www.awaldigital.org  a recours  à la fois à des cookies propriétaires et à ceux de tiers afin d'offrir une meilleure expérience de navigation et un service de qualité. Toutefois, l'utilisateur peut bloquer la génération de cookies et les supprimer en sélectionnant l'option correspondante dans son navigateur. Si l’utilisateur bloque l'utilisation de cookies sur son navigateur, il est possible que certains services ou fonctionnalités du site web ne soient pas accessibles.\nDéfinition des cookies Les cookies permettent aux serveurs web de stocker et de récupérer des informations relatives aux utilisateurs. Il s’agit de petits fichiers texte que les pages web envoient au navigateur et qui sont stockés sur le terminal de l’utilisateur, qu’il s’agisse d’un ordinateur, d’un téléphone portable ou d’une tablette. Les informations ainsi stockées permettent, par exemple, de récupérer l’identifiant de l’utilisateur enregistré, le cas échéant, des données de connexion aux réseaux sociaux ou des préférences de navigation. Ces données sont conservées jusqu'à la visite suivante de l’utilisateur sur le site.\nComment sont utilisés les cookies et quel type d’informations peuvent-ils contenir ? Lors de la navigation sur le site www.awaldigital.org, le terminal de l’utilisateur peut recueillir les informations suivantes :",
-    "cookies_list_1": "Des données statistiques relatives à l’usage du site",
-    "cookies_list_2": "Le format préféré de l’utilisateur pour accéder au site depuis un dispositif mobile",
-    "cookies_list_3": "L’activité menée par l’utilisateur sur le site (pages consultées, recherches, etc.)",
-    "cookies_list_4": "Des données de connexion aux réseaux sociaux pour les utilisateurs se connectant via leur compte Facebook ou Twitter.",
-    "cookies_text_2": "Si vous bloquez l’utilisation des cookies par le navigateur, certains services du site web peuvent ne plus être disponibles.\nComment bloquer ou supprimer les cookies ? Vous pouvez autoriser, bloquer ou supprimer les cookies présents sur votre appareil en configurant les options de votre navigateur, que ce soit sur un ordinateur, un smartphone ou une tablette. Le fait de bloquer l’installation de cookies n’empêche toutefois pas la navigation effective sur le site."
-  },
-  "privacy": {
-    "privacy_heading": "Politique de confidentialité",
-    "privacy_item_1_txt_1_heading": "INFORMATIONS À LA PERSONNE UTILISATRICE",
-    "privacy_item_1_txt_1": "Qui est le responsable du traitement de vos données personnelles°?\nCol·lectivaT SCCL est le RESPONSABLE du traitement des données personnelles de la PERSONNE UTILISATRICE et vous informe que lesdites données sont traitées conformément aux dispositions du Règlement (UE) 2016/679 du 27 avril (RGPD) et de la Loi Organique 3/2018 du 5 décembre (LOPDGDD).\nDans quel but traitons-nous les données à caractère personnel vous concernant ?\nAfin de maintenir une relation commerciale avec la personne utilisatrice. Les opérations prévues pour le traitement sont les suivantes :\nPourquoi sommes-nous autorisés à traiter les données à caractère personnel vous concernant ?\nLeur traitement est prévu à l'article 6 du RGPD de la façon suivante :",
-    "privacy_item_1_li_1": "Envoyer des communications commerciales et du bulletin d'information, moyennant l’accord de la PERSONNE UTILISATRICE.",
-    "privacy_item_1_li_2": "Mener des études de marché, des analyses statistiques, etc., motivées par l'intérêt légitime du RESPONSABLE ; réaliser des commandes, des requêtes, etc., à la demande de la .PERSONNE UTILISATRICE.",
-    "privacy_item_1_txt_2": "Quelle est la durée de conservation de vos données personnelles ?\nLes données à caractère personnel vous concernant sont conservées pendant une durée n'excédant pas celle qui est strictement nécessaire à leur traitement, ou tant que des prescriptions légales en imposent la conservation. Une fois cette durée dépassée, elles sont supprimées au moyen de mesures de sécurité appropriées visant à garantir leur anonymisation ou leur destruction complète.\nÀ qui fournissons-nous les données à caractère personnel vous concernant ?\nNous pouvons transmettre des données personnelles à des tiers afin d’assurer le développement et l’exécution adéquats des finalités du traitement.\nQuels sont vos droits ?\nLes droits de la PERSONNE UTILISATRICE sont les suivants : ",
-    "privacy_item_1_li_3": "Droit de retirer son accord à tout moment",
-    "privacy_item_1_li_4": "Droit d'obtenir l’accès, la rectification, la portabilité et l’effacement de données la concernant, ainsi que de limiter ou de s’opposer à leur traitement.",
-    "privacy_item_1_li_5": "Droit de déposer une réclamation auprès de l’autorité de contrôle (www.aepd.es) si elle estime que le traitement n’est pas conforme à la réglementation en vigueur.",
-    "privacy_item_1_txt_3": "Coordonnées pour exercer vos droits :\nCol·lectivaT, SCCL, Carrer Rocafort, 242 bis, 2n, 08029, Barcelone (Espagne) info@collectivat.cat",
-    "privacy_item_2_txt_heading": "CARACTÈRE OBLIGATOIRE OU FACULTATIF DES INFORMATIONS FOURNIES PAR L’UTILISATEUR",
-    "privacy_item_2_txt": "En cochant les cases correspondantes et en saisissant les données dans les champs identifiés par un astérisque (*) sur le formulaire de contact ou présentés dans les formulaires de téléchargement, la PERSONNE UTILISATRICE accepte expressément, librement et de manière non équivoque que ses données sont indispensables au traitement de sa demande par le prestataire. Par conséquent, la communication des données dans les autres champs est facultative. La PERSONNE UTILISATRICE garantit que les données personnelles communiquées au RESPONSABLE sont exactes et s’engage à signaler toute modification.\nLe RESPONSABLE informe que toutes les données sollicitées via le site web sont obligatoires, car elles sont nécessaires pour garantir à la PERSONNE UTILISATRICE une prestation de service optimale.\nFaute de fournir l’ensemble des données, il ne sera pas garanti que les informations et les services fournis répondent pleinement aux besoins de la personne.",
-    "privacy_item_3_heading": "MESURES DE SÉCURITÉ",
-    "privacy_item_3_txt": "Le RESPONSABLE respecte toutes les exigences du RGPD et de la LOPDGDD relatives au traitement des données à caractère personnel qui lui ont été confiées, et notamment aux principes énoncés à l'article 5 du RGPD, qui exigent que les données soient traitées de manière licite, loyale et transparente au regard de la personne concernée, et qu'elles soient adéquates, pertinentes et limitées à ce qui est nécessaire au regard des finalités du traitement.\nLe RESPONSABLE garantit avoir mis en place les politiques techniques et organisationnelles appropriées pour appliquer les mesures de sécurité prévues par le RGPD et la LOPDGDD, afin de protéger les droits et libertés des PERSONNES UTILISATRICES, et a communiqué les informations nécessaires à l’exercice de leurs droits."
-  },
-  "resources": {
-    "resources_heading": "Ressources",
-    "awal_huggingface": "Le projet Awal peut être trouvé dans le référentiel Hugging Face de Col·lectivaT",
-    "NLLB": "NLLB-200 est un ensemble de modèles de traduction automatique multilingues créés par Meta. C'est le premier modèle open source qui inclut le tamazight. La version utilisée sur ce site internet est le modèle contenant 600 millions de paramètres.",
-    "tamazight_NLP_huggingface": "Le groupe Tamazight NLP publie des ensembles de données et des modèles ouverts sur Hugging Face",
-    "tamazight_wiki": "Wikipédia en Tamazight",
-    "TALAM_groups": "Le portail TALAM regroupe des applications liées au traitement automatique du Tamazight",
-    "darija_open": "Darija Open Dataset est un projet collaboratif open source pour la traduction automatique darija-anglais. La base de données de phrases en darija d'Awal repose sur cet ensemble de données.",
-    "tamazight_for_all": "Tamazight For All est une chaîne YouTube contenant des leçons, des discussions et des histoires courtes en Tamazight, ainsi que des réflexions sur la culture amazighe."
-  },
-  "faq": {
-    "q1": {
-      "q": "Je ne suis pas sûr/e de mes compétences en écriture en catalan/espagnol/français/arabe. Que dois-je faire ?",
-      "a": "Ne vous inquiétez pas ! Si vous avez une bonne compréhension de la langue, vos contributions nous sont quand même précieuses. Utilisez le bouton 'Phrase aléatoire' pour charger automatiquement une phrase source, puis ajouter sa traduction en tamazight. Vous pouvez également extraire des phrases de sources non soumises à des droits d’auteur, comme Wikipédia, pour diversifier le type de traductions que nous recueillons."
-    },
-    "q2": {
-      "q": "J’ai corrigé une erreur dans la phrase traduite automatiquement mais elle continue à apparaître. Est-ce que cela signifie que ma contribution n’a pas été prise en compte ?",
-      "a": "Vos corrections sont enregistrées dans notre base de données, mais elles n'affectent pas immédiatement la traduction automatique. L'amélioration se produira ultérieurement, après avoir recueilli suffisamment de traductions de qualité de contributeurs comme vous. C’est pourquoi vos efforts sont précieux et contribuent à améliorer le moteur de traduction avec le temps."
-    },
-    "q3": {
-      "q": "Comment sont calculés les scores de contribution pour les traductions ?",
-      "a": "Vos points de contribution sont déterminés par la longueur en caractères à la fois de la phrase source que vous saisissez et de sa traduction. Si vous saisissez manuellement la phrase source et la traduisez de zéro (c'est-à-dire sans utiliser l’option 'Pré-traduire'), vos points seront la somme des caractères des deux phrases. Si vous utilisez le moteur de traduction automatique en cliquant sur 'Pré-traduire', vos points pour la traduction seront basés sur le nombre d'éditions de caractères que vous apportez à la phrase traduite automatiquement. Si vous chargez une phrase source depuis la base de données avec la fonction 'Phrase aléatoire', vous gagnerez des points uniquement pour votre traduction, et pas pour la phrase source."
-    },
-    "q4": {
-      "q": "Est-ce que mes contributions vocales dans Common Voice me font gagner des points ?",
-      "a": "Hélas, pour le moment, le système de points ne concerne que les contributions de traduction. Notre objectif à terme est d'y inclure également les contributions vocales."
-    },
-    "q5": {
-      "q": "J'ai oublié mon mot de passe et je ne peux pas accéder à mon compte. Que dois-je faire ?",
-      "a": "Nous travaillons encore à la possibilité de récupérer les mots de passe. En attendant, vous pouvez ouvrir un nouveau compte et nous contacter à aawaldigital@gmail.com pour que nous transférions vos points sur ce nouveau compte."
-    },
-    "q6": {
-      "q": "J'ai déjà un compte sur AWAL. Dois-je en créer un également sur Common Voice ?",
-      "a": "Ce n’est pas obligatoire mais nous vous recommandons de créer un compte sur Common Voice. Cela vous permettra de visualiser vos contributions et de compléter votre profil."
-    }
-  },
-  "carousel": {
-    "c1": {
-      "heading": "Le tamazight dans l’enseignement public marocain : une course de fond",
-      "body": "Rapport avec analyse de données sur la situation du tamazight dans le système éducatif marocain.",
-      "link": "https://www.ciemen.cat/wp-content/uploads/2026/05/Le-tamazight-dans-lenseignement-public-marocain-une-course-de-fond-FR_MAQUETAT.pdf"
-    },
-    "c2": {
-      "heading": "Awal – Une technologie linguistique pour le tamazight portée par la communauté",
-      "body": "Recherche sur le processus de numérisation du tamazight avec la participation de la communauté.",
-      "link": "https://arxiv.org/pdf/2510.27407"
-    },
-    "c3": {
-      "heading": "Digital future of minoritized languages depends on community action, institutional support, and resource commitment",
-      "body": "Lisez les dernières mises à jour sur Awal sur Nationalia",
-      "link": "https://www.nationalia.info/opinion/11729/digital-future-of-minoritized-languages-depends-on-community-action-institutional-support-"
-    },
-    "c4": {
-      "heading": "\"Awal, le projet populaire qui veut qu’internet parle tamazight\"",
-      "body": "Découvrez le projet Awal et son premier datathon sur Nationalia.",
-      "link": "https://www.nationalia.info/new/11589/awal-the-popular-project-that-wants-to-make-the-internet-speak-amazigh"
-    }
-  },
-  "email": {
-    "verification": {
-      "page_redirect": "Redirection en cours...",
-      "token_error": "Le jeton de validation n'est pas valide, veuillez essayer de renvoyer l'email de vérification.",
-      "success_title": "Merci d'avoir vérifié votre e-mail.",
-      "error_title": "La vérification de l'e-mail a échoué.",
-      "error_msg": "Une erreur s’est produite. Si vous voyez toujours la bannière, veuillez essayer de renvoyer l'e-mail de vérification. Si le problème persiste, contactez-nous pour obtenir de l'aide.",
-      "success_email": "L'email de vérification a bien été envoyé. Veuillez consulter votre boîte de réception et cliquer sur le lien pour terminer la vérification.",
-      "alert": "Veuillez vérifier votre e-mail.",
-      "error_email": "Impossible d'envoyer l'e-mail de vérification. Assurez-vous d'avoir bien écrit votre e-mail sur votre page de profil. Si le problème persiste, contactez-nous pour obtenir de l'aide.",
-      "reset_password": "Réinitialiser le mot de passe",
-      "reset_success": "Mot de passe réinitialisé.",
-      "reset_email_send_success": "L’e-mail de réinitialisation a été envoyé, veuillez consulter votre boîte de réception et cliquer sur le lien pour terminer la réinitialisation du mot de passe.",
-      "email_recovery": "E-mail de récupération du mot de passe",
-      "submit_btn": "Envoyer",
-      "reset_email_send_error": "Erreur lors de l'envoi de l'e-mail, veuillez réessayer plus tard",
-      "password_mismatch": "Les mots de passe ne correspondent pas",
-      "new_password": "Nouveau mot de passe",
-      "confirm_password": "Confirmer le mot de passe",
-      "check_spam": "Veuillez vérifier que l’e-mail n’a pas atterri dans votre dossier de courriers indésirables (spam).",
-      "password_min_char": "Le mot de passe doit contenir au moins 8 caractères"
-    }
-  }
 }
