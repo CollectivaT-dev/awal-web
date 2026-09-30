@@ -414,6 +414,7 @@ export interface User {
 }
 
 interface Menu {
+    label: string;
     translator: string;
     voice: string;
     about: string;

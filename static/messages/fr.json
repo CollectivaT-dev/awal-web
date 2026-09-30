@@ -27,6 +27,7 @@
     "other": "Autre"
   },
   "menu": {
+      "label": "Menu",
     "translator": "Traducteur",
     "voice": "Voix",
     "about": "À propos d’Awal",

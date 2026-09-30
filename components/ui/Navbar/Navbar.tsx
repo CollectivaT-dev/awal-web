@@ -18,8 +18,9 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from '../dropdown-menu';
-import { Globe } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import { Globe, Menu, X } from 'lucide-react';
+import { usePathname, useRouter } from 'next/navigation';
+import { cn } from '@/lib/utils';
 import toast from 'react-hot-toast';
 import { SendEmail } from '@/app/actions/emails/SendEmail';
 import Publication from '@/app/components/Emails/Publication';
@@ -101,42 +102,49 @@ const AppBar = () => {
     const handleClick = () => {
         setOpen(!open);
     };
+    const pathname = usePathname();
+    const navItems = [
+        { key: 'translator', href: '/translate', label: d?.menu.translator },
+        { key: 'voice', href: '/', label: d?.menu.voice },
+        { key: 'about', href: '/about', label: d?.menu.about },
+        { key: 'resources', href: '/resources', label: d?.menu.resources },
+        { key: 'leaderboard', href: '/leaderboard', label: d?.footer.leaderboard },
+        { key: 'faq', href: '/faq', label: d?.menu.faq },
+    ];
     return (
         <>
             <div
                 className="relative flex flex-row items-center gap-4 p-4 " // Use flex-col and flex-row classes for responsive behavior
                 ref={menuRef}
             >
-                {/* menu button */}
-                <motion.div
-                    variants={{
-                        open: { rotate: 90, scale: 1 },
-                        closed: { rotate: 0, scale: 1 },
-                    }}
-                    animate={open ? 'open' : 'closed'}
+                {/* menu button - small screens only, desktop uses the top nav below */}
+                <Button
+                    size={'icon'}
+                    onClick={handleClick}
+                    className="lg:hidden"
+                    aria-label={d?.menu.label}
+                    aria-expanded={open}
+                    aria-haspopup="menu"
                 >
-                    <Button
-                        size={'icon'}
-                        onClick={handleClick}
-                        className="bg-transparent hover:bg-transparent mr-3"
-                    >
-                        {open ? (
-                            <Image
-                                src={'/logo_line.svg'}
-                                height={100}
-                                width={100}
-                                alt="menu_icon"
-                            />
-                        ) : (
-                            <Image
-                                src={'/logo_line.svg'}
-                                height={100}
-                                width={100}
-                                alt="menu_icon"
-                            />
-                        )}
-                    </Button>
-                </motion.div>
+                    {open ? (
+                        <X width={22} height={22} />
+                    ) : (
+                        <Menu width={22} height={22} />
+                    )}
+                </Button>
+                {/* tifinagh glyph - home link on large screens */}
+                <Link
+                    href={'/'}
+                    scroll={false}
+                    className="hidden lg:inline-block mr-3"
+                >
+                    <Image
+                        src={'/logo_line.svg'}
+                        height={28}
+                        width={28}
+                        alt="Awal"
+                    />
+                </Link>
                 {/* char logo */}
                 <div className="w-[7%] hidden lg:inline-block">
                     <Link href={'/'} scroll={false}>
@@ -157,6 +165,33 @@ const AppBar = () => {
                 >
                     AWAL
                 </Link>
+                {/* top nav - large screens */}
+                <nav
+                    aria-label={d?.menu.label}
+                    className="hidden lg:flex lg:items-center gap-3 ml-2 text-xs xl:gap-5 xl:ml-6 xl:text-sm"
+                >
+                    {navItems.map((item) => {
+                        const isActive = pathname === item.href;
+                        return (
+                            <Link
+                                key={item.key}
+                                href={item.href}
+                                scroll={false}
+                                aria-current={
+                                    isActive ? 'page' : undefined
+                                }
+                                className={cn(
+                                    'transition-colors hover:text-yellow-500',
+                                    isActive
+                                        ? 'text-yellow-500 font-semibold underline underline-offset-4'
+                                        : 'text-foreground'
+                                )}
+                            >
+                                {item.label}
+                            </Link>
+                        );
+                    })}
+                </nav>
                 {/* sign in */}
                 <div className="flex flex-row items-center justify-center space-x-3 ml-auto">
                     <SignInButton />
@@ -267,7 +302,7 @@ const AppBar = () => {
                                 },
                             },
                         }}
-                        className="absolute top-full left-3 bg-text-accent py-4 px-10 z-10 rounded-xl"
+                        className="absolute top-full left-3 bg-text-accent py-4 px-10 z-10 rounded-xl lg:hidden"
                     >
                         <ul className="space-y-2 mt-2">
                             {user?.email?.includes('test' || 'alp') && (
@@ -275,36 +310,13 @@ const AppBar = () => {
                                     send test email
                                 </Button>
                             )}
-                            <li>
-                                <Link href={'/translate'} scroll={false}>
-                                    {d?.menu.translator}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={'/'} scroll={false}>
-                                    {d?.menu.voice}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={'/about'} scroll={false}>
-                                    {d?.menu.about}
-                                </Link>
-                            </li>{' '}
-                            <li>
-                                <Link href={'/resources'} scroll={false}>
-                                    {d?.menu.resources}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={'/leaderboard'} scroll={false}>
-                                    {d?.footer.leaderboard}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={'/faq'} scroll={false}>
-                                    {d?.menu.faq}
-                                </Link>
-                            </li>
+                            {navItems.map((item) => (
+                                <li key={item.key}>
+                                    <Link href={item.href} scroll={false}>
+                                        {item.label}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </motion.div>
                 )}

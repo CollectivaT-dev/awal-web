@@ -27,6 +27,7 @@
         "other": "Otro"
     },
     "menu": {
+        "label": "Menú",
         "translator": "Traductor",
         "voice": "Voz",
         "about": "Sobre Awal",

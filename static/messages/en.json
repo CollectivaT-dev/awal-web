@@ -27,6 +27,7 @@
         "other": "Other"
     },
     "menu": {
+        "label": "Menu",
         "translator": "Translate",
         "voice": "Voice",
         "about": "About Awal",
