@@ -244,10 +244,11 @@ const AppBar = () => {
                 {/* top nav - centered on its own row, large screens */}
                 <nav
                     aria-label={d?.menu.label}
-                    className="hidden lg:flex lg:items-center lg:justify-center gap-8 pb-4 text-sm"
+                    className="hidden lg:flex lg:items-center lg:justify-center gap-10 pb-10 text-base font-medium tracking-wide"
                 >
                     {navItems.map((item) => {
-                        const isActive = pathname === item.href;
+                        const isActive =
+                            item.href !== '/' && pathname === item.href;
                         return (
                             <Link
                                 key={item.key}
