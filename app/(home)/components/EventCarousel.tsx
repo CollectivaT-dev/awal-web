@@ -59,7 +59,7 @@ const EventCarousel = () => {
                                             target="_blank"
                                         >
                                             <CardContent className="py-10 flex flex-col justify-evenly items-center min-h-[250px]">
-                                                <h1 className="text-3xl font-bold">
+                                                <h1 className="text-3xl font-bold text-center">
                                                     {c[key].heading}
                                                 </h1>
                                                 <p className="whitespace-pre-wrap text-center">
