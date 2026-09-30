@@ -348,24 +348,24 @@
     },
     "carousel": {
         "c1": {
-            "heading": "Digital future of minoritized languages depends on community action, institutional support, and resource commitment",
-            "body": "ⵖⵔ ⵅⴼ ⵉⵙⴷⵖⵉⵜⵏ ⵉⵎⴳⴳⵓⵔⴰ ⴳ ⴰⵡⴰⵍ ⴳ ⵏⴰⵛⵏⴰⵍⵢⴰ.",
-            "link": "https://www.nationalia.info/opinion/11729/digital-future-of-minoritized-languages-depends-on-community-action-institutional-support-"
-        },
-        "c2": {
-            "heading": "\\\"ⴰⵡⴰⵍ, ⴰⵙⵏⴼⴰⵔ ⴰⵖⵔⴼⴰⵏ ⵏⵏⴰ ⵉⵔⴰⵏ ⴰⴷ ⵢⴰⵊⵊ ⴰⵏⵜⵉⵔⵏⵉⵜ ⴰⵔ ⵉⵙⴰⵡⴰⵍ ⵜⴰⵎⴰⵣⵉⵖⵜ\\\"",
-            "body": "ⵖⵔ ⵖⴼ ⵓⵙⵏⴼⴰⵔ ⴰⵡⴰⵍ ⴷ ⵓⴷⴰⵜⴰⵜⵓⵏ ⴰⵎⵣⵡⴰⵔⵓ ⵏⵏⵙ ⴳ ⵏⴰⵛⵏⴰⵍⵢⴰ.",
-            "link": "https://www.nationalia.info/new/11589/awal-the-popular-project-that-wants-to-make-the-internet-speak-amazigh"
-        },
-        "c3": {
             "heading": "ⵜⴰⵎⴰⵣⵉⵖⵜ ⴳ ⵓⵙⵙⵍⵎⴷ ⴰⴳⴷⵓⴷⴰⵏ ⴰⵎⵕⵕⵓⴽ: ⵜⴰⵣⵣⵍⴰ ⵜⴰⵖⵣⵣⴰⴼⵜ",
             "body": "Report with data analysis on the situation of Tamazight in the Moroccan education system.",
             "link": "https://www.ciemen.cat/wp-content/uploads/2026/05/Lamazic-a-lensenyament-public-marroqui-una-cursa-de-fons_Amazic.pdf"
         },
-        "c4": {
+        "c2": {
             "heading": "ⴰⵡⴰⵍ–ⵢⴰⵏ ⵓⵙⵏⵜⵉ ⵉⵖⵍⵉⵏ ⵙ ⵜⵣⵎⵔⵜ ⵏ ⵜⵎⵓⵏⵜ ⵉ ⵓⵙⴱⵓⵖⵍⵓ ⵏ ⵉⵙⵓⴳⴰⵎⵏ ⵏ ⵉⵜⵉⴽⵏⵓⵍⵓⵊⵉⵏ ⵏ ⵉⵜⵓⵜⵍⴰⵢⵜ ⵉ ⵜⵎⴰⵣⵉⵖⵜ",
             "body": "Research on the digitalisation process of Tamazight with community participation.",
             "link": "https://www.ciemen.cat/wp-content/uploads/2026/08/awal_paper_zgh.pdf"
+        },
+        "c3": {
+            "heading": "Digital future of minoritized languages depends on community action, institutional support, and resource commitment",
+            "body": "ⵖⵔ ⵅⴼ ⵉⵙⴷⵖⵉⵜⵏ ⵉⵎⴳⴳⵓⵔⴰ ⴳ ⴰⵡⴰⵍ ⴳ ⵏⴰⵛⵏⴰⵍⵢⴰ.",
+            "link": "https://www.nationalia.info/opinion/11729/digital-future-of-minoritized-languages-depends-on-community-action-institutional-support-"
+        },
+        "c4": {
+            "heading": "\\\"ⴰⵡⴰⵍ, ⴰⵙⵏⴼⴰⵔ ⴰⵖⵔⴼⴰⵏ ⵏⵏⴰ ⵉⵔⴰⵏ ⴰⴷ ⵢⴰⵊⵊ ⴰⵏⵜⵉⵔⵏⵉⵜ ⴰⵔ ⵉⵙⴰⵡⴰⵍ ⵜⴰⵎⴰⵣⵉⵖⵜ\\\"",
+            "body": "ⵖⵔ ⵖⴼ ⵓⵙⵏⴼⴰⵔ ⴰⵡⴰⵍ ⴷ ⵓⴷⴰⵜⴰⵜⵓⵏ ⴰⵎⵣⵡⴰⵔⵓ ⵏⵏⵙ ⴳ ⵏⴰⵛⵏⴰⵍⵢⴰ.",
+            "link": "https://www.nationalia.info/new/11589/awal-the-popular-project-that-wants-to-make-the-internet-speak-amazigh"
         }
     },
     "email": {
